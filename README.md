@@ -113,5 +113,5 @@ Each component should be autonomous (html + css + javascript) and extensible.
 ## Roadmap
 
 - Update general documentation
-- Continu migration to TypeScript component by component
+- Continu to migrate to TypeScript component by component
 - Continu to fix and clean code. Make it simpler, better, lighter
