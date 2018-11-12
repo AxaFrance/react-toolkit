@@ -1,0 +1,10 @@
+.af-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .glyphicon {
+    margin: 0 1rem;
+    font-size: .75rem;
+  }
+}

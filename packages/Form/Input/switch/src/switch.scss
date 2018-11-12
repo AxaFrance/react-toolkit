@@ -1,0 +1,72 @@
+.af-form {
+  &-switch {
+    width: auto;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 24px;
+      display: inline-block;
+      position: absolute;
+      border-radius: 15px;
+      background-color: $color-mercury;
+      z-index: 0;
+    }
+
+    .af-form__radio-custom {
+      width: auto;
+      height: 24px;
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      padding: 0 12px;
+      font-size: .819rem;
+      color: $color-pager-link;
+      box-sizing: border-box;
+      z-index: 1;
+      cursor: pointer;
+
+      .af-form__label,
+      .af-form__input-radio:checked + .af-form__label,
+      &:hover .af-form__label {
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      .af-form__description {
+        padding: 0;
+      }
+    }
+
+    .af-btn-switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      transition: .4s;
+      z-index: 0;
+      display: inline-block;
+      width: 100%;
+
+      &::before {
+        position: absolute;
+        display: block;
+        width: 100%;
+        content: '';
+        height: 30px;
+        top: -2px;
+        padding: 0 12px;
+        background-color: $color-azur;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px 0 rgba(123, 123, 123, .5);
+        transform: translateX(0);
+        transition: .4s;
+      }
+    }
+  }
+}

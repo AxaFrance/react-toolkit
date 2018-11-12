@@ -1,0 +1,41 @@
+.af-contrat {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $gray-lighter;
+  border-radius: 25px;
+  padding: 0.4rem 0.3rem 0.4rem 3rem;
+  font-size: 0.9em;
+  order: 3;
+
+  .glyphicon-info-sign {
+    position: absolute;
+    color: $color-gray-contract;
+    font-size: 1.25rem;
+    top: 50%;
+    left: 0.7rem;
+    transform: translate(0, -50%);
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__word {
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+
+  &__def {
+    display: inline-block;
+    margin: 0 0.5rem 0 0;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .af-contrat {
+    order: 2;
+    margin: 0;
+  }
+}

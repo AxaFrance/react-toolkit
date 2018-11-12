@@ -1,0 +1,91 @@
+.af-form {
+  background: $color-wild-sand;
+  padding: 1rem;
+
+  &__group {
+    margin-bottom: 3rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--label-top {
+      align-items: flex-start;
+    }
+  }
+
+  &__group-label {
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &__message {
+    position: absolute;
+    min-height: 1.6em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.2rem 0;
+
+    .glyphicon {
+      margin-right: 0.4rem;
+    }
+
+    &--error {
+      color: $color-red-axa;
+    }
+  }
+
+  &__input-cmplt {
+    margin-left: 1rem;
+    display: inline-flex;
+  }
+
+  &__fields-inline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .af-form__text {
+      padding: 0;
+    }
+  }
+
+  &__input-inline {
+    margin-right: 1rem;
+  }
+
+  /* Commons styles ****************************************************************/
+  &__label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  &__indicator {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: $white;
+    border: 1px solid $color-silver;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    .glyphicon-ok {
+      display: none;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      font-size: 0.625rem;
+      font-weight: 100;
+    }
+  }
+
+  &__description {
+    padding-left: 1.8rem;
+  }
+}

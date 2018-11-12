@@ -1,0 +1,27 @@
+.glyphicon {
+  &--ring {
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: .5rem;
+    font-size: 1em;
+  }
+  @include generate-universes() {
+    border-color: $color;
+    color: $color;
+  }
+
+  &--success {
+    border-color: $color-malachite;
+    color: $color-malachite;
+  }
+
+  &--warning {
+    border-color: $color-flamingo;
+    color: $color-flamingo;
+  }
+
+  &--danger {
+    border-color: $color-red-axa;
+    color: $color-red-axa;
+  }
+}

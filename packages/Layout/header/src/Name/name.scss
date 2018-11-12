@@ -1,0 +1,31 @@
+.af-header {
+  &__title {
+    font-size: 1.4em;
+    line-height: 1em;
+    font-weight: 600;
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  &__subtitle {
+    line-height: 1em;
+    font-weight: 400;
+    display: block;
+  }
+
+  &__name {
+    order: 1;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    flex-basis: 60%;
+    display: table;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .af-header {
+    &__name {
+      flex-basis: initial;
+    }
+  }
+}

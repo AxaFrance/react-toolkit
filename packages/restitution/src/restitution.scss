@@ -1,0 +1,130 @@
+.af-restitution {
+  width: 100%;
+  color: $color-scorpion;
+  background: $white;
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 2rem;
+
+  &__header {
+    border-bottom: 1px solid $color-silver;
+    padding: 0.25rem 0 0.1875rem 0;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background: $color-axa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-left {
+      margin-left: 2.25rem;
+    }
+
+    &-right {
+      margin-right: 2.25rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1.5rem 0.625rem;
+    width: 100%;
+
+    &-title {
+      color: $color-axa;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    &-left--borderRight {
+      border-right: solid 1px rgba($color: $border-bottom-header, $alpha: 0.27);
+    }
+
+    &-left--borderBottom {
+      border-bottom: solid 1px rgba($color: $border-bottom-header, $alpha: 0.27);
+      margin-bottom: 1.875rem;
+      padding-bottom: 1.875rem;
+    }
+
+    &-block {
+      flex-basis: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: $white;
+
+    &-title {
+      margin-right: 0.875rem;
+    }
+
+    &-subtitle {
+      font-size: 1.125rem;
+      opacity: 0.72;
+    }
+
+    .af-link {
+      color: $white;
+      font-size: 0.9375rem;
+      background: none;
+      border: 0;
+      font-weight: 400;
+
+      &__text {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      &:hover {
+        .af-link__text {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__listdef {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    font-size: 1rem;
+    margin: 0;
+
+    &-item {
+      flex-basis: 50%;
+      font-weight: normal;
+      padding-right: 0.5rem;
+      color: $color-pager-link;
+    }
+
+    &-link {
+      color: $color-axa;
+      font-weight: 600;
+    }
+
+    &-value {
+      margin: 0;
+      flex-basis: 41%;
+      padding-left: 0.5rem;
+      font-weight: 600;
+      color: $color-azur;
+    }
+
+    &--marge {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 0.2rem;
+    display: block;
+    text-align: right;
+  }
+
+  &__listul {
+    padding-left: 1rem;
+  }
+}

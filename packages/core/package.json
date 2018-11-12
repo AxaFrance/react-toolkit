@@ -1,0 +1,20 @@
+{
+  "name": "@axa-fr/react-toolkit-core",
+  "version": "0.0.1-alpha.0",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "private": false,
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "cuid": "^2.1.1",
+    "prop-types": "^15.5.10",
+    "recompose": "^0.27.1"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

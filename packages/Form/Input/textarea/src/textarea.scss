@@ -1,0 +1,32 @@
+.af-form {
+  &__textarea {
+    &--disabled {
+      .af-form__input-textarea {
+        cursor: not-allowed;
+      }
+    }
+
+    &--error {
+      .af-form__input-textarea {
+        border: 1px solid $color-red-axa;
+        color: $color-red-axa;
+      }
+    }
+  }
+
+  &__input-textarea {
+    font-family: $font-family-base;
+    border: 1px solid $color-silver;
+    padding: .7rem 1.2rem;
+    font-size: 1em;
+
+    &:focus {
+      border-color: $color-axa;
+      color: $color-axa;
+    }
+
+    &--hasinfobulle {
+      margin-right: 1rem;
+    }
+  }
+}

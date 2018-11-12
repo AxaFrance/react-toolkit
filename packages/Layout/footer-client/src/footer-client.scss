@@ -1,0 +1,36 @@
+@import '_footer-client-item.scss';
+@import '_footer-client-list.scss';
+@import '_language-selection.scss';
+@import '_social-network.scss';
+
+.af-footer-client {
+  border-top: none;
+  padding: 0;
+  margin: 0;
+  color: $color-white;
+  margin-top: 50px;
+}
+
+.af-footer-client__top {
+  background-color: $color-dark-indigo;
+  padding: 50px 0 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.af-footer-client__bottom {
+  background-color: $color-azur;
+  padding: 15px 0;
+  min-height: 45px;
+}
+
+.af-footer-client__policy {
+  float: right;
+  height: 17px;
+  opacity: 0.5;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0;
+  text-align: right;
+  color: $color-white;
+  line-height: 25px;
+}

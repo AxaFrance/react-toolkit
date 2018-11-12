@@ -1,0 +1,32 @@
+{
+  "name": "af-toolkit",
+  "cacheDirectory": ".cache/jest",
+  "roots": ["<rootDir>/packages"],
+  "testPathIgnorePatterns": ["/node_modules/", "/dist/", "/core/css/"],
+  "setupFiles": ["<rootDir>/scripts/jest.init.js"],
+  "collectCoverageFrom": [
+    "packages/**/*.{js,jsx,tsx}",
+    "!**/dist/**",
+    "!**/core/css/**",
+    "!**/storybook/**",
+    "!packages/**/src/index.{js,ts}",
+    "!packages/core/src/common/scss/colorsList.js"
+  ],
+  "collectCoverage": false,
+  "globals": {
+    "ts-jest": {
+      "tsConfigFile": "tsconfig.test.json"
+    }
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js"],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(scss|css|less|md)$": "<rootDir>/__mocks__/styleMock.js"
+  },
+  "transform": {
+    ".(js|jsx)": "<rootDir>/node_modules/babel-jest",
+    ".(ts|tsx)": "ts-jest"
+  },
+  "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
+}

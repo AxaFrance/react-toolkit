@@ -1,0 +1,63 @@
+{
+  "name": "@axa-fr/react-toolkit-all",
+  "version": "0.0.1-alpha.0",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "private": false,
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "dependencies": {
+    "@axa-fr/react-toolkit-action": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-alert": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-badge": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-button": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-collapse": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-core": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-core": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-filter": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-filter-inline": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-card": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-checkbox": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-choice": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-date": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-file": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-number": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-pass": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-radio": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-select": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-select-multi": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-slider": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-switch": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-text": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-textarea": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-steps": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-summary": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-help": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-highlight": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-icon": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-layout-footer": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-layout-footer-client": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-layout-header": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-link": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-list": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-loader": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-modal-boolean": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-modal-default": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-panel": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-popover": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-restitution": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-status": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-table": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-tabs": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-title": "^0.0.1-alpha.0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

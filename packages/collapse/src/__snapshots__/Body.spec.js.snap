@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion.Body renders Accordion.Body correctly 1`] = `
+<div
+  aria-labelledby={null}
+  className="af-accordion__collapse af-accordion__collapse--open"
+  role="tabpanel"
+>
+  <div
+    className="af-accordion__block"
+  >
+    <b>
+      Content
+    </b>
+  </div>
+</div>
+`;

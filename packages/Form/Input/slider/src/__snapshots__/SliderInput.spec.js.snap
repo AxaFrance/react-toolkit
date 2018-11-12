@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SliderInput> renders SliderInput correctly 1`] = `
+<Field
+  classModifier={null}
+  className={null}
+  classNameContainerInput="col-md-10"
+  classNameContainerLabel="col-md-2"
+  forceDisplayMessage={false}
+  id=""
+  isVisible={true}
+  label="File *"
+  message={null}
+  messageType="error"
+>
+  <CustomSlider
+    classModifier={null}
+    className={null}
+    disabled={false}
+    id="id"
+    inputRef={null}
+    isVisible={true}
+    name="file"
+    onBlur={null}
+    onChange={[Function]}
+    onFocus={null}
+    readOnly={false}
+  />
+  <HelpMessage
+    isVisible={true}
+    message={null}
+  />
+</Field>
+`;

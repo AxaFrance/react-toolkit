@@ -1,0 +1,13 @@
+.af-hightlight {
+  &__text {
+    background-color: $color-axa;
+    color: $white;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+
+    &--pink {
+      background-color: $color-highlightpink;
+    }
+  }
+}

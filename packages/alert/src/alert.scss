@@ -1,0 +1,103 @@
+//selector leftBgColor bgColor colorBorder textColor
+$typesLite: (
+  success $color-alertSucces-leftBgColor $color-alertSucces-bgColor
+    $color-alertSucces-colorBorder $color-alertSucces-textColor,
+  info $color-alertInfo-leftBgColor $color-alertInfo-bgColor
+    $color-alertInfo-colorBorder $color-alertInfo-textColor,
+  danger $color-alertDanger-leftBgColor $color-alertDanger-bgColor
+    $color-alertDanger-colorBorder $color-alertDanger-textColor,
+  error $color-alertError-leftBgColor $color-alertError-bgColor
+    $color-alertError-colorBorder $color-alertError-textColor
+);
+
+.af-alert {
+  border: 1px solid;
+  margin-bottom: 2rem;
+  position: relative;
+  @each $typeLite in $typesLite {
+    &--#{nth($typeLite, 1)} {
+      background-color: nth($typeLite, 3);
+      border-color: nth($typeLite, 4);
+      color: nth($typeLite, 5);
+
+      .af-alert__content {
+        color: nth($typeLite, 5);
+
+        .af-alert__content__left {
+          background: nth($typeLite, 2);
+          width: 4.813rem;
+          min-width: 4.813rem;
+        }
+      }
+
+      .af-alert__title {
+        &-icon {
+          background-color: nth($typeLite, 2);
+          color: $white;
+          min-width: 4.813rem;
+
+          &::after {
+            border-left-color: nth($typeLite, 2);
+          }
+        }
+      }
+    }
+  }
+
+  &__icon-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+  }
+
+  &__title {
+    display: flex;
+    overflow: hidden;
+    color: inherit;
+    font-size: 1.1rem;
+    margin: 0;
+
+    &-icon {
+      position: relative;
+      font-size: 1.3rem;
+      padding: 0 1.5rem 0 1.688rem;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 98%;
+        top: 50%;
+        margin-top: -40%;
+        border: 30px solid transparent;
+        border-right-width: 0;
+      }
+
+      .glyphicon {
+        top: 50%;
+        margin-top: -50%;
+        display: block;
+      }
+    }
+
+    &-text {
+      line-height: 24px;
+      padding: 0.9375rem 1.5rem 0.9375rem 2.75rem;
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    .af-alert__content__right {
+      padding: 0 1.5rem 0 1.188rem;
+    }
+  }
+}

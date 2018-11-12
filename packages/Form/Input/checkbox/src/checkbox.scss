@@ -1,0 +1,158 @@
+.af-form {
+  &__checkbox,
+  &__checkbox-inline {
+    &--disabled {
+      .af-form__label {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+
+    &--error {
+      .af-form__label {
+        color: $color-red-axa;
+      }
+
+      .af-form__indicator {
+        border-color: $color-red-axa;
+      }
+    }
+  }
+
+  &__input-checkbox {
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+
+    &:checked + .af-form__label {
+      .af-form__indicator {
+        background-color: $color-azur;
+        border-color: $color-azur;
+        color: $white;
+
+        .glyphicon-ok {
+          display: block;
+        }
+      }
+    }
+
+    &:focus + .af-form__label {
+      color: $color-azur;
+    }
+  }
+
+  /* Déclinaisons des checkbox ****************************************************/
+
+  /* Classic */
+  &__checkbox {
+    display: block;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid $color-silver;
+
+    &:nth-last-child(1) {
+      border-bottom: 0;
+    }
+  }
+
+  /* Inline */
+  &__checkbox-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+    position: relative;
+
+    .af-form__label {
+      padding: 0;
+    }
+  }
+
+  /* Custom */
+  &__checkbox-custom {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.3rem 0.3rem 0;
+    text-align: center;
+    position: relative;
+
+    .af-form__label {
+      padding: 0.6rem 2rem;
+      background: $color-mercury;
+      border: $color-gray;
+      font-weight: normal;
+      cursor: pointer;
+      box-shadow: inset 0 -2px 0 0 $color-scorpion;
+      margin: 0;
+    }
+
+    .af-form__indicator {
+      left: 1rem;
+    }
+
+    .af-form__description {
+      padding-left: 0.5em;
+    }
+
+    .af-form__input-checkbox {
+      position: absolute;
+      z-index: -1;
+      visibility: hidden;
+
+      &:checked + .af-form__label {
+        background-color: $color-azur;
+        box-shadow: inset 0 -2px 0 0 $color-axa;
+        color: $white;
+
+        .af-form__indicator {
+          background: $white;
+          border: 1px solid $color-silver;
+          color: $color-mine-shaft;
+
+          .glyphicon-ok {
+            color: $color-azur;
+          }
+        }
+      }
+
+      &:focus + .af-form__label {
+        background-color: $color-axa;
+        color: $white;
+        box-shadow: 0 0 5px $color-axa;
+      }
+    }
+
+    &--disabled {
+      .af-form__label {
+        cursor: not-allowed;
+        opacity: 0.6;
+        box-shadow: inset 0 -2px 0 0 $color-silver;
+      }
+
+      .af-form__description {
+        opacity: 0.4;
+      }
+    }
+
+    &--error {
+      .af-form__label {
+        background: $error-custom-bg;
+        border: 1px solid $error-custom-border;
+        color: $color-red-axa;
+        box-shadow: inset 0 -2px 0 0 $color-red-axa;
+      }
+
+      .af-form__indicator {
+        border-color: $color-red-axa;
+      }
+    }
+
+    &:hover {
+      .af-form__label {
+        background-color: $color-azur;
+        border-color: $color-axa;
+        color: $white;
+        box-shadow: inset 0 -2px 0 0 $color-axa;
+      }
+    }
+  }
+}

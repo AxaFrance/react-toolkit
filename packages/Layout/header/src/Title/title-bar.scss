@@ -1,0 +1,107 @@
+.af-title-bar {
+  background: $brand-primary;
+  color: $white;
+  overflow: auto;
+  padding: 0.66rem 0;
+  margin-bottom: 2rem;
+
+  &--fixed {
+    position: fixed;
+    width: 100%;
+  }
+
+  &__button {
+    margin-right: 1rem;
+
+    .button--circled:hover {
+      color: initial;
+
+      .button__icon {
+        fill: initial;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0;
+    color: $white;
+    font-weight: normal;
+  }
+
+  &__subtitle {
+    margin-left: 1rem;
+    opacity: 0.64;
+  }
+
+  &__actions {
+    .af-btn--circle {
+      vertical-align: middle;
+      margin-left: 1rem;
+
+      &:focus {
+        box-shadow: 0 0 6px $white;
+        color: $white;
+      }
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.65;
+      color: $white;
+    }
+
+    &:focus {
+      text-shadow: 0 0 5px $white;
+      color: $white;
+    }
+  }
+
+  &__mobile-menu {
+    display: inline-block;
+    background-image: none;
+    background-color: transparent;
+    padding: 0;
+    margin-right: 1rem;
+  }
+
+  &__icon {
+    font-size: 1em;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .af-title-bar {
+    padding: 0.7em 0;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .af-title-bar {
+    padding: 0.66rem 0;
+
+    &__wrapper {
+      width: nth(nth($container-max-widths, 4), 2);
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__mobile-menu {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<File.FileTable> renders File.FileTable correctly 1`] = `
+<div
+  className="custom-table-file af-file-table"
+>
+  <div
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    <span>
+      Le chargement de certains fichiers à échoué: 
+    </span>
+    <ul>
+      <li
+        key="[object Object]"
+      >
+         
+        youhou.txt
+         (
+        2
+        )
+         
+      </li>
+    </ul>
+  </div>
+  <table
+    className="table table-striped table-bordered"
+  >
+    <tbody>
+      <FileLine
+        classModifier={null}
+        className="custom-line-file af-file-line"
+        disabled={false}
+        file={Object {}}
+        id="id"
+        key="id"
+        onClick={[Function]}
+      />
+    </tbody>
+  </table>
+</div>
+`;

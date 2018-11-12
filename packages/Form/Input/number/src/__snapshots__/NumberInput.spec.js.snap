@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput> renders NumberInput correctly 1`] = `
+<div
+  className="row af-form__group"
+>
+  <div
+    className="col-md-2"
+  >
+    <label
+      className="af-form__group-label"
+      htmlFor="iddateinput"
+    >
+      Image *
+    </label>
+  </div>
+  <div
+    className="col-md-10"
+  >
+    <div
+      className="af-form__text"
+    >
+      <input
+        autoFocus={null}
+        className="af-form__input-text"
+        disabled={false}
+        id="iddateinput"
+        name="placeImage"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder={null}
+        readOnly={false}
+        tabIndex={null}
+        type="text"
+        value="2"
+      />
+    </div>
+    <small
+      className="af-form__help"
+    />
+  </div>
+</div>
+`;

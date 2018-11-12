@@ -1,0 +1,178 @@
+// Wizard Steps
+// --------------------------------------------------
+$steps-bg: $gray-lighter;
+$steps-bg-active: $white;
+$font-size-step: $font-size-base;
+$font-size-step-number: ceil(($font-size-step * 1.6));
+$steps-color: $gray-dark;
+$steps-color-active: mix($black, $brand-primary, 20%);
+
+.af-steps {
+  margin-bottom: 2rem;
+
+  .af-steps-list {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 2px solid $steps-bg;
+
+    &-step {
+      display: table-cell;
+      font-size: $font-size-step;
+      background: $steps-bg;
+      color: $steps-color;
+      padding-left: 1.875em;
+
+      &.on {
+        color: $steps-color-active;
+        background: $steps-bg-active;
+
+        .af-steps-list-stepNumber,
+        .af-steps-list-stepTitle {
+          opacity: 1;
+        }
+
+        .af-steps-list-stepLabel::after {
+          border-color: transparent transparent transparent $steps-bg-active;
+        }
+      }
+
+      &.past {
+        color: $steps-color-active;
+
+        .af-steps-list-stepNumber,
+        .af-steps-list-stepTitle {
+          opacity: .5;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          .af-steps-list-stepNumber,
+          .af-steps-list-stepTitle {
+            opacity: 1;
+          }
+        }
+
+        .af-steps-list-stepLabel:first-child::after {
+          border-color: transparent transparent transparent $steps-bg;
+        }
+      }
+
+      &.disabled {
+        color: $gray-lightest;
+        background: $gray-lighter;
+
+        .af-steps-list-stepLabel::after {
+          border-color: transparent transparent transparent $steps-bg;
+        }
+      }
+
+      &Label {
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          right: -23px;
+          top: 50%;
+          transform: translate(0, -50%);
+          border-style: solid;
+          border-width: 50px 0 50px 36px;
+          border-color: transparent transparent transparent $white;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          right: -20px;
+          top: 50%;
+          transform: translate(0, -50%);
+          border-style: solid;
+          border-width: 50px 0 50px 36px;
+          border-color: transparent transparent transparent $steps-bg;
+        }
+      }
+
+      &Number,
+      &Title {
+        opacity: .3;
+      }
+
+      &Number {
+        margin-right: .3125rem;
+        font-size: $font-size-step-number;
+        font-weight: 600;
+
+        .glyphicon {
+          font-size: 1.5rem;
+        }
+      }
+
+      &Title {
+        font-weight: 600;
+        padding-top: .5rem;
+      }
+
+      &:last-child {
+        .af-steps-list-stepLabel {
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+
+        .af-steps-list-stepNumber {
+          font-size: ceil(($font-size-step * 1.1));
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &-list {
+      table-layout: auto;
+
+      &-step {
+        min-width: 3.125rem;
+
+        &Title {
+          display: none;
+        }
+
+        &Number {
+          left: 2rem;
+          z-index: 2;
+
+          .glyphicon {
+            font-size: ceil(($font-size-step * 1.2));
+          }
+        }
+
+        &.on {
+          .af-steps-list-stepTitle {
+            display: block;
+          }
+
+          .af-steps-list-stepNumber {
+            .glyphicon {
+              font-size: ceil(($font-size-step * 1.1));
+            }
+          }
+        }
+      }
+    }
+  }
+}

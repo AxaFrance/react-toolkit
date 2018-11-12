@@ -1,0 +1,39 @@
+$logo-size: 51px;
+$switch-size: 14px;
+
+.af-logo {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+
+  &-name,
+  &-headline {
+    text-decoration: none;
+    line-height: 1;
+    vertical-align: bottom;
+  }
+
+  &-name {
+    font-weight: 700;
+  }
+
+  &-switch {
+    vertical-align: bottom;
+    fill: $color-red-axa;
+    width: $switch-size;
+    height: $switch-size;
+    margin: 0 2px;
+  }
+
+  &__brand {
+    width: $logo-size;
+    height: $logo-size;
+    margin-right: 0.5rem;
+  }
+}

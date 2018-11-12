@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table.Items renders correctly 1`] = `
+<div
+  className="af-paging__limit"
+>
+  <form
+    className="af-paging__form"
+  >
+    <div
+      className="af-form__group"
+    >
+      <div
+        className="col col-sm-2 col-md-2 col-lg-2 col-xl-2"
+      >
+        <label
+          className="af-form__group-label"
+          htmlFor="itemid"
+        >
+          Afficher
+        </label>
+      </div>
+      <div
+        className="col col-sm-10 col-md-10 col-lg-10 col-xl-10"
+      >
+        <div
+          className="af-form__select"
+        >
+          <div
+            className="af-form__select-container"
+          >
+            <select
+              className="af-form__input-select"
+              id="itemid"
+              onChange={[Function]}
+              value={10}
+            >
+              <option
+                value={5}
+              >
+                5
+              </option>
+              <option
+                value={10}
+              >
+                10
+              </option>
+              <option
+                value={25}
+              >
+                25
+              </option>
+              <option
+                value={50}
+              >
+                50
+              </option>
+              <option
+                value={100}
+              >
+                100
+              </option>
+            </select>
+            <span
+              className="glyphicon glyphicon-menu-down"
+            />
+          </div>
+          <span
+            className="af-form__input-cmplt"
+          >
+            éléments
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

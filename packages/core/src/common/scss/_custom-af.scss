@@ -1,0 +1,86 @@
+@import './_custom-af-colorsvariables';
+
+// stylelint-disable color-no-hex
+// base
+$white: #fff !default;
+$black: #000 !default;
+$red: #d90000 !default;
+$orange: #e18a00 !default;
+$yellow: #ffd500 !default;
+$green: #468847 !default;
+$blue: #0275d8 !default;
+$teal: #3a87ad !default;
+$pink: #ff5b77 !default;
+$purple: #613d7c !default;
+// others
+// @TODO: set in colorsList ?
+$color-azur-focused: #aaabf9;
+$color-card-border: #dbdbdb;
+$color-highlightpink: #d52861;
+$color-error-custom-1: #ffbfbf;
+$color-error-custom-2: #d18e8e;
+$color-table-bg-accent: #e5e7eb;
+$color-table-head-bg: #555;
+$color-btn-success-focused: #bdffe1;
+$color-btn-danger-focused: #ffa0af;
+// stylelint-enable color-no-hex
+
+// List of Universes (AF-Themes)
+$color: $black !default;
+
+$universes: (
+  auto: $color-auto,
+  habitation: $color-habitation,
+  loisirs: $color-loisirs,
+  sante: $color-sante,
+  banque: $color-banque,
+  epargne: $color-epargne,
+  entreprise: $color-entreprise,
+  collective: $color-collective,
+  iard: $color-iard,
+  patrimonial: $color-patrimonial,
+  pros: $color-pros,
+  assurbanque: $color-assurbanque,
+);
+
+@mixin generate-universes() {
+  @each $universe, $universe-color in $universes {
+    $color: $universe-color !global;
+
+    &--#{$universe} {
+      @content;
+    }
+  }
+}
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+// COMPONENTS
+// Drawer
+$drawer-width: 16rem !default;
+$drawer-header-height: 4.25rem !default;
+$drawer-footer-height: 4.25rem !default;
+$drawer-transition: transform 0.3s ease-out !default;
+// Menu
+$menu-button-size: 35px !default;
+// Af-table
+$table-head-font-weight: 200 !default;
+// Af-Restitution
+$border-bottom-header: $color-dusty-gray;
+$brand-primary: $color-axa !default;
+// Af-rccard
+$card-white: $color-white !default;
+$card-grey-light: $color-wild-sand !default;
+$card-border-grey: $color-card-border !default;
+$card-blue-active: $color-azur !default;
+$card-header: $color-silver !default;
+$card-text-color: $color-pager-link !default;
+$card-bg-disabled: $color-mercury !default;
+// Af-form
+$error-custom-bg: $color-error-custom-1 !default;
+$error-custom-border: $color-error-custom-2 !default;
+// OTHERS
+$font-family-icon: icons !default;

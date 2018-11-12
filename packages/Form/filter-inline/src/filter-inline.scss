@@ -1,0 +1,25 @@
+.af-filter-inline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+
+  &__title {
+    padding-top: 1.25rem;
+    font-weight: 600;
+
+    &-text {
+      margin-left: .5rem;
+    }
+  }
+
+  &__field {
+    margin-left: 1rem;
+  }
+
+  .af-form__checkbox-custom {
+    display: block;
+  }
+}

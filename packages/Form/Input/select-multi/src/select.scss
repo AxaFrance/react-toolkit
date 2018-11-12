@@ -1,0 +1,83 @@
+.af-form {
+  &__select {
+    position: relative;
+
+    &--success {
+      .af-form__select-container {
+        margin-right: 1rem;
+      }
+
+      &::after {
+        font-family: $font-family-icon;
+        content: '\EABA';
+        color: $color-malachite;
+      }
+
+      > .af-btn--circle,
+      > .af-form__message {
+        display: none;
+      }
+    }
+
+    &-container {
+      position: relative;
+      border: 1px solid $color-silver;
+      background: $white;
+      display: inline-block;
+    }
+
+    &--disabled {
+      .af-form__select-container {
+        cursor: not-allowed;
+        background: $color-mercury;
+      }
+    }
+
+    &--error {
+      .af-form__input-text {
+        border: 1px solid $color-red-axa;
+        color: $color-red-axa;
+      }
+
+      .af-form__select-container {
+        border: 1px solid $color-red-axa;
+        color: $color-red-axa;
+      }
+    }
+
+    .glyphicon-menu-down {
+      position: absolute;
+      right: .5rem;
+      font-size: .7em;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__input-select {
+    border: 0;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    padding: .6rem 1.8rem .55rem .5rem;
+    width: 100%;
+    font-size: 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: .01px;
+    text-overflow: '';
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      border-color: $color-axa;
+    }
+
+    &--hasinfobulle {
+      margin-right: 1rem;
+    }
+  }
+}

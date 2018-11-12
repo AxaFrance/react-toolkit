@@ -1,0 +1,6 @@
+#root {
+  padding: 2rem;
+}
+#root > div > div {
+  text-align: left !important;
+}

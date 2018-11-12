@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slider> renders Slider correctly 1`] = `
+<div
+  style={
+    Object {
+      "margin": 0,
+      "width": "100%",
+    }
+  }
+>
+  <ComponentEnhancer(undefined)
+    activeDotStyle={Object {}}
+    className=""
+    defaultValue={1}
+    disabled={false}
+    dotStyle={Object {}}
+    dots={false}
+    handle={[Function]}
+    handleStyle={
+      Array [
+        Object {},
+      ]
+    }
+    included={true}
+    marks={
+      Object {
+        "0": "VERY BAD",
+        "1": "BAD",
+        "2": "NICE",
+        "3": "VERY NICE",
+      }
+    }
+    max={3}
+    min={0}
+    onAfterChange={null}
+    onBeforeChange={null}
+    onChange={[Function]}
+    prefixCls="rc-slider"
+    railStyle={Object {}}
+    readOnly={false}
+    step={null}
+    trackStyle={
+      Array [
+        Object {},
+      ]
+    }
+    vertical={false}
+  />
+</div>
+`;

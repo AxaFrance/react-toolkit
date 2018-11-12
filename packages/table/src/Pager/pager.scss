@@ -1,0 +1,51 @@
+.af-pager {
+  &__pagination {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    border-radius: 100%;
+    font-size: .9375rem;
+
+    &--active {
+      background: $color-axa;
+      color: $white;
+      width: 1.9rem;
+      height: 1.9rem;
+      text-align: center;
+
+      &:hover {
+        background: $color-azur;
+      }
+
+      .af-pager__item-link {
+        color: $white;
+      }
+    }
+
+    &-link,
+    &-nolink {
+      display: inline-flex;
+      padding: .3em .5rem;
+      color: $color-pager-link;
+    }
+
+    &-text {
+      text-decoration: underline;
+    }
+
+    &-icon {
+      margin: 0 .5rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

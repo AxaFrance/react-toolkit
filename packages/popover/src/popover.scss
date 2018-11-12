@@ -1,0 +1,98 @@
+$size-arrow: 8px;
+
+.af-popover {
+  &__container {
+    position: relative;
+    display: inline-block;
+
+    &-pop {
+      position: relative;
+      background: $color-azur;
+      color: $white;
+      border-radius: 3px;
+      padding: .5rem;
+
+      .af-subtitle {
+        color: $white;
+        font-size: 2em;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .af-popover__arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+      }
+
+      &[data-placement^='top'] {
+        margin-bottom: $size-arrow;
+
+        .af-popover__arrow {
+          border-width: $size-arrow $size-arrow 0 $size-arrow;
+          border-color: $color-azur transparent transparent transparent;
+          bottom: -$size-arrow;
+          left: calc(50% - #{$size-arrow});
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &[data-placement^='bottom'] {
+        margin-top: $size-arrow;
+
+        .af-popover__arrow {
+          border-width: 0 $size-arrow $size-arrow $size-arrow;
+          border-color: transparent transparent $color-azur transparent;
+          top: -$size-arrow;
+          left: calc(50% - #{$size-arrow});
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &[data-placement^='right'] {
+        margin-left: $size-arrow;
+
+        .af-popover__arrow {
+          border-width: $size-arrow $size-arrow $size-arrow 0;
+          border-color: transparent $color-azur transparent transparent;
+          left: -$size-arrow;
+          top: calc(50% - #{$size-arrow});
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      &[data-placement^='left'] {
+        margin-right: $size-arrow;
+
+        .af-popover__arrow {
+          border-width: $size-arrow 0 $size-arrow $size-arrow;
+          border-color: transparent transparent transparent $color-azur;
+          right: -$size-arrow;
+          top: calc(50% - #{$size-arrow});
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &-fade-in {
+    animation: fadein .2s linear 1 forwards;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

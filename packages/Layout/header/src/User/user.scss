@@ -1,0 +1,41 @@
+.af-info-user {
+  font-weight: 600;
+  text-decoration: underline;
+  order: 2;
+  margin-bottom: 1rem;
+  text-align: left;
+
+  &__name {
+    display: inline;
+  }
+
+  &__profile {
+    margin-left: 0.3em;
+    display: inline;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .af-info-user {
+    text-align: right;
+
+    &__name,
+    &__profile {
+      display: block;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .af-info-user {
+    order: 3;
+    margin: 0;
+    align-self: initial;
+    flex-basis: initial;
+
+    &__name,
+    &__profile {
+      display: inline;
+    }
+  }
+}

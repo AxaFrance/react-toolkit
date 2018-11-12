@@ -1,0 +1,24 @@
+include status.pug
+mixin line(item)
+  tr.af-table__tr
+    td.af-table__cell
+      a.af-link(href="")
+        | #{item.contractId}
+    td.af-table__cell
+      a.af-link(href="")
+        | #{item.folderId}
+    td.af-table__cell
+      | #{item.request}
+    td.af-table__cell
+      | #{item.site}
+    td.af-table__cell
+      | #{item.update}
+    td.af-table__cell
+      | #{item.decision}
+    td.af-table__cell
+      +status(item.status)
+    td.af-table__cell
+      a.af-link.af-link--hasIconLeft(href="#")
+        span.glyphicon.glyphicon-pencil
+        span.af-link__text
+          | Consulter

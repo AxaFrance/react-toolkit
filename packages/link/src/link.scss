@@ -1,0 +1,34 @@
+.af-link {
+  color: $color-azur;
+
+  &--hasIconLeft,
+  &--hasIconRight {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .glyphicon {
+      font-size: .9em;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .af-link__text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--hasIconLeft {
+    .glyphicon {
+      margin-right: .3rem;
+    }
+  }
+
+  &--hasIconRight {
+    .glyphicon {
+      margin-left: .3rem;
+    }
+  }
+}

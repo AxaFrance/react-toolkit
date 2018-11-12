@@ -1,0 +1,74 @@
+$heightslide: 6px;
+
+.af-form {
+  &__slider {
+    width: 80%;
+
+    // stylelint-disable selector-class-pattern
+    .rc-slider {
+      border-radius: 0;
+
+      &-rail {
+        background: $color-mercury;
+        height: $heightslide;
+      }
+
+      &-track {
+        background: $color-azur;
+        height: $heightslide;
+        border-radius: 0;
+      }
+
+      &-handle {
+        background: $color-azur;
+        border-color: $color-azur;
+        color: $white;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-top: 0;
+        width: 20px;
+        height: 20px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: $color-silver;
+          width: 2px;
+          height: $heightslide;
+        }
+      }
+
+      &-step {
+        height: $heightslide;
+      }
+
+      &-dot {
+        border-radius: 0;
+        background: $color-gray;
+        border-color: $color-gray;
+        width: 2px;
+        height: $heightslide;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        &.active {
+          background: $color-silver;
+          border-color: $color-silver;
+        }
+
+        &:nth-child(1) {
+          height: 12px;
+        }
+
+        &:nth-last-child(1) {
+          height: 12px;
+        }
+      }
+    }
+    // stylelint-enable selector-class-pattern
+  }
+}

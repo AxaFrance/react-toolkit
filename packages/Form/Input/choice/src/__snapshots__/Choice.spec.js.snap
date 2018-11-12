@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChoiceInput> renders ChoiceInput correctly 1`] = `
+<div
+  className="row af-form__group"
+>
+  <div
+    className="col-md-2"
+  >
+    <label
+      className="af-form__group-label"
+      htmlFor=""
+    >
+      Image *
+    </label>
+  </div>
+  <div
+    className="col-md-10"
+  >
+    <div
+      className="af-form__radio-custom"
+    >
+      <input
+        autoFocus={null}
+        checked={false}
+        className="af-form__input-radio"
+        componentClassName="af-form__radio-custom"
+        disabled={false}
+        id="iddateinput"
+        name="placeImage"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        readOnly={false}
+        tabIndex={null}
+        type="radio"
+        value="sample"
+      />
+      <label
+        className="af-form__label"
+        htmlFor="iddateinput"
+      >
+        <span
+          className="af-form__description"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;

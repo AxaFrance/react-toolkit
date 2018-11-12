@@ -1,0 +1,156 @@
+// stylelint-disable selector-class-pattern
+.ReactModal__Overlay {
+  animation: fademodal .1s linear;
+  z-index: 3;
+}
+
+.ReactModal__Body {
+  &--open {
+    overflow: hidden;
+  }
+}
+// stylelint-enable selector-class-pattern
+
+.af-modal {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1050;
+  outline: 0;
+  overflow: auto;
+
+  &--lg {
+    max-width: 800px;
+  }
+
+  &--sm {
+    max-width: 300px;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: $color;
+
+    &.show {
+      opacity: .5;
+    }
+  }
+
+  &__dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+    animation: appeardialog .3s cubic-bezier(.65, .05, .36, 1);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid $color-mine-shaft;
+    border-radius: 0;
+    outline: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid $gray-lighter;
+
+    &-title {
+      font-weight: inherit;
+      margin-bottom: 0;
+    }
+
+    &-close-btn {
+      font-size: 1rem;
+      line-height: 1rem;
+      border: none;
+      box-shadow: none;
+      background: none;
+      padding: .5rem;
+
+      &:hover {
+        background-color: $gray-lighter;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    border-top: 1px solid $gray-lighter;
+
+    & > .af-btn:not(:last-child) {
+      margin-right: .25rem;
+    }
+
+    & > .af-btn:not(:first-child) {
+      margin-left: .25rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .af-modal {
+    max-width: 500px;
+    margin: 30px auto;
+
+    &--sm {
+      max-width: 300px;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .af-modal {
+    &--lg {
+      max-width: 800px;
+      margin: 30px auto;
+    }
+  }
+}
+
+@keyframes appeardialog {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  0% {
+    top: -100%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes fademodal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

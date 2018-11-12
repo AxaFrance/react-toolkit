@@ -1,0 +1,133 @@
+.af-tabs {
+  &__title {
+    font-family: $font-family-serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: left;
+    color: $white;
+  }
+
+  &__control {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 0;
+    background-color: $color-tabs-item;
+    height: 2.5rem;
+    margin-top: .4375rem;
+    vertical-align: bottom;
+    border: 1px solid;
+    border-bottom: 0;
+    border-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    margin-right: .375rem;
+    border-radius: 4px 4px 0 0;
+
+    &:hover {
+      background-color: $color-azur;
+      border-color: $color-azur;
+
+      .af-tabs__link {
+        color: $color-white;
+        border: none;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      background-color: $color-azur;
+      border-color: $color-azur;
+      height: 46px;
+      margin-top: 1px;
+
+      .af-tabs__link {
+        color: $white;
+      }
+    }
+
+    &--disabled {
+      background-color: $color-tabs-disabled;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: $color-tabs-disabled;
+        border-color: transparent;
+
+        button {
+          color: $color-tabs-disabled-button;
+        }
+      }
+
+      button {
+        pointer-events: none;
+        cursor: not-allowed;
+        color: $color-tabs-disabled-button;
+      }
+    }
+
+    &--has-icon-left {
+      padding-left: 1rem;
+
+      .glyphicon {
+        left: 1.5rem;
+      }
+    }
+
+    &--has-icon-right {
+      padding-right: 1rem;
+
+      .glyphicon {
+        right: 1.5rem;
+      }
+    }
+
+    .glyphicon {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .af-badge {
+      z-index: 1;
+      position: absolute;
+      right: -14px;
+      top: -14px;
+    }
+  }
+
+  &__link {
+    color: $color-tabs-link;
+    line-height: 2.688rem;
+    padding: 0 2.875rem;
+    font-weight: lighter;
+    background: none;
+    border: none;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__content {
+    border: solid 1px $color-tabs-content;
+    border-top: 2px solid $color-azur;
+    background-color: $white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .11);
+  }
+
+  &__pane {
+    padding: 1.25rem;
+  }
+}

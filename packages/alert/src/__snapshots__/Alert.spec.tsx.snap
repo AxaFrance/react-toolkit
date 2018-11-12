@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> renders an error alert with exclamation icon and title 1`] = `
+<div
+  className="af-alert af-alert--error"
+>
+  <div
+    className="af-alert__title"
+  >
+    <div
+      className="af-alert__title-icon"
+    >
+      <i
+        className="glyphicon glyphicon-exclamation-sign"
+      />
+    </div>
+    <div
+      className="af-alert__title-text"
+    >
+      Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert /> renders an info alert with info-sign icon, a title and a body containing an unordered list 1`] = `
+<div
+  className="af-alert af-alert--error"
+>
+  <div
+    className="af-alert__title"
+  >
+    <div
+      className="af-alert__title-icon"
+    >
+      <i
+        className="glyphicon glyphicon-exclamation-sign"
+      />
+    </div>
+    <div
+      className="af-alert__title-text"
+    >
+      Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+    </div>
+  </div>
+  <div
+    className="af-alert__content"
+  >
+    <div
+      className="af-alert__content__left"
+    />
+    <div
+      className="af-alert__content__right"
+    >
+      <ul>
+        <li>
+          Test1
+        </li>
+        <li>
+          Test2
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

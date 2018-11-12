@@ -1,0 +1,233 @@
+.af-rccard-group {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 19px 0 rgba(0, 0, 0, 0.11);
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  .af-rccard-group__text {
+    margin: 0;
+  }
+
+  .af-rccard-group__label,
+  .af-form__label {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .af-rccard-group__title {
+    border-bottom: 1px solid $card-grey-light;
+    border-radius: 4px 4px 0 0;
+    font-weight: normal;
+  }
+
+  .af-rccard:nth-child(n + 1):not(:first-child):not(.af-rccard--active) {
+    .af-rccard-header {
+      border-left: 1px solid $card-grey-light;
+    }
+
+    .af-rccard-content,
+    .af-rccard-footer {
+      border-left: 1px solid $card-border-grey;
+    }
+  }
+}
+
+.af-rccard-group__title {
+  margin: 0;
+  width: 100%;
+  padding: rem(10px);
+  text-align: center;
+  font-size: rem(18px);
+  background: $card-header;
+  color: $card-text-color;
+}
+
+.af-rccard-group__content {
+  display: flex;
+  flex-direction: row;
+}
+
+.af-rccard {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.af-rccard-group--active {
+  .af-rccard-group__title {
+    color: $card-white;
+    background: $card-blue-active;
+    border-bottom: 0;
+  }
+
+  .af-rccard--active {
+    .af-rccard-content {
+      box-shadow: inset 0 0 0 1px $card-blue-active;
+    }
+
+    .af-rccard-footer {
+      box-shadow: inset 0 -1px 0 1px $card-blue-active;
+    }
+  }
+}
+
+.af-rccard--active .af-rccard-header {
+  background-color: $card-blue-active;
+}
+
+.af-rccard--disabled {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    background-color: $card-bg-disabled;
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+}
+
+.af-rccard-header {
+  background-color: $card-header;
+  border-radius: 4px 4px 0 0;
+  flex-grow: 2;
+  display: flex;
+
+  .af-form__radio {
+    flex: 1;
+    align-items: stretch;
+
+    .af-form__label {
+      height: 100%;
+
+      &::before {
+        left: rem(9.76px);
+        top: rem(38px);
+      }
+    }
+  }
+
+  .af-form__checkbox .af-form__indicator {
+    left: rem(10px);
+    top: rem(38px);
+  }
+
+  .af-form__radio .af-form__label::after {
+    left: rem(12.8px);
+    top: rem(38px);
+  }
+
+  .af-form__checkbox .af-form__indicator i {
+    left: 2px;
+    top: 2px;
+  }
+
+  input {
+    margin-top: rem(12px);
+  }
+
+  label {
+    padding: rem(19px) rem(17px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.af-rccard-header__meta,
+.af-rccard-group__title {
+  & + .af-rccard-group__content {
+    .af-rccard-header {
+      border-radius: 0;
+    }
+  }
+}
+
+.af-rccard-header__content {
+  padding-left: rem(18px);
+}
+
+.af-rccard-header__title,
+.af-rccard-header__subtitle {
+  color: $card-text-color;
+  margin: 0;
+}
+
+.af-rccard-header__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.af-rccard-header__subtitle {
+  font-size: rem(22px);
+  font-weight: 400;
+}
+
+.af-rccard--active {
+  .af-rccard-header__title,
+  .af-rccard-header__subtitle {
+    color: $card-white;
+  }
+}
+
+.af-rccard-header__meta {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  color: $card-white;
+  background-color: $card-blue-active;
+  text-align: center;
+  font-size: rem(14px);
+  line-height: rem(20px);
+  margin: 0;
+
+  & + .af-rccard-group__title {
+    border-radius: 0;
+  }
+}
+
+.af-rccard-content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: rem(23px) rem(30px) rem(31px) rem(20px);
+  background-color: $card-white;
+}
+
+.af-rccard-footer {
+  width: 100%;
+  background-color: $card-grey-light;
+  padding: rem(18px) rem(12px);
+  font-size: rem(14px);
+  position: relative;
+  top: -1px;
+
+  &::after {
+    content: '';
+    display: block;
+    background: $card-border-grey;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    right: 1px;
+  }
+}
+
+$nb-card-max: 5;
+
+@for $i from 1 through $nb-card-max {
+  .af-rccard__#{$i} .af-rccard {
+    flex: 0 0 percentage(1 / $i);
+    width: percentage(1 / $i);
+  }
+}

@@ -1,0 +1,169 @@
+.af-accordion {
+  &__item {
+    &:first-child {
+      .af-accordion__item-header {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    &:last-child {
+      .af-accordion__item-header {
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+    &--open:last-child {
+      .af-accordion__item-header {
+        border-radius: 0;
+      }
+    }
+
+    &-header {
+      background: $color-azur;
+      position: relative;
+      cursor: pointer;
+    }
+
+    &-title {
+      cursor: pointer;
+      padding: 0.7rem 1rem;
+      color: $white;
+      margin: 0;
+      font-size: 1.2rem;
+      .glyphicon-menu-down,
+      .glyphicon-menu-up {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translate(0, -50%);
+        font-size: 0.6em;
+      }
+    }
+
+    &-toggle {
+      color: $white;
+      display: block;
+      position: relative;
+      z-index: 2;
+      padding-left: 1.5rem;
+
+      &:hover,
+      :focus {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__collapse {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: solid 1px $color-accordeon-border-collapse;
+
+    &--open {
+      max-height: 100vh;
+      overflow: visible;
+    }
+  }
+
+  &__block {
+    padding: 1rem;
+  }
+
+  &--arrow-right {
+    .af-accordion__item-title {
+      .glyphicon-menu-down,
+      .glyphicon-menu-up {
+        left: inherit;
+        right: 1rem;
+      }
+
+      .af-accordion__item-toggle {
+        padding-left: 0.2rem;
+      }
+    }
+  }
+
+  &--light {
+    .af-accordion__item {
+      border: 0;
+
+      .af-accordion__collapse {
+        border: none;
+      }
+
+      &-header {
+        background: none;
+        padding: 0;
+      }
+
+      &-title {
+        color: $color-mine-shaft;
+        padding: 0.4rem 1rem 0.4rem 0;
+        display: flex;
+        align-items: center;
+
+        .glyphicon-menu-down,
+        .glyphicon-menu-up {
+          position: static;
+          transform: translate(0, 0);
+          margin-right: 0.1rem;
+        }
+
+        &::after {
+          background-color: $color-scorpion;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+
+      &-toggle {
+        display: block;
+        color: $color-mine-shaft;
+        background: $white;
+        padding: 0 1rem;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:focus {
+          color: $color-mine-shaft;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &--custom {
+    .af-accordion {
+      &__item {
+        &-header--custom {
+          background: $color-accordion-custom;
+          border-radius: 3px 3px 0 0;
+        }
+
+        &-toggle {
+          padding-left: 0;
+        }
+      }
+
+      &__collapse--custom {
+        border: 1px dashed $color-scorpion;
+        border-top: 0;
+        background: $white;
+      }
+    }
+  }
+  @include generate-universes() {
+    .af-accordion__item {
+      border-color: $color;
+
+      &-header {
+        background-color: $color;
+      }
+    }
+  }
+}

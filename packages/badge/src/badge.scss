@@ -1,0 +1,19 @@
+$types: (
+  success $color-malachite,
+  info $color-blue-alert,
+  danger $color-orange,
+  error $color-pink
+);
+
+.af-badge {
+  color: $white;
+  border-radius: 16px;
+  padding: 0.2rem 0.7rem;
+  height: 28px;
+  line-height: 1.25rem;
+  @each $type in $types {
+    &--#{nth($type, 1)} {
+      background-color: nth($type, 2);
+    }
+  }
+}

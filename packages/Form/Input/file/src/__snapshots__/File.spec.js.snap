@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<File.File> renders File.File correctly 1`] = `
+<branch(withProps(withHandlers(File)))
+  accept="image/jpeg, image/png, application/*"
+  classModifier={null}
+  className="af-file"
+  disabled={false}
+  icon="file"
+  id="id"
+  inputRef={null}
+  isVisible={true}
+  label="File *"
+  maxSize={20000000}
+  minSize={0}
+  multiple={true}
+  name="file"
+  onBlur={null}
+  onFocus={null}
+  onOpenClick={[Function]}
+  placeholder="Glissez/déposez vos fichiers"
+  readOnly={false}
+  values={null}
+/>
+`;

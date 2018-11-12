@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1-alpha.0",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ],
+      "message": "chore(release): publish %s [ci skip]"
+    },
+    "bootstrap": {
+      "ignore": "component-*"
+    }
+  },
+  "packages": [
+    "packages/*",
+    "packages/Form/*",
+    "packages/Form/Input/*",
+    "packages/Layout/*",
+    "packages/Modal/*",
+    "storybook/*"
+  ]
+}

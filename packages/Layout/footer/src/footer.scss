@@ -1,0 +1,22 @@
+$logo-size: 40px;
+
+.af-footer {
+  font-size: .81rem;
+  padding: .5625rem 0 .25rem 1.438rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    .af-logo__brand {
+      width: $logo-size;
+      height: $logo-size;
+      margin-right: .5rem;
+    }
+  }
+
+  &-content {
+    color: $color-axa;
+    font-weight: 600;
+  }
+}

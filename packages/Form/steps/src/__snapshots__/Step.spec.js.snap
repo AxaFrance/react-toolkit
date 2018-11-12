@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Steps> renders Steps correctly 1`] = `
+<div
+  className="af-steps"
+>
+  <ol
+    className="af-steps-list"
+  >
+    <li
+      className="past af-steps-list-step"
+      title="Previous step"
+    >
+      <a
+        className="af-steps-list-stepLabel"
+        href="/etape1"
+        onClick={[Function]}
+      >
+        <div
+          className="af-steps-list-stepNumber"
+        >
+          1
+        </div>
+        <div
+          className="af-steps-list-stepTitle"
+        >
+          Previous step
+        </div>
+      </a>
+    </li>
+    <li
+      className="af-steps-list-step"
+      title="Un titre"
+    >
+      <a
+        className="af-steps-list-stepLabel"
+        href="#"
+        onClick={[Function]}
+      >
+        <span
+          className="af-steps-list-stepNumber"
+        >
+          <i
+            className="glyphicon glyphicon-ok"
+          />
+        </span>
+        <span
+          className="af-steps-list-stepTitle"
+        >
+          Custom
+        </span>
+      </a>
+    </li>
+    <li
+      className="af-steps-list-step"
+      title="Final step"
+    >
+      <div
+        className="af-steps-list-stepLabel"
+      >
+        <div
+          className="af-steps-list-stepNumber"
+        >
+          5
+        </div>
+        <div
+          className="af-steps-list-stepTitle"
+        >
+          Final step
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>
+`;

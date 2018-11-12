@@ -1,0 +1,29 @@
+.af-header {
+  &__content {
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .af-header {
+    &__wrapper {
+      width: 100%;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .af-header {
+    &__wrapper {
+      width: nth(nth($container-max-widths, 4), 2);
+      max-width: 100%;
+    }
+
+    &__content {
+      flex-wrap: initial;
+    }
+  }
+}

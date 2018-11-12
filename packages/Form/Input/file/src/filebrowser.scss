@@ -1,0 +1,35 @@
+.af-form {
+  &__filebrowser {
+    &:hover {
+      .af-form__input-text {
+        border-color: $color-axa;
+        color: $color-axa;
+      }
+    }
+  }
+
+  &__input-filebrowser {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 2;
+    cursor: pointer;
+
+    &:focus {
+      border-color: $color-axa;
+      color: $color-axa;
+    }
+
+    &-label {
+      display: flex;
+
+      .af-form__input-text {
+        background: white;
+        width: 10rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+$levels: (
+  bad red '20%',
+  okay orange '40%',
+  good green '60%',
+  verygood blue '80%',
+  excellent purple '100%'
+);
+
+.af-form {
+  &__pass {
+    position: relative;
+    display: inline-block;
+
+    .af-form__input-text {
+      padding-right: 3rem;
+    }
+
+    &--hasinfobulle {
+      margin-right: 1rem;
+    }
+
+    .af-form__help {
+      min-height: 1.6em;
+      display: flex;
+      flex-wrap: wrap;
+      -ms-flex-align: center;
+      align-items: center;
+      justify-content: flex-start;
+      margin: .2rem 0;
+    }
+
+    &-btn {
+      position: absolute;
+      right: 5px;
+      top: 6px;
+      background: none;
+      border: none;
+      outline: 0;
+      color: gray;
+      font-size: 1.3em;
+      cursor: pointer;
+      display: flex;
+      padding: .45rem .4rem;
+
+      &:hover {
+        background: $color-mercury;
+        border-radius: 100%;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &-strength {
+      width: 0;
+      height: 3px;
+      background: transparent;
+      transition: all 300ms ease-in-out;
+    }
+    @each $level in $levels {
+      &--#{nth($level, 1)} {
+        .af-form__pass-strength {
+          width: #{nth($level, 3)};
+          background: #{nth($level, 2)};
+        }
+      }
+    }
+  }
+
+  &__pass-container {
+    .af-popover__container {
+      display: inline-block;
+    }
+  }
+}

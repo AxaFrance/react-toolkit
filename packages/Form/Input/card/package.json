@@ -1,0 +1,26 @@
+{
+  "name": "@axa-fr/react-toolkit-form-input-card",
+  "version": "0.0.1-alpha.0",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "private": false,
+  "scripts": {
+    "prepare": "node ../../../../scripts/prepare.js"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "dependencies": {
+    "@axa-fr/react-toolkit-core": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-core": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-checkbox": "^0.0.1-alpha.0",
+    "@axa-fr/react-toolkit-form-input-radio": "^0.0.1-alpha.0",
+    "prop-types": "^15.5.10",
+    "recompose": "^0.27.1"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
