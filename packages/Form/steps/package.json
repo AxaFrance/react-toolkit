@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-steps",
-  "version": "0.0.2-alpha.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,7 +12,7 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^0.0.2-alpha.0",
+    "@axa-fr/react-toolkit-core": "^1.0.0",
     "prop-types": "^15.5.10",
     "recompose": "^0.27.1"
   },
