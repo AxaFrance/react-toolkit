@@ -54,9 +54,9 @@ const MyAlertComponent => () => {
 
 - [`@axa-fr/react-toolkit-form-input-text`](./packages/Form/Input/text/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text)
 - [`@axa-fr/react-toolkit-form-input-date`](./packages/Form/Input/date/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date)
-- [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/readme.md)[![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice)
-- [`@axa-fr/react-toolkit-form-input-select`](./packages/Form/Input/select/readme.md) (https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select)
-- [`@axa-fr/react-toolkit-form-input-select-multi`](./packages/Form/Input/select-multi/readme.md) (https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-select-multi.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-multi-select)
+- [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice)
+- [`@axa-fr/react-toolkit-form-input-select`](./packages/Form/Input/select/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select)
+- [`@axa-fr/react-toolkit-form-input-select-multi`](./packages/Form/Input/select-multi/readme.md)[![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-select-multi.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-select-multi)
 - [`@axa-fr/react-toolkit-form-input-file`](./packages/Form/Input/file/readme.md)
 - [`@axa-fr/react-toolkit-form-input-slider`](./packages/Form/Input/slider/readme.md)
 - [`@axa-fr/react-toolkit-form-input-checkbox`](./packages/Form/Input/checkbox/readme.md)
