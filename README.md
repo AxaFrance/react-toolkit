@@ -2,6 +2,8 @@
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
 [![Build Status](https://travis-ci.com/AxaGuilDEv/react-toolkit.svg?branch=master)](https://travis-ci.com/AxaGuilDEv/react-toolkit)
+[![Maintainability](https://api.codeclimate.com/v1/badges/502c94217e58384a8a77/maintainability)](https://codeclimate.com/github/AxaGuilDEv/react-toolkit/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/502c94217e58384a8a77/test_coverage)](https://codeclimate.com/github/AxaGuilDEv/react-toolkit/test_coverage)
 
 - [About](#about)
 - [Getting Started](#getting-started)
