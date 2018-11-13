@@ -52,9 +52,9 @@ const MyAlertComponent => () => {
 
 ## Packages
 
-- [`@axa-fr/react-toolkit-form-input-text`](./packages/Form/Input/text/readme.md) [![npm version](https://badge.fury.io/js/@axa-fr/react-oidc-context.svg)](https://badge.fury.io/js/@axa-fr/react-toolkit-form-input-text)
-- [`@axa-fr/react-toolkit-form-input-date`](./packages/Form/Input/date/readme.md) [![npm version](https://badge.fury.io/js/@axa-fr/react-toolkit-form-input-date.svg)](https://badge.fury.io/js/@axa-fr/react-toolkit-form-input-date)
-- [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/readme.md)[![npm version](https://badge.fury.io/js/@axa-fr/react-toolkit-form-input-choice.svg)](https://badge.fury.io/js/@axa-fr/react-toolkit-form-input-choice)
+- [`@axa-fr/react-toolkit-form-input-text`](./packages/Form/Input/text/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2/react-oidc-context.svg)](https://badge.fury.io/js/%40axa-fr%2/react-toolkit-form-input-text)
+- [`@axa-fr/react-toolkit-form-input-date`](./packages/Form/Input/date/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2/react-toolkit-form-input-date.svg)](https://badge.fury.io/js/%40axa-fr%2/react-toolkit-form-input-date)
+- [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/readme.md)[![npm version](https://badge.fury.io/js/%40axa-fr%2/react-toolkit-form-input-choice.svg)](https://badge.fury.io/js/%40axa-fr%2/react-toolkit-form-input-choice)
 - [`@axa-fr/react-toolkit-form-input-select`](./packages/redux-fetch/readme.md)
 - [`@axa-fr/react-toolkit-form-input-select-multi`](./packages/redux-fetch/readme.md)
 - [`@axa-fr/react-toolkit-form-input-file`](./packages/redux-fetch/readme.md)
