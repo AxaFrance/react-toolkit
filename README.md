@@ -1,6 +1,7 @@
 # @axa-fr/react-toolkit
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
+[![Build Status](https://travis-ci.com/AxaGuilDEv/react-toolkit.svg?branch=master)](https://travis-ci.com/AxaGuilDEv/react-toolkit)
 
 - [About](#about)
 - [Getting Started](#getting-started)
