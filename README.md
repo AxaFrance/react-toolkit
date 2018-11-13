@@ -32,7 +32,6 @@ Install what you need
 
 ```sh
 npm install @axa-fr/react-toolkit-alert --save
-npm install @axa-fr/css-core --save
 ```
 
 Use only what you need
@@ -40,11 +39,10 @@ Use only what you need
 ```javascript
 import React from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
-import '@axa-fr/css-core/dist/axa-components/alert/alert.scss';
+import '@axa-fr/react-toolkit-alert.css';
 
 const MyAlertComponent => () => {
 <Alert
-    classModifier="MyModifier"
     icon="ok"
     title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
   />
@@ -78,7 +76,7 @@ const MyAlertComponent => () => {
 - [`@axa-fr/react-toolkit-loader`](./packages/loader/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-loader.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-loader)
 - [`@axa-fr/react-toolkit-help`](./packages/help/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-help.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-help)
 - [`@axa-fr/react-toolkit-popover`](./packages/popover/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-popover.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-popover)
-- [`@axa-fr/react-toolkit-modal`](./packages/modal/default/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal)
+- [`@axa-fr/react-toolkit-modal`](./packages/modal/default/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal-default.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal-default)
 - [`@axa-fr/react-toolkit-modal`](./packages/modal/boolean/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal-boolean.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-modal-boolean)
 - [`@axa-fr/react-toolkit-action`](./packages/action/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-action.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-action)
 - [`@axa-fr/react-toolkit-alert`](./packages/alert/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-alert.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-alert)
