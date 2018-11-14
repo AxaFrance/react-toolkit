@@ -108,7 +108,7 @@ Each component should be autonomous (html + css + javascript) and extensible.
 ## Contribute
 
 - [How to run the solution and to contribute](./CONTRIBUTING.md)
-- [Please respect our code of conduct](./CODE_OF_CONDUCT)
+- [Please respect our code of conduct](./CODE_OF_CONDUCT.md)
 
 ## Roadmap
 
