@@ -9,6 +9,8 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const path = require('path');
 const clean = require('gulp-clean');
+const shell = require('gulp-shell');
+
 const {
   packageFolder,
   srcFolder,
@@ -46,6 +48,26 @@ gulp.task('clean', () =>
     gulp.src(`${path.join(folder, distFolder)}`, { read: false }).pipe(clean())
   )
 );
+
+/* Suppression des package_lock.json */
+
+gulp.task('clearlock', () => {
+  allFolders.map(folder =>
+    gulp.src(`${path.join(folder)}/package-lock.json`).pipe(clean())
+  );
+  gulp.src(`./addons/storybook/package-lock.json`).pipe(clean());
+  gulp.src(`./storybook/storybook/package-lock.json`).pipe(clean());
+  gulp.src(`./styles/storybook/package-lock.json`).pipe(clean());
+  gulp.src(`./addons/toolkit/package-lock.json`).pipe(clean());
+});
+
+gulp.task('generatelock', () => {
+  allFolders.map(folder =>
+    gulp
+      .src(`${path.join(folder)}/package.json`)
+      .pipe(shell([`npm i --prefix ${folder}`]))
+  );
+});
 
 gulp.task('sass', () =>
   folders.map(folder =>

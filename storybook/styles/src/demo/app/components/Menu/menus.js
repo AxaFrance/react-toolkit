@@ -12,10 +12,6 @@ export const main = [
         label: 'Get started',
       },
       {
-        to: '/contribution',
-        label: 'Contribution',
-      },
-      {
         to: '/changelog',
         label: 'Changelog',
       },
