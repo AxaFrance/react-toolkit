@@ -8,7 +8,6 @@ import Menu from '../Menu/Menu';
 
 import Home from '../../components/Home/Home';
 import Getstarted from '../../components/Getstarted/Getstarted';
-import Contribution from '../../components/Contribution/Contribution';
 import Changelog from './../Changelog/Changelog';
 import FooterDemo from './../Footer/Footer';
 
@@ -105,7 +104,6 @@ const App = () => (
             <Route path="/button-circle" component={ButtonCircle} />
             <Route path="/button-link" component={ButtonLink} />
             <Route path="/badge" component={Badge} />
-            <Route path="/contribution" component={Contribution} />
             <Route path="/title" component={Title} />
             <Route path="/table" component={Table} />
             <Route path="/pager" component={Pager} />

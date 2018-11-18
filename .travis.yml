@@ -22,6 +22,7 @@ script:
   - npm test -- --coverage
   - npm run lint
   - npm run storybook:build
+  - npm run css:build
 deploy:
   on:
     all_branches: true
