@@ -25,8 +25,8 @@ Component are simple to use (just drag and drog it), simple to customise (by usi
 
 You can easily build a new app from scratch or integrate component into existing application.
 
-[html+css documentation website](https://axaguildev.github.io/react-toolkit/index.html??target=react_toolkit_storybook)
-[react storybook website](https://axaguildev.github.io/react-toolkit/index.html??target=react_toolkit_design)
+[html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
+[react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
 
 
 ## Getting Started
@@ -99,12 +99,12 @@ Each component should be autonomous (html + css + javascript) and extensible.
 
   - BEM convention is used in order to break css cascading problem
   - Scss and css files are avalaible by component and can be overrided or extended
-  - [Html/Css Documentation](https://axaguildev.github.io/react-toolkit/index.html?target=react_toolkit_storybook)
+  - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
   - Components are without state by default
   - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
-  - [React documentation](https://axaguildev.github.io/react-toolkit/index.html??target=react_toolkit_design)
+  - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
 
