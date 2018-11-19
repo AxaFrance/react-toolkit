@@ -25,8 +25,9 @@ Component are simple to use (just drag and drog it), simple to customise (by usi
 
 You can easily build a new app from scratch or integrate component into existing application.
 
-[html+css documentation website](https://toolkit-intranet-axa.azurewebsites.net)
-[react storybook website](https://toolkit-intranet-react-axa.azurewebsites.net)
+[html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
+[react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
+
 
 ## Getting Started
 
@@ -41,7 +42,7 @@ Use only what you need
 ```javascript
 import React from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
-import '@axa-fr/react-toolkit-alert.css';
+import '@axa-fr/react-toolkit-alert/dist/alert.scss';
 
 const MyAlertComponent => () => {
 <Alert
@@ -98,12 +99,12 @@ Each component should be autonomous (html + css + javascript) and extensible.
 
   - BEM convention is used in order to break css cascading problem
   - Scss and css files are avalaible by component and can be overrided or extended
-  - [Html/Css Documentation](http://toolkit-intranet-axa.azurewebsites.net)
+  - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
   - Components are without state by default
   - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
-  - [React documentation](https://toolkit-intranet-react-axa.azurewebsites.net/)
+  - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
 
@@ -114,4 +115,4 @@ Each component should be autonomous (html + css + javascript) and extensible.
 
 - Update general documentation
 - Continu to migrate to TypeScript component by component
-- Continu to fix and clean code. Make it simpler, better, lighter
+- Continu to fix and clean code. Make it simpler, faster, lighter
