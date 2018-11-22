@@ -1,0 +1,22 @@
+@import '../shared/utils/vars';
+.af-steps-new {
+  .af-steps-list-step {
+    &--success {
+      color: $color-btn-success;
+    }
+  }
+}
+
+.af-confirm {
+  color: $color-btn-success;
+  text-align: center;
+  .glyphicon-ok {
+    border-color: $color-btn-success;
+    font-size: 4rem;
+    padding: 0.2em;
+    margin: 1em 0 0.5em 0;
+  }
+  &__message {
+    margin-bottom: 2em;
+  }
+}

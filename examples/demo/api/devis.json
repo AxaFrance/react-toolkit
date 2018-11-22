@@ -1,0 +1,31 @@
+{
+  "devis": [
+    {
+      "id": "0001",
+      "firstname": "Olivier",
+      "lastname": "Youf",
+      "type": "auto",
+      "agent": "Guillaume Chervet",
+      "birthdate": "02/03/1984",
+      "begin": "04/04/2011"
+    },
+    {
+      "id": "0002",
+      "firstname": "Romain",
+      "lastname": "Petigny",
+      "type": "maison",
+      "agent": "Guillaume Chervet",
+      "birthdate": "12/07/1981",
+      "begin": "23/09/2014"
+    },
+    {
+      "id": "0003",
+      "firstname": "Olivier",
+      "lastname": "Youf",
+      "type": "sante",
+      "agent": "Rodrigue Delroisse",
+      "birthdate": "02/03/1989",
+      "begin": "30/10/2019"
+    }
+  ]
+}

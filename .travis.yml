@@ -23,6 +23,7 @@ script:
   - npm run lint
   - npm run storybook:build
   - npm run css:build
+  - npm run demo:build
 deploy:
   on:
     all_branches: true
