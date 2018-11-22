@@ -1,0 +1,17 @@
+@import '../../shared/utils/vars';
+
+.af-title-bar {
+  &--backhome {
+    .af-title-bar {
+      &__wrapper {
+        justify-content: flex-start;
+        .af-title-bar__title {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+  &--hasstepper {
+    margin-bottom: 0;
+  }
+}

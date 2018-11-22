@@ -1,6 +1,6 @@
 # @axa-fr/react-toolkit
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![Build Status](https://travis-ci.com/AxaGuilDEv/react-toolkit.svg?branch=master)](https://travis-ci.com/AxaGuilDEv/react-toolkit)
 [![Maintainability](https://api.codeclimate.com/v1/badges/502c94217e58384a8a77/maintainability)](https://codeclimate.com/github/AxaGuilDEv/react-toolkit/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/502c94217e58384a8a77/test_coverage)](https://codeclimate.com/github/AxaGuilDEv/react-toolkit/test_coverage)
@@ -10,7 +10,8 @@
 - [Packages](#packages)
 - [Concept](#concept)
 - [How It Works](#how-it-works)
-- [Contribute](#ontribute)
+- [Demo App](#example-demo-app)
+- [Contribute](#contribute)
 
 ## About
 
@@ -27,7 +28,6 @@ You can easily build a new app from scratch or integrate component into existing
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
-
 
 ## Getting Started
 
@@ -71,8 +71,8 @@ const MyAlertComponent => () => {
 - [`@axa-fr/react-toolkit-form-input-card`](./packages/Form/Input/card/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-card.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-card)
 - [`@axa-fr/react-toolkit-form-input-select`](./packages/Form/Input/select/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-select)
 - [`@axa-fr/react-toolkit-form-input-switch`](./packages/Form/Input/switch/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-switch.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-switch)
-- [`@axa-fr/react-toolkit-layout-footer`](./packages/Layout/footer/readme.md)  [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer)
-- [`@axa-fr/react-toolkit-layout-footer-client`](./packages/Layout/footer-client/readme.md)  [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer-client.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer-client)
+- [`@axa-fr/react-toolkit-layout-footer`](./packages/Layout/footer/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer)
+- [`@axa-fr/react-toolkit-layout-footer-client`](./packages/Layout/footer-client/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer-client.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-footer-client)
 - [`@axa-fr/react-toolkit-layout-header`](./packages/Layout/header/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-header.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-layout-header)
 - [`@axa-fr/react-toolkit-table`](./packages/table/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-table.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-table)
 - [`@axa-fr/react-toolkit-collapse`](./packages/collapse/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-collapse.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-collapse)
@@ -105,6 +105,20 @@ Each component should be autonomous (html + css + javascript) and extensible.
   - Components are without state by default
   - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
+
+## Example Demo App
+
+Launch local demo app
+
+```sh
+npm start
+```
+
+Build local demo app
+
+```sh
+npm run demo:build
+```
 
 ## Contribute
 
