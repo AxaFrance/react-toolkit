@@ -5,12 +5,14 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { AlertWithType } from '@axa-fr/react-toolkit-alert';
 import { action } from '@storybook/addon-actions';
 
+const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
+
 const storyData = {
   name: 'Alert.AlertWithType',
   stories: [
     {
       desc: 'Default',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(
@@ -28,7 +30,7 @@ const storyData = {
     },
     {
       desc: 'With close button',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(
@@ -47,7 +49,7 @@ const storyData = {
     },
     {
       desc: 'With child and custom icon',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(

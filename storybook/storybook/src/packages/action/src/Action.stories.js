@@ -11,12 +11,14 @@ const withPreventDefaultClick = next => e => {
   next(e);
 };
 
+const readme = require('@axa-fr/react-toolkit-action/dist/README.md');
+
 let storyData = {
   name: 'Action',
   stories: [
     {
       desc: 'Simple action link',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <Action
           href={text('href', 'http://www.axa.fr')}
@@ -31,7 +33,7 @@ let storyData = {
     },
     {
       desc: 'Simple action button',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <Action
           id="id"
@@ -43,7 +45,7 @@ let storyData = {
     },
     {
       desc: 'Simple actionCore link',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <ActionCore
           href={text('href', 'http://www.axa.fr')}
@@ -56,7 +58,7 @@ let storyData = {
     },
     {
       desc: 'Simple actionCore button',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <ActionCore
           id="id"

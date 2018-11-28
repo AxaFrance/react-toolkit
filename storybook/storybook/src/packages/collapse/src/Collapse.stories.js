@@ -147,7 +147,6 @@ stories.push({
 
 const storyData = {
   name: 'Collapse',
-  docs: require('./Collapse.md'),
   stories: stories,
 };
 

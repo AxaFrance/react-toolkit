@@ -5,6 +5,8 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import { SwitchInput } from '@axa-fr/react-toolkit-form-input-switch';
 
+const readme = require('@axa-fr/react-toolkit-form-input-switch/dist/README.md');
+
 const stories = [];
 
 const LABELS = {
@@ -76,7 +78,7 @@ const options = [
 
 stories.push({
   desc: 'SwitchInput',
-  docs: require('./Switch.md'),
+  docs: readme,
   component: () => (
     <SwitchInput
       label={text('label', 'Select a choice')}

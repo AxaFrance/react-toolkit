@@ -5,12 +5,14 @@ import addToStorie from '@axa-fr/storybook-addons';
 import Alert from '@axa-fr/react-toolkit-alert';
 import { action } from '@storybook/addon-actions';
 
+const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
+
 const storyData = {
   name: 'Alert.Alert',
   stories: [
     {
       desc: 'Default',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}
@@ -24,7 +26,7 @@ const storyData = {
     },
     {
       desc: 'With close button',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}
@@ -39,7 +41,7 @@ const storyData = {
     },
     {
       desc: 'With child and custom icon',
-      docs: require('./README.md'),
+      docs: readme,
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}

@@ -32,6 +32,15 @@ $ npm run css
 $ npm run css:build
 ```
 
+## How to run Demo Application
+
+```sh
+# [react] Launch local demo app
+$ npm start
+# [react] Build local demo app
+$ npm run demo:build
+```
+
 ### Run Unit Tests
 
 ```sh

@@ -1,13 +1,15 @@
-# C'est quoi af-toolkit-react?
+## About
+The framework consists of a composition of existing frameworks on the net.
 
-Le framework est constitué d'une composition de frameworks existants sur le net.
+The idea is to overload at least the components to be able to update as easily as possible and of course as often as possible.
 
-L'idée est de surcharger au minimum les composants afin de pouvoir mettre à jour le plus facilement possible et bien évidement le plus souvent possible.
+To install it:
 
-Pour l'installer:
-- npm install af-toolkit-react --save
+``
+npm install @axa-fr/react-toolkit-all --save
+``
 
-## Comportements
-Le framework permet de respecter les guildlines (comportements) intranet AXA. Notament par exemple la gestion de l'affichage des messages d'erreurs.
+## Behaviours
+The framework makes it possible to respect AXA intranet guildlines (behaviors). Notament for example the management of the display of error messages.
 
-Par exemple, un champ en erreur va apparaître en rouge uniquement à la sortie du champ ou sinon si le formulaire a été valider.
+For example, a field in error will appear in red only at the exit of the field or if the form has been validated

@@ -4,6 +4,8 @@ import { text } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import Button from '@axa-fr/react-toolkit-button';
 
+const readme = require('@axa-fr/react-toolkit-button/dist/README.md');
+
 const LABELS = {
   btn1: {
     id: 'previous',
@@ -61,7 +63,7 @@ let storyData = {
   name: 'Button',
   stories: [{
   desc:  'Simple button',
-  docs: require('./Button.md'),
+  docs: readme,
   component: Component}
   ],
 };

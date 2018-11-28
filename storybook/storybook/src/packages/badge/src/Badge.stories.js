@@ -5,6 +5,8 @@ import { text, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import Badge from '@axa-fr/react-toolkit-badge';
 
+const readme = require('@axa-fr/react-toolkit-badge/dist/README.md');
+
 const LABELS = {
   listClass: [
     'success',
@@ -28,7 +30,7 @@ let storyData = {
   name: 'Badge',
   stories: [{
   desc:  'Simple badge',
-  docs: require('./README.md'),
+  docs: readme,
   component: ()=> ( <Badge classModifier={select(KNOBS_LABELS.classModifier, LABELS.listClass, LABELS.defaultClass)}>
   {text(KNOBS_LABELS.title, LABELS.title)}
 </Badge>)},
