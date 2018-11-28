@@ -13,11 +13,13 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-date/dist/README.md');
+
 const stories = [];
 
 stories.push({
   desc: 'DateInput',
-  docs: require('./InputDate.md'),
+  docs: readme,
   component: () => (
     <form className="af-form" name="myform">
       <DateInput
@@ -58,7 +60,7 @@ stories.push({
 
 stories.push({
   desc: 'CustomDate',
-  docs: require('./CustomDate.md'),
+  docs: readme,
   component: () => (
     <form className="af-form" name="myform">
       <FieldForm

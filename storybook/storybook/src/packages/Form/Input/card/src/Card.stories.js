@@ -321,7 +321,6 @@ stories.push({
 });
 
 const storyData = {
-  doc:require('./Card.md'),
   name: 'Form.Input.Card',
   stories: stories,
 };

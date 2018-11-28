@@ -44,12 +44,12 @@ import React from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
 import '@axa-fr/react-toolkit-alert/dist/alert.scss';
 
-const MyAlertComponent => () => {
+const MyAlertComponent => () => (
 <Alert
     icon="ok"
     title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
   />
-}
+)
 ```
 
 ## Packages
@@ -88,6 +88,13 @@ const MyAlertComponent => () => {
 - [`@axa-fr/react-toolkit-button`](./packages/button/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-button.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-button)
 - [`@axa-fr/react-toolkit-icon`](./packages/icon/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-icon.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-icon)
 - [`@axa-fr/react-toolkit-core`](./packages/core/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-core.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-core)
+- [`@axa-fr//react-toolkit-title`](./packages/title/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-title-core.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-title)
+- [`@axa-fr//react-toolkit-link`](./packages/link/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-link.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-link)
+- [`@axa-fr//react-toolkit-list`](./packages/list/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-list.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-list)
+- [`@axa-fr//react-toolkit-panel`](./packages/panel/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-panel.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-panel)
+- [`@axa-fr//react-toolkit-restitution`](./packages/restitution/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-restitution.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-restitution)
+- [`@axa-fr//react-toolkit-form-filter-inline`](./packages/Form/filter-inline/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter-inline.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-form-filter-inline)
+- [`@axa-fr//react-toolkit-form-filter`](./packages/Form/filter/readme.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-form-filter)
 
 ## Concept
 
@@ -105,20 +112,6 @@ Each component should be autonomous (html + css + javascript) and extensible.
   - Components are without state by default
   - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
-
-## Example Demo App
-
-Launch local demo app
-
-```sh
-npm start
-```
-
-Build local demo app
-
-```sh
-npm run demo:build
-```
 
 ## Contribute
 

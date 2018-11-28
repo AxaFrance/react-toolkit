@@ -5,6 +5,7 @@ const chalk = require('chalk');
 const log = require('npmlog');
 const { babelify } = require('./compile-js');
 const { tscfy } = require('./compile-ts');
+const fs = require('fs');
 
 function getPackageJson() {
   const modulePath = path.resolve('./');
@@ -26,6 +27,14 @@ function logError(type, packageJson) {
   );
 }
 
+function copyReadmeToDist(){
+  const modulePath = path.resolve('./');
+  const readmePath = path.join(modulePath, 'README.md');
+  if (fs.existsSync(readmePath)) {
+    shell.cp(readmePath, path.join(modulePath, 'dist'));
+  }
+}
+
 const packageJson = getPackageJson();
 
 const tsFiles = shell.find('src').filter(tsFile => tsFile.match(/\.ts$/));
@@ -36,6 +45,8 @@ if (tsFiles.length !== 0) {
   babelify({ errorCallback: () => logError('js', packageJson) });
 }
 copyLicence();
+
+copyReadmeToDist();
 
 console.log(
   chalk.gray(

@@ -4,6 +4,8 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Switch } from '@axa-fr/react-toolkit-form-input-switch';
 
+const readme = require('@axa-fr/react-toolkit-form-input-switch/dist/README.md');
+
 const stories = [];
 
 const LABELS = {
@@ -74,7 +76,7 @@ const options = [
 
 stories.push({
   desc: 'Switch',
-  docs: require('./Switch.md'),
+  docs: readme,
   component: () => (
     <Switch
       name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
