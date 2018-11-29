@@ -11,6 +11,8 @@ import {
   FieldError,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-core/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -39,6 +41,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.FieldForm',
+  docs: readme,
   stories,
 };
 

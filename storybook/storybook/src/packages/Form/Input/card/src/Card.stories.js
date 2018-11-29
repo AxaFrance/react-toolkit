@@ -5,6 +5,8 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Card, CardGroupRadio, CardGroupCheckbox, CardMeta, CardContent, CardHeader, CardFooter } from '@axa-fr/react-toolkit-form-input-card';
 
+const readme = require('@axa-fr/react-toolkit-form-input-card/dist/README.md');
+
 const stories = [];
 
 const LABELS = {
@@ -322,6 +324,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Card',
+  docs:readme,
   stories: stories,
 };
 

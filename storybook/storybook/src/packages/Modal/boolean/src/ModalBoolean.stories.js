@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 import addToStorie from '@axa-fr/storybook-addons';
 import BooleanModal from '@axa-fr/react-toolkit-modal-boolean';
 
+const readme = require('@axa-fr/react-toolkit-modal-boolean/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -34,6 +36,7 @@ stories.push({
 
 const storyData = {
   name: 'Modal.Boolean',
+  docs:readme,
   stories: stories,
 };
 

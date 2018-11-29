@@ -6,6 +6,8 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { ChoiceInput, Choice } from '@axa-fr/react-toolkit-form-input-choice';
 import { MessageTypes, FieldForm, HelpMessage, FieldError, InputConstants } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-choice/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -75,6 +77,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Choice',
+  docs:readme,
   stories: stories,
 };
 

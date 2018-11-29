@@ -8,10 +8,10 @@ const readme = require('@axa-fr/react-toolkit-icon/dist/README.md');
 
 const storyData = {
   name: 'Icon',
+  docs: readme,
   stories: [
     {
       desc: 'Icon',
-      docs: readme,
       component: () => (
         <Icon
           icon={select('icon', ['sante', 'banque', 'epargne'], 'sante')}

@@ -8,10 +8,10 @@ const readme = require('@axa-fr/react-toolkit-layout-footer/dist/README.md');
 
 const storyData = {
   name: 'Layout.Footer',
+  docs: readme,
   stories: [
     {
       desc: 'Default',
-      docs: readme,
       component: () => (
         <Footer icon="images/logo-axa.svg" copyright={text('copyright')} />
       ),

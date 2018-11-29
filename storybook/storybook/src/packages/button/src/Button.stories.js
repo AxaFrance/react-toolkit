@@ -61,9 +61,9 @@ const Component = () => (
 
 let storyData = {
   name: 'Button',
+  docs: readme,
   stories: [{
   desc:  'Simple button',
-  docs: readme,
   component: Component}
   ],
 };

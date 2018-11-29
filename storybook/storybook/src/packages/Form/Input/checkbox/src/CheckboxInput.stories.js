@@ -17,6 +17,8 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-checkbox/dist/README.md');
+
 const stories = [];
 
 const options = [
@@ -134,6 +136,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Checkbox',
+  docs:readme,
   stories,
 };
 
