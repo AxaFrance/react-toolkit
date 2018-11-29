@@ -1,3 +1,5 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 .af-form {
   &__text {
     &--disabled {
@@ -41,7 +43,7 @@
 
   &__input-text {
     border: 1px solid $color-silver;
-    padding: .5625rem 1.2rem;
+    padding: 0.5625rem 1.2rem;
     font-size: 1em;
     line-height: 20px;
 
@@ -69,7 +71,7 @@
   &__clear {
     position: absolute;
     right: 3rem;
-    top: .75rem;
+    top: 0.75rem;
 
     &:hover {
       background: $color-mercury;

@@ -1,6 +1,8 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 // stylelint-disable selector-class-pattern
 .ReactModal__Overlay {
-  animation: fademodal .1s linear;
+  animation: fademodal 0.1s linear;
   z-index: 3;
 }
 
@@ -37,7 +39,7 @@
     background-color: $color;
 
     &.show {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
@@ -45,7 +47,7 @@
     position: relative;
     width: auto;
     margin: 10px;
-    animation: appeardialog .3s cubic-bezier(.65, .05, .36, 1);
+    animation: appeardialog 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
 
   &__content {
@@ -77,7 +79,7 @@
       border: none;
       box-shadow: none;
       background: none;
-      padding: .5rem;
+      padding: 0.5rem;
 
       &:hover {
         background-color: $gray-lighter;
@@ -101,11 +103,11 @@
     border-top: 1px solid $gray-lighter;
 
     & > .af-btn:not(:last-child) {
-      margin-right: .25rem;
+      margin-right: 0.25rem;
     }
 
     & > .af-btn:not(:first-child) {
-      margin-left: .25rem;
+      margin-left: 0.25rem;
     }
   }
 }

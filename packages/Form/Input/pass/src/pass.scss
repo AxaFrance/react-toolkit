@@ -1,3 +1,5 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 $levels: (
   bad red '20%',
   okay orange '40%',
@@ -26,7 +28,7 @@ $levels: (
       -ms-flex-align: center;
       align-items: center;
       justify-content: flex-start;
-      margin: .2rem 0;
+      margin: 0.2rem 0;
     }
 
     &-btn {
@@ -40,7 +42,7 @@ $levels: (
       font-size: 1.3em;
       cursor: pointer;
       display: flex;
-      padding: .45rem .4rem;
+      padding: 0.45rem 0.4rem;
 
       &:hover {
         background: $color-mercury;

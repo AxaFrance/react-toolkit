@@ -1,3 +1,6 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+@import '../node_modules/react-datepicker/src/stylesheets/datepicker.scss';
+
 $border-radius-width: 3px;
 
 .af-datepicker__container {
@@ -9,7 +12,7 @@ $border-radius-width: 3px;
     position: absolute;
     font-size: 1.1em;
     right: 1rem;
-    top: .7rem;
+    top: 0.7rem;
     color: $color-dusty-gray;
     z-index: 2;
   }
@@ -30,7 +33,7 @@ $border-radius-width: 3px;
 
 .af-datepicker {
   border: 1px solid $color-silver;
-  padding: .438rem 1.2rem;
+  padding: 0.438rem 1.2rem;
   font-size: 1em;
   background: transparent;
   width: 9.688rem;
@@ -50,7 +53,7 @@ $border-radius-width: 3px;
   $p: &;
 
   font-family: $font-family-base;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: $border-radius-width;
 
   &-popper[data-placement^='right'] {
@@ -85,7 +88,9 @@ $border-radius-width: 3px;
     }
   }
 
-  .react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle &__month-container {
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle
+    &__month-container {
     border: 1px solid $color-axa;
   }
 
@@ -146,7 +151,7 @@ $border-radius-width: 3px;
 
     &-names {
       color: $white;
-      padding: .5rem 0 0 0;
+      padding: 0.5rem 0 0 0;
     }
 
     &--today {
@@ -187,7 +192,7 @@ $border-radius-width: 3px;
         top: 0;
         content: '\EA0A';
         font-family: icons; // stylelint-disable-line font-family-no-missing-generic-family-keyword
-        font-size: .7em;
+        font-size: 0.7em;
         font-weight: 900;
         text-align: center;
         line-height: 35px;
@@ -247,16 +252,14 @@ $border-radius-width: 3px;
       border: none;
       border-radius: 0;
       background: $white;
-      background-image:
-        -moz-linear-gradient(
-          $color-mercury 1px,
-          transparent 1px
-        );
-      background-image:
-        -webkit-linear-gradient(
-          $color-mercury 1px,
-          transparent 1px
-        );
+      background-image: -moz-linear-gradient(
+        $color-mercury 1px,
+        transparent 1px
+      );
+      background-image: -webkit-linear-gradient(
+        $color-mercury 1px,
+        transparent 1px
+      );
       background-image: linear-gradient($color-mercury 1px, transparent 1px);
       background-size: 1px 64px;
     }

@@ -1,8 +1,10 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 .glyphicon {
   &--ring {
     border: 2px solid black;
     border-radius: 100%;
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1em;
   }
   @include generate-universes() {

@@ -1,3 +1,5 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 .af-form {
   &__textarea {
     &--disabled {
@@ -17,7 +19,7 @@
   &__input-textarea {
     font-family: $font-family-base;
     border: 1px solid $color-silver;
-    padding: .7rem 1.2rem;
+    padding: 0.7rem 1.2rem;
     font-size: 1em;
 
     &:focus {

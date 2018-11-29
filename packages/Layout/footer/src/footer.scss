@@ -1,8 +1,10 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 $logo-size: 40px;
 
 .af-footer {
-  font-size: .81rem;
-  padding: .5625rem 0 .25rem 1.438rem;
+  font-size: 0.81rem;
+  padding: 0.5625rem 0 0.25rem 1.438rem;
 
   .container {
     display: flex;
@@ -11,7 +13,7 @@ $logo-size: 40px;
     .af-logo__brand {
       width: $logo-size;
       height: $logo-size;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
 

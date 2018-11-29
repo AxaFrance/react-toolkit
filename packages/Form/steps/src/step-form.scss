@@ -1,3 +1,5 @@
+@import '../node_modules/@axa-fr/react-toolkit-core/src/common/scss/core';
+
 // Wizard Steps
 // --------------------------------------------------
 $steps-bg: $gray-lighter;
@@ -46,7 +48,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
         .af-steps-list-stepNumber,
         .af-steps-list-stepTitle {
-          opacity: .5;
+          opacity: 0.5;
         }
 
         &:hover {
@@ -109,11 +111,11 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
       &Number,
       &Title {
-        opacity: .3;
+        opacity: 0.3;
       }
 
       &Number {
-        margin-right: .3125rem;
+        margin-right: 0.3125rem;
         font-size: $font-size-step-number;
         font-weight: 600;
 
@@ -124,7 +126,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
       &Title {
         font-weight: 600;
-        padding-top: .5rem;
+        padding-top: 0.5rem;
       }
 
       &:last-child {

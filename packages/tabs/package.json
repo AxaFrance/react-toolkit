@@ -7,6 +7,9 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
+  "files": [
+    "dist/"
+  ],
   "peerDependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
