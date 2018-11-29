@@ -6,7 +6,7 @@
 npm i @axa-fr/react-toolkit-action
 ```
 
-### Diffrence entre Action et ActionCore
+### Difference between Action and ActionCore
 
 Action :
 
@@ -21,32 +21,32 @@ onCick : React.MouseEventHandler<HTMLAnchorElement>;
 ```
 
 
-### Exemple Action
+### Sample Action
 
 ```javascript
 import React from 'react';
 import Action from '@axa-fr/react-toolkit-action';
 
-const MyAlertComponent => () => {
+const MyAlertComponent => () => (
 <Action
     classModifier="MyModifier"
     icon="ok"
     title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
   />
-}
+)
 ```
 
-### Exemple ActionCore
+### Sample ActionCore
 
 ```javascript
 import React from 'react';
 import {ActionCore} from '@axa-fr/react-toolkit-action';
 
-const MyAlertComponent => () => {
+const MyAlertComponent => () => (
 <Action
     classModifier="MyModifier"
     icon="ok"
     title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
   />
-}
+)
 ```

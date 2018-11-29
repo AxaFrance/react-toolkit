@@ -10,7 +10,7 @@ import '@axa-fr/react-toolkit-core/dist/assets/fonts/icons/af-icons.css';
 import './storybook.css';
 
 setOptions({
-  name: 'TOOLKIT-AXA-REACT',
+  name: '@axa-fr/react-toolkit-all',
   url: 'https://www.axa.fr',
   downPanelInRight: true,
   hierarchySeparator: /\./,

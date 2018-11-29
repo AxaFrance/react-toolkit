@@ -17,6 +17,8 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-radio/dist/README.md');
+
 const stories = [];
 
 const options = [
@@ -121,6 +123,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Radio',
+  docs:readme,
   stories,
 };
 

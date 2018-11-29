@@ -1,12 +1,7 @@
 import { storiesOf } from '@storybook/react';
-import { withTests } from '@storybook/addon-jest';
-import { compose } from 'recompose';
-// import withDesc from './addons/addon-desc';
 import { withKnobs } from '@storybook/addon-knobs';
-// import results from './jest-test-results-storybook.json';
 import { withReadme, withDocs } from 'storybook-readme';
 import { withInfo } from '@storybook/addon-info';
-// config.js
 import { setDefaults } from '@storybook/addon-info';
 
 // addon-info

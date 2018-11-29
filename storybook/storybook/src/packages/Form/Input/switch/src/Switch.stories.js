@@ -11,10 +11,8 @@ const stories = [];
 const LABELS = {
   name: 'Form.SwitchInput',
   desc: 'Switch',
-  mdFile: 'Form/SwitchInput/Switch',
   SwitchInput: {
     import: 'Switch',
-    mdFile: 'Form/SwitchInput/Switch',
     name: 'placeName',
     disabled: false,
     isVisible: true,
@@ -76,7 +74,6 @@ const options = [
 
 stories.push({
   desc: 'Switch',
-  docs: readme,
   component: () => (
     <Switch
       name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
@@ -109,6 +106,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Switch',
+  docs: readme,
   stories: stories,
 };
 

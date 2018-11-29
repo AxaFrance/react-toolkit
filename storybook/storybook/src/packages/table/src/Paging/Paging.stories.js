@@ -5,6 +5,8 @@ import { text, number } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Paging } from '@axa-fr/react-toolkit-table';
 
+const readme = require('@axa-fr/react-toolkit-table/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -22,6 +24,7 @@ stories.push({
 
 const storyData = {
   name: 'Table.Paging',
+  docs: readme,
   stories: stories,
 };
 

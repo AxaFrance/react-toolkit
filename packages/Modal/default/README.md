@@ -1,9 +1,9 @@
-## Simple badge
+## Modal Default
 
 ### Get started
 
 ```sh
-npm i "@axa-fr/react-toolkit-modal"
+npm i "@axa-fr/react-toolkit-modal-default"
 ```
 
 For more information about style component, you can see the [Modal Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/modal)
@@ -14,7 +14,7 @@ For more information about style component, you can see the [Modal Style on Tool
 import React from 'react';
 import Modal from '@axa-fr/react-toolkit-modal';
 
-const MyModal => () => {
+const MyModal => () => (
  <Modal
   classModifier={text('classModifier', '')}
   className={text('className', '')}
@@ -44,6 +44,6 @@ const MyModal => () => {
   </button>
   </Modal.Footer>
 </Modal>
-}
+)
 ```
 

@@ -14,6 +14,8 @@ import {
   FieldInput,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-text/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -94,6 +96,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Text',
+  readme,
   stories,
 };
 
