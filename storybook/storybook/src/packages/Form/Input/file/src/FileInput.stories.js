@@ -6,6 +6,8 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { FileInput, File } from '@axa-fr/react-toolkit-form-input-file';
 import { MessageTypes, InputConstants } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-file/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -65,6 +67,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.File',
+  docs:readme,
   stories,
 };
 

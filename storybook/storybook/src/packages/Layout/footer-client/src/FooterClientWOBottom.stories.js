@@ -10,6 +10,8 @@ import {
   SocialNetwork,
 } from '@axa-fr/react-toolkit-layout-footer-client';
 
+const readme = require('@axa-fr/react-toolkit-layout-footer-client/dist/README.md');
+
 const stories = [];
 
 const columns = [
@@ -106,6 +108,7 @@ stories.push({
 
 const storyData = {
   name: 'Layout.FooterClient',
+  docs:readme,
   stories,
 };
 

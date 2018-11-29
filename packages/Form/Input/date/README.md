@@ -1,11 +1,17 @@
-## CustomDate
+## Form Input Date
 * * *
 
 ### Get started
+
+```sh
+npm i @axa-fr/react-toolkit-form-input-date
+```
+
+
 First to use, you have to import the component.
 
 ```js
-import {CustomDate} from 'af-toolkit-react';
+import {CustomDate} from '@axa-fr/react-toolkit-form-input-date';
 ```
 
 The component reuses the following library:

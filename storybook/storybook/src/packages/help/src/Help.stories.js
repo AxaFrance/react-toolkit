@@ -1,8 +1,10 @@
 import React from 'react';
-import { text, boolean } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
 import Help from '@axa-fr/react-toolkit-help';
+
+const readme = require('@axa-fr/react-toolkit-help/dist/README.md');
 
 const stories = [];
 
@@ -28,6 +30,7 @@ stories.push({
 const storyData = {
   name: 'Help',
   stories,
+  docs:readme,
 };
 
 addToStorie(storyData, module);

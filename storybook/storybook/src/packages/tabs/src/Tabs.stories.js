@@ -5,6 +5,8 @@ import addToStorie from '@axa-fr/storybook-addons';
 import Tabs from '@axa-fr/react-toolkit-tabs';
 import Badge from '@axa-fr/react-toolkit-badge';
 
+const readme = require('@axa-fr/react-toolkit-table/dist/README.md');
+
 const stories = [];
 
 const titleWithLeftIcon = (
@@ -54,6 +56,7 @@ stories.push({
 
 const storyData = {
   name: 'Tabs',
+  docs: readme,
   stories: stories,
 };
 

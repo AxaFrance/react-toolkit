@@ -12,6 +12,8 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
+const readme = require('@axa-fr/react-toolkit-form-input-number/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -93,6 +95,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Number',
+  docs:readme,
   stories,
 };
 

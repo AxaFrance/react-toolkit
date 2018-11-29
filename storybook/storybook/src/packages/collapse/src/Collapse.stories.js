@@ -8,6 +8,8 @@ import {
   Accordion,
 } from '@axa-fr/react-toolkit-collapse';
 
+const readme = require('@axa-fr/react-toolkit-collapse/dist/README.md');
+
 const LABELS = {
   desc: 'CollapseCard',
   desc2: 'CollapseCardBase',
@@ -147,6 +149,7 @@ stories.push({
 
 const storyData = {
   name: 'Collapse',
+  docs: readme,
   stories: stories,
 };
 

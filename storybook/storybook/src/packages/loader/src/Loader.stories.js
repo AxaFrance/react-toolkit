@@ -4,6 +4,8 @@ import { text, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import Loader, { LoaderModes } from '@axa-fr/react-toolkit-loader';
 
+const readme = require('@axa-fr/react-toolkit-loader/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -23,6 +25,7 @@ stories.push({
 
 const storyData = {
   name: 'Loader',
+  docs: readme,
   stories: stories,
 };
 
