@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../node_modules/moment/locale/fr';
+import 'moment/locale/fr';
 
 import '@axa-fr/react-toolkit-all/dist/style/bootstrap/grid.css';
 import '@axa-fr/react-toolkit-all/dist/style/bootstrap/reboot.css';
