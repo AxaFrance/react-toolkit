@@ -80,6 +80,7 @@
 
 .af-rccard--disabled {
   position: relative;
+  cursor: not-allowed;
 
   &::before {
     content: '';
@@ -92,7 +93,6 @@
     z-index: 3;
     background-color: $card-bg-disabled;
     opacity: 0.75;
-    cursor: not-allowed;
   }
 }
 
