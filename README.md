@@ -10,7 +10,6 @@
 - [Packages](#packages)
 - [Concept](#concept)
 - [How It Works](#how-it-works)
-- [Demo App](#example-demo-app)
 - [Contribute](#contribute)
 
 ## About
