@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-choice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,9 +12,9 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.0.0",
-    "@axa-fr/react-toolkit-form-core": "^1.0.0",
-    "@axa-fr/react-toolkit-form-input-radio": "^1.0.0",
+    "@axa-fr/react-toolkit-core": "^1.0.1",
+    "@axa-fr/react-toolkit-form-core": "^1.0.1",
+    "@axa-fr/react-toolkit-form-input-radio": "^1.0.1",
     "prop-types": "^15.5.10",
     "recompose": "^0.27.1"
   },

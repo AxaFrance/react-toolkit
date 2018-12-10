@@ -1,8 +1,11 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "command": {
     "publish": {
-      "ignoreChanges": ["ignored-file", "*.md"],
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ],
       "message": "chore(release): publish %s [ci skip]"
     },
     "bootstrap": {
@@ -10,12 +13,12 @@
     }
   },
   "packages": [
+    "examples/*",
     "packages/*",
     "packages/Form/*",
     "packages/Form/Input/*",
     "packages/Layout/*",
     "packages/Modal/*",
-    "storybook/*",
-    "examples/*"
+    "storybook/*"
   ]
 }
