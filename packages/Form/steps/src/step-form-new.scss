@@ -1,9 +1,11 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 // Wizard Steps
 // --------------------------------------------------
 $steps-bg: $gray-lighter;
 $steps-bg-active: $white;
-$font-size-step: $font-size-base + .1rem;
-$font-size-step-number: $font-size-base + .4rem;
+$font-size-step: $font-size-base + 0.1rem;
+$font-size-step-number: $font-size-base + 0.4rem;
 $steps-color: $gray-dark;
 $steps-color-active: mix($black, $brand-primary, 20%);
 
@@ -66,7 +68,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
       }
 
       &Number {
-        margin-right: .3125rem;
+        margin-right: 0.3125rem;
         font-size: $font-size-step-number;
         font-weight: 600;
 
@@ -134,7 +136,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
           }
 
           .af-steps-list-stepNumber {
-            margin-right: .5rem;
+            margin-right: 0.5rem;
 
             .glyphicon {
               font-size: 1.2rem;

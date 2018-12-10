@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-form {
   &__select {
     position: relative;
@@ -47,8 +49,8 @@
 
     .glyphicon-menu-down {
       position: absolute;
-      right: .5rem;
-      font-size: .7em;
+      right: 0.5rem;
+      font-size: 0.7em;
       top: 50%;
       transform: translate(0, -50%);
     }
@@ -59,13 +61,13 @@
     background: transparent;
     position: relative;
     z-index: 1;
-    padding: .6rem 1.8rem .55rem .5rem;
+    padding: 0.6rem 1.8rem 0.55rem 0.5rem;
     width: 100%;
     font-size: 1em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    text-indent: .01px;
+    text-indent: 0.01px;
     text-overflow: '';
 
     &::-ms-expand {

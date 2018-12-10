@@ -112,7 +112,7 @@ gulp.task('bootstrap-theme', () =>
 gulp.task('af-toolkit-core', () => {
   const arrayFiles = getImports(folders);
   const imports = arrayFiles
-    .map(file => `@import '../../../${file}';`)
+    .map(filePath => setFileImport(filePath))
     .join('\n');
 
   return gulp
@@ -134,7 +134,7 @@ gulp.task('af-toolkit-core-build', () =>
 gulp.task('af-components', () => {
   const arrayFiles = getImports(folders);
   const imports = arrayFiles
-    .map(file => `@import '../../../${file}';`)
+    .map(filePath => setFileImport(filePath))
     .join('\n');
   return gulp
     .src(path.join(srcAll, 'bootstrap', 'af-components.template.scss'))
@@ -142,6 +142,12 @@ gulp.task('af-components', () => {
     .pipe(rename({ basename: 'af-components' }))
     .pipe(gulp.dest(path.join(allDist, 'style')));
 });
+
+const setFileImport = filePath => {
+  const fileSplit = filePath.split('/src/');
+  const basePath = fileSplit[0].replace(/\//g, '-').toLowerCase();
+  return `@import '@axa-fr/react-toolkit-${basePath}/dist/${fileSplit[1]}';`;
+};
 
 gulp.task('af-components-build', () =>
   gulp

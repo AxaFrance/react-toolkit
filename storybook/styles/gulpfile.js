@@ -6,6 +6,6 @@ const config = require('config');
 
 requireDir(path.resolve(__dirname, config.tasks));
 
-gulp.task('build', (callback) => {
+gulp.task('buildstyle', (callback) => {
   runSequence('clean', ['template'], callback);
 });

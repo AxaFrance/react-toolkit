@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 $color-headpanel-default: $color-axa;
 $color-footpanel-default: $color-axa;
 $color-border-default: $color-blue-lighter;
@@ -7,13 +9,13 @@ $color-border-default: $color-blue-lighter;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background: $white;
 
   &__header {
     background: $color-headpanel-default;
     border-bottom: 1px solid $color-border-default;
-    padding: .5rem 3rem .5rem 1rem;
+    padding: 0.5rem 3rem 0.5rem 1rem;
     position: relative;
     color: $white;
 
@@ -37,7 +39,7 @@ $color-border-default: $color-blue-lighter;
   }
 
   &__content {
-    padding: .625rem .75rem .875rem 1.313rem;
+    padding: 0.625rem 0.75rem 0.875rem 1.313rem;
     flex-grow: 1;
     position: relative;
     overflow: hidden;
@@ -52,7 +54,7 @@ $color-border-default: $color-blue-lighter;
   &__footer {
     background: $color-footpanel-default;
     border-top: 1px solid $color-border-default;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     position: relative;
     color: $white;
 
@@ -86,7 +88,7 @@ $color-border-default: $color-blue-lighter;
     border-bottom: 1px solid $color-silver;
     flex-wrap: wrap;
     margin: 0;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 
     &--ajust {
       background: $color-silver;
@@ -158,13 +160,13 @@ $color-border-default: $color-blue-lighter;
     }
   }
   @include generate-universes() {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     .af-panel {
       &__header {
         border-bottom-color: $color;
         background: $color;
-        padding: .5rem 3rem .5rem 1rem;
+        padding: 0.5rem 3rem 0.5rem 1rem;
 
         .sps-icons,
         .glyphicon {

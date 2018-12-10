@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-form {
   &-switch {
     width: auto;
@@ -23,7 +25,7 @@
       position: relative;
       margin: 0;
       padding: 0 12px;
-      font-size: .819rem;
+      font-size: 0.819rem;
       color: $color-pager-link;
       box-sizing: border-box;
       z-index: 1;
@@ -48,7 +50,7 @@
       cursor: pointer;
       top: 0;
       left: 0;
-      transition: .4s;
+      transition: 0.4s;
       z-index: 0;
       display: inline-block;
       width: 100%;
@@ -63,9 +65,9 @@
         padding: 0 12px;
         background-color: $color-azur;
         border-radius: 15px;
-        box-shadow: 0 2px 4px 0 rgba(123, 123, 123, .5);
+        box-shadow: 0 2px 4px 0 rgba(123, 123, 123, 0.5);
         transform: translateX(0);
-        transition: .4s;
+        transition: 0.4s;
       }
     }
   }

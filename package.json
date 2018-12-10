@@ -8,7 +8,7 @@
   },
   "scripts": {
     "publish": "lerna publish",
-    "bootstrap": "gulp clean && gulp prepare && lerna bootstrap",
+    "bootstrap": "gulp clean && lerna bootstrap && gulp prepare",
     "storybook": "npm -C ./storybook/storybook run storybook",
     "storybook:build": "npm -C ./storybook/storybook run storybook:build",
     "start": "npm -C ./examples/demo run start",

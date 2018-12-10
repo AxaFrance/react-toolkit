@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-link {
   color: $color-azur;
 
@@ -8,7 +10,7 @@
     justify-content: flex-start;
 
     .glyphicon {
-      font-size: .9em;
+      font-size: 0.9em;
     }
 
     &:hover {
@@ -22,13 +24,13 @@
 
   &--hasIconLeft {
     .glyphicon {
-      margin-right: .3rem;
+      margin-right: 0.3rem;
     }
   }
 
   &--hasIconRight {
     .glyphicon {
-      margin-left: .3rem;
+      margin-left: 0.3rem;
     }
   }
 }

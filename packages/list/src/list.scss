@@ -1,15 +1,17 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-list {
   &--check {
     list-style: none;
     padding-left: 1rem;
 
     .af-list__item {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       display: flex;
     }
 
     .glyphicon-ok {
-      margin: .5rem .5rem 0 0;
+      margin: 0.5rem 0.5rem 0 0;
       color: $color-malachite;
     }
   }

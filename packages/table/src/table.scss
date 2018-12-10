@@ -1,10 +1,12 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 /* Legacy old version */
 .af-table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   margin-bottom: 2rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   background: $white;
 
   &-th {
@@ -37,7 +39,7 @@
     }
 
     .glyphicon {
-      font-size: .7rem;
+      font-size: 0.7rem;
       position: absolute;
       top: 50%;
       right: 1rem;
@@ -62,8 +64,8 @@
   }
 
   &__cell {
-    padding: .5rem 1rem;
-    font-size: .9375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9375rem;
     border: 1px solid transparent;
     border-right-color: $color-silver;
     text-align: left;

@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 $active-sort-table-th: $color-table-sorting !default;
 
 @mixin hasIcon($direction) {

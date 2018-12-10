@@ -4,7 +4,9 @@ import { withClassModifier } from '@axa-fr/react-toolkit-core';
 
 const withTitleClassName = withProps(({ backHome, classModifier }) => ({
   className: 'af-title-bar',
-  classModifier: `${classModifier}${backHome ? ' backhome' : ''}`
+  classModifier: `${classModifier ? classModifier : ''}${
+    backHome ? ' backhome' : ''
+  }`,
 }));
 
 const enhance = compose(

@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-title {
   position: relative;
   overflow: hidden;
@@ -6,12 +8,12 @@
   &::after {
     background-color: $brand-primary;
     border: none;
-    bottom: .3125rem;
+    bottom: 0.3125rem;
     clear: left;
     content: ' ';
     float: left;
     height: 1px;
-    margin-left: .875rem;
+    margin-left: 0.875rem;
     padding: 0;
     position: absolute;
     width: 100%;
@@ -58,6 +60,6 @@
     top: 50%;
     transform: (-50%, 0);
     background: $color-dusty-gray;
-    opacity: .3;
+    opacity: 0.3;
   }
 }

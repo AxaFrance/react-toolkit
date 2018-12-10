@@ -1,17 +1,19 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-filter-inline {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 1rem 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 
   &__title {
     padding-top: 1.25rem;
     font-weight: 600;
 
     &-text {
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 

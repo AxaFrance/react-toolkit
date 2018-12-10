@@ -105,5 +105,5 @@ gulp.task('copy-sass', () =>
 );
 
 gulp.task('style', callback => {
-  runSequence('clean', ['sass', 'copy-sass'], callback);
+  runSequence(['sass', 'copy-sass'], callback);
 });

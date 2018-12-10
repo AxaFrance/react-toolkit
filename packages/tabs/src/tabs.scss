@@ -1,3 +1,5 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
 .af-tabs {
   &__title {
     font-family: $font-family-serif;
@@ -18,7 +20,7 @@
     margin-left: 0;
     background-color: $color-tabs-item;
     height: 2.5rem;
-    margin-top: .4375rem;
+    margin-top: 0.4375rem;
     vertical-align: bottom;
     border: 1px solid;
     border-bottom: 0;
@@ -26,7 +28,7 @@
     box-sizing: border-box;
     cursor: pointer;
     position: relative;
-    margin-right: .375rem;
+    margin-right: 0.375rem;
     border-radius: 4px 4px 0 0;
 
     &:hover {
@@ -124,7 +126,7 @@
     border: solid 1px $color-tabs-content;
     border-top: 2px solid $color-azur;
     background-color: $white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .11);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11);
   }
 
   &__pane {
