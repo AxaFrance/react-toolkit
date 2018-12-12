@@ -18,8 +18,8 @@ try {
     console.log('stdout ', child.stdout);
     console.log('stderr ', child.stderr);
 
-    fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/design/${VERSION}`);
-    fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/storybook/${VERSION}`);
+    fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/design/v${VERSION}`);
+    fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/storybook/v${VERSION}`);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
     console.log('error', child.error);
