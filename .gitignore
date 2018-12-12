@@ -19,6 +19,7 @@ node_modules/
 storybook/storybook/src/components
 storybook/storybook/storybook-static/
 storybook/toolkit/public
+tmp/
 
 ### OSX ###
 *.DS_Store

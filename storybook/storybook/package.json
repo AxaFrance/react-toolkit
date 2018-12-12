@@ -6,7 +6,7 @@
     "storybook": "concurrently --kill-others \"start-storybook -p 9009 -s public\"",
     "storybook:start": "start-storybook -p 9009 -s public",
     "storybook:build": "npm run changelog && build-storybook -s public -c .storybook -o storybook-static && npm run toolkit:build",
-    "toolkit:build": "node ./scripts/inject-version.js && node ./scripts/build-package.js",
+    "toolkit:build": "node ./scripts/inject-version.js",
     "changelog": "auto-changelog --unreleased --commit-limit false --template changelog-template.hbs -p  --output ./src/Home/CHANGELOG.md"
   },
   "devDependencies": {
