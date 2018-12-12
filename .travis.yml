@@ -29,7 +29,7 @@ deploy:
     all_branches: true
     condition: $NPM_PUBLISH_VERSION =~ ^major|minor|patch|prerelease$
   provider: script
-  script: "git reset --hard && git remote set-url origin https://${GH_TOKEN}@github.com/AxaGuilDEv/react-toolkit.git && git checkout ${TRAVIS_BRANCH} && cp .npmrc.template $HOME/.npmrc && npm run publish -- ${NPM_PUBLISH_VERSION} --yes --concurrency 1 --force-publish"
+  script: "git reset --hard && git remote set-url origin https://${GH_TOKEN}@github.com/AxaGuilDEv/react-toolkit.git && git checkout ${TRAVIS_BRANCH} && cp .npmrc.template $HOME/.npmrc && npm run publish -- ${NPM_PUBLISH_VERSION} --yes --concurrency 1 --force-publish && node ./scripts/publish-docs.js ${GH_TOKEN}"
   skip_cleanup: true
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
