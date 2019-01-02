@@ -20,6 +20,7 @@ storybook/storybook/src/components
 storybook/storybook/storybook-static/
 storybook/toolkit/public
 tmp/
+.npmrc
 
 ### OSX ###
 *.DS_Store
