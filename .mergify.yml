@@ -6,4 +6,4 @@ rules:
       required_status_checks:
         contexts:
         - WIP
-        - af-react-oidc-github.CI
+        - af-react-toolkit-github.CI
