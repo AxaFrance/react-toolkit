@@ -62,7 +62,6 @@ steps:
     git checkout $(SmartBrancheName)
     node ./scripts/npm.js $(NPM_TOKEN)
     cp .npmrc $HOME/.npmrc
-    echo $(SmartBrancheName)
     git status
   displayName: 'configuration'
 
