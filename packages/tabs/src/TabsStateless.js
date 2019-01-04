@@ -44,7 +44,7 @@ const TabsStateless = ({
             onChange,
             role: 'TITLE',
             // index as a key is ok here, no better candidate
-            key: index,
+            key: index, // eslint-disable-line
             index,
           })
         )}
@@ -55,7 +55,7 @@ const TabsStateless = ({
             active: activeIndex === index,
             role: 'PANE',
             // index as a key is ok here, no better candidate
-            key: index,
+            key: index, // eslint-disable-line
           })
         )}
       </div>

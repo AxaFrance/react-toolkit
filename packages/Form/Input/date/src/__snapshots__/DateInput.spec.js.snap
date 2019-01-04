@@ -20,30 +20,28 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
     <div
       className="af-datepicker__container"
     >
-      <div>
+      <div
+        className="react-datepicker-wrapper"
+      >
         <div
-          className="react-datepicker-wrapper"
+          className="react-datepicker__input-container"
         >
-          <div
-            className="react-datepicker__input-container"
-          >
-            <input
-              autoFocus={null}
-              className="af-datepicker"
-              disabled={false}
-              id="iddateinput"
-              name="placeImage"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              readOnly={false}
-              tabIndex={null}
-              type="text"
-              value=""
-            />
-          </div>
+          <input
+            autoFocus={null}
+            className="af-datepicker"
+            disabled={false}
+            id="iddateinput"
+            name="placeImage"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            tabIndex={null}
+            type="text"
+            value=""
+          />
         </div>
       </div>
       <span
