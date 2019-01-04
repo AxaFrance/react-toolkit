@@ -29,94 +29,125 @@ exports[`<Modal> should render modal 1`] = `
           onRequestClose={[MockFunction]}
           parentSelector={[Function]}
           portalClassName="ReactModalPortal"
+          role="dialog"
           shouldCloseOnEsc={true}
           shouldCloseOnOverlayClick={true}
           shouldFocusAfterRender={true}
           shouldReturnFocusAfterClose={true}
         >
-          <ModalPortal
-            ariaHideApp={true}
-            bodyOpenClassName="ReactModal__Body--open"
-            className="af-modal"
-            closeTimeoutMS={0}
-            defaultStyles={
-              Object {
-                "content": Object {
-                  "WebkitOverflowScrolling": "touch",
-                  "background": "#fff",
-                  "border": "1px solid #ccc",
-                  "borderRadius": "4px",
-                  "bottom": "40px",
-                  "left": "40px",
-                  "outline": "none",
-                  "overflow": "auto",
-                  "padding": "20px",
-                  "position": "absolute",
-                  "right": "40px",
-                  "top": "40px",
-                },
-                "overlay": Object {
-                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                  "bottom": 0,
-                  "left": 0,
-                  "position": "fixed",
-                  "right": 0,
-                  "top": 0,
-                },
-              }
-            }
-            isOpen={true}
-            onRequestClose={[MockFunction]}
-            parentSelector={[Function]}
-            portalClassName="ReactModalPortal"
-            shouldCloseOnEsc={true}
-            shouldCloseOnOverlayClick={true}
-            shouldFocusAfterRender={true}
-            shouldReturnFocusAfterClose={true}
-            style={
-              Object {
-                "content": Object {},
-                "overlay": Object {},
-              }
+          <Portal
+            containerInfo={
+              <div
+                class="ReactModalPortal"
+              >
+                <div
+                  class="ReactModal__Overlay ReactModal__Overlay--after-open"
+                  style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+                >
+                  <div
+                    class="ReactModal__Content ReactModal__Content--after-open af-modal"
+                    role="dialog"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="af-modal__dialog"
+                    >
+                      <div
+                        class="af-modal__content"
+                      >
+                        Content
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             }
           >
-            <div
-              aria-modal="true"
-              className="ReactModal__Overlay ReactModal__Overlay--after-open"
-              onClick={[Function]}
-              onMouseDown={[Function]}
+            <ModalPortal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="af-modal"
+              closeTimeoutMS={0}
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={true}
+              onRequestClose={[MockFunction]}
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              role="dialog"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
               style={
                 Object {
-                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                  "bottom": 0,
-                  "left": 0,
-                  "position": "fixed",
-                  "right": 0,
-                  "top": 0,
+                  "content": Object {},
+                  "overlay": Object {},
                 }
               }
             >
               <div
-                className="ReactModal__Content ReactModal__Content--after-open af-modal"
+                className="ReactModal__Overlay ReactModal__Overlay--after-open"
                 onClick={[Function]}
-                onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                style={Object {}}
-                tabIndex="-1"
+                style={
+                  Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
               >
                 <div
-                  className="af-modal__dialog"
+                  className="ReactModal__Content ReactModal__Content--after-open af-modal"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  role="dialog"
+                  style={Object {}}
+                  tabIndex="-1"
                 >
                   <div
-                    className="af-modal__content"
+                    className="af-modal__dialog"
                   >
-                    Content
+                    <div
+                      className="af-modal__content"
+                    >
+                      Content
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </ModalPortal>
+            </ModalPortal>
+          </Portal>
         </Modal>
       </ModalCoreRaw>
     </withClassModifier>
