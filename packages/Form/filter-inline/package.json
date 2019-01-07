@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-filter-inline",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -15,7 +15,7 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.0.1",
+    "@axa-fr/react-toolkit-core": "^1.0.2",
     "prop-types": "^15.5.10",
     "recompose": "^0.27.1"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -18,7 +18,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-"repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
   }
