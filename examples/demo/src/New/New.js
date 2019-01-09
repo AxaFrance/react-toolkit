@@ -29,23 +29,19 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
         <article className="af-panel af-panel--new">
           <section className="af-panel__content">
             <TextInput
-              id={LASTNAME}
               label="Nom *"
-              name={LASTNAME}
-              value={fields[LASTNAME].value}
               onChange={onChange}
               helpMessage="Ex : Meunier"
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[LASTNAME].errorMessage}
               messageType="error"
+              {...fields[LASTNAME]}
             />
             <SelectInput
               label="Votre agent *"
               name={AGENT}
               id={AGENT}
-              value={fields[AGENT].value}
               helpMessage="Ex : Guillaume Chervet"
               onChange={onChange}
               options={[
@@ -55,63 +51,51 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[AGENT].errorMessage}
               messageType="error"
+              {...fields[AGENT]}
             />
             <TextInput
-              id={CONTRACT}
               label="Numéro de contrat *"
-              name={CONTRACT}
-              value={fields[CONTRACT].value}
               onChange={onChange}
               helpMessage="Ex : 00123456"
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[CONTRACT].errorMessage}
               messageType="error"
+              {...fields[CONTRACT]}
             />
           </section>
           <section className="af-panel__content">
             <TextInput
-              id={FIRSTNAME}
               label="Prénom *"
-              name={FIRSTNAME}
-              value={fields[FIRSTNAME].value}
               onChange={onChange}
               helpMessage="Ex : Johnathan"
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[FIRSTNAME].errorMessage}
               messageType="error"
+              {...fields[FIRSTNAME]}
             />
             <DateInput
               label="Date de naissance *"
               locale="fr-fr"
-              name={BIRTHDATE}
-              id={BIRTHDATE}
-              value={fields[BIRTHDATE].value}
               onChange={onChange}
               helpMessage="jj/mm/aaaa"
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[BIRTHDATE].errorMessage}
               messageType="error"
+              {...fields[BIRTHDATE]}
             />
             <DateInput
               label="Date d'entrée *"
-              name={BEGIN}
-              id={BEGIN}
               locale="fr-fr"
-              value={fields[BEGIN].value}
               onChange={onChange}
               helpMessage="jj/mm/aaaa"
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
               forceDisplayMessage={hasSubmit}
-              message={fields[BEGIN].errorMessage}
+              {...fields[BEGIN]}
               messageType="error"
             />
           </section>

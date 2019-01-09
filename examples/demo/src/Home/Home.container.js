@@ -8,6 +8,7 @@ import {
   setDisplayName,
   withProps
 } from 'recompose';
+import withCustomFetch from '../withCustomFetch';
 
 const withInitState = lifecycle({
   state: {
@@ -24,9 +25,10 @@ const withInitData = withStateHandlers(() => ({}), {
 });
 
 const withFetchData = lifecycle({
-  componentDidMount() {
-    const { init } = this.props;
-    fetchDevis().then(items => init(items));
+  async componentDidMount() {
+    const { init, fetch } = this.props;
+    const items = await fetchDevis(fetch)();
+    init(items);
   }
 });
 
@@ -38,6 +40,7 @@ const enhance = compose(
   setDisplayName('EnhancedHome'),
   withInitState,
   withInitData,
+  withCustomFetch(fetch),
   withFetchData,
   withLoaderMode
 );

@@ -1,6 +1,6 @@
-const LOCAL_API = 'http://localhost:5000/api/devis';
+const LOCAL_API = 'devis';
 const PROD_API =
-  'https://api.mlab.com/api/1/databases/toolkitaxa/collections/contracts?apiKey=uL19TxbOTqdHcHTPd1AgQbR-FjqEDqWK';
+  'contracts?apiKey=uL19TxbOTqdHcHTPd1AgQbR-FjqEDqWK';
 const URL_API = process.env.NODE_ENV === 'production' ? PROD_API : LOCAL_API;
 
 const FETCH_CONFIG = {
@@ -10,7 +10,7 @@ const FETCH_CONFIG = {
   withCredentials: true,
 };
 
-const fetchDevis = async () =>
-  fetch(URL_API, FETCH_CONFIG).then(res => res.json());
+const fetchDevis = fetch =>async () =>
+  fetch(URL_API, FETCH_CONFIG);
 
 export default fetchDevis;

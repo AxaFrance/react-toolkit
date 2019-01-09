@@ -1,6 +1,10 @@
 import New from './New';
 import { lifecycle, compose, withStateHandlers } from 'recompose';
-import { validationForm } from './New.validation';
+import { rules } from './New.validation.rules';
+import {
+  computeInitialStateErrorMessage,
+  genericHandleChange
+} from './validation.generic';
 import {
   FIRSTNAME,
   AGENT,
@@ -14,33 +18,42 @@ import {
 const errorList = fields =>
   Object.keys(fields).filter(key => setErrorMessage(key)(fields));
 
-const setErrorMessage = key => fields => fields[key].errorMessage !== null;
+const setErrorMessage = key => fields => fields[key].message !== null;
 
-const withInitState = lifecycle({
+const preInitState = lifecycle({
   state: {
     hasSubmit: false,
     fields: {
-      [FIRSTNAME]: { value: '', errorMessage: MSG_REQUIRED },
-      [AGENT]: { value: '', errorMessage: MSG_REQUIRED },
-      [LASTNAME]: { value: '', errorMessage: MSG_REQUIRED },
-      [CONTRACT]: { value: '', errorMessage: MSG_REQUIRED },
-      [BIRTHDATE]: { value: '', viewValue: '', errorMessage: MSG_REQUIRED },
-      [BEGIN]: { value: '', viewValue: '', errorMessage: MSG_REQUIRED }
+      [FIRSTNAME]: { name: FIRSTNAME, value: '', message: MSG_REQUIRED },
+      [AGENT]: { name: AGENT, value: '', message: MSG_REQUIRED },
+      [LASTNAME]: { name: LASTNAME, value: '', message: MSG_REQUIRED },
+      [CONTRACT]: { name: CONTRACT, value: '', message: MSG_REQUIRED },
+      [BIRTHDATE]: {
+        name: BIRTHDATE,
+        value: null,
+        viewValue: '',
+        message: MSG_REQUIRED
+      },
+      [BEGIN]: {
+        name: BEGIN,
+        value: null,
+        viewValue: '',
+        message: MSG_REQUIRED
+      }
     }
   }
 });
 
+export const withInitState = computeInitialStateErrorMessage(
+  preInitState,
+  rules
+);
+
 const withFormHandlers = withStateHandlers(({ fields }) => ({ fields }), {
-  onChange: ({ fields }, props) => ({ name, value, viewValue }) => {
-    const errorMessage = validationForm[name](viewValue || value);
+  onChange: ({ fields }, props) => event => {
+    const newField = genericHandleChange(rules, fields, event);
     return {
-      fields: {
-        ...fields,
-        [name]: {
-          value,
-          errorMessage
-        }
-      }
+      fields: newField
     };
   },
   onSubmit: ({ fields }, { history }) => e => {
