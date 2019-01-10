@@ -35,8 +35,6 @@ steps:
     cliProjectKey: 'AxaGuilDEv_react-toolkit'
     cliProjectName: 'react-toolkit'
     extraProperties: |
-     # Additional properties that will be passed to the scanner, 
-     # Put one key=value per line, example:
      sonar.exclusions=**/*.stories.js,**/*.spec.js,**/*.spec.ts,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
      sonar.javascript.lcov.reportPaths=coverage/lcov.info
      sonar.sourceEncoding=UTF-8
@@ -53,6 +51,12 @@ steps:
     npm test -- --coverage
     npm run lint
   displayName: 'npm test and lint'
+
+- script: |
+    npm run css:build
+    npm run storybook:build
+    npm run demo:build
+  displayName: 'build documentations'
 
 - script: |
     git config --global user.email "build-ci@axa.fr"

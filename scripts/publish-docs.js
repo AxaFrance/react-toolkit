@@ -20,6 +20,7 @@ try {
 
     fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/design/v${VERSION}`);
     fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/storybook/v${VERSION}`);
+    fs.copySync(`./examples/demo/build`, `./tmp/AxaGuilDEv.github.io/react-toolkit/demo/v${VERSION}`);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
     console.log('error', child.error);
