@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "prepare": "gulp buildstyle",
+    "prepare": "$(npm bin)/gulp buildstyle",
     "css": "webpack-dev-server --config src/demo/webpack.config.js",
     "css:build": "webpack --config src/demo/webpack.config.js",
     "lint:js": "eslint ./src/demo",
