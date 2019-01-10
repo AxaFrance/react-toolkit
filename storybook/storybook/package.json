@@ -47,6 +47,7 @@
     "@axa-fr/react-toolkit-tabs": "^1.0.2",
     "@axa-fr/react-toolkit-title": "^1.0.2",
     "@axa-fr/storybook-addons": "^1.0.2"
+    
   },
   "dependencies": {
     "cuid": "^2.1.1",
