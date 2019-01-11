@@ -19,7 +19,7 @@ const T = new Twit({
 
 const json = require('../package.json');
 
-const message = `Hey a new version (${json.version}) of the react toolkit is available on @github and @npm!`;
+const message = `Hey a new version (${json.version}) of the @axa-fr/react-toolkit is available on @github and @npm!`;
 
 T.post('statuses/update', { status: message }, (err) => {
   if (!err) {
