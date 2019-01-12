@@ -14,15 +14,15 @@
 ## About
 
 A set of independent components.
-Awesome library based on HTML and CSS using BEM convention with a JavaScript react.js implementation. Each components are autonomous and extensible. Pick and use only what you need!
+Awesome library based on HTML and CSS using BEM convention with a JavaScript react.js implementation. Each component is autonomous and extensible. Pick and use only what you need!
 
 **How is done css isolation?**
 
-Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of a intricate technologies, just pragatism.
+Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of an intricate technologie, just pragmatism.
 
-Component are simple to use (just drag and drog it), simple to customise (by using css modifier) to your own need. Each Components may evoluate internally (html, css, js) minimizing the impact on your application.
+Components are simple to use (just drag and drop them), simple to customise (by using css modifiers) to your own need. Each Component may evoluate internally (html, css, js) and minimize the impact on your application.
 
-You can easily build a new app from scratch or integrate component into existing application.
+You can easily build a new app from scratch or integrate components into an existing application.
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
@@ -45,7 +45,7 @@ import '@axa-fr/react-toolkit-alert/dist/alert.scss';
 const MyAlertComponent => () => (
 <Alert
     icon="ok"
-    title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
+    title="This is an alert"
   />
 )
 ```
@@ -107,8 +107,8 @@ Each component should be autonomous (html + css + javascript) and extensible.
   - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
-  - Components are without state by default
-  - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
+  - Components are statless by default
+  - Some higher component levels are statefull but feel free to use the stateless ones if it does not fit to your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
@@ -119,5 +119,5 @@ Each component should be autonomous (html + css + javascript) and extensible.
 ## Roadmap
 
 - Update general documentation
-- Continu to migrate to TypeScript component by component
-- Continu to fix and clean code. Make it simpler, faster, lighter
+- Continue to migrate to TypeScript component by component
+- Continue to fix and clean the code. Make it simpler, faster and lighter
