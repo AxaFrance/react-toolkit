@@ -8,23 +8,22 @@
 - [Getting Started](#getting-started)
 - [Packages](#packages)
 - [Concept](#concept)
-- [How It Works](#how-it-works)
+- [How Does It Work](#how-it-works)
 - [Contribute](#contribute)
 - [Roadmap](#roadmap)
 - [Demo](#demo)
 
 ## About
 
-A set of independent components.
-Awesome library based on HTML and CSS using BEM convention with a JavaScript react.js implementation. Each components are autonomous and extensible. Pick and use only what you need!
+A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each components are autonomous and extensible. Pick and use only what you need!
 
-**How is done css isolation?**
+**How can you do CSS isolation?**
 
-Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of a intricate technologies, just pragatism.
+Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need of the intricate technologies, just pragatism.
 
-Component are simple to use (just drag and drog it), simple to customise (by using css modifier) to your own need. Each Components may evoluate internally (html, css, js) minimizing the impact on your application.
+Components are simple to use (just drag and drog it), simple to customize (by using CSS modifier) to your own need. Each component may evaluate internally (HTML, CSS, JS) and minimize an impact on your application.
 
-You can easily build a new app from scratch or integrate component into existing application.
+You can easily build a new app from scratch or integrate some component into existing application.
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
@@ -99,19 +98,19 @@ const MyAlertComponent => () => (
 
 ## Concept
 
-Each component should be autonomous (html + css + javascript) and extensible.
+Each component should be autonomous (HTML + CSS + JS) and extensible.
 
-## How It Works
+## How Does It Work
 
-- Html/Css :
+- HTML/CSS :
 
-  - BEM convention is used in order to break css cascading problem
-  - Scss and css files are avalaible by component and can be overrided or extended
-  - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
+  - BEM convention is used in order to break CSS cascading problem
+  - SCSS and CSS files are avalaible for every component and can be overrided or extended
+  - [HTML/CSS Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
-  - Components are without state by default
-  - Some higher component level are statefull but feel free to use the stateless one if it not feet to your use case
+  - Components are stateless by default
+  - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
@@ -122,8 +121,8 @@ Each component should be autonomous (html + css + javascript) and extensible.
 ## Roadmap
 
 - Update general documentation
-- Continu to migrate to TypeScript component by component
-- Continu to fix and clean code. Make it simpler, faster, lighter
+- Migrating to TypeScript all components
+- Fix the issues and clean code. Make it simpler, faster, lighter
 
 ## Demo
 
