@@ -10,7 +10,7 @@ experience for everyone, regardless of the experience level, gender, gender
 identity and expression, sexual orientation, disability, personal appearance,
 body size, race, age or religion.
 
-Examples of unacceptable behavior by participants include the use of sexual
+Examples of unacceptable behaviour by participants include the use of sexual
 language or imagery, derogatory comments or personal attacks, trolling, public
 or private harassment, insults or other unprofessional conduct.
 
