@@ -14,13 +14,13 @@
 ## About
 
 A set of independent components.
-Awesome library based on HTML and CSS using BEM convention with a JavaScript react.js implementation. Each component is autonomous and extensible. Pick and use only what you need!
+Awesome library based on HTML and CSS using BEM convention with a JavaScript ReactJs implementation. Each component is autonomous and extensible. Pick and use only what you need!
 
 **How is done css isolation?**
 
-Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of an intricate technologie, just pragmatism.
+Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of the intricate technologies, just pragmatism.
 
-Components are simple to use (just drag and drop them), simple to customise (by using css modifiers) to your own need. Each Component may evoluate internally (html, css, js) and minimize the impact on your application.
+Components are simple to use (just drag and drop them), simple to customise (by using css modifiers) to your own need. Each Component may evluate internally (html, css, js) and minimize the impact on your application.
 
 You can easily build a new app from scratch or integrate components into an existing application.
 
@@ -107,8 +107,8 @@ Each component should be autonomous (html + css + javascript) and extensible.
   - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
-  - Components are statless by default
-  - Some higher component levels are statefull but feel free to use the stateless ones if it does not fit to your use case
+  - Components are stateless by default
+  - Some higher component levels are stateful but feel free to use the stateless ones if it does not fit to your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
