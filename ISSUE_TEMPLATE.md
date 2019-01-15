@@ -2,14 +2,14 @@
 
 <!-- Describe your issue and tell us how to reproduce it (include any useful information). -->
 
-### Versions
+#### Versions
 
-### Screenshots
+#### Screenshots
 
 #### Expected
 
 #### Actual
 
-### Additional Details
+#### Additional Details
 
-- Installed packages:
+- Installed packages
