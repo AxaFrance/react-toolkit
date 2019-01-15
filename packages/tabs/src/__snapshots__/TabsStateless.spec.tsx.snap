@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabStateless> should render component 1`] = `
+<div
+  className="className className--withIcon"
+>
+  <ul
+    className="af-tabs__control"
+  >
+    <li
+      className="af-tabs__item af-tabs__item--modifier af-tabs__item--1"
+    >
+      <button
+        className="af-tabs__link"
+        id="0"
+        onClick={[Function]}
+      >
+        title tab1
+      </button>
+    </li>
+    <li
+      className="af-tabs__item af-tabs__item--modifier af-tabs__item--active"
+    >
+      <button
+        className="af-tabs__link"
+        id="1"
+        onClick={[Function]}
+      >
+        title tab2
+      </button>
+    </li>
+    <li
+      className="af-tabs__item af-tabs__item--modifier af-tabs__item--1"
+    >
+      <button
+        className="af-tabs__link"
+        id="2"
+        onClick={[Function]}
+      >
+        title tab3
+      </button>
+    </li>
+  </ul>
+  <div
+    className="af-tabs__content"
+  >
+    <div
+      className="af-tabs__pane"
+    >
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+`;

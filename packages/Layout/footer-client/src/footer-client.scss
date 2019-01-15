@@ -1,9 +1,26 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
-@import '_footer-client-item.scss';
-@import '_footer-client-list.scss';
-@import '_language-selection.scss';
-@import '_social-network.scss';
+@import '_footer-client-item';
+@import '_footer-client-list';
+@import '_language-selection';
+
+.social-network__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-network__item {
+  flex-grow: 1;
+}
+
+.social-network__link {
+  color: $color-white;
+}
+
+.social-network__icon {
+  font-size: 25px;
+}
 
 .af-footer-client {
   border-top: none;
