@@ -5,6 +5,7 @@ import Home from 'Home';
 import New from 'New';
 import Confirm from 'Confirm';
 import PageNotFound from 'NotFound';
+import Test from 'Test';
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/new" component={New} />
       <Route exact path="/confirm" component={Confirm} />
+      <Route exact path="/test" component={Test} />
       <Route component={PageNotFound} />
     </Switch>
   );
