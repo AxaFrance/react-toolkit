@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 try {
 
-
+    const execSync = require('child_process').execSync;
     child = execSync(`npm run changelog && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
     console.log('error', child.error);
     console.log('stdout ', child.stdout);
