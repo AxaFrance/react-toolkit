@@ -7,7 +7,7 @@ const NotFound = () => (
     <Title backHome classModifier="hasstepper">
       404 Page Not Found
     </Title>
-    <div className="container container--notfound">
+    <div className="container af-container--notfound">
       <h1 className="af-notfound__title">
         <div className="af-notfound__title-covernumber">
           <span className="af-notfound__title-number">404</span>

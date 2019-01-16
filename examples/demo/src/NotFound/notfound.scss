@@ -2,12 +2,13 @@
 
 $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
 
-.container--notfound {
+.af-container--notfound {
   min-height: 500px;
   height: 50vh;
   position: relative;
   overflow: hidden;
 }
+
 .af-notfound {
   &__title {
     font-size: 5em;
@@ -15,6 +16,7 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
     font-family: $font-family-base;
     position: relative;
     height: 100%;
+
     &:after {
       content: '';
       width: 63px;
@@ -23,10 +25,11 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
       background-color: $color-red-axa;
       left: 50%;
       top: -70px;
-      box-shadow: 0px -3px 26px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.6);
       transform: rotateZ(29deg) translate(-50%, 0);
       z-index: 2;
     }
+
     &-covernumber {
       position: absolute;
       transform: translate(-50%, 0);
@@ -38,11 +41,13 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
       height: 280px;
       width: 350px;
     }
+
     &-number {
       animation: slideToLeft 0.7s cubic-bezier(0.86, 0, 0.07, 1);
       position: absolute;
       right: 0;
     }
+
     &-covernot {
       position: absolute;
       top: 79%;
@@ -59,12 +64,14 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
       height: 140px;
       width: 350px;
     }
+
     &-not {
       animation: slideToRight 0.7s cubic-bezier(0.86, 0, 0.07, 1);
       position: absolute;
       left: 0;
     }
   }
+
   &__message {
     position: absolute;
     color: $color-axa;
