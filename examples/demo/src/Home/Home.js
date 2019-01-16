@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './Home.scss';
+import Title from 'shared/Title';
 import { Table, Paging, Loader } from '@axa-fr/react-toolkit-all';
-import Title from '../shared/Title';
+import './Home.scss';
 
 const Home = ({ items, loaderMode }) => (
   <>
@@ -57,7 +57,7 @@ const Home = ({ items, loaderMode }) => (
 
 Home.defaultProps = {
   items: [],
-  loaderMode: ''
+  loaderMode: '',
 };
 Home.propTypes = {
   items: PropTypes.arrayOf(
@@ -68,10 +68,10 @@ Home.propTypes = {
       type: PropTypes.string,
       agent: PropTypes.string,
       birthdate: PropTypes.string,
-      begin: PropTypes.string
+      begin: PropTypes.string,
     })
   ),
-  loaderMode: PropTypes.string
+  loaderMode: PropTypes.string,
 };
 
 export default Home;
