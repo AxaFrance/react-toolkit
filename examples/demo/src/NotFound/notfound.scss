@@ -25,7 +25,7 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
       background-color: $color-red-axa;
       left: 50%;
       top: -70px;
-      box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 -3px 26px rgba(0, 0, 0, .6);
       transform: rotateZ(29deg) translate(-50%, 0);
       z-index: 2;
     }
@@ -43,7 +43,7 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
     }
 
     &-number {
-      animation: slideToLeft 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+      animation: slideToLeft .7s cubic-bezier(.86, 0, .07, 1);
       position: absolute;
       right: 0;
     }
@@ -66,7 +66,7 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
     }
 
     &-not {
-      animation: slideToRight 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+      animation: slideToRight .7s cubic-bezier(.86, 0, .07, 1);
       position: absolute;
       left: 0;
     }
@@ -81,37 +81,49 @@ $font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
     font-family: $font-family-serif;
     font-weight: 600;
     width: 20%;
-    animation: appearmessage 1s cubic-bezier(0.86, 0, 0.07, 1);
+    animation: appearmessage 1s cubic-bezier(.86, 0, .07, 1);
   }
 }
 
 @keyframes slideToLeft {
+
   from {
     right: -100%;
   }
+
   to {
     right: 0;
   }
+
 }
+
 @keyframes slideToRight {
+
   from {
     left: -100%;
   }
+
   to {
     left: 0;
   }
+
 }
+
 @keyframes appearmessage {
+
   0% {
     opacity: 0;
     right: 54%;
   }
+
   50% {
     opacity: 0;
     right: 30%;
   }
+
   100% {
     opacity: 1;
     right: 24%;
   }
+
 }
