@@ -8,7 +8,7 @@
   },
   "scripts": {
     "publish": "lerna publish",
-    "bootstrap": "$(npm bin)/gulp clean && lerna bootstrap && gulp prepare",
+    "bootstrap": "gulp clean && lerna bootstrap && gulp prepare",
     "storybook": "npm -C ./storybook/storybook run storybook",
     "storybook:build": "npm -C ./storybook/storybook run storybook:build",
     "start": "npm -C ./examples/demo run start",
@@ -21,7 +21,8 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "dev": "concurrently --kill-others \"npm run dev:ts\" \"npm run dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
-    "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js"
+    "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
+    "changelog": "auto-changelog --unreleased --commit-limit false --template changelog-template.hbs -p  --output ./CHANGELOG.md"
   },
   "husky": {
     "hooks": {

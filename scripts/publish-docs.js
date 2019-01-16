@@ -1,8 +1,7 @@
 
 const fs = require('fs-extra');
 const args = process.argv;
-const package = require('../storybook/storybook/package.json');
-const VERSION = package.version;
+const VERSION = require('../storybook/storybook/package.json').version;
 const GITHUB_TOKEN = args[2];
 
 try {
@@ -18,9 +17,12 @@ try {
     console.log('stdout ', child.stdout);
     console.log('stderr ', child.stderr);
 
-    fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/design/v${VERSION}`);
-    fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/storybook/v${VERSION}`);
-    fs.copySync(`./examples/demo/build`, `./tmp/AxaGuilDEv.github.io/react-toolkit/demo/v${VERSION}`);
+    const PREVIOUS_VERSION = require('../tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json').version;
+    fs.moveSync('./tmp/AxaGuilDEv.github.io/react-toolkit/latest', `./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}`);
+
+    fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`);
+    fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/storybook`);
+    fs.copySync(`./examples/demo/build`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/demo`);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
     console.log('error', child.error);
