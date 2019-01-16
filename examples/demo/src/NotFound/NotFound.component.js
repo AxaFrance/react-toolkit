@@ -21,7 +21,7 @@ const NotFound = () => (
         </div>
       </h1>
       <p className="af-notfound__message">
-        The page your are looking for is not here!
+        The page you are looking for is not here!
       </p>
     </div>
   </>
