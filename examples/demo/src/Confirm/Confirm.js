@@ -1,7 +1,6 @@
 import React from 'react';
-
-import Title from '../shared/Title';
-import Stepper from '../shared/Stepper';
+import Title from 'shared/Title';
+import Stepper from 'shared/Stepper';
 import './Confirm.scss';
 
 const Confirm = () => (

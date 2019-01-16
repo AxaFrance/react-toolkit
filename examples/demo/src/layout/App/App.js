@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
-import EnvironmentProvider from '../../EnvironmentProvider';
+import EnvironmentProvider from 'EnvironmentProvider';
 
-import Header from '../Header';
-import Footer from '../Footer';
-import Routes from '../Routes';
+import Header from 'layout/Header';
+import Footer from 'layout/Footer';
+import Routes from 'layout/Routes';
 
 const App = () => {
   return (
