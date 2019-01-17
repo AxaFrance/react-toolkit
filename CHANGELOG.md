@@ -31,10 +31,12 @@ All notable changes to this project will be documented in this file.
 - first commit [`041a3de`](https://github.com/AxaGuilDEv/react-toolkit/commit/041a3def242276adb8077d3f53a325ea422c33be) by Guillaume Chervet 
 
 ### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.2...v0.0.0)
-> 16 January 2019
+> 17 January 2019
 - Create PULL_REQUEST_TEMPLATE.md [`#31`](https://github.com/AxaGuilDEv/react-toolkit/pull/31) by Pavlo Liahushyn
 - feat(add) twitter bot [`#27`](https://github.com/AxaGuilDEv/react-toolkit/pull/27) by oussamahamdaoui
 - chore(gulp) prefer use local bin gulp v3.9.1 [`#26`](https://github.com/AxaGuilDEv/react-toolkit/pull/26) by Samuel Gomez
 - feat(demo) better code + add env management + publish demo [`#25`](https://github.com/AxaGuilDEv/react-toolkit/pull/25) by Guillaume Chervet
 - chore(azure-pipeline) add missing script call for publishing doc [`#24`](https://github.com/AxaGuilDEv/react-toolkit/pull/24) by Guillaume Chervet
 - chore: prefer use local bin gulp v3.9.1 [`ce1e2ab`](https://github.com/AxaGuilDEv/react-toolkit/commit/ce1e2abc3b4d56243365bfd01494c176c1f6931d) by Samuel Gomez 
+- feat(docs) add latest management [`ea60c55`](https://github.com/AxaGuilDEv/react-toolkit/commit/ea60c55e0d3d64c58e868891e83370f6b34e3a72) by Guillaume Chervet 
+- missing file [`c97f6d8`](https://github.com/AxaGuilDEv/react-toolkit/commit/c97f6d8c116cee3d56092e6f89dcd45231b09ad9) by Guillaume Chervet 

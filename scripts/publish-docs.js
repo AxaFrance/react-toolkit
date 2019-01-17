@@ -23,6 +23,8 @@ try {
     fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`);
     fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/storybook`);
     fs.copySync(`./examples/demo/build`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/demo`);
+    const versionToSave = { version: VERSION };
+    fs.writeJSONSync('./tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json', versionToSave);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
     console.log('error', child.error);
