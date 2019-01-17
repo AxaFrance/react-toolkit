@@ -1,11 +1,11 @@
 import React from 'react';
-import Title from '../shared/Title';
-import Stepper from '../shared/Stepper';
+import Title from 'shared/Title';
+import Stepper from 'shared/Stepper';
 import {
   TextInput,
   SelectInput,
   DateInput,
-  Button
+  Button,
 } from '@axa-fr/react-toolkit-all';
 import './New.scss';
 import {
@@ -14,7 +14,7 @@ import {
   AGENT,
   CONTRACT,
   BIRTHDATE,
-  BEGIN
+  BEGIN,
 } from './constants';
 
 const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
@@ -46,7 +46,7 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               onChange={onChange}
               options={[
                 { value: 'Guillaume Chervet', label: 'Guillaume Chervet' },
-                { value: 'Cyril Lakech', label: 'Cyril Lakech' }
+                { value: 'Cyril Lakech', label: 'Cyril Lakech' },
               ]}
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
@@ -102,8 +102,7 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
           <Button
             classModifier="hasiconRight confirm"
             id="myForm"
-            onClick={onSubmit}
-          >
+            onClick={onSubmit}>
             <span className="af-btn-text">Valider</span>
             <i className="glyphicon glyphicon-arrowthin-right" />
           </Button>

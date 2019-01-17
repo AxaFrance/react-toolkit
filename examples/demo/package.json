@@ -79,7 +79,8 @@
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "node-sass": "^4.11.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "stylelint-config-standard": "^18.2.0"
   },
   "proxy": "http://localhost:5000"
 }
