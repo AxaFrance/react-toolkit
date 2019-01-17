@@ -1,7 +1,7 @@
 import React from 'react';
-import './Title.scss';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import './Title.scss';
 
 const TitleBar = ({ backHome, children, className }) => (
   <div className={className}>
@@ -19,13 +19,13 @@ const TitleBar = ({ backHome, children, className }) => (
 TitleBar.defaultProps = {
   backHome: false,
   children: null,
-  className: ''
+  className: '',
 };
 
 TitleBar.propTypes = {
   backHome: PropTypes.bool,
   children: PropTypes.any,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default TitleBar;
