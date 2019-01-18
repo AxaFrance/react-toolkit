@@ -10,12 +10,7 @@ let storyData = {
   withInfo :false,
   docs: require('./Home.md'),
   component: ()=> (<div className="af-home-logos"><img className="af-home-react" src="images/react.svg" alt="React logo"/><img className="af-home-storybook" src="images/storybook.svg" alt="Storybook logo" /></div>)},
-  {
-    name: 'Get Started',
-    desc:  'ChangeLog',
-    withInfo :false,
-    docs: require('./CHANGELOG.md'),
-    component: ()=>(<div />)}],
+  ],
 };
 
 addToStorie(storyData, module);
