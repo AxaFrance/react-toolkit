@@ -1,5 +1,5 @@
 {
-  "name": "af-toolkit",
+  "name": "react-toolkit",
   "cacheDirectory": ".cache/jest",
   "roots": ["<rootDir>/packages"],
   "testPathIgnorePatterns": ["/node_modules/", "/dist/", "/core/css/"],
