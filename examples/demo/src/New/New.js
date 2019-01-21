@@ -5,7 +5,8 @@ import {
   TextInput,
   SelectInput,
   DateInput,
-  Button
+  Button,
+  SliderInput,
 } from '@axa-fr/react-toolkit-all';
 import './New.scss';
 import {
@@ -14,7 +15,7 @@ import {
   AGENT,
   CONTRACT,
   BIRTHDATE,
-  BEGIN
+  BEGIN,
 } from './constants';
 
 const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
@@ -46,7 +47,7 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               onChange={onChange}
               options={[
                 { value: 'Guillaume Chervet', label: 'Guillaume Chervet' },
-                { value: 'Cyril Lakech', label: 'Cyril Lakech' }
+                { value: 'Cyril Lakech', label: 'Cyril Lakech' },
               ]}
               classNameContainerLabel="col-md-4"
               classNameContainerInput="col-md-8"
@@ -99,15 +100,21 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               messageType="error"
             />
           </section>
-          <Button
-            classModifier="hasiconRight confirm"
-            id="myForm"
-            onClick={onSubmit}
-          >
-            <span className="af-btn-text">Valider</span>
-            <i className="glyphicon glyphicon-arrowthin-right" />
-          </Button>
+          <section className="af-panel__content">
+            <SliderInput
+              className="af-form__slider"
+              name="testslider"
+              onChange={onChange}
+            />
+          </section>
         </article>
+        <Button
+          classModifier="hasiconRight confirm"
+          id="myForm"
+          onClick={onSubmit}>
+          <span className="af-btn-text">Valider</span>
+          <i className="glyphicon glyphicon-arrowthin-right" />
+        </Button>
       </form>
     </div>
   </>
