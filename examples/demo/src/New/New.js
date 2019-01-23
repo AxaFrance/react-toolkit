@@ -6,6 +6,7 @@ import {
   SelectInput,
   DateInput,
   Button,
+  SliderInput,
 } from '@axa-fr/react-toolkit-all';
 import './New.scss';
 import {
@@ -99,14 +100,21 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               messageType="error"
             />
           </section>
-          <Button
-            classModifier="hasiconRight confirm"
-            id="myForm"
-            onClick={onSubmit}>
-            <span className="af-btn-text">Valider</span>
-            <i className="glyphicon glyphicon-arrowthin-right" />
-          </Button>
+          <section className="af-panel__content">
+            <SliderInput
+              className="af-form__slider"
+              name="testslider"
+              onChange={onChange}
+            />
+          </section>
         </article>
+        <Button
+          classModifier="hasiconRight confirm"
+          id="myForm"
+          onClick={onSubmit}>
+          <span className="af-btn-text">Valider</span>
+          <i className="glyphicon glyphicon-arrowthin-right" />
+        </Button>
       </form>
     </div>
   </>
