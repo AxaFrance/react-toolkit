@@ -136,7 +136,8 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Checkbox',
-  docs:readme,
+  docs: readme,
+  readme,
   stories,
 };
 
