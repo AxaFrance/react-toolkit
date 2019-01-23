@@ -5,7 +5,7 @@ import addToStorie from '@axa-fr/storybook-addons';
 import Tabs from '@axa-fr/react-toolkit-tabs';
 import Badge from '@axa-fr/react-toolkit-badge';
 
-const readme = require('@axa-fr/react-toolkit-table/dist/README.md');
+const readme = require('@axa-fr/react-toolkit-tabs/dist/README.md');
 
 const stories = [];
 
@@ -35,29 +35,33 @@ const titleWithBadgeAndRightIcon = (
 stories.push({
   component: () => (
     <Tabs>
-    <Tabs.Tab title={titleWithLeftIcon} classModifier={text('classModifier', 'has-icon-left')} disabled={boolean('disabled', false)}  >
+      <Tabs.Tab
+        title={titleWithLeftIcon}
+        classModifier={text('classModifier', 'has-icon-left')}
+        disabled={boolean('disabled', false)}>
         Content of my first tab
-    </Tabs.Tab>
-    <Tabs.Tab
-      title={titleWithRightIcon}
-      classModifier="has-icon-right"
-      disabled>
-      Content of my second tab
-    </Tabs.Tab>
-    <Tabs.Tab title={titleWithBadge}>Content of my third tab </Tabs.Tab>
-    <Tabs.Tab
-      title={titleWithBadgeAndRightIcon}
-      classModifier="has-icon-left">
-      Content of my fifth tab
-    </Tabs.Tab>
-  </Tabs>
-),
+      </Tabs.Tab>
+      <Tabs.Tab
+        title={titleWithRightIcon}
+        classModifier="has-icon-right"
+        disabled>
+        Content of my second tab
+      </Tabs.Tab>
+      <Tabs.Tab title={titleWithBadge}>Content of my third tab </Tabs.Tab>
+      <Tabs.Tab
+        title={titleWithBadgeAndRightIcon}
+        classModifier="has-icon-left">
+        Content of my fifth tab
+      </Tabs.Tab>
+    </Tabs>
+  ),
 });
 
 const storyData = {
   name: 'Tabs',
   docs: readme,
-  stories: stories,
+  readme,
+  stories,
 };
 
 addToStorie(storyData, module);

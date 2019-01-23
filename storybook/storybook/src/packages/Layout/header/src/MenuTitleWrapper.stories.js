@@ -13,6 +13,7 @@ class MenuTitleWrapper extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
+
   handleClick() {
     const body = document.body;
     body.classList.toggle('af-menu-open');
@@ -21,6 +22,7 @@ class MenuTitleWrapper extends React.Component {
       isMenuVisible: !isMenuVisible,
     });
   }
+
   render() {
     const { isMenuVisible } = this.state;
     return (
@@ -166,14 +168,12 @@ class MenuTitleWrapper extends React.Component {
 }
 
 stories.push({
-  component: () => (
-    <MenuTitleWrapper />
-  ),
+  component: () => <MenuTitleWrapper />,
 });
 
 const storyData = {
   name: 'Layout.Header.MenuTitleWrapper',
-  stories: stories,
+  stories,
 };
 
 addToStorie(storyData, module);

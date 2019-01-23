@@ -35,5 +35,6 @@ const Header = props => {
 
 Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
+Header.displayName = 'Table.Header';
 
 export default Header;

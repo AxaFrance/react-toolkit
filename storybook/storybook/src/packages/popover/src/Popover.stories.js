@@ -3,7 +3,11 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import addToStorie from '@axa-fr/storybook-addons';
-import Popover, { PopoverBase, PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
+import Popover, {
+  PopoverBase,
+  PopoverPlacements,
+  PopoverModes,
+} from '@axa-fr/react-toolkit-popover';
 
 const readme = require('@axa-fr/react-toolkit-popover/dist/README.md');
 
@@ -72,8 +76,9 @@ stories.push({
 
 const storyData = {
   name: 'Popover',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  readme,
+  stories,
 };
 
 addToStorie(storyData, module);

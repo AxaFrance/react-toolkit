@@ -82,5 +82,6 @@ class Tab extends React.Component {
 
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
+Tab.displayName = 'Tabs.Tab';
 
 export default Tab;

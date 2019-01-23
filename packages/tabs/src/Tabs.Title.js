@@ -42,5 +42,6 @@ const Title = props => {
 
 Title.propTypes = propTypes;
 Title.defaultProps = defaultProps;
+Title.displayName = 'Tabs.Title';
 
 export default Title;

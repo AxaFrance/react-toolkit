@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withReadme, withDocs } from 'storybook-readme';
-import { withInfo } from '@storybook/addon-info';
-import { setDefaults } from '@storybook/addon-info';
+import { withInfo, setDefaults } from '@storybook/addon-info';
 
 // addon-info
 setDefaults({
@@ -13,7 +12,7 @@ const addToStorie = (storiesData, module) => {
   const stories = storiesOf(storiesData.name, module);
   stories.addDecorator(withKnobs);
   storiesData.stories.forEach(story => {
-    let component = story.component;
+    let { component } = story;
     if (story.withInfo !== false) {
       component = withInfo({
         inline: true,
@@ -27,6 +26,8 @@ const addToStorie = (storiesData, module) => {
     }
     if (story.readme) {
       component = withReadme(story.readme, component);
+    } else if (storiesData.readme) {
+      component = withReadme(storiesData.readme, component);
     }
     const desc = story.desc || 'Default';
     stories.add(desc, component);

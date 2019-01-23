@@ -6,11 +6,12 @@ import { action } from '@storybook/addon-actions';
 import addToStorie from '@axa-fr/storybook-addons';
 import { NavBar, NavBarItem } from '@axa-fr/react-toolkit-layout-header';
 
+const readme = require('./NavBar.md');
+
 const stories = [];
 
-
 stories.push({
-  desc:'NavBarBase',
+  desc: 'NavBarBase',
   component: () => (
     <NavBar
       isVisible={boolean('isVisible', true)}
@@ -151,25 +152,25 @@ stories.push({
   desc: 'NavBarBase with null',
   component: () => (
     <NavBar
-    isVisible={boolean('isVisible', true)}
-    onClick={action('onClick Action')}>
-    <NavBarItem
-      actionElt={
-        <LinkItem className="af-nav__link" to="/home">
-          Home
-        </LinkItem>
-      }
-    />
-    {null}
-    <NavBarItem
-      label="Fileupload"
-      actionElt={
-        <a className="af-nav__link" href="/fileupload">
-          Fileupload
-        </a>
-      }
-    />
-     </NavBar>
+      isVisible={boolean('isVisible', true)}
+      onClick={action('onClick Action')}>
+      <NavBarItem
+        actionElt={
+          <LinkItem className="af-nav__link" to="/home">
+            Home
+          </LinkItem>
+        }
+      />
+      {null}
+      <NavBarItem
+        label="Fileupload"
+        actionElt={
+          <a className="af-nav__link" href="/fileupload">
+            Fileupload
+          </a>
+        }
+      />
+    </NavBar>
   ),
 });
 
@@ -312,12 +313,12 @@ stories.push({
   ),
 });
 
-
 class LinkItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     const { to, children, ...otherProps } = this.props;
     return (
@@ -328,9 +329,8 @@ class LinkItem extends React.Component {
   }
 }
 
-
 stories.push({
-  desc:  'NavBar with custom Link item',
+  desc: 'NavBar with custom Link item',
   component: () => (
     <NavBar
       isVisible={boolean('isVisible', true)}
@@ -469,8 +469,9 @@ stories.push({
 
 const storyData = {
   name: 'Layout.Header.NavBar',
-  docs: require('./NavBar.md'),
-  stories: stories,
+  docs: readme,
+  readme,
+  stories,
 };
 
 addToStorie(storyData, module);

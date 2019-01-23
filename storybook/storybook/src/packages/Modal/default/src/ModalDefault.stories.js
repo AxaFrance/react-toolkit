@@ -2,14 +2,18 @@ import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import addToStorie from '@axa-fr/storybook-addons';
-import Modal, { ModalCore, Body, Footer, HeaderBase } from '@axa-fr/react-toolkit-modal-default';
+import Modal, {
+  ModalCore,
+  Body,
+  Footer,
+  HeaderBase,
+} from '@axa-fr/react-toolkit-modal-default';
 
 const readme = require('@axa-fr/react-toolkit-modal-default/dist/README.md');
 
 const stories = [
   {
     desc: 'Custom header',
-    docs: readme,
     component: () => (
       <div>
         <Modal
@@ -46,7 +50,6 @@ const stories = [
   },
   {
     desc: 'Modal core',
-    docs: readme,
     component: () => (
       <div>
         <ModalCore
@@ -85,6 +88,8 @@ const stories = [
 
 const storyData = {
   name: 'Modal.Default',
+  docs: readme,
+  readme,
   stories,
 };
 

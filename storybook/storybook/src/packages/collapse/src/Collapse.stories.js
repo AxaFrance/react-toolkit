@@ -150,7 +150,8 @@ stories.push({
 const storyData = {
   name: 'Collapse',
   docs: readme,
-  stories: stories,
+  readme,
+  stories,
 };
 
 addToStorie(storyData, module);

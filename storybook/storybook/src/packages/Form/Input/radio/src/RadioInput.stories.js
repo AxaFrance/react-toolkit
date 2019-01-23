@@ -123,7 +123,8 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Radio',
-  docs:readme,
+  docs: readme,
+  readme,
   stories,
 };
 

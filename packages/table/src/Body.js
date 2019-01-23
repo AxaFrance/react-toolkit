@@ -26,5 +26,6 @@ const Body = props => {
 
 Body.propTypes = propTypes;
 Body.defaultProps = defaultProps;
+Body.displayName = 'Table.Body';
 
 export default Body;

@@ -5,7 +5,7 @@ import { text, number } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Items } from '@axa-fr/react-toolkit-table';
 
-const readme = require('@axa-fr/react-toolkit-table/dist/README.md');
+const readme = require('@axa-fr/react-toolkit-table/dist/Items/README.md');
 
 const stories = [];
 
@@ -18,13 +18,14 @@ stories.push({
       classModifier={text('classModifier', '')}
       className={text('className', '')}
     />
-),
+  ),
 });
 
 const storyData = {
   name: 'Table.Items',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  readme,
+  stories,
 };
 
 addToStorie(storyData, module);
