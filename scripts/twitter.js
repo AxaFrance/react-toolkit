@@ -15,9 +15,7 @@ const T = new Twit({
   strictSSL: true,
 });
 
-
-
-const json = require('../package.json');
+const json = require('../storybook/storybook/package.json');
 
 const message = `Hey a new version (${json.version}) of the @axa-fr/react-toolkit is available on @github and @npm!`;
 
