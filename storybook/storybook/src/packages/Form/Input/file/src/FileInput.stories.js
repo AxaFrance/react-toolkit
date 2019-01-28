@@ -68,7 +68,6 @@ stories.push({
 const storyData = {
   name: 'Form.Input.File',
   docs: readme,
-  readme,
   stories,
 };
 

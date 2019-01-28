@@ -127,7 +127,6 @@ stories.push({
 const storyData = {
   name: 'Form.Input.Select',
   docs: readme,
-  readme,
   stories,
 };
 

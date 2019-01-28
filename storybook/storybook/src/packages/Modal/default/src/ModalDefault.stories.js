@@ -89,7 +89,6 @@ const stories = [
 const storyData = {
   name: 'Modal.Default',
   docs: readme,
-  readme,
   stories,
 };
 

@@ -28,7 +28,6 @@ stories.push({
 const storyData = {
   name: 'Layout.Header.Infos',
   docs: readme,
-  readme,
   stories,
 };
 

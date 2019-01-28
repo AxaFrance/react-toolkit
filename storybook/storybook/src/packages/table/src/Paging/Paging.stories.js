@@ -25,7 +25,6 @@ stories.push({
 const storyData = {
   name: 'Table.Paging',
   docs: readme,
-  readme,
   stories,
 };
 

@@ -25,7 +25,6 @@ stories.push({
 const storyData = {
   name: 'Form.Summary',
   docs: readme,
-  readme,
   stories,
 };
 

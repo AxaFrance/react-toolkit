@@ -24,7 +24,6 @@ const KNOBS_LABELS = {
 const storyData = {
   name: 'Badge',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Simple badge',

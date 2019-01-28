@@ -107,7 +107,6 @@ stories.push({
 const storyData = {
   name: 'Form.Input.Switch',
   docs: readme,
-  readme,
   stories,
 };
 

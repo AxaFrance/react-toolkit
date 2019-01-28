@@ -10,7 +10,6 @@ const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
 const storyData = {
   name: 'Alert.AlertCore',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Default',

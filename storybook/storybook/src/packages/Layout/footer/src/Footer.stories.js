@@ -9,7 +9,6 @@ const readme = require('@axa-fr/react-toolkit-layout-footer/dist/README.md');
 const storyData = {
   name: 'Layout.Footer',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Default',

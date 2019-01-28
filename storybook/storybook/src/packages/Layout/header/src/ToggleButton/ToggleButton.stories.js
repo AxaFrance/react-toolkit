@@ -29,7 +29,6 @@ stories.push({
 const storyData = {
   name: 'Layout.Header.ToggleButton',
   docs: readme,
-  readme,
   stories,
 };
 

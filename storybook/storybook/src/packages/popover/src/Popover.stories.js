@@ -77,7 +77,6 @@ stories.push({
 const storyData = {
   name: 'Popover',
   docs: readme,
-  readme,
   stories,
 };
 

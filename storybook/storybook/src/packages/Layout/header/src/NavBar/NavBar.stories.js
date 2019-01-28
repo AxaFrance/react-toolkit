@@ -470,7 +470,6 @@ stories.push({
 const storyData = {
   name: 'Layout.Header.NavBar',
   docs: readme,
-  readme,
   stories,
 };
 

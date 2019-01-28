@@ -112,7 +112,6 @@ stories.push({
 const storyData = {
   name: 'Form.Input.Pass',
   docs: readme,
-  readme,
   stories,
 };
 

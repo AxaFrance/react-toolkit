@@ -131,8 +131,7 @@ stories.push({
 
 const storyData = {
   name: 'Layout.FooterClient',
-  desc: readme,
-  readme,
+  docs: readme,
   stories,
 };
 

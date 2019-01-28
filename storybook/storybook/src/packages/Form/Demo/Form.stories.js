@@ -5,7 +5,7 @@ import FormContainer from './Form.container';
 
 const storyData = {
   name: 'Form.Demo Statefull',
-  readme: require('./README.md'),
+  docs: require('./README.md'),
   stories: [
     {
       desc: 'Form with recompose',

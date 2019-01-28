@@ -63,7 +63,6 @@ stories.push({
 const storyData = {
   name: 'Layout.Header.Title',
   docs: readme,
-  readme,
   stories,
 };
 

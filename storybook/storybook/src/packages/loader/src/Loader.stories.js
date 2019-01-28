@@ -26,7 +26,6 @@ stories.push({
 const storyData = {
   name: 'Loader',
   docs: readme,
-  readme,
   stories,
 };
 

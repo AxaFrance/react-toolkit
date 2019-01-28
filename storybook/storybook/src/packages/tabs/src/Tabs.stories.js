@@ -60,7 +60,6 @@ stories.push({
 const storyData = {
   name: 'Tabs',
   docs: readme,
-  readme,
   stories,
 };
 

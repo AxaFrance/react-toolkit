@@ -13,16 +13,16 @@ const addToStorie = (storiesData, module) => {
   stories.addDecorator(withKnobs);
   storiesData.stories.forEach(story => {
     let { component } = story;
+    if (story.docs) {
+      component = withDocs(story.docs, component);
+    } else if (storiesData.docs) {
+      component = withDocs(storiesData.docs, component);
+    }
     if (story.withInfo !== false) {
       component = withInfo({
         inline: true,
         text: `<h1>Code information</h1>`,
       })(component);
-    }
-    if (story.docs) {
-      component = withDocs(story.docs, component);
-    } else if (storiesData.docs) {
-      component = withDocs(storiesData.docs, component);
     }
     if (story.readme) {
       component = withReadme(story.readme, component);

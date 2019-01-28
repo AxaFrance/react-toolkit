@@ -78,7 +78,6 @@ stories.push({
 const storyData = {
   name: 'Table.Table',
   docs: readme,
-  readme,
   stories,
 };
 

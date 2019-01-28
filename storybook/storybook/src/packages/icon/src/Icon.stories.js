@@ -9,7 +9,6 @@ const readme = require('@axa-fr/react-toolkit-icon/dist/README.md');
 const storyData = {
   name: 'Icon',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Icon',

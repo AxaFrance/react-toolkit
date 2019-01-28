@@ -110,7 +110,6 @@ stories.push({
 const storyData = {
   name: 'Form.Steps',
   docs: readme,
-  readme,
   stories,
 };
 

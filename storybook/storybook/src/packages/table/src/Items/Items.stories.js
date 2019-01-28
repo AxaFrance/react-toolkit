@@ -24,7 +24,6 @@ stories.push({
 const storyData = {
   name: 'Table.Items',
   docs: readme,
-  readme,
   stories,
 };
 

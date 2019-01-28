@@ -62,7 +62,6 @@ const Component = () => (
 const storyData = {
   name: 'Button',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Simple button',

@@ -16,7 +16,6 @@ const readme = require('@axa-fr/react-toolkit-action/dist/README.md');
 const storyData = {
   name: 'Action',
   docs: readme,
-  readme,
   stories: [
     {
       desc: 'Simple action link',

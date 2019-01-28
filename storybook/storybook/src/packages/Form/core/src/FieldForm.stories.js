@@ -42,7 +42,6 @@ stories.push({
 const storyData = {
   name: 'Form.FieldForm',
   docs: readme,
-  readme,
   stories,
 };
 

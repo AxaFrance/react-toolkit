@@ -37,7 +37,6 @@ stories.push({
 const storyData = {
   name: 'Modal.Boolean',
   docs: readme,
-  readme,
   stories,
 };
 

@@ -150,7 +150,6 @@ stories.push({
 const storyData = {
   name: 'Collapse',
   docs: readme,
-  readme,
   stories,
 };
 

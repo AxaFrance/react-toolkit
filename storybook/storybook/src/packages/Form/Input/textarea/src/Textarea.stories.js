@@ -95,7 +95,6 @@ stories.push({
 const storyData = {
   name: 'Form.Input.Textarea',
   docs: readme,
-  readme,
   stories,
 };
 
