@@ -78,7 +78,7 @@ const options = [
 
 stories.push({
   desc: 'SwitchInput',
-  docs: readme,
+
   component: () => (
     <SwitchInput
       label={text('label', 'Select a choice')}
@@ -115,7 +115,8 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Switch',
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

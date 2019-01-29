@@ -4,7 +4,13 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
 import { ChoiceInput, Choice } from '@axa-fr/react-toolkit-form-input-choice';
-import { MessageTypes, FieldForm, HelpMessage, FieldError, InputConstants } from '@axa-fr/react-toolkit-form-core';
+import {
+  MessageTypes,
+  FieldForm,
+  HelpMessage,
+  FieldError,
+  InputConstants,
+} from '@axa-fr/react-toolkit-form-core';
 
 const readme = require('@axa-fr/react-toolkit-form-input-choice/dist/README.md');
 
@@ -13,7 +19,7 @@ const stories = [];
 stories.push({
   desc: 'ChoiceInput',
   component: () => (
-      <form className="af-form" name="myform">
+    <form className="af-form" name="myform">
       <ChoiceInput
         label={text('label', 'Place type *')}
         name={text('name', 'placeType')}
@@ -77,8 +83,8 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Choice',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

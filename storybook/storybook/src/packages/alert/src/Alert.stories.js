@@ -9,10 +9,11 @@ const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
 
 const storyData = {
   name: 'Alert.Alert',
+  docs: readme,
   stories: [
     {
       desc: 'Default',
-      docs: readme,
+
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}
@@ -26,7 +27,6 @@ const storyData = {
     },
     {
       desc: 'With close button',
-      docs: readme,
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}
@@ -41,7 +41,6 @@ const storyData = {
     },
     {
       desc: 'With child and custom icon',
-      docs: readme,
       component: () => (
         <Alert
           classModifier={text('classModifier', 'danger')}

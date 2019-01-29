@@ -19,9 +19,9 @@ const storyData = {
           className={text('className', '')}
           basePath={text('basePath', '/')}
         />
-      )
-    }
-  ]
+      ),
+    },
+  ],
 };
 
 addToStorie(storyData, module);

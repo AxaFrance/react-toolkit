@@ -19,7 +19,6 @@ const stories = [];
 
 stories.push({
   desc: 'DateInput',
-  docs: readme,
   component: () => (
     <form className="af-form" name="myform">
       <DateInput
@@ -60,7 +59,6 @@ stories.push({
 
 stories.push({
   desc: 'CustomDate',
-  docs: readme,
   component: () => (
     <form className="af-form" name="myform">
       <FieldForm
@@ -97,6 +95,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Date',
+  docs: readme,
   stories,
 };
 

@@ -27,7 +27,7 @@ const modifiers = [
 ];
 
 stories.push({
-  desc:'Table',
+  desc: 'Table',
   component: () => (
     <Table
       classModifier={select('classModifier', modifiers, univers.sante)}
@@ -77,8 +77,8 @@ stories.push({
 
 const storyData = {
   name: 'Table.Table',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

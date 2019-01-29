@@ -32,5 +32,6 @@ const Tr = props => {
 
 Tr.propTypes = propTypes;
 Tr.defaultProps = defaultProps;
+Tr.displayName = 'Table.Tr';
 
 export default Tr;

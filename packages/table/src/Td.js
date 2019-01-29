@@ -56,5 +56,6 @@ const Td = props => {
 
 Td.propTypes = propTypes;
 Td.defaultProps = defaultProps;
+Td.displayName = 'Table.Td';
 
 export default Td;
