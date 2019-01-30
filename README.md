@@ -1,6 +1,6 @@
 # @axa-fr/react-toolkit
 
-[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)
+[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=AxaGuilDEv_react-toolkit) [![Reliability](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=reliability_rating) [![Security](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=security_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=security_rating) [![Code Corevage](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=coverage)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=Coverage)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
@@ -10,6 +10,8 @@
 - [Concept](#concept)
 - [How It Works](#how-it-works)
 - [Contribute](#contribute)
+- [Roadmap](#roadmap)
+- [Demo](#demo)
 
 ## About
 
@@ -52,6 +54,7 @@ const MyAlertComponent => () => (
 
 ## Packages
 
+- [`@axa-fr/react-toolkit-all`](./packages/all/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-all.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-all)
 - [`@axa-fr/react-toolkit-form-input-text`](./packages/Form/Input/text/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text)
 - [`@axa-fr/react-toolkit-form-input-date`](./packages/Form/Input/date/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date)
 - [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice)
@@ -121,3 +124,11 @@ Each component should be autonomous (html + css + javascript) and extensible.
 - Update general documentation
 - Continu to migrate to TypeScript component by component
 - Continu to fix and clean code. Make it simpler, faster, lighter
+
+## Demo
+
+- [Online](https://axaguildev.github.io/react-toolkit/latest/demo/index.html)
+- [Guideline](./examples/README.md)
+- [Source code](./examples/demo)
+
+![alt text](./examples/demo.png 'Demo sample')
