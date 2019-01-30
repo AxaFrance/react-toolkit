@@ -105,7 +105,7 @@ Let's see some examples:
 React is thought to help developper to develop in **Functionnal** way !
 
 - Prefer to code using [**Pure Function**](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976). Pure function are easy to code and test.
-- Do not mock in you [Unit Test](https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a). Functional code do not require mocks.
+- Do not use mock in your [Unit Test](https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a). Functional code do not require mocks.
 - Prefer code pure function in TDD
 - React component should be stateless
 
