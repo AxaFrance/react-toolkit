@@ -20,7 +20,7 @@
 
 # Quick start
 
-- [How to run the demo](./CONTRIBUTING.md)
+- [How to run the demo](../CONTRIBUTING.md)
 
 # Philosophy
 
@@ -55,7 +55,7 @@ This document describe only "best practice" because **Front stacks** evolve very
 ### Prefer the use **React Context api** over **Redux**.
 
 - Redux was the only way before Context api to share high level state data.
-- Redux is often missused because not very understod by developpers [**You migth not need redux**](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+- [**You migth not need redux**](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) : Redux is often missused because not very understod by developpers
 
 **Shared context** are rare and introduce complexity. You need to have in mind that local context is easier and simple to develop and maintain and to use. Local state is in reality the major case of the needs. Do not think optimization, think simple. Simple code is simpler to optimize!
 
