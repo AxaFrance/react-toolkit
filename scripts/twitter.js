@@ -1,6 +1,5 @@
 const Twit = require('twit'); // eslint-disable-line
 
-
 /* should be ran with "node twitter consumer_key consumer_secret access_token access_token_secret"
    in this order
 */
@@ -17,14 +16,16 @@ const T = new Twit({
 
 const json = require('../storybook/storybook/package.json');
 
-const message = `Hey a new version (${json.version}) of the @axa-fr/react-toolkit is available on @github and @npm! 
+const message = `Hey a new version (${
+  json.version
+}) of the @axa-fr/react-toolkit is available on @github and @npm! 
+check out the new changelog https://github.com/AxaGuilDEv/react-toolkit/blob/master/CHANGELOG.md
 https://axaguildev.github.io`;
 
-T.post('statuses/update', { status: message }, (err) => {
+T.post('statuses/update', { status: message }, err => {
   if (!err) {
     console.log('Greate job'); // eslint-disable-line
-  }
-  else{
+  } else {
     console.error(err);
   }
 });
