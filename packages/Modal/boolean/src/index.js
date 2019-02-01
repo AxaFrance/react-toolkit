@@ -1,3 +1,3 @@
-import BooleanModal from './BooleanModal';
+import BooleanModal from './ModalBoolean';
 
 export default BooleanModal;
