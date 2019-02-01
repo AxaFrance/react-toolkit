@@ -1,0 +1,1 @@
+° 2jsXhr!packages/table/src/Pager/Pager.js

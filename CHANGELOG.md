@@ -1,6 +1,37 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.0.5](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.4...v1.0.5)
+> 1 February 2019
+- doc(modal): adding import sass and css in readme.md [`#58`](https://github.com/AxaGuilDEv/react-toolkit/pull/58) by Mathieu De Baerdemaeker
+- doc(help) add readme as doc in help component #52 [`#59`](https://github.com/AxaGuilDEv/react-toolkit/pull/59) by barry-thierno
+- fix(twit) update twit [`#61`](https://github.com/AxaGuilDEv/react-toolkit/pull/61) by Guillaume Chervet
+- docs: Add import for ModalBoolean [`#60`](https://github.com/AxaGuilDEv/react-toolkit/pull/60) by Thibault Ballier
+- docs(demo) re-add guideline + image [`#49`](https://github.com/AxaGuilDEv/react-toolkit/pull/49) by Guillaume Chervet
+- chore(release): publish v1.0.5 [ci skip] [`6bd09e8`](https://github.com/AxaGuilDEv/react-toolkit/commit/6bd09e8ebfd8900393bd54be7fffc5d30334019c) by Build-CI 
+
+#### [v1.0.4](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.3...v1.0.4)
+> 30 January 2019
+- Fix/readme [`#45`](https://github.com/AxaGuilDEv/react-toolkit/pull/45) by Samuel Gomez
+- fix(twitter) update message [`#48`](https://github.com/AxaGuilDEv/react-toolkit/pull/48) by Guillaume Chervet
+- fix(twitter) fix version published [`#47`](https://github.com/AxaGuilDEv/react-toolkit/pull/47) by Guillaume Chervet
+- Fix/import af components scss [`#43`](https://github.com/AxaGuilDEv/react-toolkit/pull/43) by Samuel Gomez
+- chore(release): publish v1.0.4 [ci skip] [`1dd272b`](https://github.com/AxaGuilDEv/react-toolkit/commit/1dd272b7dafd8dd55105077a80581338ca311754) by Build-CI 
+
+#### [v1.0.3](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.2...v1.0.3)
+> 21 January 2019
+- fix(storybook): display name for Component Name [`#41`](https://github.com/AxaGuilDEv/react-toolkit/pull/41) by andriamiravaka-rado
+- chore(latest) manage lastest docs + fix readme management [`#36`](https://github.com/AxaGuilDEv/react-toolkit/pull/36) by Guillaume Chervet
+- page not found [`#32`](https://github.com/AxaGuilDEv/react-toolkit/pull/32) by Samuel Gomez
+- fix(npm) $npm-bin-on-windows [`#33`](https://github.com/AxaGuilDEv/react-toolkit/pull/33) by Samuel Gomez
+- Create PULL_REQUEST_TEMPLATE.md [`#31`](https://github.com/AxaGuilDEv/react-toolkit/pull/31) by Pavlo Liahushyn
+- feat(add) twitter bot [`#27`](https://github.com/AxaGuilDEv/react-toolkit/pull/27) by oussamahamdaoui
+- chore(gulp) prefer use local bin gulp v3.9.1 [`#26`](https://github.com/AxaGuilDEv/react-toolkit/pull/26) by Samuel Gomez
+- feat(demo) better code + add env management + publish demo [`#25`](https://github.com/AxaGuilDEv/react-toolkit/pull/25) by Guillaume Chervet
+- chore(azure-pipeline) add missing script call for publishing doc [`#24`](https://github.com/AxaGuilDEv/react-toolkit/pull/24) by Guillaume Chervet
+- chore: prefer use local bin gulp v3.9.1 [`ce1e2ab`](https://github.com/AxaGuilDEv/react-toolkit/commit/ce1e2abc3b4d56243365bfd01494c176c1f6931d) by Samuel Gomez 
+- chore(release): publish v1.0.3 [ci skip] [`21ae256`](https://github.com/AxaGuilDEv/react-toolkit/commit/21ae2569229c2f332d262d6491d384876258baba) by Build-CI 
+
 #### [v1.0.2](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.1...v1.0.2)
 > 7 January 2019
 - fix(azure-pipeline) typo error [`#23`](https://github.com/AxaGuilDEv/react-toolkit/pull/23) by Guillaume Chervet
@@ -22,21 +53,13 @@ All notable changes to this project will be documented in this file.
 - fix: update package-lock and delete page contrib on style demo [`#4`](https://github.com/AxaGuilDEv/react-toolkit/pull/4) by Samuel Gomez
 - doc: fix COC link from README [`#3`](https://github.com/AxaGuilDEv/react-toolkit/pull/3) by Samuel Gomez
 - doc(readme) add quality badge [`#2`](https://github.com/AxaGuilDEv/react-toolkit/pull/2) by Cyril Lakech
+- first commit [`041a3de`](https://github.com/AxaGuilDEv/react-toolkit/commit/041a3def242276adb8077d3f53a325ea422c33be) by Guillaume Chervet 
 - chore(release): publish v1.0.1 [ci skip] [`e5d2d46`](https://github.com/AxaGuilDEv/react-toolkit/commit/e5d2d4655427ce52ab211d0006202d7c4117ca04) by Travis CI User 
-- doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
-- doc(readme-npm-badge) add npm badge [`c464b44`](https://github.com/AxaGuilDEv/react-toolkit/commit/c464b44661c9eabac18cadcd0d482e6ebef6f195) by Guillaume Chervet 
 - chore(release): publish v1.0.0 [ci skip] [`b007a14`](https://github.com/AxaGuilDEv/react-toolkit/commit/b007a14ebdc8395fee8cfde893ea432c4ada9c67) by Travis CI User 
 - chore(release): publish v0.0.2-alpha.0 [ci skip] [`00d6d80`](https://github.com/AxaGuilDEv/react-toolkit/commit/00d6d80d9609c4c4855f00a9dd89dd2b9125eb06) by Travis CI User 
+- doc(readme-npm-badge) add npm badge [`c464b44`](https://github.com/AxaGuilDEv/react-toolkit/commit/c464b44661c9eabac18cadcd0d482e6ebef6f195) by Guillaume Chervet 
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
-- first commit [`041a3de`](https://github.com/AxaGuilDEv/react-toolkit/commit/041a3def242276adb8077d3f53a325ea422c33be) by Guillaume Chervet 
+- doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.2...v0.0.0)
-> 17 January 2019
-- Create PULL_REQUEST_TEMPLATE.md [`#31`](https://github.com/AxaGuilDEv/react-toolkit/pull/31) by Pavlo Liahushyn
-- feat(add) twitter bot [`#27`](https://github.com/AxaGuilDEv/react-toolkit/pull/27) by oussamahamdaoui
-- chore(gulp) prefer use local bin gulp v3.9.1 [`#26`](https://github.com/AxaGuilDEv/react-toolkit/pull/26) by Samuel Gomez
-- feat(demo) better code + add env management + publish demo [`#25`](https://github.com/AxaGuilDEv/react-toolkit/pull/25) by Guillaume Chervet
-- chore(azure-pipeline) add missing script call for publishing doc [`#24`](https://github.com/AxaGuilDEv/react-toolkit/pull/24) by Guillaume Chervet
-- chore: prefer use local bin gulp v3.9.1 [`ce1e2ab`](https://github.com/AxaGuilDEv/react-toolkit/commit/ce1e2abc3b4d56243365bfd01494c176c1f6931d) by Samuel Gomez 
-- feat(docs) add latest management [`ea60c55`](https://github.com/AxaGuilDEv/react-toolkit/commit/ea60c55e0d3d64c58e868891e83370f6b34e3a72) by Guillaume Chervet 
-- missing file [`c97f6d8`](https://github.com/AxaGuilDEv/react-toolkit/commit/c97f6d8c116cee3d56092e6f89dcd45231b09ad9) by Guillaume Chervet 
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.5...v0.0.0)
+> 1 February 2019
