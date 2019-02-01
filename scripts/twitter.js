@@ -16,9 +16,7 @@ const T = new Twit({
 
 const json = require('../storybook/storybook/package.json');
 
-const message = `Hey a new version (${
-  json.version
-}) of the @axa-fr/react-toolkit is available on @github and @npm! 
+const message = `Hey a new version (${json.version}) of the @axa-fr/react-toolkit is available on @github and @npm! 
 check out the new changelog https://github.com/AxaGuilDEv/react-toolkit/blob/master/CHANGELOG.md
 https://axaguildev.github.io`;
 
