@@ -8,11 +8,21 @@ npm i "@axa-fr/react-toolkit-modal-default"
 
 For more information about style component, you can see the [Modal Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/modal)
 
+### Import
+
+```javascript
+import '@axa-fr/react-toolkit-modal/dist/modal.scss
+/* or */
+import '@axa-fr/react-toolkit-modal/dist/af-modal.css
+```
+
 ### Exemple
 
 ```javascript
 import React from 'react';
 import Modal from '@axa-fr/react-toolkit-modal';
+
+import '@axa-fr/react-toolkit-modal/dist/modal.scss
 
 const MyModal => () => (
  <Modal
@@ -46,4 +56,3 @@ const MyModal => () => (
 </Modal>
 )
 ```
-
