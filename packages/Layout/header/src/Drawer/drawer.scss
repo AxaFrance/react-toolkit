@@ -8,7 +8,7 @@
   margin: 0;
   transform: translateX(100%);
   z-index: 1;
-  @include transition($drawer-transition);
+  transition: $drawer-transition;
 
   &.show {
     transform: translateX(0);

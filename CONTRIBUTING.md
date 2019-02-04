@@ -5,8 +5,8 @@ First, ensure you have the [latest `npm`](https://docs.npmjs.com/).
 To get started with the repository:
 
 ```sh
-git clone https://github.com/AxaGuilDEv/af-toolkit.git
-cd af-toolkit
+git clone https://github.com/AxaGuilDEv/react-toolkit.git
+cd react-toolkit
 npm install
 npm run bootstrap
 ```

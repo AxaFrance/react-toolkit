@@ -9,10 +9,10 @@ const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
 
 const storyData = {
   name: 'Alert.AlertWithType',
+  docs: readme,
   stories: [
     {
       desc: 'Default',
-      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(
@@ -30,7 +30,6 @@ const storyData = {
     },
     {
       desc: 'With close button',
-      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(
@@ -49,7 +48,6 @@ const storyData = {
     },
     {
       desc: 'With child and custom icon',
-      docs: readme,
       component: () => (
         <AlertWithType
           type={selectV2(

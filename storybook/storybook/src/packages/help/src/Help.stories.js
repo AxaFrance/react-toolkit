@@ -30,7 +30,7 @@ stories.push({
 const storyData = {
   name: 'Help',
   stories,
-  docs:readme,
+  docs: readme,
 };
 
 addToStorie(storyData, module);

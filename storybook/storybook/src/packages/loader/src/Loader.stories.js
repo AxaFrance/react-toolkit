@@ -26,7 +26,7 @@ stories.push({
 const storyData = {
   name: 'Loader',
   docs: readme,
-  stories: stories,
+  stories,
 };
 
 addToStorie(storyData, module);

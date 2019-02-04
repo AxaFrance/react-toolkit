@@ -4,3 +4,7 @@
 #root > div > div {
   text-align: left !important;
 }
+
+.storybook-readme-story > div {
+  text-align: left !important;
+}

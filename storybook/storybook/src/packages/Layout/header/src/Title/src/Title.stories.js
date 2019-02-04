@@ -6,6 +6,8 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { Title } from '@axa-fr/react-toolkit-layout-header';
 import Action from '@axa-fr/react-toolkit-action';
 
+const readme = require('@axa-fr/react-toolkit-layout-header/dist/README.md');
+
 const stories = [];
 
 stories.push({
@@ -60,6 +62,7 @@ stories.push({
 
 const storyData = {
   name: 'Layout.Header.Title',
+  docs: readme,
   stories,
 };
 

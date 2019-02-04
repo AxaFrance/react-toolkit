@@ -2,6 +2,8 @@ import React from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Infos } from '@axa-fr/react-toolkit-layout-header';
 
+const readme = require('@axa-fr/react-toolkit-layout-header/dist/README.md');
+
 const stories = [];
 
 const infos = [
@@ -20,14 +22,13 @@ const infos = [
 ];
 
 stories.push({
-  component: () => (
-    <Infos infos={infos} />
-  ),
+  component: () => <Infos infos={infos} />,
 });
 
 const storyData = {
   name: 'Layout.Header.Infos',
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

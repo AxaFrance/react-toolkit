@@ -3,7 +3,10 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean, select, number } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
-import { Textarea, TextareaInput } from '@axa-fr/react-toolkit-form-input-textarea';
+import {
+  Textarea,
+  TextareaInput,
+} from '@axa-fr/react-toolkit-form-input-textarea';
 import {
   MessageTypes,
   FieldForm,
