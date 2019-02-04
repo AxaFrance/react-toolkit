@@ -8,7 +8,7 @@
 - [Getting Started](#getting-started)
 - [Packages](#packages)
 - [Concept](#concept)
-- [How Does It Work](#how-it-works)
+- [How Does It Work](#how-does-it-work)
 - [Contribute](#contribute)
 - [Roadmap](#roadmap)
 - [Demo](#demo)
@@ -17,7 +17,7 @@
 
 A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each components are autonomous and extensible. Pick and use only what you need!
 
-**How can you do CSS isolation?**
+**How *React-toolkit* does CSS isolation?**
 
 Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need of the intricate technologies, just pragatism.
 
