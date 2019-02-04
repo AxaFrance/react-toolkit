@@ -8,7 +8,7 @@
 - [Getting Started](#getting-started)
 - [Packages](#packages)
 - [Concept](#concept)
-- [How It Works](#how-it-works)
+- [How Does It Work](#how-it-works)
 - [Contribute](#contribute)
 
 ## About
@@ -97,7 +97,7 @@ const MyAlertComponent => () => (
 
 Each component should be autonomous (HTML + CSS + JS) and extensible.
 
-## How Does It Works
+## How Does It Work
 
 - HTML/CSS :
 
