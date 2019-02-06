@@ -10,7 +10,7 @@ import Routes from '../Routes';
 const App = () => {
   return (
     <EnvironmentProvider>
-      <Router>
+      <Router basename={'/react-toolkit/latest/demo/'}>
         <Fragment>
           <Header />
           <Routes />
