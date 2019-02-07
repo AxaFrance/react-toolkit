@@ -1,1 +1,0 @@
-l 2tsX6hr)packages/alert/src/AlertWithType.spec.tsx
