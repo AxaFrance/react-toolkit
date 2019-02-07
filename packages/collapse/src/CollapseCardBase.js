@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { ClassManager, Constants, InputManager } from '@axa-fr/react-toolkit-core';
+import {
+  ClassManager,
+  Constants,
+  InputManager,
+} from '@axa-fr/react-toolkit-core';
 import Body from './Body';
 import Header from './Header';
 
@@ -26,10 +30,9 @@ const defaultProps = {
 };
 
 const getIds = id => {
-  const headerId = InputManager.getInputId(id);
+  const newId = InputManager.getInputId(id);
   return {
-    headerId,
-    bodyId: InputManager.getInputId(`${headerId}body`),
+    id: newId,
   };
 };
 
@@ -60,7 +63,8 @@ class CollapseCardBase extends Component {
 
   renderChild(child) {
     const { collapse, onToggle, classModifier, index } = this.props;
-    const { headerId, bodyId } = this.state;
+    const { id: headerId } = this.state;
+    const bodyId = `${headerId}body`;
     if (child) {
       switch (child.type) {
         case Header:
