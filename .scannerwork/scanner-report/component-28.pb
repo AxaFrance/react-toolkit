@@ -1,1 +1,0 @@
- 2jsXnhrpackages/all/src/index.js

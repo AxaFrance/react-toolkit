@@ -1,1 +1,0 @@
-p 2tsXhrpackages/alert/src/icons.ts
