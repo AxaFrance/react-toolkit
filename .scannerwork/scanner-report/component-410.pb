@@ -1,1 +1,0 @@
-š 2tsXhr.packages/Layout/footer/src/FooterCore.spec.tsx

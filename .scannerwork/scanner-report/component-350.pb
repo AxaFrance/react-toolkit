@@ -1,1 +1,0 @@
-Ş 2tsXhrpackages/badge/src/index.ts
