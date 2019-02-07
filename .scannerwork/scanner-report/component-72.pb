@@ -1,1 +1,0 @@
-H 2jsXWhr*packages/Modal/boolean/src/ModalBoolean.js

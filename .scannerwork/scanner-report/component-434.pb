@@ -1,1 +1,0 @@
-² 2jsXhrpackages/table/src/index.js

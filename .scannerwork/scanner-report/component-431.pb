@@ -1,1 +1,0 @@
-¯ 2jsXhr!packages/table/src/Pager/Modes.js

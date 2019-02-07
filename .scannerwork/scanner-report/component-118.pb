@@ -1,1 +1,0 @@
-v 2jsXhrpackages/panel/src/Panel.js
