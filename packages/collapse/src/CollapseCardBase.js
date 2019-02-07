@@ -30,9 +30,9 @@ const defaultProps = {
 };
 
 const getIds = id => {
-  const id = InputManager.getInputId(id);
+  const newId = InputManager.getInputId(id);
   return {
-    id,
+    id: newId,
   };
 };
 
