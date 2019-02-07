@@ -1,1 +1,0 @@
-U 2jsXhrpackages/tabs/src/index.js

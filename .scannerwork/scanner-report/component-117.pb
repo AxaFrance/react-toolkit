@@ -1,1 +1,0 @@
-u 2jsXhrpackages/panel/src/index.js
