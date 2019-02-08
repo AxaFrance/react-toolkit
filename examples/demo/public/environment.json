@@ -1,3 +1,4 @@
 {
-  "apiUrl": "https://api.mlab.com/api/1/databases/toolkitaxa/collections/{path}"
+  "apiUrl": "https://api.mlab.com/api/1/databases/toolkitaxa/collections/{path}",
+  "baseUrl" : "/react-toolkit/latest/demo/"
 }

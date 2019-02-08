@@ -82,5 +82,6 @@
     "nodemon": "^1.18.9",
     "stylelint-config-standard": "^18.2.0"
   },
+  "homepage": ".",
   "proxy": "http://localhost:5000"
 }

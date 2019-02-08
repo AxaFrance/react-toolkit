@@ -25,6 +25,7 @@ Components are simple to use (just drag and drog it), simple to customize (by us
 
 You can easily build a new app from scratch or integrate some component into existing application.
 
+
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
 
@@ -46,7 +47,7 @@ import '@axa-fr/react-toolkit-alert/dist/alert.scss';
 const MyAlertComponent => () => (
 <Alert
     icon="ok"
-    title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
+    title="This is an alert"
   />
 )
 ```
@@ -109,6 +110,7 @@ Each component should be autonomous (HTML + CSS + JS) and extensible.
   - [HTML/CSS Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
+
   - Components are stateless by default
   - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
