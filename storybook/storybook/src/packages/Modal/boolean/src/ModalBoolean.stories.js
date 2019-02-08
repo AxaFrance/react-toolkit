@@ -36,9 +36,8 @@ stories.push({
 
 const storyData = {
   name: 'Modal.Boolean',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  stories,
 };
-
 
 addToStorie(storyData, module);

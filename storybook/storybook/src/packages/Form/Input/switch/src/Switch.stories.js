@@ -68,7 +68,7 @@ const options = [
   },
   {
     label: LABELS.SwitchInput.choice.item4,
-    value: LABELS.SwitchInput.choice.value4
+    value: LABELS.SwitchInput.choice.value4,
   },
 ];
 
@@ -107,7 +107,7 @@ stories.push({
 const storyData = {
   name: 'Form.Input.Switch',
   docs: readme,
-  stories: stories,
+  stories,
 };
 
 addToStorie(storyData, module);

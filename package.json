@@ -8,7 +8,7 @@
   },
   "scripts": {
     "publish": "lerna publish",
-    "bootstrap": "$(npm bin)/gulp clean && lerna bootstrap && gulp prepare",
+    "bootstrap": "gulp clean && lerna bootstrap && gulp prepare",
     "storybook": "npm -C ./storybook/storybook run storybook",
     "storybook:build": "npm -C ./storybook/storybook run storybook:build",
     "start": "npm -C ./examples/demo run start",
@@ -21,7 +21,8 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "dev": "concurrently --kill-others \"npm run dev:ts\" \"npm run dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
-    "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js"
+    "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
+    "changelog": "auto-changelog --unreleased --commit-limit false --template changelog-template.hbs -p  --output ./CHANGELOG.md"
   },
   "husky": {
     "hooks": {
@@ -30,16 +31,16 @@
     }
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.1.4",
-    "@storybook/addon-info": "^4.1.4",
-    "@storybook/addon-jest": "^4.1.4",
-    "@storybook/addon-knobs": "^4.1.4",
-    "@storybook/addon-links": "^4.1.4",
-    "@storybook/addon-notes": "^4.1.4",
-    "@storybook/addon-options": "^4.1.4",
-    "@storybook/addon-storyshots": "^4.1.4",
-    "@storybook/addons": "^4.1.4",
-    "@storybook/react": "^4.1.4",
+    "@storybook/addon-actions": "^4.1.9",
+    "@storybook/addon-info": "^4.1.9",
+    "@storybook/addon-jest": "^4.1.9",
+    "@storybook/addon-knobs": "^4.1.9",
+    "@storybook/addon-links": "^4.1.9",
+    "@storybook/addon-notes": "^4.1.9",
+    "@storybook/addon-options": "^4.1.9",
+    "@storybook/addon-storyshots": "^4.1.9",
+    "@storybook/addons": "^4.1.9",
+    "@storybook/react": "^4.1.9",
     "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.11",
@@ -162,6 +163,7 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-plugin-prettier": "^2.0.1",
+    "twit": "^2.2.11",
     "typescript": "^3.2.2",
     "util-deprecate": "^1.0.2",
     "watch": "1.0.2",

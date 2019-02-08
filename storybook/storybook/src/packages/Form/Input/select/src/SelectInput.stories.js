@@ -3,8 +3,19 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
-import { SelectInput, SelectModes, Select, SelectBase } from '@axa-fr/react-toolkit-form-input-select';
-import { MessageTypes, FieldForm, HelpMessage, FieldError, InputConstants } from '@axa-fr/react-toolkit-form-core';
+import {
+  SelectInput,
+  SelectModes,
+  Select,
+  SelectBase,
+} from '@axa-fr/react-toolkit-form-input-select';
+import {
+  MessageTypes,
+  FieldForm,
+  HelpMessage,
+  FieldError,
+  InputConstants,
+} from '@axa-fr/react-toolkit-form-core';
 
 const readme = require('@axa-fr/react-toolkit-form-input-select/dist/README.md');
 
@@ -55,40 +66,39 @@ stories.push({
   desc: 'Select',
   component: () => (
     <form className="af-form" name="myform">
-    <FieldForm
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.error)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}>
-      <div className="col-md-4">
-        <div className="af-form__select">
-          <Select
-            name={text('name', 'placeName')}
-            id={text('id', 'muid')}
-            onChange={action('onChange')}
-            options={options}
-            value={text('value', '')}
-            readOnly={boolean('readOnly', false)}
-            disabled={boolean('disabled', false)}
-            isVisible={boolean('isVisible', true)}
-            classModifier={text('classModifier', '')}
-            className={text('className', '')}
-            mode={select('mode', SelectModes, SelectModes.default)}
-            placeholder={text('placeholder', '- Select -')}
-          />
-          <HelpMessage
-            message={text(
-              'helpMessage',
-              'Enter the place name, ex : Webcenter'
-            )}
-          />
-          <FieldError />
+      <FieldForm
+        message={text('message', '')}
+        messageType={select('messageType', MessageTypes, MessageTypes.error)}
+        forceDisplayMessage={boolean('forceDisplayMessage', false)}>
+        <div className="col-md-4">
+          <div className="af-form__select">
+            <Select
+              name={text('name', 'placeName')}
+              id={text('id', 'muid')}
+              onChange={action('onChange')}
+              options={options}
+              value={text('value', '')}
+              readOnly={boolean('readOnly', false)}
+              disabled={boolean('disabled', false)}
+              isVisible={boolean('isVisible', true)}
+              classModifier={text('classModifier', '')}
+              className={text('className', '')}
+              mode={select('mode', SelectModes, SelectModes.default)}
+              placeholder={text('placeholder', '- Select -')}
+            />
+            <HelpMessage
+              message={text(
+                'helpMessage',
+                'Enter the place name, ex : Webcenter'
+              )}
+            />
+            <FieldError />
+          </div>
         </div>
-      </div>
-    </FieldForm>
-  </form>
+      </FieldForm>
+    </form>
   ),
 });
-
 
 stories.push({
   desc: 'SelectBase',
@@ -116,8 +126,8 @@ stories.push({
 
 const storyData = {
   name: 'Form.Input.Select',
-  docs:readme,
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

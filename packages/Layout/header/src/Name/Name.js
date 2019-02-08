@@ -53,5 +53,6 @@ class Name extends React.Component {
 
 Name.propTypes = propTypes;
 Name.defaultProps = defaultProps;
+Name.displayName = "Name";
 
 export default Name;

@@ -15,7 +15,7 @@ stories.push({
     <Summary
       messages={array('messages', messages)}
       isVisible={boolean('isVisible', true)}
-      title={text('title', "Le formulaire n'est pas valide")}
+      title={text('title', 'Le formulaire invalide')}
       classModifier={text('classModifier', 'error')}
       className={text('className', 'af-alert')}
     />
@@ -24,7 +24,7 @@ stories.push({
 
 const storyData = {
   name: 'Form.Summary',
-  docs:readme,
+  docs: readme,
   stories,
 };
 

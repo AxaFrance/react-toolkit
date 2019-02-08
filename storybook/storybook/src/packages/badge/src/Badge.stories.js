@@ -8,14 +8,9 @@ import Badge from '@axa-fr/react-toolkit-badge';
 const readme = require('@axa-fr/react-toolkit-badge/dist/README.md');
 
 const LABELS = {
-  listClass: [
-    'success',
-    'info',
-    'danger',
-    'error'
-  ],
+  listClass: ['success', 'info', 'danger', 'error'],
   defaultClass: 'success',
-  title: 'Lorem ipsum'
+  title: 'Lorem ipsum',
 };
 
 const KNOBS_LABELS = {
@@ -26,14 +21,23 @@ const KNOBS_LABELS = {
   withChildDefault: 'no',
 };
 
-let storyData = {
+const storyData = {
   name: 'Badge',
-  stories: [{
-  desc:  'Simple badge',
   docs: readme,
-  component: ()=> ( <Badge classModifier={select(KNOBS_LABELS.classModifier, LABELS.listClass, LABELS.defaultClass)}>
-  {text(KNOBS_LABELS.title, LABELS.title)}
-</Badge>)},
+  stories: [
+    {
+      desc: 'Simple badge',
+      component: () => (
+        <Badge
+          classModifier={select(
+            KNOBS_LABELS.classModifier,
+            LABELS.listClass,
+            LABELS.defaultClass
+          )}>
+          {text(KNOBS_LABELS.title, LABELS.title)}
+        </Badge>
+      ),
+    },
   ],
 };
 

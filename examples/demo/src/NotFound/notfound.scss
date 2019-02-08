@@ -1,0 +1,129 @@
+@import '@axa-fr/react-toolkit-core/dist/assets/scss/core.scss';
+
+$font-family-serif: Georgia, 'Times New Roman', Times, serif, arial;
+
+.af-container--notfound {
+  min-height: 500px;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.af-notfound {
+  &__title {
+    font-size: 5em;
+    color: $color-axa;
+    font-family: $font-family-base;
+    position: relative;
+    height: 100%;
+
+    &:after {
+      content: '';
+      width: 63px;
+      height: 700px;
+      position: absolute;
+      background-color: $color-red-axa;
+      left: 50%;
+      top: -70px;
+      box-shadow: 0 -3px 26px rgba(0, 0, 0, .6);
+      transform: rotateZ(29deg) translate(-50%, 0);
+      z-index: 2;
+    }
+
+    &-covernumber {
+      position: absolute;
+      transform: translate(-50%, 0);
+      left: 40%;
+      font-size: 3em;
+      letter-spacing: -20px;
+      top: 3%;
+      overflow: hidden;
+      height: 280px;
+      width: 350px;
+    }
+
+    &-number {
+      animation: slideToLeft .7s cubic-bezier(.86, 0, .07, 1);
+      position: absolute;
+      right: 0;
+    }
+
+    &-covernot {
+      position: absolute;
+      top: 79%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      font-weight: 800;
+      line-height: 0.8em;
+      letter-spacing: -10px;
+      font-family: $font-family-serif;
+      color: black;
+      font-size: 1.1em;
+      overflow: hidden;
+      height: 140px;
+      width: 350px;
+    }
+
+    &-not {
+      animation: slideToRight .7s cubic-bezier(.86, 0, .07, 1);
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__message {
+    position: absolute;
+    color: $color-axa;
+    top: 27%;
+    right: 24%;
+    font-size: 2.1em;
+    font-family: $font-family-serif;
+    font-weight: 600;
+    width: 20%;
+    animation: appearmessage 1s cubic-bezier(.86, 0, .07, 1);
+  }
+}
+
+@keyframes slideToLeft {
+
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 0;
+  }
+
+}
+
+@keyframes slideToRight {
+
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0;
+  }
+
+}
+
+@keyframes appearmessage {
+
+  0% {
+    opacity: 0;
+    right: 54%;
+  }
+
+  50% {
+    opacity: 0;
+    right: 30%;
+  }
+
+  100% {
+    opacity: 1;
+    right: 24%;
+  }
+
+}

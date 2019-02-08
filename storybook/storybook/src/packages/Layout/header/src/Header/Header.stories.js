@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './react.svg';
 
 import addToStorie from '@axa-fr/storybook-addons';
 import { Name, Header } from '@axa-fr/react-toolkit-layout-header';
+import logo from './react.svg';
+
+const readme = require('@axa-fr/react-toolkit-layout-header/dist/README.md');
 
 const stories = [];
 
@@ -10,7 +12,7 @@ stories.push({
   component: () => (
     <Header>
       <Name
-        title="Nom de l&apos;application"
+        title="Nom de l'application"
         subtitle="Baseline"
         img={logo}
         alt="Logo React"
@@ -22,7 +24,8 @@ stories.push({
 
 const storyData = {
   name: 'Layout.Header.Header',
-  stories: stories,
+  docs: readme,
+  stories,
 };
 
 addToStorie(storyData, module);

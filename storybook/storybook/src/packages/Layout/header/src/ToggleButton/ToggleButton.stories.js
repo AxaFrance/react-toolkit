@@ -4,6 +4,8 @@ import Action from '@axa-fr/react-toolkit-action';
 import addToStorie from '@axa-fr/storybook-addons';
 import { ToggleButton } from '@axa-fr/react-toolkit-layout-header';
 
+const readme = require('./ToggleButton.md');
+
 const stories = [];
 
 const actionToggle = {
@@ -26,6 +28,7 @@ stories.push({
 
 const storyData = {
   name: 'Layout.Header.ToggleButton',
+  docs: readme,
   stories,
 };
 

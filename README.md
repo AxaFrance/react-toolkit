@@ -1,6 +1,6 @@
 # @axa-fr/react-toolkit
 
-[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)
+[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=AxaGuilDEv_react-toolkit) [![Reliability](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=reliability_rating) [![Security](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=security_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=security_rating) [![Code Corevage](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=coverage)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=Coverage)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
@@ -8,21 +8,23 @@
 - [Getting Started](#getting-started)
 - [Packages](#packages)
 - [Concept](#concept)
-- [How It Works](#how-it-works)
+- [How Does It Work](#how-does-it-work)
 - [Contribute](#contribute)
+- [Roadmap](#roadmap)
+- [Demo](#demo)
 
 ## About
 
-A set of independent components.
-Awesome library based on HTML and CSS using BEM convention with a JavaScript react.js implementation. Each component is autonomous and extensible. Pick and use only what you need!
+A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each components are autonomous and extensible. Pick and use only what you need!
 
-**How is done css isolation?**
+**How *React-toolkit* does CSS isolation?**
 
-Only by using [BEM (Block Element Modifier)](http://getbem.com) css convention. No need of an intricate technologie, just pragmatism.
+Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need of the intricate technologies, just pragatism.
 
-Components are simple to use (just drag and drop them), simple to customise (by using css modifiers) to your own need. Each Component may evoluate internally (html, css, js) and minimize the impact on your application.
+Components are simple to use (just drag and drog it), simple to customize (by using CSS modifier) to your own need. Each component may evaluate internally (HTML, CSS, JS) and minimize an impact on your application.
 
-You can easily build a new app from scratch or integrate components into an existing application.
+You can easily build a new app from scratch or integrate some component into existing application.
+
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
@@ -52,6 +54,7 @@ const MyAlertComponent => () => (
 
 ## Packages
 
+- [`@axa-fr/react-toolkit-all`](./packages/all/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-all.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-all)
 - [`@axa-fr/react-toolkit-form-input-text`](./packages/Form/Input/text/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-text)
 - [`@axa-fr/react-toolkit-form-input-date`](./packages/Form/Input/date/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-date)
 - [`@axa-fr/react-toolkit-form-input-choice`](./packages/Form/Input/choice/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-input-choice)
@@ -96,19 +99,20 @@ const MyAlertComponent => () => (
 
 ## Concept
 
-Each component should be autonomous (html + css + javascript) and extensible.
+Each component should be autonomous (HTML + CSS + JS) and extensible.
 
-## How It Works
+## How Does It Work
 
-- Html/Css :
+- HTML/CSS :
 
-  - BEM convention is used in order to break css cascading problem
-  - Scss and css files are avalaible by component and can be overrided or extended
-  - [Html/Css Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
+  - BEM convention is used in order to break CSS cascading problem
+  - SCSS and CSS files are avalaible for every component and can be overrided or extended
+  - [HTML/CSS Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
-  - Components are statless by default
-  - Some higher component levels are statefull but feel free to use the stateless ones if it does not fit to your use case
+
+  - Components are stateless by default
+  - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Contribute
@@ -119,5 +123,13 @@ Each component should be autonomous (html + css + javascript) and extensible.
 ## Roadmap
 
 - Update general documentation
-- Continue to migrate to TypeScript component by component
-- Continue to fix and clean the code. Make it simpler, faster and lighter
+- Migrating to TypeScript all components
+- Fix the issues and clean code. Make it simpler, faster, lighter
+
+## Demo
+
+- [Online](https://axaguildev.github.io/react-toolkit/latest/demo/index.html)
+- [Guideline](./examples/README.md)
+- [Source code](./examples/demo)
+
+![alt text](./examples/demo.png 'Demo sample')
