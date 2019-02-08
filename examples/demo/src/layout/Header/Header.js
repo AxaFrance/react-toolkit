@@ -21,7 +21,7 @@ const HeaderApp = () => (
     />
     <User
       name="Guillaume Chervet"
-      href="/profile"
+      href="#"
       profile="Agent 007"
       onClick={() => {}}
     />
