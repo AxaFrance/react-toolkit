@@ -20,10 +20,17 @@ try {
     const PREVIOUS_VERSION = require('../tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json').version;
     fs.moveSync('./tmp/AxaGuilDEv.github.io/react-toolkit/latest', `./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}`);
 
+
+    const environment =  require(`./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/environment.json`);
+    environment.baseUrl = `/react-toolkit/v${PREVIOUS_VERSION}/demo/`;
+
+    fs.writeFileSync(`./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/environment.json`, JSON.stringify(environment), 'utf8');
+
     fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`);
     fs.copySync(`./storybook/storybook/storybook-static`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/storybook`);
     fs.copySync(`./examples/demo/build`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/demo`);
     const versionToSave = { version: VERSION };
+    
     fs.writeJSONSync('./tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json', versionToSave);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "doc(toolkit) publish website ${VERSION}" && git push`);
