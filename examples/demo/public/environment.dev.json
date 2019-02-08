@@ -1,4 +1,4 @@
 {
-  "apiBaseUrl": "https://api.mlab.com/api/1/databases/toolkitaxa/collections/{path}",
+  "apiBaseUrl": "http://localhost:5000/api/{path}",
   "baseUrl" : ""
 }
