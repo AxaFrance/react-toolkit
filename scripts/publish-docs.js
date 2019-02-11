@@ -18,6 +18,12 @@ try {
     console.log('stderr ', child.stderr);
 
     const PREVIOUS_VERSION = require('../tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json').version;
+
+    const environment =  require(`./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/environment.json`);
+    environment.baseUrl = `/react-toolkit/v${PREVIOUS_VERSION}/demo/`;
+
+    fs.writeFileSync(`./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/environment.json`, JSON.stringify(environment), 'utf8');
+    
     fs.moveSync('./tmp/AxaGuilDEv.github.io/react-toolkit/latest', `./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}`);
 
     fs.copySync(`./storybook/styles/distDemo`, `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`);
