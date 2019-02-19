@@ -83,5 +83,8 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "homepage": ".",
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
