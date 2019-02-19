@@ -7,6 +7,8 @@ import {
   MultiSelectInput,
   MultiSelect,
 } from '@axa-fr/react-toolkit-form-input-select-multi';
+
+import '@axa-fr/react-toolkit-form-input-select-multi/dist/af-select.css';
 import {
   MessageTypes,
   FieldForm,
@@ -125,6 +127,7 @@ stories.push({
           InputConstants.defaultProps.classNameContainerInput
         )}
       />
+      <h2 className="af-subtitle">Something Bellow</h2>
     </form>
   ),
 });
