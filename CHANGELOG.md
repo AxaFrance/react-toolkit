@@ -1,6 +1,15 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.1.2](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.1.1...v1.1.2)
+> 19 February 2019
+-  fix(package) remove bad registry [`#84`](https://github.com/AxaGuilDEv/react-toolkit/pull/84) by Guillaume Chervet
+- chore(demo) fix deployment [`#75`](https://github.com/AxaGuilDEv/react-toolkit/pull/75) by Guillaume Chervet
+- chore(release): publish v1.1.2 [ci skip] [`2ca3e2d`](https://github.com/AxaGuilDEv/react-toolkit/commit/2ca3e2d333d9f448c0685aeca4dfa56f87b21ca4) by Build-CI 
+- fix(select-multi) isDisabled was not passed when used with single value [`d4f7cb3`](https://github.com/AxaGuilDEv/react-toolkit/commit/d4f7cb3dc9432fae47e6f41f13ba0eabdde8acd3) by guillaume chervet 
+- docs(changelog) update to new 1.1.1 [`16871de`](https://github.com/AxaGuilDEv/react-toolkit/commit/16871de7dc462c5a9710e8afc0a315fea42fcc2c) by Build-CI 
+- fix(storybook) fix conflict between plugin [`64cc600`](https://github.com/AxaGuilDEv/react-toolkit/commit/64cc60035ce70547784a6bdafce135a659e2d8c6) by guillaume chervet 
+
 #### [v1.1.1](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.0.4...v1.1.1)
 > 14 February 2019
 - fix(demo) update publish script to change the baseUrl of the previous version [`#71`](https://github.com/AxaGuilDEv/react-toolkit/pull/71) by oussamahamdaoui
@@ -71,5 +80,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.1.1...v0.0.0)
-> 14 February 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.1.2...v0.0.0)
+> 19 February 2019
