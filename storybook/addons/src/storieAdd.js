@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withReadme, withDocs } from 'storybook-readme';
+import { withReadme } from 'storybook-readme';
 import { withInfo, setDefaults } from '@storybook/addon-info';
 
 // addon-info
@@ -9,25 +9,19 @@ setDefaults({
 });
 
 const addToStorie = (storiesData, module) => {
-  const stories = storiesOf(storiesData.name, module);
-  stories.addDecorator(withKnobs);
   storiesData.stories.forEach(story => {
-    let { component } = story;
-    if (story.docs) {
-      component = withDocs(story.docs, component);
-    } else if (storiesData.docs) {
-      component = withDocs(storiesData.docs, component);
+    const stories = storiesOf(storiesData.name, module);
+    stories.addDecorator(withKnobs);
+    const { component } = story;
+    const theLocalDocs = story.docs || story.readme;
+    const theGlobalDocs = storiesData.docs || storiesData.readme;
+    if (theLocalDocs) {
+      stories.addDecorator(withReadme(theLocalDocs));
+    } else if (theGlobalDocs) {
+      stories.addDecorator(withReadme(theGlobalDocs));
     }
     if (story.withInfo !== false) {
-      component = withInfo({
-        inline: true,
-        text: `<h1>Code information</h1>`,
-      })(component);
-    }
-    if (story.readme) {
-      component = withReadme(story.readme, component);
-    } else if (storiesData.readme) {
-      component = withReadme(storiesData.readme, component);
+      stories.addDecorator(withInfo());
     }
     const desc = story.desc || 'Default';
     stories.add(desc, component);
