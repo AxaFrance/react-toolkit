@@ -1,54 +1,55 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import {
+  WithClassModifierOptions,
+  InputManager,
+  withClassDefault,
+  withClassModifier,
+} from '@axa-fr/react-toolkit-core';
+import { compose } from 'recompose';
+import { WithOnChangeEvent, OnChangeCustomEvent } from '../Pager/Pager';
+import { HTMLCustomAttributes } from '@axa-fr/react-toolkit-core/src/Constants';
 
-import { Constants, ClassManager, InputManager } from '@axa-fr/react-toolkit-core';
-
-const propTypes = {
-  ...Constants.propTypes,
-  numberItems: PropTypes.number,
-  items: PropTypes.arrayOf(PropTypes.number),
-  onChange: PropTypes.func.isRequired,
-  id: PropTypes.string,
+export type ItemsComponentProps =   Pick<React.HTMLProps<HTMLAnchorElement>, "className">
+& WithOnChangeEvent<OnChangeCustomEvent> & {
+  id: string;
+  numberItems?: number;
+  items?: number[];
 };
-const defaultClassName = 'af-paging__form';
-const defaultProps = {
-  ...Constants.defaultProps,
+const DEFAULT_CLASSNAME = 'af-paging__form';
+
+const defaultProps: Partial<ItemsComponentProps> = {
   numberItems: 10,
   items: [5, 10, 25, 50, 100],
   id: null,
 };
 
-class Items extends Component {
-  constructor(props) {
+class Items extends React.PureComponent<ItemsComponentProps> {
+  constructor(props: ItemsComponentProps) {
     super(props);
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e) {
-    e.preventDefault();
+  onChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    event.preventDefault();
     const { onChange } = this.props;
     onChange({
-      value: Number(e.target.value),
+      value: Number(event.target.value),
     });
   }
 
   render() {
-    const { numberItems, className, classModifier, items, id } = this.props;
+    const { numberItems, className, items, id } = this.props;
     const content = items.map(item => (
       <option key={item} value={item}>
         {item}
       </option>
     ));
-    const componentClassName = ClassManager.getComponentClassName(
-      className,
-      classModifier,
-      defaultClassName
-    );
+
     const defaultIdName = InputManager.getInputId(id);
     return (
       <div className="af-paging__limit">
-        <form className={componentClassName}>
+        <form className={className}>
           <div className="af-form__group">
             <div className="col col-sm-2 col-md-2 col-lg-2 col-xl-2">
               <label className="af-form__group-label" htmlFor={defaultIdName}>
@@ -76,8 +77,12 @@ class Items extends Component {
     );
   }
 }
+export type ItemsProps = ItemsComponentProps & WithClassModifierOptions;
 
-Items.propTypes = propTypes;
-Items.defaultProps = defaultProps;
-
-export default Items;
+const enhance = compose<ItemsComponentProps, ItemsProps>(
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier
+);
+const Enhance = enhance(Items);
+Enhance.defaultProps = defaultProps;
+export default Enhance;
