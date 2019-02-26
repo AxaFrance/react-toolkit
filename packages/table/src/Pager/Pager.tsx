@@ -1,9 +1,11 @@
 import * as React from 'react';
-
-import { WithClassModifierOptions, withClassModifier } from '@axa-fr/react-toolkit-core';
+import {
+  WithClassModifierOptions,
+  withClassModifier,
+  withClassDefault,
+} from '@axa-fr/react-toolkit-core';
 import { compose, setDisplayName, withProps } from 'recompose';
 import Modes from './Modes';
-import { withClassDefault } from '@axa-fr/react-toolkit-core/src';
 import Previous from './Previous';
 import LiPoint from './LiPoint';
 import Next from './Next';
@@ -32,9 +34,8 @@ export type PagerComponentProps = {
   numberPages?: number;
   currentPage: number;
   mode?: Modes;
-} & Pick<React.HTMLProps<HTMLAnchorElement>, "className">
- &  WithOnChangeEvent<OnChangeCustomEvent>;
-
+} & Pick<React.HTMLProps<HTMLAnchorElement>, 'className'> &
+  WithOnChangeEvent<OnChangeCustomEvent>;
 
 const defaultProps: Partial<PagerComponentProps> = {
   numberItems: 10,
@@ -141,8 +142,5 @@ const enhance = compose<PagerComponentProps, PagerProps>(
 );
 const Enhance = enhance(Pager);
 Enhance.defaultProps = defaultProps;
-
+Enhance.Modes = Modes;
 export default Enhance;
-
-Pager.defaultProps = defaultProps;
-// Pager.Modes = Modes;

@@ -8,14 +8,16 @@ import {
 } from '@axa-fr/react-toolkit-core';
 import { compose } from 'recompose';
 import { WithOnChangeEvent, OnChangeCustomEvent } from '../Pager/Pager';
-import { HTMLCustomAttributes } from '@axa-fr/react-toolkit-core/src/Constants';
 
-export type ItemsComponentProps =   Pick<React.HTMLProps<HTMLAnchorElement>, "className">
-& WithOnChangeEvent<OnChangeCustomEvent> & {
-  id: string;
-  numberItems?: number;
-  items?: number[];
-};
+export type ItemsComponentProps = Pick<
+  React.HTMLProps<HTMLAnchorElement>,
+  'className'
+> &
+  WithOnChangeEvent<OnChangeCustomEvent> & {
+    id: string;
+    numberItems?: number;
+    items?: number[];
+  };
 const DEFAULT_CLASSNAME = 'af-paging__form';
 
 const defaultProps: Partial<ItemsComponentProps> = {

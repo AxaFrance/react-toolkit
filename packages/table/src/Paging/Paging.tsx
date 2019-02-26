@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { withClassDefault, withClassModifier } from '@axa-fr/react-toolkit-core';
+import {
+  withClassDefault,
+  withClassModifier,
+  WithClassModifierOptions,
+} from '@axa-fr/react-toolkit-core';
+import { compose } from 'recompose';
 import Pager, { WithOnChangeEvent, OnChangeCustomEvent } from '../Pager/Pager';
 import Items from '../Items/Items';
-import { WithClassModifierOptions } from '@axa-fr/react-toolkit-core/src';
-import { compose } from 'recompose';
 
 const DEFAULT_CLASSNAME = 'af-paging';
 
@@ -49,13 +52,7 @@ class Paging extends React.PureComponent<PagingComponentProps> {
   }
 
   render() {
-    const {
-      numberItems,
-      currentPage,
-      numberPages,
-      className,
-      id,
-    } = this.props;
+    const { numberItems, currentPage, numberPages, className, id } = this.props;
 
     return (
       <div className={className}>
@@ -88,4 +85,3 @@ const Enhance = enhance(Paging);
 Enhance.defaultProps = defaultProps;
 
 export default Enhance;
-

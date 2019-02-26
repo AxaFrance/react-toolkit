@@ -24,11 +24,6 @@ const defaultProps: Partial<ThComponentProps> = {
 
 const Th: React.SFC<ThComponentProps> = props => {
   const { children, id, rowSpan, colSpan, className } = props;
-  // const componentClassName = ClassManager.getComponentClassName(
-  //   className,
-  //   classModifier,
-  //   DEFAULT_CLASSNAME
-  // );
 
   // A discuter mais je pense qu'il faut laisser les children gérer le contenu la cellule
   /* if (typeof children === 'string') {
