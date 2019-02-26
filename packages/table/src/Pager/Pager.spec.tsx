@@ -1,5 +1,5 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import { create } from 'react-test-renderer';
 import Pager from './Pager';
 
 describe('Table.Pager', () => {
@@ -7,7 +7,7 @@ describe('Table.Pager', () => {
     const handleOnChangeMock = jest.fn();
     handleOnChangeMock.mockImplementationOnce(() => 'My mock is called');
 
-    const component = renderer.create(
+    const component = create(
       <Pager numberPages={10} onChange={handleOnChangeMock} currentPage={1} />
     );
 

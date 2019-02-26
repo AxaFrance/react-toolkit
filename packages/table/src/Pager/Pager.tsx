@@ -142,5 +142,5 @@ const enhance = compose<PagerComponentProps, PagerProps>(
 );
 const Enhance = enhance(Pager);
 Enhance.defaultProps = defaultProps;
-Enhance.Modes = Modes;
+// Enhance.Modes = Modes;
 export default Enhance;
