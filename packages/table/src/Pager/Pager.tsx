@@ -3,6 +3,8 @@ import {
   WithClassModifierOptions,
   withClassModifier,
   withClassDefault,
+  OnChangeCustomEvent,
+  WithOnChangeEvent,
 } from '@axa-fr/react-toolkit-core';
 import { compose, setDisplayName, withProps } from 'recompose';
 import Modes from './Modes';
@@ -10,22 +12,6 @@ import Previous from './Previous';
 import LiPoint from './LiPoint';
 import Next from './Next';
 import Li from './Li';
-
-export interface WithVisibilityOption {
-  isVisible?: boolean;
-}
-
-export interface WithActiveOption {
-  active?: boolean;
-}
-
-export interface OnChangeCustomEvent {
-  value: number;
-}
-
-export interface WithOnChangeEvent<T> {
-  onChange: (event: T) => void;
-}
 
 const DEFAULT_CLASSNAME = 'af-pager';
 

@@ -4,7 +4,7 @@ import {
   WithVisibilityOption,
   WithOnChangeEvent,
   OnChangeCustomEvent,
-} from './Pager';
+} from '@axa-fr/react-toolkit-core';
 
 export type NextProps = WithActiveOption &
   WithVisibilityOption &

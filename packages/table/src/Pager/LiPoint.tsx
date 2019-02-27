@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { WithVisibilityOption } from './Pager';
+import { WithVisibilityOption } from '@axa-fr/react-toolkit-core';
 
 export type LiPointProps = WithVisibilityOption &
   React.HTMLProps<HTMLAnchorElement>;

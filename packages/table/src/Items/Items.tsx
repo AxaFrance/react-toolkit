@@ -5,9 +5,10 @@ import {
   InputManager,
   withClassDefault,
   withClassModifier,
+  WithOnChangeEvent,
+  OnChangeCustomEvent,
 } from '@axa-fr/react-toolkit-core';
 import { compose } from 'recompose';
-import { WithOnChangeEvent, OnChangeCustomEvent } from '../Pager/Pager';
 
 export type ItemsComponentProps = Pick<
   React.HTMLProps<HTMLAnchorElement>,

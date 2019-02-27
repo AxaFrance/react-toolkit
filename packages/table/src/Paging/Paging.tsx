@@ -3,9 +3,11 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
+  WithOnChangeEvent,
+  OnChangeCustomEvent,
 } from '@axa-fr/react-toolkit-core';
 import { compose } from 'recompose';
-import Pager, { WithOnChangeEvent, OnChangeCustomEvent } from '../Pager/Pager';
+import Pager from '../Pager/Pager';
 import Items from '../Items/Items';
 
 const DEFAULT_CLASSNAME = 'af-paging';
@@ -14,10 +16,11 @@ export interface PagingEvent {
   numberItems: number;
   page: number;
 }
+
 export type PagingComponentProps = React.HTMLProps<HTMLTableElement> &
   WithOnChangeEvent<PagingEvent> & {
-    numberItems: number;
-    numberPages: number;
+    numberItems?: number;
+    numberPages?: number;
     currentPage: number;
   };
 
