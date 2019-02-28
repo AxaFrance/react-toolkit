@@ -17,14 +17,13 @@
 
 A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each components are autonomous and extensible. Pick and use only what you need!
 
-**How *React-toolkit* does CSS isolation?**
+**How _React-toolkit_ does CSS isolation?**
 
 Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need of the intricate technologies, just pragatism.
 
 Components are simple to use (just drag and drog it), simple to customize (by using CSS modifier) to your own need. Each component may evaluate internally (HTML, CSS, JS) and minimize an impact on your application.
 
 You can easily build a new app from scratch or integrate some component into existing application.
-
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
@@ -110,7 +109,6 @@ Each component should be autonomous (HTML + CSS + JS) and extensible.
   - [HTML/CSS Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
 
 - React :
-
   - Components are stateless by default
   - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)

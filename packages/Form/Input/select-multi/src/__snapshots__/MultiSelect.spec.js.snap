@@ -2,7 +2,7 @@
 
 exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
 <div
-  className="css-10nd86i"
+  className="css-10nd86i react-select"
   onKeyDown={[Function]}
 >
   <div
