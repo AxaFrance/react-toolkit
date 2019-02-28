@@ -2,7 +2,7 @@
 
 exports[`Table.Paging renders correctly 1`] = `
 <div
-  className="af-paging"
+  className=""
 >
   <div
     className="af-paging__limit"
@@ -11,7 +11,7 @@ exports[`Table.Paging renders correctly 1`] = `
       className="af-paging__limit"
     >
       <form
-        className="af-paging__form"
+        className=""
       >
         <div
           className="af-form__group"
@@ -86,7 +86,7 @@ exports[`Table.Paging renders correctly 1`] = `
     className="af-paging__pager"
   >
     <nav
-      className="af-pager"
+      className=""
     >
       <ul
         className="af-pager__pagination"

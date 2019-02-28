@@ -12,7 +12,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
     >
       <th
         className="af-table__th"
-        colSpan="3"
+        colSpan={3}
         rowSpan={null}
       >
         <span
@@ -32,7 +32,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
       <td
         className="af-table__cell"
         colSpan={null}
-        rowSpan="2"
+        rowSpan={2}
       >
         <span
           className="af-table-body-content"
