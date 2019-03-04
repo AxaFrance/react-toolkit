@@ -5,7 +5,7 @@ import { text, number } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Items } from '@axa-fr/react-toolkit-table';
 
-const readme = require('@axa-fr/react-toolkit-table/dist/Items/README.md');
+const readme = require('@axa-fr/react-toolkit-table/src/Items/README.md');
 
 const stories = [];
 

@@ -53,11 +53,14 @@ steps:
       npm run lint
     displayName: 'npm test and lint'
 
-  - script: |
-      npm run css:build
-      npm run storybook:build
-      npm run demo:build
-    displayName: 'build documentations'
+  - script: npm run css:build
+    displayName: 'build css'
+
+  - script: npm run storybook:build
+    displayName: 'build storybook'
+
+  - script: npm run demo:build
+    displayName: 'build demo'
 
   - script: |
       git config --global user.email "build-ci@axa.fr"
