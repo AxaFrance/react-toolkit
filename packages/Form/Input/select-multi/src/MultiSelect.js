@@ -6,7 +6,10 @@ import {
   Input,
   InputConstants as Constants,
   withInput,
+  omit,
 } from '@axa-fr/react-toolkit-form-core';
+
+const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
 const MultiSelect = props => {
   const {
@@ -26,7 +29,7 @@ const MultiSelect = props => {
     noResultsText,
     ...otherProps
   } = props;
-
+  const isDisabled = disabled || readOnly;
   const SelectComponent = loadOptions ? ReactSelect.Async : ReactSelect;
 
   if (values != null) {
@@ -47,7 +50,7 @@ const MultiSelect = props => {
         onBlur={onBlur}
         placeholder={placeholder}
         className={className}
-        isDisabled={disabled || readOnly}
+        isDisabled={isDisabled}
         options={options}
         loadOptions={loadOptions}
         loadingPlaceholder={loadingPlaceholder}
@@ -55,7 +58,7 @@ const MultiSelect = props => {
         noResultsText={noResultsText}
         valueKey="value"
         labelKey="label"
-        {...otherProps}
+        {...omitProperties(otherProps)}
       />
     );
   }
@@ -69,8 +72,7 @@ const MultiSelect = props => {
       onChange={onChange}
       onBlur={onBlur}
       className={className}
-      readOnly={readOnly}
-      disabled={disabled}
+      isDisabled={isDisabled}
       options={options}
       loadOptions={loadOptions}
       loadingPlaceholder={loadingPlaceholder}
@@ -78,7 +80,7 @@ const MultiSelect = props => {
       noResultsText={noResultsText}
       valueKey="value"
       labelKey="label"
-      {...otherProps}
+      {...omitProperties(otherProps)}
     />
   );
 };
@@ -94,6 +96,7 @@ const propTypes = {
   loadOptions: PropTypes.func,
 };
 
+const defaultClassName = 'react-select';
 const defaultProps = {
   ...Constants.defaultProps,
   values: null,
@@ -102,8 +105,8 @@ const defaultProps = {
   searchPromptText: 'Saisir pour chercher',
   noResultsText: 'Aucun résultat',
   loadOptions: null,
+  className: defaultClassName,
 };
-const defaultClassName = '';
 
 const handlers = {
   onChange: ({ values, name, id, onChange }) => newValue => {

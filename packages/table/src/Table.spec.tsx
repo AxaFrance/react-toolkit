@@ -1,22 +1,21 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import * as React from 'react';
+import { create } from 'react-test-renderer';
 import Table from './Table';
 
 describe('<DateInput>', () => {
   it('renders DateInput correctly', () => {
-    const tree = renderer
-      .create(
-        <Table>
+    const tree = create(
+      <Table>
         <Table.Header>
           <Table.Tr>
-            <Table.Th colSpan="3">
+            <Table.Th colSpan={3}>
               <span className="af-table-th-content">Some text</span>
             </Table.Th>
           </Table.Tr>
         </Table.Header>
         <Table.Body>
           <Table.Tr>
-            <Table.Td rowSpan="2">
+            <Table.Td rowSpan={2}>
               <span className="af-table-body-content">Some text</span>
             </Table.Td>
             <Table.Td>
@@ -28,8 +27,7 @@ describe('<DateInput>', () => {
           </Table.Tr>
         </Table.Body>
       </Table>
-      )
-      .toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

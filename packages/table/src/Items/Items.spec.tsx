@@ -1,6 +1,6 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import * as React from 'react';
+import { mount } from 'enzyme';
+import { create } from 'react-test-renderer';
 import Items from './Items';
 
 describe('Table.Items', () => {
@@ -8,7 +8,7 @@ describe('Table.Items', () => {
     const handleOnChangeMock = jest.fn();
     handleOnChangeMock.mockImplementationOnce(() => 'My mock is called');
 
-    const component = renderer.create(
+    const component = create(
       <Items
         numberItems={10}
         onChange={handleOnChangeMock}
@@ -26,7 +26,7 @@ describe('Table.Items', () => {
     const preventDefaultMock = jest.fn();
     preventDefaultMock.mockImplementationOnce(() => 'My mock is called');
 
-    const component = shallow(
+    const component = mount(
       <Items
         numberItems={10}
         onChange={handleOnChangeMock}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabStateless> should render component 1`] = `
+<li
+  className="af-tabs__item af-tabs__item--active"
+>
+  <button
+    className="af-tabs__link"
+    onClick={[Function]}
+  >
+    Title displayed
+  </button>
+</li>
+`;
