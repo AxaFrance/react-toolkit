@@ -109,7 +109,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "1.2.3",
     "gulp-svgstore": "6.1.0",
-    "gulp-wrap": "0.13.0",
+    "gulp-wrap": "0.14.0",
     "gzip-size": "^4.0.0",
     "highlight-loader": "^0.7.3",
     "highlight.js": "^9.13.1",

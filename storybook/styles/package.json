@@ -91,7 +91,7 @@
     "gulp-sass": "^3.2.1",
     "gulp-svgmin": "1.2.3",
     "gulp-svgstore": "6.1.0",
-    "gulp-wrap": "0.13.0",
+    "gulp-wrap": "0.14.0",
     "highlightjs": "9.10.0",
     "html-webpack-plugin": "2.28.0",
     "husky": "0.13.3",

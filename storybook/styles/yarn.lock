@@ -681,6 +681,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://localhost:4873/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+ansi-cyan@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-cyan/-/ansi-cyan-0.1.1.tgz#538ae528af8982f28ae30d86f2f17456d2609873"
+  dependencies:
+    ansi-wrap "0.1.0"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "http://localhost:4873/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -694,6 +700,12 @@ ansi-gray@^0.1.1:
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "http://localhost:4873/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
+
+ansi-red@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-red/-/ansi-red-0.1.1.tgz#8c638f9d1080800a353c9c28c8a81ca4705d946c"
+  dependencies:
+    ansi-wrap "0.1.0"
 
 ansi-regex@^0.2.0, ansi-regex@^0.2.1:
   version "0.2.1"
@@ -760,6 +772,13 @@ argparse@^1.0.6, argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+arr-diff@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/arr-diff/-/arr-diff-1.1.0.tgz#687c32758163588fef7de7b36fabe495eb1a399a"
+  dependencies:
+    arr-flatten "^1.0.1"
+    array-slice "^0.2.3"
+
 arr-diff@^2.0.0:
   version "2.0.0"
   resolved "http://localhost:4873/arr-diff/-/arr-diff-2.0.0.tgz#8f3b827f955a8bd669697e4a4256ac3ceae356cf"
@@ -773,6 +792,10 @@ arr-diff@^4.0.0:
 arr-flatten@^1.0.1, arr-flatten@^1.1.0:
   version "1.1.0"
   resolved "http://localhost:4873/arr-flatten/-/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
+
+arr-union@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/arr-union/-/arr-union-2.1.0.tgz#20f9eab5ec70f5c7d215b1077b1c39161d292c7d"
 
 arr-union@^3.1.0:
   version "3.1.0"
@@ -809,6 +832,10 @@ array-map@~0.0.0:
 array-reduce@~0.0.0:
   version "0.0.0"
   resolved "http://localhost:4873/array-reduce/-/array-reduce-0.0.0.tgz#173899d3ffd1c7d9383e4479525dbe278cab5f2b"
+
+array-slice@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/array-slice/-/array-slice-0.2.3.tgz#dd3cfb80ed7973a75117cdac69b0b99ec86186f5"
 
 array-slice@^1.0.0:
   version "1.1.0"
@@ -3701,6 +3728,12 @@ express@^4.13.3:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
+extend-shallow@^1.1.2:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/extend-shallow/-/extend-shallow-1.1.4.tgz#19d6bf94dfc09d76ba711f39b872d21ff4dd9071"
+  dependencies:
+    kind-of "^1.1.0"
+
 extend-shallow@^2.0.1:
   version "2.0.1"
   resolved "http://localhost:4873/extend-shallow/-/extend-shallow-2.0.1.tgz#51af7d614ad9a9f610ea1bafbb989d6b1c56890f"
@@ -4487,7 +4520,7 @@ gulp-ttf2woff@^1.1.0:
     readable-stream "^2.0.1"
     ttf2woff "^2.0.1"
 
-gulp-util@*, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.3, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.6:
+gulp-util@*, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.6:
   version "3.0.8"
   resolved "http://localhost:4873/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -4523,17 +4556,17 @@ gulp-util@^2.2.14, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-wrap@0.13.0:
-  version "0.13.0"
-  resolved "http://localhost:4873/gulp-wrap/-/gulp-wrap-0.13.0.tgz#90fb0b4a27a266433832ff7c6122db5c1ee894c6"
+gulp-wrap@0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/gulp-wrap/-/gulp-wrap-0.14.0.tgz#15a5c2048e2721e70539a61baf1c34a0bc5f2729"
   dependencies:
     consolidate "^0.14.1"
     es6-promise "^3.1.2"
     fs-readfile-promise "^2.0.1"
-    gulp-util "^3.0.3"
     js-yaml "^3.2.6"
     lodash "^4.11.1"
     node.extend "^1.1.2"
+    plugin-error "^0.1.2"
     through2 "^2.0.1"
     tryit "^1.0.1"
     vinyl-bufferstream "^1.0.1"
@@ -5571,6 +5604,10 @@ jsx-ast-utils@^1.3.4:
   version "1.4.1"
   resolved "http://localhost:4873/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
+kind-of@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
+
 kind-of@^2.0.1:
   version "2.0.1"
   resolved "http://localhost:4873/kind-of/-/kind-of-2.0.1.tgz#018ec7a4ce7e3a86cb9141be519d24c8faa981b5"
@@ -5969,11 +6006,7 @@ lodash@^3.10.0, lodash@^3.10.1:
   version "3.10.1"
   resolved "http://localhost:4873/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
-  version "4.17.5"
-  resolved "http://localhost:4873/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
-
-lodash@^4.17.11:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.11, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -7045,6 +7078,16 @@ plexer@^1.0.1:
     debug "2.6.1"
     isstream "^0.1.2"
     readable-stream "^2.0.2"
+
+plugin-error@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/plugin-error/-/plugin-error-0.1.2.tgz#3b9bb3335ccf00f425e07437e19276967da47ace"
+  dependencies:
+    ansi-cyan "^0.1.1"
+    ansi-red "^0.1.1"
+    arr-diff "^1.0.1"
+    arr-union "^2.0.1"
+    extend-shallow "^1.1.2"
 
 pluralize@^1.2.1:
   version "1.2.1"
