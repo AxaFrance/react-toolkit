@@ -43,15 +43,14 @@ steps:
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
-  - script: |
-      npm ci
-      npm run bootstrap
+  - script: npm ci && npm run bootstrap
     displayName: 'npm ci and bootstrap'
 
-  - script: |
-      npm test -- --coverage
-      npm run lint
-    displayName: 'npm test and lint'
+  - script: npm test -- --coverage
+    displayName: 'npm test'
+
+  - script: npm run lint
+    displayName: 'npm trun lint'
 
   - script: npm run css:build
     displayName: 'build css'
@@ -82,10 +81,14 @@ steps:
   #  displayName: 'Publish Quality Gate Result'
   #  condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
-  - script: |
-      npm run publish -- $(Npm.Publish.Version) --yes --concurrency 1 --force-publish
-      node ./scripts/publish-docs.js $(Github.Token)
-      node ./scripts/publish-changelog.js $(Github.Token)
-      node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
+  - script: npm run publish -- $(Npm.Publish.Version) --yes --concurrency 1 --force-publish
     displayName: 'lerna publish'
+    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+
+  - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
+    displayName: 'push documentation and changelog'
+    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+
+  - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
+    displayName: 'Auto tweet'
     condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
