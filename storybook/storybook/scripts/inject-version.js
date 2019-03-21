@@ -17,6 +17,9 @@ header {
   padding: 1em;
   text-align: center;
 }
+#root > div {
+  position: relative !important;
+}
 </style>
 <header>@axa-fr/react-toolkit (version: {version})</header>
 <div id="root"></div>
