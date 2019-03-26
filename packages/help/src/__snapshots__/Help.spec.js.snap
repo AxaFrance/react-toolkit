@@ -23,17 +23,19 @@ exports[`<Help> Render Should render Help 1`] = `
     className="af-popover__container-pop"
     style={
       Object {
+        "left": 0,
         "opacity": 0,
         "pointerEvents": "none",
         "position": "absolute",
+        "top": 0,
       }
     }
   >
-    Hello
-    <span
+    <div
       className="af-popover__arrow"
       style={Object {}}
     />
+    Hello
   </div>
 </div>
 `;
