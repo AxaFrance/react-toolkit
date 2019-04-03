@@ -9,7 +9,6 @@
 		"react-dom": "^16.4.1"
 	},
 	"dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.2.0",
 		"outy": "^0.1.2",
 		"prop-types": "^15.5.10",
 		"react-popper": "^1.3.3",
