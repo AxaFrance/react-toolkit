@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Help> Render Should render Help 1`] = `
+exports[`<Help> Render Should render Help component 1`] = `
 <div
   className="af-popover__container"
 >
