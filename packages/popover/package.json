@@ -4,6 +4,9 @@
 	"main": "dist/index.js",
 	"jsnext:main": "src/index.js",
 	"private": false,
+	"scripts": {
+		"prepare": "node ../../scripts/prepare.js"
+	},
 	"peerDependencies": {
 		"react": "^16.4.1",
 		"react-dom": "^16.4.1"
