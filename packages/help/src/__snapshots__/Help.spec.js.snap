@@ -20,23 +20,5 @@ exports[`<Help> Render Should render Help component 1`] = `
       </span>
     </button>
   </div>
-  <div
-    className="af-popover__container-pop"
-    style={
-      Object {
-        "left": 0,
-        "opacity": 0,
-        "pointerEvents": "none",
-        "position": "absolute",
-        "top": 0,
-      }
-    }
-  >
-    <div
-      className="af-popover__arrow"
-      style={Object {}}
-    />
-    Hello
-  </div>
 </div>
 `;

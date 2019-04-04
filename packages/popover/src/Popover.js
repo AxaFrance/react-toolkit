@@ -49,12 +49,7 @@ class PopoverClick extends Component {
   }
 
   render() {
-    const {
-      children,
-      placement,
-      className,
-      classModifier,
-    } = this.props;
+    const { children, placement, className, classModifier } = this.props;
     const { isOpen } = this.state;
     return (
       <PopoverBase
@@ -96,7 +91,7 @@ class PopoverOver extends Component {
     const { children, placement, className, classModifier } = this.props;
     const { isOpen } = this.state;
     return (
-      <div onMouseEnter={this.enter} onMouseLeave={this.leave}>
+      <span onMouseEnter={this.enter} onMouseLeave={this.leave}>
         <PopoverBase
           isOpen={isOpen}
           placement={placement}
@@ -104,7 +99,7 @@ class PopoverOver extends Component {
           classModifier={classModifier}>
           {children}
         </PopoverBase>
-      </div>
+      </span>
     );
   }
 }
