@@ -65,8 +65,15 @@ PopoverBase.Pop = Pop;
 PopoverBase.propTypes = propTypes;
 PopoverBase.defaultProps = defaultProps;
 
-const CustomTarget = ({ innerRef, ...props }) => (
-  <div ref={innerRef} className="af-popover__container-over" {...props} />
+const CustomTarget = (ref, onToggle, props, target) => (
+  <div
+    ref={ref}
+    className="af-popover__container-over"
+    onClick={onToggle}
+    {...props}
+    role="presentation">
+    {target}
+  </div>
 );
 
 class AnimatedPopover extends PureComponent {
@@ -129,24 +136,16 @@ class AnimatedPopover extends PureComponent {
       <Manager>
         <div className={componentClassName}>
           <Reference>
-            {({ ref, ...props }) => (
-              <div
-                ref={ref}
-                className="af-popover__container-over"
-                onClick={onToggle}
-                {...props}>
-                {target}
-              </div>
-            )}
+            {({ ref, ...props }) => CustomTarget(ref, onToggle, props, target)}
           </Reference>
           {isOpen && (
             <Popper key="popper" placement={placement}>
-              {({ ref, style, placement, arrowProps }) => (
+              {({ ref, style, placement: chidrenPlacement, arrowProps }) => (
                 <div
                   ref={ref}
                   className="af-popover__container-pop"
                   style={style}
-                  data-placement={placement}>
+                  data-placement={chidrenPlacement}>
                   <div
                     ref={arrowProps.ref}
                     style={arrowProps.style}
