@@ -1,6 +1,16 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.1](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.0...v1.2.1)
+> 4 April 2019
+- feat: migrate popover @0.x to @1.x [`#122`](https://github.com/AxaGuilDEv/react-toolkit/pull/122) by barry-thierno
+- feat(storybook) : update storybook to version 5 and move packages to subdirectory [`#117`](https://github.com/AxaGuilDEv/react-toolkit/pull/117) by Samuel Gomez
+- chore(pipeline) pipeline should fail when lint and test failed [`#104`](https://github.com/AxaGuilDEv/react-toolkit/pull/104) by Guillaume Chervet
+- chore(deps): [security] bump bootstrap from 4.2.1 to 4.3.1 [`#92`](https://github.com/AxaGuilDEv/react-toolkit/pull/92) by dependabot[bot]
+- fix(storybook) bad readme link and ci should now re-through the error [`#101`](https://github.com/AxaGuilDEv/react-toolkit/pull/101) by Guillaume Chervet
+- chore(release): publish v1.2.1 [ci skip] [`1192dd9`](https://github.com/AxaGuilDEv/react-toolkit/commit/1192dd951f908a3c50e550cb404a4212eccac61f) by Build-CI 
+- docs(changelog) update to new 1.2.0 [`f04d398`](https://github.com/AxaGuilDEv/react-toolkit/commit/f04d398d8acc53ba6c6e709e8034d12e9cea2f96) by Build-CI 
+
 #### [v1.2.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.1.2...v1.2.0)
 > 28 February 2019
 - feature(table) migrate table component to typescript [`#96`](https://github.com/AxaGuilDEv/react-toolkit/pull/96) by barry-thierno
@@ -91,5 +101,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.0...v0.0.0)
-> 28 February 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.1...v0.0.0)
+> 4 April 2019
