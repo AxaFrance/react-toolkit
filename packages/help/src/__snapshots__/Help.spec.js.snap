@@ -7,6 +7,7 @@ exports[`<Help> Render Should render Help component 1`] = `
   <div
     className="af-popover__container-over"
     onClick={[Function]}
+    role="presentation"
   >
     <button
       className="btn af-btn--circle"
