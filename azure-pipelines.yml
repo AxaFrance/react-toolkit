@@ -50,7 +50,7 @@ steps:
     displayName: 'npm test'
 
   - script: npm run lint
-    displayName: 'npm trun lint'
+    displayName: 'npm run lint'
 
   - script: npm run css:build
     displayName: 'build css'
