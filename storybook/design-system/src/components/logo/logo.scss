@@ -1,0 +1,90 @@
+.#{$prefix} {
+  &-logo {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-gray-2;
+    padding: 0.5rem;
+    &__img {
+      width: 40px;
+      margin-right: 1em;
+    }
+    &--header {
+      margin-left: 3em;
+      border-bottom: 0;
+      border-left: 1px solid $color-mercury;
+      padding-left: 1rem;
+    }
+    &--home-intro {
+      position: absolute;
+      top: 9%;
+      left: 9%;
+      border-bottom: 0;
+      margin: 0;
+      .#{$prefix} {
+        &-logo {
+          &__img {
+            width: 200px;
+          }
+        }
+        &-title {
+          &--logo-name {
+            font-size: 8rem;
+            color: $white;
+            letter-spacing: -6px;
+            &:after {
+              font-size: 1rem;
+            }
+          }
+          &--logo-subtitle {
+            font-family: $font-family-base;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+  &-title {
+    &--logo-name {
+      font-family: $font-family-logo;
+      font-size: 1.4rem;
+      color: $color-axa;
+      transform: skewX(-15deg) translateX(0.1em);
+      font-weight: 600;
+      position: relative;
+      display: inline-flex;
+      letter-spacing: -1px;
+      &:after {
+        content: '®';
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: skewX(15deg);
+        font-family: $font-family-base;
+        font-size: 0.3em;
+      }
+    }
+    &--logo-subtitle {
+      font-family: $font-family-base;
+      font-size: 1.2rem;
+      font-weight: 100;
+    }
+  }
+  &-slash {
+    font-family: $font-family-logo;
+    font-weight: 600;
+    transform: skewX(-15deg);
+    position: relative;
+    display: inline-flex;
+    letter-spacing: -2px;
+    margin-right: 1rem;
+    &:after {
+      content: '®';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: $font-family-base;
+      font-size: 0.6rem;
+      transform: skewX(15deg);
+    }
+  }
+}

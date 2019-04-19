@@ -1,0 +1,64 @@
+.#{$prefix} {
+  &-tabs {
+    &__nav {
+      display: flex;
+      border-bottom: 1px solid $color-mercury;
+      &-item {
+        font-family: $font-family-base;
+        border: none;
+        background: transparent;
+        text-align: left;
+        font-size: 1.5rem;
+        margin: 0 1px;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        transition: all 0.5s linear;
+        position: relative;
+        min-width: 200px;
+        border-bottom: 3px solid $color-gray-1;
+        z-index: 0;
+        overflow: hidden;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          background: $color-gray-1;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          transform: translate3d(0, 100%, 0);
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        &:hover {
+          border-color: $color-axa;
+          &:after {
+            background: $color-axa;
+          }
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &--active {
+          border-bottom: 3px solid $color-axa;
+          color: $white;
+          &:after {
+            background: $color-axa;
+            transform: translate3d(0, 1px, 0);
+          }
+        }
+      }
+    }
+    &__content {
+      &-item {
+        display: none;
+        &--active {
+          display: block;
+        }
+      }
+    }
+  }
+}

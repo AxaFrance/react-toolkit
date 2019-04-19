@@ -1,0 +1,10 @@
+{
+  "prefix": "tk",
+  "prefixjs": "js",
+  "baseurl": "https://gulp-seed-axa.netlify.com/",
+  "pathImg": "./assets/images/",
+  "pathFavicons": "./assets/favicons/",
+  "storybookBaseUrl": "https://axaguildev.github.io/react-toolkit/latest/storybook/?path=/story/",
+  "githubBaseUrl": "https://github.com/AxaGuilDEv/react-toolkit/tree/master/packages/",
+  "badgeBaseUrl": "https://badge.fury.io/js/"
+}

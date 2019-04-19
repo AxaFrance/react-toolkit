@@ -1,0 +1,78 @@
+.#{$prefix} {
+  &-page {
+    &__header {
+      background: $color-page-header;
+      padding: 3em 1em 3em 30px;
+      h1 {
+        font-size: 2.5rem;
+      }
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+        color: $white;
+        font-family: $font-family-headings;
+      }
+      p {
+        color: $white;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    &__content {
+      padding: 2em 30px;
+
+      .hljs {
+        padding: 1em;
+        min-height: 100%;
+      }
+      .hljs-tag {
+        line-height: 2rem;
+      }
+
+      .react {
+        &-tabs {
+          &__tab {
+            font-size: 1.3rem;
+            margin: 0 1.5rem;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:focus {
+              border: 3px solid $color-azur;
+              outline: none;
+              box-shadow: none;
+              &:after {
+                display: none;
+              }
+            }
+            &--selected {
+              background: inherit;
+              border-radius: inherit;
+              color: $color-axa;
+              border: 0;
+              border-bottom: 3px solid $color-axa;
+            }
+            &-list {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    &__links {
+      padding: 1em 1em 1em 30px;
+      background: $color-mercury;
+    }
+    &__info {
+      blockquote {
+        margin: 2rem 2rem 0 2rem;
+        padding: 1rem;
+        background: $color-axa-light;
+      }
+      .af-alert--cmpt {
+        margin: 1rem;
+      }
+    }
+  }
+}

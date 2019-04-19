@@ -1,0 +1,10 @@
+mixin Code()
+    div(class=`${prefix}-code__wrapper-outer`)
+        div(class=`${prefix}-code__wrapper-middle`)
+            div(class=`${prefix}-code__wrapper-inner`)
+                div(class=`${prefix}-code__icon`)
+                    +Icon({id:'copy'})
+                    span(class=`${prefix}-code__icon-text`) Copied
+                pre(class="pre")
+                    code(class="html")
+                        block

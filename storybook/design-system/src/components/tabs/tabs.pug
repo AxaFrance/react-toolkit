@@ -1,0 +1,7 @@
+
+include ./tabs-nav-layout
+include ./tabs-content-layout
+mixin Tabs({modifier=''})
+    -const classComponent = setClass('tabs', modifier, true)
+    div(class=classComponent)
+        block

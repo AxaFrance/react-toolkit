@@ -1,0 +1,18 @@
+extends ../../commons/layout
+
+block meta
+	-const { metatitle, metadescription, metakeywords } = require('../src/pages/get-started/meta.json')
+	-var metaTitle = metatitle
+	-var metaDescription = metadescription
+	-var metaKeywords = metakeywords
+	-var basedir='../'
+block menu
+	+Menu({activePath:'/get-started'})
+block page
+	include ../../components/page/page-title
+		block page-title
+			include:markdown-it ./markdown/title.md
+	include ../../components/page/page-content
+		block page-content
+			div(class=`${prefix}-markdown`)
+				include:markdown-it ./markdown/content.md	

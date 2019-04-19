@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import '@axa-fr/react-toolkit-core/dist/assets/scss/core.scss';
+@import '@axa-fr/react-toolkit-all/dist/style/af-components.scss';
+
+@import './commons/scss/font-face';
+@import './commons/scss/variables';
+
+/* Import Normalize ******************************/
+
+@import './commons/scss/normalize';
+@import './commons/scss/reset';
+
+/* Import components *****************************/
+
+/* Commons */
+
+@import './commons/scss/mixins';
+@import './commons/scss/markdown';
+@import './commons/scss/main.scss';
+
+/* Atoms */
+
+@import './components/title/title';
+@import './components/icon/icon';
+@import './components/more/more';
+@import './components/buttonlink/buttonlink';
+
+/* Molecules */
+
+@import './components/logo/logo';
+@import './components/header/header';
+@import './components/footer/footer';
+@import './components/menu/menu';
+@import './components/repo/repo';
+@import './components/encart/encart';
+
+/* Organisms */
+@import './components/tabs/tabs';
+@import './components/demo/demo';
+
+/* Layouts */
+@import './components/content/content';
+@import './components/page/page';
+
+/* Pages */
+@import './pages/home/home';

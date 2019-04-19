@@ -1,0 +1,8 @@
+mixin PageLinks({storybook='', github='', badge=''})
+    .tk-header__links
+        a(target='_blank' href=`${storybookBaseUrl}${storybook}`)
+            +Img({img:'react.svg', alt:"react storybook"})
+        a(target='_blank' href=`${githubBaseUrl}${github}`)
+            +Img({img:'github.svg', alt:"github readme"})
+        a(target='_blank' href=`${badgeBaseUrl}${badge}`)
+            img(src=`${badgeBaseUrl}${badge}.svg` alt='npm version')

@@ -1,0 +1,37 @@
+$prefix: 'tk';
+$prefixjs: 'js';
+
+/* Font */
+$font-family-base: 'Source Sans Pro', sans-serif !default;
+$font-family-logo: 'volkhovbold_italic', 'Times New Roman', Times, serif !default;
+$font-family-headings: $font-family-logo !default;
+$font-size-base: 1.6rem !default;
+
+/* Colors */
+$color-axa: #00008f !default;
+$color-azur: #3032c1 !default;
+$white: #fff !default;
+$black: #000 !default;
+$red-axa: #e90c00 !default;
+$color-burnt-sienna: #f07662 !default;
+$color-gray-1: #ccc !default;
+$color-gray-2: #e5e5e5 !default;
+$color-gray-3: #f5f5f5 !default;
+$color-mercury: #e5e5e5 !default;
+$color-silver: $color-gray-1 !default;
+$color-wild-sand: $color-gray-3 !default;
+$color-dusty-gray: #999 !default;
+$color-scorpion: #333 !default;
+$color-mine-shaft: $color-scorpion !default;
+$color-flamingo-light: #ec4d33 !default;
+$color-alabaster: #fafafa !default;
+
+/* Layout */
+$menu-width: 300px;
+$width-mobile: 320px;
+$color-flamingo-light: #ffd6cf;
+$color-axa-light: #e5e5f4;
+$color-page-header: #4975ba;
+$color-code-background: #282c34;
+$color-action-2: #d3d3e7 !default;
+$color-flamingo: #ec4d33;

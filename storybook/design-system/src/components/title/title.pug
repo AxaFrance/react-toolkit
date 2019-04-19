@@ -1,0 +1,4 @@
+mixin Title({level = 'h1', modifier = '', js=false})
+	-const classComponent = setClass('title', modifier, js)
+	#{level}(class=classComponent)
+		block
