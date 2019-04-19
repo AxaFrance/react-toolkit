@@ -1,0 +1,82 @@
+.#{$prefix} {
+  &-menu {
+    position: relative;
+    &__nav {
+      position: fixed;
+      z-index: 2;
+      width: $menu-width;
+      height: calc(100% - 60px);
+      transition: all 0.5s ease;
+      transform: translate3d(-100%, 0, 0);
+      background: $white;
+      top: 0;
+      margin-top: 60px;
+      overflow-x: auto;
+    }
+
+    &__list {
+      &:not(.tk-menu__list--child) {
+        background: $color-gray-3;
+        border-bottom: 3px solid $color-gray-2;
+      }
+      &--child {
+        overflow: hidden;
+        transition: all 1s ease;
+      }
+    }
+    &__item {
+      &-link {
+        padding: 1rem 0 1rem 2rem;
+        display: block;
+        transition: all 0.5s linear;
+        background: $white;
+        &:hover {
+          background: $color-action-2;
+        }
+      }
+      &-text {
+        display: block;
+        text-transform: uppercase;
+        padding: 1rem;
+        font-weight: 500;
+      }
+      &--active {
+        background: $color-flamingo-light;
+        .#{$prefix}-menu__item-link {
+          color: $color-flamingo;
+        }
+      }
+    }
+    &__item:not(:last-child) {
+      border-bottom: 1px solid $color-gray-2;
+    }
+    &__open,
+    &__close {
+      position: fixed;
+      width: 36px;
+      height: 30px;
+      left: 13px;
+      top: 13px;
+      cursor: pointer;
+      fill: $black;
+      z-index: 6;
+    }
+    &__close {
+      display: none;
+    }
+
+    &--opened {
+      .#{$prefix}-menu {
+        &__nav {
+          transform: translate3d(0, 0, 0);
+        }
+        &__close {
+          display: block;
+        }
+        &__open {
+          display: none;
+        }
+      }
+    }
+  }
+}

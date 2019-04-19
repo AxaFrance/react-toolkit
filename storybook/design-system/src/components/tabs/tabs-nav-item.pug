@@ -1,0 +1,4 @@
+mixin TabsNavItem({index, modifier=''})
+    -const classComponent = setClass('tabs__nav-item', modifier, true)
+    button(class=classComponent data-nav-id=index role="tab" tabindex=(modifier === "active") ? "0" : "-1"  aria-selected=(modifier === "active") ? "true" : "false" aria-controls="nav-tab")
+        block

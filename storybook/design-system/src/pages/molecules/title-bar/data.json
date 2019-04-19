@@ -1,0 +1,70 @@
+{
+  "title": "TitleBar Component UI - Axa Toolkit App Design System",
+  "description": "UI Component TitleBar for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "keywords": "TitleBar design system, ui TitleBar, design system axa, design system ui, design system react, design",
+  "github": "Layout/header/src/Title",
+  "storybook": "layout-header-title--default",
+  "badge": "%40axa-fr%2Freact-toolkit-layout-header",
+  "colors": [
+    {
+      "name": "BLEU AXA",
+      "sass": "$color-axa",
+      "hex": "#00008f"
+    },
+    {
+      "name": "BLEU Action",
+      "sass": "$color-azur",
+      "hex": "#3032c1"
+    },
+    {
+      "name": "BLEU Action focus",
+      "sass": "$color-azur-focused",
+      "hex": "#aaabf9"
+    },
+    {
+      "name": "Mercury",
+      "sass": "$color-mercury",
+      "hex": "#e5e5e5"
+    },
+    {
+      "name": "Silver",
+      "sass": " $color-silver",
+      "hex": "#cccccc"
+    },
+    {
+      "name": "Button Disabled",
+      "sass": " $color-btn-disabled",
+      "hex": "#c9c9c9"
+    },
+    {
+      "name": "Button success",
+      "sass": " $color-btn-success",
+      "hex": " #1cc578"
+    },
+    {
+      "name": "Button success dark",
+      "sass": " $color-btn-success-dark",
+      "hex": " #0d844e"
+    },
+    {
+      "name": "Button success focuced",
+      "sass": " $color-btn-success-focused",
+      "hex": " #bdffe1"
+    },
+    {
+      "name": "Button danger",
+      "sass": " $color-btn-danger",
+      "hex": " #f02849"
+    },
+    {
+      "name": "Button danger dark",
+      "sass": " $color-btn-danger-dark",
+      "hex": " #8f182c"
+    },
+    {
+      "name": "Button danger focuced",
+      "sass": " $color-btn-danger-focused",
+      "hex": " #ffa0af"
+    }
+  ]
+}

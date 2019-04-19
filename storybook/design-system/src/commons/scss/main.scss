@@ -1,0 +1,24 @@
+.#{$prefix} {
+  &-html {
+    font-size: 1rem;
+    font-family: $font-family-base;
+    color: $color-scorpion;
+    letter-spacing: 0.01em;
+    min-width: $width-mobile;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .#{$prefix} {
+    &-body {
+    }
+  }
+}
+
+/* TODO A reporter sur le toolkit */
+
+.af-container {
+  //@include make-container-max-widths();
+  padding: 0 2em;
+  margin: 0 auto;
+}

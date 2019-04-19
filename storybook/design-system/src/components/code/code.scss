@@ -1,0 +1,41 @@
+.#{$prefix} {
+  &-code {
+    &__wrapper {
+      &-outer {
+        position: relative;
+        height: 300px;
+      }
+      &-middle {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+      }
+      &-inner {
+        height: 300px;
+        display: flex;
+        overflow: auto;
+        background: $color-code-background;
+      }
+    }
+    &__icon {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      height: 39px;
+      width: 50px;
+      cursor: pointer;
+      fill: $white;
+      &--copied {
+        fill: $color-btn-success;
+        .#{$prefix}-code__icon-text {
+          color: $color-btn-success;
+        }
+      }
+      &-text {
+        color: $color-code-background;
+      }
+    }
+  }
+}

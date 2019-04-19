@@ -1,0 +1,217 @@
+{
+  "main": [
+    {
+      "label": "Main",
+      "childsmenu": [
+        {
+          "href": "/",
+          "label": "Home"
+        },
+        {
+          "href": "/get-started",
+          "label": "Get started"
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "label": "Layouts",
+      "childsmenu": [
+        {
+          "href": "/layouts/form",
+          "label": "Page form"
+        },
+        {
+          "href": "/layouts/table",
+          "label": "Page table"
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "label": "Style",
+      "childsmenu": [
+        {
+          "href": "/style/colors",
+          "label": "Colors"
+        },
+        {
+          "href": "/style/icons",
+          "label": "Icons"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "label": "Components",
+      "childsmenu": [
+        {
+          "href": "/organisms/accordion",
+          "label": "Accordion"
+        },
+        {
+          "href": "/molecules/alert",
+          "label": "Alert"
+        },
+        {
+          "href": "/atoms/badge",
+          "label": "Badge"
+        },
+        {
+          "href": "/atoms/button",
+          "label": "Button"
+        },
+        {
+          "href": "/atoms/list",
+          "label": "List"
+        },
+        {
+          "href": "/atoms/loader",
+          "label": "Loader"
+        },
+        {
+          "href": "/organisms/modal",
+          "label": "Modal"
+        },
+        {
+          "href": "/molecules/pager",
+          "label": "Pager"
+        },
+        {
+          "href": "/organisms/paging",
+          "label": "Paging"
+        },
+        {
+          "href": "/organisms/panel",
+          "label": "Panel"
+        },
+        {
+          "href": "/atoms/popover",
+          "label": "Popover"
+        },
+        {
+          "href": "/organisms/restitution",
+          "label": "Restitution"
+        },
+        {
+          "href": "/atoms/slider",
+          "label": "Slider"
+        },
+
+        {
+          "href": "/molecules/table",
+          "label": "Table"
+        },
+        {
+          "href": "/molecules/tabs",
+          "label": "Tabs"
+        },
+        {
+          "href": "/atoms/title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "structure": [
+    {
+      "label": "Structure",
+      "childsmenu": [
+        {
+          "href": "/molecules/title-bar",
+          "label": "Title Bar"
+        },
+        {
+          "href": "/organisms/navigation",
+          "label": "Navigation"
+        },
+        {
+          "href": "/organisms/header",
+          "label": "Header"
+        },
+        {
+          "href": "/organisms/footer",
+          "label": "Footer"
+        },
+        {
+          "href": "/organisms/footer-client",
+          "label": "Footer client"
+        },
+        {
+          "href": "/atoms/drawer",
+          "label": "Drawer"
+        }
+      ]
+    }
+  ],
+  "form": [
+    {
+      "label": "FORM ELEMENTS",
+      "childsmenu": [
+        {
+          "href": "/organisms/form",
+          "label": "Overview"
+        },
+        {
+          "href": "/molecules/form-text",
+          "label": "Input Text"
+        },
+        {
+          "href": "/molecules/form-select",
+          "label": "Select"
+        },
+        {
+          "href": "/molecules/form-radio-switch",
+          "label": "Radio switch"
+        },
+        {
+          "href": "/molecules/form-textarea",
+          "label": "Textarea"
+        },
+        {
+          "href": "/molecules/form-checkbox",
+          "label": "Checkbox"
+        },
+        {
+          "href": "/molecules/form-radio",
+          "label": "Radio"
+        },
+        {
+          "href": "/molecules/form-file",
+          "label": "File"
+        },
+        {
+          "href": "/molecules/form-pass",
+          "label": "Pass"
+        },
+        {
+          "href": "/molecules/form-datepicker",
+          "label": "Datepicker"
+        },
+        {
+          "href": "/organisms/form-card",
+          "label": "Card"
+        },
+        {
+          "href": "/organisms/form-filter",
+          "label": "Filter"
+        },
+        {
+          "href": "/organisms/form-filter-inline",
+          "label": "Filter inline"
+        },
+        {
+          "href": "/molecules/steps",
+          "label": "Steps"
+        },
+        {
+          "href": "/molecules/steps-new",
+          "label": "New Steps"
+        }
+      ]
+    }
+  ]
+}

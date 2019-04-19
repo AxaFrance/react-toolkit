@@ -1,0 +1,81 @@
+.#{$prefix} {
+  &-markdown {
+    padding: 2em 1em 1em 0;
+    font-size: 1rem;
+    line-height: 1.25;
+    img,
+    svg {
+      max-width: 100%;
+    }
+    h1,
+    h2,
+    h3 {
+      font-family: $font-family-headings;
+      letter-spacing: -1px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 2rem 0;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 3rem 0 1rem 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    table {
+      table-layout: fixed;
+      background: $white;
+      border: 1px solid $color-gray-1;
+      margin-bottom: 1em;
+      thead {
+        border-bottom: 2px solid $color-axa;
+        th {
+          padding: 1rem 3rem 1rem 1rem;
+          font-weight: 600;
+          text-align: left;
+        }
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid $color-gray-1;
+          td {
+            padding: 1rem 3rem 1rem 1rem;
+            line-height: 1.25;
+            vertical-align: top;
+            &:first-child {
+              white-space: nowrap;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      list-style: disc inside;
+      li {
+        padding: 0.5rem 0;
+      }
+    }
+    code {
+      background: $color-mercury;
+      font-size: 0.9rem;
+      padding: 1rem 0.4rem;
+      margin: 1rem 0;
+      display: block;
+      border: $color-silver 1px solid;
+      border-radius: 5px;
+    }
+    blockquote {
+      padding: 1rem;
+    }
+  }
+}

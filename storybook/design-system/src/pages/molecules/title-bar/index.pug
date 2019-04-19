@@ -1,0 +1,48 @@
+extends ../../../commons/layout
+
+block meta
+	-const { metatitle, metadescription, metakeywords, github, storybook, badge } = require('../src/pages/molecules/title-bar/data.json')
+	-var metaTitle = metatitle
+	-var metaDescription = metadescription
+	-var metaKeywords = metakeywords
+	-var basedir='../../'
+block menu
+	+Menu({activePath:'/get-started'})
+block headerlinks
+	+PageLinks({github, storybook, badge})
+append page
+	include ../../../components/page/page-title
+		append page-title
+			include:markdown-it ./markdown/title.md
+	.tk-page__links
+		+PageLinks({github, storybook, badge})
+	include ../../../components/page/page-content
+		block page-content
+			+Tabs({})
+				+TabsNavLayout()
+					+TabsNavItem({index:0, modifier:'active' , active:true})
+						| Démos
+					+TabsNavItem({index:1})
+						| Usage
+					+TabsNavItem({index:2})
+						| Style
+				+TabsContentLayout()
+					+TabsContentItem({index:0, modifier:'active' , active:true})
+						+Demo({ title:'Classic Title Bar'})
+							block preview
+								include ./templates/title-bar.pug
+							block code
+								-let htmlCode = pugg.compileFile('./src/pages/molecules/title-bar/templates/title-bar.pug')
+								pre
+									code.html
+										| #{pretty(htmlCode())}
+							block css
+								pre
+									code.css
+										include:markdown-it ./markdown/importcss.md
+					+TabsContentItem({index:1})
+						div(class=`${prefix}-markdown`)
+							include:markdown-it ./markdown/usage.md
+					+TabsContentItem({index:2})
+						| hello style
+			

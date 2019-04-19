@@ -1,0 +1,26 @@
+.#{$prefix} {
+  &-encart {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    text-align: center;
+    align-items: center;
+    &__image {
+      max-width: 250px;
+      max-height: 150px;
+      margin-bottom: 1rem;
+    }
+    &__title {
+      font-family: $font-family-logo;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $color-axa;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+block vars	
+    -const id = "home"
+    -const {setClassActive, setClass, pugg, pretty} = functions
+    -const {title, author, geography, copyright, email, description, keywords, lang, avatar} = general
+    -const {prefixjs, prefix, baseurl, pathImg, pathFavicons, storybookBaseUrl, githubBaseUrl, badgeBaseUrl} = base
+    -const {main, layouts, style, components, structure, form} = menu
+
+include ../components/icon/icon
+include ../components/title/title
+include ../components/logo/logo
+include ../components/img/img
+include ../components/more/more
+include ../components/repo/repo
+include ../components/menu/menu
+include ../components/menu/menuitem
+include ../components/menu/submenu
+include ../components/introheader/introheader
+include ../components/encart/encart
+include ../components/buttonlink/buttonlink
+include ../components/pagelinks/pagelinks
+include ../components/tabs/tabs
+include ../components/tabs/tabs-nav-item
+include ../components/tabs/tabs-content-item
+include ../components/demo/demo
+
+doctype html
+html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
+    head
+        link(rel="canonical" href=baseurl)
+        include ./includes/meta
+        block meta
+        include ./includes/favicon.pug
+        meta(name="description" content=metaDescription || description)
+        meta(name="keywords" content=metaKeywords || keywords)
+        title
+            =metaTitle || title
+        //[if lte IE 8]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        link(rel="shortcut icon" href="img/favicon.ico")
+        link(href=`${basedir}bundle.css` rel="stylesheet" type="text/css")
+        link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/sunburst.min.css")
+        style
+            block style
+    body(id=`${prefix}-${id}-body` class=`${prefix}-body`)
+        block menu
+        include ../components/header/header
+        include ../components/content/content
+            include ../components/page/page
+        include ../components/footer/footer
+        div(style="display:none")
+            include ../assets/sprite/sprite.svg
+        script(src=`${basedir}bundle.js`)
+        block scriptPage
+        block template
+        include ./includes/analytics.pug
+        script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js")
+        script.
+            hljs.initHighlightingOnLoad();

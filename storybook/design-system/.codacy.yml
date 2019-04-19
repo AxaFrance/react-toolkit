@@ -1,0 +1,5 @@
+exclude_paths:
+  - '.vscode'
+  - 'gulpfile.babel.js'
+  - '**/*.spec.js'
+  - '**/*.test.js'
