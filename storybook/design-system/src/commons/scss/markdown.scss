@@ -7,19 +7,28 @@
     svg {
       max-width: 100%;
     }
+    a {
+      color: $color-links;
+    }
     h1,
     h2,
     h3 {
       font-family: $font-family-headings;
       letter-spacing: -1px;
+      font-weight: 900;
     }
     h1 {
       font-size: 2.5rem;
       margin: 2rem 0;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin: 3rem 0 1rem 0;
+      margin-bottom: 1.3rem;
+      display: block;
+      letter-spacing: -1px;
+      border-bottom: 1px solid $color-gray-1;
+      padding-bottom: .7rem;
       &:first-child {
         margin-top: 0;
       }
@@ -76,6 +85,12 @@
     }
     blockquote {
       padding: 1rem;
+    }
+    strong {
+      font-weight: bold;
+    }
+    em{
+      font-style: italic;
     }
   }
 }

@@ -1,10 +1,3 @@
-block vars	
-    -const id = "home"
-    -const {setClassActive, setClass, pugg, pretty} = functions
-    -const {title, author, geography, copyright, email, description, keywords, lang, avatar} = general
-    -const {prefixjs, prefix, baseurl, pathImg, pathFavicons, storybookBaseUrl, githubBaseUrl, badgeBaseUrl} = base
-    -const {main, layouts, style, components, structure, form} = menu
-
 include ../components/icon/icon
 include ../components/title/title
 include ../components/logo/logo
@@ -23,8 +16,17 @@ include ../components/tabs/tabs-nav-item
 include ../components/tabs/tabs-content-item
 include ../components/demo/demo
 
+block locals	
+    - const {setClassActive, setClass, pugg, pretty} = functions
+    - const {title, author, geography, copyright, email, description, keywords, lang, avatar} = general
+    - const {prefixjs, prefix, baseurl, pathImg, pathFavicons, storybookBaseUrl, githubBaseUrl, badgeBaseUrl} = base
+    - const {main, layouts, style, components, structure, form} = menu
+
+block vars
+    - var id = "home"
+
 doctype html
-html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
+html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html ${prefix}-html--${id}`)
     head
         link(rel="canonical" href=baseurl)
         include ./includes/meta

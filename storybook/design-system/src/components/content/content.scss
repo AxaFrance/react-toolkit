@@ -1,7 +1,8 @@
 .#{$prefix} {
   &-content {
-    background: $color-alabaster;
-    transition: all 0.5s ease;
+    background: $color-marine;
+    transition: all .5s ease;
+
     &--opened {
       padding-left: $menu-width;
     }

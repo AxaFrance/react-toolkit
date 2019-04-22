@@ -28,7 +28,6 @@ class Menu {
   initEvents() {
     $(classBtnOpen).addEventListener('click', () => this.openMenu());
     $(classBtnClose).addEventListener('click', () => this.closeMenu());
-    window.onresize = () => this.closeMenu();
   }
 
   isNotExitingElement() {

@@ -3,23 +3,34 @@
     position: sticky;
     top: 0;
     z-index: 5;
-    background: $white;
     width: 100%;
-    border-bottom: 1px solid $color-gray-2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1em;
+    background: $color-marine;
+
     &__links {
       display: flex;
       align-items: center;
+
       img {
         max-height: 25px;
-        margin: 0 0.5rem;
+        margin: 0 .5rem;
       }
+
       > p {
         display: inline-flex;
         align-items: center;
+      }
+    }
+  }
+
+  &-html--home {
+    .#{$prefix} {
+      &-header {
+        background: transparent;
+        position: fixed;
       }
     }
   }
