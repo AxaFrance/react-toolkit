@@ -2,8 +2,8 @@ $prefix: 'tk';
 $prefixjs: 'js';
 
 /* Font */
-$font-family-base: 'Source Sans Pro', sans-serif !default;
-$font-family-logo: 'volkhovbold_italic', 'Times New Roman', Times, serif !default;
+$font-family-base: 'Source Sans Pro', arial, sans-serif !default;
+$font-family-logo: 'playfair', georgia, Times, serif !default;
 $font-family-headings: $font-family-logo !default;
 $font-size-base: 1.6rem !default;
 
@@ -22,9 +22,15 @@ $color-silver: $color-gray-1 !default;
 $color-wild-sand: $color-gray-3 !default;
 $color-dusty-gray: #999 !default;
 $color-scorpion: #333 !default;
+$color-gray-dark: #252525 !default;
 $color-mine-shaft: $color-scorpion !default;
 $color-flamingo-light: #ec4d33 !default;
 $color-alabaster: #fafafa !default;
+$color-marine: #232350 !default;
+$color-links: #18c4de;
+$color-brown-dark: #967e68;
+$color-brown-light: #cbbeb2;
+
 
 /* Layout */
 $menu-width: 300px;

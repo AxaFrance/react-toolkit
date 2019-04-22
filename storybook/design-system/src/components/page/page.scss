@@ -1,75 +1,64 @@
 .#{$prefix} {
   &-page {
+    background: $white;
+
     &__header {
-      background: $color-page-header;
-      padding: 3em 1em 3em 30px;
+      padding: .8rem 1rem .8rem 30px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 5px;
+        background: $color-marine;
+        bottom: 0;
+        left: 30px;
+      }
+
       h1 {
-        font-size: 2.5rem;
-      }
-      h1,
-      h2,
-      h3 {
+        color: $color-marine;
         margin-top: 0;
-        color: $white;
+        font-size: 2.5rem;
         font-family: $font-family-headings;
+        transform: skewX(-15deg);
       }
-      p {
-        color: $white;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
+
+      h2 {
+        color: $color-gray-dark;
+        margin-top: 0;
+        font-family: $font-family-base;
+        font-weight: 400;
+        font-style: italic;
       }
     }
+
     &__content {
-      padding: 2em 30px;
+      padding: 0 30px 2em 30px;
+      width: 85%;
 
       .hljs {
         padding: 1em;
         min-height: 100%;
       }
+
       .hljs-tag {
         line-height: 2rem;
       }
-
-      .react {
-        &-tabs {
-          &__tab {
-            font-size: 1.3rem;
-            margin: 0 1.5rem;
-            &:first-child {
-              margin-left: 0;
-            }
-            &:focus {
-              border: 3px solid $color-azur;
-              outline: none;
-              box-shadow: none;
-              &:after {
-                display: none;
-              }
-            }
-            &--selected {
-              background: inherit;
-              border-radius: inherit;
-              color: $color-axa;
-              border: 0;
-              border-bottom: 3px solid $color-axa;
-            }
-            &-list {
-              margin: 0;
-            }
-          }
-        }
-      }
     }
+
     &__links {
       padding: 1em 1em 1em 30px;
       background: $color-mercury;
     }
+
     &__info {
       blockquote {
         margin: 2rem 2rem 0 2rem;
         padding: 1rem;
         background: $color-axa-light;
       }
+
       .af-alert--cmpt {
         margin: 1rem;
       }

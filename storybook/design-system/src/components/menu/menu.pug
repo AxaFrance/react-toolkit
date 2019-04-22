@@ -1,4 +1,4 @@
-mixin Menu({modifier='', activePath='/'})
+mixin Menu({modifier='opened', activePath='/'})
     -const classComponent = setClass('menu', modifier, true)
     div(class=classComponent)
         +Icon({id:'cross-gap', className:`${prefix}-menu__close`, modifier:"close", js:true})
