@@ -14,6 +14,7 @@ exports[`<SliderInput> renders SliderInput correctly 1`] = `
   messageType="error"
 >
   <CustomSlider
+    autoFocus={null}
     classModifier={null}
     className={null}
     disabled={false}
@@ -25,6 +26,7 @@ exports[`<SliderInput> renders SliderInput correctly 1`] = `
     onChange={[Function]}
     onFocus={null}
     readOnly={false}
+    tabIndex={null}
   />
   <HelpMessage
     isVisible={true}
