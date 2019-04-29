@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Field,
   FieldConstants as Constants,
@@ -10,6 +11,7 @@ import Slider from './Slider';
 
 const propTypes = {
   ...Constants.propTypes,
+  options: PropTypes.array.isRequired,
 };
 
 const defaultProps = {
@@ -36,6 +38,7 @@ const SliderInput = props => {
     readOnly,
     disabled,
     placeholder,
+    ...otherProps
   } = props;
   const inputId = InputManager.getInputId(id);
   return (
@@ -58,6 +61,7 @@ const SliderInput = props => {
         disabled={disabled}
         placeholder={placeholder}
         classModifier={classModifier}
+        {...otherProps}
       />
       {children}
       <HelpMessage message={helpMessage} isVisible={!message} />
