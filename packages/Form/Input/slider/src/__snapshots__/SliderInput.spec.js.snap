@@ -13,7 +13,7 @@ exports[`<SliderInput> renders SliderInput correctly 1`] = `
   message={null}
   messageType="error"
 >
-  <CustomSlider
+  <ComponentEnhancer
     autoFocus={null}
     classModifier={null}
     className={null}

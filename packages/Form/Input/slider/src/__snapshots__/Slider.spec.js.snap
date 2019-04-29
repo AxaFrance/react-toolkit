@@ -1,38 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Slider> renders Slider correctly 1`] = `
-<ComponentEnhancer(undefined)
-  activeDotStyle={Object {}}
-  className="af-form__slider"
+<branch(withProps(withHandlers(CustomSlider)))
+  classModifier={null}
+  className={null}
   disabled={false}
-  dotStyle={Object {}}
-  dots={false}
-  handle={[Function]}
-  handleStyle={
-    Array [
-      Object {},
-    ]
-  }
   id="id"
-  included={true}
   inputRef={null}
+  isVisible={true}
   label="File *"
-  marks={Object {}}
-  max={-Infinity}
-  min={Infinity}
   name="file"
-  onAfterChange={null}
-  onBeforeChange={null}
+  onBlur={null}
   onChange={[Function]}
-  prefixCls="rc-slider"
-  railStyle={Object {}}
+  onFocus={null}
+  options={Array []}
   readOnly={false}
-  step={null}
-  trackStyle={
-    Array [
-      Object {},
-    ]
-  }
-  vertical={false}
 />
 `;

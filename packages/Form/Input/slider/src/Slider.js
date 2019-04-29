@@ -7,37 +7,68 @@ import {
   InputConstants as Constants,
   Input,
   omit,
+  withInput,
 } from '@axa-fr/react-toolkit-form-core';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
-
-const propTypes = {
-  ...Constants.propTypes,
-  options: PropTypes.array.isRequired,
-};
-
-const defaultClassName = 'af-form__slider';
-const defaultProps = {
-  ...Constants.defaultProps,
-};
 
 const omitProperties = omit([
   'classModifier',
   'className',
   'isVisible',
-  'onChange',
   'options',
 ]);
 
 const mapOptions = options => options.map((o, index) => ({ index, ...o }));
 
-class CustomSlider extends Component {
-  constructor(props) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-  }
+const CustomSlider = props => {
+  const {
+    componentClassName,
+    isVisible,
+    onBlur,
+    onFocus,
+    disabled,
+    readOnly,
+    options,
+    value,
+    onChange,
+    ...otherProps
+  } = props;
 
-  onChange(e) {
-    const { name, id, onChange, options } = this.props;
+  const newOptions = mapOptions(options);
+  const indexes = newOptions.map(o => o.index);
+
+  const min = Math.min(...indexes);
+  const max = Math.max(...indexes);
+
+  const marks = {
+    /* 0: 'VERY BAD',
+      1: 'BAD',
+      2: 'NICE',
+      3: 'VERY NICE', */
+  };
+  newOptions.forEach(element => {
+    marks[element.index] = element.label;
+  });
+
+  return (
+    <Slider
+      min={min}
+      max={max}
+      marks={marks}
+      className={componentClassName}
+      step={null}
+      onChange={onChange}
+      onAfterChange={onBlur}
+      onBeforeChange={onFocus}
+      value={value}
+      disabled={disabled}
+      readOnly={readOnly}
+      {...omitProperties(otherProps)}
+    />
+  );
+};
+
+const handlers = {
+  onChange: ({ name, id, onChange, options }) => e => {
     const newOptions = mapOptions(options);
 
     let option = null;
@@ -52,73 +83,26 @@ class CustomSlider extends Component {
       name,
       id,
     });
-  }
+  },
+};
 
-  render() {
-    const {
-      className,
-      classModifier,
-      isVisible,
-      onBlur,
-      onFocus,
-      disabled,
-      readOnly,
-      options,
-      value,
-      ...otherProps
-    } = this.props;
+const propTypes = {
+  ...Constants.propTypes,
+  options: PropTypes.array.isRequired,
+};
 
-    const newOptions = mapOptions(options);
-    const indexes = newOptions.map(o => o.index);
+const defaultClassName = 'af-form__slider';
+const defaultProps = {
+  ...Constants.defaultProps,
+};
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps,
+  handlers
+)(CustomSlider);
 
-    const min = Math.min(...indexes);
-    const max = Math.max(...indexes);
+EnhancedComponent.Clone = Input.Clone;
+EnhancedComponent.displayName = Slider.name;
 
-    const marks = {
-      /* 0: 'VERY BAD',
-      1: 'BAD',
-      2: 'NICE',
-      3: 'VERY NICE', */
-    };
-    newOptions.forEach(element => {
-      marks[element.index] = element.label;
-    });
-    console.log(marks);
-    console.log(min);
-    console.log(max);
-    console.log(value);
-
-    if (!isVisible) {
-      return null;
-    }
-
-    const componentClassName = ClassManager.getComponentClassName(
-      className,
-      classModifier,
-      defaultClassName
-    );
-    return (
-      <Slider
-        min={min}
-        max={max}
-        marks={marks}
-        className={componentClassName}
-        step={null}
-        onChange={this.onChange}
-        onAfterChange={onBlur}
-        onBeforeChange={onFocus}
-        value={value}
-        disabled={disabled}
-        readOnly={readOnly}
-        {...omitProperties(otherProps)}
-      />
-    );
-  }
-}
-
-CustomSlider.propTypes = propTypes;
-CustomSlider.defaultProps = defaultProps;
-
-CustomSlider.Clone = Input.Clone;
-
-export default CustomSlider;
+export default EnhancedComponent;
