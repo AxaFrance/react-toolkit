@@ -1,6 +1,13 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.3](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.2...v1.2.3)
+> 30 April 2019
+-  fix(slider) css width  [`#192`](https://github.com/AxaGuilDEv/react-toolkit/pull/192) by Guillaume Chervet
+-  fix(slider) fix value incorrect mapping [`#190`](https://github.com/AxaGuilDEv/react-toolkit/pull/190) by Guillaume Chervet
+- chore(release): publish v1.2.3 [ci skip] [`cdcef1b`](https://github.com/AxaGuilDEv/react-toolkit/commit/cdcef1b1f38da066fea1798c4069cdf3cee902b3) by Build-CI 
+- docs(changelog) update to new 1.2.2 [`d5b3444`](https://github.com/AxaGuilDEv/react-toolkit/commit/d5b344419b3965f61203e0ed0b54263357e5bca2) by Build-CI 
+
 #### [v1.2.2](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.1...v1.2.2)
 > 29 April 2019
 - feat(slider) add slider wrapped [`#186`](https://github.com/AxaGuilDEv/react-toolkit/pull/186) by Guillaume Chervet
@@ -107,5 +114,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.2...v0.0.0)
-> 29 April 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.3...v0.0.0)
+> 30 April 2019
