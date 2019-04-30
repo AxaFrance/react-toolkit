@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'rc-slider';
 import 'rc-slider/dist/rc-slider.css';
@@ -49,6 +49,13 @@ const CustomSlider = props => {
     marks[element.index] = element.label;
   });
 
+  let newValue = null;
+  newOptions.forEach(element => {
+    if (element.value === value) {
+      newValue = element.index;
+    }
+  });
+
   return (
     <Slider
       min={min}
@@ -59,7 +66,7 @@ const CustomSlider = props => {
       onChange={onChange}
       onAfterChange={onBlur}
       onBeforeChange={onFocus}
-      value={value}
+      value={newValue}
       disabled={disabled}
       readOnly={readOnly}
       {...omitProperties(otherProps)}

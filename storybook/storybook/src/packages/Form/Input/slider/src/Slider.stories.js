@@ -7,9 +7,6 @@ import { SliderInput, Slider } from '@axa-fr/react-toolkit-form-input-slider';
 import '@axa-fr/react-toolkit-form-input-slider/dist/af-slider.css';
 import {
   MessageTypes,
-  FieldForm,
-  HelpMessage,
-  FieldError,
   InputConstants as Constants,
 } from '@axa-fr/react-toolkit-form-core';
 
@@ -36,7 +33,7 @@ stories.push({
         label={text('label', 'Place name *')}
         name={text('name', 'placeName')}
         onChange={action('onChange')}
-        value={number('value', 2)}
+        value={number('value', '1024')}
         helpMessage={text(
           'helpMessage',
           'Enter the place name, ex : Webcenter'
