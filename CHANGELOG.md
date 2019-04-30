@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.4](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.3...v1.2.4)
+> 30 April 2019
+- fix(popover): not working with onclick mode [`#194`](https://github.com/AxaGuilDEv/react-toolkit/pull/194) by vincent-ducrocq-axa
+- chore(release): publish v1.2.4 [ci skip] [`0a0f093`](https://github.com/AxaGuilDEv/react-toolkit/commit/0a0f093190fa297ef67435694753373eea39bbba) by Build-CI 
+- docs(changelog) update to new 1.2.3 [`19c4ea8`](https://github.com/AxaGuilDEv/react-toolkit/commit/19c4ea80c41659eb42e3f31ddd8e2e0442d1ad73) by Build-CI 
+
 #### [v1.2.3](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.2...v1.2.3)
 > 30 April 2019
 -  fix(slider) css width  [`#192`](https://github.com/AxaGuilDEv/react-toolkit/pull/192) by Guillaume Chervet
@@ -114,5 +120,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.3...v0.0.0)
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.4...v0.0.0)
 > 30 April 2019
