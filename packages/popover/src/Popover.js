@@ -54,8 +54,8 @@ class PopoverClick extends Component {
       placement,
       className,
       classModifier,
-      isOpen,
     } = this.props;
+    const { isOpen } = this.state;
     return (
       <PopoverBase
         className={className}
