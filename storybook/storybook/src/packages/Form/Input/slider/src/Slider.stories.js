@@ -7,9 +7,6 @@ import { SliderInput, Slider } from '@axa-fr/react-toolkit-form-input-slider';
 import '@axa-fr/react-toolkit-form-input-slider/dist/af-slider.css';
 import {
   MessageTypes,
-  FieldForm,
-  HelpMessage,
-  FieldError,
   InputConstants as Constants,
 } from '@axa-fr/react-toolkit-form-core';
 
