@@ -36,7 +36,7 @@ stories.push({
         label={text('label', 'Place name *')}
         name={text('name', 'placeName')}
         onChange={action('onChange')}
-        value={number('value', 2)}
+        value={number('value', '1024')}
         helpMessage={text(
           'helpMessage',
           'Enter the place name, ex : Webcenter'
