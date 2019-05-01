@@ -5,7 +5,7 @@ import {
 } from '@axa-fr/react-toolkit-core';
 import Help from './Help';
 
-const enhance = compose(
+export const enhance = compose(
   withClassDefault('af-popover__container'),
   withClassModifier
 );
