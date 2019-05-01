@@ -5,7 +5,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import sass from 'gulp-sass';
 import nodesass from 'node-sass';
 import plumber from 'gulp-plumber';
-import minifyCSS from 'gulp-csso';
+import cleanCSS from 'gulp-clean-css';
 import { reload, notify } from './serve';
 import config from './config';
 
@@ -26,7 +26,7 @@ export const sassBuild = () => src(`${pathSrc}${sassIndex}`)
       cascade: false,
     }),
   )
-  .pipe(minifyCSS())
+  .pipe(cleanCSS())
   .pipe(concat('bundle.css'))
   .pipe(dest(pathDest));
 
