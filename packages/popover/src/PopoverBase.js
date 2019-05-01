@@ -8,7 +8,6 @@ import PopoverPlacements from './PopoverPlacements';
 const propTypes = {
   ...Constants.propTypes,
   isOpen: PropTypes.bool.isRequired,
-  title: PropTypes.string,
   children: PropTypes.any,
   onToggle: PropTypes.func,
   onOutsideTap: PropTypes.func,
@@ -76,7 +75,7 @@ const CustomTarget = (ref, onToggle, props, target) => (
   </div>
 );
 
-class AnimatedPopover extends PureComponent {
+export class AnimatedPopover extends PureComponent {
   constructor(props) {
     super(props);
     this.setOusideTap = this.setOusideTap.bind(this);

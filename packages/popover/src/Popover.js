@@ -25,7 +25,7 @@ const defaultProps = {
   mode: PopoverModes.click,
 };
 
-class PopoverClick extends Component {
+export class PopoverClick extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -49,12 +49,7 @@ class PopoverClick extends Component {
   }
 
   render() {
-    const {
-      children,
-      placement,
-      className,
-      classModifier,
-    } = this.props;
+    const { children, placement, className, classModifier } = this.props;
     const { isOpen } = this.state;
     return (
       <PopoverBase
@@ -70,7 +65,7 @@ class PopoverClick extends Component {
   }
 }
 
-class PopoverOver extends Component {
+export class PopoverOver extends Component {
   constructor(props) {
     super(props);
     this.enter = this.enter.bind(this);
@@ -96,7 +91,7 @@ class PopoverOver extends Component {
     const { children, placement, className, classModifier } = this.props;
     const { isOpen } = this.state;
     return (
-      <div onMouseEnter={this.enter} onMouseLeave={this.leave}>
+      <span onMouseEnter={this.enter} onMouseLeave={this.leave}>
         <PopoverBase
           isOpen={isOpen}
           placement={placement}
@@ -104,7 +99,7 @@ class PopoverOver extends Component {
           classModifier={classModifier}>
           {children}
         </PopoverBase>
-      </div>
+      </span>
     );
   }
 }
@@ -125,7 +120,10 @@ const Popover = props => {
 };
 
 Popover.Pop = PopoverBase.Pop;
+Popover.Pop.displayName = 'Popover.Pop';
+
 Popover.Over = PopoverBase.Over;
+Popover.Over.displayName = 'Popover.Over';
 
 Popover.propTypes = propTypes;
 Popover.defaultProps = defaultProps;

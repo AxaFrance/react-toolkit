@@ -1,5 +1,5 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
 import Help from '@axa-fr/react-toolkit-help';
@@ -10,13 +10,18 @@ const stories = [];
 
 stories.push({
   desc: 'Text',
-  component: () => <Help>tooltip avec du text</Help>,
+  component: () => (
+    <Help mode={select('mode', ['hover', 'click'], 'click')}>
+      tooltip avec du text
+    </Help>
+  ),
 });
 
 stories.push({
   desc: 'Html',
   component: () => (
     <Help
+      mode={select('mode', ['hover', 'click'], 'click')}
       classModifier={text('classModifier', 'custom')}
       className={text('className', 'af-popover__container')}>
       <div className="af-help-demo__container">
