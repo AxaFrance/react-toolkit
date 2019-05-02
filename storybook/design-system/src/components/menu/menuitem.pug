@@ -1,0 +1,10 @@
+mixin MenuItem({href, label, childsmenu, activePath, title=''})
+	li(class=`${prefix}-menu__item${activePath === href ? ` ${prefix}-menu__item--active` : ''}`)
+		if(href)
+			a(href=href title=title class=`${prefix}-menu__item-link`)
+				|	#{label}
+		else
+			span(class=`${prefix}-menu__item-text ${prefixjs}-menu__item-text`)
+				|	#{label}
+		if childsmenu && childsmenu.length
+			+SubMenu({menu: childsmenu, isChild: true, activePath})

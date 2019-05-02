@@ -1,0 +1,9 @@
+mixin Logo({title='', subtitle='', img='axa.svg', modifier="", js=false})
+  -const classComponent = setClass('logo', modifier, js)
+  div(class=classComponent)
+    +Img({img:img, alt:"Retour à l'accueil", className:`${prefix}-logo__img`})
+    div(class=`${prefix}-logo__title`)
+      +Title({level: "h2", modifier:'logo-name'})
+        | #{title}
+      +Title({level: "h3", modifier:'logo-subtitle'})
+        | #{subtitle}

@@ -1,0 +1,5 @@
+exclude_patterns:
+  - '.vscode'
+  - 'gulpfile.babel.js'
+  - '**/*.spec.js'
+  - '**/*.test.js'

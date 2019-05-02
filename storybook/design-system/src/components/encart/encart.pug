@@ -1,0 +1,5 @@
+mixin Encart({ image, title, text }) 
+    article(class=`${prefix}-encart`)
+        img(class=`${prefix}-encart__image` src=`./assets/images/${image}` alt=image )
+        h3(class=`${prefix}-encart__title`) #{title}
+        p(class=`${prefix}-encart__text`) #{text}

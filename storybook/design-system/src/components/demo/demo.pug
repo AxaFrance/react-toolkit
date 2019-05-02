@@ -1,0 +1,22 @@
+include ../code/code
+mixin Demo({modifier='', title="Set Demo Title"})
+    -const classComponent = `${setClass('demo', modifier, true)}`
+    div(class=classComponent)
+        +Title({level: "h2", modifier:"demo"})
+            | #{title}
+        div(class=`${prefix}-demo__display`)
+            +Icon({id:'full-screen', modifier:"demo-open", js:true})
+            +Icon({id:'cross-full', modifier:"demo-close", js:true})
+            div(class=`${prefix}-demo__template`)
+                block preview
+        +Tabs({modifier:'demo'})
+            +TabsNavLayout()
+                +TabsNavItem({index:11,modifier:'active', active:true})
+                    span HTML
+                +TabsNavItem({index:12})
+                    span CSS
+            +TabsContentLayout()
+                +TabsContentItem({index:11, modifier:'active' , active:true})
+                    block code
+                +TabsContentItem({index:12})
+                    block css

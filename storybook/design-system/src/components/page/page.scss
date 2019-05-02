@@ -1,0 +1,67 @@
+.#{$prefix} {
+  &-page {
+    background: $white;
+
+    &__header {
+      padding: .8rem 1rem .8rem 30px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 5px;
+        background: $color-marine;
+        bottom: 0;
+        left: 30px;
+      }
+
+      h1 {
+        color: $color-marine;
+        margin-top: 0;
+        font-size: 2.5rem;
+        font-family: $font-family-headings;
+        transform: skewX(-15deg);
+      }
+
+      h2 {
+        color: $color-gray-dark;
+        margin-top: 0;
+        font-family: $font-family-base;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+
+    &__content {
+      padding: 0 30px 2em 30px;
+      width: 85%;
+
+      .hljs {
+        padding: 1em;
+        min-height: 100%;
+      }
+
+      .hljs-tag {
+        line-height: 2rem;
+      }
+    }
+
+    &__links {
+      padding: 1em 1em 1em 30px;
+      background: $color-mercury;
+    }
+
+    &__info {
+      blockquote {
+        margin: 2rem 2rem 0 2rem;
+        padding: 1rem;
+        background: $color-axa-light;
+      }
+
+      .af-alert--cmpt {
+        margin: 1rem;
+      }
+    }
+  }
+}

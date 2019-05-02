@@ -1,0 +1,39 @@
+.#{$prefix} {
+  &-btn {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $color-azur;
+    color: $white;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    font-weight: bold;
+    min-width: 10rem;
+    box-shadow: inset 0 -3px $color-axa;
+    transition: all 0.2s linear;
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+    &:hover {
+      background: $color-axa;
+    }
+    &__icon {
+      height: 1.2rem;
+      fill: $white;
+    }
+    &__text {
+      margin: 0 0 0 1rem;
+    }
+    &--has-icon-right {
+      .#{$prefix} {
+        &-btn {
+          &__icon {
+            order: 1;
+          }
+          &__text {
+            margin: 0 1rem 0 0;
+          }
+        }
+      }
+    }
+  }
+}

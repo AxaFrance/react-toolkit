@@ -1,0 +1,6 @@
+mixin IntroHeader({ modifier='', intro, cmpt})
+    header(class=`${prefix}-${cmpt}__header`)
+        +Logo({title:'Slash', subtitle:'Design System', img: "slash-logo.svg", modifier:"header", alt:'Slash Design System', modifier:"home-intro"})
+        if(intro !== '')
+            p(class=`${prefix}-${cmpt}__intro`)
+                | #{intro}

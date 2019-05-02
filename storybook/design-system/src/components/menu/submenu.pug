@@ -1,0 +1,5 @@
+mixin SubMenu({menu, isChild = false, activePath='/'})
+    ul(class=`${prefix}-menu__list${isChild ? ` ${prefix}-menu__list--child js-menu__list--child` : ''}` role="menu")
+        each item, index in menu
+            -const {href, label, childsmenu} = item
+            +MenuItem({href, label, childsmenu, activePath})

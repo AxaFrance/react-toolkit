@@ -1,0 +1,82 @@
+.#{$prefix} {
+  &-logo {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-gray-2;
+    padding: .5rem;
+
+    &__img {
+      width: 40px;
+      margin-right: 1em;
+    }
+
+    &--header {
+      position: relative;
+      margin-left: 3em;
+      border-bottom: 0;
+      padding-left: 1rem;
+
+      &::after {
+        content: '';
+        background: $white;
+        width: 1px;
+        height: 50%;
+        @include vcenterer;
+
+        left: 0;
+      }
+    }
+  }
+
+  &-title {
+    &--logo-name {
+      font-family: $font-family-logo;
+      font-size: 1.3rem;
+      color: $white;
+      transform: skewX(-15deg) translateX(.1em);
+      font-weight: 900;
+      position: relative;
+      display: inline-flex;
+      letter-spacing: -1px;
+
+      &::after {
+        content: '®';
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: skewX(15deg);
+        font-family: $font-family-base;
+        font-size: .3em;
+      }
+    }
+
+    &--logo-subtitle {
+      font-family: $font-family-base;
+      font-size: 1.1rem;
+      line-height: 1rem;
+      font-weight: 100;
+      color: $white;
+      font-style: italic;
+    }
+  }
+
+  &-slash {
+    font-family: $font-family-logo;
+    font-weight: 900;
+    transform: skewX(-15deg);
+    position: relative;
+    display: inline-flex;
+    letter-spacing: -2px;
+    margin-right: 1rem;
+
+    &::after {
+      content: '®';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: $font-family-base;
+      font-size: .6rem;
+      transform: skewX(15deg);
+    }
+  }
+}

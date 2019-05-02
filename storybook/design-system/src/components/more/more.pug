@@ -1,0 +1,5 @@
+mixin More({ target='', href='/', title="Plus d'info", icon = 'simpleArrowRight', modifier=''})
+	-const classComponent = setClass('more', modifier, true)
+	a(href=href target=target title=title class=classComponent)
+		+Icon({id:icon})
+		span(class=`${classComponent}__text`) #{title}
