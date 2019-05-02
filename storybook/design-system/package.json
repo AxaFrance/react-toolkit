@@ -1,7 +1,8 @@
 {
-  "name": "design-system",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@axa-fr/design-system",
+  "private": true,
+  "version": "1.2.4",
+  "description": "Static WebSite Design System, live documentation HTML/CSS and guidelines",
   "main": "index.js",
   "scripts": {
     "start": "gulp dev",
@@ -14,7 +15,7 @@
     "lint:scss": "stylelint \"src/**/*.scss\" --formatter \"verbose\" --max-warnings 96 --fix"
   },
   "author": "Samuel Gomez",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@axa-fr/react-toolkit-action": "^1.2.4",
     "@axa-fr/react-toolkit-alert": "^1.2.4",

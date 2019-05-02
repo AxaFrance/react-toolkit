@@ -1,7 +1,5 @@
 # Stack Gulp
 
-![](https://gulp-seed-axa.netlify.com/assets/images/webcenter.jpg)
-
 ## Before Started
 
 **If you've previously installed gulp globally**, `run npm rm --global gulp` before following these instructions. For more information, read this [Sip][https://medium.com/gulpjs/gulp-sips-command-line-interface-e53411d4467]
@@ -42,7 +40,7 @@ Then, to start up the local server, run
 npm start
 ```
 
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and we are ready to roll.
+Open a browser and hit [http://localhost:5001](http://localhost:5001), and we are ready to roll.
 
 ## Build & deployment
 
