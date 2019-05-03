@@ -1,0 +1,7 @@
+{
+  "sonarlint.connectedMode.project": {
+    "projectKey": "AxaGuilDEv_react-toolkit",
+    "serverId": "sonarcloud"
+  },
+  "eslint.autoFixOnSave": true
+}
