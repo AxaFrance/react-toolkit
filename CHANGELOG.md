@@ -1,6 +1,13 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.5](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5-alpha.0...v1.2.5)
+> 3 May 2019
+- fix(publish) design system website [`#209`](https://github.com/AxaGuilDEv/react-toolkit/pull/209) by Guillaume Chervet
+- chore: update lerna and change dist to src imports SASS [`#207`](https://github.com/AxaGuilDEv/react-toolkit/pull/207) by Samuel Gomez
+- chore(release): publish v1.2.5 [ci skip] [`0ecaab0`](https://github.com/AxaGuilDEv/react-toolkit/commit/0ecaab019c48f9266ebb848bda3d616caa691023) by Build-CI 
+- docs(changelog) update to new 1.2.5-alpha.0 [`b45366d`](https://github.com/AxaGuilDEv/react-toolkit/commit/b45366db66f961e455fa506088ba41ea800f81b0) by Build-CI 
+
 #### [v1.2.5-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.4...v1.2.5-alpha.0)
 > 3 May 2019
 - Design system [`#168`](https://github.com/AxaGuilDEv/react-toolkit/pull/168) by Samuel Gomez
@@ -127,5 +134,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5-alpha.0...v0.0.0)
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5...v0.0.0)
 > 3 May 2019
