@@ -114,7 +114,7 @@
     "jest-cli": "^23.6.0",
     "jest-enzyme": "^6.1.2",
     "jsx-to-string": "^1.4.0",
-    "lerna": "^3.8.4",
+    "lerna": "^3.13.4",
     "lint-staged": "7.2.0",
     "markdown-loader": "^2.0.2",
     "marked": "^0.3.19",
