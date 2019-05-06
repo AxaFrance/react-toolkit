@@ -16,4 +16,5 @@ export default {
   pathSvg: '/assets/icons',
   svgFiles: '/*.svg',
   pathSprite: '/assets/sprite',
+  baseUrlProd: 'https://axaguildev.github.io/react-toolkit/latest/design-system',
 };

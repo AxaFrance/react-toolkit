@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 import { src, dest } from 'gulp';
 import pugg from 'pug';
 import pretty from 'pretty';
@@ -12,13 +13,13 @@ import setClassActive from '../src/commons/js/setClassActive';
 
 global.fetch = fetch;
 
-const { pathSrc, pathDest } = config;
+const { pathSrc, pathDest, baseUrlProd } = config;
 
 const basedir = './';
 const baseData = './src/data/';
 const getFileData = fileName => JSON.parse(fs.readFileSync(`${baseData}${fileName}.json`));
 
-const pugTsk = () => {
+const pugTsk = (baseurl = 'lala') => {
   const base = getFileData('base');
   const general = getFileData('general');
   const menu = getFileData('menu');
@@ -28,8 +29,14 @@ const pugTsk = () => {
     general,
     menu,
     basedir,
-    functions: { setClass, setClassActive, pugg, pretty },
+    functions: {
+      setClass,
+      setClassActive,
+      pugg,
+      pretty,
+    },
     require,
+    baseurl,
   };
 
   return src([`${pathSrc}/index.pug`, `${pathSrc}/pages/**/*.pug`])
@@ -37,13 +44,15 @@ const pugTsk = () => {
     .pipe(
       pug({
         locals: data,
-        //debug: true,
-        //compileDebug: true,
-        //pretty: true,
+        // debug: true,
+        // compileDebug: true,
+        // pretty: true,
       }),
     )
     .pipe(dest(pathDest))
     .pipe(reload({ stream: true }));
 };
+const pugDev = () => pugTsk();
 
-export default pugTsk;
+export default pugDev;
+export const pugProd = () => pugTsk(baseUrlProd);
