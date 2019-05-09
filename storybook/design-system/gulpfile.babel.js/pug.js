@@ -13,17 +13,16 @@ import setClassActive from '../src/commons/js/setClassActive';
 
 global.fetch = fetch;
 
-const { pathSrc, pathDest, baseUrlProd } = config;
+const { pathSrc, pathDest } = config;
 
 const basedir = './';
 const baseData = './src/data/';
 const getFileData = fileName => JSON.parse(fs.readFileSync(`${baseData}${fileName}.json`));
+const base = getFileData('base');
+const general = getFileData('general');
+const menu = getFileData('menu');
 
-const pugTsk = (baseurl = 'lala') => {
-  const base = getFileData('base');
-  const general = getFileData('general');
-  const menu = getFileData('menu');
-
+const pugTsk = (baseurl = '') => {
   const data = {
     base,
     general,
@@ -55,4 +54,4 @@ const pugTsk = (baseurl = 'lala') => {
 const pugDev = () => pugTsk();
 
 export default pugDev;
-export const pugProd = () => pugTsk(baseUrlProd);
+export const pugProd = () => pugTsk(base.baseUrlProd);
