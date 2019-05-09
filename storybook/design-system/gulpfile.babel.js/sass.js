@@ -14,7 +14,7 @@ sass.compiler = nodesass;
 const { pathSrc, pathDest, sassIndex } = config;
 
 /* Production ***************************** */
-export const sassBuild = () => src(`${pathSrc}${sassIndex}`)
+export const sassProd = () => src(`${pathSrc}${sassIndex}`)
   .pipe(
     sass({
       includePaths: ['node_modules'],
