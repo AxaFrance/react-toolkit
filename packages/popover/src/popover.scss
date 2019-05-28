@@ -82,6 +82,14 @@ $size-arrow: 8px;
         }
       }
     }
+    &--small{
+      .af-btn{
+        &--circle{
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
   }
 
   &-fade-in {
