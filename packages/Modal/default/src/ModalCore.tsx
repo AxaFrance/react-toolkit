@@ -13,7 +13,7 @@ ReactModal.setAppElement('body');
 
 interface ModalCoreComponentProps {
   isOpen: boolean;
-  onOutsideTap: (event: MouseEvent | KeyboardEvent) => void;
+  onOutsideTap: (event: React.MouseEvent | React.KeyboardEvent) => void;
   className?: string;
 }
 

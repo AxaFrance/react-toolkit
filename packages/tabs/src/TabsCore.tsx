@@ -1,8 +1,3 @@
-import TabsStateless, {
-  TabsStatelessHandlers,
-  TabsStatelessProps,
-} from './TabsStateless';
-
 import {
   StateHandlerMap,
   StateHandler,
@@ -10,6 +5,11 @@ import {
   withStateHandlers,
   compose,
 } from 'recompose';
+import TabsStateless, {
+  TabsStatelessHandlers,
+  TabsStatelessProps,
+} from './TabsStateless';
+
 import { TabProps } from './Tab';
 
 export interface TabsContainerState {
@@ -32,8 +32,10 @@ export const stateUpdaters: StateUpdaters<
   TabsContainerState,
   TabsUpdaters
 > = {
-  onChange: () => e => {
+  onChange: (state, { onChange }) => e => {
+    onChange(e.id);
     return {
+      ...state,
       activeIndex: e.id,
     };
   },
