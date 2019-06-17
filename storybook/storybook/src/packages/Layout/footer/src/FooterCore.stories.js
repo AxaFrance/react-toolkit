@@ -3,7 +3,7 @@ import React from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
 import { FooterCore } from '@axa-fr/react-toolkit-layout-footer';
 
-const readme = require('@axa-fr/react-toolkit-layout-footer/dist/README.md');
+import readme from '@axa-fr/react-toolkit-layout-footer/dist/README.md';
 
 const storyData = {
   name: 'Layout.Footer',

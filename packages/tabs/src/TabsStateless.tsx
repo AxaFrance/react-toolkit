@@ -42,14 +42,15 @@ const TabsStateless: React.SFC<TabsStatelessProps & TabsStatelessHandlers> = ({
             active={activeIndex === index.toString()}
             onChange={onChange}
             id={`${index}`}
-            classModifier={item.props.classModifier}>
+            classModifier={item.props.classModifier}
+            key={`title-${index}`}>
             {item.props.title}
           </Title>
         ))}
       </ul>
       <div className="af-tabs__content">
         {children.map((item, index) => (
-          <Pane active={activeIndex === index.toString()}>
+          <Pane active={activeIndex === index.toString()} key={`pane -${index}`}>
             {item.props.children}
           </Pane>
         ))}

@@ -9,7 +9,7 @@ import Modal, {
   HeaderBase,
 } from '@axa-fr/react-toolkit-modal-default';
 
-const readme = require('@axa-fr/react-toolkit-modal-default/dist/README.md');
+import readme from '@axa-fr/react-toolkit-modal-default/dist/README.md';
 
 const stories = [
   {

@@ -8,7 +8,7 @@ import {
   Accordion,
 } from '@axa-fr/react-toolkit-collapse';
 
-const readme = require('@axa-fr/react-toolkit-collapse/dist/README.md');
+import readme from '@axa-fr/react-toolkit-collapse/dist/README.md';
 
 const LABELS = {
   desc: 'CollapseCard',

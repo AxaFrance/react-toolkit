@@ -5,7 +5,7 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { AlertCore } from '@axa-fr/react-toolkit-alert';
 import { action } from '@storybook/addon-actions';
 
-const readme = require('@axa-fr/react-toolkit-alert/dist/README.md');
+import readme from '@axa-fr/react-toolkit-alert/dist/README.md';
 
 const storyData = {
   name: 'Alert.AlertCore',

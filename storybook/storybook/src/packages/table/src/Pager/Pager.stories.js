@@ -5,7 +5,7 @@ import { text, number, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Pager, Modes } from '@axa-fr/react-toolkit-table';
 
-const readme = require('@axa-fr/react-toolkit-table/src/Pager/README.md');
+import readme from '@axa-fr/react-toolkit-table/src/Pager/README.md';
 
 const stories = [];
 

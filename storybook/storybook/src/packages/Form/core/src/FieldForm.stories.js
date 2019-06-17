@@ -11,7 +11,7 @@ import {
   FieldError,
 } from '@axa-fr/react-toolkit-form-core';
 
-const readme = require('@axa-fr/react-toolkit-form-core/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-core/dist/README.md';
 
 const stories = [];
 

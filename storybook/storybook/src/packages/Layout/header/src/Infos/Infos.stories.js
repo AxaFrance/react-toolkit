@@ -2,7 +2,7 @@ import React from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Infos } from '@axa-fr/react-toolkit-layout-header';
 
-const readme = require('@axa-fr/react-toolkit-layout-header/dist/README.md');
+import readme from '@axa-fr/react-toolkit-layout-header/dist/README.md';
 
 const stories = [];
 

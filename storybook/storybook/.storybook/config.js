@@ -1,6 +1,8 @@
-import React from 'react';
-import { configure } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters, addDecorator } from '@storybook/react';
+import { create } from '@storybook/theming';
+import { withKnobs } from '@storybook/addon-knobs';
+import { addReadme } from 'storybook-readme';
+
 
 import 'rc-slider/assets/index.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -9,18 +11,31 @@ import '@axa-fr/react-toolkit-all/dist/style/af-toolkit-core.css';
 import '@axa-fr/react-toolkit-core/dist/assets/fonts/icons/af-icons.css';
 import './storybook.css';
 
-setOptions({
-  name: '@axa-fr/react-toolkit-all',
-  url: 'https://www.axa.fr',
-  downPanelInRight: true,
-  hierarchySeparator: /\./,
-  hierarchyRootSeparator: /\|/,
+addDecorator(withKnobs);
+addDecorator(addReadme);
+
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: '@axa-fr/react-toolkit-all',
+      brandUrl: 'https://www.axa.fr',
+      // To control appearance:
+      // brandImage: 'http://url.of/some.svg',
+    }),
+    isFullscreen: false,
+    panelPosition: 'bottom',
+    isToolshown: true,
+    hierarchySeparator: /\./,
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
-const req = require.context('../src/packages', true, /\**.stories.js$/);
 
 function loadStories() {
   require('../src/Home/Home.stories');
+  const req = require.context('../src/packages', true, /\**.stories.js$/);
+
   req.keys().forEach(req);
 }
 

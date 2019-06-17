@@ -9,7 +9,7 @@ import Popover, {
   PopoverModes,
 } from '@axa-fr/react-toolkit-popover';
 
-const readme = require('@axa-fr/react-toolkit-popover/dist/README.md');
+import readme from '@axa-fr/react-toolkit-popover/dist/README.md';
 
 const stories = [];
 

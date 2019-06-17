@@ -4,7 +4,7 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Switch } from '@axa-fr/react-toolkit-form-input-switch';
 
-const readme = require('@axa-fr/react-toolkit-form-input-switch/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-switch/dist/README.md';
 
 const stories = [];
 

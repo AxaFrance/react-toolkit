@@ -17,7 +17,7 @@ const { pathSrc, pathDest } = config;
 
 const basedir = './';
 const baseData = './src/data/';
-const getFileData = fileName => JSON.parse(fs.readFileSync(`${baseData}${fileName}.json`));
+const getFileData = fileName => JSON.parse(fs.readFileSync(`${baseData}${fileName}.json`, 'utf8'));
 const base = getFileData('base');
 const general = getFileData('general');
 const menu = getFileData('menu');
