@@ -15,7 +15,7 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
-const readme = require('@axa-fr/react-toolkit-form-input-textarea/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-textarea/dist/README.md';
 
 const stories = [];
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
 import addToStorie from '@axa-fr/storybook-addons';
@@ -10,7 +9,7 @@ import {
   SocialNetwork,
 } from '@axa-fr/react-toolkit-layout-footer-client';
 
-const readme = require('@axa-fr/react-toolkit-layout-footer-client/dist/README.md');
+import readme from '@axa-fr/react-toolkit-layout-footer-client/dist/README.md';
 
 const stories = [];
 

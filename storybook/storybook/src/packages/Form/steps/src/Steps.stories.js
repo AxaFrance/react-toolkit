@@ -10,7 +10,7 @@ import {
   StepModes,
 } from '@axa-fr/react-toolkit-form-steps';
 
-const readme = require('@axa-fr/react-toolkit-form-steps/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-steps/dist/README.md';
 
 const stories = [];
 

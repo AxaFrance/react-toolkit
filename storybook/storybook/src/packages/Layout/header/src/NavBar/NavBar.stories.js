@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import addToStorie from '@axa-fr/storybook-addons';
 import { NavBar, NavBarItem } from '@axa-fr/react-toolkit-layout-header';
 
-const readme = require('./NavBar.md');
+import readme from './NavBar.md');
 
 const stories = [];
 

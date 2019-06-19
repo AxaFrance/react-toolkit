@@ -8,7 +8,7 @@ import {
   FooterClientList,
 } from '@axa-fr/react-toolkit-layout-footer-client';
 
-const readme = require('@axa-fr/react-toolkit-layout-footer-client/dist/README.md');
+import readme from '@axa-fr/react-toolkit-layout-footer-client/dist/README.md';
 
 const stories = [];
 const columns = [

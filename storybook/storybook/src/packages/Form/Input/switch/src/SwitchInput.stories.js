@@ -5,7 +5,7 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import { SwitchInput } from '@axa-fr/react-toolkit-form-input-switch';
 
-const readme = require('@axa-fr/react-toolkit-form-input-switch/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-switch/dist/README.md';
 
 const stories = [];
 

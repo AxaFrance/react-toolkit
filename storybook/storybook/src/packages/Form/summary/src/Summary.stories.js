@@ -4,7 +4,7 @@ import { array, boolean, text } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { Summary } from '@axa-fr/react-toolkit-form-summary';
 
-const readme = require('@axa-fr/react-toolkit-form-summary/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-summary/dist/README.md';
 
 const stories = [];
 

@@ -10,7 +10,7 @@ import {
   InputConstants as Constants,
 } from '@axa-fr/react-toolkit-form-core';
 
-const readme = require('@axa-fr/react-toolkit-form-input-slider/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-slider/dist/README.md';
 
 const options = [
   { label: '64', value: '64', id: 'uniqueId1' },

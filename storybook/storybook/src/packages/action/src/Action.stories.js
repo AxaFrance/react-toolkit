@@ -6,12 +6,12 @@ import { text } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import Action, { ActionCore } from '@axa-fr/react-toolkit-action';
 
+import readme from '@axa-fr/react-toolkit-action/dist/README.md';
+
 const withPreventDefaultClick = next => e => {
   e.preventDefault();
   next(e);
 };
-
-const readme = require('@axa-fr/react-toolkit-action/dist/README.md');
 
 const storyData = {
   name: 'Action',
