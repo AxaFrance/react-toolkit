@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-highlight",
-  "version": "1.2.5",
+  "version": "1.2.6-alpha.0",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -15,8 +15,8 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-action": "^1.2.5",
-    "@axa-fr/react-toolkit-core": "^1.2.5",
+    "@axa-fr/react-toolkit-action": "^1.2.6-alpha.0",
+    "@axa-fr/react-toolkit-core": "^1.2.6-alpha.0",
     "prop-types": "^15.5.10",
     "recompose": "^0.27.1"
   },
