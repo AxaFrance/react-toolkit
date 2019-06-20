@@ -1,6 +1,15 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.6-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5...v1.2.6-alpha.0)
+> 20 June 2019
+- Fix Storybook [`#288`](https://github.com/AxaGuilDEv/react-toolkit/pull/288) by Olivier YOUF
+- fix : compilation error in modal + onchange call on Tabs [`#283`](https://github.com/AxaGuilDEv/react-toolkit/pull/283) by Olivier YOUF
+- feat: add children for radio input form component [`#252`](https://github.com/AxaGuilDEv/react-toolkit/pull/252) by Samuel Gomez
+- fix(DS): baseurl links on build [`#214`](https://github.com/AxaGuilDEv/react-toolkit/pull/214) by Samuel Gomez
+- chore(release): publish v1.2.6-alpha.0 [ci skip] [`57576ac`](https://github.com/AxaGuilDEv/react-toolkit/commit/57576acd6579ef5c01e6576bfe282e29a0391283) by Build-CI 
+- docs(changelog) update to new 1.2.5 [`6a69884`](https://github.com/AxaGuilDEv/react-toolkit/commit/6a69884e80fcfe5123d6460158a97a2e31c01326) by Build-CI 
+
 #### [v1.2.5](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5-alpha.0...v1.2.5)
 > 3 May 2019
 - fix(publish) design system website [`#209`](https://github.com/AxaGuilDEv/react-toolkit/pull/209) by Guillaume Chervet
@@ -134,5 +143,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.5...v0.0.0)
-> 3 May 2019
+#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.6-alpha.0...v0.0.0)
+> 20 June 2019
