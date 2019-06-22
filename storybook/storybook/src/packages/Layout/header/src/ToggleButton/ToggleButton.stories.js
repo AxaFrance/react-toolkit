@@ -4,7 +4,7 @@ import Action from '@axa-fr/react-toolkit-action';
 import addToStorie from '@axa-fr/storybook-addons';
 import { ToggleButton } from '@axa-fr/react-toolkit-layout-header';
 
-import readme from './ToggleButton.md');
+import readme from './ToggleButton.md';
 
 const stories = [];
 

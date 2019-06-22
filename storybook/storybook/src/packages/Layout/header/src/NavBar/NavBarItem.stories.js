@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
 import { NavBarItem } from '@axa-fr/react-toolkit-layout-header';
 
-import readme from './NavBarItem.md');
+import readme from './NavBarItem.md';
 
 const stories = [];
 
