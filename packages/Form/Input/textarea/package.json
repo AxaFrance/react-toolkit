@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-textarea",
-  "version": "1.2.6-alpha.0",
+  "version": "1.2.6",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -14,8 +14,8 @@
     "recompose": "^0.27.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.2.6-alpha.0",
-    "@axa-fr/react-toolkit-form-core": "^1.2.6-alpha.0"
+    "@axa-fr/react-toolkit-core": "^1.2.6",
+    "@axa-fr/react-toolkit-form-core": "^1.2.6"
   },
   "license": "MIT",
   "publishConfig": {
