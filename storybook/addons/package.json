@@ -8,9 +8,9 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addon-info": "^5.0.3",
-    "@storybook/addon-knobs": "^5.0.3",
-    "@storybook/react": "^5.0.3",
-    "storybook-readme": "^4.0.2"
+    "@storybook/addon-info": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "storybook-readme": "^5.0.5"
   }
 }
