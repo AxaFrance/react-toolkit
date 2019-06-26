@@ -29,6 +29,7 @@ const MultiSelect = props => {
     noResultsText,
     ...otherProps
   } = props;
+  
   const isDisabled = disabled || readOnly;
   const SelectComponent = loadOptions ? ReactSelect.Async : ReactSelect;
 
@@ -67,7 +68,7 @@ const MultiSelect = props => {
     <SelectComponent
       multi={false}
       name={name}
-      value={newValue}
+      value={newValue || ''}
       placeholder={placeholder}
       onChange={onChange}
       onBlur={onBlur}
