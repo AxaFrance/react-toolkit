@@ -63,12 +63,12 @@ const MultiSelect = props => {
       />
     );
   }
-  const newValue = options.find(v => v.value === value);
+  const newValue = options.find(v => v.value === value) || '';
   return (
     <SelectComponent
       multi={false}
       name={name}
-      value={newValue || ''}
+      value={newValue}
       placeholder={placeholder}
       onChange={onChange}
       onBlur={onBlur}
