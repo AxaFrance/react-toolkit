@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
+import Button from '@axa-fr/react-toolkit-button';
+import Popover from '@axa-fr/react-toolkit-popover';
 
 const propTypes = {
   file: PropTypes.object.isRequired,
@@ -10,7 +12,7 @@ const propTypes = {
   className: PropTypes.string,
   classModifier: PropTypes.string,
 };
-const defaultClassName = 'custom-line-file af-file-line';
+const defaultClassName = 'af-form__file-line';
 const defaultProps = {
   disabled: false,
   className: defaultClassName,
@@ -22,44 +24,55 @@ const style = {
   maxHeight: '200px',
 };
 
-const Preview = ({ file }) => {
+export const Preview = ({ file }) => {
   if (file && file.type && file.type.startsWith('image')) {
     return (
-      <img
-        src={file.preview}
-        style={style}
-        className="img-thumbnail"
-        alt="File Preview"
-      />
+      <Popover mode="hover">
+        <Popover.Pop>
+          <img
+            src={file.preview}
+            style={style}
+            className="af-form__file-thumbnail"
+            alt="File Preview"
+          />
+        </Popover.Pop>
+        <Popover.Over>
+          <i className="glyphicon glyphicon-picture" />
+        </Popover.Over>
+      </Popover>
     );
   }
-  return <span>TODO a définir le comportement avec les UX</span>;
+  return <i className="glyphicon glyphicon-file" />;
 };
 
-const FileLine = props => {
-  const { className, classModifier, file, disabled, id, onClick } = props;
+const FileLine = ({
+  className,
+  classModifier,
+  file,
+  disabled,
+  id,
+  onClick,
+}) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
     defaultClassName
   );
   return (
-    <tr className={componentClassName}>
-      <td className="text-center">
-        <Preview file={file} />
-      </td>
-      <td>{file.name}</td>
-      <td className="text-center">{file.size}</td>
-      <td className="text-center">
-        <button
-          disabled={disabled}
-          type="button"
-          className="btn btn-danger"
-          onClick={() => onClick(id)}>
-          X
-        </button>
-      </td>
-    </tr>
+    <li className={componentClassName}>
+      <Preview file={file} />
+      <span>{file.name}</span>
+      <span>{file.size}</span>
+
+      <Button
+        disabled={disabled}
+        type="button"
+        className="af-link"
+        classModifier="delete-file"
+        onClick={() => onClick(id)}>
+        <span className="af-link__text">Supprimer</span>
+      </Button>
+    </li>
   );
 };
 

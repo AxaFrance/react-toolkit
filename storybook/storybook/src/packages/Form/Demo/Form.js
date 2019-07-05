@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { TextInput } from '@axa-fr/react-toolkit-form-input-text';
 import { DateInput } from '@axa-fr/react-toolkit-form-input-date';
 import { FileInput } from '@axa-fr/react-toolkit-form-input-file';
 import HelpButton from '@axa-fr/react-toolkit-help';
 import { SelectInput } from '@axa-fr/react-toolkit-form-input-select';
 import { Summary } from '@axa-fr/react-toolkit-form-summary';
+import Button from '@axa-fr/react-toolkit-button';
+import Title from '@axa-fr/react-toolkit-title';
 
 const Form = ({ handleChange, handleSubmit, form }) => (
-  <form className="form-horizontal" onSubmit={handleSubmit}>
-    <div className="card form-header">
-      <h1>Place</h1>
+  <Fragment>
+    <Title>Demo Place form</Title>
+    <form className="af-form" onSubmit={handleSubmit}>
       <Summary
         messages={form.errorMessages}
         isVisible={form.hasFormSubmittedOnce}
         classModifier="error"
       />
-      <h3>Characteristics</h3>
+      <h3 className="af-subtitle">Informations</h3>
       <TextInput
         label="Place name *"
         name="placeName"
         onChange={handleChange}
         helpMessage="Enter the place name, ex : Webcenter"
         {...form.placeName}>
-        <HelpButton>
+        <HelpButton classModifier="small" mode="hover">
           Paris est la capitale de la France. Elle se situe au cœur d&apos;un
           vaste bassin sédimentaire aux sols fertiles et au climat tempéré, le
           bassin parisien, sur une boucle de la Seine, entre les confluents de
@@ -50,7 +52,8 @@ const Form = ({ handleChange, handleSubmit, form }) => (
         onChange={handleChange}
         {...form.placeType}
       />
-      <h3>Image</h3>
+      <h3 className="af-subtitle">Image</h3>
+
       <FileInput
         label="Upload image"
         accept="image/jpeg, image/png"
@@ -58,6 +61,7 @@ const Form = ({ handleChange, handleSubmit, form }) => (
         name="files"
         {...form.files}
       />
+
       <TextInput
         label="Image title *"
         name="imageTitle"
@@ -66,18 +70,19 @@ const Form = ({ handleChange, handleSubmit, form }) => (
         {...form.imageTitle}
       />
       <div className="row">
-        <div className="col-md-2" />
-        <div className="col-md-10">
-          <button
-            className="btn btn-primary float-right float-md-left"
+        <div className="col-md-10 offset-md-2">
+          <Button
+            type="submit"
             name="submit"
-            type="submit">
-            Share
-          </button>
+            id="next"
+            classModifier="hasiconRight">
+            <span className="af-btn__text">Share</span>
+            <i className="glyphicon glyphicon-arrowthin-right" />
+          </Button>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </Fragment>
 );
 
 export default Form;

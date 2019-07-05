@@ -20,30 +20,20 @@ const defaultProps = {
   classModifier: null,
 };
 
-const style = {
-  color: 'red',
-};
-
-const Errors = errors => {
+export const Errors = ({ errors }) => {
   if (!errors || errors.length <= 0) {
     return null;
   }
 
-  const errorList = errors.map(
-    err =>
-      err ? (
-        <li key={err}>
-          {' '}
-          {err.file.name} ({err.file.size}){' '}
-        </li>
-      ) : (
-        ''
-      )
-  );
+  const errorList = errors.map(err => (
+    <li key={err}>
+      {err.file.name} ({err.file.size})
+    </li>
+  ));
   return (
-    <div style={style}>
-      <span>Le chargement de certains fichiers à échoué: </span>
-      <ul>{errorList}</ul>
+    <div className="af-form__file-errors">
+      <span>Le chargement de certains fichiers a échoué : </span>
+      <ul className="af-form__file-errors-list">{errorList}</ul>
     </div>
   );
 };
@@ -66,25 +56,18 @@ const FileTable = ({
   );
   return (
     <div className={componentClassName}>
-      {Errors(errors)}
-      <table className="table table-striped table-bordered">
-        <tbody>
-          {values.map(
-            value =>
-              value ? (
-                <LineFile
-                  disabled={disabled}
-                  file={value.file}
-                  onClick={onClick}
-                  id={value.id}
-                  key={value.id}
-                />
-              ) : (
-                ''
-              )
-          )}
-        </tbody>
-      </table>
+      <Errors errors={errors} />
+      <ul className="af-form__file-list">
+        {values.map(({ file, id }) => (
+          <LineFile
+            disabled={disabled}
+            file={file}
+            onClick={onClick}
+            id={id}
+            key={id}
+          />
+        ))}
+      </ul>
     </div>
   );
 };
