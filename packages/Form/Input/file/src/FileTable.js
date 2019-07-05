@@ -62,13 +62,13 @@ const FileTable = ({
     <div className={componentClassName}>
       {Errors(errors)}
       <ul className="af-form__file-list">
-        {values.map(value => (
+        {values.map(({ file, id }) => (
           <LineFile
             disabled={disabled}
-            file={value.file}
+            file={file}
             onClick={onClick}
-            id={value.id}
-            key={value.id}
+            id={id}
+            key={id}
           />
         ))}
       </ul>
