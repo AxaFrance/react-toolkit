@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.7](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.6...v1.2.7)
+> 5 July 2019
+- feat: design for file input #305 [`#306`](https://github.com/AxaGuilDEv/react-toolkit/pull/306) by Samuel Gomez
+- chore(release): publish v1.2.7 [ci skip] [`72121a8`](https://github.com/AxaGuilDEv/react-toolkit/commit/72121a88dd69306224093dab915ecc8febde0502) by Build-CI 
+- docs(changelog) update to new 1.2.6 [`340e79c`](https://github.com/AxaGuilDEv/react-toolkit/commit/340e79cf5e1f5fa5b8b7a98382c66565f1732284) by Build-CI 
+
 #### [v1.2.6](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.6-alpha.0...v1.2.6)
 > 23 June 2019
 - Fix Npm version for storybook [`#296`](https://github.com/AxaGuilDEv/react-toolkit/pull/296) by Olivier YOUF
@@ -149,5 +155,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.6...v0.0.0)
-> 23 June 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.7...v0.0.0)
+> 5 July 2019
