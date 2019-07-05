@@ -18,6 +18,7 @@
     "css": "npm -C ./storybook/styles run css",
     "css:build": "npm -C ./storybook/styles run css:build",
     "test": "jest --config jest.config.json",
+    "cover": "jest --no-cache --config ./jest.config.json --coverage",
     "lint": "npm run lint:js && npm run lint:ts **/*.ts",
     "lint:js": "cross-env NODE_ENV=production eslint packages --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",

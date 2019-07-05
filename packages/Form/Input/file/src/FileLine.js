@@ -24,7 +24,7 @@ const style = {
   maxHeight: '200px',
 };
 
-const Preview = ({ file }) => {
+export const Preview = ({ file }) => {
   if (file && file.type && file.type.startsWith('image')) {
     return (
       <Popover mode="hover">
@@ -45,8 +45,14 @@ const Preview = ({ file }) => {
   return <i className="glyphicon glyphicon-file" />;
 };
 
-const FileLine = props => {
-  const { className, classModifier, file, disabled, id, onClick } = props;
+const FileLine = ({
+  className,
+  classModifier,
+  file,
+  disabled,
+  id,
+  onClick,
+}) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
