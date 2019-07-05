@@ -1,0 +1,62 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
+.af-form {
+  &__file{
+    &-input{
+      position: relative;
+      display: flex;
+      background: $white;
+      justify-content: space-between;
+      cursor: pointer;
+      .drop-box{
+        padding-left: 1rem;
+        border: 2px dashed $color-mercury;
+        border-right: 0;
+        flex-basis: 61%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+      .af-btn--file {
+        flex-basis: 40%;
+        min-width: 8rem;
+      }
+      &:hover, &:focus{
+        .drop-box{
+          border-color: $color-axa;
+        }
+      }
+    }
+    &-errors{
+      color: $color-red-error;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    &-list{
+      list-style: none;
+      display: flex;
+      padding: 0;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+    &-line{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $color-mercury;
+      background: $white;
+      width: 100%;
+    }
+  }
+}
+.af-link{
+  &--delete-file{
+    border: 0;
+    text-decoration: underline;
+    background: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

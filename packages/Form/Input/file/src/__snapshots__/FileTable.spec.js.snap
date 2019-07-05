@@ -5,42 +5,36 @@ exports[`<File.FileTable> renders File.FileTable correctly 1`] = `
   className="custom-table-file af-file-table"
 >
   <div
-    style={
-      Object {
-        "color": "red",
-      }
-    }
+    className="af-form__file-errors"
   >
     <span>
-      Le chargement de certains fichiers à échoué: 
+      Le chargement de certains fichiers a échoué : 
     </span>
-    <ul>
+    <ul
+      className="af-form__file-errors-list"
+    >
       <li
         key="[object Object]"
       >
-         
         youhou.txt
          (
         2
         )
-         
       </li>
     </ul>
   </div>
-  <table
-    className="table table-striped table-bordered"
+  <ul
+    className="af-form__file-list"
   >
-    <tbody>
-      <FileLine
-        classModifier={null}
-        className="custom-line-file af-file-line"
-        disabled={false}
-        file={Object {}}
-        id="id"
-        key="id"
-        onClick={[Function]}
-      />
-    </tbody>
-  </table>
+    <FileLine
+      classModifier={null}
+      className="af-form__file-line"
+      disabled={false}
+      file={Object {}}
+      id="id"
+      key="id"
+      onClick={[Function]}
+    />
+  </ul>
 </div>
 `;

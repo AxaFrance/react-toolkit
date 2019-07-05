@@ -1,41 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<File.FileInput> renders File.FileInput correctly 1`] = `
-<tr
-  className="custom-line-file af-file-line"
+<li
+  className="af-form__file-line"
 >
-  <td
-    className="text-center"
-  >
-    <Preview
-      file={
-        Object {
-          "name": "name",
-          "preview": "#",
-          "size": 1,
-        }
+  <Preview
+    file={
+      Object {
+        "name": "name",
+        "preview": "#",
+        "size": 1,
       }
-    />
-  </td>
-  <td>
+    }
+  />
+  <span>
     name
-  </td>
-  <td
-    className="text-center"
-  >
+  </span>
+  <span>
     1
-  </td>
-  <td
-    className="text-center"
+  </span>
+  <Button
+    classModifier="delete-file"
+    className="af-link"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
   >
-    <button
-      className="btn btn-danger"
-      disabled={false}
-      onClick={[Function]}
-      type="button"
+    <span
+      className="af-link__text"
     >
-      X
-    </button>
-  </td>
-</tr>
+      Supprimer
+    </span>
+  </Button>
+</li>
 `;

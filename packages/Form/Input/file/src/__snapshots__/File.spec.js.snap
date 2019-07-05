@@ -4,9 +4,9 @@ exports[`<File.File> renders File.File correctly 1`] = `
 <branch(withProps(withHandlers(File)))
   accept="image/jpeg, image/png, application/*"
   classModifier={null}
-  className="af-file"
+  className="af-form__file-input"
   disabled={false}
-  icon="file"
+  icon="open"
   id="id"
   inputRef={null}
   isVisible={true}
