@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.8](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.7...v1.2.8)
+> 9 July 2019
+- fix: issue #109 allow multiselect to be emptyed when value is set to unknown value [`#300`](https://github.com/AxaGuilDEv/react-toolkit/pull/300) by oussamahamdaoui
+- chore(release): publish v1.2.8 [ci skip] [`c251c40`](https://github.com/AxaGuilDEv/react-toolkit/commit/c251c40c9275c1cf022671a13765748f91e06639) by Build-CI 
+- docs(changelog) update to new 1.2.7 [`c019852`](https://github.com/AxaGuilDEv/react-toolkit/commit/c01985273d5a7bf883e791e95b72505e93bef8a3) by Build-CI 
+
 #### [v1.2.7](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.6...v1.2.7)
 > 5 July 2019
 - feat: design for file input #305 [`#306`](https://github.com/AxaGuilDEv/react-toolkit/pull/306) by Samuel Gomez
@@ -155,5 +161,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.7...v0.0.0)
-> 5 July 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.8...v0.0.0)
+> 9 July 2019
