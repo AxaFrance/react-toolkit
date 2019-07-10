@@ -46,9 +46,6 @@ const FileTable = ({
   disabled,
   onClick,
 }) => {
-  if (!values || values.length <= 0) {
-    return null;
-  }
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
@@ -57,17 +54,19 @@ const FileTable = ({
   return (
     <div className={componentClassName}>
       <Errors errors={errors} />
-      <ul className="af-form__file-list">
-        {values.map(({ file, id }) => (
-          <LineFile
-            disabled={disabled}
-            file={file}
-            onClick={onClick}
-            id={id}
-            key={id}
-          />
-        ))}
-      </ul>
+      {values && values.length > 0 && (
+        <ul className="af-form__file-list">
+          {values.map(({ file, id }) => (
+            <LineFile
+              disabled={disabled}
+              file={file}
+              onClick={onClick}
+              id={id}
+              key={id}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

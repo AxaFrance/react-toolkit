@@ -10,7 +10,7 @@ import {
 import { InputManager } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 
-const omitProperties = omit(['classModifier', 'className', 'onChange']);
+const omitProperties = omit(['classModifier', 'className', 'onChange', 'isVisible', 'inputRef']);
 
 class File extends Component {
   constructor(props) {
