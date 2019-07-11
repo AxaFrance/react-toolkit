@@ -5,6 +5,6 @@ import Restitution from '.';
 
 describe('<Restitution />', () => {
   it('renders without crashing', () => {
-    shallow(<Restitution />);
+    shallow(<Restitution label="test" value="test" />);
   });
 });
