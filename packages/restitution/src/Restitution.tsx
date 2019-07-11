@@ -7,11 +7,18 @@ import {
 } from '@axa-fr/react-toolkit-core';
 import { compose } from 'recompose';
 
-interface RestitutionProps{
+const DEFAULT_CLASSNAME = 'af-restitution__listdef';
+
+type RestitutionBaseProps = {
   label: string;
   value?: string;
   values?: string[];
+  className?: string;
 }
+
+const defaultProps: Partial<RestitutionProps> = {
+  className:DEFAULT_CLASSNAME
+};
 
 interface RestitutionValuesProps{
   values: string[];
@@ -27,7 +34,7 @@ const RestitutionValues : React.FC<RestitutionValuesProps> = ({ values }) => {
   return <ul className="af-restitution__listul">{li}</ul>;
 };
 
-const Restitution: React.FC<RestitutionProps> = ({ label, value, values }) => {
+const Restitution: React.FC<RestitutionProps> = ({ label, value, values, className }) => {
   let restitValue = values ? <RestitutionValues values={values} /> : value;
 
   if (!restitValue) {
@@ -35,7 +42,7 @@ const Restitution: React.FC<RestitutionProps> = ({ label, value, values }) => {
   }
 
   return (
-    <dl className="af-restitution__listdef">
+    <dl className={className}>
       <dt className="af-restitution__listdef-item">
         <span className="af-restitution__text">{label}</span>
       </dt>
@@ -44,4 +51,16 @@ const Restitution: React.FC<RestitutionProps> = ({ label, value, values }) => {
   );
 };
 
-export default Restitution;
+Restitution.defaultProps = defaultProps;
+
+interface RestitutionProps extends WithClassModifierOptions, RestitutionBaseProps {}
+
+const enhance = compose<RestitutionBaseProps, RestitutionProps>(
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier
+);
+
+const Enhanced = enhance(Restitution);
+Enhanced.displayName = 'Restitution';
+Enhanced.defaultProps = defaultProps;
+export default Enhanced;

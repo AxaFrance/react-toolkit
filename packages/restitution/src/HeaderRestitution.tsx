@@ -61,4 +61,5 @@ const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
 
 const Enhanced = enhance(HeaderRestitution);
 Enhanced.displayName = 'HeaderRestitution';
+Enhanced.defaultProps = defaultProps;
 export default Enhanced;

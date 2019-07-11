@@ -39,5 +39,6 @@ const enhance = compose<ArticleRestitutionBaseProps, ArticleRestitutionProps>(
 
 const Enhanced = enhance(ArticleRestitution);
 Enhanced.displayName = 'ArticleRestitution';
+Enhanced.defaultProps = defaultProps;
 export default Enhanced;
 

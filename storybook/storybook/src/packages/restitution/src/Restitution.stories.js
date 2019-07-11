@@ -19,7 +19,7 @@ stories.push({
     <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft={<TitleLeft/>}>
     </HeaderRestitution>
       <SectionRestitution >
-        <SectionRestitutionRow classModifier="borderBottom" title="Base de calcul des prestations">
+        <div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12" >
           <SectionRestitutionColumn>
           <Restitution label="TA" value="99,99 %" />
           <Restitution label="EURO" value="EURO" />
@@ -40,7 +40,7 @@ stories.push({
 'Plomberie et électricité',
 'Jardin']} />
           </SectionRestitutionColumn>
-        </SectionRestitutionRow>
+        </div>
         
         <SectionRestitutionRow title="Base de calcul des prestations">
           <SectionRestitutionColumn>
