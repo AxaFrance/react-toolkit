@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
@@ -10,7 +9,7 @@ import { compose } from 'recompose';
 const DEFAULT_CLASSNAME = 'af-restitution__content-title';
 
 type RestitutionBaseProps = {
-  title: string;
+  title: React.ReactNode;
   className?: string;
 }
 
@@ -18,12 +17,7 @@ const defaultProps: Partial<RestitutionProps> = {
   className:DEFAULT_CLASSNAME
 };
 
-interface RestitutionValuesProps{
-  values: string[];
-}
-
 const Restitution: React.FC<RestitutionProps> = ({ title, className }) => {
-
   return (
     <div className={className}>{title}</div>
   );

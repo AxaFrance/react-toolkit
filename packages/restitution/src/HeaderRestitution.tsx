@@ -27,15 +27,15 @@ const HeaderRestitution: React.SFC<HeaderRestitutionProps> = ({ children, title,
     <header className={className}>
       <div className="af-restitution__header-left">
         <div className="af-restitution__title">
-          <span className="af-restitution__title-title">{title}</span>
+          {title && <span className="af-restitution__title-title">{title}</span>}
           <div className="af-restitution__title-subtitle">{subtitle}</div>
         </div>
       </div>
-      <div className="af-restitution__header-right">
+      {titleLeft && (<div className="af-restitution__header-right">
         <span className="af-restitution__title">
           {titleLeft}
         </span>
-      </div>
+      </div>)}
     </header>
   );
 };

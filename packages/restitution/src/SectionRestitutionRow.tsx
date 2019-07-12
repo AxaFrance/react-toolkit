@@ -1,7 +1,6 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import SectionRestitutionTitle from './SectionRestitutionTitle';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
@@ -9,56 +8,42 @@ import {
 
 import { compose } from 'recompose';
 
-interface RestitutionRowProps{
-  classModifier?: string;
+const DEFAULT_CLASSNAME = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12';
+
+type SectionRestitutionRowBaseProps = {
   children?: React.ReactNode;
   title?: React.ReactNode;
+  classNameContainer?: string;
+  //className: string;
 }
 
-interface RestitutionColumn{
-  children?: React.ReactNode;
-}
+const defaultProps: Partial<SectionRestitutionRowBaseProps> = {
+  children: null,
+  classNameContainer: "row af-restitution__content-left",
+  //className:DEFAULT_CLASSNAME
+};
+interface SectionRestitutionRowProps extends WithClassModifierOptions, SectionRestitutionRowBaseProps {}
 
-export const SectionRestitutionRow: React.FC<RestitutionRowProps> = ({ title, classModifier, children }: { title?:React.ReactNode,classModifier:string, children?:React.ReactNode }) => {
-  const modifier = {
-    [`af-restitution__content-left--${classModifier}`]: classModifier
-  };
-  const className = classNames('af-restitution__content-left row', modifier);
-  return (<div className="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <div className="af-restitution__content-title">{title}</div>
-    <div className={className}>
+export const SectionRestitutionRow: React.FC<SectionRestitutionRowProps> = ({ title, className, classNameContainer, children }: { title?:React.ReactNode,className:string, classNameContainer:string, children?:React.ReactNode }) => {
+  return (<div className={className}>
+    {title && <SectionRestitutionTitle title={title} />}
+    <div className={classNameContainer}>
       {children}
     </div>
   </div>);
 };
 
-export const SectionRestitutionColumn: React.FC<RestitutionColumn> = ({ children }) => {
-  return (
-    <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">{children}</div>
-  );
-};
+SectionRestitutionRow.defaultProps = defaultProps;
 
-/*
-interface PanelRestitutionRowProps {
-  right?: React.ReactNode;
-  title: string;
-  classModifier?: string;
-}
+const enhance = compose<SectionRestitutionRowBaseProps, SectionRestitutionRowProps>(
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier
+);
 
-const PanelRestitutionRow: React.FC<PanelRestitutionRowProps> = ({
-  children,
-  right,
-  title,
-  classModifier,
-}: { title:string, classModifier:string, children?:React.ReactNode, right?:React.ReactNode }) => {
-  return (
-    <SectionRestitution title={title} classModifier={classModifier}>
-      <RestitutionRow>
-        <RestitutionColumn>{children}</RestitutionColumn>
-        <RestitutionColumn>{right}</RestitutionColumn>
-      </RestitutionRow>
-    </SectionRestitution>
-  );
-};
+const Enhanced = enhance(SectionRestitutionRow);
+Enhanced.displayName = 'SectionRestitutionRow';
 
-export default PanelRestitutionRow;*/
+Enhanced.defaultProps = defaultProps;
+
+export default Enhanced;
+

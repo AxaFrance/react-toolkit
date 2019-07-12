@@ -1,7 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
@@ -13,7 +11,7 @@ const DEFAULT_CLASSNAME = 'af-restitution__content';
 type SectionRestitutionBaseProps = {
   className?: string;
   children?: React.ReactNode;
-} 
+}
 
 const defaultProps: Partial<SectionRestitutionBaseProps> = {
   children: null,
