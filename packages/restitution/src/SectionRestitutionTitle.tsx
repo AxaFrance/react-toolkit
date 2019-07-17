@@ -13,26 +13,25 @@ type RestitutionBaseProps = {
   className?: string;
 }
 
-const defaultProps: Partial<RestitutionProps> = {
-  className:DEFAULT_CLASSNAME
-};
-
-const Restitution: React.FC<RestitutionProps> = ({ title, className }) => {
+const Restitution = ({ title, className } : RestitutionBaseProps) => {
   return (
     <div className={className}>{title}</div>
   );
 };
-
-Restitution.defaultProps = defaultProps;
-
-interface RestitutionProps extends WithClassModifierOptions, RestitutionBaseProps {}
 
 const enhance = compose<RestitutionBaseProps, RestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier
 );
 
+type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
+
+const defaultProps: Partial<RestitutionProps> = {
+  className:DEFAULT_CLASSNAME
+};
+
 const Enhanced = enhance(Restitution);
 Enhanced.displayName = 'SectionTitle';
 Enhanced.defaultProps = defaultProps;
+
 export default Enhanced;

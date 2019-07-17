@@ -13,12 +13,7 @@ type SectionRestitutionBaseProps = {
   children?: React.ReactNode;
 }
 
-const defaultProps: Partial<SectionRestitutionBaseProps> = {
-  children: null,
-  className:DEFAULT_CLASSNAME
-};
-
-const SectionRestitution: React.FC<SectionRestitutionBaseProps> = ({ children, className }:{ children?:React.ReactNode, className?:string }) => {
+const SectionRestitution = ({ children, className }: SectionRestitutionBaseProps) => {
   return (
     <section className={className}>
         {children}
@@ -26,18 +21,20 @@ const SectionRestitution: React.FC<SectionRestitutionBaseProps> = ({ children, c
   );
 };
 
-SectionRestitution.defaultProps = defaultProps;
-
-interface SectionRestitutionProps extends WithClassModifierOptions, SectionRestitutionBaseProps {}
+type SectionRestitutionProps = WithClassModifierOptions & SectionRestitutionBaseProps;
 
 const enhance = compose<SectionRestitutionBaseProps, SectionRestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier
 );
 
+const defaultProps: Partial<SectionRestitutionProps> = {
+  children: null,
+  className: DEFAULT_CLASSNAME
+};
+
 const Enhanced = enhance(SectionRestitution);
 Enhanced.displayName = 'SectionRestitution';
-
 Enhanced.defaultProps = defaultProps;
 
 export default Enhanced;

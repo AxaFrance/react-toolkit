@@ -8,5 +8,4 @@ export { default as SectionRestitutionRow } from './SectionRestitutionRow';
 export { default as SectionRestitutionColumn } from './SectionRestitutionColumn';
 export { default as Restitution } from './Restitution';
 
-
 export default Restitution;

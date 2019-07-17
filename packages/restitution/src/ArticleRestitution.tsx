@@ -1,7 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
@@ -12,17 +10,12 @@ const DEFAULT_CLASSNAME = 'af-restitution';
 
 type ArticleRestitutionBaseProps = {
   className?: string;
-  children?: React.ReactNode;
-} 
+  children : React.ReactNode;
+}
 
-const defaultProps: Partial<ArticleRestitutionBaseProps> = {
-  children: null,
-  className:DEFAULT_CLASSNAME
-};
+type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps;
 
-interface ArticleRestitutionProps extends WithClassModifierOptions, ArticleRestitutionBaseProps {}
-
-const ArticleRestitution= ({ children, className }:{ children: React.ReactNode, className: string }) => {
+const ArticleRestitution= ({ children, className }:ArticleRestitutionBaseProps) => {
   return (
     <article className={className}>
     {children}
@@ -30,7 +23,10 @@ const ArticleRestitution= ({ children, className }:{ children: React.ReactNode, 
   );
 };
 
-ArticleRestitution.defaultProps = defaultProps;
+const defaultProps: Partial<ArticleRestitutionProps> = {
+  children: null,
+  className:DEFAULT_CLASSNAME
+};
 
 const enhance = compose<ArticleRestitutionBaseProps, ArticleRestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),

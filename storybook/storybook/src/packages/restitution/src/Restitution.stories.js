@@ -9,7 +9,7 @@ import readme from '@axa-fr/react-toolkit-restitution/dist/README.md';
 const stories = [];
 
 const TitleLeft = () => {
-  return (<a class="af-link af-link--hasIconLeft" href="#"><i class="glyphicon glyphicon-pencil"></i><span class="af-link__text">Modifier</span></a>)
+  return (<a className="af-link af-link--hasIconLeft" href="#"><i className="glyphicon glyphicon-pencil"></i><span className="af-link__text">Modifier</span></a>)
   };
 
 stories.push({

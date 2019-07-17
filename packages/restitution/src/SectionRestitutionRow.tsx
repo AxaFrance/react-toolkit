@@ -14,17 +14,10 @@ type SectionRestitutionRowBaseProps = {
   children?: React.ReactNode;
   title?: React.ReactNode;
   classNameContainer?: string;
-  //className: string;
+  className?: string;
 }
 
-const defaultProps: Partial<SectionRestitutionRowBaseProps> = {
-  children: null,
-  classNameContainer: "row af-restitution__content-left",
-  //className:DEFAULT_CLASSNAME
-};
-interface SectionRestitutionRowProps extends WithClassModifierOptions, SectionRestitutionRowBaseProps {}
-
-export const SectionRestitutionRow: React.FC<SectionRestitutionRowProps> = ({ title, className, classNameContainer, children }: { title?:React.ReactNode,className:string, classNameContainer:string, children?:React.ReactNode }) => {
+const SectionRestitutionRow = ({ title, className, classNameContainer, children }:SectionRestitutionRowBaseProps) => {
   return (<div className={className}>
     {title && <SectionRestitutionTitle title={title} />}
     <div className={classNameContainer}>
@@ -33,16 +26,21 @@ export const SectionRestitutionRow: React.FC<SectionRestitutionRowProps> = ({ ti
   </div>);
 };
 
-SectionRestitutionRow.defaultProps = defaultProps;
+type SectionRestitutionRowProps = WithClassModifierOptions & SectionRestitutionRowBaseProps;
 
 const enhance = compose<SectionRestitutionRowBaseProps, SectionRestitutionRowProps>(
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier
 );
 
+const defaultProps: Partial<SectionRestitutionRowBaseProps> = {
+  children: null,
+  classNameContainer: "row af-restitution__content-left",
+  className:DEFAULT_CLASSNAME
+};
+
 const Enhanced = enhance(SectionRestitutionRow);
 Enhanced.displayName = 'SectionRestitutionRow';
-
 Enhanced.defaultProps = defaultProps;
 
 export default Enhanced;

@@ -15,15 +15,11 @@ type RestitutionBaseProps = {
   className?: string;
 }
 
-const defaultProps: Partial<RestitutionProps> = {
-  className:DEFAULT_CLASSNAME
-};
-
-interface RestitutionValuesProps{
+type RestitutionValuesProps = {
   values: string[];
 }
 
-const RestitutionValues : React.FC<RestitutionValuesProps> = ({ values }) => {
+const RestitutionValues = ({ values }: RestitutionValuesProps) => {
   const li = values.map((v: string) => (
     <li key={v} className="af-restitution__listul-item">
       {v}
@@ -33,11 +29,11 @@ const RestitutionValues : React.FC<RestitutionValuesProps> = ({ values }) => {
   return <ul className="af-restitution__listul">{li}</ul>;
 };
 
-const Restitution: React.FC<RestitutionProps> = ({ label, value, values, className }) => {
-  let restitValue = values ? <RestitutionValues values={values} /> : value;
+const Restitution = ({ label, value, values, className }: RestitutionProps) => {
+  let restitutionValue = values ? <RestitutionValues values={values} /> : value;
 
-  if (!restitValue) {
-    restitValue = '-';
+  if (!restitutionValue) {
+    restitutionValue = '-';
   }
 
   return (
@@ -45,14 +41,16 @@ const Restitution: React.FC<RestitutionProps> = ({ label, value, values, classNa
       <dt className="af-restitution__listdef-item">
         <span className="af-restitution__text">{label}</span>
       </dt>
-      <dd className="af-restitution__listdef-value">{restitValue}</dd>
+      <dd className="af-restitution__listdef-value">{restitutionValue}</dd>
     </dl>
   );
 };
 
-Restitution.defaultProps = defaultProps;
+type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
 
-interface RestitutionProps extends WithClassModifierOptions, RestitutionBaseProps {}
+const defaultProps: Partial<RestitutionProps> = {
+  className:DEFAULT_CLASSNAME
+};
 
 const enhance = compose<RestitutionBaseProps, RestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),

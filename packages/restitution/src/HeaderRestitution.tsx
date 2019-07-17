@@ -1,7 +1,5 @@
 import  * as React from 'react';
-import classNames from 'classnames';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
@@ -12,17 +10,12 @@ const DEFAULT_CLASSNAME = 'af-restitution__header';
 
 type HeaderRestitutionBaseProps = {
   className?: string;
-  children?: React.ReactNode;
-} 
+  title?:React.ReactNode;
+  subtitle?:React.ReactNode;
+  titleLeft?:React.ReactNode;
+}
 
-const defaultProps: Partial<HeaderRestitutionBaseProps> = {
-  children: null,
-  className:DEFAULT_CLASSNAME
-};
-
-interface HeaderRestitutionProps extends WithClassModifierOptions, HeaderRestitutionBaseProps {}
-
-const HeaderRestitution: React.SFC<HeaderRestitutionProps> = ({ children, title, subtitle, titleLeft, className }: { children:React.ReactNode, title:React.ReactNode, subtitle:React.ReactNode, titleLeft:React.ReactNode, className:string }) => {
+const HeaderRestitution = ({ title, subtitle, titleLeft, className }: HeaderRestitutionBaseProps) => {
   return (
     <header className={className}>
       <div className="af-restitution__header-left">
@@ -40,26 +33,19 @@ const HeaderRestitution: React.SFC<HeaderRestitutionProps> = ({ children, title,
   );
 };
 
-/*
-
-
-      {titleLeft ?? (<div className="af-restitution__header-right">
-        <span className="af-restitution__title">
-          {titleLeft}
-        </span>
-      </div>
-      */
-
-HeaderRestitution.defaultProps = defaultProps;
-
-interface HeaderRestitutionProps extends WithClassModifierOptions, HeaderRestitutionBaseProps {}
+type HeaderRestitutionProps = WithClassModifierOptions & HeaderRestitutionBaseProps;
 
 const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier
 );
 
+const defaultProps: Partial<HeaderRestitutionProps> = {
+  className: DEFAULT_CLASSNAME
+};
+
 const Enhanced = enhance(HeaderRestitution);
 Enhanced.displayName = 'HeaderRestitution';
 Enhanced.defaultProps = defaultProps;
+
 export default Enhanced;
