@@ -8,15 +8,14 @@ import { compose } from 'recompose';
 
 const DEFAULT_CLASSNAME = 'af-restitution__listdef';
 
-type RestitutionBaseProps = {
-  label: string;
-  value?: string;
-  values?: string[];
-  className?: string;
-}
-
 type RestitutionValuesProps = {
   values: string[];
+}
+
+type RestitutionBaseProps = Partial<RestitutionValuesProps> & {
+  label: string;
+  value?: string;
+  className?: string;
 }
 
 const RestitutionValues = ({ values }: RestitutionValuesProps) => {

@@ -11,15 +11,13 @@ const DEFAULT_CLASSNAME = 'af-restitution__content';
 type SectionRestitutionBaseProps = {
   className?: string;
   children?: React.ReactNode;
-}
+};
 
-const SectionRestitution = ({ children, className }: SectionRestitutionBaseProps) => {
-  return (
+const SectionRestitution = ({ children, className }: SectionRestitutionBaseProps) => (
     <section className={className}>
         {children}
     </section>
   );
-};
 
 type SectionRestitutionProps = WithClassModifierOptions & SectionRestitutionBaseProps;
 

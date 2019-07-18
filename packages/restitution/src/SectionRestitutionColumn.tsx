@@ -15,14 +15,12 @@ type SectionRestitutionColumnBaseProps = {
   children?: React.ReactNode;
 }
 
-export const SectionRestitutionColumn = ({ children, className, title } : SectionRestitutionColumnBaseProps) => {
-  return (
+export const SectionRestitutionColumn = ({ children, className, title } : SectionRestitutionColumnBaseProps) => (
     <div className={className}>
         {title && <SectionRestitutionTitle title={title} />}
        {children}
     </div>
   );
-};
 
 type SectionRestitutionColumnProps = WithClassModifierOptions & SectionRestitutionColumnBaseProps;
 

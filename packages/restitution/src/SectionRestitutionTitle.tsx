@@ -13,11 +13,9 @@ type RestitutionBaseProps = {
   className?: string;
 }
 
-const Restitution = ({ title, className } : RestitutionBaseProps) => {
-  return (
+const Restitution = ({ title, className } : RestitutionBaseProps) => (
     <div className={className}>{title}</div>
   );
-};
 
 const enhance = compose<RestitutionBaseProps, RestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),

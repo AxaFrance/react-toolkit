@@ -17,14 +17,12 @@ type SectionRestitutionRowBaseProps = {
   className?: string;
 }
 
-const SectionRestitutionRow = ({ title, className, classNameContainer, children }:SectionRestitutionRowBaseProps) => {
-  return (<div className={className}>
+const SectionRestitutionRow = ({ title, className, classNameContainer, children }:SectionRestitutionRowBaseProps) => (<div className={className}>
     {title && <SectionRestitutionTitle title={title} />}
     <div className={classNameContainer}>
       {children}
     </div>
   </div>);
-};
 
 type SectionRestitutionRowProps = WithClassModifierOptions & SectionRestitutionRowBaseProps;
 

@@ -15,13 +15,12 @@ type HeaderRestitutionBaseProps = {
   titleLeft?:React.ReactNode;
 }
 
-const HeaderRestitution = ({ title, subtitle, titleLeft, className }: HeaderRestitutionBaseProps) => {
-  return (
+const HeaderRestitution = ({ title, subtitle, titleLeft, className }: HeaderRestitutionBaseProps) => (
     <header className={className}>
       <div className="af-restitution__header-left">
         <div className="af-restitution__title">
           {title && <span className="af-restitution__title-title">{title}</span>}
-          <div className="af-restitution__title-subtitle">{subtitle}</div>
+          <span className="af-restitution__title-subtitle">{subtitle}</span>
         </div>
       </div>
       {titleLeft && (<div className="af-restitution__header-right">
@@ -31,7 +30,6 @@ const HeaderRestitution = ({ title, subtitle, titleLeft, className }: HeaderRest
       </div>)}
     </header>
   );
-};
 
 type HeaderRestitutionProps = WithClassModifierOptions & HeaderRestitutionBaseProps;
 

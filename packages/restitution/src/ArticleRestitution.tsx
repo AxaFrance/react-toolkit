@@ -15,13 +15,11 @@ type ArticleRestitutionBaseProps = {
 
 type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps;
 
-const ArticleRestitution= ({ children, className }:ArticleRestitutionBaseProps) => {
-  return (
+const ArticleRestitution= ({ children, className }:ArticleRestitutionBaseProps) => (
     <article className={className}>
     {children}
     </article>
   );
-};
 
 const defaultProps: Partial<ArticleRestitutionProps> = {
   children: null,
