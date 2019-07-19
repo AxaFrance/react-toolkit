@@ -13,7 +13,7 @@ type ArticleRestitutionBaseProps = {
   children : React.ReactNode;
 }
 
-type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps;
+type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps ;
 
 const ArticleRestitution= ({ children, className }:ArticleRestitutionBaseProps) => (
     <article className={className}>
