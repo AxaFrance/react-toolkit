@@ -11,7 +11,6 @@ describe('<SwitchInput>', () => {
           id="iddateinput"
           name="placeImage"
           options={[]}
-          values={[]}
           onChange={() => {}}
         />
       )
