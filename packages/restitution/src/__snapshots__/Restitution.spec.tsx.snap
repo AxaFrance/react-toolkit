@@ -18,11 +18,11 @@ exports[`<ArticleRestitution /> should render component 1`] = `
         >
           Tarifs
         </span>
-        <div
+        <span
           className="af-restitution__title-subtitle"
         >
           Tout adhérent, assuré, base (sans EAC ou sans PAC)
-        </div>
+        </span>
       </div>
     </div>
     <div
