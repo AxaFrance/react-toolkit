@@ -56,4 +56,21 @@ exports[`<File.FileTable> renders File.FileTable correctly 1`] = `
 </div>
 `;
 
-exports[`<File.FileTable> renders File.FileTable correctly when no have values 1`] = `""`;
+exports[`<File.FileTable> renders File.FileTable correctly when no have values 1`] = `
+<div
+  className="custom-table-file af-file-table"
+>
+  <Errors
+    errors={
+      Array [
+        Object {
+          "file": Object {
+            "name": "youhou.txt",
+            "size": 2,
+          },
+        },
+      ]
+    }
+  />
+</div>
+`;

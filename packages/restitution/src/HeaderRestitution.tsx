@@ -10,7 +10,7 @@ const DEFAULT_CLASSNAME = 'af-restitution__header';
 
 type HeaderRestitutionBaseProps = {
   className?: string;
-  title?:React.ReactNode;
+  title:React.ReactNode;
   subtitle?:React.ReactNode;
   titleLeft?:React.ReactNode;
 }
