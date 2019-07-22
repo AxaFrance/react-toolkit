@@ -78,18 +78,19 @@ class Switch extends React.Component {
     };
   }
 
-  getSliderStyle() {
-    const sliderPosition = getSliderPosition(this.props.name, this.ref);
-    return {
-      width: `${sliderPosition.width}px`,
-      left: `${sliderPosition.left}px`,
-    };
-  }
-
   componentDidMount() {
     this.setState({
       sliderStyle: this.getSliderStyle(),
     });
+  }
+
+  getSliderStyle() {
+    const { name } = this.props;
+    const sliderPosition = getSliderPosition(name, this.ref);
+    return {
+      width: `${sliderPosition.width}px`,
+      left: `${sliderPosition.left}px`,
+    };
   }
 
   handleChange(e, onChange) {
@@ -102,15 +103,15 @@ class Switch extends React.Component {
 
   render() {
     const { onChange, ...props } = this.props;
-
+    const { selectedValue: value, sliderStyle } = this.state;
     return (
       <div className="af-form-switch" ref={this.ref}>
         <SwitchItems
           {...props}
           onChange={e => this.handleChange(e, onChange)}
-          value={this.state.selectedValue}
+          value={value}
         />
-        <span className="af-btn-switch-slider" style={this.state.sliderStyle} />
+        <span className="af-btn-switch-slider" style={sliderStyle} />
       </div>
     );
   }
