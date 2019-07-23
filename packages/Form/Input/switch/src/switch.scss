@@ -30,6 +30,7 @@
       box-sizing: border-box;
       z-index: 1;
       cursor: pointer;
+      user-select: none;
 
       .af-form__label,
       .af-form__input-radio:checked + .af-form__label,

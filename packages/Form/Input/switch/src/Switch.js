@@ -20,41 +20,49 @@ const defaultProps = {
 };
 
 const SwitchItems = props => {
-  const { options, value, name, onChange, onBlur, onFocus, disabled, ...otherProps } = props;
+  const {
+    options,
+    value,
+    name,
+    onChange,
+    onBlur,
+    onFocus,
+    disabled,
+    ...otherProps
+  } = props;
   return options.map(option => {
     const isChecked = option.value === value;
-    return (<SwitchItem
-      key={option.value}
-      id={option.id}
-      value={option.value}
-      label={option.label}
-      isChecked={isChecked}
-      name={name}
-      onChange={onChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      disabled={disabled}
-      {...omitProperties(otherProps)}
-    />)
-  })
+    return (
+      <SwitchItem
+        key={option.value}
+        id={option.id}
+        value={option.value}
+        label={option.label}
+        isChecked={isChecked}
+        name={name}
+        onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        disabled={disabled}
+        {...omitProperties(otherProps)}
+      />
+    );
+  });
 };
 
-export const getSliderPosition = (value, options, ref) => {
-  const option = options.find(v => v.value === value);
-  const emptyResult = { left: 0, width: 0 };
-  if (!option || !ref.current) {
-    return emptyResult;
-  }
-  const currentElementResult = ref.current.querySelectorAll(`input[value="${value}"]`);
+export const getSliderPosition = (radioName, ref) => {
+  const currentElementResult =
+    ref.current &&
+    ref.current.querySelectorAll(`input[name="${radioName}"]:checked`);
   if (!currentElementResult || currentElementResult.length !== 1) {
-    return emptyResult;
+    return { left: 0, width: 0 };
   }
   const currentElement = currentElementResult[0].parentNode;
   const left = currentElement.offsetLeft;
   const width = currentElement.clientWidth;
   return {
     left,
-    width
+    width,
   };
 };
 
@@ -62,30 +70,56 @@ class Switch extends React.Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
+    this.state = {
+      selectedValue: props.value,
+      sliderStyle: {
+        display: 'none',
+      },
+    };
   }
 
-  render() {
-    const { value, options } = this.props;
-    const sliderPosition = getSliderPosition(value, options, this.ref);
-    const sliderStyle = {
+  componentDidMount() {
+    this.setState({
+      sliderStyle: this.getSliderStyle(),
+    });
+  }
+
+  getSliderStyle() {
+    const { name } = this.props;
+    const sliderPosition = getSliderPosition(name, this.ref);
+    return {
       width: `${sliderPosition.width}px`,
       left: `${sliderPosition.left}px`,
     };
+  }
+
+  handleChange(e, onChange) {
+    this.setState({
+      selectedValue: e.currentTarget.value,
+      sliderStyle: this.getSliderStyle(),
+    });
+    onChange(e);
+  }
+
+  render() {
+    const { onChange, ...props } = this.props;
+    const { selectedValue: value, sliderStyle } = this.state;
     return (
       <div className="af-form-switch" ref={this.ref}>
-        <SwitchItems {...this.props} />
+        <SwitchItems
+          {...props}
+          onChange={e => this.handleChange(e, onChange)}
+          value={value}
+        />
         <span className="af-btn-switch-slider" style={sliderStyle} />
       </div>
     );
   }
-};
+}
 
-
-const EnhancedComponent = withInput(
-  defaultClassName,
-  propTypes,
-  defaultProps
-)(Switch);
+const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
+  Switch
+);
 
 EnhancedComponent.displayName = 'SwitchInput';
 
