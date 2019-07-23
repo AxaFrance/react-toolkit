@@ -1,0 +1,49 @@
+import  * as React from 'react';
+import {
+  withClassDefault,
+  withClassModifier,
+  WithClassModifierOptions,
+} from '@axa-fr/react-toolkit-core';
+import { compose } from 'recompose';
+
+const DEFAULT_CLASSNAME = 'af-restitution__header';
+
+type HeaderRestitutionBaseProps = {
+  className?: string;
+  title:React.ReactNode;
+  subtitle?:React.ReactNode;
+  titleLeft?:React.ReactNode;
+}
+
+const HeaderRestitution = ({ title, subtitle, titleLeft, className }: HeaderRestitutionBaseProps) => (
+    <header className={className}>
+      <div className="af-restitution__header-left">
+        <div className="af-restitution__title">
+          {title && <span className="af-restitution__title-title">{title}</span>}
+          <span className="af-restitution__title-subtitle">{subtitle}</span>
+        </div>
+      </div>
+      {titleLeft && (<div className="af-restitution__header-right">
+        <span className="af-restitution__title">
+          {titleLeft}
+        </span>
+      </div>)}
+    </header>
+  );
+
+type HeaderRestitutionProps = WithClassModifierOptions & HeaderRestitutionBaseProps;
+
+const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier
+);
+
+const defaultProps: Partial<HeaderRestitutionProps> = {
+  className: DEFAULT_CLASSNAME
+};
+
+const Enhanced = enhance(HeaderRestitution);
+Enhanced.displayName = 'HeaderRestitution';
+Enhanced.defaultProps = defaultProps;
+
+export default Enhanced;

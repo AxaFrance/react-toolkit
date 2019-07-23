@@ -26,3 +26,5 @@ tmp/
 *.DS_Store
 .AppleDouble
 .LSOverride
+.idea
+.vs

@@ -107,3 +107,4 @@ export { default as Badge } from '@axa-fr/react-toolkit-badge';
 export { default as Button } from '@axa-fr/react-toolkit-button';
 export { ClassManager, InputManager, Constants } from '@axa-fr/react-toolkit-core';
 export { default as Icon } from '@axa-fr/react-toolkit-icon';
+export { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';

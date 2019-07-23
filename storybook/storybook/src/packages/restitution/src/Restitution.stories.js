@@ -1,32 +1,22 @@
-## Restitution
-
-### Get started
-
-```sh
-npm i "@axa-fr/react-toolkit-restitution"
-```
-
-For more information about style component, you can see the [Restitution Style on Toolkit-core ](https://axaguildev.github.io/react-toolkit/latest/design/index.html#/restitution)
-
-### Import
-
-```javascript
-import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
-
-import '@axa-fr/react-toolkit-restitution/dist/restitution.scss';
-/* or */
-import '@axa-fr/react-toolkit-restitution/dist/af-restitution.css';
-```
-
-### Sample
-
-```javascript
 import React from 'react';
+import { text, select } from '@storybook/addon-knobs';
+
+import addToStorie from '@axa-fr/storybook-addons';
 import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
 
-const MyBadgeComponent => () => (
-<ArticleRestitution>
-    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft="Edit"}>
+import readme from '@axa-fr/react-toolkit-restitution/dist/README.md';
+
+const stories = [];
+
+const TitleLeft = () => {
+  return (<a className="af-link af-link--hasIconLeft" href="#"><i className="glyphicon glyphicon-pencil"></i><span className="af-link__text">Modifier</span></a>)
+  };
+
+stories.push({
+  desc: 'ArticleRestitution',
+  component: () => (
+    <ArticleRestitution>
+    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft={<TitleLeft/>}>
     </HeaderRestitution>
       <SectionRestitution >
         <SectionRestitutionRow title="Base de calcul des prestations">
@@ -75,5 +65,13 @@ const MyBadgeComponent => () => (
 
       </SectionRestitution>
     </ArticleRestitution>
-)
-```
+  ),
+});
+
+const storyData = {
+  name: 'Restitution',
+  docs: readme,
+  stories,
+};
+
+addToStorie(storyData, module);
