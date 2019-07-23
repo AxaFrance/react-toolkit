@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-file",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,10 +12,10 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-button": "^1.2.8",
-    "@axa-fr/react-toolkit-core": "^1.2.8",
-    "@axa-fr/react-toolkit-form-core": "^1.2.8",
-    "@axa-fr/react-toolkit-popover": "^1.2.8",
+    "@axa-fr/react-toolkit-button": "^1.2.9",
+    "@axa-fr/react-toolkit-core": "^1.2.9",
+    "@axa-fr/react-toolkit-form-core": "^1.2.9",
+    "@axa-fr/react-toolkit-popover": "^1.2.9",
     "prop-types": "^15.5.10",
     "react-dropzone": "^4.2.11",
     "recompose": "^0.27.1"
