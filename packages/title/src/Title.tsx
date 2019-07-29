@@ -17,7 +17,7 @@ const defaultProps: Partial<TitleBaseProps> = {
 
 const omitProperties = PropsManager.omit(['classModifier']);
 
-const TitleRaw: React.SFC<TitleBaseProps> = ({ children, ...otherProps }) => (
+const TitleRaw: React.FC<TitleBaseProps> = ({ children, ...otherProps }) => (
   <h1 {...omitProperties(otherProps)}>{children}</h1>
 );
 
