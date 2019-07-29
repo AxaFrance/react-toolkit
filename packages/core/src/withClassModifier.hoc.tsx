@@ -7,7 +7,7 @@ export interface WithClassModifierOptions {
   defaultClassName?: string | null;
 }
 
-export const withClassModifierFunc = (defaultClassModifier?: string) => compose(
+export default compose(
   setDisplayName('withClassModifier'),
   withProps(({ className, classModifier, defaultClassName }: WithClassModifierOptions) => ({
     className: classManager.default.getComponentClassName(
@@ -17,5 +17,3 @@ export const withClassModifierFunc = (defaultClassModifier?: string) => compose(
     ),
   }))
 );
-
-export default withClassModifierFunc();

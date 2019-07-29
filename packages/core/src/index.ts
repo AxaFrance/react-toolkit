@@ -13,7 +13,6 @@ export {
 export { default as withClassDefault } from './withClassDefault.hoc';
 export {
   default as withClassModifier,
-  withClassModifierFunc,
   WithClassModifierOptions,
 } from './withClassModifier.hoc';
 export * from './Models';
