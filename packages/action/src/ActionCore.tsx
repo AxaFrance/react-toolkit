@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { withClassDefault, withClassModifier, PropsManager } from '@axa-fr/react-toolkit-core';
+import { withClassDefault, withClassModifierFunc, PropsManager } from '@axa-fr/react-toolkit-core';
 import { compose, withProps } from 'recompose';
 
-const defaultClassName = 'btn af-btn--circle';
+const defaultClassName = 'btn af-btn';
 
 export interface ActionCoreProps
   extends React.DetailedHTMLProps<
@@ -30,7 +30,7 @@ ActionCore.defaultProps = defaultProps;
 
 const enhance = compose<ActionCoreProps, ActionCoreProps>(
   withClassDefault(defaultClassName),
-  withClassModifier,
+  withClassModifierFunc('circle'),
   withProps(({ onClick, href, role }: ActionCoreProps) => ({
     href: onClick ? '#' : href || undefined,
     role: onClick ? 'button' : role || undefined,

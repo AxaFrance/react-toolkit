@@ -1,3 +1,5 @@
+import {withClassModifierFunc} from "./withClassModifier.hoc";
+
 export { default as ClassManager } from './ClassManager';
 export { default as PropsManager } from './PropsManager';
 export { default as InputManager } from './InputManager';
@@ -11,6 +13,7 @@ export {
 export { default as withClassDefault } from './withClassDefault.hoc';
 export {
   default as withClassModifier,
+  withClassModifierFunc,
   WithClassModifierOptions,
 } from './withClassModifier.hoc';
 export * from './Models';
