@@ -20,7 +20,7 @@ const defaultProps: Partial<ActionCoreProps> = {
 
 const omitProperties = PropsManager.omit(['classModifier']);
 
-const ActionCore: React.SFC<ActionCoreProps> = ({ icon, ...otherProps }) => (
+const ActionCore: React.FC<ActionCoreProps> = ({ icon, ...otherProps }) => (
   <a {...omitProperties(otherProps)}>
     <i className={`glyphicon glyphicon-${icon}`} />
   </a>
