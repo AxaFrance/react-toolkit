@@ -12,7 +12,7 @@ export default compose(
   withProps(({ className, classModifier, defaultClassName }: WithClassModifierOptions) => ({
     className: classManager.default.getComponentClassName(
       className,
-      classModifier != null ? classModifier : defaultClassModifier,
+      classModifier,
       defaultClassName
     ),
   }))
