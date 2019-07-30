@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withClassDefault, withClassModifier, PropsManager } from '@axa-fr/react-toolkit-core';
 import { compose, withProps } from 'recompose';
 
-const defaultClassName = 'btn af-btn--circle';
+const defaultClassName = 'btn af-btn';
 
 export interface ActionCoreProps
   extends React.DetailedHTMLProps<
@@ -11,16 +11,18 @@ export interface ActionCoreProps
     > {
   icon: string;
   className?: string;
+  classModifier?: string;
 }
 
 const defaultProps: Partial<ActionCoreProps> = {
   tabIndex: 0,
   href: '#',
+  classModifier: 'circle',
 };
 
 const omitProperties = PropsManager.omit(['classModifier']);
 
-const ActionCore: React.SFC<ActionCoreProps> = ({ icon, ...otherProps }) => (
+const ActionCore: React.FC<ActionCoreProps> = ({ icon, ...otherProps }) => (
   <a {...omitProperties(otherProps)}>
     <i className={`glyphicon glyphicon-${icon}`} />
   </a>

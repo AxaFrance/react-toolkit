@@ -41,6 +41,7 @@ const Title = props => {
         <ToggleButton idControl="mainmenu">
           <Action
             className="btn af-btn--circle af-title-bar__mobile-menu"
+            classModifier={null}
             id="togglemenu"
             icon="menu-hamburger"
             title="Toggle menu"
