@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.11](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.10...v1.2.11)
+> 30 July 2019
+- fix(action) revert previous fix [`#335`](https://github.com/AxaGuilDEv/react-toolkit/pull/335) by Guillaume Chervet
+- chore(release): publish v1.2.11 [ci skip] [`629e7e4`](https://github.com/AxaGuilDEv/react-toolkit/commit/629e7e468009f0c49f8407f18b58a602640520fd) by Build-CI 
+- docs(changelog) update to new 1.2.10 [`b537001`](https://github.com/AxaGuilDEv/react-toolkit/commit/b537001b45acae617dbfb20e8273ac9e3d00919b) by Build-CI 
+
 #### [v1.2.10](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.9...v1.2.10)
 > 30 July 2019
 -  fix(action) modifier can be extended [`#333`](https://github.com/AxaGuilDEv/react-toolkit/pull/333) by Guillaume Chervet
@@ -174,5 +180,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.10...v0.0.0)
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.11...v0.0.0)
 > 30 July 2019
