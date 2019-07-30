@@ -1,6 +1,19 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.10](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.9...v1.2.10)
+> 30 July 2019
+-  fix(action) modifier can be extended [`#333`](https://github.com/AxaGuilDEv/react-toolkit/pull/333) by Guillaume Chervet
+- chore(release): publish v1.2.10 [ci skip] [`4c82bcd`](https://github.com/AxaGuilDEv/react-toolkit/commit/4c82bcd2f66bdf0f3e4d19566a85c85b2fc10fb5) by Build-CI 
+
+#### [v1.2.9](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.8...v1.2.9)
+> 23 July 2019
+- refactor (switch) set properly slider position for input switch [`#326`](https://github.com/AxaGuilDEv/react-toolkit/pull/326) by Arnaud Foraison
+- feat(restitution) add react components in order to display retitution [`#317`](https://github.com/AxaGuilDEv/react-toolkit/pull/317) by Guillaume Chervet
+- fix: omit props and display errors [`#309`](https://github.com/AxaGuilDEv/react-toolkit/pull/309) by Samuel Gomez
+- chore(release): publish v1.2.9 [ci skip] [`b408866`](https://github.com/AxaGuilDEv/react-toolkit/commit/b408866420e84ed624bd4fd1a512c134dfcca02f) by Build-CI 
+- docs(changelog) update to new 1.2.8 [`0e5f5dd`](https://github.com/AxaGuilDEv/react-toolkit/commit/0e5f5dd4ef66057ab447c36fd2124c45782cb8fd) by Build-CI 
+
 #### [v1.2.8](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.7...v1.2.8)
 > 9 July 2019
 - fix: issue #109 allow multiselect to be emptyed when value is set to unknown value [`#300`](https://github.com/AxaGuilDEv/react-toolkit/pull/300) by oussamahamdaoui
@@ -161,5 +174,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.8...v0.0.0)
-> 9 July 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.10...v0.0.0)
+> 30 July 2019
