@@ -1,5 +1,4 @@
 import React from 'react';
-import { text, select } from '@storybook/addon-knobs';
 
 import addToStorie from '@axa-fr/storybook-addons';
 import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
@@ -8,16 +7,13 @@ import readme from '@axa-fr/react-toolkit-restitution/dist/README.md';
 
 const stories = [];
 
-const TitleLeft = () => {
-  return (<a className="af-link af-link--hasIconLeft" href="#"><i className="glyphicon glyphicon-pencil"></i><span className="af-link__text">Modifier</span></a>)
-  };
+const RightTitle = () => (<a className="af-link af-link--hasIconLeft" href="#"><i className="glyphicon glyphicon-pencil" /><span className="af-link__text">Modifier</span></a>);
 
 stories.push({
   desc: 'ArticleRestitution',
   component: () => (
     <ArticleRestitution>
-    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft={<TitleLeft/>}>
-    </HeaderRestitution>
+    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTitle/>}/>
       <SectionRestitution >
         <SectionRestitutionRow title="Base de calcul des prestations">
           <SectionRestitutionColumn>
