@@ -8,7 +8,7 @@ import readme from '@axa-fr/react-toolkit-restitution/dist/README.md';
 
 const stories = [];
 
-const TitleLeft = () => {
+const RightTitle = () => {
   return (<a className="af-link af-link--hasIconLeft" href="#"><i className="glyphicon glyphicon-pencil"></i><span className="af-link__text">Modifier</span></a>)
   };
 
@@ -16,7 +16,7 @@ stories.push({
   desc: 'ArticleRestitution',
   component: () => (
     <ArticleRestitution>
-    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft={<TitleLeft/>}>
+    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTitle/>}>
     </HeaderRestitution>
       <SectionRestitution >
         <SectionRestitutionRow title="Base de calcul des prestations">

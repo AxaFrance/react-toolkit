@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 
 import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '.';
 import {create} from "react-test-renderer";
-import Badge from "../../badge/src/Badge";
 
-const TitleLeft = () => {
+const RightTItle = () => {
   return (<a className="af-link af-link--hasIconLeft" href="#">
     <i className="glyphicon glyphicon-pencil"></i>
     <span className="af-link__text">Modifier</span>
@@ -13,7 +11,7 @@ const TitleLeft = () => {
 };
 
 const Component = (<ArticleRestitution>
-  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft={<TitleLeft/>}>
+  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTItle/>}>
   </HeaderRestitution>
   <SectionRestitution >
     <SectionRestitutionRow title="Base de calcul des prestations">
