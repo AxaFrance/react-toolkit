@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.13](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.12...v1.2.13)
+> 19 August 2019
+- refactor(restitution) Change titleLeft to rightTitle prop in HeaderRestitution [`#351`](https://github.com/AxaGuilDEv/react-toolkit/pull/351) by Cockedey Sébastien
+- chore(release): publish v1.2.13 [ci skip] [`77808e2`](https://github.com/AxaGuilDEv/react-toolkit/commit/77808e210295b157ad8ea6d35760c6807e6d6e11) by Build-CI 
+- docs(changelog) update to new 1.2.12 [`7daa7d9`](https://github.com/AxaGuilDEv/react-toolkit/commit/7daa7d9fbbe823dea9ccce2b711d8927179bcbba) by Build-CI 
+
 #### [v1.2.12](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.11...v1.2.12)
 > 1 August 2019
 - fix(action) remove previous fix and fix package.lock.json corruption [`#338`](https://github.com/AxaGuilDEv/react-toolkit/pull/338) by Guillaume Chervet
@@ -186,5 +192,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.12...v0.0.0)
-> 1 August 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.13...v0.0.0)
+> 19 August 2019
