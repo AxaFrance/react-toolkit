@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-tabs",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,7 +12,7 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.2.12",
+    "@axa-fr/react-toolkit-core": "^1.2.13",
     "classnames": "^2.2.6",
     "prop-types": "^15.5.10",
     "recompose": "^0.27.1"
