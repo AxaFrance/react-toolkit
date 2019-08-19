@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '.';
 import {create} from "react-test-renderer";
 
-const RightTItle = () => {
+const RightTitle = () => {
   return (<a className="af-link af-link--hasIconLeft" href="#">
     <i className="glyphicon glyphicon-pencil"></i>
     <span className="af-link__text">Modifier</span>
@@ -11,7 +11,7 @@ const RightTItle = () => {
 };
 
 const Component = (<ArticleRestitution>
-  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTItle/>}>
+  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTitle/>}>
   </HeaderRestitution>
   <SectionRestitution >
     <SectionRestitutionRow title="Base de calcul des prestations">
