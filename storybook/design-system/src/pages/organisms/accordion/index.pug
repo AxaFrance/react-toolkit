@@ -1,0 +1,33 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/organisms/accordion';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Accordion', subtitle: 'Organisms' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Accordion', storybook, activePath, tmpl: 'accordion' })
+      +Demo({ title:'Accordion with right arrow', storybook, activePath, tmpl: 'accordion-right-arrow' })
+      +Demo({ title:'Accordion light', storybook, activePath, tmpl: 'accordion-light' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

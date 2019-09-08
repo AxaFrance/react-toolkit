@@ -10,8 +10,7 @@
 
 @media screen and (min-width: 980px) {
   .#{$prefix} {
-    &-body {
-    }
+    &-body {}
   }
 }
 
@@ -21,4 +20,17 @@
   //@include make-container-max-widths();
   padding: 0 2em;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $color-axa;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: $color-burnt-sienna;
+  }
 }

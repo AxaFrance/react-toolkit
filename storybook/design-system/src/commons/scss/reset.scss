@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -91,7 +91,22 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+} */
+
+header,
+a,
+div,
+img,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -107,24 +122,13 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
+
+
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -150,15 +154,4 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-a {
-  text-decoration: none;
-  color: $color-axa;
-  &:hover {
-    text-decoration: underline;
-  }
-  &:focus {
-    color: $color-burnt-sienna;
-  }
 }

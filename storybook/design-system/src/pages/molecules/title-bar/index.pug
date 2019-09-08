@@ -1,45 +1,32 @@
 extends ../../../commons/layout
 
 block meta
-	-const { metatitle, metadescription, metakeywords, github, storybook, badge } = require('../src/pages/molecules/title-bar/data.json')
-	-var metaTitle = metatitle
-	-var metaDescription = metadescription
-	-var metaKeywords = metakeywords
-	-var basedir='../../'
+  -var activePath = '/molecules/title-bar';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
 
-block vars	
-	- var id = "component"
+block vars
+  - var id = "component"
 
 block menu
-	+Menu({activePath:'/molecules/title-bar'})
+  +Menu({ activePath })
 
 block page
-	include ../../../components/page/page-title
-		append page-title
-			+Title({level:"h1", modifier:""})
-				| TitleBar
-			+Title({level:"h2", modifier:""})
-				| Molecule
-	.tk-page__links
-		+PageLinks({github, storybook, badge})
-	include ../../../components/page/page-content
-		block page-content
-			div(class=`${prefix}-markdown`)
-				include:markdown-it ./markdown/toneofvoice.md
-			+Demo({ title:'Classic Title Bar'})
-				block preview
-					include ./templates/title-bar.pug
-				block code
-					-let htmlCode = pugg.compileFile('./src/pages/molecules/title-bar/templates/title-bar.pug')
-					pre
-						code.html
-							| #{pretty(htmlCode())}
-				block css
-					pre
-						code.css
-							include:markdown-it ./markdown/importcss.md
-			div(class=`${prefix}-markdown`)
-				include:markdown-it ./markdown/usage.md
-			p
-				| hello style
-			
+  +PageTitle({ title: 'TitleBar', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic TitleBar', storybook, activePath, tmpl: 'title-bar' })
+      +Demo({ title:'Complex TitleBar', storybook: 'layout-header-title--complex', activePath, tmpl: 'title-bar-complex' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

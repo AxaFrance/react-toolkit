@@ -6,13 +6,13 @@
 
 Pour une utilisation simple et rapide, vous pouvez importer l'ensemble des styles des composants en important le fichier :
 
-```scss
+```javascript
 import '@axa-fr/react-toolkit-all/dist/style/af-components.css';
 ```
 
 Ou la version SASS
 
-```scss
+```javascript
 import '@axa-fr/react-toolkit-all/dist/style/af-components.scss';
 ```
 
@@ -25,8 +25,8 @@ Vous pouvez utiliser **Slash Design System** indépendemment des [composants Rea
 **Component** : import du style par composant. Dans cette méthode, vous allez utiliser des fichiers sources des composants.
 De cette manière, importer uniquement les styles dont vous avez besoin afin de réduire votre bundles.
 
-```scss
-// @file: myheader.scss
+```css
+/* @file: myheader.scss */
 @import '@axa-fr/react-toolkit-layout-header/dist/Header/header.scss';
 @import '@axa-fr/react-toolkit-layout-header/dist/Infos/infos.scss';
 @import '@axa-fr/react-toolkit-layout-header/dist/Name/name.scss';
@@ -47,7 +47,7 @@ La liste des variables est de couleurs est disponibles sur la [page des couleurs
 
 Vous pouvez importer les variables dans le fichier SASS de votre composant :
 
-```scss
+```css
 @import '@axa-fr/react-toolkit-core/dist/assets/scss/core.scss';
 ```
 
@@ -74,9 +74,9 @@ Solution 2 : **sprite SVG**
 import sprite from '@axa-fr/react-toolkit-core/dist/assets/icons-sprite.svg';
 
 const IconOk = () => (
-  <svg viewBox="0 0 16 16">
-    <use xlinkHref={`${sprite}#ok`} />}
-  </svg>
+    <svg viewBox="0 0 16 16">
+        <use xlinkHref={`${sprite}#ok`} />}
+    </svg>
 );
 ```
 

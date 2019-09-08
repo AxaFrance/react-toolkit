@@ -116,14 +116,22 @@ gulp.task('iconfont', () =>
     .pipe(gulp.dest(path.join(coreDist, 'fonts/icons')))
 );
 
+gulp.task('copyiconfontcsstosass', () =>
+  gulp
+    .src(path.join(coreDist, 'fonts/icons', '*.css'))
+    .pipe(rename({ extname: '.scss' }))
+    .pipe(gulp.dest(path.join(coreDist, 'fonts/icons')))
+);
+
 gulp.task('assets', callback => {
   runSequence(
     'copymedia',
     'svgstore',
+    'iconfont',
     'copysvg',
     'copycore',
     'copyfonttypo',
-    'iconfont',
+    'copyiconfontcsstosass',
     callback
   );
 });

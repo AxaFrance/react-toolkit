@@ -7,11 +7,23 @@ import pugDev, { pugProd } from './pug';
 import copyImages from './copy';
 import sprite from './sprite';
 import serve from './serve';
+import copyIconfont from './copyiconfont';
 
-const build = series(clean, jsProd, sassProd, sprite, pugProd, copyImages);
-const dev = series(clean, jsDev, sassDev, pugDev, copyImages, serve);
+const build = series(clean, jsProd, sassProd, sprite, pugProd, copyImages, copyIconfont);
+const dev = series(clean, jsDev, sassDev, pugDev, copyImages, copyIconfont, serve);
 
 export default build;
 export {
-  dev, build, clean, jsDev, jsProd, sassProd, sassDev, pugDev, pugProd, copyImages, sprite,
+  dev,
+  build,
+  clean,
+  jsDev,
+  jsProd,
+  sassProd,
+  sassDev,
+  pugDev,
+  pugProd,
+  copyImages,
+  sprite,
+  copyIconfont,
 };

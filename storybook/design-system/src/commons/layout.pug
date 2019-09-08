@@ -1,3 +1,4 @@
+include ../components/blocks/blocks
 include ../components/icon/icon
 include ../components/title/title
 include ../components/logo/logo
@@ -14,12 +15,20 @@ include ../components/pagelinks/pagelinks
 include ../components/tabs/tabs
 include ../components/tabs/tabs-nav-item
 include ../components/tabs/tabs-content-item
+include ../components/code/code
 include ../components/demo/demo
+include ../components/colors/colors
+include ../components/colors/color
+include ../components/page/page-content
+include ../components/page/page-content-component
+include ../components/page/page-title
+include ../components/page/page-markdown
+include ../components/page/page-summary
 
 block locals
     - const {setClassActive, setClass, pugg, pretty} = functions
     - const {title, author, geography, copyright, email, description, keywords, lang, avatar} = general
-    - const {prefixjs, prefix, pathImg, pathFavicons, storybookBaseUrl, githubBaseUrl, badgeBaseUrl} = base
+    - const {prefixjs, prefix, pathImg, pathFavicons, storybookBaseUrl, storybookIframeUrl, githubBaseUrl, badgeBaseUrl} = base
     - const {main, layouts, style, components, structure, form} = menu
 
 block vars

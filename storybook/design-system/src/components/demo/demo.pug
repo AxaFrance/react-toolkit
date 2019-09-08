@@ -1,22 +1,24 @@
-include ../code/code
-mixin Demo({modifier='', title="Set Demo Title"})
+mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activePath })
     -const classComponent = `${setClass('demo', modifier, true)}`
-    div(class=classComponent)
+    -const tmplPath = `./src/pages${activePath}/templates/${tmpl}.pug`
+    -const htmlCode = pugg.compileFile(tmplPath, { pretty: true })
+    block
+    article(class=classComponent)
         +Title({level: "h2", modifier:"demo"})
             | #{title}
         div(class=`${prefix}-demo__display`)
             +Icon({id:'full-screen', modifier:"demo-open", js:true})
             +Icon({id:'cross-full', modifier:"demo-close", js:true})
             div(class=`${prefix}-demo__template`)
-                block preview
+              | !{htmlCode()}
         +Tabs({modifier:'demo'})
             +TabsNavLayout()
                 +TabsNavItem({index:11,modifier:'active', active:true})
                     span HTML
                 +TabsNavItem({index:12})
-                    span CSS
+                    span REACT
             +TabsContentLayout()
                 +TabsContentItem({index:11, modifier:'active' , active:true})
-                    block code
+                  +Code({ htmlCode })
                 +TabsContentItem({index:12})
-                    block css
+                  iframe(class=`${prefix}-demo__iframe` src=`${storybookIframeUrl}${storybook}`)

@@ -60,22 +60,25 @@
             padding: 1rem 3rem 1rem 1rem;
             line-height: 1.25;
             vertical-align: top;
-            &:first-child {
-              white-space: nowrap;
-              font-weight: 600;
-            }
+
           }
         }
       }
     }
+    ol {
+      list-style: decimal;
+      padding-left: 1rem;
+    }
     ul {
       list-style: disc inside;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
       li {
         padding: 0.5rem 0;
       }
     }
     code {
-      background: $color-mercury;
+
       font-size: 0.9rem;
       padding: 1rem 0.4rem;
       margin: 1rem 0;
@@ -91,6 +94,35 @@
     }
     em{
       font-style: italic;
+    }
+
+
+    &__usecases{
+      &-container{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+        display: flex;
+        max-width: 250px;
+        flex-direction: column;
+        text-align: center;
+        flex-basis: 30% 30% 40%;
+	      margin-top: 15px;
+        box-shadow: rgba(black, 0.19) 0 0 8px 0;
+        margin: 10px;
+        img{
+          width: auto;
+        }
+        h4{
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin: 1rem 0;
+          padding: 0 1rem;
+        }
+        p{
+          padding: 0 1rem;
+        }
     }
   }
 }

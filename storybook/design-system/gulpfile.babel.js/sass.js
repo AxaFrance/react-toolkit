@@ -20,6 +20,7 @@ export const sassProd = () => src(`${pathSrc}${sassIndex}`)
       includePaths: ['node_modules'],
     }).on('error', sass.logError),
   )
+
   .pipe(
     autoprefixer({
       browsers: ['last 2 versions'],

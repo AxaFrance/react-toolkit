@@ -38,7 +38,7 @@ const pugTsk = (baseurl = '') => {
     baseurl,
   };
 
-  return src([`${pathSrc}/index.pug`, `${pathSrc}/pages/**/*.pug`])
+  return src([`${pathSrc}/index.pug`, `${pathSrc}/pages/**/index.pug`])
     .pipe(plumber())
     .pipe(
       pug({

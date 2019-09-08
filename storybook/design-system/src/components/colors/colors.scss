@@ -1,0 +1,68 @@
+.#{$prefix} {
+  &-colors {
+    padding: 2em 1em 1em 0;
+    font-size: 1rem;
+    line-height: 1.25;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1em;
+    }
+
+    &__title {
+      font-family: $font-family-headings;
+      letter-spacing: -1px;
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem 0;
+      margin-bottom: 1.3rem;
+      display: block;
+      border-bottom: 1px solid $color-gray-1;
+      padding-bottom: .7rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-color {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $color-action-2;
+    background: $white;
+    text-align: center;
+    margin: 0 1em 1em 0;
+    width: 200px;
+
+    &:hover {
+      box-shadow: 0 0 10px $color-action-2;
+    }
+
+    &__pantone {
+      height: 100px;
+      width: 100%;
+    }
+
+    &__name {
+      font-weight: 600;
+      width: 100%;
+      padding: .2rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    &__hex {
+      width: 100%;
+      padding: .2rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    &__sass {
+      width: 100%;
+      padding: .2rem .2rem 1rem .2rem;
+    }
+  }
+}

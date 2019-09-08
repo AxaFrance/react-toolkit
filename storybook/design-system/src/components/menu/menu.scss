@@ -4,7 +4,7 @@
 
     &__nav {
       position: fixed;
-      z-index: 2;
+      z-index: 4;
       width: $menu-width;
       height: calc(100% - 53px);
       transition: all .5s ease;
@@ -17,6 +17,9 @@
     }
 
     &__list {
+      margin: 0;
+      padding: 0;
+
       &:not(.tk-menu__list--child) {
         background: $color-gray-3;
       }

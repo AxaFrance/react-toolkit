@@ -1,0 +1,25 @@
+{
+  "metatitle": "Badge Component UI - Axa Toolkit App Design System",
+  "metadescription": "UI Component Badge for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "metakeywords": "Badge design system, ui Badge, design system axa, design system ui, design system react, design",
+  "github": "badge",
+  "storybook": "badge--simple-badge",
+  "badge": "%40axa-fr%2Freact-toolkit-badge",
+  "colors": [
+    {
+      "name": "BLEU AXA",
+      "sass": "$color-axa",
+      "hex": "#00008f"
+    },
+    {
+      "name": "Mercury",
+      "sass": "$color-mercury",
+      "hex": "#e5e5e5"
+    },
+    {
+      "name": "Silver",
+      "sass": " $color-silver",
+      "hex": "#cccccc"
+    }
+  ]
+}

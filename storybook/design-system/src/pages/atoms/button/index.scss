@@ -1,0 +1,16 @@
+/* Just for demo *****************************************************/
+.af-btn {
+  margin: 0 1rem 1rem 0;
+}
+
+.button-demo {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+  background: $white;
+
+  .af-btn--circle {
+    margin: 0 1rem 1rem 0;
+  }
+}

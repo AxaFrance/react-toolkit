@@ -17,22 +17,18 @@
       background-color: $white;
       border: 1px solid $color-mercury;
       background-image:
-        linear-gradient(
-          45deg,
+        linear-gradient(45deg,
           $color-mercury 25%,
           transparent 25%,
           transparent 75%,
           $color-mercury 75%,
-          $color-mercury
-        ),
-        linear-gradient(
-          45deg,
+          $color-mercury),
+        linear-gradient(45deg,
           $color-mercury 25%,
           transparent 25%,
           transparent 75%,
           $color-mercury 75%,
-          $color-mercury
-        );
+          $color-mercury);
       background-size: 20px 20px;
       background-position: 0 0, 10px 10px;
       position: relative;
@@ -62,6 +58,11 @@
       }
     }
 
+    &__iframe {
+      height: 300px;
+      border: 1px solid $color-mercury;
+    }
+
     &__css {
       height: 300px;
     }
@@ -89,14 +90,18 @@
     &--demo-open,
     &--demo-close {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       right: 5px;
       top: 5px;
       cursor: pointer;
+      z-index: 2;
+      background: rgba(255, 255, 255, .5);
+      padding: 5px;
     }
 
     &--demo-close {
+      background: rgba(0, 0, 0, .5);
       display: none;
     }
   }
