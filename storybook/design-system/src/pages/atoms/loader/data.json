@@ -1,0 +1,25 @@
+{
+  "metatitle": "Loader Component UI - Axa Toolkit App Design System",
+  "metadescription": "UI Component Loader for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "metakeywords": "Loader design system, ui Loader, design system axa, design system ui, design system react, design",
+  "github": "loader",
+  "storybook": "loader--default",
+  "badge": "%40axa-fr%2Freact-toolkit-loader",
+  "colors": [
+    {
+      "name": "BLEU AXA",
+      "sass": "$color-axa",
+      "hex": "#00008f"
+    },
+    {
+      "name": "Mercury",
+      "sass": "$color-mercury",
+      "hex": "#e5e5e5"
+    },
+    {
+      "name": "Silver",
+      "sass": " $color-silver",
+      "hex": "#cccccc"
+    }
+  ]
+}

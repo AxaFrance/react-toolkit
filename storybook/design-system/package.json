@@ -111,6 +111,7 @@
     "@babel/register": "^7.0.0",
     "jstransformer-markdown-it": "^2.1.0",
     "normalize-scss": "^7.0.1",
-    "pretty": "^2.0.0"
+    "pretty": "^2.0.0",
+    "rc-slider": "^8.6.4"
   }
 }

@@ -1,0 +1,31 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/atoms/popover';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Popover', subtitle: 'Atom' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Popover', storybook, activePath, tmpl: `classic`, modifier: 'popover' })
+    block style
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/style.md
+      +Colors({ colors })

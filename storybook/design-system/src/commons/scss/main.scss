@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 .#{$prefix} {
   &-html {
     font-size: 1rem;
@@ -5,12 +11,6 @@
     color: $color-scorpion;
     letter-spacing: 0.01em;
     min-width: $width-mobile;
-  }
-}
-
-@media screen and (min-width: 980px) {
-  .#{$prefix} {
-    &-body {}
   }
 }
 
@@ -33,4 +33,14 @@ a {
   &:focus {
     color: $color-burnt-sienna;
   }
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

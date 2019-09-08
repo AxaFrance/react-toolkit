@@ -1,0 +1,11 @@
+/* Correction toolkit *****************************************************/
+
+.af {
+  &-list--check {
+    .af-list__item {
+      .glyphicon {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/atoms/list';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'List', subtitle: 'Atom' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic List', storybook, activePath, tmpl: `classic` })
+      +Demo({ title:'List With Icon', storybook, activePath, tmpl: `withIcon` })
+    block style
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/style.md
+      +Colors({ colors })

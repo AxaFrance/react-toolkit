@@ -3,24 +3,29 @@
     padding: 2em 1em 1em 0;
     font-size: 1rem;
     line-height: 1.25;
+
     img,
     svg {
       max-width: 100%;
     }
+
     a {
       color: $color-links;
     }
+
     h1,
     h2,
     h3 {
       font-family: $font-family-headings;
       letter-spacing: -1px;
-      font-weight: 900;
     }
+
     h1 {
       font-size: 2.5rem;
       margin: 2rem 0;
+      font-weight: 900;
     }
+
     h2 {
       font-size: 1.8rem;
       margin: 3rem 0 1rem 0;
@@ -29,33 +34,43 @@
       letter-spacing: -1px;
       border-bottom: 1px solid $color-gray-1;
       padding-bottom: .7rem;
+      font-weight: 700;
+
       &:first-child {
         margin-top: 0;
       }
     }
+
     h3 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      font-weight: 500;
     }
+
     p {
       margin-bottom: 1rem;
     }
+
     table {
       table-layout: fixed;
       background: $white;
       border: 1px solid $color-gray-1;
       margin-bottom: 1em;
+
       thead {
         border-bottom: 2px solid $color-axa;
+
         th {
           padding: 1rem 3rem 1rem 1rem;
           font-weight: 600;
           text-align: left;
         }
       }
+
       tbody {
         tr {
           border-bottom: 1px solid $color-gray-1;
+
           td {
             padding: 1rem 3rem 1rem 1rem;
             line-height: 1.25;
@@ -65,18 +80,22 @@
         }
       }
     }
+
     ol {
       list-style: decimal;
       padding-left: 1rem;
     }
+
     ul {
       list-style: disc inside;
       padding-left: 1rem;
       margin-bottom: 1rem;
+
       li {
         padding: 0.5rem 0;
       }
     }
+
     code {
 
       font-size: 0.9rem;
@@ -86,43 +105,50 @@
       border: $color-silver 1px solid;
       border-radius: 5px;
     }
+
     blockquote {
       padding: 1rem;
     }
+
     strong {
       font-weight: bold;
     }
-    em{
+
+    em {
       font-style: italic;
     }
 
 
-    &__usecases{
-      &-container{
+    &__usecases {
+      &-container {
         display: flex;
         width: 100%;
         flex-wrap: wrap;
       }
-        display: flex;
-        max-width: 250px;
-        flex-direction: column;
-        text-align: center;
-        flex-basis: 30% 30% 40%;
-	      margin-top: 15px;
-        box-shadow: rgba(black, 0.19) 0 0 8px 0;
-        margin: 10px;
-        img{
-          width: auto;
-        }
-        h4{
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin: 1rem 0;
-          padding: 0 1rem;
-        }
-        p{
-          padding: 0 1rem;
-        }
+
+      display: flex;
+      max-width: 250px;
+      flex-direction: column;
+      text-align: center;
+      flex-basis: 30% 30% 40%;
+      margin-top: 15px;
+      box-shadow: rgba(black, 0.19) 0 0 8px 0;
+      margin: 10px;
+
+      img {
+        width: auto;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 1rem 0;
+        padding: 0 1rem;
+      }
+
+      p {
+        padding: 0 1rem;
+      }
     }
   }
 }

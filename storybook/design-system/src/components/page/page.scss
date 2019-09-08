@@ -22,13 +22,14 @@
         font-size: 2.5rem;
         font-family: $font-family-headings;
         transform: skewX(-15deg);
+        letter-spacing: -2px;
       }
 
       h2 {
         color: $color-gray-dark;
         margin-top: 0;
         font-family: $font-family-base;
-        font-weight: 400;
+        font-weight: 100;
         font-style: italic;
       }
     }
@@ -104,6 +105,7 @@
     &--page {
       font-size: 2.2rem;
       margin: 1.5rem 0;
+      font-weight: 800;
     }
   }
 }

@@ -38,6 +38,7 @@
       position: relative;
       display: inline-flex;
       letter-spacing: -1px;
+      margin-bottom: 0;
 
       &::after {
         content: '®';
@@ -57,6 +58,7 @@
       font-weight: 100;
       color: $white;
       font-style: italic;
+      margin-bottom: 0;
     }
   }
 

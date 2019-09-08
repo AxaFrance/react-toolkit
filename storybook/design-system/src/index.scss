@@ -2,20 +2,19 @@
 
 /* Import Normalize **********************************************************/
 
-@import './commons/scss/normalize';
-@import './commons/scss/reset';
+/* @import './commons/scss/normalize';
+@import './commons/scss/reset'; */
 
 /* Import Toolkit styles *****************************************************/
 
-@import '@axa-fr/react-toolkit-core/dist/assets/scss/core.scss';
 @import '@axa-fr/react-toolkit-all/dist/style/af-components.scss';
 @import '@axa-fr/react-toolkit-core/dist/assets/fonts/icons/af-icons.scss';
-
 
 /* Import components *********************************************************/
 
 /* Commons */
 
+@import './commons/scss/grid';
 @import './commons/scss/font-face';
 @import './commons/scss/variables';
 @import './commons/scss/mixins';
@@ -53,7 +52,13 @@
 /* Pages */
 
 @import './pages/home/home';
+@import './pages/atoms/button/index';
+@import './pages/atoms/list/index';
 @import './pages/molecules/title-bar/index';
 @import './pages/molecules/alert/index';
-@import './pages/atoms/button/index';
+@import './pages/molecules/pager/index';
 @import './pages/organisms/accordion/index';
+@import './pages/organisms/paging/index';
+@import './pages/organisms/panel/index';
+@import './pages/atoms/popover/index';
+@import './pages/atoms/slider/index';

@@ -1,0 +1,20 @@
+{
+  "metatitle": "List Component UI - Axa Toolkit App Design System",
+  "metadescription": "UI Component List for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "metakeywords": "List design system, ui List, design system axa, design system ui, design system react, design",
+  "github": "list",
+  "storybook": "get-started--introduction",
+  "badge": "%40axa-fr%2Freact-toolkit-list",
+  "colors": [
+    {
+      "name": "Mercury",
+      "sass": "$color-mercury",
+      "hex": "#e5e5e5"
+    },
+    {
+      "name": "Silver",
+      "sass": " $color-silver",
+      "hex": "#cccccc"
+    }
+  ]
+}
