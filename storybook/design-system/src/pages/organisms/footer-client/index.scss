@@ -1,0 +1,23 @@
+/* fix toolkit */
+.af-languageSelection__title {
+  margin: 0;
+}
+
+.af-languageSelection__list {
+  margin-top: 0;
+}
+
+/* Just for demo */
+.#{$prefix} {
+  &-demo {
+    &--footerclient {
+      .#{$prefix}-demo__display {
+        height: 400px;
+
+        &--fullscreen {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

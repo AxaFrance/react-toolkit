@@ -1,0 +1,15 @@
+/* TODO  A reporter sur le toolkit */
+/* Dans le composant drawer, il faut supprimer l'appel à la fonction transition de bootstrap */
+.af-drawer {
+  &__part {
+    font-family: $font-family-headings;
+    background: $color-axa;
+    color: $white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    font-weight: 900;
+  }
+}

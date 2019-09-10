@@ -1,0 +1,31 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/footer';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Footer', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Footer', storybook, activePath, tmpl: 'classic' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

@@ -24,14 +24,16 @@ const {
   pathSvg,
 } = config;
 
+const initBrowserSync = () => browserSync.init({
+  port: 5001,
+  server: {
+    watch: true,
+    baseDir: pathDest,
+  },
+});
+
 const serve = () => {
-  browserSync.init({
-    port: 5001,
-    server: {
-      watch: true,
-      baseDir: pathDest,
-    },
-  });
+  initBrowserSync();
 
   watch([`${pathSrc}${sassFiles}`], series(sass));
   watch([`${pathSrc}${jsFiles}`], series(js));
@@ -43,7 +45,6 @@ const serve = () => {
       `${pathSrc}/pages/**/*.pug`,
       `${pathSrc}/pages/**/*.md`,
       `${pathSrc}/pages/**/*.json`,
-      `${pathSrc}/pages/**/data.js`,
     ],
     series(pug),
   );
