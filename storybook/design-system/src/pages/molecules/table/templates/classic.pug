@@ -1,0 +1,11 @@
+include headerCell.pug
+include line.pug
+include data.pug
+table.af-table
+  thead.af-table__thead
+    tr.af-table__tr
+      each headElt in headers
+        +headerCell(headElt)
+  tbody.af-table__body
+    each lineElt in lines
+      +line(lineElt)

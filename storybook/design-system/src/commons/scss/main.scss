@@ -4,9 +4,13 @@
   box-sizing: border-box;
 }
 
+* {
+  font-family: $font-family-base;
+  font-size: 1rem;
+}
+
 .#{$prefix} {
   &-html {
-    font-size: 1rem;
     font-family: $font-family-base;
     color: $color-scorpion;
     letter-spacing: 0.01em;
@@ -43,4 +47,9 @@ body {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+button {
+  font-family: $font-family-base;
+  font-size: 1rem;
 }

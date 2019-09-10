@@ -1,0 +1,22 @@
+.af-tabs
+  ul.af-tabs__control
+    li.af-tabs__item.af-tabs__item--active.af-tabs__item--has-icon-left
+      button.af-tabs__link
+        span
+          i.glyphicon.glyphicon-ok
+          |  Title with left icon
+    li.af-tabs__item.af-tabs__item--has-icon-right
+      button.af-tabs__link
+        span
+          | Title with right icon 
+          i.glyphicon.glyphicon-facetime-video
+    li.af-tabs__item
+      button.af-tabs__link
+        span
+          | Title with badge 
+          span.af-badge.af-badge--danger  42 
+    li.af-tabs__item
+      button.af-tabs__link
+        | I try to write a very long title without any sense just to see what is the behavior of my title component in this case
+  .af-tabs__content
+    .af-tabs__pane Content of my first tab

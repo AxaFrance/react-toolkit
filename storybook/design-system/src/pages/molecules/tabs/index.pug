@@ -1,0 +1,33 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/tabs';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Tabs', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Tabs', storybook, activePath, tmpl: 'tabs' })
+      +Demo({ title:'Complex Tabs', storybook, activePath, tmpl: 'tabs-complex' })
+      +Demo({ title:'Tabs with long text', storybook, activePath, tmpl: 'tabs-long-text' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md
