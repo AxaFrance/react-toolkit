@@ -16,5 +16,7 @@ export default {
   pathSvg: '/assets/icons',
   svgFiles: '/*.svg',
   pathSprite: '/assets/sprite',
+  pathImgFiles: '/assets/images',
+  imgFiles: '/*.{jpg,jpeg,svg,gif,png}',
   pathFontToolkit: './node_modules/@axa-fr/react-toolkit-core/dist/assets/fonts/icons',
 };

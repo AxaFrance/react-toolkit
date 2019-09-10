@@ -1,16 +1,17 @@
 import { series } from 'gulp';
 
-import clean from './clean';
+import clean, { cleanImages } from './clean';
 import jsDev, { jsProd } from './js';
 import sassDev, { sassProd } from './sass';
 import pugDev, { pugProd } from './pug';
-import copyImages from './copy';
+import copyAssets, { copyImages } from './copy';
 import sprite from './sprite';
 import serve from './serve';
 import copyIconfont from './copyiconfont';
 
-const build = series(clean, jsProd, sassProd, sprite, pugProd, copyImages, copyIconfont);
-const dev = series(clean, jsDev, sassDev, pugDev, copyImages, copyIconfont, serve);
+const reloadImages = series(cleanImages, copyImages);
+const build = series(clean, jsProd, sassProd, sprite, pugProd, copyAssets, copyIconfont);
+const dev = series(clean, jsDev, sassDev, pugDev, copyAssets, copyIconfont, serve);
 
 export default build;
 export {
@@ -23,7 +24,8 @@ export {
   sassDev,
   pugDev,
   pugProd,
-  copyImages,
+  copyAssets,
   sprite,
   copyIconfont,
+  reloadImages,
 };

@@ -4,6 +4,7 @@ import sass from './sass';
 import js from './js';
 import pug from './pug';
 import sprite from './sprite';
+import { reloadImages } from '.';
 import config from './config';
 
 const browserSync = create();
@@ -18,6 +19,8 @@ const {
   jsonPageFiles,
   jsonFiles,
   svgFiles,
+  pathImgFiles,
+  imgFiles,
   pathSvg,
 } = config;
 
@@ -40,10 +43,12 @@ const serve = () => {
       `${pathSrc}/pages/**/*.pug`,
       `${pathSrc}/pages/**/*.md`,
       `${pathSrc}/pages/**/*.json`,
+      `${pathSrc}/pages/**/data.js`,
     ],
     series(pug),
   );
   watch([`${pathSrc}${pathSvg}${svgFiles}`], series(sprite));
+  watch([`${pathSrc}${pathImgFiles}${imgFiles}`], series(reloadImages));
 };
 
 export default serve;

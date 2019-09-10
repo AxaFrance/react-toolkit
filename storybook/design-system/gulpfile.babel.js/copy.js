@@ -5,8 +5,12 @@ import config from './config';
 
 const { pathSrc, pathDest, pathImgDist } = config;
 
-const copyImages = () => src(`${pathSrc}${pathImgDist}/**/*`)
+const copyAssets = () => src(`${pathSrc}${pathImgDist}/**/*`)
   .pipe(chmod(777))
   .pipe(dest(`${pathDest}${pathImgDist}`));
 
-export default copyImages;
+export default copyAssets;
+
+export const copyImages = () => src(`${pathSrc}${pathImgDist}/images/**/*`)
+  .pipe(chmod(777))
+  .pipe(dest(`${pathDest}${pathImgDist}/images`));
