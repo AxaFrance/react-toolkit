@@ -7,10 +7,8 @@
           "href": "/",
           "label": "Home"
         },
-        {
-          "href": "/get-started",
-          "label": "Get started"
-        }
+        { "href": "/get-started", "label": "Get started" },
+        { "href": "/github", "label": "Github" }
       ]
     }
   ],
