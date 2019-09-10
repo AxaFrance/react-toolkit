@@ -125,7 +125,7 @@
           "label": "Title Bar"
         },
         {
-          "href": "/organisms/navigation",
+          "href": "/molecules/navigation",
           "label": "Navigation"
         },
         {
