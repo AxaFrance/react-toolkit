@@ -1,0 +1,39 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/form-text';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'FormText', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Input Text', storybook, activePath, tmpl: 'form-text', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text Success', storybook, activePath, tmpl: 'form-text-success', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text Error', storybook, activePath, tmpl: 'form-text-error', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text Disabled', storybook, activePath, tmpl: 'form-text-disabled', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text with Clear', storybook, activePath, tmpl: 'form-text-clear', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text with Clear Error', storybook, activePath, tmpl: 'form-text-clear-error', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text with Info Bulle', storybook, activePath, tmpl: 'form-text-bulle', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text with Info Bulle Success', storybook, activePath, tmpl: 'form-text-bulle-success', modifier: 'forminputtext' })
+      +Demo({ title:'Input Text with Info Bulle Error', storybook, activePath, tmpl: 'form-text-bulle-error', modifier: 'forminputtext' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

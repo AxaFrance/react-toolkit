@@ -1,0 +1,6 @@
+mixin formFieldRadio({ name='defaultname', modifier= '', label= 'default label', disabled=false, id="0", className= "af-form__radio"})
+  div(class=className class=(modifier !== '') ? ` ${className}--${modifier}` : '')
+    input.af-form__input-radio(name=name type="radio" id=`radio${id}` disabled= disabled || null)
+    label.af-form__label(for=`radio${id}`)
+      span.af-form__description 
+        | #{label}
