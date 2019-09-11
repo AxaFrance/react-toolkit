@@ -11,6 +11,8 @@ import config from './config';
 import setClass from '../src/commons/js/setClass';
 import setClassActive from '../src/commons/js/setClassActive';
 
+const scssTransformer = require('jstransformer')(require('jstransformer-scss'));
+
 global.fetch = fetch;
 
 const { pathSrc, pathDest } = config;
@@ -33,6 +35,7 @@ const pugTsk = (baseurl = '') => {
       setClassActive,
       pugg,
       pretty,
+      scssTransformer,
     },
     require,
     baseurl,

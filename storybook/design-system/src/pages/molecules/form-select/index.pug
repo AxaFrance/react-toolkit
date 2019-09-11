@@ -1,0 +1,37 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/form-select';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Form Select', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Input Select', storybook, activePath, tmpl: 'form-select', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select Success', storybook, activePath, tmpl: 'form-select-success', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select Error', storybook, activePath, tmpl: 'form-select-error', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select Disabled', storybook, activePath, tmpl: 'form-select-disabled', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select inline', storybook, activePath, tmpl: 'form-select-inline', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select inline Error', storybook, activePath, tmpl: 'form-select-inline-error', modifier: 'forminputtext' })
+      +Demo({ title:'Input Select inline Success', storybook, activePath, tmpl: 'form-select-inline-success', modifier: 'forminputtext' })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

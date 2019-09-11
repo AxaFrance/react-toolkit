@@ -2,7 +2,7 @@
 
 ```
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
-@import '@axa-fr/react-toolkit-form-input-text/dist/inputtext.scss';
+@import '@axa-fr/react-toolkit-form-input-select/dist/select.scss';
 ```
 
 ## Structure
@@ -13,6 +13,6 @@ A Component Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicin
 
 Component text should be set in sentence case, with only the first word in a phrase and any proper nouns capitalized.
 
-| Class             | Font-size (px/rem) | Font-weight | Font-family             |
-| ----------------- | ------------------ | ----------- | ----------------------- |
-| **.af-form-text** | 16 / 1             | 400         | Source Sans Pro Regular |
+| Class               | Font-size (px/rem) | Font-weight | Font-family             |
+| ------------------- | ------------------ | ----------- | ----------------------- |
+| **.af-form-select** | 16 / 1             | 400         | Source Sans Pro Regular |

@@ -1,4 +1,4 @@
-mixin Code({ htmlCode })
+mixin Code({ htmlCode = '', sassCode = '' })
   div(class=`${prefix}-code__wrapper-outer`)
     div(class=`${prefix}-code__wrapper-middle`)
       div(class=`${prefix}-code__wrapper-inner`)
@@ -6,5 +6,9 @@ mixin Code({ htmlCode })
           +Icon({id:'copy', modifier: 'copy'})
           span(class=`${prefix}-code__icon-text`) Copied
         pre.pre
-          code.html
-            | #{pretty(htmlCode())}
+          if htmlCode !== ''
+            code.html
+              | #{pretty(htmlCode())}
+          if sassCode !== ''
+            code.css
+              | #{pretty(sassCode)}

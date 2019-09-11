@@ -1,0 +1,48 @@
+/* Corrections à reporter sur le toolkit */
+
+.af-form {
+  &__error-text {
+    font-size: .8rem;
+  }
+
+  &__input-inline {
+    .af-form {
+      &__select {
+        &-container {
+          min-width: 200px;
+        }
+      }
+    }
+  }
+
+  &__select {
+    &-container {
+      border: none;
+      min-width: 200px;
+    }
+
+    &--error {
+      .af-form {
+        &__select-container {
+          border: none;
+        }
+
+        &__input-select {
+          box-shadow: 0 0 0 1px $color-red-axa;
+        }
+      }
+    }
+  }
+
+  &__input-select {
+    padding: 0 1.8rem 0 .5rem;
+    height: 38px;
+    box-shadow: 0 0 0 1px $color-gray-1;
+    border-radius: 0;
+
+    &:focus {
+      box-shadow: 0 0 0 1px $color-axa;
+      outline: none;
+    }
+  }
+}
