@@ -1,0 +1,11 @@
+extends ../../../../components/form/layouts/layout-form-textarea
+include ../../../../components/form/mixins/mixin-form-field-checkbox
+
+block label
+  label.af-form__group-label Classic checkbox
+
+block input
+  +formFieldCheckbox({id:"5", name:"classic", label: "lorem ipsum dolor sit amet", modifier:'success'})
+  +formFieldCheckbox({id:"6", name:"classic", label: "Nam sem nisi, auctor sit amet massa sit amet", modifier:'success'})
+  +formFieldCheckbox({id:"7", name:"classic", label: "Ut sollicitudin eleifend tincidunt", modifier:'success'})
+  +formFieldCheckbox({id:"8", name:"classic", label: "disabled", disabled: true, modifier:'disabled'})

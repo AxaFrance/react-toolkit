@@ -1,0 +1,13 @@
+extends ../../../../components/form/layouts/layout-form-textarea
+include ../../../../components/form/mixins/mixin-form-field-checkbox
+include ../../../../components/form/mixins/mixin-form-message
+
+block label
+  label.af-form__group-label Inline checkbox
+
+block input
+  +formFieldCheckbox({className:'af-form__checkbox-inline', id:"33", name:"classic", label: "Check 1", modifier:'error'})
+  +formFieldCheckbox({className:'af-form__checkbox-inline', id:"34", name:"classic", label: "Check 2", modifier:'error'})
+  +formFieldCheckbox({className:'af-form__checkbox-inline', id:"35", name:"classic", label: "Check 3", modifier:'error'})
+  +formFieldCheckbox({className:'af-form__checkbox-inline', id:"36", name:"classic", label: "Check 4", modifier:'error'})
+  +formMessage({modifierMessage: 'error', textMessage:"Message d'erreur", iconMessage: 'exclamation-sign'})

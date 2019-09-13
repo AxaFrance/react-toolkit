@@ -5,6 +5,7 @@ import pretty from 'pretty';
 import pug from 'gulp-pug';
 import plumber from 'gulp-plumber';
 import fs from 'fs';
+import beautify from 'js-beautify';
 import fetch from 'node-fetch';
 import { reload } from './serve';
 import config from './config';
@@ -12,6 +13,9 @@ import setClass from '../src/commons/js/setClass';
 import setClassActive from '../src/commons/js/setClassActive';
 
 const scssTransformer = require('jstransformer')(require('jstransformer-scss'));
+
+const beautifyCss = beautify.css;
+const beautifyHtml = beautify.html;
 
 global.fetch = fetch;
 
@@ -36,6 +40,9 @@ const pugTsk = (baseurl = '') => {
       pugg,
       pretty,
       scssTransformer,
+      fs,
+      beautifyCss,
+      beautifyHtml,
     },
     require,
     baseurl,

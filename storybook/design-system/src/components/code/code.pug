@@ -8,7 +8,7 @@ mixin Code({ htmlCode = '', sassCode = '' })
         pre.pre
           if htmlCode !== ''
             code.html
-              | #{pretty(htmlCode())}
+              | #{htmlCode}
           if sassCode !== ''
             code.css
-              | #{pretty(sassCode)}
+              | #{sassCode}

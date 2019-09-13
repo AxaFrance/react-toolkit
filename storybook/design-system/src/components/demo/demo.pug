@@ -2,7 +2,7 @@ mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activ
     -const classComponent = `${setClass('demo', modifier, true)}`
     -const tmplPath = `./src/pages${activePath}/templates/${tmpl}.pug`
     -const htmlCode = pugg.compileFile(tmplPath, { pretty: true })
-    -const sassCode = sassPath !== '' ? scssTransformer.renderFile(`node_modules/@axa-fr/${sassPath}`).body : ''
+    -const sassCode = sassPath !== '' ? fs.readFileSync(`node_modules/@axa-fr/${sassPath}`, 'utf8') : ''
     block
     article(class=classComponent)
         +Title({level: "h2", modifier:"demo"})
@@ -17,13 +17,13 @@ mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activ
                 +TabsNavItem({index:11,modifier:'active', active:true})
                     span HTML
                 +TabsNavItem({index:12})
-                    span CSS
+                    span SASS
                 +TabsNavItem({index:13})
                     span REACT
             +TabsContentLayout()
                 +TabsContentItem({index:11, modifier:'active' , active:true})
-                  +Code({ htmlCode })
+                  +Code({ htmlCode: beautifyHtml(htmlCode()) })
                 +TabsContentItem({index:12})
-                  +Code({ sassCode })
+                  +Code({ sassCode: beautifyCss(sassCode) })
                 +TabsContentItem({index:13})
                   iframe(class=`${prefix}-demo__iframe` src=`${storybookIframeUrl}${storybook}`)

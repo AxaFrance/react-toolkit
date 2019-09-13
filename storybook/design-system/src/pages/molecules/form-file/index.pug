@@ -1,9 +1,9 @@
 extends ../../../commons/layout
 
 block meta
-  -var activePath = '/molecules/form-textarea';
+  -var activePath = '/molecules/form-file';
   -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
-  -var sassPath = 'react-toolkit-form-input-textarea/dist/textarea.scss'
+  -var sassPath = 'react-toolkit-form-input-file/dist/file.scss'
   -var metaTitle = metatitle
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
@@ -16,7 +16,7 @@ block menu
   +Menu({ activePath })
 
 block page
-  +PageTitle({ title: 'Form Textarea', subtitle: 'Molecule' })
+  +PageTitle({ title: 'Form File', subtitle: 'Molecule' })
   .tk-page__links
     +PageSummary()
     +PageLinks({github, storybook, badge})
@@ -25,9 +25,9 @@ block page
       +PageMarkdown()
         include:markdown-it ./markdown/guidelines.md
     block code
-      +Demo({ title:'Classic Input Textarea', storybook, activePath, tmpl: 'form-textarea', modifier: 'forminputtext', sassPath })
-      +Demo({ title:'Input Textarea Success', storybook, activePath, tmpl: 'form-textarea-success', modifier: 'forminputtext', sassPath })
-      +Demo({ title:'Input Textarea Error', storybook, activePath, tmpl: 'form-textarea-error', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Classic Input File', storybook, activePath, tmpl: 'form-file', modifier: 'forminputtext',  sassPath })
+      +Demo({ title:'Classic Input File with list files', storybook: "form-input-file--file-with-values", activePath, tmpl: 'form-file-list', modifier: 'forminputtext',  sassPath })
+      +Demo({ title:'Classic Input File with errors', storybook: "form-input-file--file-with-errors", activePath, tmpl: 'form-file-list-error', modifier: 'forminputtext',  sassPath })
     block style
       +Colors({ colors })
       +PageMarkdown()

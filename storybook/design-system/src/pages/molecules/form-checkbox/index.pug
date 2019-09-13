@@ -1,0 +1,40 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/form-checkbox';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var sassPath = 'react-toolkit-form-input-checkbox/dist/checkbox.scss'
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Form Checkbox', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Input Checkbox', storybook, activePath, tmpl: 'form-checkbox', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Success', storybook, activePath, tmpl: 'form-checkbox-success', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Error', storybook, activePath, tmpl: 'form-checkbox-error', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Classic Input Checkbox Inline', storybook, activePath, tmpl: 'form-checkbox-inline', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Success Inline', storybook, activePath, tmpl: 'form-checkbox-inline-success', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Error Inline', storybook, activePath, tmpl: 'form-checkbox-inline-error', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Classic Input Checkbox Custom', storybook, activePath, tmpl: 'form-checkbox-custom', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Success Custom', storybook, activePath, tmpl: 'form-checkbox-custom-success', modifier: 'forminputtext', sassPath })
+      +Demo({ title:'Input Checkbox Error Custom', storybook, activePath, tmpl: 'form-checkbox-custom-error', modifier: 'forminputtext', sassPath })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md
