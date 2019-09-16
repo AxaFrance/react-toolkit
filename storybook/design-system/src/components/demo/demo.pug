@@ -1,7 +1,7 @@
-mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activePath, sassPath = '' })
+mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activePath, sassPath = '', absTmpl= '' })
     -const classComponent = `${setClass('demo', modifier, true)}`
-    -const tmplPath = `./src/pages${activePath}/templates/${tmpl}.pug`
-    -const htmlCode = pugg.compileFile(tmplPath, { pretty: true })
+    -const tmplPath = absTmpl !== '' ? absTmpl : tmpl!== '' ? `./src/pages${activePath}/templates/${tmpl}.pug` : ''
+    -const htmlCode = tmplPath !== '' ? pugg.compileFile(tmplPath, { pretty: true }) : ''
     -const sassCode = sassPath !== '' ? fs.readFileSync(`node_modules/@axa-fr/${sassPath}`, 'utf8') : 'No style'
     block
     article(class=classComponent)

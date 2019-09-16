@@ -1,7 +1,7 @@
 extends ../../commons/layout
 
 block vars
-  - var id = "getstarted"
+  - var id = "github"
 
 block meta
   -const { metatitle, metadescription, metakeywords } = require('../src/pages/get-started/meta.json')
@@ -10,7 +10,7 @@ block meta
   -var metaKeywords = metakeywords
   -var basedir='../'
 block menu
-  +Menu({activePath:'/get-started'})
+  +Menu({activePath:'/github'})
 block page
   +PageTitle({ title: 'Github' })
   +PageContent()

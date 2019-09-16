@@ -121,13 +121,14 @@
         font-size: 4rem;
         font-weight: 200;
         color: $white;
-        margin-bottom: 2rem;
+        margin: 0 0 2rem auto;
       }
 
       &-text {
         color: $white;
         font-size: 2.5rem;
         font-weight: 200;
+        margin-bottom: 0;
       }
     }
 
@@ -157,12 +158,14 @@
         font-weight: 200;
         color: $white;
         margin-bottom: 2rem;
+        margin: 0 0 2rem auto;
       }
 
       &-text {
         color: $white;
         font-size: 2.5rem;
         font-weight: 200;
+        margin-bottom: 0;
       }
     }
   }

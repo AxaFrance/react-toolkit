@@ -5,6 +5,7 @@
     &__header {
       padding: .8rem 1rem .8rem 30px;
       position: relative;
+      line-height: 1; 
 
       &::after {
         content: '';
@@ -27,7 +28,8 @@
 
       h2 {
         color: $color-gray-dark;
-        margin-top: 0;
+        font-size: 1.2rem;
+        margin: 0;
         font-family: $font-family-base;
         font-weight: 100;
         font-style: italic;
