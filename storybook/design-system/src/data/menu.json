@@ -7,21 +7,27 @@
           "href": "/",
           "label": "Home"
         },
-        { "href": "/get-started", "label": "Get started" },
-        { "href": "/github", "label": "Github" }
+        {
+          "href": "/get-started",
+          "label": "Get started"
+        },
+        {
+          "href": "/github",
+          "label": "Github"
+        }
       ]
     }
   ],
   "layouts": [
     {
-      "label": "Layouts",
+      "label": "Pages",
       "childsmenu": [
         {
-          "href": "/layouts/form",
+          "href": "/pages/form",
           "label": "Page form"
         },
         {
-          "href": "/layouts/table",
+          "href": "/pages/table",
           "label": "Page table"
         }
       ]
@@ -98,7 +104,6 @@
           "href": "/atoms/slider",
           "label": "Slider"
         },
-
         {
           "href": "/molecules/table",
           "label": "Table"
