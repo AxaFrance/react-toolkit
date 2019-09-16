@@ -7,9 +7,9 @@
 @import '@axa-fr/react-toolkit-form-core/dist/form.scss';
 @import '@axa-fr/react-toolkit-link/dist/link.scss';
 @import '@axa-fr/react-toolkit-form-input-text/dist/inputtext.scss';
-@import '@axa-fr/react-toolkit-collapse/dist/accordion.scss';
-@import '@axa-fr/react-toolkit-panel/dist/panel.scss';
-@import '@axa-fr/react-toolkit-form-filter/dist/filter.scss';
+@import '@axa-fr/react-toolkit-form-input-select/dist/select.scss';
+@import '@axa-fr/react-toolkit-form-input-checkbox/dist/checkbox.scss';
+@import '@axa-fr/react-toolkit-form-filter-inline/dist/filter-inline.scss';
 ```
 
 ## Structure
@@ -22,4 +22,4 @@ Component text should be set in sentence case, with only the first word in a phr
 
 | Class             | Font-size (px/rem) | Font-weight | Font-family             |
 | ----------------- | ------------------ | ----------- | ----------------------- |
-| **.af-filter** | 16 / 1             | 400         | Source Sans Pro Regular |
+| **.af-filter-inline** | 16 / 1             | 400         | Source Sans Pro Regular |
