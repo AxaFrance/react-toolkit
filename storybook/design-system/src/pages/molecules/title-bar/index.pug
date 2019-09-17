@@ -3,6 +3,7 @@ extends ../../../commons/layout
 block meta
   -var activePath = '/molecules/title-bar';
   -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var sassPath = 'react-toolkit-layout-header/dist/Title/title-bar.scss'
   -var metaTitle = metatitle
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
@@ -24,8 +25,8 @@ block page
       +PageMarkdown()
         include:markdown-it ./markdown/guidelines.md
     block code
-      +Demo({ title:'Classic TitleBar', storybook, activePath, tmpl: 'title-bar' })
-      +Demo({ title:'Complex TitleBar', storybook: 'layout-header-title--complex', activePath, tmpl: 'title-bar-complex' })
+      +Demo({ title:'Classic TitleBar', storybook, activePath, tmpl: 'title-bar', sassPath })
+      +Demo({ title:'Complex TitleBar', storybook: 'layout-header-title--complex', activePath, tmpl: 'title-bar-complex', sassPath })
     block style
       +Colors({ colors })
       +PageMarkdown()

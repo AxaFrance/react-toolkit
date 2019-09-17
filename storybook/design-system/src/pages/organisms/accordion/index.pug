@@ -3,6 +3,7 @@ extends ../../../commons/layout
 block meta
   -var activePath = '/organisms/accordion';
   -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var sassPath = 'react-toolkit-collapse/dist/accordion.scss'
   -var metaTitle = metatitle
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
@@ -24,9 +25,9 @@ block page
       +PageMarkdown()
         include:markdown-it ./markdown/guidelines.md
     block code
-      +Demo({ title:'Classic Accordion', storybook, activePath, tmpl: 'accordion' })
-      +Demo({ title:'Accordion with right arrow', storybook, activePath, tmpl: 'accordion-right-arrow' })
-      +Demo({ title:'Accordion light', storybook, activePath, tmpl: 'accordion-light' })
+      +Demo({ title:'Classic Accordion', storybook, activePath, tmpl: 'accordion', sassPath })
+      +Demo({ title:'Accordion with right arrow', storybook, activePath, tmpl: 'accordion-right-arrow', sassPath })
+      +Demo({ title:'Accordion light', storybook, activePath, tmpl: 'accordion-light', sassPath })
     block style
       +Colors({ colors })
       +PageMarkdown()

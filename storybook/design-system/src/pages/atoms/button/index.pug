@@ -3,6 +3,7 @@ extends ../../../commons/layout
 block meta
   -var activePath = '/atoms/button';
   -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var sassPath = 'react-toolkit-button/dist/button.scss'
   -var metaTitle = metatitle
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
@@ -24,11 +25,11 @@ block page
       +PageMarkdown()
         include:markdown-it(html) ./markdown/guidelines.md
     block code
-      +Demo({ title:'Classic Button', storybook, activePath, tmpl: `button`, modifier:"button" })
-      +Demo({ title:'Button with icon', storybook, activePath, tmpl: `button-icon` , modifier:"button" })
-      +Demo({ title:'Button reverse', storybook, activePath, tmpl: `button-reverse` , modifier:"button" })
-      +Demo({ title:'Button circle', storybook, activePath, tmpl: `circle` , modifier:"button" })
-      +Demo({ title:'Button ghost', storybook, activePath, tmpl: `ghost` , modifier:"button" })
+      +Demo({ title:'Classic Button', storybook, activePath, tmpl: `button`, modifier:"button", sassPath })
+      +Demo({ title:'Button with icon', storybook, activePath, tmpl: `button-icon` , modifier:"button", sassPath })
+      +Demo({ title:'Button reverse', storybook, activePath, tmpl: `button-reverse` , modifier:"button", sassPath })
+      +Demo({ title:'Button circle', storybook, activePath, tmpl: `circle` , modifier:"button", sassPath })
+      +Demo({ title:'Button ghost', storybook, activePath, tmpl: `ghost` , modifier:"button", sassPath })
     block style
       +PageMarkdown()
         include:markdown-it(html) ./markdown/style.md

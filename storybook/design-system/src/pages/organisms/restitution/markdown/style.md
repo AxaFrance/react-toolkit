@@ -2,7 +2,7 @@
 
 ```
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
-@import '@axa-fr/react-toolkit-slider/dist/slider.scss';
+@import '@axa-fr/react-toolkit-restitution/dist/restitution.scss';
 ```
 
 ## Structure
@@ -15,4 +15,4 @@ Component text should be set in sentence case, with only the first word in a phr
 
 | Class          | Font-size (px/rem) | Font-weight | Font-family             |
 | -------------- | ------------------ | ----------- | ----------------------- |
-| **.af-slider** | 16 / 1             | 400         | Source Sans Pro Regular |
+| **.af-restitution** | 16 / 1             | 400         | Source Sans Pro Regular |
