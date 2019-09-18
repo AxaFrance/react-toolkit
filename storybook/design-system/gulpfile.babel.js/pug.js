@@ -12,8 +12,6 @@ import config from './config';
 import setClass from '../src/commons/js/setClass';
 import setClassActive from '../src/commons/js/setClassActive';
 
-const scssTransformer = require('jstransformer')(require('jstransformer-scss'));
-
 const beautifyCss = beautify.css;
 const beautifyHtml = beautify.html;
 
@@ -39,7 +37,6 @@ const pugTsk = (baseurl = '') => {
       setClassActive,
       pugg,
       pretty,
-      scssTransformer,
       fs,
       beautifyCss,
       beautifyHtml,
@@ -48,7 +45,11 @@ const pugTsk = (baseurl = '') => {
     baseurl,
   };
 
-  return src([`${pathSrc}/index.pug`, `${pathSrc}/pages/**/index.pug`])
+  return src([
+    `${pathSrc}/index.pug`,
+    `${pathSrc}/pages/**/index.pug`,
+    `${pathSrc}/pages/**/iframe-*.pug`,
+  ])
     .pipe(plumber())
     .pipe(
       pug({

@@ -1,12 +1,12 @@
 .#{$prefix} {
   &-page {
-    background: $white;
+    background: $color-gray-3;
 
     &__header {
       padding: .8rem 1rem .8rem 30px;
       position: relative;
       line-height: 1; 
-
+      background: $white;
       &::after {
         content: '';
         position: absolute;
