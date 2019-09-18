@@ -1,0 +1,9 @@
+extends ../../../../components/form/layouts/layout-form-field
+include ../../../../components/form/mixins/mixin-form-field-text
+
+block label
+  label.af-form__group-label(for="inputtext1") Input text *
+
+block input
+  +formFieldText({hasInfobulle: true, modifier: 'success'})
+

@@ -4,7 +4,7 @@
 
     &__nav {
       position: fixed;
-      z-index: 2;
+      z-index: 4;
       width: $menu-width;
       height: calc(100% - 53px);
       transition: all .5s ease;
@@ -14,9 +14,13 @@
       margin-top: 53px;
       overflow-x: auto;
       box-shadow: 0 16px 19px rgba(0, 0, 0, .4);
+      line-height: 1;
     }
 
     &__list {
+      margin: 0;
+      padding: 0;
+
       &:not(.tk-menu__list--child) {
         background: $color-gray-3;
       }
@@ -29,7 +33,7 @@
 
     &__item {
       &-link {
-        padding: 1rem 0 1rem 2rem;
+        padding: .8rem 0 .8rem 2rem;
         display: block;
         transition: all .5s linear;
         background: $white;

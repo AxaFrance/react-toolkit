@@ -1,0 +1,12 @@
+mixin headerCell(item)
+  th.af-table__th(class=item.isSortable ? 'af-table__th--sortable' : '')
+    span.af-table__th-content 
+      if item.isSortable
+        button.af-btn.af-btn--table-sorting(class=item.isActive ? "af-btn--table-sorting--active" : "" role="button")
+          | #{item.label}
+          if item.isActive
+            span.glyphicon.glyphicon-arrow-xs-down
+          else
+            span.glyphicon.glyphicon-sorting
+      else
+        | #{item.label}

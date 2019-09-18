@@ -1,0 +1,13 @@
+/* Style just for demo */
+
+.#{$prefix}-demo{
+  &__display{
+    &--fullscreen{
+      .#{$prefix}-demo{
+        &__iframe{
+          height: 100vh
+        }
+      }
+    }
+  }  
+}

@@ -1,0 +1,8 @@
+mixin formFieldCheckbox({ name='defaultname', modifier= '', label= 'default label', disabled=false, id="0", className= "af-form__checkbox"})
+  div(class=className class=(modifier !== '') ? ` ${className}--${modifier}` : '')
+    input.af-form__input-checkbox(name=name type="checkbox" id=`checkbox${id}` disabled= disabled || null)
+    label.af-form__label(for=`checkbox${id}`)
+      span.af-form__indicator
+        i.glyphicon.glyphicon-ok
+      span.af-form__description 
+        | #{label}

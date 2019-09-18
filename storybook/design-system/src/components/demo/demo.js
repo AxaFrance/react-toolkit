@@ -6,15 +6,11 @@ const classJsClose = `${prefixjs}-icon--demo-close`;
 const activeModifier = 'fullscreen';
 const classDisplay = `${prefix}-demo__display`;
 
-const openFullScreen = e => {
-  e.currentTarget.closest(`.${classDisplay}`).classList.add(`${classDisplay}--${activeModifier}`);
-};
+const openFullScreen = e => e.currentTarget.closest(`.${classDisplay}`).classList.add(`${classDisplay}--${activeModifier}`);
 
-const closeFullScreen = e => {
-  e.currentTarget
-    .closest(`.${classDisplay}--${activeModifier}`)
-    .classList.remove(`${classDisplay}--${activeModifier}`);
-};
+const closeFullScreen = e => e.currentTarget
+  .closest(`.${classDisplay}--${activeModifier}`)
+  .classList.remove(`${classDisplay}--${activeModifier}`);
 
 class Demo {
   constructor() {
@@ -31,12 +27,8 @@ class Demo {
   }
 
   initEvents() {
-    [].forEach.call(this.openElts, elt =>
-      elt.addEventListener('click', e => openFullScreen(e), true),
-    );
-    [].forEach.call(this.closeElts, elt =>
-      elt.addEventListener('click', e => closeFullScreen(e), true),
-    );
+    [].forEach.call(this.openElts, elt => elt.addEventListener('click', e => openFullScreen(e), true));
+    [].forEach.call(this.closeElts, elt => elt.addEventListener('click', e => closeFullScreen(e), true));
   }
 
   isNotExitingElement() {

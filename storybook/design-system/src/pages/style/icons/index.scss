@@ -1,0 +1,41 @@
+
+
+.icons-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &__item {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid $color-gray-1;
+    position: relative;
+    margin-bottom: 1rem;
+    background: $white;
+    box-shadow: 0 0 5px 0 rgba(250,250,250,0.5);
+    .glyphicon {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-icon {
+      font-size: 3em;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-name {
+      position: absolute;
+      width: 100%;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+}

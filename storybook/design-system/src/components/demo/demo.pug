@@ -1,22 +1,32 @@
-include ../code/code
-mixin Demo({modifier='', title="Set Demo Title"})
+mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activePath, sassPath = '', absTmpl= '', iframe = false })
     -const classComponent = `${setClass('demo', modifier, true)}`
-    div(class=classComponent)
+    -const tmplPath = absTmpl !== '' ? absTmpl : tmpl!== '' ? `./src/pages${activePath}/templates/${tmpl}.pug` : ''
+    -const htmlCode = tmplPath !== '' ? pugg.compileFile(tmplPath, { pretty: true }) : 'No HTML'
+    -const sassCode = sassPath !== '' ? fs.readFileSync(`node_modules/@axa-fr/${sassPath}`, 'utf8') : 'No style'
+    block
+    article(class=classComponent)
         +Title({level: "h2", modifier:"demo"})
             | #{title}
         div(class=`${prefix}-demo__display`)
             +Icon({id:'full-screen', modifier:"demo-open", js:true})
             +Icon({id:'cross-full', modifier:"demo-close", js:true})
             div(class=`${prefix}-demo__template`)
-                block preview
+              if iframe
+                iframe(class=`${prefix}-demo__iframe` src=`${activePath}/templates/iframe-${tmpl}.html`)
+              else
+                | !{htmlCode()}
         +Tabs({modifier:'demo'})
             +TabsNavLayout()
                 +TabsNavItem({index:11,modifier:'active', active:true})
                     span HTML
                 +TabsNavItem({index:12})
-                    span CSS
+                    span SASS
+                +TabsNavItem({index:13})
+                    span REACT
             +TabsContentLayout()
                 +TabsContentItem({index:11, modifier:'active' , active:true})
-                    block code
+                  +Code({ htmlCode: beautifyHtml(htmlCode()) })
                 +TabsContentItem({index:12})
-                    block css
+                  +Code({ sassCode: beautifyCss(sassCode) })
+                +TabsContentItem({index:13})
+                  iframe(class=`${prefix}-demo__iframe` src=`${storybookIframeUrl}${storybook}`)

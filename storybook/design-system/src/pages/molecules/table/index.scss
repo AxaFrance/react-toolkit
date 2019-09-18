@@ -1,0 +1,14 @@
+/* Just for demo */
+.#{$prefix} {
+  &-demo {
+    &--table {
+      .#{$prefix}-demo__display {
+        height: 600px;
+
+        &--fullscreen {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

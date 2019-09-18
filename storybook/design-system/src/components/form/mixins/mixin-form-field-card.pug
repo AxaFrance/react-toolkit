@@ -1,0 +1,54 @@
+mixin formFieldCardHeaderCheckbox({ name='', modifier= '', disabled=false, forId="test", checked=false})
+  header.af-rccard-header
+    .af-form__checkbox(class=(modifier !== '') ? ` af-form__checkbox--${modifier}` : '')
+      input.af-form__input-checkbox(name=name type="checkbox" value="on" id=forId disabled= disabled || null checked= checked || null)
+      label.af-form__label(for=forId)
+        span.af-form__indicator
+          i.glyphicon.glyphicon-ok
+        span.af-form__description
+          p.af-rccard-header__title  Référence
+          p.af-rccard-header__subtitle 50 € / mois
+
+mixin formFieldCardHeaderRadio({ name='', modifier= '', disabled=false, forId, checked=false})
+  header.af-rccard-header
+    .af-form__radio(class=(modifier !== '') ? ` af-form__radio--${modifier}` : '')
+      input.af-form__input-radio(name=name type="radio" value="on" id=forId disabled= disabled || null checked= checked || null)
+      label.af-form__label(for=forId)
+        span.af-form__description
+          p.af-rccard-header__title  Référence
+          p.af-rccard-header__subtitle 50 € / mois
+
+mixin formFieldCardLabel({forId})
+  label.af-rccard-content.af-rccard-group__label(for=forId)
+    p.af-rccard-group__text John Doe
+    dl
+      dt.af-rccard__term  Statut:
+      dd.af-rccard__def  En cours
+      dt.af-rccard__term  Epargne atteinte:
+      dd.af-rccard__def  125 000€
+
+mixin formFieldCardFooter({forId})
+  footer.af-rccard-footer
+    label.af-rccard-group__label(for=forId)
+      button.btn.af-btn(type="submit") Valider mon action
+
+mixin formFieldCard({ name='cardname', modifier= '', disabled=false, id="0", checked=false, type="checkbox" })
+  - const forId = `${type}card${id}`
+  .af-rccard(class=(modifier !== '') ? ` af-rccard--${modifier}` : '')
+    if type === 'checkbox'
+      +formFieldCardHeaderCheckbox({name, modifier, disabled, checked, forId})
+    else
+      +formFieldCardHeaderRadio({name, modifier, disabled, checked, forId})
+    +formFieldCardLabel({forId})
+    +formFieldCardFooter({forId})
+
+mixin formFieldCardGroup({ active=false, meta='', title= '' })
+  .af-rccard-group(class=(active) ? ` af-rccard-group--active` : '')
+    if meta !== ''
+      p.af-rccard-header__meta #{meta}
+    if title !== ''
+      h1.af-rccard-group__title #{title}
+    .af-rccard-group__content
+      if block
+        block
+      

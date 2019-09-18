@@ -1,0 +1,17 @@
+/* Just for demo */
+
+.#{$prefix} {
+  &-demo {
+    &--panel {
+      .af-panel {
+        width: 400px;
+      }
+    }
+  }
+}
+
+/* fix toolkit */
+.af-panel__def-list--result .af-panel__def,
+.af-panel__def {
+  flex-basis: auto;
+}

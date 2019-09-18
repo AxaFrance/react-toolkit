@@ -1,0 +1,13 @@
+
+extends ../../../../commons/layout
+
+block meta
+  -var activePath = '/organisms/modal';
+  -var basedir='../../../'
+
+block page
+  style.
+    .tk-header, .tk-footer {
+      display: none;
+    }
+  include ./modal

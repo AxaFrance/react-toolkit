@@ -1,0 +1,18 @@
+-const menu = [{ "label":"Home", "href":"/home", "active": true }, { "label":"Forms", "href":"/form" }, { "label":"Fileupload", "href":"/fileupload" }, { "label":"Table", "href":"/table" }, { "label":"Accordions", "href":"/collapse" }, { "label":" Drag n drop", "href":"/table" }, { "label":"Alerts", "href":"/alert" }, { "label":"Validation", "href":"/contributing" }, { "label":"Doc", "href":"/doc", "children": [ { "label":"Sous lien", "href":"/doc/sous-lien" }, { "label":"Sous lien 2", "href":"/doc/sous-lien2" }, { "label":"Sous lien 3", "href":"/doc/sous-lien3" }, { "label":"Sous lien 4", "href":"/doc/sous-lien4" }] } ]
+.af-nav-container
+  button.mask.fade.show(type="button")
+  nav.af-nav.af-drawer.left.show(role="navigation" aria-label="Menu principal")
+    .af-container.af-nav__wrapper
+      .af-nav__aside-header
+        h4.af-nav__aside-title Menu
+        a.af-nav__aside-close(href="#" role="button" aria-haspopup="true" aria-controls="idmenu" id="menubutton") ×
+      ul.af-nav__list(role="menubar" aria-labelledby="menubutton" id="idmenu")
+        each item, index in menu
+          li.af-nav__item(role="none" class=(item.active) ? "af-nav__item--active" : "" class=(item.children) ? "af-nav__item--haschild" : "")
+            a.af-nav__link(role="menuitem" href=item.href tabindex=(index === 0) ? "0" : "-1" aria-haspopup=(item.children) ? true : false aria-expanded=(item.children) ? true : false) #{item.label}
+            if item.children
+              i.glyphicon.glyphicon-arrow-xs-down
+              ul.af-nav__list.af-nav__list--children(role="menu" aria-label=item.label)
+                each child in item.children
+                  li.af-nav__item(role="none" class=(child.active) ? "af-nav__item--active" : "")
+                    a.af-nav__link(role="menuitem" href=child.href tabindex="-1") #{child.label}

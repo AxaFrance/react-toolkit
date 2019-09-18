@@ -5,11 +5,15 @@ import pretty from 'pretty';
 import pug from 'gulp-pug';
 import plumber from 'gulp-plumber';
 import fs from 'fs';
+import beautify from 'js-beautify';
 import fetch from 'node-fetch';
 import { reload } from './serve';
 import config from './config';
 import setClass from '../src/commons/js/setClass';
 import setClassActive from '../src/commons/js/setClassActive';
+
+const beautifyCss = beautify.css;
+const beautifyHtml = beautify.html;
 
 global.fetch = fetch;
 
@@ -33,12 +37,19 @@ const pugTsk = (baseurl = '') => {
       setClassActive,
       pugg,
       pretty,
+      fs,
+      beautifyCss,
+      beautifyHtml,
     },
     require,
     baseurl,
   };
 
-  return src([`${pathSrc}/index.pug`, `${pathSrc}/pages/**/*.pug`])
+  return src([
+    `${pathSrc}/index.pug`,
+    `${pathSrc}/pages/**/index.pug`,
+    `${pathSrc}/pages/**/iframe-*.pug`,
+  ])
     .pipe(plumber())
     .pipe(
       pug({

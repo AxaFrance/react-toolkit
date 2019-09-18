@@ -1,0 +1,11 @@
+extends ../../../../components/form/layouts/layout-form-textarea
+include ../../../../components/form/mixins/mixin-form-field-radio
+
+block label
+  label.af-form__group-label Classic radio
+
+block input
+  +formFieldRadio({id:"5", name:"classic-success", label: "lorem ipsum dolor sit amet", modifier:'success'})
+  +formFieldRadio({id:"6", name:"classic-success", label: "Nam sem nisi, auctor sit amet massa sit amet", modifier:'success'})
+  +formFieldRadio({id:"7", name:"classic-success", label: "Ut sollicitudin eleifend tincidunt", modifier:'success'})
+  +formFieldRadio({id:"8", name:"classic-success", label: "disabled", disabled: true, modifier:'disabled'})

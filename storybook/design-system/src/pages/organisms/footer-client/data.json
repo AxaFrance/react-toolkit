@@ -1,0 +1,25 @@
+{
+  "metatitle": "Footer-client Component UI - Slash Design System",
+  "metadescription": "UI Component Footer-client for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "metakeywords": "Footer-client design system, ui Footer-client, design system axa, design system ui, design system react, design",
+  "github": "Layout/footer-client",
+  "storybook": "layout-footerclient--simple",
+  "badge": "%40axa-fr%2Freact-toolkit-layout-footer-client",
+  "colors": [
+    {
+      "name": "BLEU AXA",
+      "sass": "$color-axa",
+      "hex": "#00008f"
+    },
+    {
+      "name": "BLEU Action",
+      "sass": "$color-azur",
+      "hex": "#3032c1"
+    },
+    {
+      "name": "BLEU Action focus",
+      "sass": "$color-azur-focused",
+      "hex": "#aaabf9"
+    }
+  ]
+}

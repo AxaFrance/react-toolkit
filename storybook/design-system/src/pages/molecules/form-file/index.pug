@@ -1,0 +1,34 @@
+extends ../../../commons/layout
+
+block meta
+  -var activePath = '/molecules/form-file';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var sassPath = 'react-toolkit-form-input-file/dist/file.scss'
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block vars
+  - var id = "component"
+
+block menu
+  +Menu({ activePath })
+
+block page
+  +PageTitle({ title: 'Form File', subtitle: 'Molecule' })
+  .tk-page__links
+    +PageSummary()
+    +PageLinks({github, storybook, badge})
+  +PageContentComponent()
+    block guidelines
+      +PageMarkdown()
+        include:markdown-it ./markdown/guidelines.md
+    block code
+      +Demo({ title:'Classic Input File', storybook, activePath, tmpl: 'form-file', modifier: 'forminputtext',  sassPath })
+      +Demo({ title:'Classic Input File with list files', storybook: "form-input-file--file-with-values", activePath, tmpl: 'form-file-list', modifier: 'forminputtext',  sassPath })
+      +Demo({ title:'Classic Input File with errors', storybook: "form-input-file--file-with-errors", activePath, tmpl: 'form-file-list-error', modifier: 'forminputtext',  sassPath })
+    block style
+      +Colors({ colors })
+      +PageMarkdown()
+        include:markdown-it ./markdown/style.md

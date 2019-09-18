@@ -1,0 +1,34 @@
+mixin BaseFooter({ isSocial = false })
+  footer.af-footer-client
+    .af-footer-client__top
+      .af-container
+        .af-footer-client__top-container
+          .af-footer-client__column
+            h3.af-footer-client__column-title Languages
+            ul.af-footer-client__column-items
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/9") Lorem
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/8") Young driver insurance
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/7") Home insurance
+          .af-footer-client__column
+            h3.af-footer-client__column-title Axa & You
+            ul.af-footer-client__column-items
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/6") Call us
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/5") Policy documents
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/4") Xtra by AXA
+          .af-footer-client__column
+            h3.af-footer-client__column-title Useful links
+            ul.af-footer-client__column-items
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/3") About us
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/2") Careers
+              li.af-footer-client__column-item
+                a.af-footer-client__column-link(href="/1") Blog
+          if isSocial
+            include ./social

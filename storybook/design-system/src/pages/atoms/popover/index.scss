@@ -1,0 +1,17 @@
+/* Style just for demo */
+.#{$prefix} {
+  &-demo {
+    &--popover {
+      .#{$prefix}-block-demo {
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+
+        .af-btn--circle {
+          margin: 3rem;
+        }
+      }
+    }
+  }
+}

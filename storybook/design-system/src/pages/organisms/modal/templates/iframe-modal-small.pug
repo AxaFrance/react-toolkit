@@ -1,0 +1,17 @@
+
+extends ../../../../commons/layout
+
+block meta
+  -var activePath = '/organisms/modal';
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../../'
+
+block page
+  style.
+    .tk-header, .tk-footer {
+      display: none;
+    }
+  include ./modal-small

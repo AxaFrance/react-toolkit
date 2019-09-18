@@ -1,21 +1,20 @@
 extends ../../commons/layout
 
-block vars	
-	- var id = "getstarted"
+block vars
+  - var id = "getstarted"
 
 block meta
-	-const { metatitle, metadescription, metakeywords } = require('../src/pages/get-started/meta.json')
-	-var metaTitle = metatitle
-	-var metaDescription = metadescription
-	-var metaKeywords = metakeywords
-	-var basedir='../'
+  -const { metatitle, metadescription, metakeywords } = require('../src/pages/get-started/meta.json')
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../'
 block menu
-	+Menu({activePath:'/get-started'})
+  +Menu({activePath:'/get-started'})
 block page
-	include ../../components/page/page-title
-		block page-title
-			include:markdown-it ./markdown/title.md
-	include ../../components/page/page-content
-		block page-content
-			div(class=`${prefix}-markdown`)
-				include:markdown-it ./markdown/content.md	
+  +PageTitle({ title: 'Get started', subtitle: `
+  Slash Design System contain multiples packages on NPM. Use npm install @axa-fr/react-toolkit-all for all
+or just component you need @axa-fr/react-toolkit-xxxxx.` })
+  +PageContent()
+    +PageMarkdown()
+      include:markdown-it ./markdown/content.md
