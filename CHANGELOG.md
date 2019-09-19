@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.15](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.14...v1.2.15)
+> 19 September 2019
+- fix(design-system) lowercase colors.pug [`#381`](https://github.com/AxaGuilDEv/react-toolkit/pull/381) by Samuel Gomez
+- chore(release): publish v1.2.15 [ci skip] [`bc874eb`](https://github.com/AxaGuilDEv/react-toolkit/commit/bc874eb7d6903899faafa8de4ee3e6de454bd27b) by Build-CI 
+- docs(changelog) update to new 1.2.14 [`90b34c9`](https://github.com/AxaGuilDEv/react-toolkit/commit/90b34c9515e610e26821554f4bbfd99ae78ef77d) by Build-CI 
+
 #### [v1.2.14](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.13...v1.2.14)
 > 19 September 2019
 - Feat/design system [`#379`](https://github.com/AxaGuilDEv/react-toolkit/pull/379) by Samuel Gomez
@@ -200,5 +206,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.14...v0.0.0)
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.15...v0.0.0)
 > 19 September 2019
