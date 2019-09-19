@@ -1,6 +1,14 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.2.14](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.13...v1.2.14)
+> 19 September 2019
+- Feat/design system [`#379`](https://github.com/AxaGuilDEv/react-toolkit/pull/379) by Samuel Gomez
+- fix(licence) typo [`#362`](https://github.com/AxaGuilDEv/react-toolkit/pull/362) by Guillaume Chervet
+- feat(ToolkitCore): Le texte ne passe plus en dessous des inputs. [`#355`](https://github.com/AxaGuilDEv/react-toolkit/pull/355) by Antoine Regembal
+- chore(release): publish v1.2.14 [ci skip] [`b4df24e`](https://github.com/AxaGuilDEv/react-toolkit/commit/b4df24e9a96483530ce47a0ef703e47308da7f84) by Build-CI 
+- docs(changelog) update to new 1.2.13 [`aa908a9`](https://github.com/AxaGuilDEv/react-toolkit/commit/aa908a9c907a2718000d7fe86aa34a62f4341954) by Build-CI 
+
 #### [v1.2.13](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.12...v1.2.13)
 > 19 August 2019
 - refactor(restitution) Change titleLeft to rightTitle prop in HeaderRestitution [`#351`](https://github.com/AxaGuilDEv/react-toolkit/pull/351) by Cockedey Sébastien
@@ -192,5 +200,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.13...v0.0.0)
-> 19 August 2019
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.14...v0.0.0)
+> 19 September 2019
