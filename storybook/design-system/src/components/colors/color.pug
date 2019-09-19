@@ -1,0 +1,6 @@
+mixin Color({ hex = '#ccc', name = 'name color', sass= 'SASS variable' })
+  div(class=`${prefix}-color`)
+    div(class=`${prefix}-color__pantone` style=`background-color:${hex}`)
+    span(class=`${prefix}-color__name`) #{name}
+    span(class=`${prefix}-color__hex`) #{hex}
+    span(class=`${prefix}-color__sass`) #{sass}
