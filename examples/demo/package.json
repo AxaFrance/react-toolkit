@@ -53,7 +53,7 @@
     "react-dom": "^16.9.0",
     "react-dropzone": "^7.0.1",
     "react-modal": "^3.10.1",
-    "react-router-dom": "^4.4.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.1",
     "react-select": "^2.4.4",
     "recompose": "^0.30.0"
