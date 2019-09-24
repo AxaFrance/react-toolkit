@@ -16,7 +16,7 @@ const withCustomFetch = fetch => Component => props => {
     fetch={customFetch(fetch)(props.environment.apiUrl)}
   />
 );
-  }
+  };
 
 export default (fetch = undefined) =>
   compose(
