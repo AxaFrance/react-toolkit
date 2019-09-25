@@ -1,19 +1,28 @@
 import React from 'react';
 import Title from 'shared/Title';
 import Stepper from 'shared/Stepper';
+import {withRouter} from "react-router-dom";
 import './Confirm.scss';
 
-const Confirm = () => (
+export const Confirm = ({onClick}) => (
   <>
-    <Title backHome classModifier="hasstepper">
+    <Title onClick={onClick} classModifier="hasstepper">
       Confirmation
     </Title>
     <Stepper activeStep="confirm" />
     <div className="af-confirm">
-      <span class="glyphicon glyphicon--ring glyphicon-ok" />
+      <span className="glyphicon glyphicon--ring glyphicon-ok" />
       <h2 className="af-confirm__message">Demande de devis ajoutée !</h2>
     </div>
   </>
 );
 
-export default Confirm;
+const ConfirmContainer = ({history}) => {
+  const onClick = (e) => {
+    e.preventDefault();
+    history.push('/');
+  };
+  return (<Confirm onClick={onClick} />);
+};
+
+export default withRouter(ConfirmContainer);

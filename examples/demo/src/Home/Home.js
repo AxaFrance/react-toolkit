@@ -5,13 +5,13 @@ import Title from 'shared/Title';
 import { Table, Paging, Loader } from '@axa-fr/react-toolkit-all';
 import './Home.scss';
 
-const Home = ({ items, loaderMode }) => (
+const Home = ({ items, loaderMode, onClick }) => (
   <>
     <Title>Page d'accueil</Title>
     <div className="af-home container">
-      <Link className="btn af-btn af-btn--quote" to="/new">
+      <a className="btn af-btn af-btn--quote" onClick={onClick}>
         <span className="af-btn__text">Nouveau devis</span>
-      </Link>
+      </a>
       <h1 className="af-title--content">{`Vos devis en cours (${
         items.length
       })`}</h1>

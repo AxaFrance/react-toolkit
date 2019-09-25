@@ -17,9 +17,9 @@ import {
   BEGIN,
 } from './constants';
 
-const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
+const New = ({ fields, onChange, hasSubmit, onSubmit, onClick }) => (
   <>
-    <Title backHome classModifier="hasstepper">
+    <Title onClick={onClick} classModifier="hasstepper">
       Nouveau devis
     </Title>
     <Stepper />
