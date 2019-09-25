@@ -80,7 +80,7 @@
     "eslint-plugin-jest": "^21.27.2",
     "eslint-plugin-json": "^1.3.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-prettier": "^2.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.12.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "0.11.1",
