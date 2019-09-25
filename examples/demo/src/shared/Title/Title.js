@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import './Title.scss';
 
-const TitleBar = ({ backHome, children, className }) => (
+const TitleBar = ({ onClick, children, className }) => (
   <div className={className}>
     <div className="container-fluid container af-title-bar__wrapper">
-      {backHome && (
-        <Link title="Retour à l'accueil" className="btn af-btn--circle" to="/">
+      {onClick && (
+        <a title="Retour à l'accueil" className="btn af-btn--circle" onClick={onClick}>
           <i className="glyphicon glyphicon-home" />
-        </Link>
+        </a>
       )}
       <h1 className="af-title-bar__title">{children}</h1>
     </div>

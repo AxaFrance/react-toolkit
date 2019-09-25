@@ -2,10 +2,10 @@ import Title from './Title';
 import { withProps, compose } from 'recompose';
 import { withClassModifier } from '@axa-fr/react-toolkit-core';
 
-const withTitleClassName = withProps(({ backHome, classModifier }) => ({
+const withTitleClassName = withProps(({ onClick, classModifier }) => ({
   className: 'af-title-bar',
   classModifier: `${classModifier ? classModifier : ''}${
-    backHome ? ' backhome' : ''
+    onClick ? ' backhome' : ''
   }`,
 }));
 

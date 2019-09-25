@@ -1,6 +1,7 @@
 import New from './New';
-import { lifecycle, compose, withStateHandlers } from 'recompose';
 import { rules } from './New.validation.rules';
+import React, {useReducer} from 'react';
+import { withRouter } from "react-router-dom";
 import {
   computeInitialStateErrorMessage,
   genericHandleChange
@@ -20,8 +21,7 @@ const errorList = fields =>
 
 const setErrorMessage = key => fields => fields[key].message !== null;
 
-const preInitState = lifecycle({
-  state: {
+const preInitState = {
     hasSubmit: false,
     fields: {
       [FIRSTNAME]: { name: FIRSTNAME, value: '', message: MSG_REQUIRED },
@@ -41,37 +41,49 @@ const preInitState = lifecycle({
         message: MSG_REQUIRED
       }
     }
-  }
-});
+};
 
-export const withInitState = computeInitialStateErrorMessage(
+export const initState = computeInitialStateErrorMessage(
   preInitState,
   rules
 );
 
-const withFormHandlers = withStateHandlers(({ fields }) => ({ fields }), {
-  onChange: ({ fields }, props) => event => {
-    const newField = genericHandleChange(rules, fields, event);
-    return {
-      fields: newField
-    };
-  },
-  onSubmit: ({ fields }, { history }) => e => {
-    const errors = errorList(fields);
+function reducer(state, action) {
+  switch (action.type) {
+    case 'onChange':
+      const newField = genericHandleChange(rules, state.fields, action.event);
+      return {
+        ...state,
+        fields: newField
+      };
+    case 'onSubmit':
+      return {
+        ...state,
+        hasSubmit: true
+      };
+    default:
+      throw new Error();
+  }
+}
+
+const NewContainer = ({history}) => {
+  const [state, dispatch] = useReducer(reducer, initState);
+   const onChange =  event => dispatch({type:'onChange', event });
+   const onSubmit = () => {
+    const errors = errorList(state.fields);
     if (!errors.length) {
       history.push('/confirm');
     }
-    return {
-      hasSubmit: true
-    };
-  }
-});
+     dispatch({type:'onSubmit' });
+   };
 
-const enhance = compose(
-  withInitState,
-  withFormHandlers
-);
+   const onClick = (e) => {
+     e.preventDefault();
+     history.push('/');
+   };
 
-const Enhanced = enhance(New);
 
-export default Enhanced;
+  return (<New {...state} onChange={onChange} onSubmit={onSubmit} onClick={onClick} />);
+};
+
+export default withRouter(NewContainer);
