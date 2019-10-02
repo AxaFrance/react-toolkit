@@ -11,10 +11,9 @@ const defaultProps = {
   classModifier: defaultClassModifier,
 };
 
-interface MessagesProps {
+type MessagesProps = {
   messages: string[];
-}
-
+};
 const Messages = ({ messages }: MessagesProps) => {
   return (
     <>
@@ -27,14 +26,13 @@ const Messages = ({ messages }: MessagesProps) => {
   );
 };
 
-interface SummaryProps {
+type SummaryProps = {
   title?: string;
   messages?: string[];
   isVisible?: boolean;
   className?: string;
   classModifier?: string;
-}
-
+};
 const Summary = ({ messages, isVisible, className, classModifier, title }: SummaryProps) => {
   if (!messages || !isVisible) {
     return null;
