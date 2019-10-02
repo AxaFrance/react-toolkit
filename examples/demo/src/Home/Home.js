@@ -9,9 +9,9 @@ const Home = ({ items, loaderMode, onClick }) => (
   <>
     <Title>Page d'accueil</Title>
     <div className="af-home container">
-      <a className="btn af-btn af-btn--quote" onClick={onClick}>
+      <Link className="btn af-btn af-btn--quote" to="/new">
         <span className="af-btn__text">Nouveau devis</span>
-      </a>
+      </Link>
       <h1 className="af-title--content">{`Vos devis en cours (${
         items.length
       })`}</h1>

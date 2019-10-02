@@ -19,7 +19,7 @@ import {
 
 const New = ({ fields, onChange, hasSubmit, onSubmit, onClick }) => (
   <>
-    <Title onClick={onClick} classModifier="hasstepper">
+    <Title backHome classModifier="hasstepper">
       Nouveau devis
     </Title>
     <Stepper />
