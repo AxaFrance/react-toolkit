@@ -39,7 +39,6 @@ steps:
         sonar.javascript.lcov.reportPaths=coverage/lcov.info
         sonar.sourceEncoding=UTF-8
         sonar.verbose=true
-        sonar.host.url=https://sonarcloud.io
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 

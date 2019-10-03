@@ -77,13 +77,7 @@ const NewContainer = ({history}) => {
      dispatch({type:'onSubmit' });
    };
 
-   const onClick = (e) => {
-     e.preventDefault();
-     history.push('/');
-   };
-
-
-  return (<New {...state} onChange={onChange} onSubmit={onSubmit} onClick={onClick} />);
+  return (<New {...state} onChange={onChange} onSubmit={onSubmit} />);
 };
 
 export default withRouter(NewContainer);

@@ -3,8 +3,9 @@ import fetchDevis from './Home.service';
 
 import React, {useState, useEffect} from 'react';
 import withCustomFetch from '../withCustomFetch';
-import withLoader from "../withLoader";
-import {withRouter} from "react-router-dom";
+import withLoader from '../withLoader';
+import compose from '../compose';
+import {withRouter} from 'react-router-dom';
 
 const HomeWithLoader = withLoader(Home);
 
@@ -25,12 +26,9 @@ const HomeContainer = ({ fetch, history }) => {
     init(fetch, setState)();
   }, []);
 
-  const onClick = (e) => {
-    e.preventDefault();
-    history.push('/new');
-  };
-
-  return (<HomeWithLoader {...state} onClick={onClick} />);
+  return (<HomeWithLoader {...state} />);
 };
 
-export default withCustomFetch(fetch)(withRouter(HomeContainer));
+export default compose(
+  withCustomFetch(fetch),
+  withRouter)(HomeContainer);
