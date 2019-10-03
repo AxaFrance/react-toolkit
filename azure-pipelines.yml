@@ -29,11 +29,11 @@ steps:
     displayName: 'Prepare analysis on SonarCloud'
     inputs:
       SonarCloud: SonarCloud
-        organization: axaguildev
-        scannerMode: CLI
-        configMode: manual
-        cliProjectKey: 'AxaGuilDEv_react-toolkit'
-        cliProjectName: 'react-toolkit'
+      organization: axaguildev
+      scannerMode: CLI
+      configMode: manual
+      cliProjectKey: 'AxaGuilDEv_react-toolkit'
+      cliProjectName: 'react-toolkit'
       extraProperties: |
         sonar.exclusions=**/*.stories.js,**/*.spec.js,**/*.spec.ts,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
         sonar.javascript.lcov.reportPaths=coverage/lcov.info
