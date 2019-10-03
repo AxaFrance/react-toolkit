@@ -28,18 +28,15 @@ steps:
   - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
     displayName: 'Prepare analysis on SonarCloud'
     inputs:
-      SonarCloud: SonarCloud
-      organization: axaguildev
-      scannerMode: CLI
-      configMode: manual
-      cliProjectKey: 'AxaGuilDEv_react-toolkit'
-      cliProjectName: 'react-toolkit'
+      SonarCloud: "AxaGuilDEv.react-toolkit"
+      organization: "axaguildev"
+      projectKey: "AxaGuilDEv_react-toolkit"
+      projectName: "react-toolkit"
       extraProperties: |
         sonar.exclusions=**/*.stories.js,**/*.spec.js,**/*.spec.ts,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
         sonar.javascript.lcov.reportPaths=coverage/lcov.info
         sonar.sourceEncoding=UTF-8
         sonar.verbose=true
-        sonar.host.url=https://sonarcloud.io
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 

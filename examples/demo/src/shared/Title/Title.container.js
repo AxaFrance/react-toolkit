@@ -1,6 +1,8 @@
 import Title from './Title';
 import compose from '../../compose';
+import withProps from '../../withProps';
 import { withClassModifier } from '@axa-fr/react-toolkit-core';
+
 
 const withTitleClassName = withProps(({ backHome, classModifier }) => ({
   className: 'af-title-bar',
