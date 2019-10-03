@@ -1,0 +1,11 @@
+extends ../../../../components/form/layouts/layout-form-textarea
+include ../../../../components/form/mixins/mixin-form-field-checkbox
+
+block label
+  label.af-form__group-label Toggle checkbox
+
+block input
+  +formFieldCheckbox({className:'af-form__checkbox-toggle', id:"13", name:"toggle"})
+  +formFieldCheckbox({className:'af-form__checkbox-toggle', id:"14", name:"toggle", checked: true })
+  +formFieldCheckbox({className:'af-form__checkbox-toggle', id:"14", name:"toggle", disabled: true, modifier:'disabled'})
+  +formFieldCheckbox({className:'af-form__checkbox-toggle', id:"15", name:"toggle", modifier:'error'})

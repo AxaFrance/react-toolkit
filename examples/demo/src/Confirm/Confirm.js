@@ -1,12 +1,11 @@
 import React from 'react';
 import Title from 'shared/Title';
 import Stepper from 'shared/Stepper';
-import {withRouter} from "react-router-dom";
 import './Confirm.scss';
 
-export const Confirm = ({onClick}) => (
+export const Confirm = () => (
   <>
-    <Title onClick={onClick} classModifier="hasstepper">
+    <Title backHome classModifier="hasstepper">
       Confirmation
     </Title>
     <Stepper activeStep="confirm" />
@@ -17,12 +16,4 @@ export const Confirm = ({onClick}) => (
   </>
 );
 
-const ConfirmContainer = ({history}) => {
-  const onClick = (e) => {
-    e.preventDefault();
-    history.push('/');
-  };
-  return (<Confirm onClick={onClick} />);
-};
-
-export default withRouter(ConfirmContainer);
+export default Confirm;

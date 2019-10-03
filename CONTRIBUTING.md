@@ -27,9 +27,7 @@ $ npm run storybook:build
 $ npm run dev
 
 # [react] To edit a single component in live inside storybook, you have run js compilation in another bash process
-$ NPX lerna exec --scope=@axa-fr/react-toolkit-table -- node ../../scripts/watch-js.js
-# [react] To edit a single component in live inside storybook, you have run ts compilation in another bash process
-$ NPX lerna exec --scope=@axa-fr/react-toolkit-table -- node ../../scripts/watch-ts.js
+$ npx lerna exec --scope=@axa-fr/react-toolkit-table -- node ../../scripts/watch-js.js
 
 # [css] Develop html/css
 $ npm run css

@@ -1,36 +1,51 @@
+Le composant accordéon permet aux utilisateurs d'afficher et de masquer des sections de contenu sur une même page.
+
 ## Tone of voice
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
-
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
-
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Les accordéons cachent le contenu, les titres des accordéons doivent donc être clairs.
+Si nécessaire, ajouter une ligne de résumé pour aider les utilisateurs à comprendre le contenu de la section :
 
 ## Usage
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+Utiliser un accordéon pour permettre à l'utilisateur d'afficher et de masquer du contenu si besoin.
+Dans le cas où l'interface n'est pas utilisée régulièrement, les accordéons doivent être utilisés avec parcimonie.
 
-## Label
+### Visuel 1 : A utiliser quand le contenu doit être mis en avant dans la page
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+![accordion-closed](../../assets/images/accordion/accordion-closed.jpg)
 
-## Icon usage
+### Visuel 2 : A utiliser quand le contenu est secondaire (ex : récapitulatif d'information)
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+![accordion-secondary](../../assets/images/accordion/accordion-secondary.jpg)
 
-## Danger version usage
+### Visuel 3 : A utiliser uniquement quand l’accordéon doit être en fullscreen
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+![accordion-fullscreen](../../assets/images/accordion/accordion-fullscreen.jpg)
+
+## Bests practices
+
+La nature d'un accordéon nécessiterait un collapse automatique, mais ce n'est pas toujours la meilleure option en termes de facilité d'utilisation :
+
+-   Pour les accordéons comportant de nombreux éléments, laisser les sections agrandies, car les sauts qui se produisent lorsque les panneaux se ferment et s’ouvrent simultanément sont trop perturbants.
+-   S'il n'y a pas beaucoup d'éléments, la section peut être réduite par défaut car le saut sera minime.
+
+Dans tous les cas, le choix de collapser ou non le contenu doit résulter du besoin de l’utilisateur à voir, analyser, comparer ou non les données des sections de l’accordéon.
+
+L'icône en forme de flèche sert à indiquer la fonctionnalité de l'accordéon, ainsi qu'à indiquer visuellement l'état de l'accordéon par sa rotation et sa direction.
+
+Il est possible de pouvoir sauvegarder la ou les sections de contenu ouvertes lorsque l'utilisateur revient sur la page.
+
+## DO / DONT
+
+### DO
+
+1. Lorsqu'un accordéon s'ouvre et se ferme, seule sa hauteur doit changer, sa largeur doit rester constante.
+2. Les fonctionnalités d'ouverture et de fermeture d'un accordéon s'effectuent au clic sur l'ensemble de l'en-tête du composant.
+3. Utiliser un accordéon plutôt que les onglets (tabs) si les utilisateurs ont besoin de voir plus d'une section à la fois.
+
+### DONT
+
+1. N'utilisez pas un accordéon pour du contenu essentiel aux utilisateurs.
+2. N'utilisez pas le composant accordéon si la quantité de contenu qu'il contient ralenti le chargement de la page.
+3. Ne pas désactiver les sections. Désactiver les contrôles est déroutant pour les utilisateurs. S'il n'y a pas de contenu pour une section, expliquez pourquoi à l'ouverture de la section.
+4. Les fonctionnalités d'ouverture et de fermeture ne doivent jamais être déclenchées au survol.

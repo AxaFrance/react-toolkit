@@ -57,6 +57,7 @@ stories.push({
           'classNameContainerInput',
           InputConstants.defaultProps.classNameContainerInput
         )}
+        forceDisplayPlaceholder={boolean('forceDisplayPlaceholder', false)}
       />
     </form>
   ),
@@ -85,6 +86,10 @@ stories.push({
               className={text('className', '')}
               mode={select('mode', SelectModes, SelectModes.default)}
               placeholder={text('placeholder', '- Select -')}
+              forceDisplayPlaceholder={boolean(
+                'forceDisplayPlaceholder',
+                false
+              )}
             />
             <HelpMessage
               message={text(
@@ -118,6 +123,7 @@ stories.push({
           classModifier={text('classModifier', '')}
           className={text('className', '')}
           placeholder={text('placeholder', '- Select -')}
+          forceDisplayPlaceholder={boolean('forceDisplayPlaceholder', false)}
         />
       </div>
     </form>

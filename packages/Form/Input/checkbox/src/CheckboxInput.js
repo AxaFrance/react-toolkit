@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FieldConstants as Constants, Field } from '@axa-fr/react-toolkit-form-core';
+import {
+  FieldConstants as Constants,
+  Field,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import CheckBoxModes from './CheckboxModes';
@@ -12,6 +15,7 @@ const propTypes = {
     CheckBoxModes.default,
     CheckBoxModes.classic,
     CheckBoxModes.inline,
+    CheckBoxModes.toggle,
   ]),
   options: PropTypes.array.isRequired,
   values: PropTypes.array,
