@@ -1,9 +1,12 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Title from 'shared/Title';
 import { Table, Paging, Loader } from '@axa-fr/react-toolkit-all';
 import './Home.scss';
+import Action from "@axa-fr/react-toolkit-action";
+import Button from "@axa-fr/react-toolkit-button";
 
 const Home = ({ items, loaderMode, onClick }) => (
   <>
@@ -19,11 +22,37 @@ const Home = ({ items, loaderMode, onClick }) => (
         <Table>
           <Table.Header>
             <Table.Tr>
-              <Table.Th>Nom prénom</Table.Th>
-              <Table.Th>type</Table.Th>
-              <Table.Th>Agent</Table.Th>
+              <Table.Th  classModifier="sortable">
+                <span className="af-table__th-content">
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                    <span className="af-btn__text">Nom prénom</span>
+                    <i className="glyphicon glyphicon-sorting" />
+                  </Button>
+                </span>
+              </Table.Th>
+              <Table.Th classModifier="sortable">
+                <span className="af-table__th-content">
+                <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                  <span className="af-btn__text">Type</span>
+                  <i className="glyphicon glyphicon-sorting" />
+                </Button>
+                  </span>
+              </Table.Th>
+              <Table.Th classModifier="sortable">
+                <span className="af-table__th-content">
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                    <span className="af-btn__text">Agent</span>
+                    <i className="glyphicon glyphicon-sorting" />
+                  </Button>
+                </span>
+              </Table.Th>
               <Table.Th>Date de naissance</Table.Th>
-              <Table.Th>Date d'entrée</Table.Th>
+              <Table.Th classModifier="sortable"><span className="af-table__th-content">
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                    <span className="af-btn__text">Date d'entrée</span>
+                    <i className="glyphicon glyphicon-sorting" />
+                  </Button>
+                </span></Table.Th>
               <Table.Th>Action</Table.Th>
             </Table.Tr>
           </Table.Header>
@@ -38,7 +67,12 @@ const Home = ({ items, loaderMode, onClick }) => (
                   <Table.Td>{agent}</Table.Td>
                   <Table.Td>{birthdate}</Table.Td>
                   <Table.Td>{begin}</Table.Td>
-                  <Table.Td>{'action'}</Table.Td>
+                  <Table.Td><Action
+                    id="id"
+                    icon="edit"
+                    title="Editer"
+                    onClick={() => {}}
+                  /></Table.Td>
                 </Table.Tr>
               )
             )}

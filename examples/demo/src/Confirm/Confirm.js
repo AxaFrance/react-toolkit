@@ -6,7 +6,7 @@ import './Confirm.scss';
 
 export const Confirm = ({onClick}) => (
   <>
-    <Title onClick={onClick} classModifier="hasstepper">
+    <Title backHome classModifier="hasstepper">
       Confirmation
     </Title>
     <Stepper activeStep="confirm" />
@@ -17,12 +17,4 @@ export const Confirm = ({onClick}) => (
   </>
 );
 
-const ConfirmContainer = ({history}) => {
-  const onClick = (e) => {
-    e.preventDefault();
-    history.push('/');
-  };
-  return (<Confirm onClick={onClick} />);
-};
-
-export default withRouter(ConfirmContainer);
+export default Confirm;

@@ -13,18 +13,27 @@ const init = (fetch, setState) => async () => {
   const items = await fetchDevis(fetch)();
   setState({
     loading: false,
-    items: items
+    items: items,
+    filters:{
+      numberItems : 10,
+      currentPage: 1,
+    }
   });
 };
 
-const HomeContainer = ({ fetch, history }) => {
-  const [state, setState]  = useState({
-     loading: true,
-     items: []
-   });
+const useHome = fetch => {
+  const [state, setState] = useState({
+    loading: true,
+    items: []
+  });
   useEffect(() => {
     init(fetch, setState)();
   }, []);
+  return state;
+};
+
+const HomeContainer = ({ fetch, history }) => {
+  const state = useHome(fetch);
 
   return (<HomeWithLoader {...state} />);
 };
