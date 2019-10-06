@@ -1,36 +1,30 @@
-## Tone of voice
-
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
-
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
-
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Le spinner aide à informer l'utilisateur que l'application est en train de charger du contenu. Il est utilisé lorsque la progression du chargement ne peut pas être déterminée.
 
 ## Usage
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+Le spinner est utilisé lors du :
 
-## Label
+-   Chargement du contenu pour une page entière.
+-   Chargement du contenu à l'intérieur d'un composant.
+-   Chargement de contenu à l'intérieur d'une modal.
+-   Chargement de la prochaine étape d'un workflow.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Sans cet indicateur, l'utilisateur peut se sentir perdu ou naviguer prématurément en dehors de la page.
 
-## Icon usage
+Pour les temps de chargement supérieurs à 10 secondes, inclure une notification avec un texte explicatif.
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## Bests practices
 
-## Danger version usage
+1. S’il s'agit d'un spinner pour une page entière :
+    - Centrez le spinner horizontalement et verticalement dans le conteneur.
+    - Ne placez pas le spinner directement sur du texte ou d’autres éléments visuels d’une page sans appliquer au préalable un masque foncé.
+2. Dans les autres cas, utiliser le spinner bleu sur fond clair et le spinner blanc sur fond foncé.
+3. Indépendamment de la longueur ou de la brièveté du temps de chargement, le spinner fonctionnera toujours à la même vitesse.
+4. Le spinner ne doit jamais être utilisé pour indiquer une progression, il indique une attente.
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## DO / DONT
+
+| <span style="color: green;">DO</span>                                                                   | <span style="color: red;">DONT</span>                        |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Mettre le loader à droite du bouton                                                                     | Ne pas utiliser le spinner à l’intérieur des boutons.        |
+| Si plusieurs éléments de contenu sont en cours de chargement, afficher un spinner pour la page entière. | Ne pas inclure plusieurs spinners sur une page en même temps |
