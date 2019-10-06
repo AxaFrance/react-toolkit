@@ -16,9 +16,9 @@ class SelectDefault extends Component {
   }
 
   onChange(e) {
-    const { onChange } = this.props;
+    const { onChange, forceDisplayPlaceholder } = this.props;
     onChange(e);
-    this.setState({ hasHandleChangeOnce: true });
+    this.setState({ hasHandleChangeOnce: !forceDisplayPlaceholder });
   }
 
   getOptions() {
@@ -73,6 +73,7 @@ const propTypes = {
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string,
   mode: PropTypes.oneOf([SelectModes.default, SelectModes.base]),
+  forceDisplayPlaceholder: PropTypes.bool,
 };
 
 const defaultClassName = 'af-form__select-container';
@@ -82,6 +83,7 @@ const defaultProps = {
   className: defaultClassName,
   placeholder: '- Select -',
   mode: SelectModes.default,
+  forceDisplayPlaceholder: Boolean(false),
 };
 
 const Select = props => {

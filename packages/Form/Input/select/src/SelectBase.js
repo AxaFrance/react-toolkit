@@ -9,6 +9,7 @@ const omitProperties = omit([
   'isVisible',
   'placeholder',
   'mode',
+  'forceDisplayPlaceholder',
 ]);
 
 const SelectBase = props => {
