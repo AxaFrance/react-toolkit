@@ -1,0 +1,6 @@
+mixin Colors({ colors })
+  div(class=`${prefix}-colors`)
+    h2(class=`${prefix}-colors__title`) Colors
+    div(class=`${prefix}-colors__list`)
+      each color in colors
+        +Color({ hex: color.hex, name: color.name, sass: color.sass })
