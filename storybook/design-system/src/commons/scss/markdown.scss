@@ -127,23 +127,29 @@
       }
 
       display: flex;
-      max-width: 250px;
+      max-width: 20%;
       flex-direction: column;
       text-align: center;
       flex-basis: 30% 30% 40%;
       margin-top: 15px;
-      box-shadow: rgba(black, 0.19) 0 0 8px 0;
+      box-shadow: rgba(150, 126, 104, 0.19) 0 0 8px 0;
       margin: 10px;
-
+      background: $white;
+      border-radius: 3px;
       img {
-        width: auto;
+        width: 250px;
+        height: 100px;
+        margin:0 auto;
+        border-bottom: 2px solid $color-brown-dark;
       }
 
       h4 {
+        font-family: $font-family-logo;
         font-size: 1.2rem;
         font-weight: 600;
         margin: 1rem 0;
         padding: 0 1rem;
+        color: $color-brown-dark;
       }
 
       p {
