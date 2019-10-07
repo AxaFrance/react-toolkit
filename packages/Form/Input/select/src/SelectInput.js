@@ -19,12 +19,14 @@ const propTypes = {
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string,
   mode: PropTypes.oneOf([SelectModes.default, SelectModes.base]),
+  forceDisplayPlaceholder: PropTypes.bool,
 };
 
 const defaultProps = {
   ...Constants.defaultProps,
   value: '',
   mode: SelectModes.default,
+  forceDisplayPlaceholder: Boolean(false),
 };
 
 const SelectInput = props => {
