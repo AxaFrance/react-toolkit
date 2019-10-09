@@ -1,10 +1,9 @@
 import React from 'react';
 import Title from 'shared/Title';
 import Stepper from 'shared/Stepper';
-import {withRouter} from "react-router-dom";
 import './Confirm.scss';
 
-export const Confirm = ({onClick}) => (
+export const Confirm = () => (
   <>
     <Title backHome classModifier="hasstepper">
       Confirmation

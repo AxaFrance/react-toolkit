@@ -8,7 +8,7 @@ import './Home.scss';
 import Action from "@axa-fr/react-toolkit-action";
 import Button from "@axa-fr/react-toolkit-button";
 
-const Home = ({ items, loaderMode, onClick }) => (
+const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, onChangeFilter }) => (
   <>
     <Title>Page d'accueil</Title>
     <div className="af-home container">
@@ -16,7 +16,7 @@ const Home = ({ items, loaderMode, onClick }) => (
         <span className="af-btn__text">Nouveau devis</span>
       </Link>
       <h1 className="af-title--content">{`Vos devis en cours (${
-        items.length
+        numberItemsTotal
       })`}</h1>
       <Loader mode={loaderMode}>
         <Table>
@@ -24,7 +24,7 @@ const Home = ({ items, loaderMode, onClick }) => (
             <Table.Tr>
               <Table.Th  classModifier="sortable">
                 <span className="af-table__th-content">
-                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("fullName")}}>
                     <span className="af-btn__text">Nom prénom</span>
                     <i className="glyphicon glyphicon-sorting" />
                   </Button>
@@ -32,7 +32,7 @@ const Home = ({ items, loaderMode, onClick }) => (
               </Table.Th>
               <Table.Th classModifier="sortable">
                 <span className="af-table__th-content">
-                <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("type")}}>
                   <span className="af-btn__text">Type</span>
                   <i className="glyphicon glyphicon-sorting" />
                 </Button>
@@ -40,7 +40,7 @@ const Home = ({ items, loaderMode, onClick }) => (
               </Table.Th>
               <Table.Th classModifier="sortable">
                 <span className="af-table__th-content">
-                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("agent")}}>
                     <span className="af-btn__text">Agent</span>
                     <i className="glyphicon glyphicon-sorting" />
                   </Button>
@@ -48,7 +48,7 @@ const Home = ({ items, loaderMode, onClick }) => (
               </Table.Th>
               <Table.Th>Date de naissance</Table.Th>
               <Table.Th classModifier="sortable"><span className="af-table__th-content">
-                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{}}>
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("startDate")}}>
                     <span className="af-btn__text">Date d'entrée</span>
                     <i className="glyphicon glyphicon-sorting" />
                   </Button>
@@ -79,10 +79,10 @@ const Home = ({ items, loaderMode, onClick }) => (
           </Table.Body>
         </Table>
         <Paging
-          onChange={() => {}}
-          numberItems={items.length}
-          numberPages={1}
-          currentPage={1}
+          onChange={onChangePaging}
+          numberItems={filters.paging.numberItemsByPage}
+          numberPages={filters.paging.numberPages}
+          currentPage={filters.paging.currentPage}
         />
       </Loader>
     </div>
