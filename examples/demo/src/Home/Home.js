@@ -48,9 +48,9 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
               </Table.Th>
               <Table.Th>Date de naissance</Table.Th>
               <Table.Th classModifier="sortable"><span className="af-table__th-content">
-                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("startDate")}}>
+                  <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("beginDate")}}>
                     <span className="af-btn__text">Date d'entrée</span>
-                    <i className={"glyphicon " + (filters.columns.startDate.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.startDate.value}`) } />
+                    <i className={"glyphicon " + (filters.columns.beginDate.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.beginDate.value}`) } />
                   </Button>
                 </span></Table.Th>
               <Table.Th>Action</Table.Th>
@@ -58,7 +58,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
           </Table.Header>
           <Table.Body>
             {items.map(
-              ({ id, fullName, type, agent, birthdate, begin }) => (
+              ({ id, fullName, type, agent, birthdate, beginDate }) => (
                 <Table.Tr key={id}>
                   <Table.Td>
                     {fullName}
@@ -66,7 +66,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
                   <Table.Td>{type}</Table.Td>
                   <Table.Td>{agent}</Table.Td>
                   <Table.Td>{birthdate}</Table.Td>
-                  <Table.Td>{begin}</Table.Td>
+                  <Table.Td>{beginDate.toLocaleDateString('fr')}</Table.Td>
                   <Table.Td><Action
                     id="id"
                     icon="edit"

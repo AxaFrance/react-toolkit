@@ -14,7 +14,12 @@ const init = (fetch, setState, state) => async () => {
   setState({
     ...state,
     loading: false,
-    items: items.map(i => ({ ...i, fullName : `${i.firstname} ${i.lastname}` }))
+    items: items.map(i => {
+
+      const dateSplit = i.begin.split('/');
+      return { ...i, fullName : `${i.firstname} ${i.lastname}`, beginDate : new Date(dateSplit[2], dateSplit[1], dateSplit[0])
+      };
+    })
   });
 };
 
@@ -31,7 +36,7 @@ const useHome = fetch => {
         fullName : { value: null, timeLastUpdate : null},
         type: { value: null, timeLastUpdate : null},
         agent: { value: null, timeLastUpdate : null},
-        startDate: { value: null, timeLastUpdate : null}
+        beginDate: { value: null, timeLastUpdate : null}
       }
     }
   });
@@ -53,10 +58,10 @@ const useHome = fetch => {
     const property = columns[propertyName];
     const value = property.value;
     if(value === null) {
-      property.value = "asc";
-      property.timeLastUpdate = (new Date()).getTime();
-    } else if(value === "asc"){
       property.value = "desc";
+      property.timeLastUpdate = (new Date()).getTime();
+    } else if(value === "desc"){
+      property.value = "asc";
     } else{
       property.value = null;
       property.timeLastUpdate = null;
@@ -151,18 +156,27 @@ const HomeContainer = ({ fetch }) => {
     for (let i = 0; i < entries.length; i++) {
 
       const entry = entries[i];
-      console.log(entry);
       if(columns[entry.key].value === "asc") {
+        if(itemB[entry.key] && itemA[entry.key] ) {
 
-        const localComp = itemA[entry.key].localeCompare(itemB[entry.key]);
-        if(localComp !== 0) {
-          return localComp;
+          if(itemB[entry.key] instanceof Date){
+            return itemA[entry.key].getTime() - itemB[entry.key].getTime();
+          }
+          const localComp = itemA[entry.key].localeCompare(itemB[entry.key]);
+          if (localComp !== 0) {
+            return localComp;
+          }
         }
       }
       if(columns[entry.key].value === "desc") {
-        const localComp = itemB[entry.key].localeCompare(itemA[entry.key]);
-        if(localComp !== 0) {
-          return localComp;
+        if(itemB[entry.key] && itemA[entry.key] ) {
+          if(itemB[entry.key] instanceof Date){
+            return itemB[entry.key].getTime() - itemA[entry.key].getTime();
+          }
+          const localComp = itemB[entry.key].localeCompare(itemA[entry.key]);
+          if (localComp !== 0) {
+            return localComp;
+          }
         }
       }
     }
