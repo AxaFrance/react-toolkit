@@ -14,7 +14,7 @@ const init = (fetch, setState, state) => async () => {
   setState({
     ...state,
     loading: false,
-    items: items
+    items: items.map(i => ({ ...i, fullName : `${i.firstname} ${i.lastname}` }))
   });
 };
 
@@ -28,10 +28,10 @@ const useHome = fetch => {
         currentPage: 1,
       },
       columns :{
-        fullName : null,
-        type: null,
-        agent: null,
-        startDate: null
+        fullName : { value: null, timeLastUpdate : null},
+        type: { value: null, timeLastUpdate : null},
+        agent: { value: null, timeLastUpdate : null},
+        startDate: { value: null, timeLastUpdate : null}
       }
     }
   });
@@ -49,13 +49,26 @@ const useHome = fetch => {
 
   const onChangeFilter = (propertyName) => {
 
-    /*state.filters.columns[propertyName]
+    const columns = {...state.filters.columns};
+    const property = columns[propertyName];
+    const value = property.value;
+    if(value === null) {
+      property.value = "asc";
+      property.timeLastUpdate = (new Date()).getTime();
+    } else if(value === "asc"){
+      property.value = "desc";
+    } else{
+      property.value = null;
+      property.timeLastUpdate = null;
+    }
+
     setState({
       ...state,
       filters : {
         ...state.filters,
-         }});*/
+        columns
 
+         }});
   };
 
   useEffect(() => {
@@ -86,6 +99,7 @@ export function filterPaging(items, numberItems, currentPage) {
 }
 
 export function computeNumberPages(items, numberItems) {
+
   if (!items) {
     return 1;
   }
@@ -94,7 +108,7 @@ export function computeNumberPages(items, numberItems) {
   const length = items.length;
   return length > 0 ? Math.ceil(length / numberItemsControlled) : 1;
 }
-
+/*
 export function filterText(items, filter, propertyName) {
   const controlledFilter = filter ? filter.toLocaleLowerCase() : filter;
   return items.reduce((acc, item) => {
@@ -108,14 +122,55 @@ export function filterText(items, filter, propertyName) {
 
     return acc;
   }, []);
-}
-
-
+}*/
 
 const HomeContainer = ({ fetch }) => {
   const { state, onChangePaging, onChangeFilter } = useHome(fetch);
 
-  const numberPages = computeNumberPages(state.items,state.filters.paging.numberItemsByPage);
+  const itemsSorted = [...state.items].sort((itemA, itemB) => {
+    const columns = state.filters.columns;
+    const entries = [];
+    for (let [key, value] of Object.entries(columns)) {
+      entries.push({key, value});
+    }
+    entries.sort((a, b) => {
+      if(a.value.timeLastUpdate === b.value.timeLastUpdate){
+        return 0;
+      }
+
+      if(a.value.timeLastUpdate === null){
+        return 1;
+      }
+
+      if(b.value.timeLastUpdate === null){
+        return -1;
+      }
+
+      return a.value.timeLastUpdate - b.value.timeLastUpdate;
+    });
+    for (let i = 0; i < entries.length; i++) {
+
+      const entry = entries[i];
+      console.log(entry);
+      if(columns[entry.key].value === "asc") {
+
+        const localComp = itemA[entry.key].localeCompare(itemB[entry.key]);
+        if(localComp !== 0) {
+          return localComp;
+        }
+      }
+      if(columns[entry.key].value === "desc") {
+        const localComp = itemB[entry.key].localeCompare(itemA[entry.key]);
+        if(localComp !== 0) {
+          return localComp;
+        }
+      }
+    }
+
+   return 0;
+  });
+
+  const numberPages = computeNumberPages(itemsSorted, state.filters.paging.numberItemsByPage);
   const currentPage = state.filters.paging.currentPage;
   const filters = {
       ...state.filters,
@@ -126,7 +181,7 @@ const HomeContainer = ({ fetch }) => {
       }
   };
 
-  const items = filterPaging(state.items, state.filters.paging.numberItemsByPage, filters.paging.currentPage);
+  const items = filterPaging(itemsSorted, state.filters.paging.numberItemsByPage, filters.paging.currentPage);
 
   return (<HomeWithLoader {...state} numberItemsTotal={state.items.length} items={items} filters={filters} onChangePaging={onChangePaging} onChangeFilter={onChangeFilter} />);
 };

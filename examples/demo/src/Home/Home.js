@@ -26,7 +26,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
                 <span className="af-table__th-content">
                   <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("fullName")}}>
                     <span className="af-btn__text">Nom prénom</span>
-                    <i className="glyphicon glyphicon-sorting" />
+                    <i className={"glyphicon " + (filters.columns.fullName.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.fullName.value}`) } />
                   </Button>
                 </span>
               </Table.Th>
@@ -34,7 +34,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
                 <span className="af-table__th-content">
                 <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("type")}}>
                   <span className="af-btn__text">Type</span>
-                  <i className="glyphicon glyphicon-sorting" />
+                  <i className={"glyphicon " + (filters.columns.type.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.type.value}`) } />
                 </Button>
                   </span>
               </Table.Th>
@@ -42,7 +42,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
                 <span className="af-table__th-content">
                   <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("agent")}}>
                     <span className="af-btn__text">Agent</span>
-                    <i className="glyphicon glyphicon-sorting" />
+                    <i className={"glyphicon " + (filters.columns.agent.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.agent.value}`) } />
                   </Button>
                 </span>
               </Table.Th>
@@ -50,7 +50,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
               <Table.Th classModifier="sortable"><span className="af-table__th-content">
                   <Button className="af-btn" classModifier="table-sorting" onClick={()=>{onChangeFilter("startDate")}}>
                     <span className="af-btn__text">Date d'entrée</span>
-                    <i className="glyphicon glyphicon-sorting" />
+                    <i className={"glyphicon " + (filters.columns.startDate.value === null ? "glyphicon-sorting" : `glyphicon-sorting-${filters.columns.startDate.value}`) } />
                   </Button>
                 </span></Table.Th>
               <Table.Th>Action</Table.Th>
@@ -58,10 +58,10 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
           </Table.Header>
           <Table.Body>
             {items.map(
-              ({ id, firstname, lastname, type, agent, birthdate, begin }) => (
+              ({ id, fullName, type, agent, birthdate, begin }) => (
                 <Table.Tr key={id}>
                   <Table.Td>
-                    {firstname} {lastname}
+                    {fullName}
                   </Table.Td>
                   <Table.Td>{type}</Table.Td>
                   <Table.Td>{agent}</Table.Td>
