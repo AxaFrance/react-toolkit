@@ -48,7 +48,7 @@ export const initState = computeInitialStateErrorMessage(
   rules
 );
 
-const reducer =(state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'onChange':
       const newField = genericHandleChange(rules, state.fields, action.event);
