@@ -3,6 +3,7 @@ pull_request_rules:
     conditions:
       - '#approved-reviews-by>=1'
       - status-success=AxaGuilDEv.react-toolkit
+      - status-success=SonarCloud Code Analysis
       - label!=WIP
     actions:
       merge:

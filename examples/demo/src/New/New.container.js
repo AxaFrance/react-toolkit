@@ -48,7 +48,7 @@ export const initState = computeInitialStateErrorMessage(
   rules
 );
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'onChange':
       const newField = genericHandleChange(rules, state.fields, action.event);
@@ -64,19 +64,23 @@ function reducer(state, action) {
     default:
       throw new Error();
   }
-}
+};
 
-const NewContainer = ({history}) => {
+const useNew = history => {
   const [state, dispatch] = useReducer(reducer, initState);
-   const onChange =  event => dispatch({type:'onChange', event });
-   const onSubmit = () => {
+  const onChange = event => dispatch({type: 'onChange', event});
+  const onSubmit = () => {
     const errors = errorList(state.fields);
     if (!errors.length) {
       history.push('/confirm');
     }
-     dispatch({type:'onSubmit' });
-   };
+    dispatch({type: 'onSubmit'});
+  };
+  return {state, onChange, onSubmit};
+};
 
+const NewContainer = ({history}) => {
+  const {state, onChange, onSubmit} = useNew(history);
   return (<New {...state} onChange={onChange} onSubmit={onSubmit} />);
 };
 
