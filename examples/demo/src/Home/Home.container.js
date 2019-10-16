@@ -23,7 +23,6 @@ const reducer = (state, action) => {
         ...state,
         loading: false,
         items: items.map(i => {
-
           const dateSplit = i.begin.split('/');
           return { ...i, fullName : `${i.firstname} ${i.lastname}`, beginDate : new Date(dateSplit[2], dateSplit[1], dateSplit[0])
           };

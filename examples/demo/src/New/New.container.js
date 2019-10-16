@@ -66,7 +66,7 @@ const reducer = (state, action) => {
   }
 };
 
-const useNew = (history) => {
+const useNew = history => {
   const [state, dispatch] = useReducer(reducer, initState);
   const onChange = event => dispatch({type: 'onChange', event});
   const onSubmit = () => {
