@@ -7,27 +7,28 @@ import withLoader from '../withLoader';
 import compose from '../compose';
 import {withRouter} from 'react-router-dom';
 import {computeNumberPages, filterPaging, getItemsSorted} from "./Home.filters";
-import {genericHandleChange} from "../New/validation.generic";
-import {rules} from "../New/New.validation.rules";
 
 const HomeWithLoader = withLoader(Home);
 
-const init = (fetch, setState, state) => async () => {
+const init = (fetch, dispatch) => async () => {
   const items = await fetchDevis(fetch)();
-  setState({
-    ...state,
-    loading: false,
-    items: items.map(i => {
-
-      const dateSplit = i.begin.split('/');
-      return { ...i, fullName : `${i.firstname} ${i.lastname}`, beginDate : new Date(dateSplit[2], dateSplit[1], dateSplit[0])
-      };
-    })
-  });
+  dispatch({type: "init", data :{items}});
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'init' :
+      const { items } = action.data;
+      return {
+        ...state,
+        loading: false,
+        items: items.map(i => {
+
+          const dateSplit = i.begin.split('/');
+          return { ...i, fullName : `${i.firstname} ${i.lastname}`, beginDate : new Date(dateSplit[2], dateSplit[1], dateSplit[0])
+          };
+        })
+      };
     case 'onChangePaging':
       const {numberItems, page} = action.data;
       return{
@@ -90,7 +91,7 @@ const useHome = fetch => {
     dispatch({type: "onChangeFilter", data: { propertyName}});
   };
   useEffect(() => {
-    init(fetch, setState, state)();
+    init(fetch, dispatch)();
   }, []);
   return { state, onChangePaging, onChangeFilter };
 };
