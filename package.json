@@ -95,7 +95,7 @@
     "gulp-pug": "3.3.0",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
-    "gulp-sass": "3.1.0",
+    "gulp-sass": "4.0.2",
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "1.2.3",
