@@ -20,8 +20,7 @@ const Radio = ({
                  children,
                  onChange,
                  ...otherProps
-               } ) => {
-  return options.map(option => {
+               }) => options.map(option => {
     const isChecked = option.value === value;
     return (
       <RadioItem
@@ -44,7 +43,7 @@ const Radio = ({
       </RadioItem>
     );
   });
-};
+
 
 const propTypes = {
   ...Constants.propTypes,
