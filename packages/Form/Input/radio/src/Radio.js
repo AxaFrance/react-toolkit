@@ -6,22 +6,21 @@ import RadioModes from './RadioModes';
 
 const omitProperties = omit(['mode', 'helpMessage', 'id']);
 
-const Radio = props => {
-  const {
-    isVisible,
-    className,
-    disabled,
-    options,
-    value,
-    name,
-    onBlur,
-    onFocus,
-    readOnly,
-    classModifier,
-    children,
-    onChange,
-    ...otherProps
-  } = props;
+const Radio = ({
+                 isVisible,
+                 className,
+                 disabled,
+                 options,
+                 value,
+                 name,
+                 onBlur,
+                 onFocus,
+                 readOnly,
+                 classModifier,
+                 children,
+                 onChange,
+                 ...otherProps
+               } ) => {
   return options.map(option => {
     const isChecked = option.value === value;
     return (

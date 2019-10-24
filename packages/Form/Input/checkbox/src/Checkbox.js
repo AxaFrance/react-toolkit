@@ -8,22 +8,21 @@ import CheckboxItem from './CheckboxItem';
 
 const omitProperties = omit(['mode', 'id']);
 
-const Checkbox = props => {
-  const {
-    classModifier,
-    options,
-    isVisible,
-    disabled,
-    name,
-    onBlur,
-    onFocus,
-    readOnly,
-    children,
-    values,
-    className,
-    onChange,
-    ...otherProps
-  } = props;
+const Checkbox = ({
+                    classModifier,
+                    options,
+                    isVisible,
+                    disabled,
+                    name,
+                    onBlur,
+                    onFocus,
+                    readOnly,
+                    children,
+                    values,
+                    className,
+                    onChange,
+                    ...otherProps
+                  }) => {
 
   if (!options) {
     return null;

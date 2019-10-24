@@ -6,7 +6,7 @@
         "ignored-file",
         "*.md"
       ],
-      "message": "chore(release): publish %s [ci skip]"
+      "message": "chore(release): publish %s [skip ci]"
     },
     "bootstrap": {
       "ignore": "component-*"
