@@ -60,26 +60,22 @@ const CardGroupStateless = ({
   );
 
   /**
- * 
+ *
 * @param {title} can be a string or a jsx Element
  * Return a jsx title
  */
   const formatTitle = titleParam => {
-    let formattedTitle = titleParam;
-
     if (React.isValidElement(titleParam)) {
-      formattedTitle = React.cloneElement(titleParam, {
+      return React.cloneElement(titleParam, {
         className: classNames(title.props.className, 'af-rccard-group__title'),
       });
-    } else {
-      formattedTitle = React.createElement(
+    }
+      return React.createElement(
         'h3',
         { className: 'af-rccard-group__title' },
         titleParam
       );
-    }
-    return formattedTitle;
-  };
+    };
 
   return (
     <div className={classNames(`af-rccard__${nbCards}`, propClassName)}>

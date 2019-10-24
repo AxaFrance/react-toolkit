@@ -1,4 +1,4 @@
-import { compose } from 'recompose';
+import compose from './compose';
 import { withEnvironment } from './EnvironmentProvider';
 import React from 'react';
 

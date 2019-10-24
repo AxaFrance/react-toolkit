@@ -12,23 +12,22 @@ const omitProperties = omit([
   'options'
 ]);
 
-const RadioItem = props => {
-  const {
-    optionClassName,
-    disabled,
-    value,
-    isChecked,
-    id,
-    name,
-    inputRef,
-    readOnly,
-    onChange,
-    onBlur,
-    onFocus,
-    children,
-    label,
-    ...otherProps
-  } = props;
+const RadioItem = ({
+                     optionClassName,
+                     disabled,
+                     value,
+                     isChecked,
+                     id,
+                     name,
+                     inputRef,
+                     readOnly,
+                     onChange,
+                     onBlur,
+                     onFocus,
+                     children,
+                     label,
+                     ...otherProps
+                   }) => {
   const newLabel = children || label;
   const newId = InputManager.getInputId(id); // id is require on this component
   return (
