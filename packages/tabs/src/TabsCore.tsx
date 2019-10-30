@@ -3,8 +3,8 @@ import {
   StateHandler,
   StateUpdaters,
   withStateHandlers,
-  compose,
 } from 'recompose';
+import { compose } from '@axa-fr/react-toolkit-core';
 import TabsStateless, {
   TabsStatelessHandlers,
   TabsStatelessProps,
