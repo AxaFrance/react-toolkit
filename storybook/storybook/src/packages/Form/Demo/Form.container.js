@@ -1,10 +1,10 @@
-import { withState, withHandlers, compose, withProps } from 'recompose';
 import Form from './Form';
 import Validation from './validation';
 import {
   computeInitialStateErrorMessage,
   genericHandleChange,
 } from './generic';
+import {useState} from "react";
 
 const preInitialState = {
   placeName: {
@@ -60,8 +60,7 @@ const rules = {
 };
 const initialState = computeInitialStateErrorMessage(preInitialState, rules);
 
-const handleChange = ({ setForm }) => event =>
-  setForm(form => {
+const handleChange = (form ) => event => {
     const { name } = event;
     switch (name) {
       case 'files': {
@@ -86,10 +85,9 @@ const handleChange = ({ setForm }) => event =>
       default:
         return genericHandleChange(rules, form, event);
     }
-  });
+  };
 
-const handleSubmit = ({ setForm }) => e =>
-  setForm(form => {
+const handleSubmit = (form) => () => {
     const errorMessages = [];
     for (const name in form) {
       const element = form[name];
@@ -112,19 +110,24 @@ const handleSubmit = ({ setForm }) => e =>
     }
 
     return newForm;
-  });
+  };
 
-const enhance = compose(
-  withState('form', 'setForm', initialState),
-  withHandlers({ handleChange, handleSubmit }),
-  withProps(props => ({
-    handleSubmit: e => {
-      e.preventDefault();
-      props.handleSubmit();
-    },
-  }))
-);
+const FormContainer = (props) => {
 
-const FormContainer = enhance(Form);
+  const [form, setForm] = useState(initialState);
+
+  const submit = e => {
+    e.preventDefault();
+    const newForm = handleSubmit(form)();
+    setForm(newForm);
+  };
+
+  const change = (e) => {
+    const newForm = handleChange(form)(e);
+    setForm(newForm);
+  };
+
+  return (<Form {...form} handleSubmit={submit} handleChange={change} />);
+};
 
 export default FormContainer;

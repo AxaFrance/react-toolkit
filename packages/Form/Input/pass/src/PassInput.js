@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import { withStateHandlers } from 'recompose';
 import {
   Field,
   FieldConstants as Constants,
@@ -112,25 +111,32 @@ export const PassInput = props => {
 PassInput.propTypes = propTypes;
 PassInput.defaultProps = defaultProps;
 
-const widthHandlerPass = withStateHandlers(
-  { type: typesField.PASSWORD, strength: null },
-  {
-    onToggleType: ({ type }) => () => ({
-      type:
-        type === typesField.PASSWORD ? typesField.TEXT : typesField.PASSWORD,
-    }),
-    onChange: (state, { onChange, score }) => payload => {
-      const strength =
-        score === null ? null : strengthList[parseInt(score, 10)];
-      onChange(payload);
-      return {
-        strength,
-      };
-    },
-  }
-);
+const onToggleType = ({ type }) => () => ({
+  type:
+    type === typesField.PASSWORD ? typesField.TEXT : typesField.PASSWORD,
+});
 
-const PassInputHoc = widthHandlerPass(PassInput);
-PassInputHoc.displayName = PassInput.name;
+const onChange = (state, { onChange, score }) => payload => {
+  const strength = score === null ? null : strengthList[parseInt(score, 10)];
+  onChange(payload);
+  return {
+    strength,
+  };
+};
 
-export default PassInputHoc;
+const EnhancedComponent = (props) => {
+  const [state, setState] = useState({ type: typesField.PASSWORD, strength: null });
+  const toggleType = (e) => {
+    const newState = onToggleType(state)(e);
+    setState({ ...state, newState});
+  };
+  const change = (e) => {
+    const newState = onChange(state, props)(e);
+    setState({ ...state, newState});
+  };
+  return (<AccordionBase {...props} onChange={change} onToggleType={toggleType} />);
+};
+
+EnhancedComponent.displayName = PassInput.name;
+
+export default EnhancedComponent;

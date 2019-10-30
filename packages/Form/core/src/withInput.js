@@ -1,15 +1,6 @@
-import {
-  compose,
-  withProps,
-  defaultProps,
-  setPropTypes,
-  branch,
-  renderComponent,
-  renderNothing,
-  withHandlers,
-} from 'recompose';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Constants from './InputConstants';
+import React from "react";
 
 export const omit = keys => props => {
   if (!keys) {
@@ -33,7 +24,7 @@ export const withInput = (
   addDefaultProps = {},
   withHandlersOverride = {},
   withPropsOverride = null
-) => Component => {
+) => Component =>  {
   let defaultWithProps = ({ className, classModifier }) => ({
     componentClassName: ClassManager.getComponentClassName(
       className,
@@ -45,31 +36,37 @@ export const withInput = (
     defaultWithProps = withPropsOverride;
   }
 
-  const enhance = compose(
-    withProps(defaultWithProps),
-    withHandlers({
-      onChange: defaultOnChange,
-      ...withHandlersOverride,
-    })
-  );
+  const handlers = {
+    onChange: defaultOnChange,
+    ...withHandlersOverride,
+  };
 
-  const enhancedComponent = enhance(Component);
+  const NewComponent = (props) => {
 
-  const enhanceVisibility = compose(
-    setPropTypes({
+    const {isVisible} = props;
+    if (!isVisible) {
+      return null;
+    }
+
+    const propTypes = {
       ...Constants.propTypes,
       ...addPropTypes,
-    }),
-    defaultProps({
+    };
+    Component.propTypes = propTypes;
+
+    const defaultProps = {
       ...Constants.defaultProps,
       ...addDefaultProps,
-    }),
-    branch(
-      ({ isVisible }) => isVisible === true,
-      renderComponent(enhancedComponent),
-      renderNothing
-    )
-  );
+    };
+    Component.defaultProps = defaultProps;
 
-  return enhanceVisibility(enhancedComponent);
+    const onHandlers = {};
+    for (let propertyName in handlers){
+      onHandlers[propertyName] = handlers[propertyName](props);
+    }
+
+    return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
+  };
+
+ return NewComponent;
 };
