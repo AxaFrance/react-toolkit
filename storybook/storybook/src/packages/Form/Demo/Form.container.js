@@ -4,7 +4,7 @@ import {
   computeInitialStateErrorMessage,
   genericHandleChange,
 } from './generic';
-import {useState} from "react";
+import React, {useState} from "react";
 
 const preInitialState = {
   placeName: {
@@ -127,7 +127,7 @@ const FormContainer = (props) => {
     setForm(newForm);
   };
 
-  return (<Form {...form} handleSubmit={submit} handleChange={change} />);
+  return (<Form form={form} handleSubmit={submit} handleChange={change} />);
 };
 
 export default FormContainer;

@@ -134,7 +134,7 @@ const EnhancedComponent = (props) => {
     const newState = onChange(state, props)(e);
     setState({ ...state, newState});
   };
-  return (<AccordionBase {...props} onChange={change} onToggleType={toggleType} />);
+  return (<PassInput {...props} onChange={change} onToggleType={toggleType} />);
 };
 
 EnhancedComponent.displayName = PassInput.name;

@@ -42,31 +42,28 @@ export const withInput = (
   };
 
   const NewComponent = (props) => {
-
     const {isVisible} = props;
     if (!isVisible) {
       return null;
     }
-
-    const propTypes = {
-      ...Constants.propTypes,
-      ...addPropTypes,
-    };
-    Component.propTypes = propTypes;
-
-    const defaultProps = {
-      ...Constants.defaultProps,
-      ...addDefaultProps,
-    };
-    Component.defaultProps = defaultProps;
-
     const onHandlers = {};
     for (let propertyName in handlers){
       onHandlers[propertyName] = handlers[propertyName](props);
     }
-
     return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
   };
+
+  const propTypes = {
+    ...Constants.propTypes,
+    ...addPropTypes,
+  };
+  NewComponent.propTypes = propTypes;
+
+  const defaultProps = {
+    ...Constants.defaultProps,
+    ...addDefaultProps,
+  };
+  NewComponent.defaultProps = defaultProps;
 
  return NewComponent;
 };
