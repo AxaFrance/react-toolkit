@@ -3,9 +3,10 @@ import {
   withClassDefault,
   withClickId,
   WithClassModifierOptions,
-  withClassModifier
+  withClassModifier,
+  compose,
 } from '@axa-fr/react-toolkit-core';
-import { compose, withProps } from 'recompose';
+import {  withProps } from 'recompose';
 
 const onChangeEvent = 'onChange';
 

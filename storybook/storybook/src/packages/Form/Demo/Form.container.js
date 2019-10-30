@@ -112,7 +112,7 @@ const handleSubmit = (form) => () => {
     return newForm;
   };
 
-const FormContainer = (props) => {
+const FormContainer = () => {
 
   const [form, setForm] = useState(initialState);
 

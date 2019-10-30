@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 
@@ -73,7 +73,7 @@ const EnhancedComponent = (props) => {
     setState(newState);
   };
 
-  return (<AccordionBase {...props} handleToggle={toggle} />);
+  return (<AccordionBase {...props} {...state} handleToggle={toggle} />);
 };
 
 EnhancedComponent.displayName = 'Accordion';

@@ -128,13 +128,13 @@ const EnhancedComponent = (props) => {
   const [state, setState] = useState({ type: typesField.PASSWORD, strength: null });
   const toggleType = (e) => {
     const newState = onToggleType(state)(e);
-    setState({ ...state, newState});
+    setState({ ...state, ...newState});
   };
   const change = (e) => {
     const newState = onChange(state, props)(e);
-    setState({ ...state, newState});
+    setState({ ...state, ...newState});
   };
-  return (<PassInput {...props} onChange={change} onToggleType={toggleType} />);
+  return (<PassInput {...props} {...state} onChange={change} onToggleType={toggleType} />);
 };
 
 EnhancedComponent.displayName = PassInput.name;
