@@ -22,7 +22,16 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseCom
     };
     return previous;
   }, {});
-  return <BaseComponent {...handler} />;
+
+  const Hoc = (props:TOutter) => {
+    const newProps = {
+      ...props,
+      ...handler,
+    };
+    return <BaseComponent {...newProps} />
+  };
+
+  return Hoc;
 };
 
 export default withClickId;
