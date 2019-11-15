@@ -1,49 +1,30 @@
-import {
-  StateHandlerMap,
-  StateHandler,
-  StateUpdaters,
-  withStateHandlers,
-} from 'recompose';
-import { compose } from '@axa-fr/react-toolkit-core';
-import TabsStateless, {
-  TabsStatelessHandlers,
-  TabsStatelessProps,
-} from './TabsStateless';
+import TabsStateless, { TabsStatelessProps } from './TabsStateless';
 
-import { TabProps } from './Tab';
+import * as React from "react";
+import {useState} from "react";
 
-export interface TabsContainerState {
+export type TabsContainerState = {
   activeIndex: string;
-}
-
-export interface TabsCoreProps {
-  children: React.ReactElement<TabProps>[];
-  onChange: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-interface TabsUpdaters extends StateHandlerMap<TabsContainerState> {
-  onChange: StateHandler<TabsContainerState>;
 }
 
 export const defaultState = { activeIndex: '0' };
 
-export const stateUpdaters: StateUpdaters<
-  TabsCoreProps,
-  TabsContainerState,
-  TabsUpdaters
-> = {
-  onChange: (state, { onChange }) => e => {
+export type TabsCoreProps = Tabs & TabsStatelessProps;
+
+export type Tabs = {
+  onChange: (e:string)=>void;
+}
+
+const TabsCore = ({ onChange, ...otherProps }: TabsCoreProps) => {
+  const [state, setState] = useState<TabsContainerState>(defaultState);
+  const onChangeEvent = (e:any) => {
     onChange(e.id);
-    return {
+    setState ({
       ...state,
       activeIndex: e.id,
-    };
-  },
+    });
+  };
+  return <TabsStateless {...otherProps} onChange={onChangeEvent} />;
 };
 
-const enchancer = compose<
-  TabsStatelessHandlers & TabsStatelessProps,
-  TabsCoreProps
->(withStateHandlers(defaultState, stateUpdaters));
-
-export default enchancer(TabsStateless);
+export default TabsCore;

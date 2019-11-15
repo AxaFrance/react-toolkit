@@ -3,6 +3,7 @@ export { default as PropsManager } from './PropsManager';
 export { default as InputManager } from './InputManager';
 export { default as Constants } from './Constants';
 export { default as compose } from './compose';
+export { default as withProps } from './withProps.hoc';
 export {
   default as withClickId,
   WithClickIdOption,

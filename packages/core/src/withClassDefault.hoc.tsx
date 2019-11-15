@@ -1,3 +1,14 @@
-import { defaultProps } from 'recompose';
+import * as React from "react";
 
-export default (defaultClassName: string) => defaultProps({ className: defaultClassName });
+const withClassDefault = (defaultClassName: string) => (BaseComponent: Function) => {
+  const Hoc = (props: any) => {
+    const newProps = {
+        ...{ className: defaultClassName },
+      ...props,
+    };
+    return <BaseComponent {...newProps} />
+  };
+  return Hoc;
+};
+
+export default withClassDefault

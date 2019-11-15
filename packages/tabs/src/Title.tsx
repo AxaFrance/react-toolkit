@@ -5,8 +5,8 @@ import {
   WithClassModifierOptions,
   withClassModifier,
   compose,
+  withProps,
 } from '@axa-fr/react-toolkit-core';
-import {  withProps } from 'recompose';
 
 const onChangeEvent = 'onChange';
 

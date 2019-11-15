@@ -1,5 +1,5 @@
-import { withClickId, WithClickIdProps } from '@axa-fr/react-toolkit-core';
-import { compose, renameProp } from 'recompose';
+import { withClickId, WithClickIdProps, compose } from '@axa-fr/react-toolkit-core';
+import { renameProp } from 'recompose';
 import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 const onCancelEvent = 'onCancel';

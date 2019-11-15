@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { withClassDefault, compose, } from '@axa-fr/react-toolkit-core';
-import {  branch, renderNothing } from 'recompose';
 
 const DEFAULT_CLASSNAME = 'af-tabs__pane';
 
@@ -14,12 +13,14 @@ interface PaneComponentProps extends DivProps {
   className?: string;
   children?: React.ReactNode;
 }
-const Pane: React.SFC<PaneComponentProps> = ({ children, className }) => (
+const Pane: React.SFC<PaneComponentProps> = ({ children, className, active }) => {
+  if(active === false){
+    return null;
+  }
   <div className={className}>{children}</div>
-);
+};
 
 const enchance = compose<PaneComponentProps, PaneComponentProps>(
-  branch((props: PaneComponentProps) => props.active === false, renderNothing),
   withClassDefault(DEFAULT_CLASSNAME)
 )(Pane);
 
