@@ -1,6 +1,6 @@
+import React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Constants from './InputConstants';
-import React from "react";
 
 export const omit = keys => props => {
   if (!keys) {
@@ -47,8 +47,10 @@ export const withInput = (
       return null;
     }
     const onHandlers = {};
-    for (let propertyName in handlers){
-      onHandlers[propertyName] = handlers[propertyName](props);
+    for (const propertyName in handlers){
+      if( handlers.hasOwnProperty( propertyName ) ) {
+        onHandlers[propertyName] = handlers[propertyName](props);
+      }
     }
     return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
   };
