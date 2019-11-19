@@ -48,9 +48,8 @@ export const withInput = (
     }
     const onHandlers = {};
     for (const propertyName in handlers){
-      if( handlers.hasOwnProperty( propertyName ) ) {
-        onHandlers[propertyName] = handlers[propertyName](props);
-      }
+      // eslint-disable-next-line guard-for-in
+      onHandlers[propertyName] = handlers[propertyName](props);
     }
     return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
   };

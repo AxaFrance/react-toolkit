@@ -116,7 +116,7 @@ const onToggleType = ({ type }) => () => ({
     type === typesField.PASSWORD ? typesField.TEXT : typesField.PASSWORD,
 });
 
-const onChange = (state, { onChange, score }) => payload => {
+const onChangeCore = (state, { onChange, score }) => payload => {
   const strength = score === null ? null : strengthList[parseInt(score, 10)];
   onChange(payload);
   return {
@@ -131,7 +131,7 @@ const EnhancedComponent = (props) => {
     setState({ ...state, ...newState});
   };
   const change = (e) => {
-    const newState = onChange(state, props)(e);
+    const newState = onChangeCore(state, props)(e);
     setState({ ...state, ...newState});
   };
   return (<PassInput {...props} {...state} onChange={change} onToggleType={toggleType} />);
