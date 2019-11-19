@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { create } from 'react-test-renderer';
-import Footer, { FooterProps, toCoreProps } from './Footer';
+import Footer, { FooterProps, setWithProps } from './Footer';
 import { FooterCoreProps } from './FooterCore';
 
 describe('<Footer>', () => {
@@ -12,7 +12,7 @@ describe('<Footer>', () => {
   describe('toCoreProps', () => {
     it('should map copyright to children', () => {
       const actual: FooterProps = { copyright: 'test' };
-      const result: FooterCoreProps = toCoreProps(actual);
+      const result: FooterCoreProps = setWithProps(actual);
       expect(result.children).toBe(actual.copyright);
     });
   });

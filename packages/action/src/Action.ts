@@ -6,6 +6,6 @@ export type ActionProps = WithClickIdProps<ActionCoreProps, 'onClick'>;
 const Action = compose<ActionCoreProps, ActionProps>(
   withClickId<ActionCoreProps>({ event: ['onClick'] })
 )(ActionCore);
-//Action.displayName = 'Action';
+Action.displayName = 'Action';
 
 export default Action;

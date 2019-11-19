@@ -8,6 +8,6 @@ const Button = compose<ButtonCoreProps, ButtonProps>(
   withClickId<ButtonCoreProps>({ event: ['onClick'] })
 )(ButtonCore);
 
-//Button.displayName = "Button";
+Button.displayName = "Button";
 
 export default Button;

@@ -24,9 +24,16 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseCom
   }, {});
 
   const Hoc = (props:TOutter) => {
+    let handlerWithProps: {[k: string]: any} = {} ;
+
+    for (let property in handler) {
+      if( handler.hasOwnProperty( property ) ) {
+        handlerWithProps[property] = handler[property](props);
+      }
+    }
     const newProps = {
       ...props,
-      ...handler,
+      ...handlerWithProps,
     };
     return <BaseComponent {...newProps} />
   };

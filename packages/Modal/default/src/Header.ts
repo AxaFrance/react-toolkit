@@ -18,6 +18,6 @@ const enchance = compose<HeaderCoreProps, HeaderProps>(
   withProps<HeaderProps, HeaderCoreProps>(setWithProps),
 )(HeaderCore);
 
-//enchance.displayName = 'Header';
+enchance.displayName = 'Header';
 
 export default enchance;

@@ -17,7 +17,7 @@ const Pane: React.SFC<PaneComponentProps> = ({ children, className, active }) =>
   if(active === false){
     return null;
   }
-  <div className={className}>{children}</div>
+  return <div className={className}>{children}</div>
 };
 
 const enchance = compose<PaneComponentProps, PaneComponentProps>(

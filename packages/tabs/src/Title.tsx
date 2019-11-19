@@ -57,4 +57,6 @@ const enchance = compose<TitleComponentProps & TitleHandlerProps, TitleProps>(
   withClassModifier
 )(Title);
 
+enchance.displayName = 'Title';
+
 export default enchance;

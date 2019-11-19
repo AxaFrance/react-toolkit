@@ -8,7 +8,7 @@ export interface FooterProps extends FooterCoreProps {
   copyright?: React.ReactNode;
 }
 
-const setWithProps = ({
+export const setWithProps = ({
                         copyright,
                         ...otherProps
                       }: FooterProps): FooterCoreProps => ({
