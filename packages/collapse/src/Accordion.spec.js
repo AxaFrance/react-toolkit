@@ -1,6 +1,5 @@
 import React from 'react';
 import Accordion, { handleToggle } from './Accordion';
-import '@testing-library/jest-dom/extend-expect';
 
 describe('Accordion', () => {
 
