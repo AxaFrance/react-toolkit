@@ -8,6 +8,9 @@
 		"react": "^16.4.1",
 		"react-dom": "^16.4.1"
 	},
+	"scripts": {
+		"prepare": "node ../../../scripts/prepare.js"
+	  },
 	"dependencies": {
 		"@axa-fr/react-toolkit-core": "^1.2.16",
 		"@axa-fr/react-toolkit-action": "^1.2.16",
