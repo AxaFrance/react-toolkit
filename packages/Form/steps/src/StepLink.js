@@ -8,7 +8,7 @@ const propTypes = {
   ...Constants.propTypes,
   id: PropTypes.string.isRequired,
   href: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
