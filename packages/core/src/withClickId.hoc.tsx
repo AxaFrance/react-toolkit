@@ -1,4 +1,4 @@
-import { withHandlers } from 'recompose';
+import * as React from "react";
 
 export interface ClickEvent {
   id?: string;
@@ -12,7 +12,7 @@ export type WithClickIdProps<TProps, TOption extends keyof TProps> = {
   [T in keyof TProps]: T extends TOption ? (e: ClickEvent) => void : TProps[T]
 };
 
-const withClickId = <TOutter extends {}>(option: WithClickIdOption) => {
+const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseComponent: Function) => {
   const handler = option.event.reduce((previous: any, current: any) => {
     previous[current] = (props: any) => (event: React.MouseEvent<any>) => {
       if (props[current]) {
@@ -22,7 +22,23 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption) => {
     };
     return previous;
   }, {});
-  return withHandlers<TOutter, any>(handler);
+
+  const Hoc = (props:TOutter) => {
+    let handlerWithProps: {[k: string]: any} = {} ;
+
+    for (let property in handler) {
+      if( handler.hasOwnProperty( property ) ) {
+        handlerWithProps[property] = handler[property](props);
+      }
+    }
+    const newProps = {
+      ...props,
+      ...handlerWithProps,
+    };
+    return <BaseComponent {...newProps} />
+  };
+
+  return Hoc;
 };
 
 export default withClickId;

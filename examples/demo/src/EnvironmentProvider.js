@@ -16,7 +16,7 @@ const getEnvironmentData = async () => {
     process.env.NODE_ENV === 'development'
       ? 'environment.dev.json'
       : 'environment.json';
-  const data = await fetch(`/${fileName}`);
+  const data = await fetch(`./${fileName}`);
   return data.json();
 };
 

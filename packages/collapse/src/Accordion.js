@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withStateHandlers } from 'recompose';
-import { ClassManager, Constants, InputManager } from '@axa-fr/react-toolkit-core';
+import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 
 const propTypes = {
   ...Constants.propTypes,
@@ -66,9 +65,17 @@ export const handleToggle = (state, { onlyOne, children }) => e => {
 AccordionBase.propTypes = propTypes;
 AccordionBase.defaultProps = defaultProps;
 
-const EnhancedComponent = withStateHandlers(() => ({ collapses: [] }), {
-  handleToggle,
-})(AccordionBase);
+const EnhancedComponent = (props) => {
+  const [state, setState] = useState({ collapses: [] });
+
+  const toggle = (e) => {
+    const newState = handleToggle(state, props)(e);
+    setState(newState);
+  };
+
+  return (<AccordionBase {...props} {...state} handleToggle={toggle} />);
+};
+
 EnhancedComponent.displayName = 'Accordion';
 
 export default EnhancedComponent;

@@ -4,9 +4,8 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
+  compose
 } from '@axa-fr/react-toolkit-core';
-
-import { compose } from 'recompose';
 
 const DEFAULT_CLASSNAME = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12';
 

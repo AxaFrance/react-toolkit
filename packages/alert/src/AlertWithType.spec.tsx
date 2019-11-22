@@ -1,19 +1,19 @@
 import * as React from 'react';
 import AlertWithType, { TypeIcons } from './AlertWithType';
 import { create } from 'react-test-renderer';
-import { typePropsToCoreProps } from './AlertWithType';
+import { setWithProps } from './AlertWithType';
 
 describe('<AlertWithType>', () => {
   describe('typePropsToCoreProps', () => {
     describe(`classModifier is undefined`, () => {
       it('should set classModifier to type', () => {
-        const result = typePropsToCoreProps({ title: 'title', type: 'danger' });
+        const result = setWithProps({ title: 'title', type: 'danger' });
         expect(result.classModifier).toBe('danger');
       });
     });
     describe(`classModifier is 'small'`, () => {
       it('should concat type to classModifier', () => {
-        const result = typePropsToCoreProps({
+        const result = setWithProps({
           title: 'title',
           classModifier: 'small',
           type: 'danger',
@@ -24,7 +24,7 @@ describe('<AlertWithType>', () => {
     describe(`icon is undefined`, () => {
       it('should set icon according to type', () => {
         const type = 'danger';
-        const result = typePropsToCoreProps({ title: 'title', type });
+        const result = setWithProps({ title: 'title', type });
         expect(result.iconClassName).toBe(TypeIcons[type]);
       });
     });

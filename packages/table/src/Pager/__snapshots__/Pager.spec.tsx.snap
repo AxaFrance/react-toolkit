@@ -2,7 +2,7 @@
 
 exports[`Table.Pager renders correctly 1`] = `
 <nav
-  className=""
+  className="af-pager"
 >
   <ul
     className="af-pager__pagination"

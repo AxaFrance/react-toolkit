@@ -7,17 +7,13 @@
   "scripts": {
     "prepare": "node ../../../scripts/prepare.js"
   },
-  "files": [
-    "dist/"
-  ],
   "peerDependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "^1.2.16",
-    "prop-types": "^15.5.10",
-    "recompose": "^0.27.1"
+    "prop-types": "^15.5.10"
   },
   "license": "MIT",
   "publishConfig": {

@@ -1,7 +1,7 @@
-import { compose } from 'recompose';
 import {
   withClassDefault,
   withClassModifier,
+  compose
 } from '@axa-fr/react-toolkit-core';
 import Help from './Help';
 
