@@ -1,6 +1,22 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.2-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.1-alpha.0...v1.3.2-alpha.0)
+> 26 November 2019
+- chore(deps): [security] bump lodash.merge from 4.6.1 to 4.6.2 [`#443`](https://github.com/AxaGuilDEv/react-toolkit/pull/443) by dependabot-preview[bot]
+- chore(release): publish v1.3.2-alpha.0 [skip ci] [`b94b998`](https://github.com/AxaGuilDEv/react-toolkit/commit/b94b99815a25c25bd90a632929a9a053c545807e) by Build-CI 
+
+#### [v1.3.1-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.0-alpha.0...v1.3.1-alpha.0)
+> 23 November 2019
+- chore(deps): [security] bump macaddress from 0.2.8 to 0.2.9 [`#80`](https://github.com/AxaGuilDEv/react-toolkit/pull/80) by dependabot-preview[bot]
+- chore(release): publish v1.3.1-alpha.0 [skip ci] [`c74fed7`](https://github.com/AxaGuilDEv/react-toolkit/commit/c74fed761604c943f1b960fd7be7e93bf5a16cf4) by Build-CI 
+
+#### [v1.3.0-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.16...v1.3.0-alpha.0)
+> 22 November 2019
+- refactor(all) remove recompose [`#421`](https://github.com/AxaGuilDEv/react-toolkit/pull/421) by Guillaume Chervet
+- chore(release): publish v1.3.0-alpha.0 [skip ci] [`ef0e31d`](https://github.com/AxaGuilDEv/react-toolkit/commit/ef0e31dc8a38309fcedf104f3f957c61b1df28f6) by Build-CI 
+- docs(changelog) update to new 1.2.16 [skip ci] [`445eca2`](https://github.com/AxaGuilDEv/react-toolkit/commit/445eca2e55f58a5d9e57d1ce28e22c93dcea4616) by Build-CI 
+
 #### [v1.2.16](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.15...v1.2.16)
 > 24 October 2019
 - refactor(sonar) clean some sonar [`#419`](https://github.com/AxaGuilDEv/react-toolkit/pull/419) by Guillaume Chervet
@@ -219,5 +235,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.2.16...v0.0.0)
-> 24 October 2019
+#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.2-alpha.0...v0.0.0)
+> 26 November 2019
