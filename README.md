@@ -2,7 +2,7 @@
 
 [![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=AxaGuilDEv_react-toolkit) [![Reliability](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=reliability_rating) [![Security](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=security_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=security_rating) [![Code Corevage](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=coverage)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=Coverage)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![Twitter](https://img.shields.io/twitter/follow/GuildDEvOpen?style=social)](https://twitter.com/intent/follow?screen_name=GuildDEvOpen)
 
 - [About](#about)
 - [Getting Started](#getting-started)
@@ -88,13 +88,13 @@ const MyAlertComponent => () => (
 - [`@axa-fr/react-toolkit-button`](./packages/button/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-button.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-button)
 - [`@axa-fr/react-toolkit-icon`](./packages/icon/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-icon.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-icon)
 - [`@axa-fr/react-toolkit-core`](./packages/core/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-core.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-core)
-- [`@axa-fr/react-toolkit-title`](./packages/title/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-title.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-title)
-- [`@axa-fr/react-toolkit-link`](./packages/link/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-link.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-link)
-- [`@axa-fr/react-toolkit-list`](./packages/list/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-list.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-list)
+- [`@axa-fr/react-toolkit-title`](./packages/title/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-title.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-title)
+- [`@axa-fr/react-toolkit-link`](./packages/link/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-link.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-link)
+- [`@axa-fr/react-toolkit-list`](./packages/list/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-list.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-list)
 - [`@axa-fr/react-toolkit-panel`](./packages/panel/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-panel.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-panel)
-- [`@axa-fr/react-toolkit-restitution`](./packages/restitution/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-restitution.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-restitution)
-- [`@axa-fr/react-toolkit-form-filter-inline`](./packages/Form/filter-inline/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter-inline.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-form-filter-inline)
-- [`@axa-fr/react-toolkit-form-filter`](./packages/Form/filter/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter.svg)](https://badge.fury.io/js/%40axa-fr%2F/react-toolkit-form-filter)
+- [`@axa-fr/react-toolkit-restitution`](./packages/restitution/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-restitution.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-restitution)
+- [`@axa-fr/react-toolkit-form-filter-inline`](./packages/Form/filter-inline/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter-inline.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter-inline)
+- [`@axa-fr/react-toolkit-form-filter`](./packages/Form/filter/README.md) [![npm version](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter.svg)](https://badge.fury.io/js/%40axa-fr%2Freact-toolkit-form-filter)
 
 ## Concept
 

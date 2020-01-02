@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-
 import addToStorie from '@axa-fr/storybook-addons';
 import { NavBarItem } from '@axa-fr/react-toolkit-layout-header';
 
-const readme = require('./NavBarItem.md');
+import readme from './NavBarItem.md';
 
 const stories = [];
 

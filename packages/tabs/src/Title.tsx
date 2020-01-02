@@ -3,9 +3,10 @@ import {
   withClassDefault,
   withClickId,
   WithClassModifierOptions,
-  withClassModifier
+  withClassModifier,
+  compose,
+  withProps,
 } from '@axa-fr/react-toolkit-core';
-import { compose, withProps } from 'recompose';
 
 const onChangeEvent = 'onChange';
 
@@ -55,5 +56,7 @@ const enchance = compose<TitleComponentProps & TitleHandlerProps, TitleProps>(
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier
 )(Title);
+
+enchance.displayName = 'Title';
 
 export default enchance;

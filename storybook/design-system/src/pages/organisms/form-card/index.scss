@@ -1,0 +1,28 @@
+
+/* Style just for demo */
+
+.#{$prefix}-demo{
+  &__display{
+    &--fullscreen{
+      .#{$prefix}-demo{
+        &__template{
+          &--formcard{
+            margin: 2em;
+          }
+        }
+      }
+    }
+  }
+  &__template{
+    &--formcard{
+      background: $white;
+      padding: 1em;
+    }
+  }
+}
+
+/* Corrections à reporter sur le toolkit */
+
+.af-rccard{
+  flex: auto;
+}

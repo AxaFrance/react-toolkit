@@ -6,7 +6,6 @@ import {
   SelectInput,
   DateInput,
   Button,
-  SliderInput,
 } from '@axa-fr/react-toolkit-all';
 import './New.scss';
 import {
@@ -18,7 +17,7 @@ import {
   BEGIN,
 } from './constants';
 
-const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
+const New = ({ fields, onChange, hasSubmit, onSubmit, onClick }) => (
   <>
     <Title backHome classModifier="hasstepper">
       Nouveau devis
@@ -98,13 +97,6 @@ const New = ({ fields, onChange, hasSubmit, onSubmit }) => (
               forceDisplayMessage={hasSubmit}
               {...fields[BEGIN]}
               messageType="error"
-            />
-          </section>
-          <section className="af-panel__content">
-            <SliderInput
-              className="af-form__slider"
-              name="testslider"
-              onChange={onChange}
             />
           </section>
         </article>

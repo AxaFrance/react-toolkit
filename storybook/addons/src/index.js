@@ -1,2 +1,1 @@
-import storieAdd  from './storieAdd';
-export default storieAdd;
+export { default } from './storieAdd';

@@ -1,0 +1,11 @@
+extends ../../../../components/form/layouts/layout-form-textarea
+include ../../../../components/form/mixins/mixin-form-field-radio
+
+block label
+  label.af-form__group-label Inline radio
+
+block input
+  +formFieldRadio({className:'af-form__radio-inline', id:"29", name:"classic-inline-success", label: "Radio 1", modifier:'success'})
+  +formFieldRadio({className:'af-form__radio-inline', id:"30", name:"classic-inline-success", label: "Radio 2", modifier:'success'})
+  +formFieldRadio({className:'af-form__radio-inline', id:"31", name:"classic-inline-success", label: "Radio 3", modifier:'success'})
+  +formFieldRadio({className:'af-form__radio-inline', id:"32", name:"classic-inline-success", label: "Disabled", disabled: true, modifier:'disabled'})

@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: $font-family-base;
+}
+
+.#{$prefix} {
+  &-html {
+    font-family: $font-family-base;
+    color: $color-scorpion;
+    letter-spacing: 0.01em;
+    min-width: $width-mobile;
+  }
+}
+
+/* TODO A reporter sur le toolkit */
+
+.af-container {
+  //@include make-container-max-widths();
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $color-axa;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: $color-burnt-sienna;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  font-family: $font-family-base;
+  font-size: 1rem;
+}

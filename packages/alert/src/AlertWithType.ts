@@ -1,5 +1,5 @@
 import AlertCore, { AlertCoreProps } from './AlertCore';
-import { mapProps, mapper } from 'recompose';
+import { withProps, compose } from '@axa-fr/react-toolkit-core';
 import classnames from 'classnames';
 
 export interface AlertWithTypeProps extends AlertCoreProps {
@@ -13,16 +13,13 @@ export enum TypeIcons {
   success = 'glyphicon glyphicon-ok',
 }
 
-export const typePropsToCoreProps: mapper<
-  AlertWithTypeProps,
-  AlertCoreProps
-> = ({ type, classModifier, iconClassName, ...otherProps }) => ({
+export const setWithProps = ({ type, classModifier, iconClassName, ...otherProps }: AlertWithTypeProps): AlertCoreProps => ({
   ...otherProps,
   classModifier: classnames(classModifier, type),
   iconClassName: iconClassName || TypeIcons[type as keyof typeof TypeIcons],
 });
 
-const enhance = mapProps(typePropsToCoreProps)(AlertCore);
+const enhance =  compose(withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps))(AlertCore);
 
 enhance.defaultProps = {
   type: 'error',

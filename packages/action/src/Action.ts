@@ -1,5 +1,4 @@
-import { WithClickIdProps, withClickId } from '@axa-fr/react-toolkit-core';
-import { compose } from 'recompose';
+import { WithClickIdProps, withClickId, compose } from '@axa-fr/react-toolkit-core';
 import ActionCore, { ActionCoreProps } from './ActionCore';
 
 export type ActionProps = WithClickIdProps<ActionCoreProps, 'onClick'>;

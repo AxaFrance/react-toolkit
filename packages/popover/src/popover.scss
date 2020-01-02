@@ -13,6 +13,8 @@ $size-arrow: 8px;
       color: $white;
       border-radius: 3px;
       padding: 0.5rem;
+      z-index: 100;
+      width: 260px;
 
       .af-subtitle {
         color: $white;
@@ -79,6 +81,14 @@ $size-arrow: 8px;
           top: calc(50% - #{$size-arrow});
           margin-left: 0;
           margin-right: 0;
+        }
+      }
+    }
+    &--small {
+      .af-btn {
+        &--circle {
+          width: 2rem;
+          height: 2rem;
         }
       }
     }

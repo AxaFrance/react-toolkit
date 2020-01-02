@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PopoverBase } from '@axa-fr/react-toolkit-popover';
+import Popover, {
+  PopoverBase,
+  PopoverModes,
+  PopoverPlacements,
+} from '@axa-fr/react-toolkit-popover';
 import { Constants } from '@axa-fr/react-toolkit-core';
 
 const propTypes = {
@@ -10,26 +14,35 @@ const propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]),
+  placement: PropTypes.oneOf([
+    PopoverPlacements.top,
+    PopoverPlacements.bottom,
+    PopoverPlacements.left,
+    PopoverPlacements.right,
+  ]),
+  mode: PropTypes.oneOf([PopoverModes.over, PopoverModes.click]),
 };
 const defaultProps = {
   ...Constants.defaultProps,
   children: '',
+  mode: PopoverModes.click,
+  placement: PopoverPlacements.right,
 };
 
-const Help = ({ isOpen, toggle, outsideTap, className, children }) => (
-  <PopoverBase
+const Help = ({ toggle, outsideTap, className, children, mode, placement }) => (
+  <Popover
     className={className}
-    placement="right"
-    isOpen={isOpen}
+    placement={placement}
     onOutsideTap={outsideTap}
-    onToggle={toggle}>
+    onToggle={toggle}
+    mode={mode}>
     <PopoverBase.Pop>{children}</PopoverBase.Pop>
     <PopoverBase.Over>
       <button className="btn af-btn--circle" type="button">
         <span className="af-more-help">i</span>
       </button>
     </PopoverBase.Over>
-  </PopoverBase>
+  </Popover>
 );
 
 Help.propTypes = propTypes;

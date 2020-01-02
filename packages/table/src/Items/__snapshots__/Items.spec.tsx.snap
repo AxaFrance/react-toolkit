@@ -5,7 +5,7 @@ exports[`Table.Items renders correctly 1`] = `
   className="af-paging__limit"
 >
   <form
-    className=""
+    className="af-paging__form"
   >
     <div
       className="af-form__group"

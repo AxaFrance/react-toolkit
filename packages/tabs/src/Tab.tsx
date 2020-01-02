@@ -3,8 +3,8 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
+  compose,
 } from '@axa-fr/react-toolkit-core';
-import { compose } from 'recompose';
 
 interface TabComponentProps {
   className?: string;

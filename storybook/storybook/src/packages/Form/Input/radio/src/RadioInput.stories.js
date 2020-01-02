@@ -9,6 +9,7 @@ import {
   Radio,
   RadioInput,
 } from '@axa-fr/react-toolkit-form-input-radio';
+import HelpButton from '@axa-fr/react-toolkit-help';
 import {
   MessageTypes,
   FieldForm,
@@ -17,7 +18,7 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
-const readme = require('@axa-fr/react-toolkit-form-input-radio/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-radio/dist/README.md';
 
 const stories = [];
 
@@ -59,6 +60,42 @@ stories.push({
           InputConstants.defaultProps.classNameContainerInput
         )}
       />
+    </form>
+  ),
+});
+stories.push({
+  desc: 'RadioInput with children',
+  component: () => (
+    <form className="af-form" name="myform">
+      <RadioInput
+        label={text('label', 'Place type *')}
+        name={text('name', 'placeType')}
+        id={text('id', '')}
+        options={options}
+        onChange={action('onChange')}
+        mode={select('mode', modes, RadioModes.default)}
+        value={text('value', '')}
+        helpMessage={text('helpMessage', 'Enter the place type')}
+        message={text('message', '')}
+        messageType={select('messageType', MessageTypes, MessageTypes.error)}
+        forceDisplayMessage={boolean('forceDisplayMessage', false)}
+        readOnly={boolean('readOnly', false)}
+        disabled={boolean('disabled', false)}
+        isVisible={boolean('isVisible', true)}
+        classModifier={text('classModifier', '')}
+        className={text('className', '')}
+        classNameContainerLabel={text(
+          'classNameContainerLabel',
+          InputConstants.defaultProps.classNameContainerLabel
+        )}
+        classNameContainerInput={text(
+          'classNameContainerInput',
+          InputConstants.defaultProps.classNameContainerInput
+        )}>
+        <HelpButton mode="hover" classModifier="small">
+          Hello Radio
+        </HelpButton>
+      </RadioInput>
     </form>
   ),
 });

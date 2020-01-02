@@ -1,0 +1,7 @@
+-const listicons = ['arrow-collapse-right','option-horizontal','ok','arrowthin-right'];
+-var universes = ["auto", "habitation", "loisirs", "sante", "banque", "epargne", "entreprise", "collective", "iard", "patrimonial", "pros", "assurbanque"];
+ul.icons-list
+  each icon in listicons
+    each uni in universes
+      li.icons-list__item
+        span.glyphicon.glyphicon--ring(class=`glyphicon-${icon} glyphicon--${uni}`)

@@ -1,5 +1,4 @@
-import { compose } from 'recompose';
-import { withClickId, WithClickIdProps } from '@axa-fr/react-toolkit-core';
+import { withClickId, WithClickIdProps, compose } from '@axa-fr/react-toolkit-core';
 
 import ButtonCore, { ButtonCoreProps } from './ButtonCore';
 

@@ -146,7 +146,7 @@ gulp.task('af-components', () => {
 const setFileImport = filePath => {
   const fileSplit = filePath.split('/src/');
   const basePath = fileSplit[0].replace(/\//g, '-').toLowerCase();
-  return `@import '@axa-fr/react-toolkit-${basePath}/dist/${fileSplit[1]}';`;
+  return `@import '@axa-fr/react-toolkit-${basePath}/src/${fileSplit[1]}';`;
 };
 
 gulp.task('af-components-build', () =>

@@ -1,0 +1,2 @@
+mixin Img({className=`${prefix}-img`, img, alt="", modifier = ""})
+	img(class=`${className}${modifier !== "" ? ` ${className}--${modifier}` : ""}` src=`${basedir}${pathImg}${img}` alt=alt)

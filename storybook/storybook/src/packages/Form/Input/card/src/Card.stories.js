@@ -13,7 +13,7 @@ import {
   CardFooter,
 } from '@axa-fr/react-toolkit-form-input-card';
 
-const readme = require('@axa-fr/react-toolkit-form-input-card/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-card/dist/README.md';
 
 const stories = [];
 

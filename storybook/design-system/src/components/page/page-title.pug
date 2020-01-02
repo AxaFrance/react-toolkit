@@ -1,0 +1,6 @@
+mixin PageTitle({ title, subtitle })
+  div(class=`${prefix}-page__header`)
+    +Title({level:"h1", modifier:""})
+      | #{title}
+    +Title({level:"h2", modifier:""})
+      | #{subtitle}

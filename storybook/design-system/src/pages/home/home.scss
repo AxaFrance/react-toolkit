@@ -1,0 +1,225 @@
+.#{$prefix} {
+  &-home {
+    background: $white;
+
+    &__header {
+      position: relative;
+      height: 450px;
+      width: 100%;
+      background:
+        linear-gradient(
+          45deg,
+          rgba(125, 185, 232, 1) 0%,
+          rgba(0, 0, 143, 1) 50%,
+          rgba(2, 2, 48, 1) 100%
+        );
+      color: $white;
+      font-size: 1.2rem;
+      z-index: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: url('./assets/images/paris-panorama.jpg') no-repeat 0 0;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        z-index: -1;
+      }
+    }
+
+    &__intro {
+      font-family: $font-family-logo;
+      font-style: italic;
+      font-size: 2rem;
+      line-height: 2.2rem;
+      position: absolute;
+      top: 54%;
+      width: 50%;
+      text-align: right;
+      right: 3%;
+    }
+
+    &__getstarted {
+      position: relative;
+      height: 600px;
+      width: 100%;
+      background: $color-mercury no-repeat -8% 50%;
+      background-image:
+        url('./assets/images/square-popup.png'),
+        linear-gradient(45deg, #a8abb1 0%, #dbdfe0 100%);
+      background-size: 50%, 100%;
+
+      &-content {
+        @include vcenterer;
+
+        right: 0;
+        width: 40%;
+        padding: 1em 5em 1em 1em;
+      }
+
+      &-title {
+        font-family: $font-family-logo;
+        font-size: 2.8rem;
+        font-weight: bold;
+        margin-bottom: .5rem;
+        letter-spacing: -2px;
+      }
+
+      &-text {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        margin-bottom: 1em;
+      }
+    }
+
+    &__explore {
+      &-title {
+        font-size: 3rem;
+        text-align: center;
+        margin: 3rem 0;
+        font-weight: 200;
+      }
+    }
+
+    &__encarts {
+      display: flex;
+      justify-content: space-around;
+      padding: 2em 1em 4em 1em;
+    }
+
+    &__demotuto {
+      display: flex;
+      background:
+        url('./assets/images/ultimate-toolkit.jpg') center bottom
+        no-repeat;
+      background-size: cover;
+      height: 400px;
+      justify-content: space-between;
+    }
+
+    &__demo {
+      background: rgba(48, 50, 193, .8);
+      padding: 2em 5em 2em 2em;
+      width: calc(50% - 200px);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -400px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 400px 400px 0 0;
+        border-color: rgba(48, 50, 193, .8) transparent transparent transparent;
+      }
+
+      &-title {
+        font-size: 4rem;
+        font-weight: 200;
+        color: $white;
+        margin: 0 0 2rem auto;
+      }
+
+      &-text {
+        color: $white;
+        font-size: 2rem;
+        font-weight: 200;
+        margin: 0;
+      }
+    }
+
+    &__tuto {
+      background: rgba(240, 118, 98, .8);
+      padding: 2em 5em 2em 2em;
+      width: calc(50% - 200px);
+      position: relative;
+      text-align: right;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -400px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 400px 400px;
+        border-color:
+          transparent transparent rgba(240, 118, 98, .8)
+          transparent;
+      }
+
+      &-title {
+        font-size: 4rem;
+        font-weight: 200;
+        color: $white;
+        margin-bottom: 2rem;
+        margin: 0 0 2rem auto;
+      }
+
+      &-text {
+        color: $white;
+        font-size: 2rem;
+        font-weight: 200;
+        margin: 0;
+      }
+    }
+  }
+
+  &-btn {
+    &--demo {
+      margin-top: 3rem;
+      border: 2px solid $white;
+    }
+
+    &--tuto {
+      margin-top: 3rem;
+      border: 2px solid $white;
+      background: $color-burnt-sienna;
+      box-shadow: inset 0 -3px $color-flamingo;
+
+      &:hover {
+        background: $color-flamingo;
+      }
+    }
+  }
+
+  &-logo {
+    &--home-intro {
+      position: absolute;
+      top: 15%;
+      left: 3%;
+      border-bottom: 0;
+      margin: 0;
+
+      .#{$prefix} {
+        &-logo {
+          &__img {
+            width: 200px;
+          }
+        }
+
+        &-title {
+          &--logo-name {
+            font-size: 8rem;
+            color: $white;
+            letter-spacing: -6px;
+
+            &::after {
+              font-size: 1rem;
+            }
+          }
+
+          &--logo-subtitle {
+            font-family: $font-family-base;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

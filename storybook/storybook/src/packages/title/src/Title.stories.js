@@ -3,7 +3,7 @@ import addToStorie from '@axa-fr/storybook-addons';
 import { text } from '@storybook/addon-knobs';
 import Title from '@axa-fr/react-toolkit-title';
 
-const readme = require('@axa-fr/react-toolkit-title/dist/README.md');
+import readme from '@axa-fr/react-toolkit-title/dist/README.md';
 
 const stories = [];
 

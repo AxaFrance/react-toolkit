@@ -1,0 +1,11 @@
+extends ../../../../components/form/layouts/layout-form-field
+include ../../../../components/form/mixins/mixin-form-field-select
+include ../../../../components/form/mixins/mixin-form-field-text
+
+block label
+  label.af-form__group-label(for="select1") Inline fields *
+
+block input
+  .af-form__fields-inline
+    +formFieldSelect({className:'af-form__input-inline',modifier: 'success'})
+    +formFieldText({hasInfobulle: true, modifier: 'success'})

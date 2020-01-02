@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger, jsx-a11y/href-no-hash  */
 import React from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
+import ReadMe from './Home.md';
 import './Home.scss';
 
 const storyData = {
@@ -9,7 +10,7 @@ const storyData = {
     {
       desc: 'Introduction',
       withInfo: false,
-      docs: require('./Home.md'),
+      docs: ReadMe,
       component: () => (
         <div className="af-home-logos">
           <img

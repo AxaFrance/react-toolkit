@@ -1,0 +1,37 @@
+.#{$prefix} {
+  &-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background: $color-marine;
+
+    &__links {
+      display: flex;
+      align-items: center;
+
+      img {
+        max-height: 25px;
+        margin: 0 .5rem;
+      }
+
+      > p {
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &-html--home {
+    .#{$prefix} {
+      &-header {
+        background: transparent;
+        position: fixed;
+      }
+    }
+  }
+}

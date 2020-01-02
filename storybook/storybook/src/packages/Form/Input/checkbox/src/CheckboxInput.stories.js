@@ -17,7 +17,7 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
-const readme = require('@axa-fr/react-toolkit-form-input-checkbox/dist/README.md');
+import readme from '@axa-fr/react-toolkit-form-input-checkbox/dist/README.md';
 
 const stories = [];
 
@@ -40,6 +40,7 @@ const modes = [
   CheckboxModes.classic,
   CheckboxModes.default,
   CheckboxModes.inline,
+  CheckboxModes.toggle,
 ];
 
 stories.push({
@@ -130,6 +131,61 @@ stories.push({
           <FieldError />
         </div>
       </FieldForm>
+    </form>
+  ),
+});
+
+stories.push({
+  desc: 'CheckboxInput Toggle',
+  component: () => (
+    <form className="af-form" name="myform">
+      <CheckboxInput
+        label={text('label', 'Do you accept CGU ?')}
+        name={text('name', 'cgu')}
+        id={text('id', 'inputuniqueid')}
+        mode={CheckboxModes.toggle}
+        options={[{ value: '1', id: 'uniqueId1' }]}
+        values={[1]}
+        onChange={action('onChange')}
+        helpMessage={text('helpMessage', 'Enter the place type')}
+        message={text('message', '')}
+        messageType={select('messageType', MessageTypes, MessageTypes.error)}
+        forceDisplayMessage={boolean('forceDisplayMessage', false)}
+        readOnly={boolean('readOnly', false)}
+        disabled={boolean('disabled', false)}
+        isVisible={boolean('isVisible', true)}
+        classModifier={text('classModifier', '')}
+        className={text('className', '')}
+        classNameContainerLabel={text(
+          'classNameContainerLabel',
+          InputConstants.defaultProps.classNameContainerLabel
+        )}
+        classNameContainerInput={text(
+          'classNameContainerInput',
+          InputConstants.defaultProps.classNameContainerInput
+        )}
+      />
+    </form>
+  ),
+});
+
+stories.push({
+  desc: 'CheckboxItem toggle',
+  component: () => (
+    <form className="af-form" name="myform">
+      <CheckboxItem
+        name={text('name', 'placeType')}
+        id={text('id', 'uniqueid')}
+        value={text('value', 'toto')}
+        onChange={action('onChange')}
+        onBlur={action('onBlur')}
+        readOnly={boolean('readOnly', false)}
+        disabled={boolean('disabled', false)}
+        isVisible={boolean('isVisible', true)}
+        isChecked={boolean('isChecked', false)}
+        classModifier={text('classModifier', '')}
+        className={text('className', 'af-form__checkbox-toggle')}
+      />
     </form>
   ),
 });

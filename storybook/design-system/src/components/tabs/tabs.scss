@@ -1,0 +1,42 @@
+.#{$prefix} {
+  &-tabs {
+    &__nav {
+      display: flex;
+
+      &-item {
+        font-family: $font-family-base;
+        border: none;
+        background: transparent;
+        text-align: left;
+        font-size: 1.1rem;
+        margin: 0 1px;
+        padding: .8rem 1rem;
+        cursor: pointer;
+        transition: all .5s linear;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        color: $color-brown-light;
+
+        &--active {
+          color: $color-brown-dark;
+        }
+      }
+    }
+
+    &__content {
+      &-item {
+        display: none;
+
+        &--active {
+          display: block;
+          box-shadow: 0 0 11px 5px rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Manager, Target as RpTarget, Popper, Arrow } from 'react-popper';
+import { Manager, Reference, Popper } from 'react-popper';
 import outy from 'outy';
 import PropTypes from 'prop-types';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
@@ -8,7 +8,6 @@ import PopoverPlacements from './PopoverPlacements';
 const propTypes = {
   ...Constants.propTypes,
   isOpen: PropTypes.bool.isRequired,
-  title: PropTypes.string,
   children: PropTypes.any,
   onToggle: PropTypes.func,
   onOutsideTap: PropTypes.func,
@@ -65,11 +64,18 @@ PopoverBase.Pop = Pop;
 PopoverBase.propTypes = propTypes;
 PopoverBase.defaultProps = defaultProps;
 
-const CustomTarget = ({ innerRef, ...props }) => (
-  <div ref={innerRef} className="af-popover__container-over" {...props} />
+const CustomTarget = (ref, onToggle, props, target) => (
+  <div
+    ref={ref}
+    className="af-popover__container-over"
+    onClick={onToggle}
+    {...props}
+    role="presentation">
+    {target}
+  </div>
 );
 
-class AnimatedPopover extends PureComponent {
+export class AnimatedPopover extends PureComponent {
   constructor(props) {
     super(props);
     this.setOusideTap = this.setOusideTap.bind(this);
@@ -126,28 +132,30 @@ class AnimatedPopover extends PureComponent {
     );
 
     return (
-      <Manager className={componentClassName}>
-        <RpTarget
-          innerRef={node => {
-            this.target = node;
-          }}
-          component={CustomTarget}
-          onClick={onToggle}>
-          {target}
-        </RpTarget>
-
-        {isOpen && (
-          <Popper
-            key="popper"
-            className="af-popover__container-pop"
-            innerRef={c => {
-              this.popper = c;
-            }}
-            placement={placement}>
-            {children}
-            <Arrow className="af-popover__arrow" />
-          </Popper>
-        )}
+      <Manager>
+        <div className={componentClassName}>
+          <Reference>
+            {({ ref, ...props }) => CustomTarget(ref, onToggle, props, target)}
+          </Reference>
+          {isOpen && (
+            <Popper key="popper" placement={placement}>
+              {({ ref, style, placement: chidrenPlacement, arrowProps }) => (
+                <div
+                  ref={ref}
+                  className="af-popover__container-pop"
+                  style={style}
+                  data-placement={chidrenPlacement}>
+                  <div
+                    ref={arrowProps.ref}
+                    style={arrowProps.style}
+                    className="af-popover__arrow"
+                  />
+                  {children}
+                </div>
+              )}
+            </Popper>
+          )}
+        </div>
       </Manager>
     );
   }

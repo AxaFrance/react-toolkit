@@ -1,7 +1,6 @@
 
 .cache
 .settings/
-.vscode/
 logs
 *.log
 npm-debug.log*
@@ -27,3 +26,5 @@ tmp/
 *.DS_Store
 .AppleDouble
 .LSOverride
+.idea
+.vs

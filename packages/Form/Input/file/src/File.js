@@ -8,13 +8,9 @@ import {
   omit,
 } from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
+import Button from '@axa-fr/react-toolkit-button';
 
-const omitProperties = omit([
-  'classModifier',
-  'className',
-  'isVisible',
-  'onChange',
-]);
+const omitProperties = omit(['classModifier', 'className', 'onChange', 'isVisible', 'inputRef']);
 
 class File extends Component {
   constructor(props) {
@@ -46,13 +42,6 @@ class File extends Component {
 
     return (
       <div className={componentClassName}>
-        <button
-          type="button"
-          className="btn btn-default needsclick"
-          onClick={this.onOpenClick}
-          disabled={disabled}>
-          <i className={`glyphicon glyphicon-${icon}`} /> {label}
-        </button>
         <Dropzone
           onDrop={onDrop}
           id={id}
@@ -70,6 +59,14 @@ class File extends Component {
           {...omitProperties(otherProps)}>
           <div>{placeholder} </div>
         </Dropzone>
+        <Button
+          type="button"
+          className="af-btn"
+          classModifier="file hasiconLeft"
+          onClick={this.onOpenClick}
+          disabled={disabled}>
+          <i className={`glyphicon glyphicon-${icon}`} /> {label}
+        </Button>
       </div>
     );
   }
@@ -87,7 +84,7 @@ const propTypes = {
   label: PropTypes.string,
   icon: PropTypes.string,
 };
-const defaultClassName = 'af-file';
+const defaultClassName = 'af-form__file-input';
 const defaultProps = {
   ...Constants.defaultProps,
   values: null,
@@ -99,7 +96,7 @@ const defaultProps = {
   className: defaultClassName,
   classModifier: null,
   label: 'Parcourir',
-  icon: 'file',
+  icon: 'open',
 };
 
 const handlers = {

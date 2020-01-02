@@ -1,5 +1,6 @@
 import Title from './Title';
-import { withProps, compose } from 'recompose';
+import compose from '../../compose';
+import withProps from '../../withProps';
 import { withClassModifier } from '@axa-fr/react-toolkit-core';
 
 const withTitleClassName = withProps(({ backHome, classModifier }) => ({

@@ -5,7 +5,7 @@ import { text, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import Badge from '@axa-fr/react-toolkit-badge';
 
-const readme = require('@axa-fr/react-toolkit-badge/dist/README.md');
+import readme from '@axa-fr/react-toolkit-badge/dist/README.md';
 
 const LABELS = {
   listClass: ['success', 'info', 'danger', 'error'],

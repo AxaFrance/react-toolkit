@@ -2,11 +2,10 @@
 
 exports[`<ModalCore> should render modalCore 1`] = `
 <ModalCore
-  className="af-modal"
   isOpen={true}
   onOutsideTap={[MockFunction]}
 >
-  <withClassModifier
+  <Hoc
     className="af-modal"
     isOpen={true}
     onOutsideTap={[MockFunction]}
@@ -146,6 +145,6 @@ exports[`<ModalCore> should render modalCore 1`] = `
         </Portal>
       </Modal>
     </ModalCoreRaw>
-  </withClassModifier>
+  </Hoc>
 </ModalCore>
 `;

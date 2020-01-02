@@ -1,0 +1,7 @@
+mixin formMessage({modifierMessage= '', textMessage='', iconMessage= ''})
+  small.af-form__message(class=(modifierMessage !== '') ? ` af-form__message--${modifierMessage}` : '')
+    if(!iconMessage)
+      | #{textMessage}
+    else
+      span.glyphicon(class=`glyphicon-${iconMessage}`)
+      span.af-form__error-text #{textMessage}

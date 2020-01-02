@@ -4,7 +4,8 @@ $heightslide: 6px;
 
 .af-form {
   &__slider {
-    width: 80%;
+    width: 80% !important;
+    margin-bottom: 1.2em;
 
     // stylelint-disable selector-class-pattern
     .rc-slider {

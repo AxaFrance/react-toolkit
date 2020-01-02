@@ -1,0 +1,9 @@
+/* Correction Toolkit */
+
+@include media-breakpoint-up(md) {
+  .af-title-bar {
+    &__mobile-menu {
+      display: none;
+    }
+  }
+}

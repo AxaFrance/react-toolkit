@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import addToStorie from '@axa-fr/storybook-addons';
 import BooleanModal from '@axa-fr/react-toolkit-modal-boolean';
 
-const readme = require('@axa-fr/react-toolkit-modal-boolean/dist/README.md');
+import readme from '@axa-fr/react-toolkit-modal-boolean/dist/README.md';
 
 const stories = [];
 

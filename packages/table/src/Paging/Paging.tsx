@@ -5,8 +5,8 @@ import {
   WithClassModifierOptions,
   WithOnChangeEvent,
   OnChangeCustomEvent,
+  compose,
 } from '@axa-fr/react-toolkit-core';
-import { compose } from 'recompose';
 import Pager from '../Pager/Pager';
 import Items from '../Items/Items';
 

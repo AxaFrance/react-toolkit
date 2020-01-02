@@ -8,22 +8,21 @@ import CheckboxItem from './CheckboxItem';
 
 const omitProperties = omit(['mode', 'id']);
 
-const Checkbox = props => {
-  const {
-    classModifier,
-    options,
-    isVisible,
-    disabled,
-    name,
-    onBlur,
-    onFocus,
-    readOnly,
-    children,
-    values,
-    className,
-    onChange,
-    ...otherProps
-  } = props;
+const Checkbox = ({
+                    classModifier,
+                    options,
+                    isVisible,
+                    disabled,
+                    name,
+                    onBlur,
+                    onFocus,
+                    readOnly,
+                    children,
+                    values,
+                    className,
+                    onChange,
+                    ...otherProps
+                  }) => {
 
   if (!options) {
     return null;
@@ -59,6 +58,7 @@ const propTypes = {
     CheckBoxModes.default,
     CheckBoxModes.classic,
     CheckBoxModes.inline,
+    CheckBoxModes.toggle,
   ]),
   options: PropTypes.array.isRequired,
   values: PropTypes.array,
@@ -92,21 +92,17 @@ const handlers = {
   },
 };
 
-const props = ({ mode }) => {
-  let className = '';
-  switch (mode) {
-    case CheckBoxModes.classic:
-      className = 'af-form__checkbox';
-      break;
-    case CheckBoxModes.inline:
-      className = 'af-form__checkbox-inline';
-      break;
-    default:
-      className = 'af-form__checkbox-custom';
-      break;
-  }
-  return { className };
+const classMode = {
+  default: 'af-form__checkbox-custom',
+  classic: 'af-form__checkbox',
 };
+
+const props = ({ mode }) => ({
+  className:
+    mode === CheckBoxModes.default || mode === CheckBoxModes.classic
+      ? classMode[mode]
+      : `af-form__checkbox-${mode}`,
+});
 
 const EnhancedComponent = withInput(
   defaultClassName,

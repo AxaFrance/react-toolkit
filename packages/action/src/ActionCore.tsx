@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { withClassDefault, withClassModifier, PropsManager } from '@axa-fr/react-toolkit-core';
-import { compose, withProps } from 'recompose';
+import { withClassDefault, withClassModifier, PropsManager, compose, withProps } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'btn af-btn--circle';
 
@@ -20,7 +19,7 @@ const defaultProps: Partial<ActionCoreProps> = {
 
 const omitProperties = PropsManager.omit(['classModifier']);
 
-const ActionCore: React.SFC<ActionCoreProps> = ({ icon, ...otherProps }) => (
+const ActionCore: React.FC<ActionCoreProps> = ({ icon, ...otherProps }) => (
   <a {...omitProperties(otherProps)}>
     <i className={`glyphicon glyphicon-${icon}`} />
   </a>

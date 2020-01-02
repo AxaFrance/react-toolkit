@@ -3,9 +3,11 @@ import React from 'react';
 import addToStorie from '@axa-fr/storybook-addons';
 import FormContainer from './Form.container';
 
+import readme from './README.md';
+
 const storyData = {
   name: 'Form.Demo Statefull',
-  docs: require('./README.md'),
+  docs: readme,
   stories: [
     {
       desc: 'Form with recompose',

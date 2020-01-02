@@ -1,0 +1,12 @@
+mixin status(code)
+  .af-status
+    case code
+      when 1
+        span.glyphicon.glyphicon--ring.glyphicon--banque.glyphicon-option-horizontal
+        | En cours
+      when 2
+        span.glyphicon.glyphicon--ring.glyphicon--warning.glyphicon-arrowthin-right
+        | Transmis
+      default
+        span.glyphicon.glyphicon--ring.glyphicon--success.glyphicon-ok
+        | Clos

@@ -1,0 +1,64 @@
+/* Style just for demo */
+
+.#{$prefix}-demo {
+  &--forminputtext {
+    .#{$prefix}-demo {
+      &__display {
+        &--fullscreen {
+          .#{$prefix}-demo {
+            &__template {
+              margin: 2em;
+            }
+          }
+        }
+      }
+
+      &__template {
+        background: $white;
+        padding: 1em;
+      }
+    }
+  }
+}
+
+/* Corrections à reporter sur le toolkit */
+
+.af-form {
+  &__clear {
+    &.glyphicon {
+      position: absolute;
+      top: .75rem;
+    }
+  }
+
+  &__fields-inline {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__text {
+    &-wrapper {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &--success {
+      position: relative;
+      display: inline-block;
+
+      &.af-form__text--hasinfobulle {
+        &::after {
+          position: absolute;
+          right: -30px;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 10px;
+        right: -5px;
+      }
+    }
+  }
+
+}

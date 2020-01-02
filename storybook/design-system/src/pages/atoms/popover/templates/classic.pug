@@ -1,0 +1,12 @@
+-var exemples = ["pushpin", "print", "arrow-xs-down", "heart", "eye-open", "menu-hamburger", "remove", "filter", "floppy-disk", "open"];
+-var translate = ["32px, -7px, 0px", "44px, -7px, 0px", "9px, -7px, 0px", "42px, -7px, 0px", "27px, -7px, 0px", "0, -17px, 0px", "32px, -7px, 0px", "43px, -7px, 0px", "19px, -7px, 0px", "41px, -7px, 0px"];
+
+.tk-block-demo
+  each ex, index in exemples
+    .af-popover__container
+      .af-popover__container-over
+        a.btn.af-btn--circle(href="#" role="button" )
+          i.glyphicon(class=`glyphicon-${ex}`)
+      .af-popover__container-pop(data-placement="top" style=`text-align: center;position: absolute; transform: translate3d(${translate[index]}); top: 0px; left: 0px; will-change: transform;` )
+        | #{ex}
+        span.af-popover__arrow

@@ -55,18 +55,26 @@ gulp.task('clearlock', () => {
   allFolders.map(folder =>
     gulp.src(`${path.join(folder)}/package-lock.json`).pipe(clean())
   );
-  gulp.src(`./addons/storybook/package-lock.json`).pipe(clean());
+  gulp.src(`./storybook/addons/package-lock.json`).pipe(clean());
   gulp.src(`./storybook/storybook/package-lock.json`).pipe(clean());
-  gulp.src(`./styles/storybook/package-lock.json`).pipe(clean());
-  gulp.src(`./addons/toolkit/package-lock.json`).pipe(clean());
+  gulp.src(`./storybook/styles/package-lock.json`).pipe(clean());
+  gulp.src(`./storybook/design-system/package-lock.json`).pipe(clean());
 });
 
 gulp.task('generatelock', () => {
-  allFolders.map(folder =>
+  /* allFolders.map(folder =>
     gulp
       .src(`${path.join(folder)}/package.json`)
       .pipe(shell([`npm i --prefix ${folder}`]))
-  );
+  ); */
+  //gulp.src(`./storybook/addons/package.json`).pipe(shell([`npm i --prefix`]));
+  /* gulp
+    .src(`./storybook/storybook/package.json`)
+    .pipe(shell([`npm i --prefix`]));
+  gulp.src(`./storybook/styles/package.json`).pipe(shell([`npm i --prefix`])); */
+  gulp
+    .src(`./storybook/design-system/package.json`)
+    .pipe(shell([`npm i --prefix ./`]));
 });
 
 gulp.task('sass', () =>

@@ -1,9 +1,9 @@
 const path = require('path');
 
 // Export a function. Accept the base config as the only param.
-module.exports = (baseConfig, env, defaultConfig) => {
-  const extensions = defaultConfig.resolve.extensions;
-  const rules = defaultConfig.module.rules;
+module.exports = ({config, mode}) => {
+  const extensions = config.resolve.extensions;
+  const rules = config.module.rules;
   rules.push({
     test: /\.(scss)$/,
     loaders: ['style-loader', 'css-loader', 'sass-loader'],
@@ -20,5 +20,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     test: /\.md$/,
     loader: 'highlight-loader!markdown-loader',
   });
-  return defaultConfig;
+  return config;
 };

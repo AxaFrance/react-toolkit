@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Field, FieldConstants as Constants } from '@axa-fr/react-toolkit-form-core';
+import {
+  Field,
+  FieldConstants as Constants,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import Radio from './Radio';
@@ -43,6 +46,7 @@ const RadioInput = props => {
     onChange,
     readOnly,
     disabled,
+    children,
     ...otherProps
   } = props;
   if (!isVisible) {
@@ -79,6 +83,7 @@ const RadioInput = props => {
         classModifier={classModifier}
         {...otherProps}
       />
+      {children}
     </Field>
   );
 };

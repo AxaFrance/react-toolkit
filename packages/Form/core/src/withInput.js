@@ -1,13 +1,4 @@
-import {
-  compose,
-  withProps,
-  defaultProps,
-  setPropTypes,
-  branch,
-  renderComponent,
-  renderNothing,
-  withHandlers,
-} from 'recompose';
+import React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Constants from './InputConstants';
 
@@ -33,7 +24,7 @@ export const withInput = (
   addDefaultProps = {},
   withHandlersOverride = {},
   withPropsOverride = null
-) => Component => {
+) => Component =>  {
   let defaultWithProps = ({ className, classModifier }) => ({
     componentClassName: ClassManager.getComponentClassName(
       className,
@@ -45,31 +36,35 @@ export const withInput = (
     defaultWithProps = withPropsOverride;
   }
 
-  const enhance = compose(
-    withProps(defaultWithProps),
-    withHandlers({
-      onChange: defaultOnChange,
-      ...withHandlersOverride,
-    })
-  );
+  const handlers = {
+    onChange: defaultOnChange,
+    ...withHandlersOverride,
+  };
 
-  const enhancedComponent = enhance(Component);
+  const NewComponent = (props) => {
+    const {isVisible} = props;
+    if (!isVisible) {
+      return null;
+    }
+    const onHandlers = {};
+    // eslint-disable-next-line guard-for-in
+    for (const propertyName in handlers){
+      onHandlers[propertyName] = handlers[propertyName](props);
+    }
+    return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
+  };
 
-  const enhanceVisibility = compose(
-    setPropTypes({
-      ...Constants.propTypes,
-      ...addPropTypes,
-    }),
-    defaultProps({
-      ...Constants.defaultProps,
-      ...addDefaultProps,
-    }),
-    branch(
-      ({ isVisible }) => isVisible === true,
-      renderComponent(enhancedComponent),
-      renderNothing
-    )
-  );
+  const propTypes = {
+    ...Constants.propTypes,
+    ...addPropTypes,
+  };
+  NewComponent.propTypes = propTypes;
 
-  return enhanceVisibility(enhancedComponent);
+  const defaultProps = {
+    ...Constants.defaultProps,
+    ...addDefaultProps,
+  };
+  NewComponent.defaultProps = defaultProps;
+
+ return NewComponent;
 };
