@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Input, withInput, omit } from '@axa-fr/react-toolkit-form-core';
-
 import { typesField, strengthList } from './Constant';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);

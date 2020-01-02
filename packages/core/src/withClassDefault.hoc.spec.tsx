@@ -16,6 +16,6 @@ const Enhanced = enhance(MyComponent);
 describe('HOC withClassDefault', () => {
   it(`Should have className ${CLASS_TEST}`, () => {
     const wrapper = mount(<Enhanced />);
-    expect(wrapper.prop('className')).toEqual(CLASS_TEST);
+    expect(wrapper.find(MyComponent).prop('className')).toEqual(CLASS_TEST);
   });
 });

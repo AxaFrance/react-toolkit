@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<File.File> renders File.File correctly 1`] = `
-<branch(withProps(withHandlers(File)))
+<File
   accept="image/jpeg, image/png, application/*"
   classModifier={null}
   className="af-form__file-input"
+  componentClassName="af-form__file-input"
   disabled={false}
   icon="open"
   id="id"
@@ -16,6 +17,8 @@ exports[`<File.File> renders File.File correctly 1`] = `
   multiple={true}
   name="file"
   onBlur={null}
+  onChange={[Function]}
+  onDrop={[Function]}
   onFocus={null}
   onOpenClick={[Function]}
   placeholder="Glissez/déposez vos fichiers"

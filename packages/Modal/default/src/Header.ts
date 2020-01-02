@@ -1,5 +1,4 @@
-import { withClickId, WithClickIdProps } from '@axa-fr/react-toolkit-core';
-import { compose, renameProp } from 'recompose';
+import { withClickId, WithClickIdProps, compose, withProps } from '@axa-fr/react-toolkit-core';
 import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 const onCancelEvent = 'onCancel';
@@ -9,9 +8,14 @@ export interface HeaderProps
   title: string;
 }
 
+const setWithProps = (props: HeaderProps) => ({
+  ...props,
+  children: props.title,
+});
+
 const enchance = compose<HeaderCoreProps, HeaderProps>(
   withClickId({ event: [onCancelEvent] }),
-  renameProp('title', 'children')
+  withProps<HeaderProps, HeaderCoreProps>(setWithProps),
 )(HeaderCore);
 
 enchance.displayName = 'Header';

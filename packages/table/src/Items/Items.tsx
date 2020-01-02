@@ -7,8 +7,8 @@ import {
   withClassModifier,
   WithOnChangeEvent,
   OnChangeCustomEvent,
+  compose
 } from '@axa-fr/react-toolkit-core';
-import { compose } from 'recompose';
 
 export type ItemsComponentProps = Pick<
   React.HTMLProps<HTMLAnchorElement>,

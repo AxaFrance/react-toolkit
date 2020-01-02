@@ -1,6 +1,9 @@
-import { mapProps } from 'recompose';
 import AlertCore, { AlertCoreProps } from './AlertCore';
 import icons from './icons';
+import {
+  withProps,
+  compose,
+} from '@axa-fr/react-toolkit-core';
 
 const defaultClassModifier = 'error';
 
@@ -8,15 +11,15 @@ type AlertProps = Pick<AlertCoreProps, Exclude<keyof AlertCoreProps, 'iconClassN
   icon?: string;
 };
 
-const enhance = mapProps<AlertCoreProps, AlertProps>(({ icon, ...otherProps }) => {
+const setWithProps = ({ icon, ...otherProps }: AlertProps): AlertCoreProps => {
   const firstModifier = otherProps.classModifier.split(' ')[0];
   return {
     ...otherProps,
     iconClassName: `glyphicon glyphicon-${icon || icons[firstModifier]}`,
   };
-});
+};
 
-const Enhanced = enhance(AlertCore);
+const Enhanced = compose(withProps<AlertProps, AlertCoreProps>(setWithProps))(AlertCore);
 
 Enhanced.displayName = 'Alert';
 Enhanced.defaultProps = {
