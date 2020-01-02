@@ -36,10 +36,6 @@ try {
 
   fs.copySync(
     `./storybook/design-system/dist`,
-    `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design-system`
-  );
-  fs.copySync(
-    `./storybook/styles/distDemo`,
     `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`
   );
   fs.copySync(
