@@ -26,7 +26,7 @@ const CustomNumber = props => {
   let currentViewValue = '';
   if (value !== undefined && value !== null) {
     currentViewValue = value.toString();
-  } else if (viewValue != null && viewValue != undefined) {
+  } else if (viewValue !== null && viewValue !== undefined) {
     currentViewValue = props.viewValue;
   }
   const inputId = InputManager.getInputId(id);

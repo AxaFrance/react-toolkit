@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Slider> renders Slider correctly 1`] = `
-<branch(withProps(withHandlers(CustomSlider)))
+<CustomSlider
   classModifier={null}
   className={null}
+  componentClassName="af-form__slider"
   disabled={false}
   id="id"
   inputRef={null}

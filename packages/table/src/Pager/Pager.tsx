@@ -5,8 +5,8 @@ import {
   withClassDefault,
   OnChangeCustomEvent,
   WithOnChangeEvent,
+  compose,
 } from '@axa-fr/react-toolkit-core';
-import { compose, setDisplayName, withProps } from 'recompose';
 import Modes from './Modes';
 import Previous from './Previous';
 import LiPoint from './LiPoint';

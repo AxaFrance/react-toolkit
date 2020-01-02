@@ -1,22 +1,7 @@
-import { shallow } from 'enzyme';
 import React from 'react';
 import Accordion, { handleToggle } from './Accordion';
-import CollapseCardBase from './CollapseCardBase';
 
 describe('Accordion', () => {
-  it('renders Accordion correctly', () => {
-    const wrapper = shallow(
-      <Accordion onlyOne>
-        <CollapseCardBase collapse={false}>
-          <CollapseCardBase.Header>title</CollapseCardBase.Header>
-          <CollapseCardBase.Body>
-            <b>Content</b>
-          </CollapseCardBase.Body>
-        </CollapseCardBase>
-      </Accordion>
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
 
   it('handleToggle should return correct value', () => {
     let state = { collapses: [false] };

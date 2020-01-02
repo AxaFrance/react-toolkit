@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { compose } from 'recompose';
 import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
+  compose,
 } from '@axa-fr/react-toolkit-core';
 import SectionRestitutionTitle from './SectionRestitutionTitle';
 

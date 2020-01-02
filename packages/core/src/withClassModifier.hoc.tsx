@@ -1,5 +1,6 @@
 import * as classManager from './ClassManager';
-import { withProps, compose, setDisplayName } from 'recompose';
+import withProps  from './withProps.hoc';
+import compose from './compose';
 
 export interface WithClassModifierOptions {
   className?: string | null;
@@ -7,13 +8,14 @@ export interface WithClassModifierOptions {
   defaultClassName?: string | null;
 }
 
-export default compose(
-  setDisplayName('withClassModifier'),
-  withProps(({ className, classModifier, defaultClassName }: WithClassModifierOptions) => ({
-    className: classManager.default.getComponentClassName(
-      className,
-      classModifier,
-      defaultClassName
-    ),
-  }))
+const withClassModifier = compose(
+    withProps(({ className, classModifier, defaultClassName }: WithClassModifierOptions) => ({
+      className: classManager.default.getComponentClassName(
+        className,
+        classModifier,
+        defaultClassName
+      ),
+    }))
 );
+
+export default withClassModifier;

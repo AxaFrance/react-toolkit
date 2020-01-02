@@ -2,8 +2,8 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
+  compose,
 } from '@axa-fr/react-toolkit-core';
-import { compose } from 'recompose';
 import Div, { DivProps } from './Div';
 
 const DEFAULT_CLASSNAME = 'af-modal__header';
