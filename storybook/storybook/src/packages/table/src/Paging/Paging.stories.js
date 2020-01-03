@@ -17,7 +17,7 @@ stories.push({
       currentPage={number('currentPage', 5)}
       onChange={action('onChange')}
       classModifier={text('classModifier', '')}
-      className={text('className', '')}
+      className={text('className', 'af-paging')}
     />
   ),
 });
