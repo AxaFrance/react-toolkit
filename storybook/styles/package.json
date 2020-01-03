@@ -109,7 +109,7 @@
     "react-datepicker": "1.4.1",
     "react-dom": "15.6.1",
     "react-frame-component": "1.0.3",
-    "react-input-mask": "1.2.2",
+    "react-input-mask": "2.0.4",
     "react-maskedinput": "4.0.1",
     "react-router-dom": "4.1.0",
     "react-tabs": "2.2.1",
