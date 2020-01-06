@@ -84,7 +84,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.12.2",
     "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "0.11.1",
+    "file-loader": "5.0.2",
     "fs-extra": "^6.0.1",
     "github-markdown-css": "2.8.0",
     "gulp": "3.9.1",
