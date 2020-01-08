@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-highlight",
-  "version": "1.3.2-alpha.0",
+  "version": "1.3.2",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,8 +12,8 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-action": "^1.3.2-alpha.0",
-    "@axa-fr/react-toolkit-core": "^1.3.2-alpha.0",
+    "@axa-fr/react-toolkit-action": "^1.3.2",
+    "@axa-fr/react-toolkit-core": "^1.3.2",
     "prop-types": "^15.5.10"
   },
   "license": "MIT",

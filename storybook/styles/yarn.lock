@@ -2,384 +2,343 @@
 # yarn lockfile v1
 
 
-"@axa-fr/react-toolkit-action@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-action/-/react-toolkit-action-1.2.15.tgz#8e63e18191c92e9ff514992afcf20b89d8fb1b19"
+"@axa-fr/react-toolkit-action@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-action/-/react-toolkit-action-1.3.2.tgz#e22129ab839ed800584d6495affef50d762d02f5"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-alert@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-alert/-/react-toolkit-alert-1.2.15.tgz#c399b50e25b71bb28cabbd2b0c331aee0b2985e0"
+"@axa-fr/react-toolkit-alert@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-alert/-/react-toolkit-alert-1.3.2.tgz#3e6c4137198c40a867654195827cc94a0480d55c"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-badge@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-badge/-/react-toolkit-badge-1.2.15.tgz#372c4f7863ddfcc074361c8bf51659d1cc09fa30"
+"@axa-fr/react-toolkit-badge@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-badge/-/react-toolkit-badge-1.3.2.tgz#edabcfd48a79c3f613890d95573f2c883ce6c379"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-button@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-button/-/react-toolkit-button-1.2.15.tgz#86d4b11b6cbad635945563de60b44fdf679322b8"
+"@axa-fr/react-toolkit-button@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-button/-/react-toolkit-button-1.3.2.tgz#cb74233d45958e98d641084580dac315eb416a1d"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-collapse@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-collapse/-/react-toolkit-collapse-1.2.15.tgz#e9d8fac5ef868739a9ed199cf96d5ad732ddb24c"
+"@axa-fr/react-toolkit-collapse@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-collapse/-/react-toolkit-collapse-1.3.2.tgz#609f7de5e8ee5a8a6b06ee3b3522e3707e296eb9"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-core@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-core/-/react-toolkit-core-1.2.15.tgz#a5dbb358fab2e72d32ddc134520a160f06c89620"
+"@axa-fr/react-toolkit-core@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-core/-/react-toolkit-core-1.3.2.tgz#388f89163fb47c947e8575f031ec87d42e00c495"
   dependencies:
     classnames "^2.2.6"
     cuid "^2.1.1"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-core@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-core/-/react-toolkit-form-core-1.2.15.tgz#60a2511949a7a9e7d8b2e26f20c65cb42ab18514"
+"@axa-fr/react-toolkit-form-core@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-core/-/react-toolkit-form-core-1.3.2.tgz#ec7d5f53c8bc0f24624d42d558345ea9e65fe2aa"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     cuid "^2.1.3"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-filter-inline@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter-inline/-/react-toolkit-form-filter-inline-1.2.15.tgz#e5c44acd91bcd58bf5b541203b9a492f433cd517"
+"@axa-fr/react-toolkit-form-filter-inline@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter-inline/-/react-toolkit-form-filter-inline-1.3.2.tgz#4eb7ae89c4d4608110dd369b054cc5fe67a4cb30"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-filter@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter/-/react-toolkit-form-filter-1.2.15.tgz#e17a030e280cacf84a6af70df177e53b08e1ec56"
+"@axa-fr/react-toolkit-form-filter@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter/-/react-toolkit-form-filter-1.3.2.tgz#4984496b305dfae0e25a4e996b8a93bfc31a8920"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-card@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-card/-/react-toolkit-form-input-card-1.2.15.tgz#ccae47fe6f1c72b3dff0b1277c05aaf8f3c2f715"
+"@axa-fr/react-toolkit-form-input-card@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-card/-/react-toolkit-form-input-card-1.3.2.tgz#7b45ee9196e0a72cf0560823b62cdc0a29d08d22"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-input-checkbox" "^1.2.16"
-    "@axa-fr/react-toolkit-form-input-radio" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-input-checkbox" "^1.3.2"
+    "@axa-fr/react-toolkit-form-input-radio" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-checkbox@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-checkbox/-/react-toolkit-form-input-checkbox-1.2.15.tgz#e1cb1b7d06425ffd03a2e4b254c679bf10588787"
+"@axa-fr/react-toolkit-form-input-checkbox@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-checkbox/-/react-toolkit-form-input-checkbox-1.3.2.tgz#f061a94c3d6dcb61cae85422592978858ab36ff9"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-choice@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-choice/-/react-toolkit-form-input-choice-1.2.15.tgz#198b5a9e2067942ff3a7e89fa9b9133bad9167cc"
+"@axa-fr/react-toolkit-form-input-choice@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-choice/-/react-toolkit-form-input-choice-1.3.2.tgz#314f9fd0bb24c13ab4eb9c381fe3345dd16d6c04"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-input-radio" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-input-radio" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-date@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-date/-/react-toolkit-form-input-date-1.2.15.tgz#76f503800ad75f8a62bd44b285d01e2d5ed47a42"
+"@axa-fr/react-toolkit-form-input-date@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-date/-/react-toolkit-form-input-date-1.3.2.tgz#45d4b49912b4ce37dfef25eda6b869229d2d7835"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     moment "^2.23.0"
     prop-types "^15.5.10"
     react-datepicker "^1.8.0"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-file@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-file/-/react-toolkit-form-input-file-1.2.15.tgz#d1f154d78d2aa3271dd98ee75daeb3955ec32aa2"
+"@axa-fr/react-toolkit-form-input-file@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-file/-/react-toolkit-form-input-file-1.3.2.tgz#93735817bd036740d033b3b1775d4212056b2948"
   dependencies:
-    "@axa-fr/react-toolkit-button" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
-    "@axa-fr/react-toolkit-popover" "^1.2.16"
+    "@axa-fr/react-toolkit-button" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-popover" "^1.3.2"
     prop-types "^15.5.10"
     react-dropzone "^4.2.11"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-number@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-number/-/react-toolkit-form-input-number-1.2.15.tgz#0d0a34eac642b5d4dd558490e854693d969904cf"
+"@axa-fr/react-toolkit-form-input-number@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-number/-/react-toolkit-form-input-number-1.3.2.tgz#81fa90a697ac875003ab2e19832a0fa909df2eb1"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-pass@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-pass/-/react-toolkit-form-input-pass-1.2.15.tgz#942665fbbd66178e475efc48587f5487d9ffab3a"
+"@axa-fr/react-toolkit-form-input-pass@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-pass/-/react-toolkit-form-input-pass-1.3.2.tgz#5a678a7a8637fa05390bef153377adf5cb0f217f"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     moment "~2.22.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-radio@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-radio/-/react-toolkit-form-input-radio-1.2.15.tgz#fd98e469e717a98d94de178b479de340060d447c"
+"@axa-fr/react-toolkit-form-input-radio@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-radio/-/react-toolkit-form-input-radio-1.3.2.tgz#6ace82626839843c0f6b49edcfb9366652d62ee5"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     moment "~2.22.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-select-multi@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select-multi/-/react-toolkit-form-input-select-multi-1.2.15.tgz#d5502acd01a2bfb901fdbe514d7ea51b00c721a1"
+"@axa-fr/react-toolkit-form-input-select-multi@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select-multi/-/react-toolkit-form-input-select-multi-1.3.2.tgz#e6933f2c1e0baf6dedfc29e3ad56a14415c879e5"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
     react-select "^2.2.0"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-select@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select/-/react-toolkit-form-input-select-1.2.15.tgz#be2b56203483ee1822fc729703aa066c3435b31c"
+"@axa-fr/react-toolkit-form-input-select@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select/-/react-toolkit-form-input-select-1.3.2.tgz#4dd454c93bec58777a482be0d141a132ee4987f4"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-slider@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-slider/-/react-toolkit-form-input-slider-1.2.15.tgz#d66aea8e72415ad5d09c7f5970e0a477827ac91d"
+"@axa-fr/react-toolkit-form-input-slider@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-slider/-/react-toolkit-form-input-slider-1.3.2.tgz#3d44df76c200e3c1d7c9853a151f001b7c7e1a1a"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
     rc-slider "^8.6.4"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-switch@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-switch/-/react-toolkit-form-input-switch-1.2.15.tgz#e7f62bf356fcf8479d6630e38ddeaf4dda152607"
+"@axa-fr/react-toolkit-form-input-switch@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-switch/-/react-toolkit-form-input-switch-1.3.2.tgz#86415e31d21674d31df4b10f25d8b849aaccaaff"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-text@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-text/-/react-toolkit-form-input-text-1.2.15.tgz#1f36cee89cbc2d4babe5b5eb15ba0d9b05c9e6e0"
+"@axa-fr/react-toolkit-form-input-text@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-text/-/react-toolkit-form-input-text-1.3.2.tgz#24461fe47f8e9c84622d72f185360ca7e7c34f43"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-input-textarea@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-textarea/-/react-toolkit-form-input-textarea-1.2.15.tgz#d50e175ca5675a37f26b06424f904218df56b3c4"
+"@axa-fr/react-toolkit-form-input-textarea@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-textarea/-/react-toolkit-form-input-textarea-1.3.2.tgz#8e51d9eee86018cd382990e30b5ee5d80b28984c"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-form-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-form-core" "^1.3.2"
 
-"@axa-fr/react-toolkit-form-steps@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-steps/-/react-toolkit-form-steps-1.2.15.tgz#67ebbb80061fb4b75e92c4836804c41f67a85fc2"
+"@axa-fr/react-toolkit-form-steps@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-steps/-/react-toolkit-form-steps-1.3.2.tgz#ba6723aa00dc450109b4f5002a7e319641d3d7b8"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-form-summary@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-summary/-/react-toolkit-form-summary-1.2.15.tgz#6176481029e03ecf20f5c569acf166a40cded548"
+"@axa-fr/react-toolkit-form-summary@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-summary/-/react-toolkit-form-summary-1.3.2.tgz#b6d352449021a398ba6446a59dd6ca9bbcc7f827"
   dependencies:
-    "@axa-fr/react-toolkit-alert" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-alert" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-help@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-help/-/react-toolkit-help-1.2.15.tgz#67c40bcbd79e826c5749126654e4a2187835bb93"
+"@axa-fr/react-toolkit-help@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-help/-/react-toolkit-help-1.3.2.tgz#df8fa3b8a14d954e6a96d7122684b32d380c43cd"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-popover" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-popover" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-highlight@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-highlight/-/react-toolkit-highlight-1.2.15.tgz#c8656cce4df993b9b38a26191ef5155fcb6495b9"
+"@axa-fr/react-toolkit-highlight@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-highlight/-/react-toolkit-highlight-1.3.2.tgz#0e074375e37e9a04b3354f1894dac9853a686419"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-action" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-icon@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-icon/-/react-toolkit-icon-1.2.15.tgz#b60ffbbee0683d7d5d842bc345a514e326c024b2"
+"@axa-fr/react-toolkit-icon@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-icon/-/react-toolkit-icon-1.3.2.tgz#1e8de57001b2af78f0f4efa59d2ee48c129a7182"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-layout-footer-client@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer-client/-/react-toolkit-layout-footer-client-1.2.15.tgz#7be645225593cc0db9ec163295b926ad486ee0fe"
+"@axa-fr/react-toolkit-layout-footer-client@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer-client/-/react-toolkit-layout-footer-client-1.3.2.tgz#a177989b02f5b61d3a2f595b95f355bc72a38d65"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-layout-footer@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer/-/react-toolkit-layout-footer-1.2.15.tgz#3787c9e67354d5f1ac53c45e2128eaec79bbb6f3"
+"@axa-fr/react-toolkit-layout-footer@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer/-/react-toolkit-layout-footer-1.3.2.tgz#a115a82cfadf9beaae9a3a61c16629e453ff1213"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-layout-header@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-header/-/react-toolkit-layout-header-1.2.15.tgz#42ab43c57ae05098a2a02a79d6977379b213c222"
+"@axa-fr/react-toolkit-layout-header@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-header/-/react-toolkit-layout-header-1.3.2.tgz#1f3e0e86e31dff1700b23e08ba5a9f8cfb4afb67"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-action" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-link@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-link/-/react-toolkit-link-1.2.15.tgz#7507468b08526c6868f4cad195a952c6d42f7c7e"
+"@axa-fr/react-toolkit-link@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-link/-/react-toolkit-link-1.3.2.tgz#61aed7f95464d0ce826b0d4ed8e259f1e01a2e9b"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-list@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-list/-/react-toolkit-list-1.2.15.tgz#d8fe530c0f6e22e43cb9e1dc8af56071789e1d93"
+"@axa-fr/react-toolkit-list@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-list/-/react-toolkit-list-1.3.2.tgz#028673b0a6e08cd8de95022904c5ddcefe0daa99"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-loader@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-loader/-/react-toolkit-loader-1.2.15.tgz#ebb70504e37fd3730d34334313f003537bbb7d69"
+"@axa-fr/react-toolkit-loader@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-loader/-/react-toolkit-loader-1.3.2.tgz#588554bdfaa28f77638b4793bcc3e28af96e2751"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-modal-boolean@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-boolean/-/react-toolkit-modal-boolean-1.2.15.tgz#eb37bf04aa67497dc2481ac9f19a0d918b7337df"
+"@axa-fr/react-toolkit-modal-boolean@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-boolean/-/react-toolkit-modal-boolean-1.3.2.tgz#fb36d0bf9f6dfb61f990a216a72e410636ce903a"
   dependencies:
-    "@axa-fr/react-toolkit-button" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
-    "@axa-fr/react-toolkit-modal-default" "^1.2.16"
+    "@axa-fr/react-toolkit-button" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-modal-default" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-modal-default@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-default/-/react-toolkit-modal-default-1.2.15.tgz#d186bde18d6d32039f1c31d68a9512cd12ea9bbb"
+"@axa-fr/react-toolkit-modal-default@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-default/-/react-toolkit-modal-default-1.3.2.tgz#ec4b553ce41cb73295e257691e3080126d637b4d"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
     react-modal "^3.8.1"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-panel@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-panel/-/react-toolkit-panel-1.2.15.tgz#100fcecc6cd4222b54bebe49d2737579fd7ec481"
+"@axa-fr/react-toolkit-panel@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-panel/-/react-toolkit-panel-1.3.2.tgz#f703a3bc86e45c2716003b4e30985df1d9807b18"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.2.16"
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-action" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-popover@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-popover/-/react-toolkit-popover-1.2.15.tgz#7a3e0745aa8dbcd8f89da57893a0c7597dc2faee"
+"@axa-fr/react-toolkit-popover@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-popover/-/react-toolkit-popover-1.3.2.tgz#9a3060e053dccd7d1604191940cdbe6d896f9d56"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     outy "^0.1.2"
     prop-types "^15.5.10"
     react-popper "^1.3.3"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-restitution@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-restitution/-/react-toolkit-restitution-1.2.15.tgz#9ba5c1d16fbe205315752d35a9ffb3fc9a956b57"
+"@axa-fr/react-toolkit-restitution@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-restitution/-/react-toolkit-restitution-1.3.2.tgz#1272d518af1d52335084566a7ca3e1d58d707854"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
 
-"@axa-fr/react-toolkit-status@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-status/-/react-toolkit-status-1.2.15.tgz#6fda8757bd43882bb2182fefea1e1bfea2287d45"
+"@axa-fr/react-toolkit-status@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-status/-/react-toolkit-status-1.3.2.tgz#c711afddd5ea567365cf081b08e58e103f43fdec"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-table@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-table/-/react-toolkit-table-1.2.15.tgz#b32142ef7ee9fa20c833a0f57275f60412b14c3d"
+"@axa-fr/react-toolkit-table@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-table/-/react-toolkit-table-1.3.2.tgz#bca45affe77d6e8b0f7b2b5c1a1dae40b2d79960"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-tabs@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-tabs/-/react-toolkit-tabs-1.2.15.tgz#71d04981db70810d3d2f8a63bc7061a3ded4d32b"
+"@axa-fr/react-toolkit-tabs@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-tabs/-/react-toolkit-tabs-1.3.2.tgz#7b70d07030a459d126ba2e812cfb37678d69aff9"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     classnames "^2.2.6"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
-"@axa-fr/react-toolkit-title@^1.2.16":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-title/-/react-toolkit-title-1.2.15.tgz#a212197e2a9e4650bc528d7a7ee5acef8e1be581"
+"@axa-fr/react-toolkit-title@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-title/-/react-toolkit-title-1.3.2.tgz#9654484d1af230c398faf38d7012249b6233502d"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.2.16"
+    "@axa-fr/react-toolkit-core" "^1.3.2"
     prop-types "^15.5.10"
-    recompose "^0.27.1"
 
 "@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -682,6 +641,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://localhost:4873/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+ansi-colors@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-1.1.0.tgz#6374b4dd5d4718ff3ce27a671a3b1cad077132a9"
+  dependencies:
+    ansi-wrap "^0.1.0"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "http://localhost:4873/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -722,7 +687,7 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ansi-wrap@0.1.0:
+ansi-wrap@0.1.0, ansi-wrap@^0.1.0:
   version "0.1.0"
   resolved "http://localhost:4873/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
 
@@ -1696,7 +1661,7 @@ balanced-match@^0.4.2:
 
 balanced-match@^1.0.0:
   version "1.0.0"
-  resolved "http://localhost:4873/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
+  resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
 base64-arraybuffer@0.1.5:
   version "0.1.5"
@@ -1776,7 +1741,7 @@ bluebird@^2.9.26:
   version "2.11.0"
   resolved "http://localhost:4873/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
 
-bluebird@^3.1.1, bluebird@^3.4.7:
+bluebird@^3.1.1:
   version "3.5.1"
   resolved "http://localhost:4873/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
@@ -1827,7 +1792,7 @@ bootstrap@^4.2.1:
 
 brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.11"
-  resolved "http://localhost:4873/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
@@ -2161,9 +2126,9 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chalk@*, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.2:
-  version "2.4.0"
-  resolved "http://localhost:4873/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
+chalk@*, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -2188,10 +2153,6 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
-
-change-emitter@^0.1.2:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
 
 character-entities-html4@^1.0.0:
   version "1.1.2"
@@ -2518,7 +2479,7 @@ compression@^1.5.2:
 
 concat-map@0.0.1:
   version "0.0.1"
-  resolved "http://localhost:4873/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+  resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
 concat-stream@^1.5.2:
   version "1.6.2"
@@ -2579,9 +2540,9 @@ consolidate@^0.13.1:
   dependencies:
     bluebird "^2.9.26"
 
-consolidate@^0.14.1:
-  version "0.14.5"
-  resolved "http://localhost:4873/consolidate/-/consolidate-0.14.5.tgz#5a25047bc76f73072667c8cb52c989888f494c63"
+consolidate@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/consolidate/-/consolidate-0.15.1.tgz#21ab043235c71a07d45d9aad98593b0dba56bab7"
   dependencies:
     bluebird "^3.1.1"
 
@@ -3000,6 +2961,12 @@ define-properties@^1.1.2:
     foreach "^2.0.5"
     object-keys "^1.0.8"
 
+define-properties@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
+  dependencies:
+    object-keys "^1.0.12"
+
 define-property@^0.2.5:
   version "0.2.5"
   resolved "http://localhost:4873/define-property/-/define-property-0.2.5.tgz#c35b1ef918ec3c990f9a5bc57be04aacec5c8116"
@@ -3336,6 +3303,21 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
+es-abstract@^1.5.1:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.15.0.tgz#8884928ec7e40a79e3c9bc812d37d10c8b24cc57"
+  dependencies:
+    es-to-primitive "^1.2.0"
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.0"
+    is-callable "^1.1.4"
+    is-regex "^1.0.4"
+    object-inspect "^1.6.0"
+    object-keys "^1.1.1"
+    string.prototype.trimleft "^2.1.0"
+    string.prototype.trimright "^2.1.0"
+
 es-abstract@^1.7.0:
   version "1.11.0"
   resolved "http://localhost:4873/es-abstract/-/es-abstract-1.11.0.tgz#cce87d518f0496893b1a30cd8461835535480681"
@@ -3353,6 +3335,14 @@ es-to-primitive@^1.1.1:
     is-callable "^1.1.1"
     is-date-object "^1.0.1"
     is-symbol "^1.0.1"
+
+es-to-primitive@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/es-to-primitive/-/es-to-primitive-1.2.0.tgz#edf72478033456e8dda8ef09e00ad9650707f377"
+  dependencies:
+    is-callable "^1.1.4"
+    is-date-object "^1.0.1"
+    is-symbol "^1.0.2"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
   version "0.10.42"
@@ -3381,9 +3371,9 @@ es6-map@^0.1.3:
     es6-symbol "~3.1.1"
     event-emitter "~0.3.5"
 
-es6-promise@^3.1.2:
-  version "3.3.1"
-  resolved "http://localhost:4873/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
+es6-promise@^4.2.6:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
 
 es6-set@~0.1.5:
   version "0.1.5"
@@ -3722,11 +3712,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
-  version "3.0.1"
-  resolved "http://localhost:4873/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
-
-extend@~3.0.2:
+extend@^3.0.0, extend@~3.0.0, extend@~3.0.1, extend@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
 
@@ -3807,7 +3793,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.0, fbjs@^0.8.1:
+fbjs@^0.8.0:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
@@ -4059,15 +4045,15 @@ fs-readdir-recursive@^1.0.0:
   version "1.1.0"
   resolved "http://localhost:4873/fs-readdir-recursive/-/fs-readdir-recursive-1.1.0.tgz#e32fc030a2ccee44a6b5371308da54be0b397d27"
 
-fs-readfile-promise@^2.0.1:
-  version "2.0.1"
-  resolved "http://localhost:4873/fs-readfile-promise/-/fs-readfile-promise-2.0.1.tgz#80023823981f9ffffe01609e8be668f69ae49e70"
+fs-readfile-promise@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fs-readfile-promise/-/fs-readfile-promise-3.0.1.tgz#d0d307b7f6aedfc920c31fa6e5712efaa297c958"
   dependencies:
-    graceful-fs "^4.1.2"
+    graceful-fs "^4.1.11"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
-  resolved "http://localhost:4873/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
+  resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
 fsevents@^1.0.0, fsevents@^1.1.2:
   version "1.1.3"
@@ -4085,8 +4071,8 @@ fstream-ignore@^1.0.5:
     minimatch "^3.0.0"
 
 fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
-  version "1.0.11"
-  resolved "http://localhost:4873/fstream/-/fstream-1.0.11.tgz#5c1fb1f117477114f0632a0eb4b71b3cb0fd3171"
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.12.tgz#4e8ba8ee2d48be4f7d0de505455548eae5932045"
   dependencies:
     graceful-fs "^4.1.2"
     inherits "~2.0.0"
@@ -4235,6 +4221,17 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.2, glob@~7.1.1:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+glob@^7.1.3:
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
 glob@~3.1.21:
   version "3.1.21"
   resolved "http://localhost:4873/glob/-/glob-3.1.21.tgz#d29e0a055dea5138f4d07ed40e8982e83c2066cd"
@@ -4330,9 +4327,13 @@ graceful-fs@^3.0.0:
   dependencies:
     natives "^1.1.0"
 
+graceful-fs@^4.1.11:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
+
 graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
-  version "4.1.11"
-  resolved "http://localhost:4873/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
 
 graceful-fs@~1.2.0:
   version "1.2.3"
@@ -4419,13 +4420,16 @@ gulp-replace@0.5.4:
     readable-stream "^2.0.1"
     replacestream "^4.0.0"
 
-gulp-sass@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-3.2.1.tgz#2e3688a96fd8be1c0c01340750c191b2e79fab94"
+gulp-sass@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-4.0.2.tgz#cfb1e3eff2bd9852431c7ce87f43880807d8d505"
   dependencies:
-    gulp-util "^3.0"
+    chalk "^2.3.0"
     lodash.clonedeep "^4.3.2"
     node-sass "^4.8.3"
+    plugin-error "^1.0.1"
+    replace-ext "^1.0.0"
+    strip-ansi "^4.0.0"
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
@@ -4495,7 +4499,7 @@ gulp-ttf2woff@^1.1.0:
     readable-stream "^2.0.1"
     ttf2woff "^2.0.1"
 
-gulp-util@*, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.3, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.6:
+gulp-util@*, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.4, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8, gulp-util@~3.0.6:
   version "3.0.8"
   resolved "http://localhost:4873/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -4531,18 +4535,18 @@ gulp-util@^2.2.14, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-wrap@0.13.0:
-  version "0.13.0"
-  resolved "http://localhost:4873/gulp-wrap/-/gulp-wrap-0.13.0.tgz#90fb0b4a27a266433832ff7c6122db5c1ee894c6"
+gulp-wrap@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/gulp-wrap/-/gulp-wrap-0.15.0.tgz#e9014c9bb8643ab310e938d4469b8568551a552f"
   dependencies:
-    consolidate "^0.14.1"
-    es6-promise "^3.1.2"
-    fs-readfile-promise "^2.0.1"
-    gulp-util "^3.0.3"
-    js-yaml "^3.2.6"
-    lodash "^4.11.1"
-    node.extend "^1.1.2"
-    through2 "^2.0.1"
+    consolidate "^0.15.1"
+    es6-promise "^4.2.6"
+    fs-readfile-promise "^3.0.1"
+    js-yaml "^3.13.0"
+    lodash "^4.17.11"
+    node.extend "2.0.2"
+    plugin-error "^1.0.1"
+    through2 "^3.0.1"
     tryit "^1.0.1"
     vinyl-bufferstream "^1.0.1"
 
@@ -4695,6 +4699,12 @@ has@^1.0.1:
   dependencies:
     function-bind "^1.0.2"
 
+has@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
+  dependencies:
+    function-bind "^1.1.1"
+
 hash-base@^2.0.0:
   version "2.0.2"
   resolved "http://localhost:4873/hash-base/-/hash-base-2.0.2.tgz#66ea1d856db4e8a5470cadf6fce23ae5244ef2e1"
@@ -4771,10 +4781,6 @@ hoist-non-react-statics@^2.3.0:
   version "2.5.0"
   resolved "http://localhost:4873/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
 
-hoist-non-react-statics@^2.3.1:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
-
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "http://localhost:4873/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -4825,16 +4831,17 @@ html-tags@^2.0.0:
   version "2.0.0"
   resolved "http://localhost:4873/html-tags/-/html-tags-2.0.0.tgz#10b30a386085f43cede353cc8fa7cb0deeea668b"
 
-html-webpack-plugin@2.28.0:
-  version "2.28.0"
-  resolved "http://localhost:4873/html-webpack-plugin/-/html-webpack-plugin-2.28.0.tgz#2e7863b57e5fd48fe263303e2ffc934c3064d009"
+html-webpack-plugin@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
   dependencies:
-    bluebird "^3.4.7"
     html-minifier "^3.2.3"
     loader-utils "^0.2.16"
     lodash "^4.17.3"
     pretty-error "^2.0.2"
+    tapable "^1.0.0"
     toposort "^1.0.0"
+    util.promisify "1.0.0"
 
 htmlparser2@^3.9.1, htmlparser2@^3.9.2:
   version "3.9.2"
@@ -5011,7 +5018,7 @@ indexof@0.0.1:
 
 inflight@^1.0.4:
   version "1.0.6"
-  resolved "http://localhost:4873/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
+  resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
   dependencies:
     once "^1.3.0"
     wrappy "1"
@@ -5020,13 +5027,17 @@ inherits@1:
   version "1.0.2"
   resolved "http://localhost:4873/inherits/-/inherits-1.0.2.tgz#ca4309dadee6b54cc0b8d247e8d7c7a0975bdc9b"
 
-inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
-  version "2.0.3"
-  resolved "http://localhost:4873/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
+inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
 
 inherits@2.0.1:
   version "2.0.1"
   resolved "http://localhost:4873/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
+
+inherits@2.0.3:
+  version "2.0.3"
+  resolved "http://localhost:4873/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
@@ -5058,7 +5069,7 @@ interpret@^1.0.0:
   version "1.1.0"
   resolved "http://localhost:4873/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
-invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
+invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "http://localhost:4873/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -5133,6 +5144,10 @@ is-builtin-module@^1.0.0:
 is-callable@^1.1.1, is-callable@^1.1.3:
   version "1.1.3"
   resolved "http://localhost:4873/is-callable/-/is-callable-1.1.3.tgz#86eb75392805ddc33af71c92a0eedf74ee7604b2"
+
+is-callable@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.4.tgz#1e1adf219e1eeb684d691f9d6a05ff0d30a24d75"
 
 is-ci@^1.0.9:
   version "1.1.0"
@@ -5379,6 +5394,12 @@ is-symbol@^1.0.1:
   version "1.0.1"
   resolved "http://localhost:4873/is-symbol/-/is-symbol-1.0.1.tgz#3cc59f00025194b6ab2e38dbae6689256b660572"
 
+is-symbol@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.2.tgz#a055f6ae57192caee329e7a860118b497a950f38"
+  dependencies:
+    has-symbols "^1.0.0"
+
 is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "http://localhost:4873/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
@@ -5405,9 +5426,9 @@ is-word-character@^1.0.0:
   version "1.0.1"
   resolved "http://localhost:4873/is-word-character/-/is-word-character-1.0.1.tgz#5a03fa1ea91ace8a6eb0c7cd770eb86d65c8befb"
 
-is@^3.1.0:
-  version "3.2.1"
-  resolved "http://localhost:4873/is/-/is-3.2.1.tgz#d0ac2ad55eb7b0bec926a5266f6c662aaa83dca5"
+is@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/is/-/is-3.3.0.tgz#61cff6dd3c4193db94a3d62582072b44e5645d79"
 
 isarray@0.0.1:
   version "0.0.1"
@@ -5473,9 +5494,9 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
 
-js-yaml@^3.2.6, js-yaml@^3.4.3, js-yaml@^3.5.1, js-yaml@^3.9.0:
-  version "3.11.0"
-  resolved "http://localhost:4873/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
+js-yaml@^3.13.0, js-yaml@^3.4.3, js-yaml@^3.5.1, js-yaml@^3.9.0:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -5977,11 +5998,7 @@ lodash@^3.10.0, lodash@^3.10.1:
   version "3.10.1"
   resolved "http://localhost:4873/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
-  version "4.17.5"
-  resolved "http://localhost:4873/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
-
-lodash@^4.17.11:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.11, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6258,7 +6275,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
 
 "minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
-  resolved "http://localhost:4873/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
     brace-expansion "^1.1.7"
 
@@ -6284,7 +6301,7 @@ minimist-options@^3.0.1:
 
 minimist@0.0.8:
   version "0.0.8"
-  resolved "http://localhost:4873/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@1.1.x:
   version "1.1.3"
@@ -6523,11 +6540,12 @@ node-uuid@~1.4.7:
   version "1.4.8"
   resolved "http://localhost:4873/node-uuid/-/node-uuid-1.4.8.tgz#b040eb0923968afabf8d32fb1f17f1167fdab907"
 
-node.extend@^1.1.2:
-  version "1.1.6"
-  resolved "http://localhost:4873/node.extend/-/node.extend-1.1.6.tgz#a7b882c82d6c93a4863a5504bd5de8ec86258b96"
+node.extend@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/node.extend/-/node.extend-2.0.2.tgz#b4404525494acc99740f3703c496b7d5182cc6cc"
   dependencies:
-    is "^3.1.0"
+    has "^1.0.3"
+    is "^3.2.1"
 
 "nopt@2 || 3", nopt@3.0.x, nopt@~3.0.1:
   version "3.0.6"
@@ -6639,9 +6657,17 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-inspect@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.6.0.tgz#c70b6cbf72f274aab4c34c0c82f5167bf82cf15b"
+
 object-keys@^1.0.11, object-keys@^1.0.8:
   version "1.0.11"
   resolved "http://localhost:4873/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
+
+object-keys@^1.0.12, object-keys@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
 
 object-keys@~0.4.0:
   version "0.4.0"
@@ -6674,6 +6700,13 @@ object.defaults@^1.1.0:
     array-slice "^1.0.0"
     for-own "^1.0.0"
     isobject "^3.0.0"
+
+object.getownpropertydescriptors@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/object.getownpropertydescriptors/-/object.getownpropertydescriptors-2.0.3.tgz#8758c846f5b407adab0f236e0986f14b051caa16"
+  dependencies:
+    define-properties "^1.1.2"
+    es-abstract "^1.5.1"
 
 object.map@^1.0.0:
   version "1.0.1"
@@ -6711,7 +6744,7 @@ on-headers@~1.0.1:
 
 once@^1.3.0, once@^1.3.3:
   version "1.4.0"
-  resolved "http://localhost:4873/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
+  resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   dependencies:
     wrappy "1"
 
@@ -7053,6 +7086,15 @@ plexer@^1.0.1:
     debug "2.6.1"
     isstream "^0.1.2"
     readable-stream "^2.0.2"
+
+plugin-error@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/plugin-error/-/plugin-error-1.0.1.tgz#77016bd8919d0ac377fdcdd0322328953ca5781c"
+  dependencies:
+    ansi-colors "^1.0.1"
+    arr-diff "^4.0.0"
+    arr-union "^3.1.0"
+    extend-shallow "^3.0.2"
 
 pluralize@^1.2.1:
   version "1.2.1"
@@ -7881,15 +7923,18 @@ react-input-autosize@^2.2.1:
   dependencies:
     prop-types "^15.5.8"
 
-react-input-mask@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-1.2.2.tgz#225a1130d316ee54cea7431f004c738b4c41b4da"
+react-input-mask@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-2.0.4.tgz#9ade5cf8196f4a856dbf010820fe75a795f3eb14"
+  dependencies:
+    invariant "^2.2.4"
+    warning "^4.0.2"
 
 react-is@^16.8.1:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
@@ -8046,6 +8091,14 @@ readable-stream@1.0, "readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@~1.0
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
+"readable-stream@2 || 3":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
+
 readable-stream@^1.0.33, readable-stream@~1.1.9:
   version "1.1.14"
   resolved "http://localhost:4873/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
@@ -8100,17 +8153,6 @@ rechoir@^0.6.2:
   resolved "http://localhost:4873/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   dependencies:
     resolve "^1.1.6"
-
-recompose@^0.27.1:
-  version "0.27.1"
-  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.27.1.tgz#1a49e931f183634516633bbb4f4edbfd3f38a7ba"
-  dependencies:
-    babel-runtime "^6.26.0"
-    change-emitter "^0.1.2"
-    fbjs "^0.8.1"
-    hoist-non-react-statics "^2.3.1"
-    react-lifecycles-compat "^3.0.2"
-    symbol-observable "^1.0.4"
 
 redent@^1.0.0:
   version "1.0.0"
@@ -8286,7 +8328,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "http://localhost:4873/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-replace-ext@1.0.0:
+replace-ext@1.0.0, replace-ext@^1.0.0:
   version "1.0.0"
   resolved "http://localhost:4873/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
@@ -8501,10 +8543,10 @@ right-align@^0.1.1:
     align-text "^0.1.1"
 
 rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
-  version "2.6.2"
-  resolved "http://localhost:4873/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
   dependencies:
-    glob "^7.0.5"
+    glob "^7.1.3"
 
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.1"
@@ -8541,6 +8583,10 @@ safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, s
 safe-buffer@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
+
+safe-buffer@~5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -9133,11 +9179,31 @@ string.prototype.codepointat@^0.2.0:
   version "0.2.1"
   resolved "http://localhost:4873/string.prototype.codepointat/-/string.prototype.codepointat-0.2.1.tgz#004ad44c8afc727527b108cd462b4d971cd469bc"
 
+string.prototype.trimleft@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimleft/-/string.prototype.trimleft-2.1.0.tgz#6cc47f0d7eb8d62b0f3701611715a3954591d634"
+  dependencies:
+    define-properties "^1.1.3"
+    function-bind "^1.1.1"
+
+string.prototype.trimright@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimright/-/string.prototype.trimright-2.1.0.tgz#669d164be9df9b6f7559fa8e89945b168a5a6c58"
+  dependencies:
+    define-properties "^1.1.3"
+    function-bind "^1.1.1"
+
 string_decoder@^1.0.0, string_decoder@~1.1.1:
   version "1.1.1"
   resolved "http://localhost:4873/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
   dependencies:
     safe-buffer "~5.1.0"
+
+string_decoder@^1.1.1:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.3.0.tgz#42f114594a46cf1a8e30b0a84f56c78c3edac21e"
+  dependencies:
+    safe-buffer "~5.2.0"
 
 string_decoder@~0.10.x:
   version "0.10.31"
@@ -9153,8 +9219,8 @@ stringify-entities@^1.0.1:
     is-hexadecimal "^1.0.0"
 
 stringstream@~0.0.4, stringstream@~0.0.5:
-  version "0.0.5"
-  resolved "http://localhost:4873/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.6.tgz#7880225b0d4ad10e30927d167a1d6f2fd3b33a72"
 
 strip-ansi@^0.3.0:
   version "0.3.0"
@@ -9360,10 +9426,6 @@ svgpath@^2.1.5:
   version "2.2.1"
   resolved "http://localhost:4873/svgpath/-/svgpath-2.2.1.tgz#0834bb67c89a76472b2bd06cc101fa7b517b222c"
 
-symbol-observable@^1.0.4:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
-
 table@^3.7.8:
   version "3.8.3"
   resolved "http://localhost:4873/table/-/table-3.8.3.tgz#2bbc542f0fda9861a755d3947fefd8b3f513855f"
@@ -9389,6 +9451,10 @@ table@^4.0.1:
 tapable@^0.2.7, tapable@~0.2.5:
   version "0.2.8"
   resolved "http://localhost:4873/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
+
+tapable@^1.0.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
 
 tar-pack@^3.4.0:
   version "3.4.1"
@@ -9447,12 +9513,18 @@ through2@^0.6.1:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
 
-through2@^2.0.0, through2@^2.0.1, through2@^2.0.3:
+through2@^2.0.0, through2@^2.0.3:
   version "2.0.3"
   resolved "http://localhost:4873/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
   dependencies:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
+
+through2@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/through2/-/through2-3.0.1.tgz#39276e713c3302edf9e388dd9c812dd3b825bd5a"
+  dependencies:
+    readable-stream "2 || 3"
 
 through@^2.3.6, through@~2.3.4:
   version "2.3.8"
@@ -9846,9 +9918,16 @@ user-home@^2.0.0:
   dependencies:
     os-homedir "^1.0.0"
 
-util-deprecate@~1.0.1:
+util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://localhost:4873/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+util.promisify@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/util.promisify/-/util.promisify-1.0.0.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
+  dependencies:
+    define-properties "^1.1.2"
+    object.getownpropertydescriptors "^2.0.3"
 
 util@0.10.3, util@^0.10.3:
   version "0.10.3"
@@ -10169,7 +10248,7 @@ wrap-ansi@^2.0.0:
 
 wrappy@1:
   version "1.0.2"
-  resolved "http://localhost:4873/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
+  resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
 write@^0.2.1:
   version "0.2.1"

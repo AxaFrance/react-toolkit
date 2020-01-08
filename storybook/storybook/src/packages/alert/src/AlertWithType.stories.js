@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
-import { text, selectV2 } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 import addToStorie from '@axa-fr/storybook-addons';
 import { AlertWithType } from '@axa-fr/react-toolkit-alert';
 import { action } from '@storybook/addon-actions';
@@ -15,7 +15,7 @@ const storyData = {
       desc: 'Default',
       component: () => (
         <AlertWithType
-          type={selectV2(
+          type={select(
             'type',
             ['error', 'info', 'danger', 'success'],
             'danger'
@@ -32,7 +32,7 @@ const storyData = {
       desc: 'With close button',
       component: () => (
         <AlertWithType
-          type={selectV2(
+          type={select(
             'type',
             ['error', 'info', 'danger', 'success'],
             'danger'
@@ -50,7 +50,7 @@ const storyData = {
       desc: 'With child and custom icon',
       component: () => (
         <AlertWithType
-          type={selectV2(
+          type={select(
             'type',
             ['error', 'info', 'danger', 'success'],
             'info'

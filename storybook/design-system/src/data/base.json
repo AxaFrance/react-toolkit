@@ -7,5 +7,5 @@
   "storybookIframeUrl": "https://axaguildev.github.io/react-toolkit/latest/storybook/iframe.html?id=",
   "githubBaseUrl": "https://github.com/AxaGuilDEv/react-toolkit/tree/master/packages/",
   "badgeBaseUrl": "https://badge.fury.io/js/",
-  "baseUrlProd": "https://axaguildev.github.io/react-toolkit/latest/design-system"
+  "baseUrlProd": "https://axaguildev.github.io/react-toolkit/latest/design"
 }

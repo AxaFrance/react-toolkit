@@ -21,7 +21,12 @@ const storyData = {
             'title',
             'Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office'
           )}
-        />
+        >
+          {text(
+          'children',
+          ''
+          )}
+        </Alert>
       ),
     },
     {

@@ -51,9 +51,6 @@ steps:
   - script: npm run lint
     displayName: 'npm run lint'
 
-  - script: npm run css:build
-    displayName: 'build css'
-
   - script: npm run storybook:build
     displayName: 'build storybook'
 
@@ -79,9 +76,9 @@ steps:
     displayName: 'Run Code Analysis'
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
-  #- task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
-  #  displayName: 'Publish Quality Gate Result'
-  #  condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
+  - task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+    displayName: 'Publish Quality Gate Result'
+    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
   - script: npm run publish -- $(Npm.Publish.Version) --yes --concurrency 1 --force-publish
     displayName: 'lerna publish'
