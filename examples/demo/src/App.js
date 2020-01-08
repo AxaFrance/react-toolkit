@@ -4,9 +4,9 @@ import './App.scss';
 
 import EnvironmentProvider, { withEnvironment} from 'EnvironmentProvider';
 
-import Header from 'layout/Header';
-import Footer from 'layout/Footer';
-import Routes from 'layout/Routes';
+import Header from 'shared/Header';
+import Footer from 'shared/Footer';
+import Routes from './Routes';
 
 
 const RoutesBase = ({environment}) => (<Router basename={environment.baseUrl}>
