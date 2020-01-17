@@ -8,15 +8,12 @@ const customFetch = fetch => apiBaseUrl => async (path, config) => {
   return response.json();
 };
 
-const withCustomFetch = fetch => Component => ({environment, ...otherProps}) => {
-  console.log(fetch, environment, Component );
-  return (
+const withCustomFetch = fetch => Component => ({environment, ...otherProps}) => (
   <Component
     {...otherProps}
     fetch={customFetch(fetch)(environment.apiUrl)}
   />
 );
-  };
 
 export default (fetch = undefined) =>
   compose(

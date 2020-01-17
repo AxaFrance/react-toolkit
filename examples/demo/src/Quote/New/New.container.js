@@ -72,7 +72,7 @@ const useNew = history => {
   const onSubmit = () => {
     const errors = errorList(state.fields);
     if (!errors.length) {
-      history.push('/confirm');
+      history.push('/quote/confirm');
     }
     dispatch({type: 'onSubmit'});
   };

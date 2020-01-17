@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthenticationProvider } from '@axa-fr/react-oidc-context';
 import EnvironmentProvider, { withEnvironment} from 'EnvironmentProvider';
@@ -6,7 +6,7 @@ import './App.scss';
 
 import Header from 'shared/Header';
 import Footer from 'shared/Footer';
-import Routes from './Routes';
+import Routes from './AppRoutes';
 
 const RoutesBase = ({environment}) => (
   <AuthenticationProvider
@@ -22,12 +22,10 @@ const RoutesBase = ({environment}) => (
 
 const MyRoutes = withEnvironment(RoutesBase);
 
-const App = () => {
-  return (
+const App = () => (
     <EnvironmentProvider>
       <MyRoutes/>
     </EnvironmentProvider>
   );
-};
 
 export default App;
