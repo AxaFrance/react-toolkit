@@ -1,4 +1,19 @@
 {
   "apiUrl": "https://api.mlab.com/api/1/databases/toolkitaxa/collections/{path}",
-  "baseUrl" : "/react-toolkit/latest/demo/"
+  "baseUrl" : "/react-toolkit/latest/demo/",
+  "oidc": {
+    "isEnabled": false,
+    "configuration": {
+      "client_id": "spa",
+      "redirect_uri": "http://localhost:3000/authentication/callback",
+      "response_type": "code",
+      "post_logout_redirect_uri": "http://localhost:3000/",
+      "scope": "openid profile email api offline_access",
+      "authority": "https://demo.identityserver.io",
+      "silent_redirect_uri": "http://localhost:3000/authentication/silent_callback",
+      "automaticSilentRenew": true,
+      "loadUserInfo": true,
+      "triggerAuthFlow": true
+    }
+  }
 }
