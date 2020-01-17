@@ -13,7 +13,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
   <>
     <Title>Page d'accueil</Title>
     <div className="af-home container">
-      <Link className="btn af-btn af-btn--quote" to="/new">
+      <Link className="btn af-btn af-btn--quote" to="/quote/new">
         <span className="af-btn__text">Nouveau devis</span>
       </Link>
       <h1 className="af-title--content">{`Vos devis en cours (${

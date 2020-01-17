@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './App.scss';
-
 import EnvironmentProvider, { withEnvironment} from 'EnvironmentProvider';
-
 import Header from 'shared/Header';
 import Footer from 'shared/Footer';
-import Routes from './Routes';
+import Routes from './AppRoutes';
 
+import './App.scss';
 
 const RoutesBase = ({environment}) => (<Router basename={environment.baseUrl}>
   <Fragment>
@@ -26,7 +24,5 @@ const App = () => {
     </EnvironmentProvider>
   );
 };
-
-
 
 export default App;

@@ -9,7 +9,6 @@ const customFetch = fetch => apiBaseUrl => async (path, config) => {
 };
 
 const withCustomFetch = fetch => Component => ({environment, ...otherProps}) => {
-  console.log(fetch, environment, Component );
   return (
   <Component
     {...otherProps}

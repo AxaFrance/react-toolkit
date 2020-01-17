@@ -6,7 +6,7 @@ const Stepper = ({ activeStep }) => (
   <Steps classModifier="devis" className="af-steps-new">
     <Step
       id="id1"
-      href="/new"
+      href="/quote/new"
       onClick={() => {}}
       number="1"
       title="Nouveau devis"
