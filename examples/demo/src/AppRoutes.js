@@ -5,14 +5,12 @@ import Home from './Home';
 import Quote from './Quote';
 import PageNotFound from './NotFound';
 
-const Routes = () => {
-  return (
+const Routes = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/quote" component={Quote} />
       <Route component={PageNotFound} />
     </Switch>
   );
-};
 
 export default Routes;

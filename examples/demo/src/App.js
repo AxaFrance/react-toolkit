@@ -1,28 +1,37 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthenticationProvider, withOidcSecure } from '@axa-fr/react-oidc-context';
 import EnvironmentProvider, { withEnvironment} from 'EnvironmentProvider';
+import './App.scss';
+
 import Header from 'shared/Header';
 import Footer from 'shared/Footer';
 import Routes from './AppRoutes';
 
-import './App.scss';
+const RoutesBase = ({environment}) => (
+    <Router basename={environment.baseUrl}>
+      <Header />
+      <Routes />
+      <Footer />
+    </Router>
+);
 
-const RoutesBase = ({environment}) => (<Router basename={environment.baseUrl}>
-  <Fragment>
-    <Header />
-    <Routes />
-    <Footer />
-  </Fragment>
-  </Router>);
+const SecureRouteBase = withOidcSecure(RoutesBase);
 
-const MyRoutes = withEnvironment(RoutesBase);
+const Authentification = ({environment}) => (
+  <AuthenticationProvider
+    configuration={environment.oidc.configuration}
+    isEnabled={environment.oidc.isEnabled}
+  >
+    <SecureRouteBase environment={environment} />
+  </AuthenticationProvider>);
 
-const App = () => {
-  return (
+const AuthentificationWithEnvironment = withEnvironment(Authentification);
+
+const App = () => (
     <EnvironmentProvider>
-      <MyRoutes/>
+      <AuthentificationWithEnvironment />
     </EnvironmentProvider>
   );
-};
 
 export default App;
