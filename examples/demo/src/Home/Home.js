@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -84,6 +83,7 @@ const Home = ({ items, numberItemsTotal, filters, loaderMode, onChangePaging, on
           numberItems={filters.paging.numberItemsByPage}
           numberPages={filters.paging.numberPages}
           currentPage={filters.paging.currentPage}
+          id="home_paging"
         />
       </Loader>
     </div>

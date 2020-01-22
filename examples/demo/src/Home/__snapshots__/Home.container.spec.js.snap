@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.container HomeContainer render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-title-bar"
+  >
+    <div
+      class="container-fluid container af-title-bar__wrapper"
+    >
+      <h1
+        class="af-title-bar__title"
+      >
+        Page d'accueil
+      </h1>
+    </div>
+  </div>
+  <div
+    class="af-home container"
+  >
+    <a
+      class="btn af-btn af-btn--quote"
+      href="/quote/new"
+    >
+      <span
+        class="af-btn__text"
+      >
+        Nouveau devis
+      </span>
+    </a>
+    <h1
+      class="af-title--content"
+    >
+      Vos devis en cours (1)
+    </h1>
+    <div
+      style="min-height: 94px; position: relative;"
+    >
+      <table
+        class="af-table"
+      >
+        <thead
+          class="af-table-thead"
+        >
+          <tr
+            class="af-table__tr"
+          >
+            <th
+              class="af-table__th af-table__th--sortable"
+            >
+              <span
+                class="af-table__th-content"
+              >
+                <button
+                  class="af-btn af-btn--table-sorting"
+                >
+                  <span
+                    class="af-btn__text"
+                  >
+                    Nom prénom
+                  </span>
+                  <i
+                    class="glyphicon glyphicon-sorting"
+                  />
+                </button>
+              </span>
+            </th>
+            <th
+              class="af-table__th af-table__th--sortable"
+            >
+              <span
+                class="af-table__th-content"
+              >
+                <button
+                  class="af-btn af-btn--table-sorting"
+                >
+                  <span
+                    class="af-btn__text"
+                  >
+                    Type
+                  </span>
+                  <i
+                    class="glyphicon glyphicon-sorting"
+                  />
+                </button>
+              </span>
+            </th>
+            <th
+              class="af-table__th af-table__th--sortable"
+            >
+              <span
+                class="af-table__th-content"
+              >
+                <button
+                  class="af-btn af-btn--table-sorting"
+                >
+                  <span
+                    class="af-btn__text"
+                  >
+                    Agent
+                  </span>
+                  <i
+                    class="glyphicon glyphicon-sorting"
+                  />
+                </button>
+              </span>
+            </th>
+            <th
+              class="af-table__th"
+            >
+              Date de naissance
+            </th>
+            <th
+              class="af-table__th af-table__th--sortable"
+            >
+              <span
+                class="af-table__th-content"
+              >
+                <button
+                  class="af-btn af-btn--table-sorting"
+                >
+                  <span
+                    class="af-btn__text"
+                  >
+                    Date d'entrée
+                  </span>
+                  <i
+                    class="glyphicon glyphicon-sorting"
+                  />
+                </button>
+              </span>
+            </th>
+            <th
+              class="af-table__th"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="af-table__body"
+        >
+          <tr
+            class="af-table__tr"
+          >
+            <td
+              class="af-table__cell"
+            >
+              Olivier Youf
+            </td>
+            <td
+              class="af-table__cell"
+            >
+              auto
+            </td>
+            <td
+              class="af-table__cell"
+            >
+              Guillaume Chervet
+            </td>
+            <td
+              class="af-table__cell"
+            >
+              02/03/1984
+            </td>
+            <td
+              class="af-table__cell"
+            >
+              2011-5-4
+            </td>
+            <td
+              class="af-table__cell"
+            >
+              <a
+                class="btn af-btn--circle"
+                href="#"
+                id="id"
+                role="button"
+                tabindex="0"
+                title="Editer"
+              >
+                <i
+                  class="glyphicon glyphicon-edit"
+                />
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="af-paging"
+      >
+        <div
+          class="af-paging__limit"
+        >
+          <div
+            class="af-paging__limit"
+          >
+            <form
+              class="af-paging__form"
+            >
+              <div
+                class="af-form__group"
+              >
+                <div
+                  class="col col-sm-2 col-md-2 col-lg-2 col-xl-2"
+                >
+                  <label
+                    class="af-form__group-label"
+                    for="home_paging"
+                  >
+                    Afficher
+                  </label>
+                </div>
+                <div
+                  class="col col-sm-10 col-md-10 col-lg-10 col-xl-10"
+                >
+                  <div
+                    class="af-form__select"
+                  >
+                    <div
+                      class="af-form__select-container"
+                    >
+                      <select
+                        class="af-form__input-select"
+                        id="home_paging"
+                      >
+                        <option
+                          value="5"
+                        >
+                          5
+                        </option>
+                        <option
+                          value="10"
+                        >
+                          10
+                        </option>
+                        <option
+                          value="25"
+                        >
+                          25
+                        </option>
+                        <option
+                          value="50"
+                        >
+                          50
+                        </option>
+                        <option
+                          value="100"
+                        >
+                          100
+                        </option>
+                      </select>
+                      <span
+                        class="glyphicon glyphicon-menu-down"
+                      />
+                    </div>
+                    <span
+                      class="af-form__input-cmplt"
+                    >
+                      éléments
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="af-paging__pager"
+        >
+          <nav
+            class="af-pager"
+          >
+            <ul
+              class="af-pager__pagination"
+            >
+              <li
+                class="af-pager__item af-pager__item--disabled"
+              >
+                <span
+                  class="af-pager__item-nolink"
+                >
+                  « Précédent
+                </span>
+              </li>
+              <li
+                class="af-pager__item af-pager__item--active"
+              >
+                <a
+                  class="af-pager__item-link"
+                  href="#"
+                >
+                  <span>
+                    1
+                  </span>
+                </a>
+              </li>
+              <li
+                class="af-pager__item af-pager__item--disabled"
+              >
+                <span
+                  class="af-pager__item-nolink"
+                >
+                  Suivant »
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+</DocumentFragment>
+`;
