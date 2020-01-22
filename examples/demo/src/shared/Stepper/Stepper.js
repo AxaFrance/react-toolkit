@@ -1,4 +1,4 @@
-import React from 'react';
+nimport React from 'react';
 import { Steps, Step, StepBase } from '@axa-fr/react-toolkit-all';
 import './Stepper.scss';
 
