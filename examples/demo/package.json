@@ -81,6 +81,7 @@
     "@storybook/addon-actions": "^5.3.6",
     "@storybook/addon-knobs": "^5.3.6",
     "@storybook/react": "^5.3.6",
+    "@testing-library/react": "^9.4.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.2",
     "express": "^4.17.1",

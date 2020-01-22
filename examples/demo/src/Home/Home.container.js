@@ -4,14 +4,13 @@ import fetchDevis from './Home.service';
 import React, {useEffect, useReducer} from 'react';
 import withCustomFetch from '../withCustomFetch';
 import withLoader from '../withLoader';
-import compose from '../compose';
-import {withRouter} from 'react-router-dom';
 import {computeNumberPages, filterPaging, getItemsSorted} from "./Home.filters";
 
 const HomeWithLoader = withLoader(Home);
 
 const init = (fetch, dispatch) => async () => {
   const items = await fetchDevis(fetch)();
+  console.log(items);
   dispatch({type: "init", data :{items}});
 };
 
@@ -95,7 +94,7 @@ const useHome = fetch => {
   return { state, onChangePaging, onChangeFilter };
 };
 
-const HomeContainer = ({ fetch }) => {
+export const HomeContainer = ({ fetch }) => {
   const { state, onChangePaging, onChangeFilter } = useHome(fetch);
   const itemsSorted = getItemsSorted(state.items, state.filters.columns);
   const numberPages = computeNumberPages(itemsSorted, state.filters.paging.numberItemsByPage);
@@ -113,6 +112,4 @@ const HomeContainer = ({ fetch }) => {
   return (<HomeWithLoader {...state} numberItemsTotal={state.items.length} items={items} filters={filters} onChangePaging={onChangePaging} onChangeFilter={onChangeFilter} />);
 };
 
-export default compose(
-  withCustomFetch(fetch),
-  withRouter)(HomeContainer);
+export default withCustomFetch(fetch)(HomeContainer);
