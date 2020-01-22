@@ -10,7 +10,6 @@ const HomeWithLoader = withLoader(Home);
 
 const init = (fetch, dispatch) => async () => {
   const items = await fetchDevis(fetch)();
-  console.log(items);
   dispatch({type: "init", data :{items}});
 };
 
