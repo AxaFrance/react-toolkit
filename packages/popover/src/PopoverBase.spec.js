@@ -31,13 +31,6 @@ const createWrapper = customProps => {
 };
 
 describe('<PopoverBase />', () => {
-  it('Target click throw onToggle event', () => {
-    const toggleClick = jest.fn();
-    const wrapper = createWrapper({ onToggle: toggleClick });
-    const button = wrapper.find('#idbouton');
-    button.simulate('click');
-    expect(toggleClick).toHaveBeenCalled();
-  });
   it('Should contain AnimatedPopover element', () => {
     const wrapper = createWrapper();
     expect(wrapper.find('AnimatedPopover').length).toBe(1);
@@ -51,8 +44,6 @@ const createWrapperAnimatedPopover = customProps => {
     isOpen: false,
     className: '',
     classModifier: '',
-    onToggle: () => '',
-    onOutsideTap: null,
     children: <div>Content</div>,
   };
   const actualProps = Object.assign(defaultProps, customProps);
@@ -80,44 +71,4 @@ describe('<AnimatedPopover />', () => {
     expect(wrapper.find('Reference').find('.targetElement').length).toBe(1);
   });
 
-  it('Should outsideTap.remove called when setOusideTap called', () => {
-    const mockRemove = jest.fn();
-    const wrapper = createWrapperAnimatedPopover();
-    const instance = wrapper.instance();
-    instance.outsideTap = {
-      remove: mockRemove,
-    };
-    instance.setOusideTap();
-    expect(mockRemove).toHaveBeenCalled();
-  });
-
-  it('Should outy module function called when setOusideTap called', () => {
-    const mockOuty = jest.fn();
-    const wrapper = createWrapperAnimatedPopover();
-    const instance = wrapper.instance();
-    outy.mockImplementation(mockOuty);
-    instance.setOusideTap();
-    expect(mockOuty).toHaveBeenCalled();
-  });
-
-  it('Should outsideTap.remove called when component unmounted called', () => {
-    const mockRemove = jest.fn();
-    const wrapper = createWrapperAnimatedPopover({ onOutsideTap: true });
-    const instance = wrapper.instance();
-    instance.outsideTap = {
-      remove: mockRemove,
-    };
-    wrapper.unmount();
-    expect(mockRemove).toHaveBeenCalled();
-  });
-  it('Should setOusideTap called when any isOpen props changed', () => {
-    const mockSetOusideTap = jest.fn();
-    const wrapper = createWrapperAnimatedPopover({ onOutsideTap: true });
-    const instance = wrapper.instance();
-    instance.setOusideTap = mockSetOusideTap;
-    wrapper.setProps({ isOpen: true });
-    setTimeout(() => {
-      expect(mockSetOusideTap).toHaveBeenCalled();
-    }, 200);
-  });
 });

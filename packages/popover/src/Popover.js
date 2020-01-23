@@ -28,41 +28,84 @@ const defaultProps = {
 export class PopoverClick extends Component {
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
-    this.outsideTap = this.outsideTap.bind(this);
     this.state = {
       isOpen: false,
+      isHover: false,
+      isHoverPopover: false,
     };
+    this.outsideClick = this.outsideClick.bind(this);
+    this.enter = this.enter.bind(this);
+    this.leave = this.leave.bind(this);
+    this.enterPopover = this.enterPopover.bind(this);
+    this.leavePopover = this.leavePopover.bind(this);
   }
 
-  toggle() {
-    const { isOpen } = this.state;
+  componentDidMount() {
+    const body = window.document.getElementsByTagName('body')[0];
+    body.addEventListener("mouseup", this.outsideClick);
+  }
+
+  componentWillUnmount() {
+    const body = window.document.getElementsByTagName('body')[0];
+    body.removeEventListener("mouseup", this.outsideClick);
+  }
+
+  outsideClick ()
+  {
+    const { isHover, isHoverPopover, isOpen } = this.state;
+    if (!isHoverPopover && isOpen) {
+      this.setState({
+        isOpen: false,
+      });
+    }
+    if(isHover && !isHoverPopover && !isOpen) {
+      this.setState({
+        isOpen: true,
+      });
+    }
+  }
+
+  enter() {
     this.setState({
-      isOpen: !isOpen,
+      isHover: true,
     });
   }
 
-  outsideTap() {
+  leave() {
     this.setState({
-      isOpen: false,
+      isHover: false,
+      isHoverPopover: false,
+    });
+  }
+
+  enterPopover() {
+    this.setState({
+      isHoverPopover: true,
+    });
+  }
+
+  leavePopover() {
+    this.setState({
+      isHoverPopover: false,
     });
   }
 
   render() {
-    const { children, placement, className, classModifier } = this.props;
-    const { isOpen } = this.state;
-    return (
-      <PopoverBase
-        className={className}
-        classModifier={classModifier}
-        onToggle={this.toggle}
-        onOutsideTap={this.outsideTap}
-        isOpen={isOpen}
-        placement={placement}>
-        {children}
+      const { children, placement, className, classModifier } = this.props;
+        const { isOpen } = this.state;
+        return (<span onMouseEnter={this.enter} onMouseLeave={this.leave}>
+          <PopoverBase
+            isOpen={isOpen}
+            placement={placement}
+            className={className}
+            classModifier={classModifier}
+            onMouseEnter={this.enterPopover}
+            onMouseLeave={this.leavePopover}
+          >
+          {children}
       </PopoverBase>
-    );
-  }
+  </span>);
+    }
 }
 
 export class PopoverOver extends Component {

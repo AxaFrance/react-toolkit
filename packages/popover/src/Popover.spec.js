@@ -44,20 +44,6 @@ describe('<PopoverClick />', () => {
     const wrapper = createWrapperPopoverClick({ placement: 'left' });
     expect(wrapper.instance().props.placement).toBe('left');
   });
-  it('Should toggle isOpen State when toggle have been called', () => {
-    const wrapper = createWrapperPopoverClick();
-    wrapper.instance().toggle();
-    expect(wrapper.state().isOpen).toBe(true);
-    wrapper.instance().toggle();
-    expect(wrapper.state().isOpen).toBe(false);
-  });
-  it('Should isOpen State equal false when outsideTap have been called', () => {
-    const wrapper = createWrapperPopoverClick();
-    wrapper.instance().toggle();
-    expect(wrapper.state().isOpen).toBe(true);
-    wrapper.instance().outsideTap();
-    expect(wrapper.state().isOpen).toBe(false);
-  });
 });
 
 const createWrapperPopoverOver = customProps => {

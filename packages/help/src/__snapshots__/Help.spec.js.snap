@@ -1,24 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Help> Render Should render Help component 1`] = `
-<div
-  className="af-popover__container"
+<span
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
-    className="af-popover__container-over"
-    onClick={[Function]}
-    role="presentation"
+    className="af-popover__container"
   >
-    <button
-      className="btn af-btn--circle"
-      type="button"
+    <div
+      className="af-popover__container-over"
+      role="presentation"
     >
-      <span
-        className="af-more-help"
+      <button
+        className="btn af-btn--circle"
+        type="button"
       >
-        i
-      </span>
-    </button>
+        <span
+          className="af-more-help"
+        >
+          i
+        </span>
+      </button>
+    </div>
   </div>
-</div>
+</span>
 `;
