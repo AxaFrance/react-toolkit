@@ -1,6 +1,29 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.3](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.2...v1.3.3)
+> 23 January 2020
+- fix(popover) remove crash in console and repair UX behavior [`#515`](https://github.com/AxaGuilDEv/react-toolkit/pull/515) by Guillaume Chervet
+- refactor(demo) update packages [`#513`](https://github.com/AxaGuilDEv/react-toolkit/pull/513) by Guillaume Chervet
+- feat(demo) add a test [`#512`](https://github.com/AxaGuilDEv/react-toolkit/pull/512) by Guillaume Chervet
+- feat(demo) oidc auth [`#508`](https://github.com/AxaGuilDEv/react-toolkit/pull/508) by Guillaume Chervet
+- refactor(demo) domain and sub-route [`#507`](https://github.com/AxaGuilDEv/react-toolkit/pull/507) by Guillaume Chervet
+- refactor(demo):  architecture of demo, delete react logo, remove footer and he… [`#499`](https://github.com/AxaGuilDEv/react-toolkit/pull/499) by Trofleau Clément
+- fix(design-system) quick fix for lastest version only [`#488`](https://github.com/AxaGuilDEv/react-toolkit/pull/488) by Guillaume Chervet
+- chore(deps-dev): bump gulp-wrap from 0.13.0 to 0.15.0 [`#136`](https://github.com/AxaGuilDEv/react-toolkit/pull/136) by dependabot-preview[bot]
+- chore(deps-dev): bump svg-sprite from 1.4.0 to 1.5.0 [`#483`](https://github.com/AxaGuilDEv/react-toolkit/pull/483) by dependabot-preview[bot]
+- chore(deps-dev): bump enzyme from 3.8.0 to 3.11.0 [`#484`](https://github.com/AxaGuilDEv/react-toolkit/pull/484) by dependabot-preview[bot]
+- chore(deps): bump @babel/register from 7.7.0 to 7.7.7 [`#485`](https://github.com/AxaGuilDEv/react-toolkit/pull/485) by dependabot-preview[bot]
+- chore(deps-dev): bump react-input-mask from 1.2.2 to 2.0.4 [`#486`](https://github.com/AxaGuilDEv/react-toolkit/pull/486) by dependabot-preview[bot]
+- chore(deps): [security] bump eslint-utils from 1.3.1 to 1.4.3 [`#454`](https://github.com/AxaGuilDEv/react-toolkit/pull/454) by dependabot-preview[bot]
+- chore(release): publish v1.3.3 [skip ci] [`3c2faa4`](https://github.com/AxaGuilDEv/react-toolkit/commit/3c2faa4c2ddae6778a7797bbeb9eb0645f2c1234) by Build-CI 
+- resolve conflict [`1badf59`](https://github.com/AxaGuilDEv/react-toolkit/commit/1badf59cff407c302e66698bef7a5fea5f687330) by Trofleau Clément 
+- resolve conflict [`bdf3654`](https://github.com/AxaGuilDEv/react-toolkit/commit/bdf3654b40bfb0a6efb24e42202fcc9f893a7a0a) by Trofleau Clément 
+- Delete package-lock.json [`5763d19`](https://github.com/AxaGuilDEv/react-toolkit/commit/5763d19a88bf555114aaa076dd0688592dc227c3) by Trofleau Clément 
+- add new package-lock.json [`7f7a6e8`](https://github.com/AxaGuilDEv/react-toolkit/commit/7f7a6e801e97d4aa09da32e946d0759a8b6149ec) by Trofleau Clément 
+- refacto architecture of demo, delete react logo, remove footer and header in shared folder, replace route folder in root [`cb987dc`](https://github.com/AxaGuilDEv/react-toolkit/commit/cb987dc643b161572b95530f42ae9be7c3f094ee) by Trofleau Clément 
+- docs(changelog) update to new 1.3.2 [skip ci] [`bb5e9b0`](https://github.com/AxaGuilDEv/react-toolkit/commit/bb5e9b041fc0788d69db1682be953488396bf172) by Build-CI 
+
 #### [v1.3.2](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.2-alpha.0...v1.3.2)
 > 2 January 2020
 - chore(deps-dev): bump gulp-sass from 3.1.0 to 4.0.2 [`#91`](https://github.com/AxaGuilDEv/react-toolkit/pull/91) by dependabot-preview[bot]
@@ -245,5 +268,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.2...v0.0.0)
-> 2 January 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.3...v0.0.0)
+> 23 January 2020
