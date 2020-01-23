@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import outy from 'outy';
 import PopoverBase, { AnimatedPopover } from './PopoverBase';
 import PopoverPlacements from './PopoverPlacements';
 
@@ -49,8 +48,6 @@ const createWrapperAnimatedPopover = customProps => {
   const actualProps = Object.assign(defaultProps, customProps);
   return mount(<AnimatedPopover {...actualProps} />);
 };
-
-jest.mock('outy');
 
 describe('<AnimatedPopover />', () => {
   it('Should contain Manager and Reference elements', () => {
