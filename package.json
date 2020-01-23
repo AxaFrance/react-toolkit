@@ -164,7 +164,6 @@
     "cuid": "^2.1.4",
     "glob-stream": "^6.1.0",
     "moment": "~2.22.2",
-    "outy": "^0.1.2",
     "prop-types": "^15.5.10",
     "rc-slider": "^8.6.4",
     "react-datepicker": "^1.8.0",
