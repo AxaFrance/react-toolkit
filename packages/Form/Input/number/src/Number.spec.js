@@ -17,5 +17,7 @@ describe('Form/NumberInput/Number', () => {
     expect(goodNumber).toBe(2.1);
     goodNumber = parseValueToNumber('2,20');
     expect(goodNumber).toBe(2.2);
+    goodNumber = parseValueToNumber('0');
+    expect(goodNumber).toBe(0);
   });
 });
