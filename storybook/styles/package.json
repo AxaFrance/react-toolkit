@@ -77,7 +77,7 @@
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-react": "6.10.3",
-    "file-loader": "0.11.1",
+    "file-loader": "5.0.2",
     "github-markdown-css": "2.8.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
