@@ -2,7 +2,7 @@ const endWith = (str, suffix) =>
   str.indexOf(suffix, str.length - suffix.length) !== -1;
 
 const isValidNumber = value => {
-  if (!value) {
+  if (value === null || value === undefined) {
     return false;
   }
   const regex = new RegExp('^\\d+([,.]\\d+)?$', 'gi');
@@ -23,7 +23,7 @@ const parseValueToNumber = value => {
   }
 
   const number = parseFloat(valueTemp);
-  if (number) {
+  if (number !== null && number !== undefined) {
     return number;
   }
 
