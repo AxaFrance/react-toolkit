@@ -1,6 +1,13 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.4](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.3...v1.3.4)
+> 3 February 2020
+- fix: isValidNumber for support zero value in the component numberInput [`#525`](https://github.com/AxaGuilDEv/react-toolkit/pull/525) by Gparquet
+- chore(deps-dev): bump file-loader from 0.11.1 to 5.0.2 [`#489`](https://github.com/AxaGuilDEv/react-toolkit/pull/489) by dependabot-preview[bot]
+- chore(release): publish v1.3.4 [skip ci] [`ed02608`](https://github.com/AxaGuilDEv/react-toolkit/commit/ed0260858a11512c84e27c479c17682cba36644f) by Build-CI 
+- docs(changelog) update to new 1.3.3 [skip ci] [`0b5fee9`](https://github.com/AxaGuilDEv/react-toolkit/commit/0b5fee969ff031e8b8d0dc1e6263650e86ff7761) by Build-CI 
+
 #### [v1.3.3](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.2...v1.3.3)
 > 23 January 2020
 - fix(popover) remove crash in console and repair UX behavior [`#515`](https://github.com/AxaGuilDEv/react-toolkit/pull/515) by Guillaume Chervet
@@ -268,5 +275,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.3...v0.0.0)
-> 23 January 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.4...v0.0.0)
+> 3 February 2020
