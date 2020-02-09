@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from 'shared/Header';
 import Title from 'shared/Title';
 import './notfound.scss';
 
 const NotFound = () => (
   <>
+    <Header />
     <Title backHome classModifier="hasstepper">
       404 Page Not Found
     </Title>

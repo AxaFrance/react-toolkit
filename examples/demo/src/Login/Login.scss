@@ -1,0 +1,63 @@
+@import '@axa-fr/react-toolkit-panel/dist/panel.scss';
+
+$primary: #47a80d;
+$primary-hover: #3c8f0b;
+
+.af-icon-login {
+  margin: 0 auto 20px auto;
+  width: 55px;
+  height: 55px;
+}
+
+.af-form {
+  &--login {
+    background-image: url('https://espaceclient.axa.fr/content/dam/axa-connect/visuel-saga-02.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    .af-form__input-text {
+      width: 100%;
+    }
+  }
+}
+
+.af-panel {
+  &--login {
+    width: 20vw;
+    margin: 0 auto;
+    padding: 2em 1em 1em 1em;
+    .af-panel__content {
+      overflow: inherit;
+      flex-basis: 50%;
+    }
+  }
+}
+
+.af-btn {
+  &--connect-user,
+  &--new-user {
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 0;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    margin: 0 auto 1rem auto;
+  }
+  &--connect-user {
+    background-color: $primary;
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
+
+.af-links {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  .af-link {
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+    color: $color-scorpion;
+  }
+}
