@@ -9,21 +9,20 @@ import CheckboxItem from './CheckboxItem';
 const omitProperties = omit(['mode', 'id']);
 
 const Checkbox = ({
-                    classModifier,
-                    options,
-                    isVisible,
-                    disabled,
-                    name,
-                    onBlur,
-                    onFocus,
-                    readOnly,
-                    children,
-                    values,
-                    className,
-                    onChange,
-                    ...otherProps
-                  }) => {
-
+  classModifier,
+  options,
+  isVisible,
+  disabled,
+  name,
+  onBlur,
+  onFocus,
+  readOnly,
+  children,
+  values,
+  className,
+  onChange,
+  ...otherProps
+}) => {
   if (!options) {
     return null;
   }
@@ -45,7 +44,7 @@ const Checkbox = ({
         isVisible={isVisible}
         disabled={InputList.isDisabled(option, disabled)}
         className={className}
-        classModifier={classModifier}
+        classModifier={option.classModifier}
         {...omitProperties(otherProps)}>
         {children}
       </CheckboxItem>
