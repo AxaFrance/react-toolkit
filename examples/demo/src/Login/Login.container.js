@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import {
   computeInitialStateErrorMessage,
   genericHandleChange,
-} from './validation.generic';
+} from 'validation.generic';
 import { LOGIN, PASSWORD, MSG_REQUIRED } from './constants';
 
 const errorList = fields =>
