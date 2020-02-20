@@ -3,5 +3,7 @@
     "projectKey": "AxaGuilDEv_react-toolkit",
     "serverId": "sonarcloud"
   },
-  "eslint.autoFixOnSave": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
