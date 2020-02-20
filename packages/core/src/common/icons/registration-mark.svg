@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<path fill="#454545" d="M50,0.725c6.67,0,13.047,1.31,19.137,3.921c6.087,2.611,11.327,6.113,15.718,10.504
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="#000000" d="M50,0.725c6.67,0,13.047,1.31,19.137,3.921c6.087,2.611,11.327,6.113,15.718,10.504
 	c4.391,4.393,7.895,9.63,10.507,15.713C97.973,36.95,99.275,43.33,99.275,50s-1.303,13.051-3.914,19.137
 	c-2.612,6.084-6.116,11.324-10.507,15.718s-9.631,7.895-15.718,10.507c-6.084,2.608-12.46,3.914-19.134,3.914
 	c-6.673,0.007-13.049-1.303-19.133-3.914c-6.088-2.619-11.328-6.116-15.721-10.507c-4.395-4.391-7.895-9.628-10.504-15.714
