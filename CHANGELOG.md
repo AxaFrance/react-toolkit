@@ -1,6 +1,16 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.5-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.4...v1.3.5-alpha.0)
+> 26 February 2020
+- Clean svg icons [`#538`](https://github.com/AxaGuilDEv/react-toolkit/pull/538) by Olivier YOUF
+- Update all package-lock [`#543`](https://github.com/AxaGuilDEv/react-toolkit/pull/543) by Olivier YOUF
+- ci(npm): update all package-lock [`03dc28b`](https://github.com/AxaGuilDEv/react-toolkit/commit/03dc28b6c309576f2bafc5909f1ad96234840d6a) by Arnaud Foraison 
+- refactor(icons): clean all svg [`f4e165f`](https://github.com/AxaGuilDEv/react-toolkit/commit/f4e165f335a2ad5a26a6f4bbd35b0b940bc8a865) by Arnaud Foraison 
+- chore(release): publish v1.3.5-alpha.0 [skip ci] [`a03f815`](https://github.com/AxaGuilDEv/react-toolkit/commit/a03f815e187575b19d80042d5154d68051a39756) by Build-CI 
+- feat(example): add icons route [`ccbbf06`](https://github.com/AxaGuilDEv/react-toolkit/commit/ccbbf06b9c5da8455c7d9187990334f1cacff069) by Arnaud Foraison 
+- docs(changelog) update to new 1.3.4 [skip ci] [`5540243`](https://github.com/AxaGuilDEv/react-toolkit/commit/5540243bd1df1e2051b23449fd2a5b88cea4445d) by Build-CI 
+
 #### [v1.3.4](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.3...v1.3.4)
 > 3 February 2020
 - fix: isValidNumber for support zero value in the component numberInput [`#525`](https://github.com/AxaGuilDEv/react-toolkit/pull/525) by Gparquet
@@ -275,5 +285,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.4...v0.0.0)
-> 3 February 2020
+#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.5-alpha.0...v0.0.0)
+> 26 February 2020
