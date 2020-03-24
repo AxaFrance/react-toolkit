@@ -1,6 +1,6 @@
 {
 	"name": "@axa-fr/react-toolkit-layout-header",
-	"version": "1.3.5-alpha.0",
+	"version": "1.3.6-alpha.0",
 	"main": "dist/index.js",
 	"jsnext:main": "src/index.js",
 	"private": false,
@@ -12,8 +12,8 @@
 		"prepare": "node ../../../scripts/prepare.js"
 	},
 	"dependencies": {
-		"@axa-fr/react-toolkit-action": "^1.3.5-alpha.0",
-		"@axa-fr/react-toolkit-core": "^1.3.5-alpha.0",
+		"@axa-fr/react-toolkit-action": "^1.3.6-alpha.0",
+		"@axa-fr/react-toolkit-core": "^1.3.6-alpha.0",
 		"prop-types": "^15.5.10"
 	},
 	"license": "MIT",
