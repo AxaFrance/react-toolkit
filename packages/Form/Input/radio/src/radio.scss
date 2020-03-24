@@ -34,6 +34,15 @@
         }
       }
     }
+    &--warning {
+      .af-form__label {
+        color: $color-orange-dark;
+
+        &::before {
+          border-color: $color-orange-dark;
+        }
+      }
+    }
 
     &--disabled {
       .af-form__label {
@@ -151,6 +160,15 @@
         border: 1px solid $error-custom-border;
         color: $color-red-axa;
         box-shadow: inset 0 -2px 0 0 $color-red-axa;
+      }
+    }
+
+    &--warning {
+      .af-form__label {
+        background: $color-alertDanger-bgColor;
+        border: 1px solid $color-alertDanger-colorBorder;
+        color: $color-orange-dark;
+        box-shadow: inset 0 -2px 0 0 $color-orange-dark;
       }
     }
 

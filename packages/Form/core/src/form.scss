@@ -36,6 +36,9 @@
     &--error {
       color: $color-red-axa;
     }
+    &--warning {
+      color: $color-orange-dark;
+    }
   }
 
   &__input-cmplt {

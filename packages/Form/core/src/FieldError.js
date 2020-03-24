@@ -1,24 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MessageTypes from "./MessageTypes";
+import { ClassManager } from '@axa-fr/react-toolkit-core';
 
 const propTypes = {
   message: PropTypes.string,
+  messageType: PropTypes.oneOf([
+    MessageTypes.error,
+    MessageTypes.success,
+    MessageTypes.warning,
+  ]),
 };
 
 const defaultProps = {
   message: null,
+  messageType: MessageTypes.error
 };
 
-function FieldError(props) {
-  const { message } = props;
-  const error = message ? (
-    <small className="af-form__message af-form__message--error">
-      <span className="glyphicon glyphicon-exclamation-sign" />
-      <span className="af-form__error-text">{message}</span>
+const defaultClassName = 'af-form__message';
+
+function FieldError({ message, messageType }) {
+  const className = ClassManager.getComponentClassName(
+    defaultClassName,
+    messageType,
+    defaultClassName
+  );
+
+  const classNameError = `af-form__${messageType}-text`;
+
+  return message ? (
+    <small className={className}>
+      <span className="glyphicon glyphicon-exclamation-sign"/>
+      <span className={classNameError}>{message}</span>
     </small>
   ) : null;
-
-  return error;
 }
 
 FieldError.propTypes = propTypes;

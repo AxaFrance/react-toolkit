@@ -1,5 +1,17 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
+@mixin _set-message-type($color) {
+  .af-form__input-text {
+    border: 1px solid $color;
+    color: $color;
+  }
+
+  .af-form__select-container {
+    border: 1px solid $color;
+    color: $color;
+  }
+}
+
 .af-form {
   &__select {
     position: relative;
@@ -36,15 +48,11 @@
     }
 
     &--error {
-      .af-form__input-text {
-        border: 1px solid $color-red-axa;
-        color: $color-red-axa;
-      }
+      @include _set-message-type($color-red-axa);
+     }
 
-      .af-form__select-container {
-        border: 1px solid $color-red-axa;
-        color: $color-red-axa;
-      }
+    &--warning {
+      @include _set-message-type($color-orange-dark);
     }
 
     .glyphicon-menu-down {
