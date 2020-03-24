@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MessageTypes from "./MessageTypes";
 import { ClassManager } from '@axa-fr/react-toolkit-core';
+import MessageTypes from "./MessageTypes";
 
 const propTypes = {
   message: PropTypes.string,
@@ -19,7 +19,7 @@ const defaultProps = {
 
 const defaultClassName = 'af-form__message';
 
-function FieldError({ message, messageType }) {
+const FieldError = ({ message, messageType }) => {
   const className = ClassManager.getComponentClassName(
     defaultClassName,
     messageType,
