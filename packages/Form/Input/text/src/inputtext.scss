@@ -28,10 +28,17 @@
 
     &--error {
       padding: 0;
-
       .af-form__input-text {
         border: 1px solid $color-red-axa;
         color: $color-red-axa;
+      }
+    }
+
+    &--warning {
+      padding: 0;
+      .af-form__input-text {
+        border: 1px solid $color-orange-dark;
+        color: $color-orange-dark;
       }
     }
 

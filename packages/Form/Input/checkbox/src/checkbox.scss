@@ -19,6 +19,15 @@
         border-color: $color-red-axa;
       }
     }
+    &--warning {
+      .af-form__label {
+        color: $color-orange-dark;
+      }
+
+      .af-form__indicator {
+        border-color: $color-orange-dark;
+      }
+    }
   }
 
   &__input-checkbox {
@@ -212,6 +221,11 @@
     &--error{
       .af-form__label {
         background-color: $color-red-error;
+      }
+    }
+    &--warning{
+      .af-form__label {
+        background-color: $color-orange-dark;
       }
     }
     &--disabled:hover {

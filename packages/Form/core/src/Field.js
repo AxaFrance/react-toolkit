@@ -74,7 +74,7 @@ const Field = props => {
         messageType={messageType}
         forceDisplayMessage={forceDisplayMessage}>
         {children}
-        <FieldError message={message} />
+        <FieldError message={message} messageType={messageType} />
       </FieldForm>
     </div>
   );

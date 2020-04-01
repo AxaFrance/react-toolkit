@@ -14,6 +14,12 @@
         color: $color-red-axa;
       }
     }
+    &--warning {
+      .af-form__input-textarea {
+        border: 1px solid $color-orange-dark;
+        color: $color-orange-dark;
+      }
+    }
   }
 
   &__input-textarea {

@@ -3,3 +3,17 @@
 .react-select > div:nth-of-type(2) {
   z-index: 2;
 }
+
+.af-form__select {
+  &--error {
+    .react-select > div {
+      border-color: $color-red-axa;
+    }
+  }
+  &--warning {
+    .react-select > div {
+      border-color: $color-orange-dark;
+    }
+  }
+}
+

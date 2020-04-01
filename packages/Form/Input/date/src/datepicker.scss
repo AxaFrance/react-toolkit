@@ -29,6 +29,14 @@ $border-radius-width: 3px;
       border-color: $color-red-axa;
     }
   }
+  &--warning {
+    margin-bottom: 0;
+
+    .af-datepicker {
+      color: $color-orange-dark;
+      border-color: $color-orange-dark;
+    }
+  }
 }
 
 .af-datepicker {
