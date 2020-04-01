@@ -1,0 +1,89 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
+.af-form {
+  &__date {
+    &--disabled {
+      .af-form__input-date {
+        cursor: not-allowed;
+      }
+    }
+
+    &--success {
+      .af-form__input-date {
+        margin-right: 1rem;
+      }
+
+      &::after {
+        font-family: $font-family-icon;
+        content: '\EABA';
+        color: $color-malachite;
+        position: relative;
+        top: 5px;
+      }
+
+      > .af-btn--circle {
+        margin-right: 1rem;
+      }
+    }
+
+    &--error {
+      padding: 0;
+      .af-form__input-date {
+        border: 1px solid $color-red-axa;
+        color: $color-red-axa;
+      }
+    }
+
+    &--warning {
+      padding: 0;
+      .af-form__input-date {
+        border: 1px solid $color-orange-dark;
+        color: $color-orange-dark;
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      display: inline-flex;
+    }
+  }
+
+  &__input-date {
+    border: 1px solid $color-silver;
+    padding: 0.5625rem 1.2rem;
+    font-size: 1em;
+    line-height: 20px;
+
+    &:focus {
+      border-color: $color-axa;
+      color: $color-axa;
+    }
+
+    &--hasinfobulle {
+      margin-right: 1rem;
+    }
+  }
+
+  &__input-date::-ms-clear,
+  &__input-date::-ms-reveal {
+    display: none;
+  }
+
+  &__help {
+    position: absolute;
+    display: block;
+    bottom: -20px;
+  }
+
+  &__clear {
+    position: absolute;
+    right: 3rem;
+    top: 0.75rem;
+
+    &:hover {
+      background: $color-mercury;
+      border-radius: 100%;
+      box-shadow: 0 0 0 6px $color-mercury;
+    }
+  }
+}
