@@ -1,12 +1,11 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
-#### [v1.3.6-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.5-alpha.0...v1.3.6-alpha.0)
-> 24 March 2020
-- chore(release): publish v1.3.6-alpha.0 [skip ci] [`ee2c4a1`](https://github.com/AxaGuilDEv/react-toolkit/commit/ee2c4a13c210aaff0d1b5fb1b1bd3057b3a22920) by Build-CI 
-- feat(input): finish to set up warning message type [`0d90dae`](https://github.com/AxaGuilDEv/react-toolkit/commit/0d90dae48893c232138249dc14c7913f20adaf33) by guillaume chervet 
+#### [v1.3.6](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.5-alpha.0...v1.3.6)
+> 1 April 2020
+- feat(input): finish to set up warning message type [`#573`](https://github.com/AxaGuilDEv/react-toolkit/pull/573) by Guillaume Chervet
+- chore(release): publish v1.3.6 [skip ci] [`ce067c3`](https://github.com/AxaGuilDEv/react-toolkit/commit/ce067c34bcd68de1c9b2c9eb49ad12a20a492b4d) by Build-CI 
 - docs(changelog) update to new 1.3.5-alpha.0 [skip ci] [`cfb3c24`](https://github.com/AxaGuilDEv/react-toolkit/commit/cfb3c248c678de9891bb7dca82110f8139286ae5) by Build-CI 
-- feat(input): finish to set up warning message type [`f760a68`](https://github.com/AxaGuilDEv/react-toolkit/commit/f760a68e508f6fd157dc19d9017539b5945b5a19) by guillaume chervet 
 
 #### [v1.3.5-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.4...v1.3.5-alpha.0)
 > 26 February 2020
@@ -292,5 +291,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6-alpha.0...v0.0.0)
-> 24 March 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6...v0.0.0)
+> 1 April 2020
