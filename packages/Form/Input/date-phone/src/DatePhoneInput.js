@@ -9,7 +9,7 @@ import {
   FormClassManager,
 } from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
-import PhoneDate from './PhoneDate';
+import DatePhone from './DatePhone';
 
 const propTypes = {
   ...FieldConstants.propTypes,
@@ -81,7 +81,7 @@ const DateInput = props => {
         messageType={messageType}
         className="af-form__date"
         classModifier={inputFieldClassModifier}>
-        <PhoneDate
+        <DatePhone
           name={name}
           id={inputId}
           value={value}

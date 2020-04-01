@@ -13,12 +13,12 @@ import {
   InputConstants,
 } from '@axa-fr/react-toolkit-form-core';
 
-import readme from '@axa-fr/react-toolkit-form-input-date/dist/README.md';
+import readme from '@axa-fr/react-toolkit-form-input-date-phone/dist/README.md';
 
 const stories = [];
 
 stories.push({
-  desc: 'DateInput',
+  desc: 'DatePhoneInput',
   component: () => (
     <form className="af-form" name="myform">
       <DatePhoneInput
@@ -51,7 +51,7 @@ stories.push({
 });
 
 stories.push({
-  desc: 'CustomDate',
+  desc: 'DatePhone',
   component: () => (
     <form className="af-form" name="myform">
       <FieldForm
@@ -80,7 +80,7 @@ stories.push({
 });
 
 const storyData = {
-  name: 'Form.Input.Date',
+  name: 'Form.Input.DatePhone',
   docs: readme,
   stories,
 };

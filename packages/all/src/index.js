@@ -1,5 +1,6 @@
 export { TextInput, Text } from '@axa-fr/react-toolkit-form-input-text';
 export { CustomDate, DateInput } from '@axa-fr/react-toolkit-form-input-date';
+export { DatePhone, DatePhoneInput } from '@axa-fr/react-toolkit-form-input-date-phone';
 export { ChoiceInput, Choice } from '@axa-fr/react-toolkit-form-input-choice';
 export {
   Select,

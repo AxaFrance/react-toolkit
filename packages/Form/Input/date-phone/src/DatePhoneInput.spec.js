@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import DatePhoneInput from './DatePhoneInput';
 
-describe('<DateInput>', () => {
+describe('<DatePhoneInput>', () => {
   it('renders DatePhoneInput correctly', () => {
     const tree = renderer
       .create(

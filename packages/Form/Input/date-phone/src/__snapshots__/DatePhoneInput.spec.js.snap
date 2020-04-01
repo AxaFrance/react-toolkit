@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DatePhoneInput> renders DatePhoneInput correctly 1`] = `
+<div
+  className="row af-form__group"
+>
+  <div
+    className="col-md-2"
+  >
+    <label
+      className="af-form__group-label"
+      htmlFor="iddateinput"
+    >
+      Image *
+    </label>
+  </div>
+  <div
+    className="col-md-10"
+  >
+    <div
+      className="af-form__date"
+    >
+      <input
+        autoFocus={null}
+        className="af-form__input-date"
+        disabled={false}
+        id="iddateinput"
+        name="placeImage"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        readOnly={false}
+        tabIndex={null}
+        type="date"
+        value=""
+      />
+    </div>
+    <small
+      className="af-form__help"
+    />
+  </div>
+</div>
+`;

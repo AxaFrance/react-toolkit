@@ -4,7 +4,7 @@
 ### Get started
 
 ```sh
-npm i @axa-fr/react-toolkit-form-input-date
+npm i @axa-fr/react-toolkit-form-input-date-phone
 ```
 
 
@@ -14,9 +14,7 @@ First to use, you have to import the component.
 import { DatePhone } from '@axa-fr/react-toolkit-form-input-date-phone';
 ```
 
-The component reuses the following library:
-- react-datepicker: https://reactdatepicker.com
-- react-datepicker uses momentjs: https://momentjs.com that you must install in your application (mandatory)
+The component reuses the native date input :
 
 ```
 npm install moment --save
