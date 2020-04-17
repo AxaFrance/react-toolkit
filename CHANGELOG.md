@@ -1,6 +1,11 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.8-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.7-alpha.0...v1.3.8-alpha.0)
+> 17 April 2020
+- chore(release): publish v1.3.8-alpha.0 [skip ci] [`b04cac5`](https://github.com/AxaGuilDEv/react-toolkit/commit/b04cac5a4bf9f35868d0cd55737e19cdb77e8a6b) by Build-CI 
+- docs(changelog) update to new 1.3.7-alpha.0 [skip ci] [`56eb171`](https://github.com/AxaGuilDEv/react-toolkit/commit/56eb1716904163c7aecc9aef2321c666a203129d) by Build-CI 
+
 #### [v1.3.7-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6...v1.3.7-alpha.0)
 > 1 April 2020
 - wip [`0bec216`](https://github.com/AxaGuilDEv/react-toolkit/commit/0bec216deaf17f8f58718227a0dfb04016382918) by guillaume chervet 
@@ -298,5 +303,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.7-alpha.0...v0.0.0)
-> 1 April 2020
+#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.8-alpha.0...v0.0.0)
+> 17 April 2020
