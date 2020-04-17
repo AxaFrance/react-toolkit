@@ -1,6 +1,13 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.7-alpha.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6...v1.3.7-alpha.0)
+> 1 April 2020
+- wip [`0bec216`](https://github.com/AxaGuilDEv/react-toolkit/commit/0bec216deaf17f8f58718227a0dfb04016382918) by guillaume chervet 
+- chore(release): publish v1.3.7-alpha.0 [skip ci] [`3ef40f4`](https://github.com/AxaGuilDEv/react-toolkit/commit/3ef40f40b01a7328d14126c92a9cf05fbe61a6a1) by Build-CI 
+- wip [`0c7ba18`](https://github.com/AxaGuilDEv/react-toolkit/commit/0c7ba1899942682155e97e848c8a5280c383047e) by guillaume chervet 
+- docs(changelog) update to new 1.3.6 [skip ci] [`9ac8e8c`](https://github.com/AxaGuilDEv/react-toolkit/commit/9ac8e8c8625c3d013a56492bd2bae60857fa3a50) by Build-CI 
+
 #### [v1.3.6](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.5-alpha.0...v1.3.6)
 > 1 April 2020
 - feat(input): finish to set up warning message type [`#573`](https://github.com/AxaGuilDEv/react-toolkit/pull/573) by Guillaume Chervet
@@ -291,5 +298,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6...v0.0.0)
+#### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.7-alpha.0...v0.0.0)
 > 1 April 2020
