@@ -12,6 +12,7 @@ First to use, you have to import the component.
 
 ```js
 import { DatePhone } from '@axa-fr/react-toolkit-form-input-date-phone';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/phonedate.scss';
 ```
 
 The component reuses the native date input :

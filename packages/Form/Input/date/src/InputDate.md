@@ -6,6 +6,7 @@ First to use, you have to import the component.
 
 ```js
 import {DateInput} from 'af-toolkit-react';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/datepicker.scss';
 ```
 
 The component reuses the following library:

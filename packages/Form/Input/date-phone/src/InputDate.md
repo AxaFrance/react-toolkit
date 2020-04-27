@@ -6,8 +6,7 @@ First to use, you have to import the component.
 
 ```js
 import { DateInput } from 'af-toolkit-react';
-import 'af-toolkit-react/dist/phonedate.scss';
-
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/phonedate.scss';
 ```
 
 The component reuses the following library:
