@@ -5,8 +5,8 @@
 First to use, you have to import the component.
 
 ```js
-import {CustomDate} from 'af-toolkit-react';
-import '@axa-fr/react-toolkit-form-input-date-phone/dist/datepicker.scss';
+import { DateInput } from 'af-toolkit-react';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/phonedate.scss';
 ```
 
 The component reuses the following library:

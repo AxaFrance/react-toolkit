@@ -5,13 +5,11 @@
 First to use, you have to import the component.
 
 ```js
-import {CustomDate} from 'af-toolkit-react';
-import '@axa-fr/react-toolkit-form-input-date-phone/dist/datepicker.scss';
+import { DatePhone } from 'af-toolkit-react';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/phonedate.scss';
 ```
 
-The component reuses the following library:
-- react-datepicker: https://reactdatepicker.com
-- react-datepicker uses momentjs: https://momentjs.com that you must install in your application (mandatory)
+The component use de default html input type date
 
 ```
 npm install moment --save
