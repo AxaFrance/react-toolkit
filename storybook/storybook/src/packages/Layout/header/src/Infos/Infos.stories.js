@@ -1,10 +1,7 @@
 import React from 'react';
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import { Infos } from '@axa-fr/react-toolkit-layout-header';
-
 import readme from '@axa-fr/react-toolkit-layout-header/dist/README.md';
-
-const stories = [];
 
 const infos = [
   {
@@ -21,14 +18,14 @@ const infos = [
   },
 ];
 
-stories.push({
-  component: () => <Infos infos={infos} />,
+const InfosStory = () => <Infos infos={infos} />;
+
+const stories = storiesOf('Layout.Header.Infos', module);
+
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-const storyData = {
-  name: 'Layout.Header.Infos',
-  docs: readme,
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Default', InfosStory);

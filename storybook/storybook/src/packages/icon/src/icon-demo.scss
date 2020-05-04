@@ -1,0 +1,10 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
+.af-demo {
+  &__icons {
+    display: grid;
+    grid-gap: 0.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+    grid-auto-rows: minmax(26vh, 120px);
+  }
+}

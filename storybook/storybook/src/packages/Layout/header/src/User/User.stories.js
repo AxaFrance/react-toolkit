@@ -1,13 +1,8 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import { User } from '@axa-fr/react-toolkit-layout-header';
-
 import readme from '@axa-fr/react-toolkit-layout-header/dist/README.md';
-
-const stories = [];
 
 const onClick = e => {
   e.event.preventDefault();
@@ -15,26 +10,24 @@ const onClick = e => {
   action('onClick')(e);
 };
 
-stories.push({
-  component: () => (
-    <User
-      name="Pierre Martin"
-      href="/profile"
-      profile="profile"
-      onClick={onClick}
-    />
-  ),
+const UserStory = () => (
+  <User
+    name="Pierre Martin"
+    href="/profile"
+    profile="profile"
+    onClick={onClick}
+  />
+);
+
+const UserNoLinkStory = () => <User name="Pierre Martin" profile="profile" />;
+
+const stories = storiesOf('Layout.Header.User', module);
+
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-stories.push({
-  desc: 'nolink',
-  component: () => <User name="Pierre Martin" profile="profile" />,
-});
-
-const storyData = {
-  name: 'Layout.Header.User',
-  docs: readme,
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Default', UserStory);
+stories.add('No Link', UserNoLinkStory);

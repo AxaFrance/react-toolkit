@@ -1,8 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select, number } from '@storybook/addon-knobs';
-
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import { SliderInput, Slider } from '@axa-fr/react-toolkit-form-input-slider';
 import '@axa-fr/react-toolkit-form-input-slider/dist/af-slider.css';
 import {
@@ -21,70 +20,62 @@ const options = [
   { label: '4096', value: '4096', id: 'uniqueId5' },
 ];
 
-const stories = [];
+const SliderInputStory = () => (
+  <form className="af-form" name="myform">
+    <SliderInput
+      options={options}
+      id={text('id', 'uniqueid')}
+      label={text('label', 'Place name *')}
+      name={text('name', 'placeName')}
+      onChange={action('onChange')}
+      value={number('value', '1024')}
+      helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
+      placeholder={text('placeholder', '')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        Constants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        Constants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
 
-stories.push({
-  desc: 'SliderInput',
-  component: () => (
-    <form className="af-form" name="myform">
-      <SliderInput
-        options={options}
-        id={text('id', 'uniqueid')}
-        label={text('label', 'Place name *')}
-        name={text('name', 'placeName')}
-        onChange={action('onChange')}
-        value={number('value', '1024')}
-        helpMessage={text(
-          'helpMessage',
-          'Enter the place name, ex : Webcenter'
-        )}
-        placeholder={text('placeholder', '')}
-        message={text('message', '')}
-        messageType={select('messageType', MessageTypes, MessageTypes.error)}
-        forceDisplayMessage={boolean('forceDisplayMessage', false)}
-        readOnly={boolean('readOnly', false)}
-        disabled={boolean('disabled', false)}
-        isVisible={boolean('isVisible', true)}
-        classModifier={text('classModifier', '')}
-        className={text('className', '')}
-        classNameContainerLabel={text(
-          'classNameContainerLabel',
-          Constants.defaultProps.classNameContainerLabel
-        )}
-        classNameContainerInput={text(
-          'classNameContainerInput',
-          Constants.defaultProps.classNameContainerInput
-        )}
-      />
-    </form>
-  ),
+const SliderStory = () => (
+  <form className="af-form" name="myform">
+    <Slider
+      name={text('name', 'placeName')}
+      options={options}
+      id={text('id', 'uniqueid')}
+      onChange={action('onChange')}
+      value={number('value', '2048')}
+      placeholder={text('placeholder', 'Paris')}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+    />
+  </form>
+);
+
+const stories = storiesOf('Form.Input.Slider', module);
+
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-stories.push({
-  desc: 'Slider',
-  component: () => (
-    <form className="af-form" name="myform">
-      <Slider
-        name={text('name', 'placeName')}
-        options={options}
-        id={text('id', 'uniqueid')}
-        onChange={action('onChange')}
-        value={number('value', 'Robert')}
-        placeholder={text('placeholder', 'Paris')}
-        readOnly={boolean('readOnly', false)}
-        disabled={boolean('disabled', false)}
-        isVisible={boolean('isVisible', true)}
-        classModifier={text('classModifier', '')}
-        className={text('className', '')}
-      />
-    </form>
-  ),
-});
-
-const storyData = {
-  name: 'Form.Input.Slider',
-  docs: readme,
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Slider', SliderStory);
+stories.add('SliderInput', SliderInputStory);

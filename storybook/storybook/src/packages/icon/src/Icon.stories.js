@@ -1,27 +1,45 @@
 import React from 'react';
-import { text, select } from '@storybook/addon-knobs';
-
-import addToStorie from '@axa-fr/storybook-addons';
+import { text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 import Icon from '@axa-fr/react-toolkit-icon';
-
 import readme from '@axa-fr/react-toolkit-icon/dist/README.md';
+import './icon-demo.scss';
 
-const storyData = {
-  name: 'Icon',
-  docs: readme,
-  stories: [
-    {
-      desc: 'Icon',
-      component: () => (
-        <Icon
-          icon={select('icon', ['sante', 'banque', 'epargne'], 'sante')}
-          classModifier={text('classModifier', '')}
-          className={text('className', '')}
-          basePath={text('basePath', '/')}
-        />
-      ),
-    },
-  ],
-};
+const IconStory = () => (
+  <div className="af-demo__icons">
+    <Icon
+      icon="sante"
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      basePath={text('basePath', '/')}
+    />
+    <Icon
+      icon="banque"
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      basePath={text('basePath', '/')}
+    />
+    <Icon
+      icon="epargne"
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      basePath={text('basePath', '/')}
+    />
+    <Icon
+      icon="arrow-down"
+      classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      basePath={text('basePath', '/')}
+    />
+  </div>
+);
 
-addToStorie(storyData, module);
+const stories = storiesOf('Icon', module);
+
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
+});
+
+stories.add('Icon', IconStory);

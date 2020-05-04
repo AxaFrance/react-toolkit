@@ -1,9 +1,6 @@
 import React from 'react';
-
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import { NavBar, NavBarItem, Title } from '@axa-fr/react-toolkit-layout-header';
-
-const stories = [];
 
 class MenuTitleWrapper extends React.Component {
   constructor() {
@@ -15,7 +12,7 @@ class MenuTitleWrapper extends React.Component {
   }
 
   handleClick() {
-    const body = document.body;
+    const { body } = document;
     body.classList.toggle('af-menu-open');
     const { isMenuVisible } = this.state;
     this.setState({
@@ -167,13 +164,14 @@ class MenuTitleWrapper extends React.Component {
   }
 }
 
-stories.push({
-  component: () => <MenuTitleWrapper />,
+const MenuTitleWrapperStory = () => <MenuTitleWrapper />;
+
+const stories = storiesOf('Layout.Header.MenuTitleWrapper', module);
+
+stories.addParameters({
+  viewport: {
+    defaultViewport: 'iphone6',
+  },
 });
 
-const storyData = {
-  name: 'Layout.Header.MenuTitleWrapper',
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Default', MenuTitleWrapperStory);

@@ -1,34 +1,30 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import { Name } from '@axa-fr/react-toolkit-layout-header';
+import readme from '@axa-fr/react-toolkit-layout-header/dist/README.md';
 import logo from './react.svg';
 
-import readme from '@axa-fr/react-toolkit-layout-header/dist/README.md';
+const NameStory = () => (
+  <Name
+    title="Nom de l'application"
+    subtitle="Baseline"
+    img={logo}
+    alt="Logo React"
+    onClick={e => {
+      e.event.preventDefault();
+      e.event = {};
+      action('onClick')(e);
+    }}
+  />
+);
 
-const stories = [];
+const stories = storiesOf('Layout.Header.Name', module);
 
-stories.push({
-  component: () => (
-    <Name
-      title="Nom de l'application"
-      subtitle="Baseline"
-      img={logo}
-      alt="Logo React"
-      onClick={e => {
-        e.event.preventDefault();
-        e.event = {};
-        action('onClick')(e);
-      }}
-    />
-  ),
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-const storyData = {
-  name: 'Layout.Header.Name',
-  docs: readme,
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Default', NameStory);
