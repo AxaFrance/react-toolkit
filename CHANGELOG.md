@@ -1,6 +1,12 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.10](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.9...v1.3.10)
+> 6 May 2020
+- feat(storybook): delete addon and clean stories [`#605`](https://github.com/AxaGuilDEv/react-toolkit/pull/605) by Samuel Gomez
+- chore(release): publish v1.3.10 [skip ci] [`24cbfe8`](https://github.com/AxaGuilDEv/react-toolkit/commit/24cbfe85edf71c0b25bdf8375d4358be967cc722) by Build-CI 
+- docs(changelog) update to new 1.3.9 [skip ci] [`6dcec5b`](https://github.com/AxaGuilDEv/react-toolkit/commit/6dcec5bcef09cd834cfc9ae4b896faecde740689) by Build-CI 
+
 #### [v1.3.9](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.6...v1.3.9)
 > 27 April 2020
 - feat(date-phone) add phone date input [`#580`](https://github.com/AxaGuilDEv/react-toolkit/pull/580) by Guillaume Chervet
@@ -297,5 +303,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.9...v0.0.0)
-> 27 April 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.10...v0.0.0)
+> 6 May 2020
