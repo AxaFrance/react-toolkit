@@ -8,3 +8,7 @@
 .storybook-readme-story > div {
   text-align: left !important;
 }
+
+.af-form {
+  padding-bottom: 5rem;
+}

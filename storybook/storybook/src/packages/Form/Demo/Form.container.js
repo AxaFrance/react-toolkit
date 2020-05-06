@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
 import Form from './Form';
 import Validation from './validation';
 import {
   computeInitialStateErrorMessage,
   genericHandleChange,
 } from './generic';
-import React, {useState} from "react";
 
 const preInitialState = {
   placeName: {
@@ -60,60 +60,59 @@ const rules = {
 };
 const initialState = computeInitialStateErrorMessage(preInitialState, rules);
 
-const handleChange = (form ) => event => {
-    const { name } = event;
-    switch (name) {
-      case 'files': {
-        {
-          const { values } = event;
-          const imageTitle = form.imageTitle.value;
-          const imageTitleErrorMessage = Validation.validateImageTitle(
-            imageTitle,
-            values
-          );
-          return {
-            ...form,
-            imageTitle: {
-              value: imageTitle,
-              message: imageTitleErrorMessage,
-              isVisible: values.length > 0,
-            },
-            files: { values },
-          };
-        }
+const handleChange = form => event => {
+  const { name } = event;
+  switch (name) {
+    case 'files': {
+      {
+        const { values } = event;
+        const imageTitle = form.imageTitle.value;
+        const imageTitleErrorMessage = Validation.validateImageTitle(
+          imageTitle,
+          values
+        );
+        return {
+          ...form,
+          imageTitle: {
+            value: imageTitle,
+            message: imageTitleErrorMessage,
+            isVisible: values.length > 0,
+          },
+          files: { values },
+        };
       }
-      default:
-        return genericHandleChange(rules, form, event);
     }
+    default:
+      return genericHandleChange(rules, form, event);
+  }
+};
+
+const handleSubmit = form => () => {
+  const errorMessages = [];
+  for (const name in form) {
+    const element = form[name];
+    if (element instanceof Object && element.message) {
+      errorMessages.push(`[${name}] ${element.message}`);
+    }
+  }
+
+  const newForm = {
+    ...form,
+    hasFormSubmittedOnce: true,
+    errorMessages,
   };
 
-const handleSubmit = (form) => () => {
-    const errorMessages = [];
-    for (const name in form) {
-      const element = form[name];
-      if (element instanceof Object && element.message) {
-        errorMessages.push(`[${name}] ${element.message}`);
-      }
+  for (const name in newForm) {
+    const element = newForm[name];
+    if (element instanceof Object) {
+      element.forceDisplayMessage = true;
     }
+  }
 
-    const newForm = {
-      ...form,
-      hasFormSubmittedOnce: true,
-      errorMessages,
-    };
-
-    for (const name in newForm) {
-      const element = newForm[name];
-      if (element instanceof Object) {
-        element.forceDisplayMessage = true;
-      }
-    }
-
-    return newForm;
-  };
+  return newForm;
+};
 
 const FormContainer = () => {
-
   const [form, setForm] = useState(initialState);
 
   const submit = e => {
@@ -122,12 +121,12 @@ const FormContainer = () => {
     setForm(newForm);
   };
 
-  const change = (e) => {
+  const change = e => {
     const newForm = handleChange(form)(e);
     setForm(newForm);
   };
 
-  return (<Form form={form} handleSubmit={submit} handleChange={change} />);
+  return <Form form={form} handleSubmit={submit} handleChange={change} />;
 };
 
 export default FormContainer;

@@ -1,20 +1,14 @@
-/* eslint-disable react/no-danger, jsx-a11y/href-no-hash  */
 import React from 'react';
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import FormContainer from './Form.container';
-
 import readme from './README.md';
 
-const storyData = {
-  name: 'Form.Demo Statefull',
-  docs: readme,
-  stories: [
-    {
-      desc: 'Form with recompose',
-      withInfo: false,
-      component: () => <FormContainer />,
-    },
-  ],
-};
+const stories = storiesOf('Form', module);
 
-addToStorie(storyData, module);
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
+});
+
+stories.add('Statefull with hooks', () => <FormContainer />);

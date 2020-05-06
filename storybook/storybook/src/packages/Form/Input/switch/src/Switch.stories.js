@@ -1,12 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import addToStorie from '@axa-fr/storybook-addons';
-import { Switch } from '@axa-fr/react-toolkit-form-input-switch';
-
+import { storiesOf } from '@storybook/react';
+import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import { Switch, SwitchInput } from '@axa-fr/react-toolkit-form-input-switch';
 import readme from '@axa-fr/react-toolkit-form-input-switch/dist/README.md';
-
-const stories = [];
 
 const LABELS = {
   name: 'Form.SwitchInput',
@@ -72,42 +70,75 @@ const options = [
   },
 ];
 
-stories.push({
-  desc: 'Switch',
-  component: () => (
-    <Switch
-      name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
-      value={select(
-        KNOBS_LABELS.SwitchInput.value,
-        LABELS.SwitchInput.values,
-        LABELS.SwitchInput.defaultValue
-      )}
-      disabled={boolean(
-        KNOBS_LABELS.SwitchInput.disabled,
-        LABELS.SwitchInput.disabled
-      )}
-      isVisible={boolean(
-        KNOBS_LABELS.SwitchInput.isVisible,
-        LABELS.SwitchInput.isVisible
-      )}
-      classModifier={text(
-        KNOBS_LABELS.SwitchInput.classModifier,
-        LABELS.SwitchInput.classModifier
-      )}
-      className={text(
-        KNOBS_LABELS.SwitchInput.className,
-        LABELS.SwitchInput.className
-      )}
-      options={options}
-      onChange={action('onChange')}
-    />
-  ),
+const SwitchStory = () => (
+  <Switch
+    name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
+    value={select(
+      KNOBS_LABELS.SwitchInput.value,
+      LABELS.SwitchInput.values,
+      LABELS.SwitchInput.defaultValue
+    )}
+    disabled={boolean(
+      KNOBS_LABELS.SwitchInput.disabled,
+      LABELS.SwitchInput.disabled
+    )}
+    isVisible={boolean(
+      KNOBS_LABELS.SwitchInput.isVisible,
+      LABELS.SwitchInput.isVisible
+    )}
+    classModifier={text(
+      KNOBS_LABELS.SwitchInput.classModifier,
+      LABELS.SwitchInput.classModifier
+    )}
+    className={text(
+      KNOBS_LABELS.SwitchInput.className,
+      LABELS.SwitchInput.className
+    )}
+    options={options}
+    onChange={action('onChange')}
+  />
+);
+
+const SwitchInputStory = () => (
+  <SwitchInput
+    label={text('label', 'Select a choice')}
+    name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
+    value={select(
+      KNOBS_LABELS.SwitchInput.value,
+      LABELS.SwitchInput.values,
+      LABELS.SwitchInput.defaultValue
+    )}
+    disabled={boolean(
+      KNOBS_LABELS.SwitchInput.disabled,
+      LABELS.SwitchInput.disabled
+    )}
+    isVisible={boolean(
+      KNOBS_LABELS.SwitchInput.isVisible,
+      LABELS.SwitchInput.isVisible
+    )}
+    classModifier={text(
+      KNOBS_LABELS.SwitchInput.classModifier,
+      LABELS.SwitchInput.classModifier
+    )}
+    className={text(
+      KNOBS_LABELS.SwitchInput.className,
+      LABELS.SwitchInput.className
+    )}
+    options={options}
+    onChange={action('onChange')}
+    message={text('message', '')}
+    messageType={select('messageType', MessageTypes, MessageTypes.error)}
+    forceDisplayMessage={boolean('forceDisplayMessage', false)}
+  />
+);
+
+const stories = storiesOf('Form.Input.Switch', module);
+
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-const storyData = {
-  name: 'Form.Input.Switch',
-  docs: readme,
-  stories,
-};
-
-addToStorie(storyData, module);
+stories.add('Switch', SwitchStory);
+stories.add('SwitchInput', SwitchInputStory);

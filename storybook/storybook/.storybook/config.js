@@ -2,7 +2,7 @@ import { configure, addParameters, addDecorator } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addReadme } from 'storybook-readme';
-
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import 'rc-slider/assets/index.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -29,8 +29,13 @@ addParameters({
     hierarchySeparator: /\./,
     hierarchyRootSeparator: /\|/,
   },
+  info: {
+    header: false,
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
 });
-
 
 function loadStories() {
   require('../src/Home/Home.stories');

@@ -1,7 +1,7 @@
 const path = require('path');
 
 // Export a function. Accept the base config as the only param.
-module.exports = ({config, mode}) => {
+module.exports = ({ config, mode }) => {
   const extensions = config.resolve.extensions;
   const rules = config.module.rules;
   rules.push({
@@ -19,6 +19,11 @@ module.exports = ({config, mode}) => {
   rules.push({
     test: /\.md$/,
     loader: 'highlight-loader!markdown-loader',
+  });
+  rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
   });
   return config;
 };

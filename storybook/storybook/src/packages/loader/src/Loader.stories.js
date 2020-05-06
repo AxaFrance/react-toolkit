@@ -1,32 +1,28 @@
 import React from 'react';
 import { text, select } from '@storybook/addon-knobs';
-
-import addToStorie from '@axa-fr/storybook-addons';
+import { storiesOf } from '@storybook/react';
 import Loader, { LoaderModes } from '@axa-fr/react-toolkit-loader';
-
 import readme from '@axa-fr/react-toolkit-loader/dist/README.md';
 
-const stories = [];
+const stories = storiesOf('Loader', module);
 
-stories.push({
-  component: () => (
-    <Loader
-      mode={select('mode', LoaderModes, LoaderModes.get)}
-      text={text('text', '')}
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}>
-      <div>
-        <h1>Title Child</h1>
-        <span>Here your child component</span>
-      </div>
-    </Loader>
-  ),
+stories.addParameters({
+  readme: {
+    sidebar: readme,
+  },
 });
 
-const storyData = {
-  name: 'Loader',
-  docs: readme,
-  stories,
-};
+const LoaderStory = () => (
+  <Loader
+    mode={select('mode', LoaderModes, LoaderModes.get)}
+    text={text('text', '')}
+    classModifier={text('classModifier', '')}
+    className={text('className', '')}>
+    <div>
+      <h1>Title Child</h1>
+      <span>Here your child component</span>
+    </div>
+  </Loader>
+);
 
-addToStorie(storyData, module);
+stories.add('Default', LoaderStory);
