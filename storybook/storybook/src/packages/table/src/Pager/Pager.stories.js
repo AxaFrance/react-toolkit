@@ -7,23 +7,29 @@ import readme from '@axa-fr/react-toolkit-table/src/Pager/README.md';
 
 const PagerStory = () => (
   <Pager
-    numberPages={number('numberPages', 23)}
-    currentPage={number('currentPage', 5)}
-    onChange={action('onChange')}
     classModifier={text('classModifier', '')}
     className={text('className', '')}
+    currentPage={number('currentPage', 5)}
     mode={select('mode', Modes, Modes.default)}
+    nextLabel={text('nextLabel', 'Next »')}
+    ofLabel={text('ofLabel', 'of')}
+    onChange={action('onChange')}
+    previousLabel={text('previousLabel', '« Previous')}
+    numberPages={number('numberPages', 23)}
   />
 );
 
 const LightStory = () => (
   <Pager
-    numberPages={number('numberPages', 23)}
-    currentPage={number('currentPage', 5)}
-    onChange={action('onChange')}
     classModifier={text('classModifier', '')}
     className={text('className', '')}
+    currentPage={number('currentPage', 5)}
     mode={select('mode', Modes, Modes.light)}
+    nextLabel={text('nextLabel', 'Next »')}
+    ofLabel={text('ofLabel', 'of')}
+    onChange={action('onChange')}
+    previousLabel={text('previousLabel', '« Previous')}
+    numberPages={number('numberPages', 23)}
   />
 );
 
