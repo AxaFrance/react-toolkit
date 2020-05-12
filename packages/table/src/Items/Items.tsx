@@ -7,7 +7,7 @@ import {
   withClassModifier,
   WithOnChangeEvent,
   OnChangeCustomEvent,
-  compose
+  compose,
 } from '@axa-fr/react-toolkit-core';
 
 export type ItemsComponentProps = Pick<
@@ -18,6 +18,8 @@ export type ItemsComponentProps = Pick<
     id: string;
     numberItems?: number;
     items?: number[];
+    displayLabel?: React.ReactNode;
+    elementsLabel?: React.ReactNode;
   };
 const DEFAULT_CLASSNAME = 'af-paging__form';
 
@@ -25,6 +27,8 @@ const defaultProps: Partial<ItemsComponentProps> = {
   numberItems: 10,
   items: [5, 10, 25, 50, 100],
   id: null,
+  displayLabel: 'Afficher',
+  elementsLabel: 'éléments',
 };
 
 class Items extends React.PureComponent<ItemsComponentProps> {
@@ -42,7 +46,15 @@ class Items extends React.PureComponent<ItemsComponentProps> {
   }
 
   render() {
-    const { numberItems, className, items, id } = this.props;
+    const {
+      className,
+      displayLabel,
+      elementsLabel,
+      id,
+      items,
+      numberItems,
+    } = this.props;
+
     const content = items.map(item => (
       <option key={item} value={item}>
         {item}
@@ -56,7 +68,7 @@ class Items extends React.PureComponent<ItemsComponentProps> {
           <div className="af-form__group">
             <div className="col col-sm-2 col-md-2 col-lg-2 col-xl-2">
               <label className="af-form__group-label" htmlFor={defaultIdName}>
-                Afficher
+                {displayLabel}
               </label>
             </div>
             <div className="col col-sm-10 col-md-10 col-lg-10 col-xl-10">
@@ -71,7 +83,7 @@ class Items extends React.PureComponent<ItemsComponentProps> {
                   </select>
                   <span className="glyphicon glyphicon-menu-down" />
                 </div>
-                <span className="af-form__input-cmplt">éléments</span>
+                <span className="af-form__input-cmplt">{elementsLabel}</span>
               </div>
             </div>
           </div>
