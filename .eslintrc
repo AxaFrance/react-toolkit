@@ -22,7 +22,7 @@
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
     "react/forbid-prop-types": 0,

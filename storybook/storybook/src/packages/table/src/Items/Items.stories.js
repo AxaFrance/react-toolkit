@@ -7,11 +7,13 @@ import readme from '@axa-fr/react-toolkit-table/src/Items/README.md';
 
 const ItemsStory = () => (
   <Items
-    numberItems={number('numberItems', 20)}
-    onChange={action('onChange')}
-    items={[5, 10, 25, 50, 100]}
     classModifier={text('classModifier', '')}
     className={text('className', '')}
+    displayLabel={text('displayLabel', 'Show')}
+    elementsLabel={text('elementsLabel', 'elements')}
+    items={[5, 10, 25, 50, 100]}
+    onChange={action('onChange')}
+    numberItems={number('numberItems', 20)}
   />
 );
 

@@ -7,8 +7,8 @@ import {
   OnChangeCustomEvent,
   compose,
 } from '@axa-fr/react-toolkit-core';
-import Pager from '../Pager/Pager';
-import Items from '../Items/Items';
+import Pager, { PagerComponentProps } from '../Pager/Pager';
+import Items, { ItemsComponentProps } from '../Items/Items';
 
 const DEFAULT_CLASSNAME = 'af-paging';
 
@@ -18,11 +18,9 @@ export interface PagingEvent {
 }
 
 export type PagingComponentProps = React.HTMLProps<HTMLTableElement> &
-  WithOnChangeEvent<PagingEvent> & {
-    numberItems?: number;
-    numberPages?: number;
-    currentPage: number;
-  };
+  WithOnChangeEvent<PagingEvent> &
+  PagerComponentProps &
+  ItemsComponentProps;
 
 const defaultProps: Partial<PagingComponentProps> = {
   numberItems: 10,
@@ -55,7 +53,19 @@ class Paging extends React.PureComponent<PagingComponentProps> {
   }
 
   render() {
-    const { numberItems, currentPage, numberPages, className, id } = this.props;
+    const {
+      className,
+      currentPage,
+      displayLabel,
+      elementsLabel,
+      id,
+      mode,
+      nextLabel,
+      numberItems,
+      numberPages,
+      ofLabel,
+      previousLabel,
+    } = this.props;
 
     return (
       <div className={className}>
@@ -64,6 +74,8 @@ class Paging extends React.PureComponent<PagingComponentProps> {
             onChange={this.onChangeItems}
             numberItems={numberItems}
             id={id}
+            displayLabel={displayLabel}
+            elementsLabel={elementsLabel}
           />
         </div>
         <div className="af-paging__pager">
@@ -71,6 +83,10 @@ class Paging extends React.PureComponent<PagingComponentProps> {
             onChange={this.onChangePage}
             currentPage={currentPage}
             numberPages={numberPages}
+            previousLabel={previousLabel}
+            nextLabel={nextLabel}
+            ofLabel={ofLabel}
+            mode={mode}
           />
         </div>
       </div>
