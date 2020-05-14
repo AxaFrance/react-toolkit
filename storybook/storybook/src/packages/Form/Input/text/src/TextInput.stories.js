@@ -18,7 +18,7 @@ const TextInputStory = () => (
   <form className="af-form" name="myform">
     <TextInput
       id={text('id', 'uniqueid')}
-      label={text('label', 'Place name *')}
+      label={text('label', 'Place name')}
       name={text('name', 'placeName')}
       onChange={action('onChange')}
       value={text('value', '')}
@@ -47,11 +47,44 @@ const TextInputStory = () => (
   </form>
 );
 
+const TextInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <TextInput
+      id={text('id', 'uniqueid')}
+      label={text('label', 'Place name')}
+      name={text('name', 'placeName')}
+      onChange={action('onChange')}
+      value={text('value', '')}
+      helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
+      placeholder={text('placeholder', '')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
+      className={text('className', '')}
+      tabIndex={text('tabIndex', '')}
+      autoFocus={boolean('autoFocus', true)}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        Constants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        Constants.defaultProps.classNameContainerInput
+      )}>
+      <HelpButton>tooltip avec du text</HelpButton>
+    </TextInput>
+  </form>
+);
+
 const TextInputErrorStory = () => (
   <form className="af-form" name="myform">
     <TextInput
       id={text('id', 'uniqueid')}
-      label={text('label', 'Place name *')}
+      label={text('label', 'Place name')}
       name={text('name', 'placeName')}
       onChange={action('onChange')}
       value={text('value', '')}
@@ -63,7 +96,7 @@ const TextInputErrorStory = () => (
       readOnly={boolean('readOnly', false)}
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
-      classModifier={text('classModifier', '')}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', false)}
@@ -217,4 +250,5 @@ stories.add('Text Error', TextErrorStory);
 stories.add('Text Success', TextSuccessStory);
 stories.add('Text Disabled', TextDisabledStory);
 stories.add('TextInput', TextInputStory);
+stories.add('TextInput Required', TextInputStoryRequired);
 stories.add('TextInput Error', TextInputErrorStory);

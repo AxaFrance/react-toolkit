@@ -29,7 +29,7 @@ const modes = [RadioModes.classic, RadioModes.default, RadioModes.inline];
 const RadioInputStory = () => (
   <form className="af-form" name="myform">
     <RadioInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', '')}
       options={options}
@@ -57,10 +57,41 @@ const RadioInputStory = () => (
   </form>
 );
 
+const RadioInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <RadioInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeType')}
+      id={text('id', '')}
+      options={options}
+      onChange={action('onChange')}
+      mode={select('mode', modes, RadioModes.default)}
+      value={text('value', '')}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
 const RadioClassicInputStory = () => (
   <form className="af-form" name="myform">
     <RadioInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', '')}
       options={options}
@@ -91,7 +122,7 @@ const RadioClassicInputStory = () => (
 const RadioInlineInputStory = () => (
   <form className="af-form" name="myform">
     <RadioInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', '')}
       options={options}
@@ -122,7 +153,7 @@ const RadioInlineInputStory = () => (
 const RadioInputWithChildrenStory = () => (
   <form className="af-form" name="myform">
     <RadioInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', '')}
       options={options}
@@ -213,6 +244,7 @@ stories.addParameters({
 stories.add('RadioItem', RadioItemStory);
 stories.add('Radio', RadioStory);
 stories.add('RadioInput Default', RadioInputStory);
+stories.add('RadioInput Default Required', RadioInputStoryRequired);
 stories.add('RadioInput Classic', RadioClassicInputStory);
 stories.add('RadioInput Inline', RadioInlineInputStory);
 stories.add('Radio with children', RadioInputWithChildrenStory);

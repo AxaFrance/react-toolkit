@@ -17,7 +17,7 @@ import readme from '@axa-fr/react-toolkit-form-input-file/dist/README.md';
 const FileInputStory = () => (
   <form className="af-form" name="myform">
     <FileInput
-      label={text('label', 'Image *')}
+      label={text('label', 'Image')}
       name={text('name', 'placeImage')}
       id={text('id', 'uniqueid')}
       accept={text('accept', 'image/jpeg, image/png, application/*')}
@@ -31,6 +31,36 @@ const FileInputStory = () => (
       readOnly={boolean('readOnly', false)}
       disabled={boolean('disabled', false)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
+const FileInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <FileInput
+      label={text('label', 'Image')}
+      name={text('name', 'placeImage')}
+      id={text('id', 'uniqueid')}
+      accept={text('accept', 'image/jpeg, image/png, application/*')}
+      onChange={action('onChange')}
+      helpMessage={text('helpMessage', 'Take a photo af a place')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      multiple={boolean('multiple', true)}
+      isVisible={boolean('isVisible', true)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
@@ -108,7 +138,6 @@ const values = [
       type: 'image',
     },
   },
-  ,
   {
     id: '000005',
     file: {
@@ -190,3 +219,4 @@ stories.add('File', FileStory);
 stories.add('File with values', FileWithValuesStory);
 stories.add('File with errors', FileWithErrorsStory);
 stories.add('FileInput', FileInputStory);
+stories.add('FileInput Required', FileInputStoryRequired);

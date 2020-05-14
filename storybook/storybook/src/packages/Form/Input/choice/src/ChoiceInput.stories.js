@@ -15,7 +15,7 @@ import readme from '@axa-fr/react-toolkit-form-input-choice/dist/README.md';
 const ChoiceInputStory = () => (
   <form className="af-form" name="myform">
     <ChoiceInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', 'uniqueid')}
       onChange={action('onChange')}
@@ -28,6 +28,35 @@ const ChoiceInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
+const ChoiceInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <ChoiceInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeType')}
+      id={text('id', 'uniqueid')}
+      onChange={action('onChange')}
+      value={boolean('value', null)}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
@@ -77,4 +106,5 @@ stories.addParameters({
 });
 
 stories.add('ChoiceInput', ChoiceInputStory);
+stories.add('ChoiceInput Required', ChoiceInputStoryRequired);
 stories.add('Choice', ChoiceStory);

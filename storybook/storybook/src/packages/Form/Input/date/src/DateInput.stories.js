@@ -16,7 +16,7 @@ import readme from '@axa-fr/react-toolkit-form-input-date/dist/README.md';
 const DateInputStory = () => (
   <form className="af-form" name="myform">
     <DateInput
-      label={text('label', 'Place name *')}
+      label={text('label', 'Place name')}
       name={text('name', 'placeName')}
       id={text('id', 'uniqueid')}
       locale={text('locale', 'fr-fr')}
@@ -30,6 +30,43 @@ const DateInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+      fixedHeight
+      showMonthDropdown
+      showYearDropdown
+      autoFocus={false}
+      todayButton={text('todayButton', "Aujourd'hui")}
+      popperPlacement="right-start"
+      yearDropdownItemNumber={6}
+    />
+  </form>
+);
+
+const DateInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <DateInput
+      label={text('label', 'Place name')}
+      name={text('name', 'placeName')}
+      id={text('id', 'uniqueid')}
+      locale={text('locale', 'fr-fr')}
+      value={moment('11/26/2017', 'MM/DD/YYYY')}
+      onChange={action('onChange')}
+      helpMessage={text('helpMessage', 'jj/mm/aaaa')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.success)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
@@ -95,4 +132,5 @@ stories.addParameters({
 });
 
 stories.add('DateInputStory', DateInputStory);
+stories.add('DateInputStory Required', DateInputStoryRequired);
 stories.add('CustomDateStory', CustomDateStory);

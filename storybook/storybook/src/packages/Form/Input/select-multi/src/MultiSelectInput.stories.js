@@ -31,7 +31,7 @@ const values = ['fun', 'drink'];
 const MultiSelectInputStory = () => (
   <form className="af-form" name="myform">
     <MultiSelectInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       options={options}
       onChange={action('onChange')}
@@ -44,6 +44,36 @@ const MultiSelectInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      placeholder={text('placeholder', 'Select')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
+const MultiSelectInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <MultiSelectInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeType')}
+      options={options}
+      onChange={action('onChange')}
+      values={values}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       placeholder={text('placeholder', 'Select')}
       classNameContainerLabel={text(
@@ -89,7 +119,7 @@ const MultiSelectStory = () => (
 const MultiSelectWithOneValueStory = () => (
   <form className="af-form" name="myform">
     <MultiSelectInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       options={options}
       onChange={action('onChange')}
@@ -127,4 +157,5 @@ stories.addParameters({
 
 stories.add('MultiSelect', MultiSelectStory);
 stories.add('MultiSelectInput', MultiSelectInputStory);
+stories.add('MultiSelectInput Required', MultiSelectInputStoryRequired);
 stories.add('MultiSelect one value', MultiSelectWithOneValueStory);

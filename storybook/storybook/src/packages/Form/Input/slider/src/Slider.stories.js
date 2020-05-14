@@ -25,7 +25,7 @@ const SliderInputStory = () => (
     <SliderInput
       options={options}
       id={text('id', 'uniqueid')}
-      label={text('label', 'Place name *')}
+      label={text('label', 'Place name')}
       name={text('name', 'placeName')}
       onChange={action('onChange')}
       value={number('value', '1024')}
@@ -38,6 +38,37 @@ const SliderInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        Constants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        Constants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
+const SliderInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <SliderInput
+      options={options}
+      id={text('id', 'uniqueid')}
+      label={text('label', 'Place name')}
+      name={text('name', 'placeName')}
+      onChange={action('onChange')}
+      value={number('value', '1024')}
+      helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
+      placeholder={text('placeholder', '')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
@@ -79,3 +110,4 @@ stories.addParameters({
 
 stories.add('Slider', SliderStory);
 stories.add('SliderInput', SliderInputStory);
+stories.add('SliderInput Required', SliderInputStoryRequired);
