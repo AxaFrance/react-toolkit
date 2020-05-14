@@ -19,7 +19,7 @@ import readme from '@axa-fr/react-toolkit-form-input-textarea/dist/README.md';
 const TextareaInputStory = () => (
   <form className="af-form" name="myform">
     <TextareaInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeType')}
       id={text('id', 'uinqid')}
       onChange={action('onChange')}
@@ -35,6 +35,40 @@ const TextareaInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      tabIndex={text('tabIndex', null)}
+      autoFocus={boolean('autoFocus', true)}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
+const TextareaInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <TextareaInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeType')}
+      id={text('id', 'uinqid')}
+      onChange={action('onChange')}
+      value={text('value', '')}
+      rows={number('rows', 6)}
+      cols={number('cols', 60)}
+      placeholder={text('placeholder', '')}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       tabIndex={text('tabIndex', null)}
       autoFocus={boolean('autoFocus', true)}
@@ -90,3 +124,4 @@ stories.addParameters({
 
 stories.add('Textarea', TextareaStory);
 stories.add('TextareaInput', TextareaInputStory);
+stories.add('TextareaInput Required', TextareaInputStoryRequired);

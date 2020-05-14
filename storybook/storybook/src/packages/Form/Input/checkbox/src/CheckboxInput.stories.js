@@ -67,6 +67,37 @@ const CheckboxInputStory = () => (
   </form>
 );
 
+const CheckboxInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <CheckboxInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeType')}
+      id={text('id', 'inputuniqueid')}
+      mode={select('mode', modes, CheckboxModes.classic)}
+      options={options}
+      values={values}
+      onChange={action('onChange')}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
 const CheckboxInputDefaultStory = () => (
   <form className="af-form" name="myform">
     <CheckboxInput
@@ -238,6 +269,7 @@ stories.addParameters({
 stories.add('CheckboxItem', CheckboxItemStory);
 stories.add('Checkbox', CheckboxStory);
 stories.add('CheckboxInput Classic', CheckboxInputStory);
+stories.add('CheckboxInput Required', CheckboxInputStoryRequired);
 stories.add('CheckboxInput Default', CheckboxInputDefaultStory);
 stories.add('CheckboxInput Inline', CheckboxInputInlineStory);
 stories.add('CheckboxItem Toggle', CheckboxItemToggleStory);

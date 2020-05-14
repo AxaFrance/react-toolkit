@@ -20,6 +20,13 @@
     margin: 0;
   }
 
+  &__group--required &__group-label {
+    &:after {
+      content: '*';
+      color: $color-red-error;
+    }
+  }
+
   &__message {
     position: absolute;
     min-height: 1.6em;

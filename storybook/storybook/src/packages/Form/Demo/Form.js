@@ -19,7 +19,8 @@ const Form = ({ handleChange, handleSubmit, form }) => (
       />
       <h3 className="af-subtitle">Informations</h3>
       <TextInput
-        label="Place name *"
+        label="Place name"
+        classModifier="required"
         name="placeName"
         onChange={handleChange}
         helpMessage="Enter the place name, ex : Webcenter"
@@ -33,14 +34,16 @@ const Form = ({ handleChange, handleSubmit, form }) => (
         </HelpButton>
       </TextInput>
       <TextInput
-        label="Author *"
+        label="Author"
+        classModifier="required"
         name="author"
         onChange={handleChange}
         helpMessage="Enter the author name, ex : Steve"
         {...form.author}
       />
       <DateInput
-        label="Date *"
+        label="Date"
+        classModifier="required"
         name="date"
         onChange={handleChange}
         helpMessage="Enter the actuel date"

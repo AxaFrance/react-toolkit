@@ -132,6 +132,39 @@ const SwitchInputStory = () => (
   />
 );
 
+const SwitchInputStoryRequired = () => (
+  <SwitchInput
+    label={text('label', 'Select a choice')}
+    name={text(KNOBS_LABELS.SwitchInput.name, LABELS.SwitchInput.name)}
+    value={select(
+      KNOBS_LABELS.SwitchInput.value,
+      LABELS.SwitchInput.values,
+      LABELS.SwitchInput.defaultValue
+    )}
+    disabled={boolean(
+      KNOBS_LABELS.SwitchInput.disabled,
+      LABELS.SwitchInput.disabled
+    )}
+    isVisible={boolean(
+      KNOBS_LABELS.SwitchInput.isVisible,
+      LABELS.SwitchInput.isVisible
+    )}
+    classModifier={text(
+      KNOBS_LABELS.SwitchInput.classModifier,
+      'required'
+    )}
+    className={text(
+      KNOBS_LABELS.SwitchInput.className,
+      LABELS.SwitchInput.className
+    )}
+    options={options}
+    onChange={action('onChange')}
+    message={text('message', '')}
+    messageType={select('messageType', MessageTypes, MessageTypes.error)}
+    forceDisplayMessage={boolean('forceDisplayMessage', false)}
+  />
+);
+
 const stories = storiesOf('Form.Input.Switch', module);
 
 stories.addParameters({
@@ -142,3 +175,4 @@ stories.addParameters({
 
 stories.add('Switch', SwitchStory);
 stories.add('SwitchInput', SwitchInputStory);
+stories.add('SwitchInput Required', SwitchInputStoryRequired);

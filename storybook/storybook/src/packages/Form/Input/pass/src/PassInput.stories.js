@@ -69,7 +69,7 @@ const PassInputStory = () => (
       <PassInput
         id={text('id', 'uniqueid')}
         score={select('score', [null, 0, 1, 2, 3, 4], 0)}
-        label={text('label', 'Password *')}
+        label={text('label', 'Password')}
         name={text('name', 'password')}
         onChange={action('onChange')}
         onToggleType={action('onToggleType')}
@@ -99,6 +99,42 @@ const PassInputStory = () => (
   </form>
 );
 
+const PassInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <div>
+      <PassInput
+        id={text('id', 'uniqueid')}
+        score={select('score', [null, 0, 1, 2, 3, 4], 0)}
+        label={text('label', 'Password')}
+        name={text('name', 'password')}
+        onChange={action('onChange')}
+        onToggleType={action('onToggleType')}
+        value={text('value', '')}
+        helpMessage={text('helpMessage', '8 caractères minimum')}
+        message={text('message', '')}
+        messageType={select('messageType', MessageTypes, MessageTypes.error)}
+        forceDisplayMessage={boolean('forceDisplayMessage', false)}
+        readOnly={boolean('readOnly', false)}
+        disabled={boolean('disabled', false)}
+        isVisible={boolean('isVisible', true)}
+        classModifier={text('classModifier', 'required')}
+        className={text('className', '')}
+        tabIndex={text('tabIndex', '')}
+        autoFocus={boolean('autoFocus', true)}
+        classNameContainerLabel={text(
+          'classNameContainerLabel',
+          InputConstants.defaultProps.classNameContainerLabel
+        )}
+        classNameContainerInput={text(
+          'classNameContainerInput',
+          InputConstants.defaultProps.classNameContainerInput
+        )}>
+        <HelpButton>Choose a password</HelpButton>
+      </PassInput>
+    </div>
+  </form>
+);
+
 const stories = storiesOf('Form.Input.Pass', module);
 
 stories.addParameters({
@@ -109,3 +145,4 @@ stories.addParameters({
 
 stories.add('Pass', PassStory);
 stories.add('PassInput', PassInputStory);
+stories.add('PassInput Required', PassInputStoryRequired);

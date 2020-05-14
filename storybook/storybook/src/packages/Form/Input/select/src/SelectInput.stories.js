@@ -26,7 +26,7 @@ const options = [
 const SelectInputStory = () => (
   <form className="af-form" name="myform">
     <SelectInput
-      label={text('label', 'Place type *')}
+      label={text('label', 'Place type')}
       name={text('name', 'placeName')}
       id={text('id', 'muid')}
       helpMessage={text('helpMessage', 'Enter the place type')}
@@ -37,6 +37,39 @@ const SelectInputStory = () => (
       disabled={boolean('disabled', false)}
       isVisible={boolean('isVisible', true)}
       classModifier={text('classModifier', '')}
+      className={text('className', '')}
+      placeholder={text('placeholder', '- Select -')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      mode={select('mode', SelectModes, SelectModes.default)}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+      forceDisplayPlaceholder={boolean('forceDisplayPlaceholder', false)}
+    />
+  </form>
+);
+
+const SelectInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <SelectInput
+      label={text('label', 'Place type')}
+      name={text('name', 'placeName')}
+      id={text('id', 'muid')}
+      helpMessage={text('helpMessage', 'Enter the place type')}
+      onChange={action('onChange')}
+      options={options}
+      value={text('value', '')}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
       className={text('className', '')}
       placeholder={text('placeholder', '- Select -')}
       message={text('message', '')}
@@ -160,3 +193,4 @@ stories.add('SelectBase', SelectBaseStory);
 stories.add('Select', SelectStory);
 stories.add('Select keep placeholder', SelectKeepPlaceholderStory);
 stories.add('SelectInput', SelectInputStory);
+stories.add('SelectInput Required', SelectInputStoryRequired);

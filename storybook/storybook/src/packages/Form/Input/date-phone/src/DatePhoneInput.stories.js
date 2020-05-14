@@ -16,7 +16,7 @@ import readme from '@axa-fr/react-toolkit-form-input-date-phone/dist/README.md';
 const DatePhoneInputStory = () => (
   <form className="af-form" name="myform">
     <DatePhoneInput
-      label={text('label', 'Place name *')}
+      label={text('label', 'Place name')}
       name={text('name', 'placeName')}
       id={text('id', 'uniqueid')}
       locale={text('locale', 'fr-fr')}
@@ -42,6 +42,37 @@ const DatePhoneInputStory = () => (
     />
   </form>
 );
+
+const DatePhoneInputStoryRequired = () => (
+  <form className="af-form" name="myform">
+    <DatePhoneInput
+      label={text('label', 'Place name')}
+      name={text('name', 'placeName')}
+      id={text('id', 'uniqueid')}
+      locale={text('locale', 'fr-fr')}
+      value={moment('11/26/2017', 'MM/DD/YYYY')}
+      onChange={action('onChange')}
+      helpMessage={text('helpMessage', 'jj/mm/aaaa')}
+      message={text('message', '')}
+      messageType={select('messageType', MessageTypes, MessageTypes.success)}
+      forceDisplayMessage={boolean('forceDisplayMessage', false)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      classModifier={text('classModifier', 'required')}
+      className={text('className', '')}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        InputConstants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        InputConstants.defaultProps.classNameContainerInput
+      )}
+    />
+  </form>
+);
+
 const DatePhoneStory = () => (
   <form className="af-form" name="myform">
     <FieldForm
@@ -75,3 +106,4 @@ stories.addParameters({
 });
 stories.add('DatePhone', DatePhoneStory);
 stories.add('DatePhoneInput', DatePhoneInputStory);
+stories.add('DatePhoneInput Required', DatePhoneInputStoryRequired);
