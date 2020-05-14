@@ -29,6 +29,9 @@ $ npm run dev
 # [react] To edit a single component in live inside storybook, you have run js compilation in another bash process
 $ npx lerna exec --scope=@axa-fr/react-toolkit-table -- node ../../scripts/watch-js.js
 
+# [CSS] Generate CSS for storybook (does not watch, you have to run it manually)
+$ gulp all
+
 # [css] Develop html/css
 $ npm run css
 # [css] Build the html/css website
