@@ -1,6 +1,20 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.11](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.10...v1.3.11)
+> 15 May 2020
+- feat(react-toolkit-form): add a red star on label of required fields [`#611`](https://github.com/AxaGuilDEv/react-toolkit/pull/611) by Guillaume Chervet
+- react-toolkit-table: customize paging labels [`#608`](https://github.com/AxaGuilDEv/react-toolkit/pull/608) by Olivier YOUF
+- build: update package-lock by Lerna [`11eca4a`](https://github.com/AxaGuilDEv/react-toolkit/commit/11eca4ae48771398ab24b6607a7ec8f3d8044fbb) by Xavier Balloy 
+- chore(release): publish v1.3.11 [skip ci] [`30e3b8a`](https://github.com/AxaGuilDEv/react-toolkit/commit/30e3b8a319a32e609fb18ac57ab7bc7da1222c2e) by Build-CI 
+- feat(react-toolkit-form): automatically add red * when field is required [`d3c1c6c`](https://github.com/AxaGuilDEv/react-toolkit/commit/d3c1c6c664839b978dde0f7352fd7333362ba369) by Xavier Balloy 
+- feat(react-toolkit-table): allow to customize labels of Paging [`ca68009`](https://github.com/AxaGuilDEv/react-toolkit/commit/ca68009cc6b2d53df883251620c5d29bfc8757e1) by Xavier Balloy 
+- feat(react-toolkit-table): allow to customize labels of Pager [`2f39067`](https://github.com/AxaGuilDEv/react-toolkit/commit/2f3906769a6ae60255e5ed18af8a191cefb4e0e1) by Xavier Balloy 
+- feat(react-toolkit-table): allow to customize labels of Items [`0945a94`](https://github.com/AxaGuilDEv/react-toolkit/commit/0945a94b6ef7608ac3767af8dfe45c0fdeeb0a44) by Xavier Balloy 
+- docs(changelog) update to new 1.3.10 [skip ci] [`e6dbdf4`](https://github.com/AxaGuilDEv/react-toolkit/commit/e6dbdf4a42f72f664ed5e4deb6932f4ed6a934d4) by Build-CI 
+- docs: improve contribution doc to build CSS [`60b96fd`](https://github.com/AxaGuilDEv/react-toolkit/commit/60b96fd6826a45c735fccaac20b2b54ed9c5a991) by Xavier Balloy 
+- build: add .tsx in Eslint allowed JSX extensions [`dec41e9`](https://github.com/AxaGuilDEv/react-toolkit/commit/dec41e96b51ee15ba3bc4e0e1842771d908e9d15) by Xavier Balloy 
+
 #### [v1.3.10](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.9...v1.3.10)
 > 6 May 2020
 - feat(storybook): delete addon and clean stories [`#605`](https://github.com/AxaGuilDEv/react-toolkit/pull/605) by Samuel Gomez
@@ -303,5 +317,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.10...v0.0.0)
-> 6 May 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.11...v0.0.0)
+> 15 May 2020
