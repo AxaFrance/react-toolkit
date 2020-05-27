@@ -26,7 +26,7 @@ function renderedChildren(children, wrapper, message, messageType) {
     return null;
   }
 
-  const newRenderedChildren = React.Children.map(children, child => {
+  return React.Children.map(children, child => {
     // create a copy that includes addtional property values
     // as needed
 
@@ -43,7 +43,7 @@ function renderedChildren(children, wrapper, message, messageType) {
         child.props.children,
         wrapper,
         message,
-        messageType
+        messageType,
       );
       if (subChildren != null) {
         props.children = subChildren;
@@ -65,7 +65,6 @@ function renderedChildren(children, wrapper, message, messageType) {
     }
     return child;
   });
-  return newRenderedChildren;
 }
 
 class FieldForm extends Component {
@@ -81,16 +80,6 @@ class FieldForm extends Component {
       hasChange: false,
       memory: { message: '', messageType: '' },
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { forceDisplayMessage } = this.props;
-    if (forceDisplayMessage !== nextProps.forceDisplayMessage) {
-      const memory = this.captureMemory();
-      this.setState({
-        memory,
-      });
-    }
   }
 
   onChange() {
@@ -111,10 +100,13 @@ class FieldForm extends Component {
   }
 
   onFocus() {
-    const memory = this.captureMemory();
+    const { message, messageType } = this.props;
     this.setState({
       hasFocus: true,
-      memory,
+      memory: {
+        message,
+        messageType,
+      },
     });
   }
 
@@ -140,14 +132,6 @@ class FieldForm extends Component {
     };
   }
 
-  captureMemory() {
-    const { message, messageType } = this.props;
-    return {
-      message,
-      messageType,
-    };
-  }
-
   render() {
     const { children } = this.props;
     const { message, messageType } = this.getInfo();
@@ -155,13 +139,13 @@ class FieldForm extends Component {
       children,
       this,
       message,
-      messageType
+      messageType,
     );
     const { className, classModifier } = this.props;
     const subComponentClassName = ClassManager.getComponentClassName(
       className,
       classModifier,
-      defaultClassName
+      defaultClassName,
     );
     return <div className={subComponentClassName}>{childrenCloned}</div>;
   }
