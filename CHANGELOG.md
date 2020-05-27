@@ -1,6 +1,15 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.12](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.11...v1.3.12)
+> 27 May 2020
+- chore(release): publish v1.3.12 [skip ci] [`cde5432`](https://github.com/AxaGuilDEv/react-toolkit/commit/cde5432a82c77661b26724028b100f7d87c94865) by Build-CI 
+- refactor(react-toolkit-form): remove use of componentWillUpdate [`b7354f2`](https://github.com/AxaGuilDEv/react-toolkit/commit/b7354f29d4354561c72277b6396b3cb22dbb0d94) by Guillaume Chervet 
+- build(TypeScript): expose typings [`1048201`](https://github.com/AxaGuilDEv/react-toolkit/commit/1048201c684a22ef40883c3126b8bd4434ef99b8) by Guillaume Chervet 
+- refactor(react-toolkit-form): remove deprecated use of componentWillUpdate [`9aed3d6`](https://github.com/AxaGuilDEv/react-toolkit/commit/9aed3d67de6cf16da01d3d06f49ffdddfa97a05d) by Xavier Balloy 
+- docs(changelog) update to new 1.3.11 [skip ci] [`bc5aa81`](https://github.com/AxaGuilDEv/react-toolkit/commit/bc5aa81dc80de5514ff8e616520dc9d5a7d7b89c) by Build-CI 
+- build(TypeScript): expose typings for packages written in TypeScript [`c5f1012`](https://github.com/AxaGuilDEv/react-toolkit/commit/c5f1012c2092111db78b7b08148abc7f265ab2af) by Xavier Balloy 
+
 #### [v1.3.11](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.10...v1.3.11)
 > 15 May 2020
 - feat(react-toolkit-form): add a red star on label of required fields [`#611`](https://github.com/AxaGuilDEv/react-toolkit/pull/611) by Guillaume Chervet
@@ -317,5 +326,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.11...v0.0.0)
-> 15 May 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.12...v0.0.0)
+> 27 May 2020
