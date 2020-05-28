@@ -50,7 +50,7 @@ const TabsStateless: React.SFC<TabsStatelessProps & TabsStatelessHandlers> = ({
       </ul>
       <div className="af-tabs__content">
         {children.map((item, index) => (
-          <Pane active={activeIndex === index.toString()} key={`pane -${index}`}>
+          <Pane active={activeIndex === index.toString()} key={`pane-${index}`}>
             {item.props.children}
           </Pane>
         ))}
