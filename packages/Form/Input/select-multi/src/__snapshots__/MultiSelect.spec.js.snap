@@ -2,19 +2,19 @@
 
 exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
 <div
-  className="css-10nd86i react-select"
+  className="react-select css-2b097c-container"
   onKeyDown={[Function]}
 >
   <div
-    className="css-vj8t7z"
+    className=" css-yk16xz-control"
     onMouseDown={[Function]}
     onTouchEnd={[Function]}
   >
     <div
-      className="css-1hwfws3"
+      className=" css-g1d714-ValueContainer"
     >
       <div
-        className="css-xwjg1b"
+        className="css-1rhbuit-multiValue"
       >
         <div
           className="css-12jo7m5"
@@ -22,14 +22,14 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
           For fun
         </div>
         <div
-          className="css-1alnv5e"
+          className="css-xb97g8"
           onClick={[Function]}
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="css-19bqh2r"
+            className="css-6q0nyr-Svg"
             focusable="false"
             height={14}
             viewBox="0 0 20 20"
@@ -42,7 +42,7 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
         </div>
       </div>
       <div
-        className="css-xwjg1b"
+        className="css-1rhbuit-multiValue"
       >
         <div
           className="css-12jo7m5"
@@ -50,14 +50,14 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
           For drink
         </div>
         <div
-          className="css-1alnv5e"
+          className="css-xb97g8"
           onClick={[Function]}
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="css-19bqh2r"
+            className="css-6q0nyr-Svg"
             focusable="false"
             height={14}
             viewBox="0 0 20 20"
@@ -70,7 +70,7 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
         </div>
       </div>
       <div
-        className="css-1g6gooi"
+        className="css-b8ldur-Input"
       >
         <div
           className=""
@@ -98,6 +98,7 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
                 "boxSizing": "content-box",
                 "color": "inherit",
                 "fontSize": "inherit",
+                "label": "input",
                 "opacity": 1,
                 "outline": 0,
                 "padding": 0,
@@ -127,17 +128,17 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-1wy0on6"
+      className=" css-1hb7zxy-IndicatorsContainer"
     >
       <div
         aria-hidden="true"
-        className="css-1ep9fjw"
+        className=" css-tlfecz-indicatorContainer"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
         <svg
           aria-hidden="true"
-          className="css-19bqh2r"
+          className="css-6q0nyr-Svg"
           focusable="false"
           height={20}
           viewBox="0 0 20 20"
@@ -149,17 +150,17 @@ exports[`<MultiSelect> renders MultiSelect correctly 1`] = `
         </svg>
       </div>
       <span
-        className="css-d8oujb"
+        className=" css-1okebmr-indicatorSeparator"
       />
       <div
         aria-hidden="true"
-        className="css-1ep9fjw"
+        className=" css-tlfecz-indicatorContainer"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
         <svg
           aria-hidden="true"
-          className="css-19bqh2r"
+          className="css-6q0nyr-Svg"
           focusable="false"
           height={20}
           viewBox="0 0 20 20"

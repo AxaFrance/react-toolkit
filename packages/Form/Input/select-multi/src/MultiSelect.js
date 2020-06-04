@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
+import ReactSelectAsync from 'react-select/async';
 
 import {
   Input,
@@ -29,9 +30,9 @@ const MultiSelect = props => {
     noResultsText,
     ...otherProps
   } = props;
-  
+
   const isDisabled = disabled || readOnly;
-  const SelectComponent = loadOptions ? ReactSelect.Async : ReactSelect;
+  const SelectComponent = loadOptions ? ReactSelectAsync : ReactSelect;
 
   if (values != null) {
     const newValues = options.reduce((acc, opt) => {

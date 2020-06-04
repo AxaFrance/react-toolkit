@@ -88,7 +88,7 @@
     "react-dropzone": "^4.2.11",
     "react-modal": "^3.8.1",
     "react-popper": "^0.8.3",
-    "react-select": "^2.2.0",
+    "react-select": "^3.1.0",
     "react-transition-group": "~2.3.1",
     "webpack": "^4.28.3",
     "webpack-dev-server": "^3.1.14"
