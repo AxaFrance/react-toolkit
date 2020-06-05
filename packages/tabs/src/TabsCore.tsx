@@ -11,9 +11,10 @@ const defaultState = { activeIndex: '0' };
 
 export type TabsCoreProps = {
   children: React.ReactElement<TabProps>[];
-  onChange?: (e: string) => void;
+  activeIndex?: string;
   className?: string;
   classModifier?: string;
+  onChange?: (tabIndex: string) => void;
 };
 
 export const onChangeEvent = (onChange: Function) => (setState: Function) => (
@@ -29,15 +30,15 @@ export const onChangeEvent = (onChange: Function) => (setState: Function) => (
 };
 
 const TabsCore: React.FunctionComponent<TabsCoreProps> = ({
+  activeIndex,
   onChange,
-  className = '',
   ...otherProps
 }) => {
   const [state, setState] = useState<TabsContainerState>(defaultState);
+
   return (
     <TabsStateless
-      className={className}
-      {...state}
+      activeIndex={activeIndex || state.activeIndex}
       {...otherProps}
       onChange={onChangeEvent(onChange)(setState)(state)}
     />

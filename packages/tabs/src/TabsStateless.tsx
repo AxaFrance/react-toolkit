@@ -7,9 +7,9 @@ import Pane from './Pane';
 const defaultClassName = 'af-tabs';
 
 export interface TabsStatelessProps {
-  className: string;
   children: React.ReactElement<TabProps>[];
   activeIndex: string;
+  className?: string;
   classModifier?: string;
 }
 
@@ -22,13 +22,9 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const TabsStateless: React.SFC<TabsStatelessProps & TabsStatelessHandlers> = ({
-  activeIndex,
-  className,
-  classModifier,
-  children,
-  onChange,
-}) => {
+const TabsStateless: React.FunctionComponent<
+  TabsStatelessProps & TabsStatelessHandlers
+> = ({ activeIndex, className, classModifier, children, onChange }) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
