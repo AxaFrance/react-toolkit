@@ -6,14 +6,16 @@ import readme from '@axa-fr/react-toolkit-help/dist/README.md';
 import './help-custom.scss';
 
 const TextStory = () => (
-  <Help mode={select('mode', ['hover', 'click'], 'click')}>
-    tooltip avec du text
+  <Help mode={select('mode', ['hover', 'click'], 'click')}
+        placement={select('placement', ['top', 'bottom', 'right', 'left'], 'right')}>
+    Lorem ipsum dolor sit amet
   </Help>
 );
 
 const HtmlStory = () => (
   <Help
     mode={select('mode', ['hover', 'click'], 'click')}
+    placement={select('placement', ['top', 'bottom', 'right', 'left'], 'right')}
     classModifier={text('classModifier', 'custom')}
     className={text('className', 'af-popover__container')}>
     <div className="af-help-demo__container">

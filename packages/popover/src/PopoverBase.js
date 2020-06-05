@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { Manager, Reference, Popper } from 'react-popper';
+import React, { useState } from 'react';
+import { usePopper } from 'react-popper';
 import PropTypes from 'prop-types';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 import PopoverPlacements from './PopoverPlacements';
@@ -59,69 +59,70 @@ PopoverBase.Pop = Pop;
 PopoverBase.propTypes = propTypes;
 PopoverBase.defaultProps = defaultProps;
 
-const CustomTarget = (ref, props, target) => (
-  <div
-    ref={ref}
-    className="af-popover__container-over"
-    {...props}
-    role="presentation">
-    {target}
-  </div>
-);
+export const AnimatedPopover = props => {
+  const {
+    placement,
+    children,
+    isOpen,
+    target,
+    className,
+    classModifier,
+    onMouseEnter,
+    onMouseLeave,
+  } = props;
 
-export class AnimatedPopover extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
+  const componentClassName = ClassManager.getComponentClassName(
+    className,
+    classModifier,
+    defaultClassName,
+  );
 
-  render() {
-    const {
-      placement,
-      children,
-      isOpen,
-      target,
-      className,
-      classModifier,
-      onMouseEnter,
-      onMouseLeave,
-    } = this.props;
+  const [referenceElement, setReferenceElement] = useState(null);
+  const [popperElement, setPopperElement] = useState(null);
+  const [arrowElement, setArrowElement] = useState(null);
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [
+      { name: 'arrow', options: { element: arrowElement } },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 8],
+        },
+      },
+    ],
+    placement,
+  });
 
-    const componentClassName = ClassManager.getComponentClassName(
-      className,
-      classModifier,
-      defaultClassName
-    );
+  return (
+    <div className={componentClassName}>
+      <div
+        ref={setReferenceElement}
+        className="af-popover__container-over"
+        role="presentation">
+        {target}
+      </div>
 
-    return (
-      <Manager>
-        <div className={componentClassName}>
-          <Reference>
-            {({ ref, ...props }) => CustomTarget(ref, props, target)}
-          </Reference>
-          {isOpen && (
-            <Popper key="popper" placement={placement}>
-              {({ ref, style, placement: chidrenPlacement, arrowProps }) => (
-                <div
-                  ref={ref}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  className="af-popover__container-pop"
-                  style={style}
-                  data-placement={chidrenPlacement}>
-                  <div
-                    ref={arrowProps.ref}
-                    style={arrowProps.style}
-                    className="af-popover__arrow"
-                  />
-                  {children}
-                </div>
-              )}
-            </Popper>
-          )}
+      {isOpen && (
+        <div
+          ref={setPopperElement}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          style={styles.popper}
+          data-popper-placement={placement}
+          className="af-popover__container-pop"
+          {...attributes.popper}>
+          <div>
+            {children}
+          </div>
+          <div
+            ref={setArrowElement}
+            style={styles.arrow}
+            className="af-popover__arrow"
+          />
         </div>
-      </Manager>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
 
 export default PopoverBase;

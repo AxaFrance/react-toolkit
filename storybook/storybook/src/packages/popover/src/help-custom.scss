@@ -2,30 +2,30 @@
 
 .af-popover__container--custom {
   margin-top: 50px;
+
   .af-popover {
     &__container-pop {
       width: 300px;
       background: white;
-      box-shadow: 2px 0 5px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.2);
       padding: 0;
-      &[data-placement^='right'] {
-        .af-popover__arrow {
-          border: 0;
-          background: white;
-          width: 15px;
-          height: 15px;
-          box-shadow: -2px 0 5px 0px rgba(0, 0, 0, 0.2);
-          transform: rotate(45deg);
-        }
+
+      &[data-popper-placement^='top'] > .af-popover__arrow::before,
+      &[data-popper-placement^='right'] > .af-popover__arrow::before,
+      &[data-popper-placement^='left'] > .af-popover__arrow::before {
+        background: white;
+        box-shadow: -2px 0 5px 0px rgba(0, 0, 0, 0.2);
       }
     }
   }
+
   .af-help-demo {
     &__container {
       background: white;
       position: relative;
       z-index: 2;
     }
+
     &__title {
       border-radius: 3px 3px 0 0;
       background: $color-axa;
@@ -34,6 +34,7 @@
       font-size: 1.5rem;
       font-weight: 400;
     }
+
     &__infos {
       color: $color-texte;
       padding: 0.5rem;
@@ -41,11 +42,13 @@
       align-items: center;
       justify-content: space-around;
     }
+
     &__info {
       display: flex;
       flex-direction: column;
       text-align: center;
       font-weight: 200;
+
       &-number {
         font-size: 2rem;
         font-weight: 400;

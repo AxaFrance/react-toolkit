@@ -2,6 +2,7 @@
 
 exports[`<Help> Render Should render Help component 1`] = `
 <span
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >

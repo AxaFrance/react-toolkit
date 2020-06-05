@@ -1,78 +1,144 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import PopoverPlacements from './PopoverPlacements';
-import Popover, { PopoverClick, PopoverOver } from './Popover';
-
-const createWrapperPopover = customProps => {
-  const defaultProps = {
-    placement: PopoverPlacements.right,
-    classModifier: '',
-    className: '',
-    mode: 'click',
-  };
-  const actualProps = Object.assign(defaultProps, customProps);
-  return shallow(<Popover {...actualProps} />);
-};
+import ReactTestUtils, { act } from 'react-dom/test-utils';
+import Popover from './Popover';
 
 describe('<Popover />', () => {
-  it('Should contain PopoverClick element', () => {
-    const wrapper = createWrapperPopover();
-    expect(wrapper.find('PopoverClick').length).toBe(1);
-  });
-  it('Should contain PopoverOver element', () => {
-    const wrapper = createWrapperPopover({ mode: 'hover' });
-    expect(wrapper.find('PopoverOver').length).toBe(1);
-  });
-});
+  let container;
 
-const createWrapperPopoverClick = customProps => {
-  const defaultProps = {
-    placement: PopoverPlacements.right,
-    classModifier: '',
-    className: '',
-  };
-  const actualProps = Object.assign(defaultProps, customProps);
-  return shallow(<PopoverClick {...actualProps} />);
-};
+  beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  });
 
-describe('<PopoverClick />', () => {
-  it('Should contain PopoverBase element', () => {
-    const wrapper = createWrapperPopoverClick();
-    expect(wrapper.find('PopoverBase').length).toBe(1);
+  afterEach(() => {
+    document.body.removeChild(container);
+    container = null;
   });
-  it('PopoverClick accept placement props', () => {
-    const wrapper = createWrapperPopoverClick({ placement: 'left' });
-    expect(wrapper.instance().props.placement).toBe('left');
-  });
-});
 
-const createWrapperPopoverOver = customProps => {
-  const defaultProps = {
-    placement: PopoverPlacements.right,
-    classModifier: '',
-    className: '',
-  };
-  const actualProps = Object.assign(defaultProps, customProps);
-  return shallow(<PopoverOver {...actualProps} />);
-};
+  describe('mode "click"', () => {
+    it('Should contain PopoverClick element when mode "click"', () => {
+      // Arrange
+      const Element = (
+        <Popover mode="click">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
 
-describe('<PopoverOver />', () => {
-  it('Should contain PopoverBase element', () => {
-    const wrapper = createWrapperPopoverOver();
-    expect(wrapper.find('PopoverBase').length).toBe(1);
+      // Act
+      const wrapper = shallow(Element);
+
+      // Assert
+      expect(wrapper.find('PopoverClick').length).toBe(1);
+    });
+
+    it('Should display content when element clicked', () => {
+      // Arrange
+      const Element = (
+        <Popover mode="click">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      // Act
+      act(() => {
+        ReactDOM.render(Element, container);
+        ReactTestUtils.Simulate.mouseEnter(container.querySelector('.af-popover__container').parentElement);
+      });
+
+      act(() => {
+        ReactTestUtils.Simulate.click(container.querySelector('.af-popover__container'));
+      })
+
+      expect(
+        container.querySelector('.af-popover__container-pop')
+      ).not.toBeNull();
+    });
   });
-  it('PopoverOver accept placement props', () => {
-    const wrapper = createWrapperPopoverOver({ placement: 'left' });
-    expect(wrapper.instance().props.placement).toBe('left');
-  });
-  it('Should isOpen State equal TRUE when enter have been called', () => {
-    const wrapper = createWrapperPopoverOver();
-    wrapper.instance().enter();
-    expect(wrapper.state().isOpen).toBe(true);
-  });
-  it('Should isOpen State equal FALSE when leave have been called', () => {
-    const wrapper = createWrapperPopoverOver();
-    wrapper.instance().leave();
-    expect(wrapper.state().isOpen).toBe(false);
+
+  describe('mode "hover"', () => {
+    it('Should contain PopoverOver element when mode "hover"', () => {
+      // Arrange
+      const Element = (
+        <Popover mode="hover">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      // Act
+      const wrapper = shallow(Element);
+
+      // Assert
+      expect(wrapper.find('PopoverOver').length).toBe(1);
+    });
+
+    it('Should display content when element hovered', () => {
+      // Arrange
+      const Element = (
+        <Popover mode="hover">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      // Act
+      act(() => {
+        ReactDOM.render(Element, container);
+        ReactTestUtils.Simulate.mouseEnter(container.querySelector('.af-popover__container').parentElement);
+      });
+
+      // Assert
+      expect(
+        container.querySelector('.af-popover__container-pop')
+      ).not.toBeNull();
+    });
+
+    it('Should hide content when element not hovered', () => {
+      // Arrange
+      const Element = (
+        <Popover mode="hover">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      // Act
+      act(() => {
+        ReactDOM.render(Element, container);
+
+        const parentContainer = container.querySelector('.af-popover__container').parentElement;
+        ReactTestUtils.Simulate.mouseEnter(parentContainer);
+        ReactTestUtils.Simulate.mouseLeave(parentContainer);
+      });
+
+      // Assert
+      expect(
+        container.querySelector('.af-popover__container-pop')
+      ).toBeNull();
+    });
   });
 });
