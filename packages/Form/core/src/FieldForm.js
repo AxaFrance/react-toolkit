@@ -132,6 +132,19 @@ class FieldForm extends Component {
     };
   }
 
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { forceDisplayMessage, message, messageType } = this.props;
+    if (forceDisplayMessage !== nextProps.forceDisplayMessage) {
+      this.setState({
+        memory: {
+          message,
+          messageType,
+        },
+      });
+    }
+  }
+
   render() {
     const { children } = this.props;
     const { message, messageType } = this.getInfo();
