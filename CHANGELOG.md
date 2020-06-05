@@ -1,6 +1,16 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.13](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.12...v1.3.13)
+> 5 June 2020
+- build: required React 16.8.0 as peer dependency [`#620`](https://github.com/AxaGuilDEv/react-toolkit/pull/620) by Olivier YOUF
+- refactor(react-toolkit-form): rollback #613 [`#619`](https://github.com/AxaGuilDEv/react-toolkit/pull/619) by Xavier Balloy
+- chore(release): publish v1.3.13 [skip ci] [`be1424f`](https://github.com/AxaGuilDEv/react-toolkit/commit/be1424f6690ff53f4891018995906a94008e4efc) by Build-CI 
+- fix(date-phone): normalize viewValue with date [`2b25b07`](https://github.com/AxaGuilDEv/react-toolkit/commit/2b25b073d6a42fbfb08b07d253e258f750b12d44) by Guillaume Chervet 
+- build: required React 16.8.0 as peerDependency [`967ef5b`](https://github.com/AxaGuilDEv/react-toolkit/commit/967ef5b1a3eb507cc912b071e47f4feded30cb07) by Xavier Balloy 
+- docs(changelog) update to new 1.3.12 [skip ci] [`369ac0a`](https://github.com/AxaGuilDEv/react-toolkit/commit/369ac0aa3e91f21f8d2869932c54dce4533a30df) by Build-CI 
+- fix(date-phone): normalize viewValue with date [`e7cfae8`](https://github.com/AxaGuilDEv/react-toolkit/commit/e7cfae8073c044fd28988ce0348ffc6d89151209) by guillaume chervet 
+
 #### [v1.3.12](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.11...v1.3.12)
 > 27 May 2020
 - chore(release): publish v1.3.12 [skip ci] [`cde5432`](https://github.com/AxaGuilDEv/react-toolkit/commit/cde5432a82c77661b26724028b100f7d87c94865) by Build-CI 
@@ -326,5 +336,5 @@ All notable changes to this project will be documented in this file.
 - feat(doc) update documentation [`f60e4ad`](https://github.com/AxaGuilDEv/react-toolkit/commit/f60e4ad7fb0e62a80d02e60ad83d3ae6270d930d) by Guillaume Chervet 
 - doc(readme) remove unused title [`a1fcf4e`](https://github.com/AxaGuilDEv/react-toolkit/commit/a1fcf4eb53a6186e984339478ee12734abf63499) by Hamza Hamidi 
 
-### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.12...v0.0.0)
-> 27 May 2020
+### [v0.0.0](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.13...v0.0.0)
+> 5 June 2020
