@@ -2,342 +2,341 @@
 # yarn lockfile v1
 
 
-"@axa-fr/react-toolkit-action@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-action/-/react-toolkit-action-1.3.2.tgz#e22129ab839ed800584d6495affef50d762d02f5"
+"@axa-fr/react-toolkit-action@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-action/-/react-toolkit-action-1.3.13.tgz#6d689cf8caf61380569f8d46fe168f3c8c213ab4"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-alert@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-alert/-/react-toolkit-alert-1.3.2.tgz#3e6c4137198c40a867654195827cc94a0480d55c"
+"@axa-fr/react-toolkit-alert@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-alert/-/react-toolkit-alert-1.3.13.tgz#76ab0797f71eb7cafaf7dae59fd361471057576e"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-badge@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-badge/-/react-toolkit-badge-1.3.2.tgz#edabcfd48a79c3f613890d95573f2c883ce6c379"
+"@axa-fr/react-toolkit-badge@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-badge/-/react-toolkit-badge-1.3.13.tgz#51c124b5c5556d2bdf124588f0686f3f526518cf"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-button@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-button/-/react-toolkit-button-1.3.2.tgz#cb74233d45958e98d641084580dac315eb416a1d"
+"@axa-fr/react-toolkit-button@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-button/-/react-toolkit-button-1.3.13.tgz#4dafedcf100861870d7331198bbe1696a09399b8"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-collapse@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-collapse/-/react-toolkit-collapse-1.3.2.tgz#609f7de5e8ee5a8a6b06ee3b3522e3707e296eb9"
+"@axa-fr/react-toolkit-collapse@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-collapse/-/react-toolkit-collapse-1.3.13.tgz#3e6a9083d6831ad0040c76233c1efc83b5122587"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-core@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-core/-/react-toolkit-core-1.3.2.tgz#388f89163fb47c947e8575f031ec87d42e00c495"
+"@axa-fr/react-toolkit-core@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-core/-/react-toolkit-core-1.3.13.tgz#59f3a25aeef12878c4de83dafe54d34818258c8c"
   dependencies:
     classnames "^2.2.6"
     cuid "^2.1.1"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-core@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-core/-/react-toolkit-form-core-1.3.2.tgz#ec7d5f53c8bc0f24624d42d558345ea9e65fe2aa"
+"@axa-fr/react-toolkit-form-core@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-core/-/react-toolkit-form-core-1.3.13.tgz#62bbaad1b94c40da25b82f280e270c2520824388"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     cuid "^2.1.3"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-filter-inline@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter-inline/-/react-toolkit-form-filter-inline-1.3.2.tgz#4eb7ae89c4d4608110dd369b054cc5fe67a4cb30"
+"@axa-fr/react-toolkit-form-filter-inline@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter-inline/-/react-toolkit-form-filter-inline-1.3.13.tgz#61b9ba97cbee3bf7cacaa1fb1207b7b7bb949071"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-filter@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter/-/react-toolkit-form-filter-1.3.2.tgz#4984496b305dfae0e25a4e996b8a93bfc31a8920"
+"@axa-fr/react-toolkit-form-filter@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-filter/-/react-toolkit-form-filter-1.3.13.tgz#730f2e57bcac4b654ebba33e4fa89ad382639732"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-card@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-card/-/react-toolkit-form-input-card-1.3.2.tgz#7b45ee9196e0a72cf0560823b62cdc0a29d08d22"
+"@axa-fr/react-toolkit-form-input-card@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-card/-/react-toolkit-form-input-card-1.3.13.tgz#1b448b6f1ec325bd0578e1f3c9d27cedac5a8bb6"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-input-checkbox" "^1.3.2"
-    "@axa-fr/react-toolkit-form-input-radio" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-input-checkbox" "^1.3.13"
+    "@axa-fr/react-toolkit-form-input-radio" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-checkbox@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-checkbox/-/react-toolkit-form-input-checkbox-1.3.2.tgz#f061a94c3d6dcb61cae85422592978858ab36ff9"
+"@axa-fr/react-toolkit-form-input-checkbox@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-checkbox/-/react-toolkit-form-input-checkbox-1.3.13.tgz#1cf5f980db76f2a41cb95fc0a1f72eb35057ab3b"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-choice@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-choice/-/react-toolkit-form-input-choice-1.3.2.tgz#314f9fd0bb24c13ab4eb9c381fe3345dd16d6c04"
+"@axa-fr/react-toolkit-form-input-choice@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-choice/-/react-toolkit-form-input-choice-1.3.13.tgz#2356b14da7388e07fc3ee6304ac5a42103b06e55"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-input-radio" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-input-radio" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-date@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-date/-/react-toolkit-form-input-date-1.3.2.tgz#45d4b49912b4ce37dfef25eda6b869229d2d7835"
+"@axa-fr/react-toolkit-form-input-date@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-date/-/react-toolkit-form-input-date-1.3.13.tgz#5210c0b8f10a6952bedcb6193a8eddc0f520e2fc"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     moment "^2.23.0"
     prop-types "^15.5.10"
     react-datepicker "^1.8.0"
 
-"@axa-fr/react-toolkit-form-input-file@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-file/-/react-toolkit-form-input-file-1.3.2.tgz#93735817bd036740d033b3b1775d4212056b2948"
+"@axa-fr/react-toolkit-form-input-file@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-file/-/react-toolkit-form-input-file-1.3.13.tgz#b4ab3bd9a838d2e989e3ae0f5d04419533c7e0b5"
   dependencies:
-    "@axa-fr/react-toolkit-button" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
-    "@axa-fr/react-toolkit-popover" "^1.3.2"
+    "@axa-fr/react-toolkit-button" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
+    "@axa-fr/react-toolkit-popover" "^1.3.13"
     prop-types "^15.5.10"
     react-dropzone "^4.2.11"
 
-"@axa-fr/react-toolkit-form-input-number@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-number/-/react-toolkit-form-input-number-1.3.2.tgz#81fa90a697ac875003ab2e19832a0fa909df2eb1"
+"@axa-fr/react-toolkit-form-input-number@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-number/-/react-toolkit-form-input-number-1.3.13.tgz#42797266a6d5289a6a0d8d0e7b4fe6e2ef9677d3"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-pass@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-pass/-/react-toolkit-form-input-pass-1.3.2.tgz#5a678a7a8637fa05390bef153377adf5cb0f217f"
+"@axa-fr/react-toolkit-form-input-pass@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-pass/-/react-toolkit-form-input-pass-1.3.13.tgz#1008663731c977a3775a249727962496536a2899"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     moment "~2.22.2"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-radio@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-radio/-/react-toolkit-form-input-radio-1.3.2.tgz#6ace82626839843c0f6b49edcfb9366652d62ee5"
+"@axa-fr/react-toolkit-form-input-radio@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-radio/-/react-toolkit-form-input-radio-1.3.13.tgz#08a7a38ddb75741511f6d9c2d350437f937caadc"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     moment "~2.22.2"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-select-multi@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select-multi/-/react-toolkit-form-input-select-multi-1.3.2.tgz#e6933f2c1e0baf6dedfc29e3ad56a14415c879e5"
+"@axa-fr/react-toolkit-form-input-select-multi@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select-multi/-/react-toolkit-form-input-select-multi-1.3.13.tgz#33ecc55d208b911152c7040bd8cb5a637f81cf41"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
     react-select "^2.2.0"
 
-"@axa-fr/react-toolkit-form-input-select@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select/-/react-toolkit-form-input-select-1.3.2.tgz#4dd454c93bec58777a482be0d141a132ee4987f4"
+"@axa-fr/react-toolkit-form-input-select@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-select/-/react-toolkit-form-input-select-1.3.13.tgz#f95957af32fe584a5987ac8c836656896913a5b7"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-slider@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-slider/-/react-toolkit-form-input-slider-1.3.2.tgz#3d44df76c200e3c1d7c9853a151f001b7c7e1a1a"
+"@axa-fr/react-toolkit-form-input-slider@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-slider/-/react-toolkit-form-input-slider-1.3.13.tgz#830ceedf2bab383bbc368da2736bc5353b4d432f"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
     rc-slider "^8.6.4"
 
-"@axa-fr/react-toolkit-form-input-switch@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-switch/-/react-toolkit-form-input-switch-1.3.2.tgz#86415e31d21674d31df4b10f25d8b849aaccaaff"
+"@axa-fr/react-toolkit-form-input-switch@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-switch/-/react-toolkit-form-input-switch-1.3.13.tgz#15105d6bb6bac7bb5af1400ad50ad99438ee67db"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-text@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-text/-/react-toolkit-form-input-text-1.3.2.tgz#24461fe47f8e9c84622d72f185360ca7e7c34f43"
+"@axa-fr/react-toolkit-form-input-text@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-text/-/react-toolkit-form-input-text-1.3.13.tgz#790a73280e4e221893a6165eb1407f5737b8465a"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-input-textarea@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-textarea/-/react-toolkit-form-input-textarea-1.3.2.tgz#8e51d9eee86018cd382990e30b5ee5d80b28984c"
+"@axa-fr/react-toolkit-form-input-textarea@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-input-textarea/-/react-toolkit-form-input-textarea-1.3.13.tgz#5e4adc5bf96c2067f45ac5dce2fa92cf37bffb04"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-form-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-form-core" "^1.3.13"
 
-"@axa-fr/react-toolkit-form-steps@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-steps/-/react-toolkit-form-steps-1.3.2.tgz#ba6723aa00dc450109b4f5002a7e319641d3d7b8"
+"@axa-fr/react-toolkit-form-steps@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-steps/-/react-toolkit-form-steps-1.3.13.tgz#3a561e32acc1c5f28e34730429b483ebc041ddbe"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-form-summary@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-summary/-/react-toolkit-form-summary-1.3.2.tgz#b6d352449021a398ba6446a59dd6ca9bbcc7f827"
+"@axa-fr/react-toolkit-form-summary@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-form-summary/-/react-toolkit-form-summary-1.3.13.tgz#54822e228341f4aca44d3f120d66592e79d60676"
   dependencies:
-    "@axa-fr/react-toolkit-alert" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-alert" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-help@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-help/-/react-toolkit-help-1.3.2.tgz#df8fa3b8a14d954e6a96d7122684b32d380c43cd"
+"@axa-fr/react-toolkit-help@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-help/-/react-toolkit-help-1.3.13.tgz#187a3a99d5d060cc4793396f8ae0f853dc6a1001"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-popover" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-popover" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-highlight@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-highlight/-/react-toolkit-highlight-1.3.2.tgz#0e074375e37e9a04b3354f1894dac9853a686419"
+"@axa-fr/react-toolkit-highlight@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-highlight/-/react-toolkit-highlight-1.3.13.tgz#8f3bb08749c11daee6f5f7dc0ae025543739bc2d"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-action" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-icon@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-icon/-/react-toolkit-icon-1.3.2.tgz#1e8de57001b2af78f0f4efa59d2ee48c129a7182"
+"@axa-fr/react-toolkit-icon@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-icon/-/react-toolkit-icon-1.3.13.tgz#66f42511b4ceccbf533fceadc5ec7e297cf9a530"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-layout-footer-client@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer-client/-/react-toolkit-layout-footer-client-1.3.2.tgz#a177989b02f5b61d3a2f595b95f355bc72a38d65"
+"@axa-fr/react-toolkit-layout-footer-client@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer-client/-/react-toolkit-layout-footer-client-1.3.13.tgz#217b47f0dc1d2eeff8021346c8a892e8317d0aa8"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-layout-footer@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer/-/react-toolkit-layout-footer-1.3.2.tgz#a115a82cfadf9beaae9a3a61c16629e453ff1213"
+"@axa-fr/react-toolkit-layout-footer@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-footer/-/react-toolkit-layout-footer-1.3.13.tgz#f56ded8ef330100c9f03941bcb971b79034ac5d8"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-layout-header@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-header/-/react-toolkit-layout-header-1.3.2.tgz#1f3e0e86e31dff1700b23e08ba5a9f8cfb4afb67"
+"@axa-fr/react-toolkit-layout-header@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-layout-header/-/react-toolkit-layout-header-1.3.13.tgz#23b790ea5e45eee40ea4bfc7907d282e1aff3898"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-action" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-link@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-link/-/react-toolkit-link-1.3.2.tgz#61aed7f95464d0ce826b0d4ed8e259f1e01a2e9b"
+"@axa-fr/react-toolkit-link@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-link/-/react-toolkit-link-1.3.13.tgz#9dbcb7f7bfdf25f7f69aaec436b5ffceb66c5cc0"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-list@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-list/-/react-toolkit-list-1.3.2.tgz#028673b0a6e08cd8de95022904c5ddcefe0daa99"
+"@axa-fr/react-toolkit-list@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-list/-/react-toolkit-list-1.3.13.tgz#f743fa7317c11b484b43045450c252b85d35ce27"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-loader@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-loader/-/react-toolkit-loader-1.3.2.tgz#588554bdfaa28f77638b4793bcc3e28af96e2751"
+"@axa-fr/react-toolkit-loader@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-loader/-/react-toolkit-loader-1.3.13.tgz#32f9f79a8df16e047d5b7aa3d63a6d5f9d87be9f"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-modal-boolean@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-boolean/-/react-toolkit-modal-boolean-1.3.2.tgz#fb36d0bf9f6dfb61f990a216a72e410636ce903a"
+"@axa-fr/react-toolkit-modal-boolean@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-boolean/-/react-toolkit-modal-boolean-1.3.13.tgz#b986e589ee24db90a4f09bc2ab1f21572f3d1cb1"
   dependencies:
-    "@axa-fr/react-toolkit-button" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    "@axa-fr/react-toolkit-modal-default" "^1.3.2"
+    "@axa-fr/react-toolkit-button" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
+    "@axa-fr/react-toolkit-modal-default" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-modal-default@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-default/-/react-toolkit-modal-default-1.3.2.tgz#ec4b553ce41cb73295e257691e3080126d637b4d"
+"@axa-fr/react-toolkit-modal-default@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-modal-default/-/react-toolkit-modal-default-1.3.13.tgz#990970058f4337fb707b8e10672859bf31d2c63d"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
     react-modal "^3.8.1"
 
-"@axa-fr/react-toolkit-panel@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-panel/-/react-toolkit-panel-1.3.2.tgz#f703a3bc86e45c2716003b4e30985df1d9807b18"
+"@axa-fr/react-toolkit-panel@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-panel/-/react-toolkit-panel-1.3.13.tgz#82d37cb5e4116ae4b10b6025357f9ea22dcee150"
   dependencies:
-    "@axa-fr/react-toolkit-action" "^1.3.2"
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-action" "^1.3.13"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-popover@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-popover/-/react-toolkit-popover-1.3.2.tgz#9a3060e053dccd7d1604191940cdbe6d896f9d56"
+"@axa-fr/react-toolkit-popover@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-popover/-/react-toolkit-popover-1.3.13.tgz#6216d5a608a24a80e61eb5824c92815f27aadc77"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
-    outy "^0.1.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
     react-popper "^1.3.3"
 
-"@axa-fr/react-toolkit-restitution@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-restitution/-/react-toolkit-restitution-1.3.2.tgz#1272d518af1d52335084566a7ca3e1d58d707854"
+"@axa-fr/react-toolkit-restitution@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-restitution/-/react-toolkit-restitution-1.3.13.tgz#6568f96f99ccbcd3803f0f959c8d174b0aa5fac3"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
 
-"@axa-fr/react-toolkit-status@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-status/-/react-toolkit-status-1.3.2.tgz#c711afddd5ea567365cf081b08e58e103f43fdec"
+"@axa-fr/react-toolkit-status@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-status/-/react-toolkit-status-1.3.13.tgz#e3a1c29a490b6debe817498429a02e11be9ebb16"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-table@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-table/-/react-toolkit-table-1.3.2.tgz#bca45affe77d6e8b0f7b2b5c1a1dae40b2d79960"
+"@axa-fr/react-toolkit-table@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-table/-/react-toolkit-table-1.3.13.tgz#ff112979780f227445a070fd9ada8a4ccf0348ad"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-tabs@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-tabs/-/react-toolkit-tabs-1.3.2.tgz#7b70d07030a459d126ba2e812cfb37678d69aff9"
+"@axa-fr/react-toolkit-tabs@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-tabs/-/react-toolkit-tabs-1.3.13.tgz#41e9e4b0c32c7e1f51f7a31c8913f123c59e57e6"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     classnames "^2.2.6"
     prop-types "^15.5.10"
 
-"@axa-fr/react-toolkit-title@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-title/-/react-toolkit-title-1.3.2.tgz#9654484d1af230c398faf38d7012249b6233502d"
+"@axa-fr/react-toolkit-title@^1.3.13":
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/@axa-fr/react-toolkit-title/-/react-toolkit-title-1.3.13.tgz#843e44b7297ad40a7d44b2c559ee63472409347d"
   dependencies:
-    "@axa-fr/react-toolkit-core" "^1.3.2"
+    "@axa-fr/react-toolkit-core" "^1.3.13"
     prop-types "^15.5.10"
 
 "@babel/code-frame@7.0.0-beta.44":
@@ -2292,11 +2291,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@2.2.5, classnames@^2.1.1, classnames@^2.2.0, classnames@^2.2.5:
+classnames@2.2.5:
   version "2.2.5"
   resolved "http://localhost:4873/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
-classnames@^2.2.6:
+classnames@^2.2.0, classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -3822,7 +3821,7 @@ fbjs@^0.8.0:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-fbjs@^0.8.16, fbjs@^0.8.9:
+fbjs@^0.8.9:
   version "0.8.16"
   resolved "http://localhost:4873/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -6855,10 +6854,6 @@ output-file-sync@^1.1.2:
     mkdirp "^0.5.1"
     object-assign "^4.1.0"
 
-outy@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/outy/-/outy-0.1.2.tgz#598d395e43f92e52d98aadff23b72a3e7128b572"
-
 p-limit@^1.1.0:
   version "1.2.0"
   resolved "http://localhost:4873/p-limit/-/p-limit-1.2.0.tgz#0e92b6bedcb59f022c13d0f1949dc82d15909f1c"
@@ -7537,15 +7532,7 @@ promise@^7.0.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.1:
-  version "15.6.1"
-  resolved "http://localhost:4873/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
-prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -7889,14 +7876,14 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-burger-menu@2.4.2:
-  version "2.4.2"
-  resolved "http://localhost:4873/react-burger-menu/-/react-burger-menu-2.4.2.tgz#d45380647f8afc81a03907a7608202bad8c326c5"
+react-burger-menu@2.6.15:
+  version "2.6.15"
+  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.6.15.tgz#a43f92ddad6247dc74efba202ea50381a64f139a"
   dependencies:
     browserify-optional "^1.0.0"
-    classnames "^2.1.1"
+    classnames "^2.2.6"
     eve "~0.5.1"
-    prop-types "^15.6.1"
+    prop-types "^15.7.2"
     snapsvg-cjs "0.0.6"
 
 react-datepicker@1.4.1:
