@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import TabsStateless from './TabsStateless';
-import { TabProps } from './Tab';
+import TabsStateless, { TabsStatelessProps } from './TabsStateless';
 
 export type TabsContainerState = {
   activeIndex: string;
@@ -9,13 +8,12 @@ export type TabsContainerState = {
 
 const defaultState = { activeIndex: '0' };
 
-export type TabsCoreProps = {
-  children: React.ReactElement<TabProps>[];
+export type TabsCoreProps = Tabs & Omit<TabsStatelessProps, 'activeIndex'>;
+
+interface Tabs {
+  onChange?: (e: string) => void;
   activeIndex?: string;
-  className?: string;
-  classModifier?: string;
-  onChange?: (tabIndex: string) => void;
-};
+}
 
 export const onChangeEvent = (onChange: Function) => (setState: Function) => (
   state: any
