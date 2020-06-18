@@ -9,9 +9,16 @@ describe('<Title>', () => {
         <Title
           title="Toolkit Axa"
           subtitle="Info complémentaire"
-          onClick={() => null}
+          toggleMenu={() => null}
         />
       )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders Title correctly without menu', () => {
+    const tree = renderer
+      .create(<Title title="Toolkit Axa" subtitle="Info complémentaire" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

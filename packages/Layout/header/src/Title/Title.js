@@ -38,16 +38,20 @@ const Title = props => {
   return (
     <div className={componentClassName}>
       <div className={`container ${defaultClassName}__wrapper`}>
-        <ToggleButton idControl="mainmenu">
-          <Action
-            className="btn af-btn--circle af-title-bar__mobile-menu"
-            classModifier={null}
-            id="togglemenu"
-            icon="menu-hamburger"
-            title="Toggle menu"
-            onClick={toggleMenu}
-          />
-        </ToggleButton>
+        {!!toggleMenu && (
+          <div className="burger-container">
+            <ToggleButton idControl="mainmenu">
+              <Action
+                className="btn af-title-bar__mobile-menu af-btn--circle"
+                classModifier={null}
+                id="togglemenu"
+                icon="menu-hamburger"
+                title="Toggle menu"
+                onClick={toggleMenu}
+              />
+            </ToggleButton>
+          </div>
+        )}
         <h1 className={`${defaultClassName}__title`}>
           {title}
           {subtitle && (

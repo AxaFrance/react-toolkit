@@ -24,12 +24,12 @@ const TitleStory = () => (
   <Title
     title="Toolkit Axa"
     subtitle="Info complémentaire"
-    onClick={action('onToggle')}
+    toggleMenu={action('onToggle')}
   />
 );
 
 const TitleComplexStory = () => (
-  <Title title="Toolkit Axa" subtitle="Sous titre" onClick={action('onToggle')}>
+  <Title title="Toolkit Axa" subtitle="Sous titre" toggleMenu={action('onToggle')}>
     <div className="af-title-bar__actions">
       <a className="af-title-bar__link" href="#lien" title="lien titlebar">
         lien titlebar
