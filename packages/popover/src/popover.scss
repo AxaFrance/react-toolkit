@@ -5,6 +5,12 @@ $arrow-offset: -4px;
 $padding-popover: 0.5rem;
 
 .af-popover {
+  &__wrapper {
+    background: inherit;
+    border: 0;
+    padding: 0;
+  }
+
   &__container {
     display: inline-block;
 

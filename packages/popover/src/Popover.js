@@ -40,7 +40,7 @@ export const PopoverClick = props => {
     };
   });
 
-  const click = (event) => {
+  const click = event => {
     setOpen(!isOpen && isHover);
     event.stopPropagation();
   };
@@ -54,7 +54,12 @@ export const PopoverClick = props => {
   };
 
   return (
-    <span onMouseEnter={enter} onMouseLeave={leave} onClick={click}>
+    <button
+      className="af-popover__wrapper"
+      type="button"
+      onMouseEnter={enter}
+      onMouseLeave={leave}
+      onClick={click}>
       <PopoverBase
         isOpen={isOpen}
         placement={placement}
@@ -62,7 +67,7 @@ export const PopoverClick = props => {
         classModifier={classModifier}>
         {children}
       </PopoverBase>
-    </span>
+    </button>
   );
 };
 
