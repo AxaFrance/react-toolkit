@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Constants } from '@axa-fr/react-toolkit-core';
 import PopoverBase from './PopoverBase';
@@ -25,127 +25,71 @@ const defaultProps = {
   mode: PopoverModes.click,
 };
 
-export class PopoverClick extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      isHover: false,
-      isHoverPopover: false,
+export const PopoverClick = props => {
+  const { children, placement, className, classModifier } = props;
+
+  const [isOpen, setOpen] = useState(false);
+  const [isHover, setHover] = useState(false);
+
+  useEffect(() => {
+    const body = window.document.getElementsByTagName('body')[0];
+    body.addEventListener('click', click);
+
+    return () => {
+      body.removeEventListener('click', click);
     };
-    this.outsideClick = this.outsideClick.bind(this);
-    this.enter = this.enter.bind(this);
-    this.leave = this.leave.bind(this);
-    this.enterPopover = this.enterPopover.bind(this);
-    this.leavePopover = this.leavePopover.bind(this);
-  }
+  });
 
-  componentDidMount() {
-    const body = window.document.getElementsByTagName('body')[0];
-    body.addEventListener("mouseup", this.outsideClick);
-  }
+  const click = (event) => {
+    setOpen(!isOpen && isHover);
+    event.stopPropagation();
+  };
 
-  componentWillUnmount() {
-    const body = window.document.getElementsByTagName('body')[0];
-    body.removeEventListener("mouseup", this.outsideClick);
-  }
+  const enter = () => {
+    setHover(true);
+  };
 
-  outsideClick ()
-  {
-    const { isHover, isHoverPopover, isOpen } = this.state;
-    if (!isHoverPopover && isOpen) {
-      this.setState({
-        isOpen: false,
-      });
-    }
-    if(isHover && !isHoverPopover && !isOpen) {
-      this.setState({
-        isOpen: true,
-      });
-    }
-  }
+  const leave = () => {
+    setHover(false);
+  };
 
-  enter() {
-    this.setState({
-      isHover: true,
-    });
-  }
-
-  leave() {
-    this.setState({
-      isHover: false,
-      isHoverPopover: false,
-    });
-  }
-
-  enterPopover() {
-    this.setState({
-      isHoverPopover: true,
-    });
-  }
-
-  leavePopover() {
-    this.setState({
-      isHoverPopover: false,
-    });
-  }
-
-  render() {
-      const { children, placement, className, classModifier } = this.props;
-        const { isOpen } = this.state;
-        return (<span onMouseEnter={this.enter} onMouseLeave={this.leave}>
-          <PopoverBase
-            isOpen={isOpen}
-            placement={placement}
-            className={className}
-            classModifier={classModifier}
-            onMouseEnter={this.enterPopover}
-            onMouseLeave={this.leavePopover}
-          >
-          {children}
+  return (
+    <span onMouseEnter={enter} onMouseLeave={leave} onClick={click}>
+      <PopoverBase
+        isOpen={isOpen}
+        placement={placement}
+        className={className}
+        classModifier={classModifier}>
+        {children}
       </PopoverBase>
-  </span>);
-    }
-}
+    </span>
+  );
+};
 
-export class PopoverOver extends Component {
-  constructor(props) {
-    super(props);
-    this.enter = this.enter.bind(this);
-    this.leave = this.leave.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
+export const PopoverOver = props => {
+  const { children, placement, className, classModifier } = props;
+  const [isOpen, setOpen] = useState(false);
 
-  enter() {
-    this.setState({
-      isOpen: true,
-    });
-  }
+  const enter = () => {
+    setOpen(true);
+  };
 
-  leave() {
-    this.setState({
-      isOpen: false,
-    });
-  }
+  const leave = () => {
+    setOpen(false);
+  };
 
-  render() {
-    const { children, placement, className, classModifier } = this.props;
-    const { isOpen } = this.state;
-    return (
-      <span onMouseEnter={this.enter} onMouseLeave={this.leave}>
-        <PopoverBase
-          isOpen={isOpen}
-          placement={placement}
-          className={className}
-          classModifier={classModifier}>
-          {children}
-        </PopoverBase>
-      </span>
-    );
-  }
-}
+  return (
+    <span onMouseEnter={enter} onMouseLeave={leave}>
+      <PopoverBase
+        isOpen={isOpen}
+        placement={placement}
+        className={className}
+        classModifier={classModifier}>
+        {children}
+      </PopoverBase>
+    </span>
+  );
+};
 
 const Popover = props => {
   const { children, placement, className, classModifier, mode } = props;
