@@ -15,9 +15,8 @@ interface FooterCoreComponentProps {
   alt?: string;
   className?: string;
 }
-
 const defaultProps: Partial<FooterCoreComponentProps> = {
-  children: '@ 2018 AXA Tous droits réservés',
+  children: `© ${new Date().getFullYear()} AXA Tous droits réservés`,
   href: 'https://www.axa.fr/',
   title: 'Site Axa',
   icon: 'assets/logo-axa.svg',
@@ -33,17 +32,18 @@ const FooterCoreRaw: React.SFC<FooterCoreComponentProps> = ({
   children,
 }) => (
   <footer className={className}>
-    <div className='container-fluid container'>
-      <a className='af-logo' href={href} title={title} target='blank'>
-        <img className='af-logo__brand' src={icon} alt={alt} />
+    <div className="container-fluid container">
+      <a className="af-logo" href={href} title={title} target="blank">
+        <img className="af-logo__brand" src={icon} alt={alt} />
       </a>
-      <div className='af-footer-content'>{children}</div>
+      <div className="af-footer-content">{children}</div>
     </div>
   </footer>
 );
 FooterCoreRaw.defaultProps = defaultProps;
 
-export type FooterCoreProps = FooterCoreComponentProps & WithClassModifierOptions;
+export type FooterCoreProps = FooterCoreComponentProps &
+  WithClassModifierOptions;
 
 const enhance = compose<FooterCoreComponentProps, FooterCoreProps>(
   withClassDefault(DEFAULT_CLASSNAME),
