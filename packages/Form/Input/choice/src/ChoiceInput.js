@@ -12,9 +12,12 @@ const propTypes = {
 const defaultProps = {
   ...Constants.defaultProps,
   value: null,
+  options: [
+    { label: 'Oui', value: true },
+    { label: 'Non', value: false },
+  ],
 };
 
-const options = [{ label: 'Oui', value: true }, { label: 'Non', value: false }];
 const ChoiceInput = props => {
   const {
     mode,
@@ -33,13 +36,25 @@ const ChoiceInput = props => {
     onChange,
     readOnly,
     disabled,
+    options,
     ...otherProps
   } = props;
   if (!isVisible) {
     return null;
   }
 
-  const newOptions = InputManager.getOptionsWithId(options);
+  let newOptions;
+  if (id) {
+    newOptions = options.map((option, index) => {
+      if (option.id) {
+        return option;
+      }
+
+      return { ...option, id: `${id}_${index}` };
+    });
+  }
+  newOptions = InputManager.getOptionsWithId(newOptions);
+
   const firstId = InputManager.getFirstId(newOptions);
   return (
     <Field
