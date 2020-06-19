@@ -28,3 +28,7 @@ tmp/
 .LSOverride
 .idea
 .vs
+
+# Ignore package-lock.json / yarn.lock in dependencies
+packages/**/package-lock.json
+packages/**/yarn.lock
