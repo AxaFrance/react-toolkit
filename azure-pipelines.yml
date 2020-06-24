@@ -42,7 +42,7 @@ steps:
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
-  - script: npm ci && npm run bootstrap
+  - script: npm ci
     displayName: 'npm ci and bootstrap'
 
   - script: npm test -- --coverage
