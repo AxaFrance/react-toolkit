@@ -1,19 +1,13 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import CollapseCardBase from './CollapseCardBase';
+import * as React from 'react';
+import { shallow, mount } from 'enzyme';
+import CollapseCardBase, { CollapseProps } from './CollapseCardBase';
+import Header from './Header';
+import Body from './Body';
 
 describe('CollapseCardBase', () => {
-  const createWrapper = customProps => {
-    const defaultProps = {
-      id: 'collapse1',
-      classModifier: '',
-      className: '',
-      collapse: false,
-      onToggle: e => console.log('onToggle', e),
-    };
-    const actualProps = Object.assign(defaultProps, customProps);
+  const createWrapper = (props: Omit<CollapseProps, 'children'>) => {
     return shallow(
-      <CollapseCardBase {...actualProps}>
+      <CollapseCardBase {...props}>
         <CollapseCardBase.Header>
           Collapsible Group Item #1
         </CollapseCardBase.Header>
@@ -35,8 +29,17 @@ describe('CollapseCardBase', () => {
 
   it('onToggle call onToggle', () => {
     const onToggle = jest.fn();
-    const wrapper = createWrapper({ onToggle });
-    wrapper.instance().onToggle();
+    const wrapper = createWrapper({
+      onToggle,
+      id: 'collapse1',
+      classModifier: '',
+      className: '',
+      collapse: false,
+    });
+    wrapper
+      .find(Header)
+      .props()
+      .onToggle({ collapse: true, id: 'collapse1', index: 0 });
     const onToggleResult = onToggle.mock.calls[0][0];
     expect(onToggleResult.id).toBe('collapse1');
     expect(onToggleResult.collapse).toBe(true);
