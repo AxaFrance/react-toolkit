@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Constants } from '@axa-fr/react-toolkit-core';
 import PopoverBase from './PopoverBase';
@@ -28,21 +28,25 @@ const defaultProps = {
 export const PopoverClick = props => {
   const { children, placement, className, classModifier } = props;
 
+  const wrapperRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const [isHover, setHover] = useState(false);
 
   useEffect(() => {
-    const body = window.document.getElementsByTagName('body')[0];
-    body.addEventListener('click', click);
-
-    return () => {
-      body.removeEventListener('click', click);
+    const handleClickOutside = event => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
     };
-  });
 
-  const click = event => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [wrapperRef]);
+
+  const click = () => {
     setOpen(!isOpen && isHover);
-    event.stopPropagation();
   };
 
   const enter = () => {
@@ -55,6 +59,7 @@ export const PopoverClick = props => {
 
   return (
     <button
+      ref={wrapperRef}
       className="af-popover__wrapper"
       type="button"
       onMouseEnter={enter}
