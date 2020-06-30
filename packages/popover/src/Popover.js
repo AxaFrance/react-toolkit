@@ -7,7 +7,6 @@ import PopoverModes from './PopoverModes';
 
 const propTypes = {
   ...Constants.propTypes,
-  title: PropTypes.string,
   children: PropTypes.any,
   placement: PropTypes.oneOf([
     PopoverPlacements.top,
