@@ -59,19 +59,19 @@ $padding-popover: 0.5rem;
     }
 
     [data-popper-placement^='top'] > .af-popover__arrow {
-      bottom: $arrow-offset;
+      bottom: -4px;
     }
 
     [data-popper-placement^='bottom'] > .af-popover__arrow {
-      top: $arrow-offset;
+      top: -4px;
     }
 
     [data-popper-placement^='right'] > .af-popover__arrow {
-      left: $arrow-offset;
+      left: -12px;
     }
 
     [data-popper-placement^='left'] > .af-popover__arrow {
-      right: $arrow-offset;
+      right: 4px;
     }
   }
 
