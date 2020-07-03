@@ -2,7 +2,7 @@ extends ../../../commons/layout
 
 block meta
   -var activePath = '/style/icons';
-  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)  
+  -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
   -var metaTitle = metatitle
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
@@ -24,8 +24,7 @@ block page
       +PageMarkdown()
         include:markdown-it ./markdown/guidelines.md
     block code
-      +Demo({ title:'Classic Icons', storybook, activePath, absTmpl: 'node_modules/@axa-fr/react-toolkit-core/dist/assets/templates/template.pug' })
-      +Demo({ title:'Themes Icons', storybook, activePath, tmpl: 'icons-decli' })
+      +Demo({ title:'Classic Icons ', storybook, activePath, tmpl: 'icons-page' })
     block style
       +Colors({ colors })
       +PageMarkdown()

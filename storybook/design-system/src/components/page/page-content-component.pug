@@ -1,13 +1,13 @@
 mixin PageContentComponent()
   +PageContent()
-    section#pageguidelines
-      +Title({ level: "h1", modifier: 'page' })
-        | Generales Guidelines
-      block guidelines
     section#pagecode
       +Title({ level: "h1", modifier: 'page'  })
         | Source Code
       block code
+    section#pageguidelines
+      +Title({ level: "h1", modifier: 'page' })
+        | Generales Guidelines
+      block guidelines
     section#pagestyle
       +Title({ level: "h1", modifier: 'page' })
         | Style

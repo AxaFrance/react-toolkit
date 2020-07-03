@@ -18,5 +18,5 @@ export default {
   pathSprite: '/assets/sprite',
   pathImgFiles: '/assets/images',
   imgFiles: '/*.{jpg,jpeg,svg,gif,png}',
-  pathFontToolkit: './node_modules/@axa-fr/react-toolkit-core/dist/assets/fonts/icons',
+  pathFontToolkit: './node_modules/@axa-fr/react-toolkit-core/dist/assets/icons',
 };

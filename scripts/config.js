@@ -1,146 +1,51 @@
 const path = require('path');
 
-const srcFolder = 'src';
-const distFolder = 'dist';
-const packageFolder = 'packages';
-const bootstrapFolder = 'bootstrap';
+const src = 'src';
+const dist = 'dist';
+const packages = 'packages';
+const core = 'core';
+const all = 'all';
 const tasks = './scripts/tasks';
-const coreStyles = 'core';
-const allStyles = 'all';
-const coreSrc = path.join(packageFolder, coreStyles, srcFolder);
-const coreDist = path.join(packageFolder, coreStyles, distFolder, 'assets');
-const srcAll = path.join(packageFolder, allStyles, srcFolder);
-const allDist = path.join(packageFolder, allStyles, distFolder);
+const coreSrc = path.join(packages, core, src);
+const coreDist = path.join(packages, core, dist, 'assets');
+const allSrc = path.join(packages, all, src);
+const allDist = path.join(packages, all, dist);
 const assets = `${coreSrc}/common`;
-const bootstrap = `${coreSrc}/${bootstrapFolder}`;
+const bootstrap = `${coreSrc}/bootstrap`;
 
-const autoprefixer = {
-  browsers: ['last 2 versions'],
+const autoprefixerConfig = {
+  overrideBrowserslist: ['last 2 versions', '> 2%', 'IE 9'],
   cascade: false,
 };
 
-const universes = [
-  {
-    name: 'auto',
-    value: '#5a8093',
-  },
-  {
-    name: 'habitation',
-    value: '#b26ab1',
-  },
-  {
-    name: 'loisirs',
-    value: '#00af8f',
-  },
-  {
-    name: 'sante',
-    value: '#98bc58',
-  },
-  {
-    name: 'banque',
-    value: '#51aad3',
-  },
-  {
-    name: 'epargne',
-    value: '#6377ba',
-  },
-  {
-    name: 'entreprise',
-    value: '#5e3778',
-  },
-  {
-    name: 'collective',
-    value: '#006983',
-  },
-  {
-    name: 'iard',
-    value: '#42145f',
-  },
-  {
-    name: 'patrimonial',
-    value: '#c5a57f',
-  },
-  {
-    name: 'pros',
-    value: '#738b9c',
-  },
-  {
-    name: 'assurbanque',
-    value: '#ff1821',
-  },
-];
+const sassConfig = {
+  errLogToConsole: true,
+  outputStyle: 'compressed',
+  sourceMapContents: true,
+  includePaths: [
+    path.resolve(process.cwd(), assets),
+    path.resolve(process.cwd(), bootstrap),
+    path.resolve(process.cwd(), 'node_modules'),
+    path.resolve(process.cwd(), `packages/all/node_modules`),
+  ],
+};
 
-const components = [
-  // Core CSS
-  'reboot',
-  'type',
-  'images',
-  'code',
-  'grid',
-  'tables',
-  'forms',
-  'buttons',
-
-  // Components
-  'animation',
-  'dropdown',
-  'button-group',
-  'input-group',
-  'custom-forms',
-  'nav',
-  'navbar',
-  'card',
-  'breadcrumb',
-  'pagination',
-  'tags',
-  'jumbotron',
-  'alert',
-  'progress',
-  'media',
-  'list-group',
-  'responsive-embed',
-  'close',
-
-  // Components w/ JavaScript
-  'modal',
-  'tooltip',
-  'popover',
-  'carousel',
-
-  // Utility classes
-  'utilities',
-];
+const cleanCssConfig = { compatibility: 'ie9' };
 
 module.exports = {
-  assets,
   tasks,
+  assets,
   coreSrc,
-  srcFolder,
+  src,
   coreDist,
-  distFolder,
-  packageFolder,
-  cleanCssConfig: { compatibility: 'ie9' },
-  autoprefixer,
+  dist,
+  packages,
   bootstrap,
-  sassOptions: Object.assign(
-    {
-      errLogToConsole: true,
-      outputStyle: 'compressed',
-    },
-    autoprefixer,
-    {
-      includePaths: [
-        path.resolve(process.cwd(), assets),
-        path.resolve(process.cwd(), bootstrap),
-        path.resolve(process.cwd(), 'node_modules'),
-        path.resolve(process.cwd(), `packages/all/node_modules`),
-      ],
-    }
-  ),
-  universes,
-  components,
   allDist,
-  srcAll,
-  allStyles,
-  coreStyles,
+  allSrc,
+  all,
+  core,
+  sassConfig,
+  cleanCssConfig,
+  autoprefixerConfig,
 };

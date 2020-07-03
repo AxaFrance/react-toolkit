@@ -4,8 +4,11 @@ mixin formFieldText({ hasInfobulle= false, hasClear=false, modifier= '', textMes
   .af-form__text(class=(modifier !== '') ? ` af-form__text--${modifier}` : '' class=(hasInfobulle) ? ` af-form__text--hasinfobulle` : '')
     .af-form__text-wrapper
       input.af-form__input-text(class=(hasInfobulle) ? ` af-form__input-text--hasinfobulle` : '' name="inputtextname" type="text" disabled= disabled || null)
-      if(hasClear)
-        .glyphicon.glyphicon-close.af-form__clear(role="button" tabindex="-1")
-      if(hasInfobulle)
+      if hasClear
+        .af-form__clear(role="button" tabindex="-1")
+          include ../../../pages/style/icons/templates/close.pug
+      if hasInfobulle
         +formHelp()
+      if modifier === "valid"
+        include ../../../pages/style/icons/templates/ok.pug
     +formMessage({modifierMessage, textMessage, iconMessage})

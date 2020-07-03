@@ -16,7 +16,8 @@
   &__select {
     position: relative;
 
-    &--success {
+    &--success,
+    &--valid {
       .af-form__select-container {
         margin-right: 1rem;
       }
@@ -30,6 +31,22 @@
       > .af-btn--circle,
       > .af-form__message {
         display: none;
+      }
+    }
+
+    &--valid {
+      &::after {
+        display: none;
+      }
+
+      .glyphicon-ok {
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        transform: translate(0, -50%);
+        width: 17px;
+        fill: $color-btn-success;
+        margin-left: 2px;
       }
     }
 
@@ -49,7 +66,7 @@
 
     &--error {
       @include _set-message-type($color-red-axa);
-     }
+    }
 
     &--warning {
       @include _set-message-type($color-orange-dark);
@@ -61,6 +78,7 @@
       font-size: 0.7em;
       top: 50%;
       transform: translate(0, -50%);
+      width: 11px;
     }
   }
 

@@ -191,6 +191,7 @@ $active-sort-table-th: $color-table-sorting !default;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 17px;
     }
   }
 
@@ -201,7 +202,9 @@ $active-sort-table-th: $color-table-sorting !default;
     height: 1.5rem;
     font-size: 0.625rem;
     cursor: pointer;
-
+    .glyphicon {
+      width: 10px;
+    }
     .af-more-help {
       font-weight: 900;
     }
@@ -260,7 +263,7 @@ $active-sort-table-th: $color-table-sorting !default;
     text-align: inherit;
     justify-content: space-between;
     cursor: pointer;
-    color: inherit;
+    color: white;
     padding: 0.881em 1rem 0.881em 1rem;
     box-shadow: inherit;
 
@@ -286,6 +289,7 @@ $active-sort-table-th: $color-table-sorting !default;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+    width: 17px;
   }
 
   .af-badge {

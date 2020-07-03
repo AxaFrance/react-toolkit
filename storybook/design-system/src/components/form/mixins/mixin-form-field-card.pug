@@ -4,7 +4,7 @@ mixin formFieldCardHeaderCheckbox({ name='', modifier= '', disabled=false, forId
       input.af-form__input-checkbox(name=name type="checkbox" value="on" id=forId disabled= disabled || null checked= checked || null)
       label.af-form__label(for=forId)
         span.af-form__indicator
-          i.glyphicon.glyphicon-ok
+          include ../../../pages/style/icons/templates/ok.pug
         span.af-form__description
           p.af-rccard-header__title  Référence
           p.af-rccard-header__subtitle 50 € / mois
@@ -51,4 +51,3 @@ mixin formFieldCardGroup({ active=false, meta='', title= '' })
     .af-rccard-group__content
       if block
         block
-      

@@ -1,12 +1,34 @@
--var exemples = ["pushpin", "print", "arrow-xs-down", "heart", "eye-open", "menu-hamburger", "remove", "filter", "floppy-disk", "open"];
+-var modifier = ["circle", "circle-small"];
 
-.tk-block-demo
-  each ex in exemples
+each mod in modifier
+  .tk-block-demo
     div.fordemo
-      a.af-btn--circle(href="#" role="button" )
-        i.glyphicon(class=`glyphicon-${ex}`)
-.tk-block-demo
-  each ex in exemples
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/pushpin.pug
     div.fordemo
-      a.af-btn--circle-small(href="#" role="button" )
-        i.glyphicon(class=`glyphicon-${ex}`)
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/print.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/arrow-xs-down.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/heart.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/eye-open.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/menu-hamburger.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/remove.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/filter.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/floppy-disk.pug
+    div.fordemo
+      a(class=`af-btn--${mod}` href="#" role="button" )
+        include ../../../style/icons/templates/open.pug

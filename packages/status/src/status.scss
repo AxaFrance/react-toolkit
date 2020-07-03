@@ -8,5 +8,44 @@
   .glyphicon {
     margin: 0 1rem;
     font-size: 0.75rem;
+    &-ring {
+      margin: 0 1rem;
+      .glyphicon {
+        width: 14px;
+        margin: inherit;
+        @include generate-universes() {
+          fill: $color;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      border: 2px solid $color-axa;
+      text-align: center;
+      color: $color-axa;
+
+      &--success {
+        border-color: $color-malachite;
+        color: $color-malachite;
+      }
+
+      &--warning {
+        border-color: $color-flamingo;
+        color: $color-flamingo;
+      }
+
+      &--danger {
+        border-color: $color-red-axa;
+        color: $color-red-axa;
+      }
+      @include generate-universes() {
+        border-color: $color;
+        color: $color;
+      }
+    }
   }
 }

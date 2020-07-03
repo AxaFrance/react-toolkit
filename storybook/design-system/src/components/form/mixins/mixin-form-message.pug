@@ -3,5 +3,8 @@ mixin formMessage({modifierMessage= '', textMessage='', iconMessage= ''})
     if(!iconMessage)
       | #{textMessage}
     else
-      span.glyphicon(class=`glyphicon-${iconMessage}`)
+      if iconMessage === "warning-sign"
+        include ../../../pages/style/icons/templates/warning-sign.pug
+      else
+        include ../../../pages/style/icons/templates/exclamation-sign.pug
       span.af-form__error-text #{textMessage}

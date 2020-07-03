@@ -80,9 +80,11 @@
       box-shadow: none;
       background: none;
       padding: 0.5rem;
-
       &:hover {
         background-color: $gray-lighter;
+      }
+      .glyphicon-close {
+        width: 17px;
       }
     }
   }

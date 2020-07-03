@@ -3,6 +3,6 @@ mixin formFieldCheckbox({ name='defaultname', modifier= '', label= 'default labe
     input.af-form__input-checkbox(name=name type="checkbox" id=`checkbox${id}` disabled= disabled || null checked= checked || null)
     label.af-form__label(for=`checkbox${id}`)
       span.af-form__indicator
-        i.glyphicon.glyphicon-ok
+        include ../../../pages/style/icons/templates/ok.pug
       span.af-form__description
         | #{label}
