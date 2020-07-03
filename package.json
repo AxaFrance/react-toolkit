@@ -8,7 +8,7 @@
   },
   "scripts": {
     "publish": "lerna publish",
-    "postinstall": "npm run clean && lerna bootstrap && npm run style",
+    "postinstall": "npm run clean && lerna bootstrap --no-ci && npm run style",
     "clean": "node ./scripts/clean.js",
     "style": "node ./scripts/style.js",
     "storybook": "npm -C ./storybook/storybook run storybook",
