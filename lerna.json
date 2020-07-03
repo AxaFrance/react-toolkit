@@ -9,16 +9,17 @@
       "message": "chore(release): publish %s [skip ci]"
     },
     "bootstrap": {
-      "ignore": "component-*"
+      "ignore": "component-*",
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
     }
   },
   "packages": [
-    "examples/*",
     "packages/*",
     "packages/Form/*",
     "packages/Form/Input/*",
     "packages/Layout/*",
-    "packages/Modal/*",
-    "storybook/*"
+    "packages/Modal/*"
   ]
 }

@@ -1,6 +1,6 @@
 # Contributing to @axa-fr/react-toolkit
 
-First, ensure you have the [latest `npm`](https://docs.npmjs.com/).
+First, ensure you have Node.js < 12 and the [latest `npm`](https://docs.npmjs.com/).
 
 To get started with the repository:
 
@@ -8,55 +8,91 @@ To get started with the repository:
 git clone https://github.com/AxaGuilDEv/react-toolkit.git
 cd react-toolkit
 npm install
-npm run bootstrap
 ```
 
-## Commands
+A post-install action is thrown. This action first install dependencies with ```lerna bootstrap``` & then build all packages with a custom command gulp.
 
-## How to run
+At this point you are ready to contribute.
 
-Demo of how the component is used.
+## Additional installations
+
+This repository contains some projects used to display, explain components built previously.
+
+* *examples/demo* : a project using some components & react-oidc library
+* *storybook* :
+  * *design-system*: a design system web app rendering & exposing code to use components
+  * *storybook*: a storybook app to develop in isolated mode
+  * *styles*: part of design sytem & use as an explaination page of toolkit style
+
+
+
+If you want to use these projects, you must:
 
 ```sh
-# [react] Develop with storybook
-$ npm run storybook
-# [react] Build the storybook website
-$ npm run storybook:build
-
-# [react] To edit component in live inside storybook, you have run js compilation in another bash process
-$ npm run dev
-
-# [react] To edit a single component in live inside storybook, you have run js compilation in another bash process
-$ npx lerna exec --scope=@axa-fr/react-toolkit-table -- node ../../scripts/watch-js.js
-
-# [CSS] Generate CSS for storybook (does not watch, you have to run it manually)
-$ gulp all
-
-# [css] Develop html/css
-$ npm run css
-# [css] Build the html/css website
-$ npm run css:build
+cd examples/demo
+npm i
 ```
 
-## How to run Demo Application
-
 ```sh
-# [react] Launch local demo app
-$ npm start
-# [react] Build local demo app
-$ npm run demo:build
+cd storybook/design-system
+npm i
 ```
 
-### Run Unit Tests
+```sh
+cd storybook/storybook
+npm i
+```
 
 ```sh
-$ npm test
+cd storybook/styles
+npm i
+```
 
-# watch for changes
-$ npm test -- --watch
+## How to work on a component
 
-# For a specific file (e.g., in packages/context/__tests__/command.test.js)
-$ npm test -- --watch packages/action
+Into a terminal, to start to develop a component you can run
+
+```sh
+npm run dev
+```
+
+Or,if you want to run your component in watch mode, execting one of command below
+
+```sh
+# If your component is in js
+npm run dev:js -- --scope=@axa-fr/react-toolkit-status
+# If your component is in TypeScript
+npm run dev:ts -- --scope=@axa-fr/react-toolkit-action
+```
+
+*scope* refer to package name of your component you are working on.
+
+And then if you want to work on it, in isolation mode, you can run storybook
+
+```sh
+npm run storybook
+```
+
+After all this, if your development affect css, you can run
+
+```sh
+npx gulp all
+```
+
+to regenerate css
+
+## Other usefull commands
+
+### Launch demo app
+
+```sh
+npm start
+```
+
+### Run unit tests
+
+```sh
+npm test
 ```
 
 By default, `npm test` also runs the linter.
@@ -69,34 +105,13 @@ $ npx jest --config jest.config.json
 # etc
 ```
 
-### Linting
+### Run coverage
 
 ```sh
-$ npm run lint
+npm test -- --coverage
 ```
 
-It's also a good idea to hook up your editor to an eslint plugin.
 
-To fix lint errors from the command line:
-
-```sh
-$ npm run lint -- --fix
-```
-
-### Coverage
-
-If you would like to check test coverage, run the coverage script, then open
-`coverage/lcov-report/index.html` in your favorite browser.
-
-```sh
-$ npm test -- --coverage
-
-# OS X
-$ open coverage/lcov-report/index.html
-
-# Linux
-$ xdg-open coverage/lcov-report/index.html
-```
 
 ## Pull Request
 

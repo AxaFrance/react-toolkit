@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const args = process.argv;
-const VERSION = require('../storybook/storybook/package.json').version;
+const VERSION = require('../packages/all/package.json').version;
 const GITHUB_TOKEN = args[2];
 
 try {
