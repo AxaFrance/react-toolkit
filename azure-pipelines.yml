@@ -45,13 +45,13 @@ steps:
   - script: npm i
     displayName: 'npm install'
 
-  - script: npm install --prefix storybook/storybook
+  - script: npm ci --prefix storybook/storybook
     displayName: 'npm install storybook'
 
-  - script: npm install --prefix storybook/design-system
+  - script: npm ci --prefix storybook/design-system
     displayName: 'npm install design'
 
-  - script: npm install --prefix examples/demo
+  - script: npm ci --prefix examples/demo
     displayName: 'npm install demo'
 
   - script: npm test -- --coverage
