@@ -43,7 +43,7 @@ steps:
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
   - script: npm ci
-    displayName: 'npm ci and bootstrap'
+    displayName: 'npm ci'
 
   - script: npm test -- --coverage
     displayName: 'npm test'
