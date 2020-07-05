@@ -1,10 +1,13 @@
 /* eslint-disable arrow-parens */
 import { src, dest } from 'gulp';
 import html2pug from 'html2pug';
+import path from 'path';
 import fs from 'fs';
 import config from './config';
 
 const { pathSrc, pathDest, pathFontToolkit } = config;
+
+const pathIconPugTemplate = path.join(`${pathSrc}/pages/style/icons/`, 'templates');
 
 const copyIcons = () => src(`${pathFontToolkit}/*.svg`).pipe(dest(`${pathDest}/iconsToolkit`));
 
@@ -27,7 +30,10 @@ ul.icons-list\n`;
       .replace('d="', 'd=`')
       .replace('z"', 'z`');
 
-    fs.writeFileSync(`${pathSrc}/pages/style/icons/templates/${name}.pug`, pugSvg);
+    if (!fs.existsSync(pathIconPugTemplate)) {
+      fs.mkdirSync(pathIconPugTemplate, { recursive: true });
+    }
+    fs.writeFileSync(`${pathIconPugTemplate}/${name}.pug`, pugSvg);
 
     contentFile += '  li.icons-list__item\n';
     contentFile += `    img.icons-list__item-icon(src="../.././iconsToolkit/${svgFile}")\n`;
