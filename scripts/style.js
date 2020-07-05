@@ -204,36 +204,41 @@ const generateColorsSassFile = () => {
 const copyCoreFiles = () => {
   logStart('Copy Core File', true);
   try {
-    if (!fs.existsSync(path.join(coreDist, 'scss'))) {
-      fs.mkdirSync(path.join(coreDist, 'scss'), { recursive: true });
+    if (!fs.existsSync(path.join(coreDist, 'assets'))) {
+      fs.mkdirSync(path.join(coreDist, 'assets'), { recursive: true });
     }
-    if (!fs.existsSync(path.join(coreDist, 'fonts'))) {
-      fs.mkdirSync(path.join(coreDist, 'fonts'), { recursive: true });
+    const coreDistAssets = path.join(coreDist, 'assets');
+
+    if (!fs.existsSync(path.join(coreDistAssets, 'scss'))) {
+      fs.mkdirSync(path.join(coreDistAssets, 'scss'), { recursive: true });
     }
-    if (!fs.existsSync(path.join(coreDist, 'fonts/icons'))) {
-      fs.mkdirSync(path.join(coreDist, 'fonts/icons'), { recursive: true });
+    if (!fs.existsSync(path.join(coreDistAssets, 'fonts'))) {
+      fs.mkdirSync(path.join(coreDistAssets, 'fonts'), { recursive: true });
     }
-    if (!fs.existsSync(path.join(coreDist, 'icons'))) {
-      fs.mkdirSync(path.join(coreDist, 'icons'), { recursive: true });
+    if (!fs.existsSync(path.join(coreDistAssets, 'fonts/icons'))) {
+      fs.mkdirSync(path.join(coreDistAssets, 'fonts/icons'), { recursive: true });
     }
-    fs.copySync(path.join(assets, 'scss'), path.join(coreDist, 'scss'));
-    fs.copySync(path.join(assets, 'fonts'), path.join(coreDist, 'fonts'));
-    fs.copySync(path.join(assets, 'icons'), path.join(coreDist, 'icons'));
+    if (!fs.existsSync(path.join(coreDistAssets, 'icons'))) {
+      fs.mkdirSync(path.join(coreDistAssets, 'icons'), { recursive: true });
+    }
+    fs.copySync(path.join(assets, 'scss'), path.join(coreDistAssets, 'scss'));
+    fs.copySync(path.join(assets, 'fonts'), path.join(coreDistAssets, 'fonts'));
+    fs.copySync(path.join(assets, 'icons'), path.join(coreDistAssets, 'icons'));
     fs.copySync(
       path.join(assets, 'legacy/icons'),
-      path.join(coreDist, 'fonts/icons')
+      path.join(coreDistAssets, 'fonts/icons')
     );
     fs.copySync(
       path.join(assets, 'favicon.ico'),
-      path.join(coreDist, 'favicon.ico')
+      path.join(coreDistAssets, 'favicon.ico')
     );
     fs.copySync(
       path.join(assets, 'logo-axa.svg'),
-      path.join(coreDist, 'logo-axa.svg')
+      path.join(coreDistAssets, 'logo-axa.svg')
     );
     fs.copySync(
       path.join(assets, 'legacy/icons-sprite.svg'),
-      path.join(coreDist, 'icons-sprite.svg')
+      path.join(coreDistAssets, 'icons-sprite.svg')
     );
   } catch (err) {
     console.error(err);
