@@ -16,7 +16,8 @@ h2.af-title Liste des icons
 ul.icons-list\n`;
   iconsSvgFiles.forEach(svgFile => {
     const name = svgFile.replace('.svg', '');
-    const pugSvg = html2pug(fs.readFileSync(`${pathDest}/iconsToolkit/${svgFile}`, 'utf8'), {
+    const svgContentFile = fs.readFileSync(`${pathDest}/iconsToolkit/${svgFile}`, 'utf8');
+    const pugSvg = html2pug(svgContentFile, {
       fragment: true,
       commas: false,
       doubleQuotes: true,

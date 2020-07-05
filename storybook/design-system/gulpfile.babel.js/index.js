@@ -13,9 +13,9 @@ const reloadImages = series(cleanImages, copyImages);
 const build = series(
   clean,
   copyIcons,
-  generatePugIcons,
   jsProd,
   sassProd,
+  generatePugIcons,
   sprite,
   pugProd,
   copyAssets,
