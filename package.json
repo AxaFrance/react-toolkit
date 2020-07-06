@@ -171,5 +171,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

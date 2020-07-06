@@ -109,7 +109,7 @@ const renderSass = (file, outputPath, outputName) => {
  */
 const writeCssFiles = (result, outFile) => {
   postcss([autoprefixer(autoprefixerConfig)])
-    .process(result.css)
+    .process(result.css, { from: undefined })
     .then(resultAutoprefixed => {
       fs.writeFile(
         outFile,
@@ -216,7 +216,9 @@ const copyCoreFiles = () => {
       fs.mkdirSync(path.join(coreDistAssets, 'fonts'), { recursive: true });
     }
     if (!fs.existsSync(path.join(coreDistAssets, 'fonts/icons'))) {
-      fs.mkdirSync(path.join(coreDistAssets, 'fonts/icons'), { recursive: true });
+      fs.mkdirSync(path.join(coreDistAssets, 'fonts/icons'), {
+        recursive: true,
+      });
     }
     if (!fs.existsSync(path.join(coreDistAssets, 'icons'))) {
       fs.mkdirSync(path.join(coreDistAssets, 'icons'), { recursive: true });

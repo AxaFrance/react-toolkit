@@ -24,7 +24,6 @@ export const sassProd = () =>
 
     .pipe(
       autoprefixer({
-        browsers: ['last 2 versions'],
         cascade: false,
       }),
     )
@@ -48,7 +47,6 @@ const sassDev = () =>
     )
     .pipe(
       autoprefixer({
-        browsers: ['last 2 versions'],
         cascade: false,
       }),
     )
