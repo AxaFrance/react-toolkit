@@ -8,8 +8,8 @@ block input
   .af-form__file
     .af-form__file-input
       #uniqueid.drop-box.hidden-mobile(style='position: relative;' aria-disabled='false')
-        div Glissez/d&eacute;posez vos fichiers 
+        div Glissez/d&eacute;posez vos fichiers
         input(accept='image/jpeg, image/png, application/*' type='file' style='position: absolute; inset: 0px; opacity: 0.00001; pointer-events: none;' multiple='' autocomplete='off' name='placeImage')
       button.af-btn.af-btn--file.af-btn--hasiconLeft(type='button')
-        i.glyphicon.glyphicon-open
+        include ../../../style/icons/templates/open.pug
         |  Parcourir

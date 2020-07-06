@@ -12,7 +12,7 @@ mixin Demo({ modifier='', title="Set Demo Title", tmpl = '', storybook='', activ
             +Icon({id:'cross-full', modifier:"demo-close", js:true})
             div(class=`${prefix}-demo__template`)
               if iframe
-                iframe(class=`${prefix}-demo__iframe` src=`${activePath}/templates/iframe-${tmpl}.html`)
+                iframe(class=`${prefix}-demo__iframe` src=`./templates/iframe-${tmpl}.html`)
               else
                 | !{htmlCode()}
         +Tabs({modifier:'demo'})

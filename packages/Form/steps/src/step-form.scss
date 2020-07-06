@@ -121,6 +121,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
         .glyphicon {
           font-size: 1.5rem;
+          width: 17px;
         }
       }
 
@@ -160,6 +161,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
           .glyphicon {
             font-size: ceil(($font-size-step * 1.2));
+            width: 17px;
           }
         }
 
@@ -171,6 +173,7 @@ $steps-color-active: mix($black, $brand-primary, 20%);
           .af-steps-list-stepNumber {
             .glyphicon {
               font-size: ceil(($font-size-step * 1.1));
+              width: 17px;
             }
           }
         }

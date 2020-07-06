@@ -18,4 +18,9 @@ $types: (
       background-color: nth($type, 2);
     }
   }
+  &--hasIcon {
+    display: inline-block;
+    min-width: 38px;
+    padding-top: 0.4rem;
+  }
 }

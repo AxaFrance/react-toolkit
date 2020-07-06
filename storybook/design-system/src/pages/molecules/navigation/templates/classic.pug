@@ -11,7 +11,7 @@
           li.af-nav__item(role="none" class=(item.active) ? "af-nav__item--active" : "" class=(item.children) ? "af-nav__item--haschild" : "")
             a.af-nav__link(role="menuitem" href=item.href tabindex=(index === 0) ? "0" : "-1" aria-haspopup=(item.children) ? true : false aria-expanded=(item.children) ? true : false) #{item.label}
             if item.children
-              i.glyphicon.glyphicon-arrow-xs-down
+              include ../../../style/icons/templates/arrow-xs-down.pug
               ul.af-nav__list.af-nav__list--children(role="menu" aria-label=item.label)
                 each child in item.children
                   li.af-nav__item(role="none" class=(child.active) ? "af-nav__item--active" : "")

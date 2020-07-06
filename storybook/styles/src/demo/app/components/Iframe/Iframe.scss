@@ -1,9 +1,0 @@
-@import '../variables';
-
-iframe {
-  border: 1px solid $color-mercury;
-  width: 100%;
-  margin: $grid-gutter-width-base 0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-  padding: 1rem;
-}

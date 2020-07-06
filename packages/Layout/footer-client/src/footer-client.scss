@@ -16,6 +16,9 @@
 
 .social-network__link {
   color: $color-white;
+  .glyphicon {
+    width: 27px;
+  }
 }
 
 .social-network__icon {

@@ -1,6 +1,0 @@
-h3 La génération de cette page a été faite à l'aide de la task gulp 'iconfont'.Pour ajouter un icon à cette page de démo, il faut relancer cette task.
-h2.af-title Liste des glyphicons
-ul.icons-list<% _.each(glyphs, function(glyph) { %>
-  li.icons-list__item
-    span.icons-list__item-icon(class="<%= cssClass %> <%= cssClass %>-<%= glyph.fileName %>")
-    span.icons-list__item-name <%= cssClass %>-<%= glyph.fileName %><% }); %>

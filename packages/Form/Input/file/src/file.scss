@@ -1,14 +1,14 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
 .af-form {
-  &__file{
-    &-input{
+  &__file {
+    &-input {
       position: relative;
       display: flex;
       background: $white;
       justify-content: space-between;
       cursor: pointer;
-      .drop-box{
+      .drop-box {
         padding-left: 1rem;
         border: 2px dashed $color-mercury;
         border-right: 0;
@@ -21,25 +21,26 @@
         flex-basis: 40%;
         min-width: 8rem;
       }
-      &:hover, &:focus{
-        .drop-box{
+      &:hover,
+      &:focus {
+        .drop-box {
           border-color: $color-axa;
         }
       }
     }
-    &-errors{
+    &-errors {
       color: $color-red-error;
       margin-top: 1rem;
       font-size: 0.9rem;
     }
-    &-list{
+    &-list {
       list-style: none;
       display: flex;
       padding: 0;
       flex-wrap: wrap;
       font-size: 0.9rem;
     }
-    &-line{
+    &-line {
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -47,15 +48,18 @@
       border-bottom: 1px solid $color-mercury;
       background: $white;
       width: 100%;
+      .glyphicon {
+        width: 17px;
+      }
     }
   }
 }
-.af-link{
-  &--delete-file{
+.af-link {
+  &--delete-file {
     border: 0;
     text-decoration: underline;
     background: none;
-    &:hover{
+    &:hover {
       text-decoration: none;
     }
   }

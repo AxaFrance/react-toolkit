@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <polygon fill="#010101" points="87.477,42.738 12.523,42.738 50,5.262 "/>
-  <polygon fill="#010101" points="12.523,59.262 87.477,59.262 50,96.738 "/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="#000000" d="M87.477 42.738H12.523L50 5.262zM12.523 59.262h74.954L50 96.738z"/></svg>

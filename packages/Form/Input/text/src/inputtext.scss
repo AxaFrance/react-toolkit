@@ -8,7 +8,8 @@
       }
     }
 
-    &--success {
+    &--success,
+    &--valid {
       .af-form__input-text {
         margin-right: 1rem;
       }
@@ -23,6 +24,18 @@
 
       > .af-btn--circle {
         margin-right: 1rem;
+      }
+    }
+
+    &--valid {
+      &::after {
+        display: none;
+      }
+
+      .glyphicon-ok {
+        width: 17px;
+        fill: $color-btn-success;
+        margin-left: 2px;
       }
     }
 
@@ -84,6 +97,12 @@
       background: $color-mercury;
       border-radius: 100%;
       box-shadow: 0 0 0 6px $color-mercury;
+    }
+    .glyphicon {
+      width: 19px;
+      height: 100%;
+      padding-top: 0px;
+      display: inherit;
     }
   }
 }
