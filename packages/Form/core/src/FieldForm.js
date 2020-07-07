@@ -21,6 +21,21 @@ const defaultProps = {
   classModifier: null,
 };
 
+function debounce(func, wait, immediate) {
+	let timeout;
+	return function() {
+		const context = this; const args = arguments;
+		const later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		const callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
 function renderedChildren(children, wrapper, message, messageType) {
   if (!children) {
     return null;
@@ -74,6 +89,9 @@ class FieldForm extends Component {
     this.onFocus = this.onFocus.bind(this);
     this.onChange = this.onChange.bind(this);
     this.getInfo = this.getInfo.bind(this);
+    this.onKeyUp = this.onKeyUp.bind(this);
+    this.onDebounce = this.onDebounce.bind(this);
+    this.debounce = debounce(this.onDebounce.bind(this), 600);
     this.state = {
       hasLostFocusOnce: false,
       hasFocus: false,
@@ -97,6 +115,21 @@ class FieldForm extends Component {
       hasLostFocusOnce: true,
       hasFocus: false,
     });
+  }
+
+  onDebounce() {
+    const { message, messageType } = this.props;
+    this.setState({
+      hasLostFocusOnce: true,
+      memory: {
+        message,
+        messageType,
+      },
+    });
+  }
+
+  onKeyUp() {
+    this.debounce()
   }
 
   onFocus() {

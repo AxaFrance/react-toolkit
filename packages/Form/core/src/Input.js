@@ -19,6 +19,12 @@ const eventWrapper = (wrapper, props) => ({
       props.onFocus(ev);
     }
   },
+  onKeyUp: ev => {
+    wrapper.onKeyUp(ev);
+    if (props.onKeyUp) {
+      props.onKeyUp(ev);
+    }
+  },
 });
 
 const Clone = data => {
