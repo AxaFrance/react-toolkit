@@ -1,26 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InputList, InputConstants as Constants, withInput, omit } from '@axa-fr/react-toolkit-form-core';
+import {
+  InputConstants as Constants,
+  InputList,
+  omit,
+  withInput,
+} from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
 import RadioModes from './RadioModes';
 
 const omitProperties = omit(['mode', 'helpMessage', 'id']);
 
 const Radio = ({
-                 isVisible,
-                 className,
-                 disabled,
-                 options,
-                 value,
-                 name,
-                 onBlur,
-                 onFocus,
-                 readOnly,
-                 classModifier,
-                 children,
-                 onChange,
-                 ...otherProps
-               }) => options.map(option => {
+  isVisible,
+  className,
+  disabled,
+  options,
+  value,
+  name,
+  onBlur,
+  onFocus,
+  readOnly,
+  classModifier,
+  children,
+  onChange,
+  ...otherProps
+}) =>
+  options.map(option => {
     const isChecked = option.value === value;
     return (
       <RadioItem
@@ -44,7 +50,6 @@ const Radio = ({
     );
   });
 
-
 const propTypes = {
   ...Constants.propTypes,
   options: PropTypes.array.isRequired,
@@ -64,11 +69,11 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ onChange, name, id }) => e => {
+  onChange: ({ onChange, name }) => ({ value, id }) => {
     onChange({
-      value: e.value,
-      name,
+      value,
       id,
+      name,
     });
   },
 };
