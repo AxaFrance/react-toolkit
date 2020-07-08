@@ -23,8 +23,8 @@ const defaultProps = {
 
 function debounce(func, wait, immediate) {
 	let timeout;
-	return function() {
-		const context = this; const args = arguments;
+	return function({...args}) {
+		const context = this; 
 		const later = function() {
 			timeout = null;
 			if (!immediate) func.apply(context, args);
