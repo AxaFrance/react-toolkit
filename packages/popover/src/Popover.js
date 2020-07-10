@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Constants } from '@axa-fr/react-toolkit-core';
 import PopoverBase from './PopoverBase';
@@ -30,48 +30,65 @@ export const PopoverClick = props => {
   const wrapperRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const [isHover, setHover] = useState(false);
+  const [isPopoverHover, setPopoverHover] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => {
+  const handleClickOutside = event => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setOpen(false);
       document.removeEventListener('click', handleClickOutside);
-    };
-  }, [wrapperRef]);
-
-  const click = () => {
-    setOpen(!isOpen && isHover);
+    }
   };
 
-  const enter = () => {
+  const handleClick = event => {
+    if (isPopoverHover) {
+      event.stopPropagation();
+      return;
+    }
+
+    const shouldOpen = !isOpen && isHover;
+    setOpen(shouldOpen);
+
+    if (shouldOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+  };
+
+  const handleMouseEnter = () => {
     setHover(true);
   };
 
-  const leave = () => {
+  const handleMouseLeave = () => {
     setHover(false);
   };
 
+  const handleMouseEnterPopover = () => {
+    setPopoverHover(true);
+  };
+
+  const handleMouseLeavePopover = () => {
+    setPopoverHover(false);
+  };
+
   return (
-    <button
+    <div
+      role="button"
+      tabIndex="0"
       ref={wrapperRef}
       className="af-popover__wrapper"
-      type="button"
-      onMouseEnter={enter}
-      onMouseLeave={leave}
-      onClick={click}>
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onKeyDown={handleClick}
+      onClick={handleClick}>
       <PopoverBase
+        onMouseEnter={handleMouseEnterPopover}
+        onMouseLeave={handleMouseLeavePopover}
         isOpen={isOpen}
         placement={placement}
         className={className}
         classModifier={classModifier}>
         {children}
       </PopoverBase>
-    </button>
+    </div>
   );
 };
 
@@ -79,16 +96,19 @@ export const PopoverOver = props => {
   const { children, placement, className, classModifier } = props;
   const [isOpen, setOpen] = useState(false);
 
-  const enter = () => {
+  const handleMouseEnter = () => {
     setOpen(true);
   };
 
-  const leave = () => {
+  const handleMouseLeave = () => {
     setOpen(false);
   };
 
   return (
-    <span onMouseEnter={enter} onMouseLeave={leave}>
+    <div
+      className="af-popover__wrapper"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
       <PopoverBase
         isOpen={isOpen}
         placement={placement}
@@ -96,7 +116,7 @@ export const PopoverOver = props => {
         classModifier={classModifier}>
         {children}
       </PopoverBase>
-    </span>
+    </div>
   );
 };
 

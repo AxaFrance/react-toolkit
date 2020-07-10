@@ -74,7 +74,7 @@ export const AnimatedPopover = props => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
-    defaultClassName,
+    defaultClassName
   );
 
   const [referenceElement, setReferenceElement] = useState(null);
@@ -82,7 +82,12 @@ export const AnimatedPopover = props => {
   const [arrowElement, setArrowElement] = useState(null);
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     modifiers: [
-      { name: 'arrow', options: { element: arrowElement } },
+      {
+        name: 'arrow',
+        options: {
+          element: arrowElement,
+        },
+      },
       {
         name: 'offset',
         options: {
@@ -111,9 +116,7 @@ export const AnimatedPopover = props => {
           data-popper-placement={placement}
           className="af-popover__container-pop"
           {...attributes.popper}>
-          <div>
-            {children}
-          </div>
+          <div>{children}</div>
           <div
             ref={setArrowElement}
             style={styles.arrow}

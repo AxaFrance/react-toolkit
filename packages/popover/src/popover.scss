@@ -1,17 +1,19 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
-$size-arrow: 16px;
+$arrow-size: 16px;
 $arrow-offset: -4px;
 $padding-popover: 0.5rem;
 
 .af-popover {
   &__wrapper {
+    display: inline-block;
     background: inherit;
     border: 0;
     padding: 0;
   }
 
   &__container {
+    cursor: initial;
     display: inline-block;
 
     &-pop {
@@ -43,35 +45,35 @@ $padding-popover: 0.5rem;
     }
 
     .af-popover__arrow {
-      width: $size-arrow;
-      height: $size-arrow;
+      width: $arrow-size;
+      height: $arrow-size;
       position: absolute;
       z-index: -1;
 
       &::before {
         content: '';
         background: $color-azur;
-        width: $size-arrow;
-        height: $size-arrow;
+        width: $arrow-size;
+        height: $arrow-size;
         transform: rotate(45deg);
         position: absolute;
       }
     }
 
     [data-popper-placement^='top'] > .af-popover__arrow {
-      bottom: -4px;
+      bottom: $arrow-offset;
     }
 
     [data-popper-placement^='bottom'] > .af-popover__arrow {
-      top: -4px;
+      top: $arrow-offset;
     }
 
     [data-popper-placement^='right'] > .af-popover__arrow {
-      left: -12px;
+      left: $arrow-offset;
     }
 
     [data-popper-placement^='left'] > .af-popover__arrow {
-      right: 4px;
+      right: $arrow-offset;
     }
   }
 
