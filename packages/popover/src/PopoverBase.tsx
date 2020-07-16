@@ -1,44 +1,37 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { usePopper } from 'react-popper';
-import PropTypes from 'prop-types';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
-import PopoverPlacements from './PopoverPlacements';
+import { Placement } from '@popperjs/core';
 
-const propTypes = {
-  ...Constants.propTypes,
-  isOpen: PropTypes.bool.isRequired,
-  children: PropTypes.any,
-  placement: PropTypes.oneOf([
-    PopoverPlacements.top,
-    PopoverPlacements.bottom,
-    PopoverPlacements.left,
-    PopoverPlacements.right,
-  ]),
-};
 const defaultClassName = 'af-popover__container';
 const defaultProps = {
   ...Constants.defaultProps,
   className: defaultClassName,
-  placement: PopoverPlacements.top,
+  placement: 'top' as Placement,
 };
 
-const Pop = props => [props.children];
-const Over = props => [props.children];
+type Props = Partial<typeof defaultProps> & {
+  children: React.ReactNode | React.ReactNode[];
+  isOpen: boolean;
+  onMouseEnter?: (event: React.MouseEvent) => void;
+  onMouseLeave?: (event: React.MouseEvent) => void;
+};
 
-const PopoverBase = props => {
-  const {
-    children,
-    isOpen,
-    placement,
-    className,
-    classModifier,
-    onMouseEnter,
-    onMouseLeave,
-  } = props;
+const Pop = (props: React.PropsWithChildren<{}>) => (<>{props.children}</>);
+const Over = (props: React.PropsWithChildren<{}>) => (<>{props.children}</>);
 
+const PopoverBase = ({
+  children,
+  isOpen,
+  placement,
+  className,
+  classModifier,
+  onMouseEnter,
+  onMouseLeave,
+}: Props) => {
   const childs = React.Children.toArray(children);
-  const targetElement = childs.filter(c => c.type === Over);
-  const contentElement = childs.filter(c => c.type === Pop);
+  const targetElement = childs.filter(c => c === Over);
+  const contentElement = childs.filter(c => c === Pop);
   return (
     <AnimatedPopover
       target={targetElement}
@@ -56,30 +49,30 @@ const PopoverBase = props => {
 PopoverBase.Over = Over;
 PopoverBase.Pop = Pop;
 
-PopoverBase.propTypes = propTypes;
 PopoverBase.defaultProps = defaultProps;
 
-export const AnimatedPopover = props => {
-  const {
-    placement,
-    children,
-    isOpen,
-    target,
-    className,
-    classModifier,
-    onMouseEnter,
-    onMouseLeave,
-  } = props;
-
+type PropsAnimatedPopover = Props & {
+  target: React.ReactNode;
+};
+export const AnimatedPopover = ({
+  placement,
+  children,
+  isOpen,
+  target,
+  className,
+  classModifier,
+  onMouseEnter,
+  onMouseLeave,
+}: PropsAnimatedPopover) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
     defaultClassName
   );
 
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
-  const [arrowElement, setArrowElement] = useState(null);
+  const [referenceElement, setReferenceElement] = React.useState(null);
+  const [popperElement, setPopperElement] = React.useState(null);
+  const [arrowElement, setArrowElement] = React.useState(null);
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     modifiers: [
       {

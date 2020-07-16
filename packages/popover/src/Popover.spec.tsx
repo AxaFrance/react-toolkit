@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import ReactTestUtils, { act } from 'react-dom/test-utils';
+import { act, Simulate } from 'react-dom/test-utils';
 import Popover from './Popover';
 
 describe('<Popover />', () => {
-  let container;
+  let container: HTMLElement;
 
   beforeEach(() => {
     container = document.createElement('div');
@@ -54,12 +54,14 @@ describe('<Popover />', () => {
       // Act
       act(() => {
         ReactDOM.render(Element, container);
-        ReactTestUtils.Simulate.mouseEnter(container.querySelector('.af-popover__container').parentElement);
+        Simulate.mouseEnter(
+          container.querySelector('.af-popover__container').parentElement
+        );
       });
 
       act(() => {
-        ReactTestUtils.Simulate.click(container.querySelector('.af-popover__container'));
-      })
+        Simulate.click(container.querySelector('.af-popover__container'));
+      });
 
       expect(
         container.querySelector('.af-popover__container-pop')
@@ -104,7 +106,9 @@ describe('<Popover />', () => {
       // Act
       act(() => {
         ReactDOM.render(Element, container);
-        ReactTestUtils.Simulate.mouseEnter(container.querySelector('.af-popover__container').parentElement);
+        Simulate.mouseEnter(
+          container.querySelector('.af-popover__container').parentElement
+        );
       });
 
       // Assert
@@ -130,15 +134,15 @@ describe('<Popover />', () => {
       act(() => {
         ReactDOM.render(Element, container);
 
-        const parentContainer = container.querySelector('.af-popover__container').parentElement;
-        ReactTestUtils.Simulate.mouseEnter(parentContainer);
-        ReactTestUtils.Simulate.mouseLeave(parentContainer);
+        const parentContainer = container.querySelector(
+          '.af-popover__container'
+        ).parentElement;
+        Simulate.mouseEnter(parentContainer);
+        Simulate.mouseLeave(parentContainer);
       });
 
       // Assert
-      expect(
-        container.querySelector('.af-popover__container-pop')
-      ).toBeNull();
+      expect(container.querySelector('.af-popover__container-pop')).toBeNull();
     });
   });
 });

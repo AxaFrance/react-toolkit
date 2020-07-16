@@ -1,45 +1,39 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { Constants } from '@axa-fr/react-toolkit-core';
 import PopoverBase from './PopoverBase';
-import PopoverPlacements from './PopoverPlacements';
 import PopoverModes from './PopoverModes';
+import { Placement } from '@popperjs/core';
 
-const propTypes = {
-  ...Constants.propTypes,
-  children: PropTypes.any,
-  placement: PropTypes.oneOf([
-    PopoverPlacements.top,
-    PopoverPlacements.bottom,
-    PopoverPlacements.left,
-    PopoverPlacements.right,
-  ]),
-  mode: PropTypes.oneOf([PopoverModes.over, PopoverModes.click]),
-};
-const defaultClassName = 'af-popover__container';
 const defaultProps = {
   ...Constants.defaultProps,
-  className: defaultClassName,
-  placement: PopoverPlacements.top,
+  className: 'af-popover__container',
+  placement: 'top' as Placement,
   mode: PopoverModes.click,
 };
 
-export const PopoverClick = props => {
-  const { children, placement, className, classModifier } = props;
+type Props = Partial<typeof defaultProps> & {
+  children?: React.ReactNode;
+};
 
-  const wrapperRef = useRef(null);
-  const [isOpen, setOpen] = useState(false);
-  const [isHover, setHover] = useState(false);
-  const [isPopoverHover, setPopoverHover] = useState(false);
+const PopoverClick = ({
+  children,
+  placement,
+  className,
+  classModifier,
+}: Props) => {
+  const wrapperRef = React.useRef(null);
+  const [isOpen, setOpen] = React.useState(false);
+  const [isHover, setHover] = React.useState(false);
+  const [isPopoverHover, setPopoverHover] = React.useState(false);
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event: MouseEvent | React.MouseEvent) => {
     if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
       setOpen(false);
       document.removeEventListener('click', handleClickOutside);
     }
   };
 
-  const handleClick = event => {
+  const handleClick = (event: MouseEvent | React.MouseEvent | React.KeyboardEvent<HTMLDivElement>) => {
     if (isPopoverHover) {
       event.stopPropagation();
       return;
@@ -72,7 +66,7 @@ export const PopoverClick = props => {
   return (
     <div
       role="button"
-      tabIndex="0"
+      tabIndex={0}
       ref={wrapperRef}
       className="af-popover__wrapper"
       onMouseEnter={handleMouseEnter}
@@ -92,9 +86,13 @@ export const PopoverClick = props => {
   );
 };
 
-export const PopoverOver = props => {
-  const { children, placement, className, classModifier } = props;
-  const [isOpen, setOpen] = useState(false);
+const PopoverOver = ({
+  children,
+  placement,
+  className,
+  classModifier,
+}: Props) => {
+  const [isOpen, setOpen] = React.useState(false);
 
   const handleMouseEnter = () => {
     setOpen(true);
@@ -120,28 +118,34 @@ export const PopoverOver = props => {
   );
 };
 
-const Popover = props => {
-  const { children, placement, className, classModifier, mode } = props;
-  const DynamicComponent =
-    mode === PopoverModes.click ? PopoverClick : PopoverOver;
+export { PopoverClick, PopoverOver };
 
-  return (
-    <DynamicComponent
+const Popover = ({
+  children,
+  placement,
+  className,
+  classModifier,
+  mode,
+}: Props) => {
+  return mode === PopoverModes.click ? (
+    <PopoverClick
       className={className}
       classModifier={classModifier}
       placement={placement}>
       {children}
-    </DynamicComponent>
+    </PopoverClick>
+  ) : (
+    <PopoverOver
+      className={className}
+      classModifier={classModifier}
+      placement={placement}>
+      {children}
+    </PopoverOver>
   );
 };
 
 Popover.Pop = PopoverBase.Pop;
-Popover.Pop.displayName = 'Popover.Pop';
-
 Popover.Over = PopoverBase.Over;
-Popover.Over.displayName = 'Popover.Over';
-
-Popover.propTypes = propTypes;
 Popover.defaultProps = defaultProps;
 
 export default Popover;
