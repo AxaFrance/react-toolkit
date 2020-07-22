@@ -8,14 +8,14 @@
 		"prepare": "node ../../scripts/prepare.js"
 	},
 	"peerDependencies": {
-		"react": "^16.8.0",
-		"react-dom": "^16.8.0"
+		"react": "16.8.0",
+		"react-dom": "16.8.0"
 	},
 	"dependencies": {
-		"@axa-fr/react-toolkit-core": "^1.3.14",
-		"@popperjs/core": "^2.4.0",
-		"prop-types": "^15.5.10",
-		"react-popper": "^2.2.3"
+		"@axa-fr/react-toolkit-core": "1.3.14",
+		"@popperjs/core": "2.4.0",
+		"prop-types": "15.5.10",
+		"react-popper": "2.2.3"
 	},
 	"license": "MIT",
 	"publishConfig": {

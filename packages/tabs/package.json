@@ -9,13 +9,13 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "^1.3.14",
-    "classnames": "^2.2.6",
-    "prop-types": "^15.5.10"
+    "@axa-fr/react-toolkit-core": "1.3.14",
+    "classnames": "2.2.6",
+    "prop-types": "15.5.10"
   },
   "license": "MIT",
   "publishConfig": {
