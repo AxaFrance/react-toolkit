@@ -6,7 +6,7 @@ import ToggleButton from '../ToggleButton';
 const propTypes = {
   ...Constants.propTypes,
   isVisible: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   handleKeys: PropTypes.func.isRequired,
   onFocus: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,

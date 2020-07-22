@@ -7,7 +7,7 @@ import { setPosition } from './NavBar.helpers';
 const propTypes = {
   ...Constants.propTypes,
   isVisible: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   id: PropTypes.string,
   toggleMenuId: PropTypes.string,
   children: PropTypes.node,
