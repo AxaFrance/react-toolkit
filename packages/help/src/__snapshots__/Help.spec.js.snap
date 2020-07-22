@@ -1,14 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Help> Render Should render Help component 1`] = `
-<div
+<button
   className="af-popover__wrapper"
   onClick={[Function]}
-  onKeyDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  role="button"
-  tabIndex="0"
+  type="button"
 >
   <div
     className="af-popover__container"
@@ -29,5 +27,5 @@ exports[`<Help> Render Should render Help component 1`] = `
       </button>
     </div>
   </div>
-</div>
+</button>
 `;
