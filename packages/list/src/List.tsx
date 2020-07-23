@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const List = () => <ul className="af-list af-list--check">
 <li className="af-list__item"><span className="glyphicon glyphicon-ok"/>  CSS et SASS</li>
