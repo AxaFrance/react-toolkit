@@ -1,6 +1,34 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.16](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.15...v1.3.16)
+> 23 July 2020
+- feat: add props to footer component to hide icon [`#120`](https://github.com/AxaGuilDEv/react-toolkit/pull/120) by barry-thierno
+- chore(release): publish v1.3.16 [skip ci] [`2b4ac47`](https://github.com/AxaGuilDEv/react-toolkit/commit/2b4ac47763f64b674a4384d0b165c783ef5a25da) by Build-CI 
+- refactor(components) Migrate empty component to Typescript [`3d2316f`](https://github.com/AxaGuilDEv/react-toolkit/commit/3d2316f5e73fd1a1afea7132164f2fb6de3c6ec3) by Guillaume Chervet 
+
+#### [v1.3.15](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.14...v1.3.15)
+> 22 July 2020
+- feat: onClick is no longer required on navbar and steplink [`#441`](https://github.com/AxaGuilDEv/react-toolkit/pull/441) by Johnathan MEUNIER
+- feat(form-input-radio) send ID on change [`#648`](https://github.com/AxaGuilDEv/react-toolkit/pull/648) by Xavier Balloy
+- feat(build): delete gulp v3 and replace by scripts tasks [`#651`](https://github.com/AxaGuilDEv/react-toolkit/pull/651) by Samuel Gomez
+- ci: improve lerna integration [`#641`](https://github.com/AxaGuilDEv/react-toolkit/pull/641) by Olivier YOUF
+- feat(layout-footer): use current year as default in copyright [`#639`](https://github.com/AxaGuilDEv/react-toolkit/pull/639) by Olivier YOUF
+- build: fix version in packages to have repeatable builds [`4ba028a`](https://github.com/AxaGuilDEv/react-toolkit/commit/4ba028af39c0ec2695f77e097761db7c925d7919) by Xavier Balloy 
+- chore(release): publish v1.3.15 [skip ci] [`6eb8546`](https://github.com/AxaGuilDEv/react-toolkit/commit/6eb85460bd26088a3072562c4ddbfebf88c7baab) by Build-CI 
+- docs: modify contributing to only use simple command [`9c46320`](https://github.com/AxaGuilDEv/react-toolkit/commit/9c46320da6607aee9ba0e872c79a03dda1a4f7a0) by Arnaud Foraison 
+- refactor: code review feedbacks [`f4a7ac2`](https://github.com/AxaGuilDEv/react-toolkit/commit/f4a7ac2a5b9ee78ce2a75efbdb1d662c9aadacdc) by Xavier Balloy 
+- feat: migrate empty component to Typescript [`ac37f7b`](https://github.com/AxaGuilDEv/react-toolkit/commit/ac37f7bef0700d31bee5832cf9bb49dffe697edd) by Arnaud Foraison 
+- build: fix version in packages to have repeatable builds [`463594c`](https://github.com/AxaGuilDEv/react-toolkit/commit/463594c3406f0440e41ec9959d71e4c7f71e05d6) by Guillaume Chervet 
+- docs(changelog) update to new 1.3.14 [skip ci] [`3c27f56`](https://github.com/AxaGuilDEv/react-toolkit/commit/3c27f56e7f4a6339e910dedc7771a248f62a4548) by Build-CI 
+- fix(popover): popover prevents click action on the page [`c6d0ac6`](https://github.com/AxaGuilDEv/react-toolkit/commit/c6d0ac62bbf3b85cd2e4273c892a24dea7bb53b3) by Guillaume Chervet 
+- fix(popover): do not stopPropagation on body click [`421d083`](https://github.com/AxaGuilDEv/react-toolkit/commit/421d0837038572ea5137dde6e4392d3fa85e054f) by Xavier Balloy 
+- fix(popover): fix arrow position [`46b872f`](https://github.com/AxaGuilDEv/react-toolkit/commit/46b872f74041d0d8292c5af45490edea117cf07f) by Xavier Balloy 
+- test: fix snapshots [`ac6153d`](https://github.com/AxaGuilDEv/react-toolkit/commit/ac6153dbadd5e9b7d327e6d39725abe9d3544fc1) by Xavier Balloy 
+- ci(publish): use version of package all to retrieve version [`5ed4b79`](https://github.com/AxaGuilDEv/react-toolkit/commit/5ed4b798f74fabcc5856ffbe1d2839bd358ea967) by Arnaud Foraison 
+- ci(publish): remove bootstrap on CI because included into postinstall [`298571e`](https://github.com/AxaGuilDEv/react-toolkit/commit/298571e4cb4aadea300bb31345b2bc353b87331a) by Arnaud Foraison 
+- fix(popover): remove unused props title [`25a2f9b`](https://github.com/AxaGuilDEv/react-toolkit/commit/25a2f9b5941b16b6d5a1d63a8b73e2ec6a8d7977) by Xavier Balloy 
+
 #### [v1.3.14](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.13...v1.3.14)
 > 19 June 2020
 - feat(form-input-choice): use the id instead of generating a new one [`#637`](https://github.com/AxaGuilDEv/react-toolkit/pull/637) by Olivier YOUF
@@ -14,6 +42,7 @@ All notable changes to this project will be documented in this file.
 - fix(sample): bump sample version [`2dba9c6`](https://github.com/AxaGuilDEv/react-toolkit/commit/2dba9c68c91c777c2552fb3fcc68d947b02f8bf4) by Olivier YOUF 
 - fix(Title): Fix burger menu in plain display [`937cf80`](https://github.com/AxaGuilDEv/react-toolkit/commit/937cf806e450fc0b42d3a3a0e5772546d80b1f7d) by Olivier YOUF 
 - fix(tabs): add activeIndex as an optionnal prop [`a46272a`](https://github.com/AxaGuilDEv/react-toolkit/commit/a46272a3f42f9d3b6f08e415bf91ffd415ded372) by BIRGAND Julien 
+- feat(layout-footer): use current year as default in copyright [`3516903`](https://github.com/AxaGuilDEv/react-toolkit/commit/3516903326179db749fd413c6df0532252d8aa04) by Xavier Balloy 
 - fix(tabs): update props definition [`0cae1d6`](https://github.com/AxaGuilDEv/react-toolkit/commit/0cae1d62203bf230289e1d8a8d6b956310a2edaa) by BIRGAND Julien 
 - docs(changelog) update to new 1.3.13 [skip ci] [`9a3b0e6`](https://github.com/AxaGuilDEv/react-toolkit/commit/9a3b0e655d27a130eaa46414228f4bf170f20372) by Build-CI 
 
