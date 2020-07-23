@@ -1,11 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Footer, FooterCore } from '@axa-fr/react-toolkit-layout-footer';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import readme from '@axa-fr/react-toolkit-layout-footer/dist/README.md';
 
 const FooterStory = () => (
-  <Footer icon="images/logo-axa.svg" copyright={text('copyright')} />
+  <Footer
+    icon="images/logo-axa.svg"
+    copyright={text('copyright')}
+    isIconHidden={boolean('isIconHidden', false)}
+  />
 );
 
 const FooterCoreStory = () => () => (

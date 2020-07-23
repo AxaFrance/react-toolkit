@@ -20,6 +20,16 @@ const MyFooter => () => (
 )
 ```
 
+You can hide icon by setting the boolean isIconHidden to true. By default the icon is shown.
+
+```javascript
+import React from 'react';
+import { Footer } from '@axa-fr/react-toolkit-layout-footer';
+const MyFooter => () => (
+  <Footer copyright="© 2017-2018 AXA Webcenter"  isIconHidden= {true} />
+)
+```
+
 #### FooterCore
 
 This core component displays its children instead of a copyright prop, therefore allowing HTML tags, e.g. :
