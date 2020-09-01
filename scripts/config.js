@@ -6,10 +6,10 @@ const packages = 'packages';
 const core = 'core';
 const all = 'all';
 const tasks = './scripts/tasks';
-const coreSrc = path.join(packages, core, src);
-const coreDist = path.join(packages, core, dist);
-const allSrc = path.join(packages, all, src);
-const allDist = path.join(packages, all, dist);
+const coreSrc = `${packages}/${core}/${src}`;
+const coreDist = `${packages}/${core}/${dist}`;
+const allSrc = `${packages}/${all}/${src}`;
+const allDist = `${packages}/${all}/${dist}`;
 const assets = `${coreSrc}/common`;
 const bootstrap = `${coreSrc}/bootstrap`;
 

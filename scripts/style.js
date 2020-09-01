@@ -57,14 +57,17 @@ const getScssFiles = () => {
   }
 };
 
+const cleanPathScssPackagesFiles = allScssFiles =>
+  allScssFiles.map(file => file.replace(/\\/g, '/'));
+
 const getScssPackagesFiles = allScssFiles =>
   allScssFiles.filter(
-    file =>
-      file.includes(`/${src}`) &&
-      !file.includes(`${coreSrc}`) &&
-      !file.includes(`${packages}/all/${src}`) &&
-      !file.includes('/node_modules') &&
-      !path.basename(file).startsWith('_')
+    pathFile =>
+      pathFile.includes(`/${src}`) &&
+      !pathFile.includes(`${coreSrc}`) &&
+      !pathFile.includes(`${packages}/all/${src}`) &&
+      !pathFile.includes('/node_modules') &&
+      !path.basename(pathFile).startsWith('_')
   );
 
 /**
@@ -84,6 +87,7 @@ const prepareStylePackages = packagesScssfiles => {
     if (!fs.existsSync(outputPath)) {
       fs.mkdirSync(outputPath, { recursive: true });
     }
+
     renderSass(scssFile, outputPath, outputName);
     fs.copyFileSync(scssFile, `${outputPath}/${path.basename(scssFile)}`);
   });
@@ -150,6 +154,7 @@ const generateAfToolkitCore = packagesScssfiles => {
   const imports = packagesScssfiles
     .map(scssFile => setFileImport(scssFile))
     .join('\n');
+
   generateContentScss(imports, 'af-toolkit-core');
   generateContentScss(imports, 'af-components');
   logFinished('af-toolkit-core', true);
@@ -161,6 +166,7 @@ const generateContentScss = (imports, name) => {
     'utf8'
   );
   const content = template.replace(/<%= axaComponents %>/g, imports);
+
   if (!fs.existsSync(outputPathAll)) {
     fs.mkdirSync(outputPathAll, { recursive: true });
   }
@@ -255,7 +261,8 @@ try {
   logStart('Build Style Files');
   generateColorsSassFile();
   const scssFiles = getScssFiles() || [];
-  const packagesScssfiles = getScssPackagesFiles(scssFiles);
+  const cleanedScssFiles = cleanPathScssPackagesFiles(scssFiles);
+  const packagesScssfiles = getScssPackagesFiles(cleanedScssFiles);
   prepareStylePackages(packagesScssfiles);
   generateAfToolkitCore(packagesScssfiles);
   copyCoreFiles();
