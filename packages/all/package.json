@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-all",
-  "version": "1.3.16",
+  "version": "1.3.17",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -38,7 +38,7 @@
     "@axa-fr/react-toolkit-form-input-textarea": "^1.3.16",
     "@axa-fr/react-toolkit-form-steps": "^1.3.16",
     "@axa-fr/react-toolkit-form-summary": "^1.3.16",
-    "@axa-fr/react-toolkit-help": "^1.3.16",
+    "@axa-fr/react-toolkit-help": "1.3.17",
     "@axa-fr/react-toolkit-highlight": "^1.3.16",
     "@axa-fr/react-toolkit-icon": "^1.3.16",
     "@axa-fr/react-toolkit-layout-footer": "^1.3.16",
