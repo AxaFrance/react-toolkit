@@ -9,7 +9,7 @@ export const enhance = compose(
   withClassDefault('af-popover__container'),
   withClassModifier
 );
-
+console.log("youhou")
 const enhanced = enhance(Help);
 enhanced.displayName = 'Help';
 
