@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "npm run lint && npm test && npm run package-lock-sanitizer && git add package-lock.json"
     }
   },
   "devDependencies": {
@@ -145,7 +145,8 @@
     "twit": "^2.2.11",
     "typescript": "^3.6.3",
     "util-deprecate": "^1.0.2",
-    "watch": "1.0.2"
+    "watch": "1.0.2",
+    "package-lock-sanitizer": "1.0.1"
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",
