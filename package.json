@@ -30,11 +30,6 @@
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
     "changelog": "auto-changelog --unreleased --commit-limit false --template changelog-template.hbs -p  --output ./CHANGELOG.md"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm test"
-    }
-  },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.0",
     "@testing-library/react": "^9.3.0",
