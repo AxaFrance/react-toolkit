@@ -155,7 +155,7 @@
     "moment": "~2.22.2",
     "postcss-cli": "^7.1.1",
     "prop-types": "^15.5.10",
-    "rc-slider": "^8.6.4",
+    "rc-slider": "^9.3.1",
     "react-datepicker": "^1.8.0",
     "react-dropzone": "^4.2.11",
     "react-modal": "^3.8.1",
