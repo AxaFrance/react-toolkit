@@ -32,7 +32,13 @@
     "highlight-loader": "^0.7.3",
     "markdown-loader": "^4.0.0",
     "sass-loader": "^7.1.0",
-    "storybook-readme": "^5.0.5"
+    "storybook-readme": "^5.0.5",
+    "husky": "4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run package-lock-sanitizer -r https://registry.npmjs.org/ -l && git add package-lock.json"
+    }
   },
   "dependencies": {
     "@axa-fr/react-toolkit-action": "file:../../packages/action",

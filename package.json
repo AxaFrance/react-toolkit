@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test && npm run package-lock-sanitizer && git add package-lock.json"
+      "pre-commit": "npm run lint && npm test && npm run package-lock-sanitizer -r https://registry.npmjs.org/ -l && git add package-lock.json"
     }
   },
   "devDependencies": {
