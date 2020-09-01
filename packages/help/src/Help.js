@@ -7,6 +7,7 @@ import Popover, {
 } from '@axa-fr/react-toolkit-popover';
 import { Constants } from '@axa-fr/react-toolkit-core';
 
+console.log("youhou")
 const propTypes = {
   ...Constants.propTypes,
   children: PropTypes.oneOfType([
