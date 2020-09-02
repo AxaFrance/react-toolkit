@@ -8,7 +8,8 @@
   },
   "scripts": {
     "publish": "lerna publish",
-    "postinstall": "npm run clean && lerna bootstrap --no-ci && npm run style",
+    "postinstall": "npm run clean && lerna bootstrap --no-ci && npm run style && npm run package-lock-sanitizer",
+    "package-lock-sanitizer": "package-lock-sanitizer",
     "preinstall": "node ./scripts/npm.js",
     "clean": "node ./scripts/clean.js",
     "style": "node ./scripts/style.js",
@@ -32,7 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test && npm run package-lock-sanitizer -r https://registry.npmjs.org/ -l && git add package-lock.json"
+      "pre-commit": "npm run lint && npm test"
     }
   },
   "devDependencies": {

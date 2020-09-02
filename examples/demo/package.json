@@ -67,7 +67,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "postinstall": "npm run package-lock-sanitizer",
+    "package-lock-sanitizer": "package-lock-sanitizer"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -92,7 +94,8 @@
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "react-scripts": "^3.3.0",
-    "stylelint-config-standard": "^19.0.0"
+    "stylelint-config-standard": "^19.0.0",
+    "package-lock-sanitizer": "1.0.1"
   },
   "homepage": ".",
   "proxy": "http://localhost:5000",

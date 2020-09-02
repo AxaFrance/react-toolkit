@@ -6,7 +6,9 @@
     "storybook": "concurrently --kill-others \"start-storybook -p 9009 -s public\"",
     "storybook:start": "start-storybook -p 9009 -s public",
     "storybook:build": "build-storybook -s public -c .storybook -o storybook-static && npm run toolkit:build",
-    "toolkit:build": "node ./scripts/inject-version.js"
+    "toolkit:build": "node ./scripts/inject-version.js",
+    "postinstall": "npm run package-lock-sanitizer",
+    "package-lock-sanitizer": "package-lock-sanitizer"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -33,12 +35,8 @@
     "markdown-loader": "^4.0.0",
     "sass-loader": "^7.1.0",
     "storybook-readme": "^5.0.5",
-    "husky": "4.2.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run package-lock-sanitizer -r https://registry.npmjs.org/ -l && git add package-lock.json"
-    }
+    "husky": "4.2.5",
+    "package-lock-sanitizer": "1.0.1"
   },
   "dependencies": {
     "@axa-fr/react-toolkit-action": "file:../../packages/action",

@@ -16,7 +16,8 @@ save-exact=true`;
     }
    const filePath = path.join(__dirname, '../.npmrc');
    fs.writeFileSync(filePath  , template, 'utf8');
-
+    return 1;
 } catch(ex) {
+    return -1;
     console.error(ex);
 }
