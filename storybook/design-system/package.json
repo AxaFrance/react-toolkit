@@ -12,9 +12,7 @@
     "lint": "run-s lint:**",
     "lint:js": "eslint ./src --fix",
     "lint:pug": "pug-lint ./src",
-    "lint:scss": "stylelint \"src/**/*.scss\" --formatter \"verbose\" --max-warnings 96 --fix",
-    "postinstall": "npm run package-lock-sanitizer",
-    "package-lock-sanitizer": "package-lock-sanitizer"
+    "lint:scss": "stylelint \"src/**/*.scss\" --formatter \"verbose\" --max-warnings 96 --fix"
   },
   "author": "Samuel Gomez",
   "license": "MIT",
@@ -112,8 +110,7 @@
     "stylelint-config-standard": "^18.3.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.11.1",
-    "package-lock-sanitizer": "1.0.1"
+    "watchify": "^3.11.1"
   },
   "dependencies": {
     "@babel/register": "^7.0.0",
