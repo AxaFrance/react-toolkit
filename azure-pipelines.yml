@@ -4,12 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pool:
-  vmImage: 'Ubuntu 16.04'
+  vmImage: 'ubuntu-20.04'
 
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '8.x'
+      versionSpec: '12.x'
     displayName: 'Install Node.js'
 
   - task: jessehouwing.jessehouwing-vsts-variable-tasks.vsts-variable-transform.VariableTransformTask@1
