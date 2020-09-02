@@ -18,6 +18,6 @@ save-exact=true`;
    fs.writeFileSync(filePath  , template, 'utf8');
     return 1;
 } catch(ex) {
-    return -1;
     console.error(ex);
+    return -1;
 }
