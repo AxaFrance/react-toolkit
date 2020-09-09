@@ -2,11 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import TabsStateless, { TabsStatelessProps } from './TabsStateless';
 
-export type TabsContainerState = {
-  activeIndex: string;
-};
-
-const defaultState = { activeIndex: '0' };
+const DEFAULT_ACTIVE_INDEX: string = '0';
 
 export type TabsCoreProps = Tabs & Omit<TabsStatelessProps, 'activeIndex'>;
 
@@ -15,30 +11,27 @@ interface Tabs {
   activeIndex?: string;
 }
 
-export const onChangeEvent = (onChange: Function) => (setState: Function) => (
-  state: any
-) => (e: any) => {
+export const onChangeEvent = (onChange: Function) => (setState: Function) => (e: any) => {
   if (onChange) {
     onChange(e.id);
   }
-  setState({
-    ...state,
-    activeIndex: e.id,
-  });
+  setState(e.id);
 };
 
-const TabsCore: React.FunctionComponent<TabsCoreProps> = ({
-  activeIndex,
-  onChange,
-  ...otherProps
-}) => {
-  const [state, setState] = useState<TabsContainerState>(defaultState);
+const TabsCore: React.FunctionComponent<TabsCoreProps> = (
+  {
+    activeIndex = DEFAULT_ACTIVE_INDEX,
+    onChange,
+    ...otherProps
+  }) => {
+
+  const [stateActiveIndex, setActiveIndex] = useState<string>(activeIndex);
 
   return (
     <TabsStateless
-      activeIndex={activeIndex || state.activeIndex}
+      activeIndex={stateActiveIndex}
       {...otherProps}
-      onChange={onChangeEvent(onChange)(setState)(state)}
+      onChange={onChangeEvent(onChange)(setActiveIndex)}
     />
   );
 };

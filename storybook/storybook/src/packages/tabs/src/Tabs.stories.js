@@ -30,7 +30,7 @@ const titleWithBadgeAndRightIcon = (
 );
 
 const TabsStory = () => (
-  <Tabs onChange={action('OnChange')}>
+  <Tabs onChange={action('OnChange')} activeIndex={text('activeIndex', '1')}>
     <Tabs.Tab
       title={titleWithLeftIcon}
       classModifier={text('classModifier', 'has-icon-left')}
