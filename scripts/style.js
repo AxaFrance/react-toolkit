@@ -19,10 +19,12 @@ const {
   autoprefixerConfig,
   cleanCssConfig,
   sassConfig,
+  bootstrapModulesDistCss,
 } = require('./config');
 
 const colors = require(`../${assets}/scss/colorsList.js`);
 const outputPathAll = `${allDist}/style`;
+const outputPathBootstrap = `${outputPathAll}/bootstrap`;
 
 const log = (prefix, message, inverse) => {
   const darkGray = '#111111';
@@ -255,6 +257,32 @@ const copyCoreFiles = () => {
 };
 
 /**************************************************************************** */
+/* Copy Bootstrap files                                                            */
+/**************************************************************************** */
+
+const copyBootstrapFiles = () => {
+  logStart('Copy Bootstrap Files', true);
+  try {
+    if (!fs.existsSync(outputPathBootstrap)) {
+      fs.mkdirSync(outputPathBootstrap, { recursive: true });
+    }
+
+    fs.copySync(
+      path.join(bootstrapModulesDistCss, 'bootstrap-grid.min.css'),
+      path.join(outputPathBootstrap, 'grid.css')
+    );
+
+    fs.copySync(
+      path.join(bootstrapModulesDistCss, 'bootstrap-reboot.min.css'),
+      path.join(outputPathBootstrap, 'reboot.css')
+    );
+  } catch (err) {
+    console.error(err);
+  }
+  logFinished('Copy Bootstrap Files', true);
+};
+
+/**************************************************************************** */
 /* Main                                                                       */
 /**************************************************************************** */
 try {
@@ -266,6 +294,7 @@ try {
   prepareStylePackages(packagesScssfiles);
   generateAfToolkitCore(packagesScssfiles);
   copyCoreFiles();
+  copyBootstrapFiles();
 } catch (err) {
   console.error(err);
 } finally {
