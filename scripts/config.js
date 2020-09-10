@@ -6,6 +6,7 @@ const packages = 'packages';
 const core = 'core';
 const all = 'all';
 const tasks = './scripts/tasks';
+const bootstrapModulesDistCss = 'node_modules/bootstrap/dist/css';
 const coreSrc = `${packages}/${core}/${src}`;
 const coreDist = `${packages}/${core}/${dist}`;
 const allSrc = `${packages}/${all}/${src}`;
@@ -48,4 +49,5 @@ module.exports = {
   sassConfig,
   cleanCssConfig,
   autoprefixerConfig,
+  bootstrapModulesDistCss,
 };
