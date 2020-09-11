@@ -3,6 +3,7 @@
 exports[`<AlertCore /> renders an error alert with exclamation icon and title 1`] = `
 <div
   className="af-alert af-alert--error"
+  role="alert"
 >
   <div
     className="af-alert__title"

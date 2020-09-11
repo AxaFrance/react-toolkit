@@ -22,7 +22,7 @@ const AlertCoreRaw: React.SFC<AlertCoreComponentProps> = ({
   title,
   children,
 }) => (
-  <div className={className}>
+  <div className={className} role="alert">
     {onClose && (
       <button className="af-alert__icon-close" onClick={onClose}>
         <i className="glyphicon glyphicon-close" />
