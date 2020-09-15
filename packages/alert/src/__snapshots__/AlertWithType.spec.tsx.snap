@@ -3,6 +3,7 @@
 exports[`<AlertWithType> should render an alert of type error with an error style and ban-circle icon 1`] = `
 <div
   className="af-alert af-alert--error"
+  role="alert"
 >
   <div
     className="af-alert__title"
@@ -26,6 +27,7 @@ exports[`<AlertWithType> should render an alert of type error with an error styl
 exports[`<AlertWithType> should render an alert of type error with an error style and exclamation-sign icon 1`] = `
 <div
   className="af-alert af-alert--error"
+  role="alert"
 >
   <div
     className="af-alert__title"
