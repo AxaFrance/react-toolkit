@@ -1,6 +1,29 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.21](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.16...v1.3.21)
+> 18 September 2020
+- fix(publish): fix publish broken [`#680`](https://github.com/AxaGuilDEv/react-toolkit/pull/680) by Guillaume Chervet
+- feat(alert): add role attribute [`#668`](https://github.com/AxaGuilDEv/react-toolkit/pull/668) by Olivier YOUF
+- fix(css): restore legacy boostrap css files - #666 [`#679`](https://github.com/AxaGuilDEv/react-toolkit/pull/679) by Samuel Gomez
+- feat: add props to footer component to hide icon [`#120`](https://github.com/AxaGuilDEv/react-toolkit/pull/120) by barry-thierno
+- feat: onClick is no longer required on navbar and steplink [`#441`](https://github.com/AxaGuilDEv/react-toolkit/pull/441) by Johnathan MEUNIER
+- chore(release): publish v1.3.21 [skip ci] [`fb876c1`](https://github.com/AxaGuilDEv/react-toolkit/commit/fb876c1c027ce7886c8d2a33fe699b5696274899) by Build-CI 
+- fix(tabs): init tabs with custom active index other than zero [`04c979a`](https://github.com/AxaGuilDEv/react-toolkit/commit/04c979abba3b87106a5e2d7620cbb9f615a36078) by Guillaume Chervet 
+- chore(release): publish v1.3.16 [skip ci] [`ce6f8f9`](https://github.com/AxaGuilDEv/react-toolkit/commit/ce6f8f96845f2b4a05f42944ef4c7498af5620da) by Build-CI 
+- chore(release): publish v1.3.15 [skip ci] [`3419683`](https://github.com/AxaGuilDEv/react-toolkit/commit/3419683c595aa938b37c46ea43c0f2b00df02ab4) by Build-CI 
+- refactor: code review feedbacks [`fee2f9a`](https://github.com/AxaGuilDEv/react-toolkit/commit/fee2f9a0f6f1a49e071cd2ca95c99ee144c503ff) by Xavier Balloy 
+- fix(tabs): init tabs with custom active index other than zero [`3246fd0`](https://github.com/AxaGuilDEv/react-toolkit/commit/3246fd0d5c04d9c0a7e6b9ce13342e5802bbadb9) by remi.jacquart@axa.fr 
+- fix(css): packages generation [`e953283`](https://github.com/AxaGuilDEv/react-toolkit/commit/e9532831b7ee8579a267168d2e0fa578b1715d18) by Guillaume Chervet 
+- feat: migrate empty component to Typescript [`d4ffbfc`](https://github.com/AxaGuilDEv/react-toolkit/commit/d4ffbfc4378f83473793f819e07ffe2afe610735) by Arnaud Foraison 
+- docs(changelog) update to new 1.3.14 [skip ci] [`fd0b57f`](https://github.com/AxaGuilDEv/react-toolkit/commit/fd0b57fe4f0440f77d54f2d257c23c766881237b) by Build-CI 
+- fix(style): clean paths [`0503d2a`](https://github.com/AxaGuilDEv/react-toolkit/commit/0503d2a8bed799331384985fd2d55b4e28a5b8d3) by Samuel Gomez 
+- docs(changelog) update to new 1.3.14 [skip ci] [`feade03`](https://github.com/AxaGuilDEv/react-toolkit/commit/feade03f98ad4dc5d74faf2bbdbd722eddc25330) by Build-CI 
+- fix(popover): do not stopPropagation on body click [`eea5e10`](https://github.com/AxaGuilDEv/react-toolkit/commit/eea5e1039e18b148643c7f463d4ec16c9778bf20) by Xavier Balloy 
+- test: fix snapshots [`172a493`](https://github.com/AxaGuilDEv/react-toolkit/commit/172a4933df82f77d66d9b465d809a5ab5444c9c8) by Xavier Balloy 
+- fix(popover): fix arrow position [`c5292f3`](https://github.com/AxaGuilDEv/react-toolkit/commit/c5292f32202f41af7a40bffce716d74bae9baec6) by Xavier Balloy 
+- fix(popover): remove unused props title [`f486aa5`](https://github.com/AxaGuilDEv/react-toolkit/commit/f486aa55eb09af1375f915e81eead7e7ee3756f1) by Xavier Balloy 
+
 #### [v1.3.16](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.15...v1.3.16)
 > 23 July 2020
 - feat: add props to footer component to hide icon [`#120`](https://github.com/AxaGuilDEv/react-toolkit/pull/120) by barry-thierno
@@ -14,17 +37,17 @@ All notable changes to this project will be documented in this file.
 - feat(build): delete gulp v3 and replace by scripts tasks [`#651`](https://github.com/AxaGuilDEv/react-toolkit/pull/651) by Samuel Gomez
 - ci: improve lerna integration [`#641`](https://github.com/AxaGuilDEv/react-toolkit/pull/641) by Olivier YOUF
 - feat(layout-footer): use current year as default in copyright [`#639`](https://github.com/AxaGuilDEv/react-toolkit/pull/639) by Olivier YOUF
-- build: fix version in packages to have repeatable builds [`4ba028a`](https://github.com/AxaGuilDEv/react-toolkit/commit/4ba028af39c0ec2695f77e097761db7c925d7919) by Xavier Balloy 
 - chore(release): publish v1.3.15 [skip ci] [`6eb8546`](https://github.com/AxaGuilDEv/react-toolkit/commit/6eb85460bd26088a3072562c4ddbfebf88c7baab) by Build-CI 
+- fix(popover): popover prevents click action on the page [`c6d0ac6`](https://github.com/AxaGuilDEv/react-toolkit/commit/c6d0ac62bbf3b85cd2e4273c892a24dea7bb53b3) by Guillaume Chervet 
 - docs: modify contributing to only use simple command [`9c46320`](https://github.com/AxaGuilDEv/react-toolkit/commit/9c46320da6607aee9ba0e872c79a03dda1a4f7a0) by Arnaud Foraison 
+- test: fix snapshots [`ac6153d`](https://github.com/AxaGuilDEv/react-toolkit/commit/ac6153dbadd5e9b7d327e6d39725abe9d3544fc1) by Xavier Balloy 
+- build: fix version in packages to have repeatable builds [`463594c`](https://github.com/AxaGuilDEv/react-toolkit/commit/463594c3406f0440e41ec9959d71e4c7f71e05d6) by Guillaume Chervet 
+- build: fix version in packages to have repeatable builds [`4ba028a`](https://github.com/AxaGuilDEv/react-toolkit/commit/4ba028af39c0ec2695f77e097761db7c925d7919) by Xavier Balloy 
 - refactor: code review feedbacks [`f4a7ac2`](https://github.com/AxaGuilDEv/react-toolkit/commit/f4a7ac2a5b9ee78ce2a75efbdb1d662c9aadacdc) by Xavier Balloy 
 - feat: migrate empty component to Typescript [`ac37f7b`](https://github.com/AxaGuilDEv/react-toolkit/commit/ac37f7bef0700d31bee5832cf9bb49dffe697edd) by Arnaud Foraison 
-- build: fix version in packages to have repeatable builds [`463594c`](https://github.com/AxaGuilDEv/react-toolkit/commit/463594c3406f0440e41ec9959d71e4c7f71e05d6) by Guillaume Chervet 
 - docs(changelog) update to new 1.3.14 [skip ci] [`3c27f56`](https://github.com/AxaGuilDEv/react-toolkit/commit/3c27f56e7f4a6339e910dedc7771a248f62a4548) by Build-CI 
-- fix(popover): popover prevents click action on the page [`c6d0ac6`](https://github.com/AxaGuilDEv/react-toolkit/commit/c6d0ac62bbf3b85cd2e4273c892a24dea7bb53b3) by Guillaume Chervet 
 - fix(popover): do not stopPropagation on body click [`421d083`](https://github.com/AxaGuilDEv/react-toolkit/commit/421d0837038572ea5137dde6e4392d3fa85e054f) by Xavier Balloy 
 - fix(popover): fix arrow position [`46b872f`](https://github.com/AxaGuilDEv/react-toolkit/commit/46b872f74041d0d8292c5af45490edea117cf07f) by Xavier Balloy 
-- test: fix snapshots [`ac6153d`](https://github.com/AxaGuilDEv/react-toolkit/commit/ac6153dbadd5e9b7d327e6d39725abe9d3544fc1) by Xavier Balloy 
 - ci(publish): use version of package all to retrieve version [`5ed4b79`](https://github.com/AxaGuilDEv/react-toolkit/commit/5ed4b798f74fabcc5856ffbe1d2839bd358ea967) by Arnaud Foraison 
 - ci(publish): remove bootstrap on CI because included into postinstall [`298571e`](https://github.com/AxaGuilDEv/react-toolkit/commit/298571e4cb4aadea300bb31345b2bc353b87331a) by Arnaud Foraison 
 - fix(popover): remove unused props title [`25a2f9b`](https://github.com/AxaGuilDEv/react-toolkit/commit/25a2f9b5941b16b6d5a1d63a8b73e2ec6a8d7977) by Xavier Balloy 
