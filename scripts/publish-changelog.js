@@ -13,4 +13,5 @@ try {
   console.log('success!');
 } catch (err) {
   console.error(err);
+  return -1;
 }
