@@ -20,6 +20,7 @@
     "packages/Form/*",
     "packages/Form/Input/*",
     "packages/Layout/*",
-    "packages/Modal/*"
+    "packages/Modal/*",
+    "storybook/*"
   ]
 }
