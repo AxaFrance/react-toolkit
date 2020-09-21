@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const VERSION = require('../storybook/storybook/package.json').version;
+const VERSION = require('../lerna.json').version;
 
 try {
   const execSync = require('child_process').execSync;
