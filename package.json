@@ -13,8 +13,6 @@
     "style": "node ./scripts/style.js",
     "storybook": "npm -C ./storybook/storybook run storybook",
     "storybook:build": "npm -C ./storybook/storybook run storybook:build",
-    "start": "npm -C ./examples/demo run start",
-    "demo:build": "npm -C ./examples/demo run build",
     "design": "npm -C ./storybook/design-system run start",
     "design:build": "npm -C ./storybook/design-system run build",
     "css": "npm -C ./storybook/styles run css",
