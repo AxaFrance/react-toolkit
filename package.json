@@ -135,7 +135,7 @@
     "svg-inline-loader": "^0.8.0",
     "svg-sprite": "1.5.0",
     "ts-jest": "^23.10.5",
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^8.0.4",
     "tslint": "~5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
