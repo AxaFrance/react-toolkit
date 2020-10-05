@@ -1,0 +1,17 @@
+mixin Headerlinks({ className = 'headerlinks' , modifier='', activePath='/'})
+    -const classComponent = setClass(className, modifier, true)
+    -const classToggle = setClass(`${className}__toggle`, modifier, true)
+    nav(class=classComponent)
+        span(class=classToggle)
+            +Icon({id:'cross-gap', className:`${prefix}-${className}__close`, modifier:"close", js:true})
+            +Icon({id:'menu-button', className:`${prefix}-${className}__open`, modifier:"open", js:true})
+        ul(class=`${prefix}-${className}__list`)
+            each item, index in main
+                -const { href, label } = item
+                li(class=`${prefix}-${className}__item${activePath === href ? ` ${prefix}-${className}__item--active` : ''}`)
+                    if(href)
+                        a(href=`${baseurl}${href}` title=label class=`${prefix}-${className}__item-link`)
+                            |	#{label}
+                    else
+                        span(class=`${prefix}-${className}__item-text ${prefixjs}-${className}__item-text`)
+                            |	#{label}
