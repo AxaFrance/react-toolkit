@@ -9,28 +9,22 @@
     align-items: center;
     padding: 0 1em;
     background: $color-marine;
+    &--opened {
+      z-index: 10;
+    }
 
     &__links {
       display: flex;
       align-items: center;
 
-      img {
-        max-height: 25px;
-        margin: 0 .5rem;
+      .#{$prefix}-img {
+        height: 25px;
+        margin: 0 0.5rem;
       }
 
       > p {
         display: inline-flex;
         align-items: center;
-      }
-    }
-  }
-
-  &-html--home {
-    .#{$prefix} {
-      &-header {
-        background: transparent;
-        position: fixed;
       }
     }
   }
