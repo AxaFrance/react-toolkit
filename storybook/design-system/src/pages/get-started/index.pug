@@ -9,10 +9,15 @@ block meta
   -var metaDescription = metadescription
   -var metaKeywords = metakeywords
   -var basedir='../'
+
 block menu
-  +Menu({activePath:'/get-started'})
+  +MenuGetstarted({ activePath:'/get-started' })
+
+block headerlinks
+  +Headerlinks({ activePath:'/get-started' })
+
 block page
   +PageTitle({ title: 'Get started' })
   +PageContent()
     +PageMarkdown()
-      include:markdown-it ./markdown/content.md
+      include:markdown-it(html) ./markdown/content.md
