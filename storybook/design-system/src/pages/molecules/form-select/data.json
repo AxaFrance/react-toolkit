@@ -1,10 +1,10 @@
 {
-  "metatitle": "Form Input Text Component UI - Slash Design System",
-  "metadescription": "UI Component Form Input Text for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
-  "metakeywords": "Form Input Text design system, ui Form Input Text, design system axa, design system ui, design system react, design",
-  "github": "Form/Input/text",
-  "storybook": "form-input-text--textinput",
-  "badge": "%40axa-fr%2Freact-toolkit-form-input-text",
+  "metatitle": "Form Input Select Component UI - Slash Design System",
+  "metadescription": "UI Component Form Input Select for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "metakeywords": "Form Input Select design system, ui Form Input Select, design system axa, design system ui, design system react, design",
+  "github": "Form/Input/select",
+  "storybook": "form-input-select--selectinput",
+  "badge": "%40axa-fr%2Freact-toolkit-form-input-select",
   "colors": [
     {
       "name": "BLEU AXA",
