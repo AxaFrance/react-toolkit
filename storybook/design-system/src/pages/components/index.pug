@@ -1,0 +1,20 @@
+extends ../../commons/layout
+
+block meta
+  -const activePath = '/components'
+  -const { metatitle, metadescription, metakeywords, items } = require(`../src/pages${activePath}/meta.json`)
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../'
+
+block menu
+  +MenuComponents({})
+
+block headerlinks
+  +Headerlinks({ activePath })
+
+block page
+  +PageTitle({ title: 'Liste des composants' })
+  +PageContent()
+    +Cards({ items })
