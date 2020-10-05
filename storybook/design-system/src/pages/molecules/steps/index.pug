@@ -13,20 +13,24 @@ block vars
   - var id = "component"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'Steps', subtitle: 'Molecule' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
-    block guidelines
-      +PageMarkdown()
-        include:markdown-it ./markdown/guidelines.md
+  +PageContentComponent({storybook})
     block code
       +Demo({ title:'Classic Steps', storybook, activePath, tmpl: 'classic', sassPath })
-    block style
-      +Colors({ colors })
+    block react
+      iframe(class=`${prefix}-demo__iframe ${prefix}-demo__iframe--storybook` src=`${storybookBaseUrl}${storybook}`)
+    block guidelines
       +PageMarkdown()
-        include:markdown-it ./markdown/style.md
+        include:markdown-it(html) ./markdown/guidelines.md
+    block style
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/style.md
+      +Colors({ colors })
