@@ -47,8 +47,8 @@ const pugTsk = (baseurl = '') => {
 
   return src([
     `${pathSrc}/index.pug`,
-    `${pathSrc}/pages/**/index.pug`,
     `${pathSrc}/pages/**/iframe-*.pug`,
+    `${pathSrc}/pages/**/index.pug`,
   ])
     .pipe(plumber())
     .pipe(
