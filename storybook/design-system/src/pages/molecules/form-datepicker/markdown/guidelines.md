@@ -1,36 +1,59 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Le datepicker permet de sélectionner une date ou une période, avec un simple champ ou un calendrier interactif.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+<img src="../../assets/images/datepicker/datepicker-01.jpg" alt="datepicker" class="tk-markdown__img-fullscreen" />
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 2) Use case
 
-## Usage
+-   Le datepicker doit être utilisé pour une saisie de date.
+-   Le datepicker peut être paramétré pour une saisie de mois ou d’année uniquement. Le format de donnée dans la légende devra être en concordance.
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+Coming soon ...
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 4) Utilisation
 
-## Icon usage
+a) Position
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+Le datepicker doit être placé à droite de son label.
 
-## Danger version usage
+b) Alignement
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Le datepicker sera ferré à gauche de la colonne de saisie, à la même hauteur.
+
+c) Contenu
+
+-   Lorsque le champ est inactif, le datepicker est vide. Une fois la date écrite, il est possible de modifier textuellement la date ou de réouvrir le calendrier interactif en cliquant sur l’icône correspondant.
+-   Sous le champ est indiqué le format de date souhaité.
+
+<img src="../../assets/images/datepicker/datepicker-02.jpg" alt="datepicker" class="tk-markdown__img-fullscreen" />
+
+d) Rédaction
+
+Le label d’un datepicker doit clairement indiquer la date ou période demandée à l’utilisateur.
+
+e) Action
+
+-   Le pictogramme calendrier sert à ouvrir et fermer le calendrier interactif.
+-   Lorsque le calendrier interactif est ouvert, le champ est en [focus].
+-   Le bouton « Aujourd’hui » du calendrier interactif sert de réinitialisation et permet de créer un repère familier pour l’utilisateur.
+-   Les liens [AAAA] et [Mois] permettent à l’utilisateur de passer sur d’autres échelles de temps facilement.
+
+<img src="../../assets/images/datepicker/datepicker-03.jpg" alt="datepicker" class="tk-markdown__img-fullscreen" />
+
+f) Variations
+
+-   Sans calendrier
+-   Avec calendrier interactif
+
+g) États
+
+-   Vide
+-   Focus
+-   Erreur
+-   Désactivé
+-   Validé
+
+<img src="../../assets/images/datepicker/datepicker-04.jpg" alt="datepicker" class="tk-markdown__img-fullscreen" />
