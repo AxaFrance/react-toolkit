@@ -3,7 +3,7 @@
     padding: 2em 1em 1em 0;
     font-size: 1rem;
     line-height: 1.25;
-
+    width: 80%;
     img,
     svg {
       max-width: 100%;
@@ -11,11 +11,17 @@
 
     a {
       color: $color-links;
+      code {
+        display: inline;
+        padding: 0.1rem 0.5rem;
+        background: $color-mercury;
+        border: 0;
+        color: $color-axa;
+      }
     }
 
     h1,
-    h2,
-    h3 {
+    h2 {
       font-family: $font-family-headings;
       letter-spacing: -1px;
     }
@@ -33,7 +39,7 @@
       display: block;
       letter-spacing: -1px;
       border-bottom: 1px solid $color-gray-1;
-      padding-bottom: .7rem;
+      padding-bottom: 0.7rem;
       font-weight: 700;
 
       &:first-child {
@@ -42,7 +48,8 @@
     }
 
     h3 {
-      font-size: 1.2rem;
+      letter-spacing: -1px;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
       font-weight: 500;
     }
@@ -75,7 +82,6 @@
             padding: 1rem 3rem 1rem 1rem;
             line-height: 1.25;
             vertical-align: top;
-
           }
         }
       }
@@ -97,7 +103,6 @@
     }
 
     code {
-
       font-size: 0.9rem;
       padding: 1rem 0.4rem;
       margin: 1rem 0;
@@ -107,7 +112,9 @@
     }
 
     blockquote {
-      padding: 1rem;
+      padding: 0 1em;
+      margin: 0;
+      border-left: 0.25em solid $color-silver;
     }
 
     strong {
@@ -117,7 +124,22 @@
     em {
       font-style: italic;
     }
-
+    h4 {
+      font-size: 1.2rem;
+    }
+    h4 + blockquote {
+      font-weight: bold;
+    }
+    p > code {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.4rem;
+      margin: 0;
+      display: inline-block;
+      border: $color-silver 1px solid;
+      border-radius: 5px;
+      background: $black;
+      color: $white;
+    }
 
     &__usecases {
       &-container {
@@ -139,7 +161,7 @@
       img {
         width: 250px;
         height: 100px;
-        margin:0 auto;
+        margin: 0 auto;
         border-bottom: 2px solid $color-brown-dark;
       }
 
@@ -155,6 +177,10 @@
       p {
         padding: 0 1rem;
       }
+    }
+
+    &__img-fullscreen {
+      margin-left: -30px;
     }
   }
 }
