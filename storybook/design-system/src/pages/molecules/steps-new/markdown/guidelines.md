@@ -1,36 +1,42 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Le train d’étapes est une représentation visuelle de la position de l’utilisateur dans un parcours composé de plusieurs étapes. Il permet à celui-ci de se repérer et de connaître son niveau d’avancement, mais aussi améliore indirectement le taux de complétion des étapes.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+## 2) Use case
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Le train d’étapes sera utilisé pour des parcours comprenant plusieurs étapes.
 
-## Usage
+<img src="../../assets/images/step/step-01.jpg" alt="step" class="tk-markdown__img-fullscreen" />
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+Le train d’étapes ne sera pas utilisé pour un parcours comprenant plus de 7 étapes, on préfèrera couper le parcours en plusieurs sections comportant chacune leurs étapes.
+Trop d’étapes peuvent envoyer un signal contraire : trop d’étapes pour compléter le parcours = abandon/non complétion de certaines étapes.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 4) Utilisation
 
-## Icon usage
+<img src="../../assets/images/step/step-02.jpg" alt="step" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+a) Position
 
-## Danger version usage
+Le train d’étape sera toujours le premier élément collé sous le header.
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+b) Alignement
+
+Le train d’étapes s’étale sur les 12 colonnes, son fond blanc.
+
+c) Contenu
+
+Le train d’étapes doit contenir toutes les étapes, séparé d’icônes [>] entre chacune.
+
+d) Rédaction
+
+Un mot ou une expression par étapes, le plus succint le mieux.
+
+f) Pictogramme
+
+Seule la section finale, de confirmation/validation du parcours pourra utiliser un icône [markup]
+
+g) Action
+
+Cliquer sur une étape précédente ramènera l’utilisateur en arrière.
