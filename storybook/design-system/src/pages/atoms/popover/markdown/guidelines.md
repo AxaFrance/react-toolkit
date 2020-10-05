@@ -1,36 +1,46 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Une infobulle offre un commentaire textuel à un objet auquel elle est rattachée.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+<img src="../../assets/images/infobulle/infobulle-01.jpg" alt="infobulle" class="tk-markdown__img-fullscreen" />
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 2) Use case
 
-## Usage
+-   Une infobulle doit être utilisée si le composant associé n’est pas compréhensible hors contexte.
+-   Une infobulle doit être utilisée si une donnée spécifique est requise.
+-   Une infobulle doit être utilisée si l’utilisateur a besoin d’une explication spécifique pour agir.
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+Une infobulle ne doit jamais cacher un composant avec lequel l’utilisateur peut agir directement : [x], bouton CTA, checkbox, radio, onglet, etc.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+<img src="../../assets/images/infobulle/infobulle-02.jpg" alt="infobulle" class="tk-markdown__img-fullscreen" />
 
-## Icon usage
+<img src="../../assets/images/infobulle/infobulle-03.jpg" alt="infobulle" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## 4) Utilisation
 
-## Danger version usage
+a) Position
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+-   Une infobulle peut être rattachée à un bouton d’information. Dans ce cas, l’infobulle sera positionnée à droite du bouton, centré sur la hauteur.
+-   Sinon, l’infobulle pourra être rattaché à son composant dans toutes les directions : au-dessus, dessous, droite ou gauche, tout en restant centré dans la hauteur ou la largeur.
+
+b) Alignement
+
+<img src="../../assets/images/infobulle/infobulle-04.jpg" alt="infobulle" class="tk-markdown__img-fullscreen" />
+
+c) Contenu
+
+Une infobulle ne doit contenir que du texte de labeur ferré à gauche.
+
+d) Rédaction
+
+Le texte de l’infobulle doit être le plus clair et concis que possible, tout en étant suffisamment précis pour donner suffisamment de contexte à l’utilisateur.
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé en plus du label.
+
+f) Action
+
+L’infobulle d’un composant s’affiche quand l’utilisateur clique dessus ou passe sa souris dessus (hover).

@@ -11,8 +11,19 @@
         .af-btn--circle {
           margin: 3rem;
         }
+        .af-popover__container {
+          position: relative;
+        }
         .af-popover__container-pop {
           width: inherit;
+        }
+        .af-popover__arrow {
+          left: 50%;
+          bottom: -6px;
+          transform: translate(-50%, 0);
+          &:before {
+            left: 0;
+          }
         }
       }
     }
