@@ -1,2 +1,2 @@
-div(class=`${prefix}-content ${prefix}-content--opened  ${prefixjs}-content `)
+div(class=`${prefix}-content ${menuState === undefined ? `${prefix}-content--opened` : `${prefix}-content--${menuState}`}  ${prefixjs}-content`)
     block content
