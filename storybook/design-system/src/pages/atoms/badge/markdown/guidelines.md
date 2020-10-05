@@ -1,36 +1,54 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Un badge indique le statut d’un élément auquel il est rattaché.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+<img src="../../assets/images/badge/badge-01.jpg" alt="badge" class="tk-markdown__img-fullscreen" />
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 2) Use case
 
-## Usage
+-   Un badge peut être utilisé dans des composants tels que des tableaux, des groupes de listes, un bloc de restitution.
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+-   Les badges se déclinent en plusieurs couleurs, sémantiques ou contextuelles. Chaque couleur doit être utilisé en accord avec le sens rattaché:
 
-## Label
+    -   Vert: succès,
+    -   Orange: avertissement, une action est requise, extérieur ou non,
+    -   Rouge: erreur/échec. L’utilisateur doit agir/recommencer l’action pour changer l’état.
+    -   Bleu AXA: Information AXA
+    -   Turquoise: Information générale / non spécifique
+    -   Univers AXA: rattaché à un univers métier d’AXA, comme assurance auto, maison etc.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 3) Utilisation
 
-## Icon usage
+<img src="../../assets/images/badge/badge-02.jpg" alt="badge" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+a) Position
 
-## Danger version usage
+Un badge doit être positionné sur la même ligne que le contenu qu’il accompagne.
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+b) Alignement
+
+Le badge doit être aligné verticalement avec le contenu associé et sera ferré à gauche de préférence dans le bloc parent.
+
+c) Contenu
+
+Uniquement le label.
+
+d) Rédaction
+
+-   Un tag doit être clairement défini par son label.
+-   Un mot par tag, sauf exception impossible (expression, mot composé, etc.).
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé en plus du label.
+
+f) Variations
+
+-   Vert
+-   Orange
+-   Rouge
+-   Information
+-   Bleu Axa
+-   Univers Axa
+
+<img src="../../assets/images/badge/badge-01.jpg" alt="badge" class="tk-markdown__img-fullscreen" />
