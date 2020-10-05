@@ -7,20 +7,21 @@
     align-items: center;
     &__image {
       max-width: 250px;
-      max-height: 150px;
-      margin-bottom: 1rem;
+      max-height: 110px;
     }
     &__title {
-      font-family: $font-family-logo;
       text-transform: uppercase;
       font-weight: 600;
       color: $color-axa;
       font-size: 1.3rem;
       margin-bottom: 1rem;
+      letter-spacing: -1px;
     }
     &__text {
       font-size: 1.2rem;
       line-height: 1.6rem;
+      padding: 0 2rem;
+      margin-top: 0;
     }
   }
 }
