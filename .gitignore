@@ -30,7 +30,7 @@ tmp/
 .vs
 
 # Ignore icons pug file generate by Gulp task
-storybook/design-system/src/pages/style/icons/templates/*.pug
+storybook/design-system/src/pages/guidelines/icones/templates/*.pug
 
 # Ignore package-lock.json / yarn.lock in dependencies
 packages/**/package-lock.json
