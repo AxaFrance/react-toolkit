@@ -1,44 +1,36 @@
 .#{$prefix} {
   &-home {
-    background: $white;
+    background: $color-sky;
 
     &__header {
       position: relative;
-      height: 450px;
+      height: 700px;
       width: 100%;
-      background:
-        linear-gradient(
-          45deg,
-          rgba(125, 185, 232, 1) 0%,
-          rgba(0, 0, 143, 1) 50%,
-          rgba(2, 2, 48, 1) 100%
-        );
-      color: $white;
+      background: url('./assets/images/accueil.svg') no-repeat right 50px;
+      background-size: 45%;
+      color: $black;
       font-size: 1.2rem;
-      z-index: 0;
+      width: 60%;
+      margin: 0 auto;
+    }
 
-      &::after {
-        content: '';
-        position: absolute;
-        background: url('./assets/images/paris-panorama.jpg') no-repeat 0 0;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        opacity: .5;
-        z-index: -1;
+    &__title {
+      font-size: 4rem;
+      font-weight: 100;
+      margin-top: 0;
+      padding-top: 2rem;
+      .#{$prefix} {
+        &-slash {
+          margin-left: 0;
+        }
       }
     }
 
     &__intro {
-      font-family: $font-family-logo;
-      font-style: italic;
-      font-size: 2rem;
-      line-height: 2.2rem;
-      position: absolute;
-      top: 54%;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.5rem;
       width: 50%;
-      text-align: right;
-      right: 3%;
     }
 
     &__getstarted {
@@ -46,14 +38,12 @@
       height: 600px;
       width: 100%;
       background: $color-mercury no-repeat -8% 50%;
-      background-image:
-        url('./assets/images/square-popup.png'),
+      background-image: url('./assets/images/square-popup.png'),
         linear-gradient(45deg, #a8abb1 0%, #dbdfe0 100%);
       background-size: 50%, 100%;
 
       &-content {
         @include vcenterer;
-
         right: 0;
         width: 40%;
         padding: 1em 5em 1em 1em;
@@ -63,7 +53,7 @@
         font-family: $font-family-logo;
         font-size: 2.8rem;
         font-weight: bold;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         letter-spacing: -2px;
       }
 
@@ -75,6 +65,13 @@
     }
 
     &__explore {
+      position: relative;
+      background: rgba(255, 255, 255, 0.7);
+      width: 60%;
+      margin: -120px auto 0 auto;
+      padding-top: 3rem;
+      border: 1px solid $color-action-2;
+      border-radius: 3px;
       &-title {
         font-size: 3rem;
         text-align: center;
@@ -89,137 +86,94 @@
       padding: 2em 1em 4em 1em;
     }
 
-    &__demotuto {
-      display: flex;
-      background:
-        url('./assets/images/ultimate-toolkit.jpg') center bottom
-        no-repeat;
-      background-size: cover;
-      height: 400px;
-      justify-content: space-between;
-    }
-
-    &__demo {
-      background: rgba(48, 50, 193, .8);
-      padding: 2em 5em 2em 2em;
-      width: calc(50% - 200px);
+    &__simpler {
       position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -400px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 400px 400px 0 0;
-        border-color: rgba(48, 50, 193, .8) transparent transparent transparent;
-      }
-
+      margin: 0 auto;
+      padding-top: 3rem;
+      width: 60%;
       &-title {
-        font-size: 4rem;
+        font-size: 3rem;
+        text-align: center;
+        margin: 3rem 0;
         font-weight: 200;
-        color: $white;
-        margin: 0 0 2rem auto;
-      }
-
-      &-text {
-        color: $white;
-        font-size: 2rem;
-        font-weight: 200;
-        margin: 0;
-      }
-    }
-
-    &__tuto {
-      background: rgba(240, 118, 98, .8);
-      padding: 2em 5em 2em 2em;
-      width: calc(50% - 200px);
-      position: relative;
-      text-align: right;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: -400px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 0 400px 400px;
-        border-color:
-          transparent transparent rgba(240, 118, 98, .8)
-          transparent;
-      }
-
-      &-title {
-        font-size: 4rem;
-        font-weight: 200;
-        color: $white;
-        margin-bottom: 2rem;
-        margin: 0 0 2rem auto;
-      }
-
-      &-text {
-        color: $white;
-        font-size: 2rem;
-        font-weight: 200;
-        margin: 0;
       }
     }
   }
+}
 
-  &-btn {
-    &--demo {
-      margin-top: 3rem;
-      border: 2px solid $white;
-    }
-
-    &--tuto {
-      margin-top: 3rem;
-      border: 2px solid $white;
-      background: $color-burnt-sienna;
-      box-shadow: inset 0 -3px $color-flamingo;
-
-      &:hover {
-        background: $color-flamingo;
+@media screen and (max-width: 1600px) {
+  $widthHome: 80%;
+  .#{$prefix} {
+    &-home {
+      &__header {
+        width: $widthHome;
+      }
+      &__explore {
+        width: $widthHome;
+      }
+      &__simpler {
+        width: $widthHome;
       }
     }
   }
+}
 
-  &-logo {
-    &--home-intro {
-      position: absolute;
-      top: 15%;
-      left: 3%;
-      border-bottom: 0;
-      margin: 0;
+@media screen and (max-width: 1200px) {
+  $widthHome: 90%;
+  .#{$prefix} {
+    &-home {
+      &__header {
+        width: $widthHome;
+        height: auto;
+      }
+      &__explore {
+        width: $widthHome;
+        margin: 0 auto;
+        padding-top: 0;
+      }
+      &__simpler {
+        width: $widthHome;
+      }
+      &__encarts {
+        flex-wrap: wrap;
+      }
+    }
+    &-encart {
+      flex-basis: 50%;
+    }
+  }
+}
 
-      .#{$prefix} {
-        &-logo {
-          &__img {
-            width: 200px;
-          }
-        }
-
+@media screen and (max-width: 800px) {
+  .#{$prefix} {
+    &-home {
+      &__explore {
         &-title {
-          &--logo-name {
-            font-size: 8rem;
-            color: $white;
-            letter-spacing: -6px;
-
-            &::after {
-              font-size: 1rem;
-            }
-          }
-
-          &--logo-subtitle {
-            font-family: $font-family-base;
-            font-size: 3rem;
-          }
+          margin: 2rem 0;
         }
       }
+      &__simpler {
+        &-title {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+      }
+      &__encarts {
+        &-title {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+      }
+      &__title {
+        font-size: 2rem;
+        margin: 2rem 0;
+      }
+      &__intro {
+        width: 100%;
+      }
+    }
+    &-encart {
+      flex-basis: 100%;
     }
   }
 }
