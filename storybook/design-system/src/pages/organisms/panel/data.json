@@ -3,7 +3,7 @@
   "metadescription": "UI Component Panel for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
   "metakeywords": "Panel design system, ui Panel, design system axa, design system ui, design system react, design",
   "github": "panel",
-  "storybook": "get-started--introduction",
+  "storybook": "restitution--articlerestitution",
   "badge": "%40axa-fr%2Freact-toolkit-panel",
   "colors": [
     {
