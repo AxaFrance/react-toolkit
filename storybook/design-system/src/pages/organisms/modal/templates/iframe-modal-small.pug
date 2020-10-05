@@ -1,6 +1,9 @@
 
 extends ../../../../commons/layout
 
+block vars
+  - var id = "iframe"
+
 block meta
   -var activePath = '/organisms/modal';
   -const { metatitle, metadescription, metakeywords, github, storybook, badge, colors } = require(`../src/pages${activePath}/data.json`)
