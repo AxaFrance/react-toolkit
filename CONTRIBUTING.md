@@ -18,7 +18,6 @@ At this point you are ready to contribute.
 
 This repository contains some projects used to display, explain components built previously.
 
-* *examples/demo* : a project using some components & react-oidc library
 * *storybook* :
   * *design-system*: a design system web app rendering & exposing code to use components
   * *storybook*: a storybook app to develop in isolated mode
@@ -29,23 +28,13 @@ This repository contains some projects used to display, explain components built
 If you want to use these projects, you must:
 
 ```sh
-cd examples/demo
-npm i
-```
-
-```sh
 cd storybook/design-system
-npm i
+npm ci
 ```
 
 ```sh
 cd storybook/storybook
-npm i
-```
-
-```sh
-cd storybook/styles
-npm i
+npm ci
 ```
 
 ## How to work on a component
@@ -99,10 +88,9 @@ By default, `npm test` also runs the linter.
 You can skip this by calling `jest` directly:
 
 ```sh
-$ npx jest
-$ npx jest --watch
-$ npx jest --config jest.config.json
-# etc
+$ npm test -- --watch
+$ npm test -- --config jest.config.json
+# etc ...
 ```
 
 ### Run coverage
@@ -112,11 +100,12 @@ npm test -- --coverage
 ```
 
 
-
 ## Pull Request
 
 Please respect the following [PULL_REQUEST_TEMPLATE.md](./PULL_REQUEST_TEMPLATE.md)
+Don't forget to add label to your PR, to help mainteners to understand PR's aim.
 
 ## Issue
 
 Please respect the following [ISSUE_TEMPLATE.md](./ISSUE_TEMPLATE.md)
+Don't forget to add label to your issue, to help mainteners to understand issue's aim.
