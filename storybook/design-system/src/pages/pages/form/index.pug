@@ -12,20 +12,22 @@ block vars
   - var id = "component"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'Page Form', subtitle: 'Organisms' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
+  +PageContentComponent({storybook, js: false})
     block guidelines
       +PageMarkdown()
-        include:markdown-it ./markdown/guidelines.md
+        include:markdown-it(html) ./markdown/guidelines.md
     block code
       +Demo({ title:'Sample Form', storybook, activePath, tmpl: 'classic', modifier: 'pageform' })
     block style
       +Colors({ colors })
       +PageMarkdown()
-        include:markdown-it ./markdown/style.md
+        include:markdown-it(html) ./markdown/style.md
