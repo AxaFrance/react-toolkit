@@ -3,7 +3,7 @@
   "metadescription": "UI Component Form Input File for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
   "metakeywords": "Form Input File design system, ui Form Input File, design system axa, design system ui, design system react, design",
   "github": "Form/Input/file",
-  "storybook": "form-input-file--fileinput",
+  "storybook": "form-input-file--file",
   "badge": "%40axa-fr%2Freact-toolkit-form-input-file",
   "colors": [
     {
