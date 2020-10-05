@@ -1,0 +1,66 @@
+.#{$prefix} {
+  &-contributors {
+    margin-top: 3rem;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 30px;
+  }
+  &-contributor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    &__avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      transition: all 0.5s linear;
+      background: linear-gradient(
+        -45deg,
+        #ecebf1 40%,
+        #f2f1f5 50%,
+        #ecebf1 60%
+      );
+      background-size: 400% 400%;
+      animation: pulse 0.5s ease-in infinite;
+      filter: grayscale(100%);
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+    &__additions {
+      color: green;
+      font-size: 0.9rem;
+    }
+    &__deletions {
+      color: red;
+      font-size: 0.9rem;
+    }
+    &__link {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    &__badge {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background: $color-axa;
+      color: $white;
+      border-radius: 100%;
+      position: absolute;
+      left: 55%;
+      top: 15%;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
