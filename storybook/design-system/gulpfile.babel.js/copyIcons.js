@@ -7,7 +7,7 @@ import config from './config';
 
 const { pathSrc, pathDest, pathFontToolkit } = config;
 
-const pathIconPugTemplate = path.join(`${pathSrc}/pages/style/icons/`, 'templates');
+const pathIconPugTemplate = path.join(`${pathSrc}/pages/guidelines/icones/`, 'templates');
 
 const copyIcons = () => src(`${pathFontToolkit}/*.svg`).pipe(dest(`${pathDest}/iconsToolkit`));
 
@@ -40,7 +40,7 @@ ul.icons-list\n`;
     contentFile += `    span.icons-list__item-name ${svgFile} \n`;
   });
 
-  fs.writeFileSync(`${pathSrc}/pages/style/icons/templates/icons-page.pug`, contentFile);
+  fs.writeFileSync(`${pathIconPugTemplate}/icons-page.pug`, contentFile);
 };
 
 export default copyIcons;
