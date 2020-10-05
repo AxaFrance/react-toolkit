@@ -1,30 +1,39 @@
-Le spinner aide à informer l'utilisateur que l'application est en train de charger du contenu. Il est utilisé lorsque la progression du chargement ne peut pas être déterminée.
+## 1) Définition
 
-## Usage
+Le spinner est un composant animé faisant patienter l’utilisateur lors de tâches à forte latence. Il représente un chargement en cours sans indication du niveau de complétion de celui-ci.
 
-Le spinner est utilisé lors du :
+## 2) Use case
 
--   Chargement du contenu pour une page entière.
--   Chargement du contenu à l'intérieur d'un composant.
--   Chargement de contenu à l'intérieur d'une modal.
--   Chargement de la prochaine étape d'un workflow.
+-   Le spinner doit être mis en place lorsque l’action liée prend constamment plus de 3 secondes pour s’effectuer.
+-   Le spinner peut être utilisé lors d’un upload de fichier.
 
-Sans cet indicateur, l'utilisateur peut se sentir perdu ou naviguer prématurément en dehors de la page.
+<img src="../../assets/images/loader/loader-01.jpg" alt="loader" class="tk-markdown__img-fullscreen" />
 
-Pour les temps de chargement supérieurs à 10 secondes, inclure une notification avec un texte explicatif.
+## 3) DO/DONT
 
-## Bests practices
+-   Le spinner ne doit pas être utilisé si l’on peut afficher une barre de chargement quantifiée (XX%).
+-   Le spinner ne doit pas être utilisé si le résultat de l’action de s’affiche pas dans un laps de temps raisonnable (1 minute). Par exemple, si une action nécessite l’action d’un admin pour que le processus avance d’une étape, on préfèrera utiliser un message indiquant le délai moyen de traitement.
 
-1. S’il s'agit d'un spinner pour une page entière :
-    - Centrez le spinner horizontalement et verticalement dans le conteneur.
-    - Ne placez pas le spinner directement sur du texte ou d’autres éléments visuels d’une page sans appliquer au préalable un masque foncé.
-2. Dans les autres cas, utiliser le spinner bleu sur fond clair et le spinner blanc sur fond foncé.
-3. Indépendamment de la longueur ou de la brièveté du temps de chargement, le spinner fonctionnera toujours à la même vitesse.
-4. Le spinner ne doit jamais être utilisé pour indiquer une progression, il indique une attente.
+<img src="../../assets/images/loader/loader-02.jpg" alt="loader" class="tk-markdown__img-fullscreen" />
 
-## DO / DONT
+## 4) Utilisation
 
-| <span style="color: green;">DO</span>                                                                   | <span style="color: red;">DONT</span>                        |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| Mettre le loader à droite du bouton                                                                     | Ne pas utiliser le spinner à l’intérieur des boutons.        |
-| Si plusieurs éléments de contenu sont en cours de chargement, afficher un spinner pour la page entière. | Ne pas inclure plusieurs spinners sur une page en même temps |
+a) Position
+
+Le spinner doit être dans la page ou le bloc en cours de chargement.
+
+b) Alignement
+
+Le spinner doit être centré horizontalement et verticalement dans la page ou le bloc en cours de chargement.
+
+c) Contenu
+
+Le spinner peut être accompagné d’un label, par exemple « Chargement en cours » ou « Veuillez patienter quelques instants »
+
+d) Rédaction
+
+Le label du spinner doit être le plus clair et concis que possible, tout en restant courtois car les chargements créent de la frustration.
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé en plus du label.
