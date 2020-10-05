@@ -1,36 +1,53 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Un switch est un composant de saisie binaire, proposant les états actif ou inactif.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+## 2) Use case
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+-   Un switch est utilisé pour sélectionner activer/désactiver rapidement une option unique.
+-   Un switch enregistre le changement d’état automatiquement et immédiatement, contrairement à une checkbox.
 
-## Usage
+<img src="../../assets/images/switch/switch-01.jpg" alt="switch" class="tk-markdown__img-fullscreen" />
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+-   Le switch ne doit être remplacé par un bouton radio si la liste de réponses est exclusive.
+-   Le switch doit être remplacé par un switch si le bouton ne s’applique que pour une donnée.
+-   Un switch ne peut pas être utilisé dans un formulaire comportant un bouton « appliquer » ou « enregistrer » à sa fin.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 4) Avancé
 
-## Icon usage
+L’usage du switch est limitée à une instance par ligne.
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## 5) Utilisation
 
-## Danger version usage
+<img src="../../assets/images/switch/switch-02.jpg" alt="switch" class="tk-markdown__img-fullscreen" />
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+a) Position
+
+Le switch doit être placé à droite de son label.
+
+b) Alignement
+
+Le switch sera ferré à gauche de la colonne de saisie, à la même hauteur.
+
+c) Contenu
+
+Le label est centré, switch adapté à la largeur du texte.
+
+d) Rédaction
+
+Le label d’un switch doit clairement indiquer l’item qu’il représente.
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé en plus du label.
+
+f) Action
+
+L’état actif ne peut être représenté que par une seule couleur par page, par défaut le [bleu AXA].
+
+g) Variations
+
+-   Inactif
+-   Actif
