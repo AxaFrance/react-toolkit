@@ -1,36 +1,65 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Les boutons radio sont utilisés pour sélectionner parmi une liste d’options mutuellement exclusives.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+## 2) Use case
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+-   Les boutons radios sont utilisés pour une saisie spécifique entre des choix déterminés
+-   La saisie peut être rendue obligatoire avec l’utilisation d’une astérisque rouge à la suite du label.
+-   L’utilisation d’une ou plusieurs listes de boutons radios doit être accompagné d’un CTA d’enregistrement de la saisie.
 
-## Usage
+<img src="../../assets/images/radio/radio-01.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+-   La liste de boutons radio n’est valable que jusqu’à 5 options. Au-delà on préfèrera un select avec des options groupées, ou découper la liste en deux questions afin de préciser les éléments de la liste.
+-   Dans les cas ou il n’y a que deux options mutuellement exclusives (oui/non), Il sera impossible d’avoir aucune option sélectionné
+-   On évitera au maximum d’avoir des réponses sur deux lignes avec des boutons radio.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+<img src="../../assets/images/radio/radio-02.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
 
-## Icon usage
+<img src="../../assets/images/radio/radio-03.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## 4) Avancé
 
-## Danger version usage
+-   Contrairement à l’usage courant, on peut désactiver le bouton sélectionné pour n’avoir aucun choix sélectionné.
+-   On utilisera de préférence les boutons radio aux listes radios dans les formulaires de saisie.
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+<img src="../../assets/images/radio/radio-04.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
+
+## 5) Utilisation
+
+a) Position
+
+-   Les boutons radio sont toujours à droite de leur label.
+-   Le label est centré dans la hauteur avec la première ligne de boutons ou puces radio.
+
+b) Alignement
+
+Le bouton radio et son label sont ferrés à gauche de leur bloc parent. Le label sera contenu de préférence sur une ligne de 224 px de large soit 2 colonnes.
+
+<img src="../../assets/images/radio/radio-05.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
+
+c) Contenu
+
+Le texte dans le bouton radio — ou accompagnant la puce — doit être le plus clair et concis que possible.
+
+d) Rédaction
+
+Afin de présenter le contexte de la liste de boutons radio, une phrase d’introduction peut être utilisée. Elle devra être traitée comme un [paragraphe].
+
+f) Variations
+
+-   Boutons radio
+-   Puces radio
+
+<img src="../../assets/images/radio/radio-06.jpg" alt="radio" class="tk-markdown__img-fullscreen" />
+
+g) États
+
+-   Sélectionné
+-   Inactif
+-   Erreur
+-   Désactivé
+
+<img src="../../assets/images/radio/radio-07.jpg" alt="radio" class="tk-markdown__img-fullscreen" />

@@ -3,7 +3,7 @@
   "metadescription": "UI Component Form Input Radio for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
   "metakeywords": "Form Input Radio design system, ui Form Input Radio, design system axa, design system ui, design system react, design",
   "github": "Form/Input/radio",
-  "storybook": "form-input-radio--radioinput",
+  "storybook": "form-input-radio--radio",
   "badge": "%40axa-fr%2Freact-toolkit-form-input-radio",
   "colors": [
     {
