@@ -1,0 +1,20 @@
+extends ../../../commons/layout
+
+block meta
+  -const { metatitle, metadescription, metakeywords } = require('../src/pages/guidelines/grid/meta.json')
+  -var metaTitle = metatitle
+  -var metaDescription = metadescription
+  -var metaKeywords = metakeywords
+  -var basedir='../../'
+
+block menu
+  +MenuGuidelines({ activePath:'/guidelines/grid' })
+
+block headerlinks
+  +Headerlinks({ activePath:'/guidelines' })
+
+block page
+  +PageTitle({ title: 'Grilles de composition' })
+  +PageContent()
+    +PageMarkdown()
+      include:markdown-it(html) ./markdown/content.md
