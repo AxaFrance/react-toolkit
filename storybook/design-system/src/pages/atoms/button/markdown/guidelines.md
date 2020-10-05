@@ -1,117 +1,58 @@
-Aussi nommés CTA (Call To Action), les boutons sont utilisés pour rendre les actions de navigation ou d'actions immédiatement visibles et faciles à exécuter en un clic.
+## 1) Définition
 
-## Tone of voice
+Les boutons CTA (Call To Action) ont pour but d’initier une action. Leur texte indique l’action à mener, leur aspect signifie leur niveau d’importance et d’influence.
 
-Les boutons doivent toujours comporter un verbe qui encourage l'action.
+## 2) Use case
 
--   Utilisez la formule {verbe} + {substantif} sur les boutons,
--   Les termes utilisés doivent permettre d’anticiper ce qui va se passer.
--   Le premier mot est en majuscule et le reste en minuscule (sauf si un terme est un nom propre).
+-   Les boutons sont principalement utilisés pour des actions, comme Ajouter, Supprimer, Valider, Se connecter. Chaque page devrait avoir un seul bouton d’action primaire, tout autre CTA devrait être représenté comme bouton secondaire.
+-   Dans le cas de l’utilisation d’un bouton dans un composant — une barre de recherche par exemple — la variation « Small » sera utilisée obligatoirement.
 
-## Usage
+<img src="../../assets/images/button/button-01.jpg" alt="button" class="tk-markdown__img-fullscreen" />
 
-<div class="tk-markdown__usecases-container">
-<div class="tk-markdown__usecases">
-    <img src="../../assets/images/button/button-main.jpg" alt="Main button" />
-    <h4>Bouton principal</h4>
-    <p>Pour mettre en évidence une action "forte" dans la page. Ne pas utiliser plus d'un bouton principal par page ou section.</p>
-</div>
+## 3) DO/DONT
 
-<div class="tk-markdown__usecases">
-    <img src="../../assets/images/button/button-main-icon.jpg" alt="Main button with icon" />
-    <h4>Bouton principal avec pictogramme</h4>
-    <p>Un pictogramme peut être inclus dans un bouton principal, lorsqu’on souhaite mettre en avant l’action principale d’une page.Ne pas multiplier les boutons avec des pictogrammes. Point d’attention : n’utiliser un pictogramme que si celui-ci est auto-porteur (ex : téléchargement).</p>
-</div>
+Les boutons ne doivent pas être utilisés comme élément de navigation vers une page spécifique (URL unique). On utilisera à la place un lien, qui amènera l’utilisateur sur la page désirée.
 
-<div class="tk-markdown__usecases">
-    <img src="../../assets/images/button/button-secondary.jpg" alt="Secondary button" />
-    <h4>Bouton secondaire</h4>
-    <p>Pour toutes les autres actions "moins fortes" que celle de l'action principale de la page (bouton de retour ou étape précédente). Un bouton secondaire peut être utilisé sans qu’un bouton principal ne soit présent dans la page.</p>
-</div>
+<img src="../../assets/images/button/button-02.jpg" alt="button" class="tk-markdown__img-fullscreen" />
 
-<div class="tk-markdown__usecases">
-    <img src="../../assets/images/button/button-small.jpg" alt="Secondary button" />
-    <h4>Bouton small</h4>
-    <p>Il est toujours associé à un champ de formulaire et positionné à droite de celui-ci.</p>
-</div>
-</div>
+<img src="../../assets/images/button/button-03.jpg" alt="button" class="tk-markdown__img-fullscreen" />
 
-## Bests practices
+## 4) Avancé
 
-Différentes couleurs peuvent être utilisées en fonction de la gravité du résultat d’une action :
+-   L’ordre des boutons est du plus important à droite au moins important à gauche.
+-   On ne peut utiliser un bouton d’un rang inférieur que si l’on a déjà utilisé un bouton d’un rang supérieur sur la page. On ne peut pas utiliser un bouton secondaire s’il n’y a pas de primaire sur la page, de lien si il n’y a pas de secondaire
 
-<div class="tk-markdown__usecases-container">
-    <div class="tk-markdown__usecases">
-        <img src="../../assets/images/button/button-danger.jpg" alt="Main button" />
-        <h4>Bouton rouge</h4>
-        <p>Utilisé lorsque « supprimer » des fichiers indique une gravité élevée.</p>
-    </div>
-    <div class="tk-markdown__usecases">
-        <img src="../../assets/images/button/button-success.jpg" alt="Success button" />
-        <h4>Bouton vert</h4>
-        <p>Utilisé pour une action de validation </p>
-    </div>
-    <div class="tk-markdown__usecases">
-        <img src="../../assets/images/button/button-main.jpg" alt="Success button" />
-        <h4>Bouton bleu</h4>
-        <p>Utilisé pour des actions principales.</p>
-    </div>
-    <div class="tk-markdown__usecases">
-        <img src="../../assets/images/button/button-disabled.jpg" alt="Disabled button" />
-        <h4>Bouton gris</h4>
-        <p>Utilisé pour montrer qu'une action est existante mais que celle-ci n'est pas disponible pour l'utilisateur.</p>
-    </div>
-</div>
+## 5) Utilisation
 
-Prioriser les actions les plus importantes : Trop de boutons d'action sèment la confusion et rendent les utilisateurs incertains de la suite des choses.
+a) Position
 
-## Positionnement
+Le bouton primaire sera toujours le plus à droite, le bouton secondaire à gauche de celui-ci. Cela permet à l’utilisateur de savoir où se situe l’action principale avant d’avoir lu le label. Le positionnement devra rester cohérent dans l’ensemble de l’interface afin de faciliter le parcours utilisateur.
 
-Les boutons sont positionnés en fonction du contexte :
+b) Alignement
 
-1. En bas à droite des éléments sur lesquels porte l’action : pour clore une action (par exemple, enregistrer une modification dans un formulaire, fermer la page).
-2. Les boutons de navigation sont positionnés en bas de la page (ou de l’écran en cas de barre sticky) à droite pour passer à l’étape suivante ou à gauche pour revenir à l’étape précédente
-3. Quand la page présente un groupe de boutons (3 et plus), présenter le même espacement. Cependant, il est possible de créer des sous-regroupements, en augmentant l’espacement (entre le bouton isolé et les sous-groupes de boutons]
-4. Cas particulier : les actions portant sur le contenu d’un tableau (l’ensemble ou une sélection) sont positionnées en tête du tableau
-5. Pour les formulaires de page unique et les tâches ciblées, alignez les boutons à droite et triez les CTA par ordre d'importance de droite à gauche.
+-   Bouton primaire seul dans une modale : Ferré à droite et largeur ajustée au label
+-   Bouton primaire et secondaire dans une modale : ferré à droite, espace de 8 px entre les boutons.
+-   Lors de groupement de boutons, utiliser un espacement de 8px entre les éléments
 
-## Use cases
+<img src="../../assets/images/button/button-04.jpg" alt="button" class="tk-markdown__img-fullscreen" />
 
-### Cas 1 :
+c) Contenu
 
-Pour distinguer clairement deux options, utiliser un bouton principal / un bouton secondaire. Le bouton principal attirera davantage l'attention.
+-   Texte aligné à gauche dans le cas d’un bouton avec pictogramme « flèche » à droite.
+-   Texte aligné à droite dans le cas d’un bouton avec pictogramme « flèche » à gauche.
+-   Texte centré si label seul
+-   Texte aligné à gauche dans le cas d’un bouton avec pictogramme à gauche
 
-![Button Case 1](../../assets/images/button/button-cas1.png)
+d) Rédaction
 
-### Cas 2 :
+-   Le label d’un bouton doit clairement indiquer l’action qu’il opère avec une forme verbale ; comme « Sauvegarder » ou « Annuler ». Les labels « OK » ou « Oui » devront être remplacé par des formes verbales équivalentes.
+-   Dans le cas de l’utilisation d’un pictogramme pour compléter le label, celui-ci doit être universel, suffisamment pour être compris sans contexte, comme un checkmark ou un plus par exemple.
 
-Quand l'action principale est irréversible (ex : «Remplacer» ou «Supprimer») : Privilégié la CTA "warning" en rouge.
+e) Pictogrammes
 
-![Button Case 2](../../assets/images/button/button-cas2.png)
+-   Taille 16\*16 px
+-   Uniquement de la <a href="/guidelines/icones" title="icon design system Axa" >liste des pictogrammes du Design System</a>
+-   Espacement avec le label de 16px
+-   Centré dans la hauteur du bouton
 
-### Cas 3 :
-
-Dans une modal, les CTA sont alignés à gauche
-
-![Button Case 3](../../assets/images/button/button-cas3.png)
-
-### Cas 4 :
-
-Pour les champs de recherche, utilisez le CTA small, il doit être collé au champ de recherche :
-
-![Button Case 4](../../assets/images/button/button-cas4.png)
-
-### Cas 5 :
-
-Lorsqu'une action impacte le contenu d’un tableau, la CTA principal est aligné à gauche et positionné au-dessus du tableau
-
-![Button Case 5](../../assets/images/button/button-cas5.png)
-
-## DO / DONT
-
-Positionnement des CTA dans une modal :
-
-| <span style="color: green;">DO</span>                          | <span style="color: red;">DONT</span>                            |
-| -------------------------------------------------------------- | ---------------------------------------------------------------- |
-| ![Button Dont](../../assets/images/button/button-modal-do.png) | ![Button Dont](../../assets/images/button/button-modal-dont.png) |
-| Il est préférable de ferrer les boutons à droite ou à gauche   | Ne pas centrer les boutons                                       |
+<img src="../../assets/images/button/button-05.jpg" alt="button" class="tk-markdown__img-fullscreen" />
