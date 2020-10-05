@@ -7,13 +7,13 @@
       z-index: 4;
       width: $menu-width;
       height: calc(100% - 53px);
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       transform: translate3d(-100%, 0, 0);
       background: $white;
       top: 0;
       margin-top: 53px;
       overflow-x: auto;
-      box-shadow: 0 16px 19px rgba(0, 0, 0, .4);
+      box-shadow: 0 16px 19px rgba(0, 0, 0, 0.4);
       line-height: 1;
     }
 
@@ -23,6 +23,9 @@
 
       &:not(.tk-menu__list--child) {
         background: $color-gray-3;
+        &:last-child {
+          margin-bottom: 2rem;
+        }
       }
 
       &--child {
@@ -33,13 +36,10 @@
 
     &__item {
       &-link {
-        padding: .8rem 0 .8rem 2rem;
+        padding: 0.5rem 0 0.5rem 2rem;
         display: block;
-        transition: all .5s linear;
+        transition: all 0.5s linear;
         background: $white;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 3px;
 
         &:hover {
           background: $color-action-2;
@@ -49,10 +49,9 @@
       &-text {
         font-family: $font-family-logo;
         color: $color-dusty-gray;
-        font-weight: 900;
+        font-weight: 600;
         display: block;
-        text-transform: uppercase;
-        padding: 1rem;
+        padding: 0.6rem 1rem;
       }
 
       &--active {

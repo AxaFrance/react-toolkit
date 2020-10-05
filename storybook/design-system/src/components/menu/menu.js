@@ -3,12 +3,12 @@ import { prefix, prefixjs } from '../../data/base.json';
 
 const classBtnOpen = `${prefixjs}-icon--open`;
 const classBtnClose = `${prefixjs}-icon--close`;
-const classJsFooter = `${prefixjs}-footer`;
+const classJsFooter = `${prefixjs}-footer-client`;
 const classJsContent = `${prefixjs}-content`;
 const openModifier = 'opened';
 const classMenu = `${prefixjs}-menu`;
 const classMenuOpened = `${prefix}-menu--${openModifier}`;
-const classFooterOpened = `${prefix}-footer--${openModifier}`;
+const classFooterOpened = `${prefix}-footer-client--${openModifier}`;
 const classContentOpened = `${prefix}-content--${openModifier}`;
 
 class Menu {
@@ -31,7 +31,7 @@ class Menu {
   }
 
   isNotExitingElement() {
-    return !this.menu && !this.footer;
+    return !this.menu;
   }
 
   openMenu() {
