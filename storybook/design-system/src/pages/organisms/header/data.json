@@ -3,7 +3,7 @@
   "metadescription": "UI Component Header for design system Axa. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
   "metakeywords": "Header design system, ui Header, design system axa, design system ui, design system react, design",
   "github": "Layout/header",
-  "storybook": "layout-header-header--default",
+  "storybook": "layout-header-header--with-name",
   "badge": "%40axa-fr%2Freact-toolkit-layout-header",
   "colors": [
     {

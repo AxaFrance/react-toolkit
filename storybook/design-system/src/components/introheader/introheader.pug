@@ -1,6 +1,13 @@
-mixin IntroHeader({ modifier='', intro, cmpt})
+mixin IntroHeader({ modifier='', title, intro, cmpt, links})
     header(class=`${prefix}-${cmpt}__header`)
-        +Logo({title:'Slash', subtitle:'Design System', img: "slash-logo.svg", modifier:"header", alt:'Slash Design System', modifier:"home-intro"})
+        if(title !== '')
+            h1(class=`${prefix}-${cmpt}__title`)
+                | !{title}
         if(intro !== '')
             p(class=`${prefix}-${cmpt}__intro`)
                 | #{intro}
+        each link, index in links
+            +ButtonLink({label:link.label, href:link.href, modifier: link.modifier  })
+        p View the 
+            a(href="https://github.com/AxaGuilDEv/react-toolkit" title="Source Github") source on GitHub
+                

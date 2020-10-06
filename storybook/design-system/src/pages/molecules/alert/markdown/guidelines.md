@@ -1,36 +1,70 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Une notification permet de communiquer une information ou un résultat d’action dans un bloc flottant, superposé à la page. D’une durée d’affichage déterminée, elle permet à l’utilisateur de comprendre les processus en cours ou achevés sans sortir de son parcours.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+<img src="../../assets/images/alert/alert-01.jpg" alt="alert" class="tk-markdown__img-fullscreen" />
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+## 2) Use case
 
-## Usage
+a) Une notification doit être utilisée lorsqu’une action menée par l’utilisateur obtient un résultat : validation, erreur, avertissement.
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+b) Une notification « information » peut être utilisée pour informer l’utilisateur d’une modification de données, de fonctionnement ou indiquer un conseil.
 
-## Label
+c) Une notification toast se distingue d’une fenêtre modale par sa durée limitée d’affichage.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+d) Une notification inline se distingue d’une fenêtre modale par son utilisation au sein d’un bloc parent.
 
-## Icon usage
+## 3) DO / DONT
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+Une variation de notification ne peut pas être utilisé pour un autre type d’information.
 
-## Danger version usage
+## 3) Avancé
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Une notification est composée d’un titre et optionnellement d’un texte.
+
+-   Titre: Doit expliquer succinctement le contexte, qui pourra être complété par un texte.
+-   Texte: Doit contenir un minimum d’information précisant le titre.
+
+<img src="../../assets/images/alert/alert-02.jpg" alt="alert" class="tk-markdown__img-fullscreen" />
+
+## 4) Utilisation
+
+a) Position
+
+Une notification devra être positionnée à [48 px] en dessous du header de la page.
+
+<img src="../../assets/images/alert/alert-03.jpg" alt="alert" class="tk-markdown__img-fullscreen" />
+
+b) Alignement
+
+Une notification doit prendre la largeur d’affichage maximale disponible (jusqu’à 12 colonnes).
+
+c) Contenu
+
+Les titres et textes sont ferrés à gauche.
+
+<img src="../../assets/images/alert/alert-04.jpg" alt="alert" class="tk-markdown__img-fullscreen" />
+
+d) Rédaction
+
+-   Les titres et contenus doivent être le plus clair et concis possible.
+-   Le titre doit rentrer sur une seule ligne.
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé dans les textes ou les boutons CTA.
+
+f) Variations
+
+-   Information
+-   Avertissement
+-   Succès
+-   Erreur
+
+Chaque notification existe en plusieurs variation:
+
+-   1 ligne
+-   2 lignes
+-   2 lignes + CTA
+
+<img src="../../assets/images/alert/alert-05.jpg" alt="alert" class="tk-markdown__img-fullscreen" />

@@ -1,0 +1,17 @@
+mixin Contributors({ contributors, modifier="" })
+    -const name = 'contributor'
+    -const classComponent = `${setClass(name, modifier, true)}`
+    div(class=`${prefix}-contributors`)
+        each item, index in contributors
+            -const { author, total, weeks } = item
+            -const { avatar_url, html_url, login } = author
+            -const additions = weeks.map(({a}) => a).reduce((acc, curr) => acc + curr)
+            -const deletions = weeks.map(({d}) => d).reduce((acc, curr) => acc + curr)
+            div(class=classComponent)
+                a(class=`${prefix}-${name}__link` href=html_url title=login) #{login}
+                img(class=`${prefix}-${name}__avatar` src=avatar_url loading="lazy")
+                span(class=`${prefix}-${name}__badge`) ##{index + 1}
+                span(class=`${prefix}-${name}__commits`) Commits : #{total}
+                span(class=`${prefix}-${name}__additions`) Additions : #{additions} ++
+                span(class=`${prefix}-${name}__deletions`) Deletions : #{deletions} --
+

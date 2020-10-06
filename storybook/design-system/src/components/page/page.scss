@@ -1,11 +1,11 @@
 .#{$prefix} {
   &-page {
     background: $color-gray-3;
-
+    min-height: 100vh;
     &__header {
-      padding: .8rem 1rem .8rem 30px;
+      padding: 0.8rem 1rem 0.8rem 30px;
       position: relative;
-      line-height: 1; 
+      line-height: 1;
       background: $white;
       &::after {
         content: '';
@@ -33,6 +33,17 @@
         font-family: $font-family-base;
         font-weight: 100;
         font-style: italic;
+      }
+    }
+
+    &__intro {
+      margin-bottom: 2rem;
+      p {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+      .#{$prefix}-img--icon {
+        height: 25px;
       }
     }
 
@@ -108,6 +119,16 @@
       font-size: 2.2rem;
       margin: 1.5rem 0;
       font-weight: 800;
+    }
+  }
+}
+
+.#{$prefix} {
+  &-html {
+    &--iframe {
+      .#{$prefix}-page {
+        min-height: inherit;
+      }
     }
   }
 }

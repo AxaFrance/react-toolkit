@@ -13,22 +13,26 @@ block vars
   - var id = "component"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'Panel', subtitle: 'Organisms' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
-    block guidelines
-      +PageMarkdown()
-        include:markdown-it ./markdown/guidelines.md
+  +PageContentComponent({storybook})
     block code
       +Demo({ title:'Panel', storybook, activePath, tmpl: 'panel', modifier: 'panel', sassPath })
       +Demo({ title:'Panel list', storybook, activePath, tmpl: 'panel-list', modifier: 'panel', sassPath })
       +Demo({ title:'Panel selection', storybook, activePath, tmpl: 'panel-selection', modifier: 'panel', sassPath })
-    block style
-      +Colors({ colors })
+    block react
+      iframe(class=`${prefix}-demo__iframe ${prefix}-demo__iframe--storybook` src=`${storybookBaseUrl}${storybook}`)
+    block guidelines
       +PageMarkdown()
-        include:markdown-it ./markdown/style.md
+        include:markdown-it(html) ./markdown/guidelines.md
+    block style
+      +PageMarkdown()
+        include:markdown-it(html) ./markdown/style.md
+      +Colors({ colors })

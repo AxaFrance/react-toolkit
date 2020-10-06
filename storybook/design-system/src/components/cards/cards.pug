@@ -1,0 +1,7 @@
+include ./card
+mixin Cards({ modifier='', name = 'cards', items = [] }) 
+    -const classComponent = `${setClass(name, modifier)}`
+    section(class=classComponent)
+        each item, index in items
+            -const { image, title, designSystem, storybook } = item;
+            +Card({ image, title, designSystem, storybook })

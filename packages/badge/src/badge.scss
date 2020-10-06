@@ -22,5 +22,8 @@ $types: (
     display: inline-block;
     min-width: 38px;
     padding-top: 0.4rem;
+    .glyphicon {
+      width: 22px;
+    }
   }
 }

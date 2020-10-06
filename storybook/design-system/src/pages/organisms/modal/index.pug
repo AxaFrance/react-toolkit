@@ -10,25 +10,29 @@ block meta
   -var basedir='../../'
 
 block vars
-  - var id = "component"
+  - var id = "iframe"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'Modal', subtitle: 'Organisms' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
+  +PageContentComponent({storybook})
+    block code
+      +Demo({ title:'Modal', storybook, activePath, tmpl: 'modal', sassPath, iframe: true, modifier:'high' })
+      +Demo({ title:'Modal Large', storybook, activePath, tmpl: 'modal-large', sassPath, iframe: true, modifier:'high' })
+      +Demo({ title:'Modal Small', storybook, activePath, tmpl: 'modal-small', sassPath, iframe: true, modifier:'high' })
+    block react
+      iframe(class=`${prefix}-demo__iframe ${prefix}-demo__iframe--storybook` src=`${storybookBaseUrl}${storybook}`)
     block guidelines
       +PageMarkdown()
-        include:markdown-it ./markdown/guidelines.md
-    block code
-      +Demo({ title:'Modal', storybook, activePath, tmpl: 'modal', sassPath, iframe: true })
-      +Demo({ title:'Modal Large', storybook, activePath, tmpl: 'modal-large', sassPath, iframe: true })
-      +Demo({ title:'Modal Small', storybook, activePath, tmpl: 'modal-small', sassPath, iframe: true })
+        include:markdown-it(html) ./markdown/guidelines.md
     block style
-      +Colors({ colors })
       +PageMarkdown()
-        include:markdown-it ./markdown/style.md
+        include:markdown-it(html) ./markdown/style.md
+      +Colors({ colors })

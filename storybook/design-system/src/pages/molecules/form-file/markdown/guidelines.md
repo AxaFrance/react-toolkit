@@ -1,36 +1,55 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Un champ d’upload permet à l’utilisateur de charger un ou plusieurs fichiers sur un serveur.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+## 2) Use case
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Un champ d’upload doit être accompagné des formats et tailles de fichiers autorisés.
 
-## Usage
+<img src="../../assets/images/upload/upload-01.jpg" alt="upload" class="tk-markdown__img-fullscreen" />
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+-   Un champ d’upload ne doit pas être utilisé pour autre chose que pour charger des fichiers.
+-   Le champ d’upload ne doit pas être utilisé sans son bouton « Choisir un fichier ».
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+<img src="../../assets/images/upload/upload-02.jpg" alt="upload" class="tk-markdown__img-fullscreen" />
 
-## Icon usage
+<img src="../../assets/images/upload/upload-03.jpg" alt="upload" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## 4) Utilisation
 
-## Danger version usage
+<img src="../../assets/images/upload/upload-04.jpg" alt="upload" class="tk-markdown__img-fullscreen" />
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+a) Position
+
+Comme n’importe quel autre champ de formulaire, le champ d’upload s’affichera à droite de son label.
+
+b) Alignement
+
+Le champ d’upload doit être aligné à gauche sur la colonne des champs de formulaire, en prenant toute la largeur possible vers la droite.
+
+c) Contenu
+
+Le texte dans le bouton upload — ou accompagnant la puce — doit être le plus clair et concis que possible.
+
+d) Rédaction
+
+Aucun pictogramme ne doit être ajouté au placeholder ou au bouton que le pictogramme d’upload déjà présent.
+
+e) Action
+
+-   Lorsqu’un fichier est déposé/sélectionné, le chargement commence.
+-   Lorsque le chargement est terminé, une ligne avec un pictogramme [√], le nom du fichier et un lien de suppression s’affiche en dessous du champ.
+-   En cas d’erreur, une ligne avec un pictogramme [!] et le nom du fichier s’affiche en dessous du champ. La cause d’erreur sera affichée avec une notification inline.
+-   Plusieurs lignes de fichiers peuvent s’accumuler.
+
+<img src="../../assets/images/upload/upload-05.jpg" alt="upload" class="tk-markdown__img-fullscreen" />
+
+f) États
+
+-   Actif
+-   Hover
+-   Focus
+-   Erreur
+-   Désactivé

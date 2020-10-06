@@ -1,36 +1,58 @@
-## Tone of voice
+## 1) Définition
 
-Quapropter a natura mihi **bold** potius quam ab indigentia orta amicitia, applicatione magis animi cum quodam sensu amandi quam cogitatione quantum illa res utilitatis esset habitura. Quod quidem quale sit, [link to Google!](http://google.com) quibusdam animadverti potest, quae ex se _italic_ ita amant ad quoddam tempus et ab eis ita amantur ut facile earum sensus appareat.
+Select est un type de saisie utilisé dans des formulaires, où l’utilisateur peut choisir une donnée parmi une sélection qui lui est soumis.
 
--   Quapropter a natura mihi videtur potius quam ab
--   sit, etiam in bestiis quibusdam animadverti potest,
--   quae ex se natos ita amant ad quoddam tempus .
+## 2) Use case
 
-**Component** Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Le select est utilisé dans le cadre d’un formulaire pour saisir de la donnée, mais aussi sert à filtrer des informations dans une page ou un tableau.
 
-## Usage
+<img src="../../assets/images/select/select-01.jpg" alt="select" class="tk-markdown__img-fullscreen" />
 
-| Component type   | Purpose              |
-| ---------------- | -------------------- |
-| Primary          | Use for ... when ... |
-| Secondary        | Use for ... when ... |
-| With icon        | Use for ... when ... |
-| Disabled version | Use for ... when ... |
-| Light version    | Use for ... when ... |
+## 3) DO/DONT
 
-## Label
+Un select ne doit pas être utilisé pour une liste inférieure à 5 options dans le cas d’un formulaire. On préfèrera des boutons radios.
 
-Component labels ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+<img src="../../assets/images/select/select-02.jpg" alt="select" class="tk-markdown__img-fullscreen" />
 
-## Icon usage
+<img src="../../assets/images/select/select-03.jpg" alt="select" class="tk-markdown__img-fullscreen" />
 
--   Use glyphs (16px) within buttons.
--   Glyphs are distinguished by their solid shape and knocked-out details.
--   Glyphs should always appear to the right of the text.
--   Glyphs used in buttons must be directly related to the action that the user is taking.
--   Glyphs must be the same color value as the text within a button.
--   Ghost buttons require a glyph icon (cannot be stand alone text because of poor affordance).
+## 4) Utilisation
 
-## Danger version usage
+a) Position
 
-Danger ... Inter has ruinarum varietates a Nisibi quam tuebatur accitus Vrsicinus, cui nos obsecuturos iunxerat imperiale praeceptum, dispicere litis exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret emergentes, quae clam palamve agitabantur, occultis Constantium litteris edocebat inplorans subsidia, quorum metu tumor notissimus Caesaris exhalaret.
+Le select doit être placé à droite de son label.
+
+b) Alignement
+
+Le select sera ferré à gauche de la colonne de saisie, à la même hauteur.
+
+<img src="../../assets/images/select/select-04.jpg" alt="select" class="tk-markdown__img-fullscreen" />
+
+c) Contenu
+
+Inactif, le select doit indiquer « Sélectionner » ou tout autre rédactionnel invitant à faire la sélection demandée par son label.
+
+d) Rédaction
+
+-   Les options doivent être les plus courtes et concises que possible, tout en étant suffisamment claires par rapport au label pour faciliter le choix.-
+-   Le contenu de la liste peut être basé sur la fréquence de la réponse si les statistiques et la lecture le permet, l’ordre alphabétique sera préféré si l’usage le rend plus compréhensible.
+
+e) Pictogrammes
+
+Aucun pictogramme ne doit être utilisé en plus du label et de la flèche déjà présents dans le composant.
+
+f) Action
+
+La liste des options doit toujours s’afficher en dessous du composant.
+
+<img src="../../assets/images/select/select-05.jpg" alt="select" class="tk-markdown__img-fullscreen" />
+
+g) États
+
+-   Vide
+-   Focus - ouvert
+-   Erreur
+-   Désactivé
+-   Validé
+
+<img src="../../assets/images/select/select-06.jpg" alt="select" class="tk-markdown__img-fullscreen" />

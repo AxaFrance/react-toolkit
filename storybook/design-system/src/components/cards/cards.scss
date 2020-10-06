@@ -1,0 +1,128 @@
+@import '@axa-fr/react-toolkit-core/dist/assets/scss/core.scss';
+
+$color-storybook: #ff2d74;
+
+.#{$prefix}-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+  grid-auto-flow: dense;
+  margin: 50px 0 100px 0;
+}
+
+.#{$prefix}-card {
+  position: relative;
+  margin-bottom: 60px;
+  min-height: 160px;
+  &__image {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+  &__header {
+    background: $color-axa;
+    border-bottom: 1px solid $color-blue-lighter;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    color: $white;
+    position: absolute;
+    width: 100%;
+    bottom: 3px;
+    border-radius: 0 0 15px 15px;
+    transform: translateY(100%);
+  }
+  &__content {
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 30%;
+  }
+  &__title {
+    margin: 0.5rem 0;
+    font-weight: 200;
+    font-size: 1.4rem;
+  }
+}
+
+.#{$prefix} {
+  &-btn {
+    &__img {
+      width: 19px;
+      fill: $white;
+      @include centerer;
+    }
+  }
+}
+
+.#{$prefix}-btn--circle {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid $white;
+  background: $color-blue-lighter;
+  border-radius: 50%;
+  text-align: center;
+  color: $white;
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+}
+.#{$prefix}-btn--storybook {
+  background-color: $color-storybook;
+  transition: all 0.5s linear;
+  &:hover {
+    .#{$prefix} {
+      &-btn {
+        &__img {
+          fill: $color-storybook;
+        }
+      }
+    }
+    background: $white;
+  }
+}
+.#{$prefix}-btn--svg {
+  background-color: $color-blue-lighter;
+  transition: all 0.5s linear;
+  &:hover {
+    .#{$prefix} {
+      &-btn {
+        &__img {
+          fill: $color-blue-lighter;
+        }
+      }
+    }
+    background: $white;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .#{$prefix}-cards {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .#{$prefix}-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .#{$prefix}-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .#{$prefix}-cards {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+}

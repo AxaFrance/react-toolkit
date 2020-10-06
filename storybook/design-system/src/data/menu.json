@@ -1,19 +1,123 @@
 {
   "main": [
     {
-      "label": "Main",
+      "href": "/",
+      "label": "Accueil"
+    },
+    {
+      "href": "/get-started",
+      "label": "Get started"
+    },
+    {
+      "href": "/guidelines",
+      "label": "Guidelines"
+    },
+    {
+      "href": "/components",
+      "label": "Composants"
+    },
+    {
+      "href": "/patterns",
+      "label": "Patterns"
+    },
+    {
+      "href": "/get-started/contributors",
+      "label": "Contributeurs"
+    }
+  ],
+  "getstarted": [
+    {
+      "label": "Get Started",
       "childsmenu": [
         {
-          "href": "/",
-          "label": "Home"
+          "href": "/get-started/contributors",
+          "label": "Contributeurs"
         },
         {
-          "href": "/get-started",
-          "label": "Get started"
+          "href": "/get-started/component-status",
+          "label": "Statuts des composants"
         },
         {
-          "href": "/github",
-          "label": "Github"
+          "href": "/get-started/changelog",
+          "label": "Changelog"
+        },
+        {
+          "href": "/get-started/how-to-contribute",
+          "label": "Comment contribuer ?"
+        },
+        {
+          "href": "/get-started/create-an-issue",
+          "label": "Créer une issue"
+        },
+        {
+          "href": "/get-started/code-of-conduct",
+          "label": "Code de conduite"
+        }
+      ]
+    }
+  ],
+  "guidelines": [
+    {
+      "label": "Guidelines",
+      "childsmenu": [
+        {
+          "href": "/guidelines/accessibility",
+          "label": "Accessibilité"
+        },
+        {
+          "href": "/guidelines/animations",
+          "label": "Animations"
+        },
+        {
+          "href": "/guidelines/color",
+          "label": "Couleur"
+        },
+        {
+          "href": "/guidelines/content",
+          "label": "Contenu"
+        },
+        {
+          "href": "/guidelines/grid",
+          "label": "Grille de composition"
+        },
+        {
+          "href": "/guidelines/spaces",
+          "label": "Espacement"
+        },
+        {
+          "href": "/guidelines/icones",
+          "label": "Icônes"
+        },
+        {
+          "href": "/guidelines/typography",
+          "label": "Typographie"
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "label": "Patterns",
+      "childsmenu": [
+        {
+          "href": "/patterns/progressive-actions",
+          "label": "Actions progressives"
+        },
+        {
+          "href": "/patterns/regressive-actions",
+          "label": "Actions régressives"
+        },
+        {
+          "href": "/patterns/loading",
+          "label": "Chargement"
+        },
+        {
+          "href": "/patterns/overtaking",
+          "label": "Dépassement"
+        },
+        {
+          "href": "/patterns/disabled",
+          "label": "Désactivé"
         }
       ]
     }
@@ -152,7 +256,7 @@
   ],
   "form": [
     {
-      "label": "FORM ELEMENTS",
+      "label": "Form elements",
       "childsmenu": [
         {
           "href": "/organisms/form",

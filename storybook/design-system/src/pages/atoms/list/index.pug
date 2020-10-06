@@ -13,14 +13,16 @@ block vars
   - var id = "component"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'List', subtitle: 'Atom' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
+  +PageContentComponent({storybook, js: false})
     block guidelines
       +PageMarkdown()
         include:markdown-it(html) ./markdown/guidelines.md

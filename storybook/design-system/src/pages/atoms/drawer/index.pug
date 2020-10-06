@@ -13,19 +13,21 @@ block vars
   - var id = "component"
 
 block menu
-  +Menu({ activePath })
+  +MenuComponents({ activePath })
+
+block headerlinks
+  +Headerlinks({ activePath:'/components' })
 
 block page
   +PageTitle({ title: 'Drawer', subtitle: 'Atom' })
   .tk-page__links
-    +PageSummary()
     +PageLinks({github, storybook, badge})
-  +PageContentComponent()
+  +PageContentComponent({storybook, js: false})
+    block code
+      +Demo({ title:'Classic Drawer', storybook, activePath, tmpl: `classic`, sassPath, modifier:'high' })
     block guidelines
       +PageMarkdown()
         include:markdown-it(html) ./markdown/guidelines.md
-    block code
-      +Demo({ title:'Classic Drawer', storybook, activePath, tmpl: `classic`, sassPath })
     block style
       +PageMarkdown()
         include:markdown-it(html) ./markdown/style.md

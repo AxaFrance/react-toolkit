@@ -18,6 +18,7 @@
 @import './commons/scss/font-face';
 @import './commons/scss/variables';
 @import './commons/scss/mixins';
+@import './commons/scss/keyframes';
 @import './commons/scss/markdown';
 @import './commons/scss/main.scss';
 
@@ -34,9 +35,12 @@
 @import './components/header/header';
 @import './components/footer/footer';
 @import './components/menu/menu';
+@import './components/headerlinks/headerlinks';
 @import './components/repo/repo';
 @import './components/encart/encart';
 @import './components/colors/colors.scss';
+@import './components/contributors/contributors.scss';
+@import './components/cards/cards.scss';
 
 /* Organisms */
 
@@ -73,8 +77,8 @@
 @import './pages/organisms/modal/index';
 @import './pages/pages/form/index';
 @import './pages/pages/table/index';
-@import './pages/style/colors/index';
-@import './pages/style/icons/index';
+@import './pages/guidelines/color/index';
+@import './pages/guidelines/icones/index';
 
 .glyphicon {
   fill: currentColor;

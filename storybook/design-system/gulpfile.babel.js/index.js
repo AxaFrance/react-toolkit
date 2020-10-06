@@ -8,11 +8,14 @@ import copyAssets, { copyImages } from './copy';
 import sprite from './sprite';
 import serve from './serve';
 import copyIcons, { generatePugIcons } from './copyIcons';
+import generateGithubInfos from './generateGithubInfos';
+import generateContributors from './generateContributors';
 
 const reloadImages = series(cleanImages, copyImages);
 const build = series(
   clean,
   copyIcons,
+  generateGithubInfos,
   generatePugIcons,
   jsProd,
   sassProd,
@@ -20,7 +23,19 @@ const build = series(
   pugProd,
   copyAssets,
 );
-const dev = series(clean, copyIcons, generatePugIcons, jsDev, sassDev, pugDev, copyAssets, serve);
+
+const dev = series(
+  clean,
+  generateContributors,
+  copyIcons,
+  generateGithubInfos,
+  generatePugIcons,
+  jsDev,
+  sassDev,
+  pugDev,
+  copyAssets,
+  serve,
+);
 
 export default build;
 export {

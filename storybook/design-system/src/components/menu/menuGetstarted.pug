@@ -1,0 +1,7 @@
+mixin MenuGetstarted({modifier='opened', activePath='/'})
+    -const classComponent = setClass('menu', modifier, true)
+    div(class=classComponent)
+        +Icon({id:'cross-gap', className:`${prefix}-menu__close`, modifier:"close", js:true})
+        +Icon({id:'menu-button', className:`${prefix}-menu__open`, modifier:"open", js:true})
+        nav(class=`${prefix}-menu__nav`)
+            +SubMenu({menu: getstarted, activePath})

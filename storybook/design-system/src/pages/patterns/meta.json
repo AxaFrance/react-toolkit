@@ -1,0 +1,52 @@
+{
+  "title": "Github Slash Design System - Axa UI/UX Design System for software applications",
+  "description": "Github Slash Design System. Toolkit Axa is the design system for Axa web and product. It is a series of individual styles, components, and guidelines used for creating unified UI.",
+  "keywords": "Github Axa design system, slash design system, design system axa, design system ui, design system react, design system ux, Github axa france",
+  "items": [
+    {
+      "id": "action-progressive",
+      "title": "Actions progressives",
+      "designSystem": {
+        "text": "Actions progressives",
+        "path": "patterns/progressive-actions/"
+      },
+      "image": { "name": "modal.svg", "alt": "Action progressive" }
+    },
+    {
+      "id": "action-reg",
+      "title": "Action régressive",
+      "designSystem": {
+        "text": "Actions régressives",
+        "path": "patterns/regressive-actions/"
+      },
+      "image": { "name": "modal.svg", "alt": "Action régressive" }
+    },
+    {
+      "id": "loading",
+      "title": "Chargement",
+      "designSystem": {
+        "text": "Chargement",
+        "path": "patterns/loading/"
+      },
+      "image": { "name": "modal.svg", "alt": "loading" }
+    },
+    {
+      "id": "overtaking",
+      "title": "Dépassement",
+      "designSystem": {
+        "text": "Dépassement",
+        "path": "patterns/overtaking/"
+      },
+      "image": { "name": "modal.svg", "alt": "overtaking" }
+    },
+    {
+      "id": "disabled",
+      "title": "Désactivé",
+      "designSystem": {
+        "text": "Désactivé",
+        "path": "patterns/disabled/"
+      },
+      "image": { "name": "modal.svg", "alt": "disabled" }
+    }
+  ]
+}

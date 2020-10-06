@@ -1,11 +1,10 @@
 .#{$prefix} {
-  &-footer {
-    padding: 1em 30px;
+  &-footer-client {
     color: $white;
     background: $color-azur;
     transition: all 0.5s ease;
     &--opened {
-      padding-left: $menu-width + 30px;
+      padding-left: $menu-width;
     }
   }
 }
