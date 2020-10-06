@@ -19,6 +19,20 @@ const PagerStory = () => (
   />
 );
 
+const ManyPagesStory = () => (
+  <Pager
+    classModifier={text('classModifier', '')}
+    className={text('className', '')}
+    currentPage={number('currentPage', 4225)}
+    mode={select('mode', Modes, Modes.default)}
+    nextLabel={text('nextLabel', 'Next »')}
+    ofLabel={text('ofLabel', 'of')}
+    onChange={action('onChange')}
+    previousLabel={text('previousLabel', '« Previous')}
+    numberPages={number('numberPages', 5000)}
+  />
+);
+
 const LightStory = () => (
   <Pager
     classModifier={text('classModifier', '')}
@@ -42,4 +56,5 @@ stories.addParameters({
 });
 
 stories.add('Default', PagerStory);
+stories.add('ManyPages', ManyPagesStory);
 stories.add('Light', LightStory);
