@@ -5,9 +5,9 @@ include ./data-sample.pug
         .af-accordion__item-header(role="tab" id=`heading${item.id}`)
           h3.af-accordion__item-title(role="intera")
             if item.active
-              include ../../../style/icons/templates/menu-up.pug
+              include ../../../guidelines/icones/templates/menu-up.pug
             else
-              include ../../../style/icons/templates/menu-down.pug
+              include ../../../guidelines/icones/templates/menu-down.pug
             a.af-accordion__item-toggle(data-toggle="collapse" href=`#collapse${item.id}` aria-expanded="true" aria-controls=`collapse${item.id}`) #{item.title}
         .af-accordion__collapse(role="tabpanel" aria-labelledby=`heading${item.id}` id=`collapse${item.id}` class=(item.active) ? "af-accordion__collapse--open" : "")
           .af-accordion__block

@@ -1,3 +1,5 @@
+# Contributing to @axa-fr/react-toolkit
+
 ## Installation
 
 To get started with the repository:
@@ -26,12 +28,12 @@ If you want to use these projects, you must:
 
 ```sh
 cd storybook/design-system
-npm i
+npm ci
 ```
 
 ```sh
 cd storybook/storybook
-npm i
+npm ci
 ```
 
 ## How to work on a component
@@ -60,7 +62,7 @@ And then if you want to work on it, in isolation mode, you can run storybook
 npm run storybook
 ```
 
-After all this, if your development affect css, you can run `npx gulp all` to regenerate css
+After all this, if your development affect css, you can run `npm run style` to regenerate css
 
 ## Other usefull commands
 
@@ -74,9 +76,9 @@ By default, `npm test` also runs the linter.
 You can skip this by calling `jest` directly:
 
 ```sh
-$ npx jest
-$ npx jest --watch
-$ npx jest --config jest.config.json
+$ npm jest
+$ npm jest --watch
+$ npm jest --config jest.config.json
 # etc
 ```
 

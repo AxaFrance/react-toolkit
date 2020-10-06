@@ -3,13 +3,13 @@ mixin status(code)
     case code
       when 1
         span.glyphicon-ring.glyphicon-ring--banque
-          include ../../../style/icons/templates/option-horizontal.pug
+          include ../../../guidelines/icones/templates/option-horizontal.pug
         | En cours
       when 2
         span.glyphicon-ring.glyphicon-ring--warning
-          include ../../../style/icons/templates/arrowthin-right.pug
+          include ../../../guidelines/icones/templates/arrowthin-right.pug
         | Transmis
       default
         span.glyphicon-ring.glyphicon-ring--success
-          include ../../../style/icons/templates/ok.pug
+          include ../../../guidelines/icones/templates/ok.pug
         | Clos
