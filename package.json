@@ -15,8 +15,6 @@
     "storybook:build": "npm -C ./storybook/storybook run storybook:build",
     "design": "npm -C ./storybook/design-system run start",
     "design:build": "npm -C ./storybook/design-system run build",
-    "css": "npm -C ./storybook/styles run css",
-    "css:build": "npm -C ./storybook/styles run css:build",
     "test": "jest --config jest.config.json",
     "cover": "jest --no-cache --config ./jest.config.json --coverage",
     "lint": "npm run lint:js && npm run lint:ts **/*.ts",
