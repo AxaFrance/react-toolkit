@@ -4,7 +4,7 @@ mixin formMessage({modifierMessage= '', textMessage='', iconMessage= ''})
       | #{textMessage}
     else
       if iconMessage === "warning-sign"
-        include ../../../pages/style/icons/templates/warning-sign.pug
+        include ../../../pages/guidelines/icones/templates/warning-sign.pug
       else
-        include ../../../pages/style/icons/templates/exclamation-sign.pug
+        include ../../../pages/guidelines/icones/templates/exclamation-sign.pug
       span.af-form__error-text #{textMessage}

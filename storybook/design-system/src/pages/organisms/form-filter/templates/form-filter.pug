@@ -10,25 +10,25 @@ block children
       header.af-panel__header
         h3.af-panel__title Filtrer
         a.af-panel__reset(href="#reset" title="Ré-initialiser les filtres de recherche")
-          include ../../../style/icons/templates/reset.pug
+          include ../../../guidelines/icones/templates/reset.pug
           span.af-panel__reset-text Reset
       section.af-panel__content
         ul.af-filter-selected
           li.af-filter-selected__item
             span.af-filter-selected__item-text Nom du client
-            include ../../../style/icons/templates/close.pug
+            include ../../../guidelines/icones/templates/close.pug
           li.af-filter-selected__item
             span.af-filter-selected__item-text N° Client
-            include ../../../style/icons/templates/close.pug
+            include ../../../guidelines/icones/templates/close.pug
         .af-accordion.af-accordion--arrow-right(role="tablist" aria-multiselectable="true")
           each item, index in listAccordion
             .af-accordion__item
               .af-accordion__item-header(role="tab" id=`heading${item.id}`)
                 h3.af-accordion__item-title(role="intera")
                   if item.active
-                    include ../../../style/icons/templates/menu-up.pug
+                    include ../../../guidelines/icones/templates/menu-up.pug
                   else
-                    include ../../../style/icons/templates/menu-down.pug
+                    include ../../../guidelines/icones/templates/menu-down.pug
                   a.af-accordion__item-toggle(data-toggle="collapse" href=`#collapse${item.id}` aria-expanded="true" aria-controls=`collapse${item.id}`) #{item.title}
               .af-accordion__collapse(role="tabpanel" aria-labelledby=`heading${item.id}` id=`collapse${item.id}` class=(item.active) ? "af-accordion__collapse--open" : "")
                 .af-accordion__block !{item.content}

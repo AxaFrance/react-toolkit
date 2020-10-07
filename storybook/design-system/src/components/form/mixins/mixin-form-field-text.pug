@@ -6,9 +6,9 @@ mixin formFieldText({ hasInfobulle= false, hasClear=false, modifier= '', textMes
       input.af-form__input-text(class=(hasInfobulle) ? ` af-form__input-text--hasinfobulle` : '' name="inputtextname" type="text" disabled= disabled || null)
       if hasClear
         .af-form__clear(role="button" tabindex="-1")
-          include ../../../pages/style/icons/templates/close.pug
+          include ../../../pages/guidelines/icones/templates/close.pug
       if hasInfobulle
         +formHelp()
       if modifier === "valid"
-        include ../../../pages/style/icons/templates/ok.pug
+        include ../../../pages/guidelines/icones/templates/ok.pug
     +formMessage({modifierMessage, textMessage, iconMessage})
