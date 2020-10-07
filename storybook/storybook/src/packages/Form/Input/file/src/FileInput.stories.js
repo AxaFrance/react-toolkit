@@ -207,12 +207,13 @@ const FileWithErrorsStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.File', module);
+const stories = storiesOf('Form/Input/File', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('File', FileStory);

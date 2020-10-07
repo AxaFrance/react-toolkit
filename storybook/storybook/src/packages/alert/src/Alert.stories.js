@@ -58,12 +58,13 @@ const AlertWithDetailStory = () => (
   </Alert>
 );
 
-const stories = storiesOf('Alert.Alert', module);
+const stories = storiesOf('Alert/Alert', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', AlertStory);

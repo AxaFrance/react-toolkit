@@ -21,12 +21,13 @@ const FooterCoreStory = () => () => (
   </FooterCore>
 );
 
-const stories = storiesOf('Layout.Footer', module);
+const stories = storiesOf('Layout/Footer', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', FooterStory);

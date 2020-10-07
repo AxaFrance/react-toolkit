@@ -1,16 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import moment from 'moment';
 import { storiesOf } from '@storybook/react';
-import { DatePhoneInput, DatePhone } from '@axa-fr/react-toolkit-form-input-date-phone';
-import {
-  MessageTypes,
-  FieldForm,
-  HelpMessage,
-  FieldError,
-  InputConstants,
-} from '@axa-fr/react-toolkit-form-core';
+import { DatePhone, DatePhoneInput } from '@axa-fr/react-toolkit-form-input-date-phone';
+import { FieldError, FieldForm, HelpMessage, InputConstants, MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import readme from '@axa-fr/react-toolkit-form-input-date-phone/dist/README.md';
 
 const DatePhoneInputStory = () => (
@@ -33,11 +27,11 @@ const DatePhoneInputStory = () => (
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
-        InputConstants.defaultProps.classNameContainerLabel
+        InputConstants.defaultProps.classNameContainerLabel,
       )}
       classNameContainerInput={text(
         'classNameContainerInput',
-        InputConstants.defaultProps.classNameContainerInput
+        InputConstants.defaultProps.classNameContainerInput,
       )}
     />
   </form>
@@ -63,11 +57,11 @@ const DatePhoneInputStoryRequired = () => (
       className={text('className', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
-        InputConstants.defaultProps.classNameContainerLabel
+        InputConstants.defaultProps.classNameContainerLabel,
       )}
       classNameContainerInput={text(
         'classNameContainerInput',
-        InputConstants.defaultProps.classNameContainerInput
+        InputConstants.defaultProps.classNameContainerInput,
       )}
     />
   </form>
@@ -92,17 +86,18 @@ const DatePhoneStory = () => (
           classModifier={text('classModifier', '')}
           className={text('className', '')}
         />
-        <HelpMessage message={text('helpMessage', 'jj/mm/aaaa')} />
-        <FieldError />
+        <HelpMessage message={text('helpMessage', 'jj/mm/aaaa')}/>
+        <FieldError/>
       </div>
     </FieldForm>
   </form>
 );
-const stories = storiesOf('Form.Input.DatePhone', module);
+const stories = storiesOf('Form/Input/DatePhone', module);
 stories.addParameters({
-  readme:{
-    sidebar: readme
-  }
+  readme: {
+    sidebar: readme,
+  },
+  options: {},
 });
 stories.add('DatePhone', DatePhoneStory);
 stories.add('DatePhoneInput', DatePhoneInputStory);

@@ -30,12 +30,13 @@ const BooleanModalStory = () => (
   </div>
 );
 
-const stories = storiesOf('Modal.Boolean', module);
+const stories = storiesOf('Modal/Boolean', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', BooleanModalStory);

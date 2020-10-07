@@ -199,12 +199,13 @@ const CardThreeStory = () => (
   </CardGroupCheckbox>
 );
 
-const stories = storiesOf('Form.Input.Checkbox Card', module);
+const stories = storiesOf('Form/Input/Checkbox Card', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
   viewport: {
     defaultViewport: 'pixel',
   },

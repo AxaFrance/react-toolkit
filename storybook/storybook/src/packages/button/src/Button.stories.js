@@ -117,6 +117,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Simple button', ButtonStory);

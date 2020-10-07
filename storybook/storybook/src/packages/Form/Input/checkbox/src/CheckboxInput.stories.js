@@ -258,12 +258,13 @@ const CheckboxItemToggleStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Checkbox', module);
+const stories = storiesOf('Form/Input/Checkbox', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('CheckboxItem', CheckboxItemStory);

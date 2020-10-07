@@ -47,12 +47,13 @@ const LightStory = () => (
   />
 );
 
-const stories = storiesOf('Table.Pager', module);
+const stories = storiesOf('Table/Pager', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', PagerStory);

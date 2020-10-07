@@ -165,12 +165,13 @@ const SwitchInputStoryRequired = () => (
   />
 );
 
-const stories = storiesOf('Form.Input.Switch', module);
+const stories = storiesOf('Form/Input/Switch', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Switch', SwitchStory);

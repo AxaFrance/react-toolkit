@@ -130,12 +130,13 @@ const ComplexTableStory = () => (
   </>
 );
 
-const stories = storiesOf('Table.Table', module);
+const stories = storiesOf('Table/Table', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Simple', SimpleTableStory);

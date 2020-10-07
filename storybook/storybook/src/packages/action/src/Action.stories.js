@@ -53,6 +53,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Simple action link', ActionLinkStory);

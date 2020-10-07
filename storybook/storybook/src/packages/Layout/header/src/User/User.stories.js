@@ -21,12 +21,13 @@ const UserStory = () => (
 
 const UserNoLinkStory = () => <User name="Pierre Martin" profile="profile" />;
 
-const stories = storiesOf('Layout.Header.User', module);
+const stories = storiesOf('Layout/Header/User', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', UserStory);

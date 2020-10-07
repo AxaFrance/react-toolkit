@@ -19,12 +19,13 @@ const NameStory = () => (
   />
 );
 
-const stories = storiesOf('Layout.Header.Name', module);
+const stories = storiesOf('Layout/Header/Name', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', NameStory);

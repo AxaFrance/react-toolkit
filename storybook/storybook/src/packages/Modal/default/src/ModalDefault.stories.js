@@ -78,12 +78,13 @@ const ModalCoreStory = () => (
   </div>
 );
 
-const stories = storiesOf('Modal.Default', module);
+const stories = storiesOf('Modal/Default', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Modal core', ModalCoreStory);

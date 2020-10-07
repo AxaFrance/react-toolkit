@@ -138,12 +138,13 @@ const CardTwoStory = () => (
   </CardGroupRadio>
 );
 
-const stories = storiesOf('Form.Input.Radio Card', module);
+const stories = storiesOf('Form/Input/Radio Card', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
   viewport: {
     defaultViewport: 'pixel',
   },

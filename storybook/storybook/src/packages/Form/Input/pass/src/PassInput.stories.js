@@ -135,12 +135,13 @@ const PassInputStoryRequired = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Pass', module);
+const stories = storiesOf('Form/Input/Pass', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Pass', PassStory);

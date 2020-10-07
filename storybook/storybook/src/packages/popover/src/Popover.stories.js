@@ -87,6 +87,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Popover', PopoverStory);

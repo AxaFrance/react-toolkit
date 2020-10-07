@@ -22,12 +22,13 @@ const PagingStory = () => (
   />
 );
 
-const stories = storiesOf('Table.Paging', module);
+const stories = storiesOf('Table/Paging', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', PagingStory);

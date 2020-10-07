@@ -17,12 +17,13 @@ const ItemsStory = () => (
   />
 );
 
-const stories = storiesOf('Table.Items', module);
+const stories = storiesOf('Table/Items', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', ItemsStory);

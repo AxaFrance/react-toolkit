@@ -106,6 +106,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('ArticleRestitution', ArticleRestitutionStory);

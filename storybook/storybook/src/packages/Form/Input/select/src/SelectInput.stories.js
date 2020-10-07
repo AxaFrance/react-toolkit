@@ -181,12 +181,13 @@ const SelectBaseStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Select', module);
+const stories = storiesOf('Form/Input/Select', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('SelectBase', SelectBaseStory);
