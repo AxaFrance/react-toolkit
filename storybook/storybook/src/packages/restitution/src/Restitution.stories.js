@@ -1,40 +1,43 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import {
-  ArticleRestitution,
-  HeaderRestitution,
-  SectionRestitution,
-  SectionRestitutionColumn,
-  SectionRestitutionRow,
-  Restitution,
-} from '@axa-fr/react-toolkit-restitution';
-import readme from '@axa-fr/react-toolkit-restitution/dist/README.md';
+import { ArticleRestitution, HeaderRestitution, Restitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow } from '@axa-fr/react-toolkit-restitution';
+import Readme from '@axa-fr/react-toolkit-restitution/README.md';
 import withPreventDefaultClick from '../../../preventClick';
+
+export default {
+  title: 'Restitution',
+  component: Restitution,
+  parameters: {
+    readme: {
+      sidebar: Readme,
+    },
+    options: {},
+  },
+};
 
 const RightTitle = () => (
   <a
     className="af-link af-link--hasIconLeft"
     href="/#"
     onClick={withPreventDefaultClick(action('onClick Action'))}>
-    <i className="glyphicon glyphicon-pencil" />
+    <i className="glyphicon glyphicon-pencil"/>
     <span className="af-link__text">Modifier</span>
   </a>
 );
 
-const ArticleRestitutionStory = () => (
+export const Default = () => (
   <ArticleRestitution>
     <HeaderRestitution
       title="Tarifs"
       subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"
-      rightTitle={<RightTitle />}
+      rightTitle={<RightTitle/>}
     />
     <SectionRestitution>
       <SectionRestitutionRow title="Base de calcul des prestations">
         <SectionRestitutionColumn>
-          <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
-          <Restitution label="TT" value={null} />
+          <Restitution label="TA" value="99,99 %"/>
+          <Restitution label="EURO" value="EURO"/>
+          <Restitution label="TT" value={null}/>
           <Restitution
             label="Garanties complémentaires"
             classModifier="marge"
@@ -48,9 +51,9 @@ const ArticleRestitutionStory = () => (
           />
         </SectionRestitutionColumn>
         <SectionRestitutionColumn>
-          <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
-          <Restitution label="TT" value="" />
+          <Restitution label="TA" value="99,99 %"/>
+          <Restitution label="EURO" value="EURO"/>
+          <Restitution label="TT" value=""/>
           <Restitution
             label="Garanties complémentaires"
             classModifier="marge"
@@ -67,8 +70,8 @@ const ArticleRestitutionStory = () => (
 
       <SectionRestitutionRow title="Base de calcul des prestations">
         <SectionRestitutionColumn>
-          <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
+          <Restitution label="TA" value="99,99 %"/>
+          <Restitution label="EURO" value="EURO"/>
           <Restitution
             label="Garanties complémentaires"
             values={[
@@ -81,8 +84,8 @@ const ArticleRestitutionStory = () => (
           />
         </SectionRestitutionColumn>
         <SectionRestitutionColumn>
-          <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
+          <Restitution label="TA" value="99,99 %"/>
+          <Restitution label="EURO" value="EURO"/>
           <Restitution
             label="Garanties complémentaires"
             classModifier="marge"
@@ -99,14 +102,3 @@ const ArticleRestitutionStory = () => (
     </SectionRestitution>
   </ArticleRestitution>
 );
-
-const stories = storiesOf('Restitution', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
-  },
-  options: {},
-});
-
-stories.add('ArticleRestitution', ArticleRestitutionStory);

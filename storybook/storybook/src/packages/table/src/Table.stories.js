@@ -1,8 +1,7 @@
 import React from 'react';
-import { text, select, number, action } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import { number, select, text } from '@storybook/addon-knobs';
 import Table, { Paging } from '@axa-fr/react-toolkit-table';
-import readme from '@axa-fr/react-toolkit-table/dist/README.md';
+import Readme from '@axa-fr/react-toolkit-table/README.md';
 
 const univers = {
   sante: 'sante',
@@ -22,7 +21,18 @@ const modifiers = [
   univers.axa,
 ];
 
-const SimpleTableStory = () => (
+export default {
+  title: 'Table/Table',
+  component: Table,
+  parameters: {
+    readme: {
+      sidebar: Readme,
+    },
+    options: {},
+  },
+};
+
+export const Simple = () => (
   <Table
     classModifier={select('classModifier', modifiers, univers.axa)}
     className={text('className', 'af-table')}>
@@ -68,7 +78,7 @@ const SimpleTableStory = () => (
   </Table>
 );
 
-const ComplexTableStory = () => (
+export const Complex = () => (
   <>
     <Table
       classModifier={select('classModifier', modifiers, univers.axa)}
@@ -130,14 +140,3 @@ const ComplexTableStory = () => (
   </>
 );
 
-const stories = storiesOf('Table/Table', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
-  },
-  options: {},
-});
-
-stories.add('Simple', SimpleTableStory);
-stories.add('Complex', ComplexTableStory);
