@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-select",
-  "version": "1.3.21",
+  "version": "1.3.22",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,8 +12,8 @@
     "react-dom": "16.8.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "1.3.21",
-    "@axa-fr/react-toolkit-form-core": "1.3.21",
+    "@axa-fr/react-toolkit-core": "1.3.22",
+    "@axa-fr/react-toolkit-form-core": "1.3.22",
     "prop-types": "15.5.10"
   },
   "license": "MIT",
