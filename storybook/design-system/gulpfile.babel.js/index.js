@@ -14,6 +14,7 @@ import generateContributors from './generateContributors';
 const reloadImages = series(cleanImages, copyImages);
 const build = series(
   clean,
+  generateContributors,
   copyIcons,
   generateGithubInfos,
   generatePugIcons,
