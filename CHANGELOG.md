@@ -1,6 +1,22 @@
 ### Changelog
 All notable changes to this project will be documented in this file.
 
+#### [v1.3.23](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.22...v1.3.23)
+> 9 October 2020
+- chore(release): publish v1.3.23 [skip ci] [`2f51399`](https://github.com/AxaGuilDEv/react-toolkit/commit/2f513997d07c3a9315d60fb22dce5d99a33ef39a) by Build-CI 
+
+#### [v1.3.22](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.21...v1.3.22)
+> 9 October 2020
+- fix(pug): contributors page production build [`#701`](https://github.com/AxaGuilDEv/react-toolkit/pull/701) by Samuel Gomez
+- fix(new-ds): fix broken link to template pugs [`#696`](https://github.com/AxaGuilDEv/react-toolkit/pull/696) by Arnaud Foraison
+- fix(table-pager): add flexible width when active page number is large [`#694`](https://github.com/AxaGuilDEv/react-toolkit/pull/694) by Olivier YOUF
+- Feat/guidelines ds [`#692`](https://github.com/AxaGuilDEv/react-toolkit/pull/692) by Samuel Gomez
+- feat(demo): delete demo [`#685`](https://github.com/AxaGuilDEv/react-toolkit/pull/685) by Samuel Gomez
+- fix(publish) version is now sync to lerna.json [`#682`](https://github.com/AxaGuilDEv/react-toolkit/pull/682) by Guillaume Chervet
+- chore(release): publish v1.3.22 [skip ci] [`e9b1080`](https://github.com/AxaGuilDEv/react-toolkit/commit/e9b1080a0fc703fb1b6c3d238db57241ebb4b340) by Build-CI 
+- docs(changelog) update to new 1.3.14 [skip ci] [`2ada542`](https://github.com/AxaGuilDEv/react-toolkit/commit/2ada542a9f976d2f351688f15b119bff83bcc17b) by Build-CI 
+- fix(table-pager): add flexible width when active page number is large (#689) [`0591caf`](https://github.com/AxaGuilDEv/react-toolkit/commit/0591caf0bc798e1f7e8dfc3be2a8ff6caf77b36b) by Gilles CRUCHON 
+
 #### [v1.3.21](https://github.com/AxaGuilDEv/react-toolkit/compare/v1.3.16...v1.3.21)
 > 18 September 2020
 - fix(publish): fix publish broken [`#680`](https://github.com/AxaGuilDEv/react-toolkit/pull/680) by Guillaume Chervet
