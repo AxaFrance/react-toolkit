@@ -161,12 +161,13 @@ const Withoutbottom = () => (
   </FooterClient>
 );
 
-const stories = storiesOf('Layout.FooterClient', module);
+const stories = storiesOf('Layout/FooterClient', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Simple', SimpleStory);

@@ -1,10 +1,10 @@
 import React from 'react';
-import Action from '@axa-fr/react-toolkit-action';
+import { ActionCore } from '@axa-fr/react-toolkit-action';
 import Readme from '@axa-fr/react-toolkit-action/README.md';
 
 export default {
-  title: 'Action/Action',
-  component: Action,
+  title: 'Action/ActionCore',
+  component: ActionCore,
   parameters: {
     readme: {
       sidebar: Readme,
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template = args => <Action {...args} />;
+const Template = args => <ActionCore {...args} />;
 
 export const Link = Template.bind({});
 Link.args = {
@@ -25,12 +25,12 @@ Link.args = {
   title: 'Lien de test',
   target: '_blank',
   id: 'id',
-  classModifier: 'hello',
 };
 
 export const Button = Template.bind({});
 Button.args = {
-  id: 'id',
   icon: 'floppy-disk',
   title: 'Enregistrer',
+  classModifier: 'axa',
+  id: 'id',
 };

@@ -237,12 +237,13 @@ const TextDisabledStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Text', module);
+const stories = storiesOf('Form/Input/Text', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Text', TextStory);

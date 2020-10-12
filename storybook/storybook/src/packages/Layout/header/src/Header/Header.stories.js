@@ -44,12 +44,13 @@ const HeaderNameInfosStory = () => (
   </Header>
 );
 
-const stories = storiesOf('Layout.Header.Header', module);
+const stories = storiesOf('Layout/Header/Header', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('With Name', HeaderNameStory);

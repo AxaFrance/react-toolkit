@@ -147,12 +147,13 @@ const MultiSelectWithOneValueStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.SelectMulti', module);
+const stories = storiesOf('Form/Input/SelectMulti', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('MultiSelect', MultiSelectStory);

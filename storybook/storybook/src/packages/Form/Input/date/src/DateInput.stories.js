@@ -123,12 +123,13 @@ const CustomDateStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Date', module);
+const stories = storiesOf('Form/Input/Date', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('DateInputStory', DateInputStory);

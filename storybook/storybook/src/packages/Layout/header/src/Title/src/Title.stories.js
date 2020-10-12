@@ -49,12 +49,13 @@ const TitleComplexStory = () => (
   </Title>
 );
 
-const stories = storiesOf('Layout.Header.Title', module);
+const stories = storiesOf('Layout/Header/Title', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', TitleStory);

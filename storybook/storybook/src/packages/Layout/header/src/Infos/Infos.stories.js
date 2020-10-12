@@ -20,12 +20,13 @@ const infos = [
 
 const InfosStory = () => <Infos infos={infos} />;
 
-const stories = storiesOf('Layout.Header.Infos', module);
+const stories = storiesOf('Layout/Header/Infos', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', InfosStory);

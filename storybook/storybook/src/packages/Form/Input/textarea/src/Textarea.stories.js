@@ -114,12 +114,13 @@ const TextareaStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Textarea', module);
+const stories = storiesOf('Form/Input/Textarea', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Textarea', TextareaStory);

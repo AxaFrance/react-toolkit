@@ -233,12 +233,13 @@ const RadioItemStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Radio', module);
+const stories = storiesOf('Form/Input/Radio', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('RadioItem', RadioItemStory);

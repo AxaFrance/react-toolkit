@@ -21,12 +21,13 @@ const ToggleButtonStory = () => (
   </ToggleButton>
 );
 
-const stories = storiesOf('Layout.Header.ToggleButton', module);
+const stories = storiesOf('Layout/Header/ToggleButton', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', ToggleButtonStory);

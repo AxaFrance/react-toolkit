@@ -99,12 +99,13 @@ const NewStepsStory = () => (
   </Steps>
 );
 
-const stories = storiesOf('Form.Steps', module);
+const stories = storiesOf('Form/Steps', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Old Design Steps', OldStepsStory);

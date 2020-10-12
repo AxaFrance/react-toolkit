@@ -45,6 +45,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Simple badge', BadgeStory);

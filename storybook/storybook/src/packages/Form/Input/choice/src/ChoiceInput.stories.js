@@ -97,12 +97,13 @@ const ChoiceStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Choice', module);
+const stories = storiesOf('Form/Input/Choice', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('ChoiceInput', ChoiceInputStory);

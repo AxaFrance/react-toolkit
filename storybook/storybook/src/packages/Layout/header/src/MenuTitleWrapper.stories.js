@@ -166,7 +166,7 @@ class MenuTitleWrapper extends React.Component {
 
 const MenuTitleWrapperStory = () => <MenuTitleWrapper />;
 
-const stories = storiesOf('Layout.Header.MenuTitleWrapper', module);
+const stories = storiesOf('Layout/Header/MenuTitleWrapper', module);
 
 stories.addParameters({
   viewport: {

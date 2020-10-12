@@ -100,12 +100,13 @@ const SliderStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Slider', module);
+const stories = storiesOf('Form/Input/Slider', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Slider', SliderStory);

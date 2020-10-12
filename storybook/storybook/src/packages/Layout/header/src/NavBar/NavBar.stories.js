@@ -461,12 +461,13 @@ const NavBarWithCustomLinkItemStory = () => (
   </NavBar>
 );
 
-const stories = storiesOf('Layout.Header.NavBar', module);
+const stories = storiesOf('Layout/Header/NavBar', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('NavBarBase', NavBarBaseStory);

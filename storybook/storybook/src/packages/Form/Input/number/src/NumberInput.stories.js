@@ -112,12 +112,13 @@ const NumberStory = () => (
   </form>
 );
 
-const stories = storiesOf('Form.Input.Number', module);
+const stories = storiesOf('Form/Input/Number', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Number', NumberStory);

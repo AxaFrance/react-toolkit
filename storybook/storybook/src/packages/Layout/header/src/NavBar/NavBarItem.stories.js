@@ -105,12 +105,13 @@ const ActiveWithChildren = () => (
   </div>
 );
 
-const stories = storiesOf('Layout.Header.NavBarItem', module);
+const stories = storiesOf('Layout/Header/NavBarItem', module);
 
 stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 stories.add('Default', defaultStory);

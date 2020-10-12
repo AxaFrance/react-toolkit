@@ -10,6 +10,7 @@ stories.addParameters({
   readme: {
     sidebar: readme,
   },
+  options: {},
 });
 
 const LoaderStory = () => (
