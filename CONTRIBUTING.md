@@ -1,5 +1,9 @@
 # Contributing to @axa-fr/react-toolkit
 
+## Prerequisite
+
+You must use a version of Node.js respecting the following rule `>=10.14.2` or `12.x` or `>=14`.
+
 ## Installation
 
 To get started with the repository:
