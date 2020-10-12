@@ -42,14 +42,14 @@ steps:
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
-  - script: npm i
-    displayName: 'npm install'
-
-  - script: npm ci --prefix storybook/storybook
+  - script: cd storybook/storybook && npm ci
     displayName: 'npm install storybook'
 
-  - script: npm ci --prefix storybook/design-system
+  - script: cd storybook/design-system && npm ci
     displayName: 'npm install design'
+
+  - script: npm i
+    displayName: 'npm install'
 
   - script: npm test -- --coverage
     displayName: 'npm test'
