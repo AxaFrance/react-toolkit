@@ -39,8 +39,11 @@ class NavBar extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ position: nextProps.positionInit });
+  static getDerivedStateFromProps(props, state) {
+    return {
+      ...state,
+      position: props.positionInit,
+    };
   }
 
   onFocus() {
