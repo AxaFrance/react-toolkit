@@ -39,13 +39,6 @@ class NavBar extends Component {
     };
   }
 
-  static getDerivedStateFromProps(props, state) {
-    return {
-      ...state,
-      position: props.positionInit,
-    };
-  }
-
   onFocus() {
     this.setState({ isMenuFocused: true });
   }
