@@ -18,10 +18,10 @@ At this point you are ready to contribute.
 
 This repository contains some projects used to display, explain components built previously.
 
-```bash
-├───storybook
-│   ├───design-system : a design system web app rendering & exposing code to use components
-│   ├───storybook : a storybook app to develop in isolated mode
+```
+└── storybook/
+    ├── design-system : a design system web app rendering & exposing code to use components
+    └── storybook : a storybook app to develop in isolated mode
 ```
 
 If you want to use these projects, you must:
