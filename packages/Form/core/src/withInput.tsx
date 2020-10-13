@@ -1,8 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Constants from './InputConstants';
 
-export const omit = (keys) => (props) => {
+export const omit = <T, K extends keyof T>(keys: K[]) => (
+  props: T
+): Partial<T> => {
   if (!keys) {
     return props;
   }
@@ -15,17 +17,35 @@ export const omit = (keys) => (props) => {
   return clonedProps;
 };
 
-const defaultOnChange = ({ name, onChange }) => (e) =>
-  onChange({ value: e.target.value, name, id: e.target.id });
+export type DefaultOnChangeProps = {
+  name: string;
+  onChange: (event: CustomOnChangeEvent) => void;
+};
 
+export type CustomOnChangeEvent = {
+  value: string;
+  name: string;
+  id: string;
+};
+const defaultOnChange = ({ name, onChange }: DefaultOnChangeProps) => (
+  e: React.ChangeEvent<HTMLInputElement>
+) => onChange({ value: e.target.value, name, id: e.target.id });
+
+type WithInputBaseProps = {
+  className: string;
+  classModifier: string;
+};
 export const withInput = (
-  defaultClassName,
+  defaultClassName: string,
   addPropTypes = {},
   addDefaultProps = {},
   withHandlersOverride = {},
   withPropsOverride = null
-) => (Component) => {
-  let defaultWithProps = ({ className, classModifier }) => ({
+) => (Component: React.ComponentClass) => {
+  let defaultWithProps = ({
+    className,
+    classModifier,
+  }: WithInputBaseProps) => ({
     componentClassName: ClassManager.getComponentClassName(
       className,
       classModifier,
@@ -41,7 +61,11 @@ export const withInput = (
     ...withHandlersOverride,
   };
 
-  const NewComponent = (props) => {
+  type NewComponentProps = {
+    isVisible: boolean;
+  } & WithInputBaseProps;
+
+  const NewComponent = (props: NewComponentProps) => {
     const { isVisible } = props;
     if (!isVisible) {
       return null;

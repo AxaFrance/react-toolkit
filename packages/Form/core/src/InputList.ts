@@ -1,9 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import FormClassManager from './FormClassManager';
-import Input from './Input';
+import Input, { Option } from './Input';
+import MessageTypes from './MessageTypes';
 
-const Clone = (data) => {
+type InputListCloneData = {
+  message: string;
+  messageType: MessageTypes;
+  child: React.ReactElement;
+  props: any;
+  wrapper: any;
+};
+
+const Clone = (data: InputListCloneData) => {
   const { props, child, wrapper, messageType, message } = data;
   const classModifier = FormClassManager.getMessageClassModifier(
     messageType,
@@ -18,11 +27,11 @@ const Clone = (data) => {
 };
 
 const getOptionClassName = (
-  className,
-  classModifier,
-  defaultClassName,
-  disabled
-) => {
+  className: string,
+  classModifier: string,
+  defaultClassName: string,
+  disabled: boolean
+): string => {
   const fieldinputClassModifier = FormClassManager.getFieldInputClassModifier(
     classModifier,
     disabled
@@ -35,7 +44,7 @@ const getOptionClassName = (
   return componentClassName;
 };
 
-const isDisabled = (option, disabled) =>
+const isDisabled = (option: Option, disabled: boolean) =>
   option.disabled !== undefined ? option.disabled : disabled;
 
 export default {

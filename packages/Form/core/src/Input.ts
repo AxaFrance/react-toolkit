@@ -1,5 +1,11 @@
 import React from 'react';
 
+export type Option = {
+  value: boolean;
+  label: string;
+  disabled?: boolean;
+};
+
 const eventWrapper = (wrapper, props) => ({
   onChange: (ev) => {
     wrapper.onChange(ev);

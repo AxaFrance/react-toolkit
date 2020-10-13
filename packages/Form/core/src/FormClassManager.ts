@@ -1,20 +1,20 @@
 import MessageTypes from './MessageTypes';
 
-const getFieldInputClassModifier = (modifier, disabled) => {
+const getFieldInputClassModifier = (modifier: string, disabled: boolean) => {
   if (disabled) {
     return `${modifier} disabled`;
   }
   return modifier;
 };
 
-const getInputClassModifier = (modifier, children) => {
+const getInputClassModifier = (modifier: string, children: React.ReactNode) => {
   if (children) {
     return `${modifier} hasinfobulle`;
   }
   return modifier;
 };
 
-const getModifier = (messageType) => {
+const getModifier = (messageType: MessageTypes) => {
   let modifier = 'error';
   switch (messageType) {
     case MessageTypes.success:
@@ -29,7 +29,11 @@ const getModifier = (messageType) => {
   return modifier;
 };
 
-const getMessageClassModifier = (messageType, message, modifier) => {
+const getMessageClassModifier = (
+  messageType: MessageTypes,
+  message: string,
+  modifier: string
+) => {
   if (message) {
     const messageModifier = getModifier(messageType);
     if (messageModifier) {

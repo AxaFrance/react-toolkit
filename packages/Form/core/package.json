@@ -2,7 +2,7 @@
   "name": "@axa-fr/react-toolkit-form-core",
   "version": "1.4.0-alpha.0",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
     "prepare": "node ../../../scripts/prepare.js"
