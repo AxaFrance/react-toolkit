@@ -48,7 +48,7 @@
     "bootstrap": "^4.2.1",
     "browser-sync": "^2.26.7",
     "chalk": "^2.4.1",
-    "colors": "1.1.2",
+    "colors": "1.4.0",
     "concurrently": "^3.6.1",
     "cross-env": " 5.2.0",
     "enzyme": "^3.8.0",
