@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'rc-slider';
-import 'rc-slider/dist/rc-slider.css';
+import 'rc-slider/assets/index.css';
 
 import {
   InputConstants as Constants,
