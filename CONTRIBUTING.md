@@ -77,12 +77,11 @@ npm test
 ```
 
 By default, `npm test` also runs the linter.
-You can skip this by calling `jest` directly:
+You can add args to `npm test` command with `--`:
 
 ```sh
-$ npm jest
-$ npm jest --watch
-$ npm jest --config jest.config.json
+$ npm test -- --watch
+$ npm test -- --config jest.config.json
 # etc
 ```
 

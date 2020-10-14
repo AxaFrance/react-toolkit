@@ -39,10 +39,6 @@ class NavBar extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ position: nextProps.positionInit });
-  }
-
   onFocus() {
     this.setState({ isMenuFocused: true });
   }

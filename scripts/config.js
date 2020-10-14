@@ -27,6 +27,7 @@ const sassConfig = {
     path.resolve(process.cwd(), assets),
     path.resolve(process.cwd(), bootstrap),
     path.resolve(process.cwd(), 'node_modules'),
+    path.resolve(process.cwd(), `packages/Form/Input/date/node_modules`),
     path.resolve(process.cwd(), `packages/all/node_modules`),
   ],
 };

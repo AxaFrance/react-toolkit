@@ -11,9 +11,7 @@ describe('<Name>', () => {
           subtitle="Baseline"
           img="test.svg"
           alt="Logo React"
-          onClick={() => {
-            null;
-          }}
+          onClick={() => null}
         />
       )
       .toJSON();
