@@ -2,9 +2,9 @@
 
 .af-header {
   &__title {
-    font-size: 1.4em;
+    font-size: 1.375em;
     line-height: 1em;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
     vertical-align: middle;
     display: table-cell;
   }
