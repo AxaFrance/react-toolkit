@@ -3,6 +3,7 @@
   "version": "1.3.23",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
