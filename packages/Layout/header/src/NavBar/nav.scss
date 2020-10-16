@@ -114,12 +114,14 @@ $mask-background: rgba(0, 0, 0, 0.5);
   &__link {
     padding: 0.8rem 1.1rem;
     text-align: left;
-    font-weight: 600;
     display: block;
 
     &:focus {
       box-shadow: 0 0 5px $color-axa;
       outline: none;
+    }
+    a:hover {
+      text-decoration: none;
     }
   }
 
