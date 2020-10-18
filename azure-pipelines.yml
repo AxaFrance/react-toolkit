@@ -45,9 +45,6 @@ steps:
   - script: cd storybook/storybook && npm ci
     displayName: 'npm install storybook'
 
-  - script: cd storybook/design-system && npm ci
-    displayName: 'npm install design'
-
   - script: npm i
     displayName: 'npm install'
 
@@ -59,9 +56,6 @@ steps:
 
   - script: npm run storybook:build
     displayName: 'build storybook'
-
-  - script: npm run design:build
-    displayName: 'build design'
 
   - script: |
       git config --global user.email "build-ci@axa.fr"

@@ -1,8 +1,0 @@
-extends ../../../../components/form/layouts/layout-form-field
-include ../../../../components/form/mixins/mixin-form-field-select
-
-block label
-  label.af-form__group-label(for="select1") Input Select *
-
-block input
-  +formFieldSelect({modifier:'error',modifierMessage:'error', iconMessage:'exclamation-sign', textMessage:"Message d'erreur"})

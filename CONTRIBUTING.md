@@ -24,16 +24,10 @@ This repository contains some projects used to display, explain components built
 
 ```
 └── storybook/
-    ├── design-system : a design system web app rendering & exposing code to use components
     └── storybook : a storybook app to develop in isolated mode
 ```
 
 If you want to use these projects, you must:
-
-```sh
-cd storybook/design-system
-npm ci
-```
 
 ```sh
 cd storybook/storybook

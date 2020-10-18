@@ -25,27 +25,11 @@ try {
     `./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}`
   );
 
-  const environment = require(`../tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/demo/environment.json`);
-  environment.baseUrl = `/react-toolkit/v${PREVIOUS_VERSION}/demo/`;
-
-  fs.writeFileSync(
-    `./tmp/AxaGuilDEv.github.io/react-toolkit/v${PREVIOUS_VERSION}/demo/environment.json`,
-    JSON.stringify(environment),
-    'utf8'
-  );
-
-  fs.copySync(
-    `./storybook/design-system/dist`,
-    `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/design`
-  );
   fs.copySync(
     `./storybook/storybook/storybook-static`,
     `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/storybook`
   );
-  fs.copySync(
-    `./examples/demo/build`,
-    `./tmp/AxaGuilDEv.github.io/react-toolkit/latest/demo`
-  );
+
   const versionToSave = { version: VERSION };
   fs.writeJSONSync(
     './tmp/AxaGuilDEv.github.io/react-toolkit/latest/version.json',

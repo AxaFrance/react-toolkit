@@ -1,4 +1,0 @@
-mixin TabsContentItem({index, modifier=''})
-    -const classComponent = setClass('tabs__content-item', modifier, true)
-    section(class=classComponent data-id=`tabs__content-item--${index}` role="tabpanel" )
-        block

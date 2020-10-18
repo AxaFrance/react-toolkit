@@ -45,6 +45,7 @@
     "@types/react-modal": "3.8.0",
     "@types/react-test-renderer": "^16.0.3",
     "auto-changelog": "^1.10.2",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^4.2.1",
     "browser-sync": "^2.26.7",
     "chalk": "^2.4.1",
