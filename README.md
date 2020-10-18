@@ -9,9 +9,9 @@
 - [Packages](#packages)
 - [Concept](#concept)
 - [How Does It Work](#how-does-it-work)
+- [List of supported browsers](#list-of-supported-browsers)
 - [Contribute](#contribute)
 - [Roadmap](#roadmap)
-- [Demo](#demo)
 
 ## About
 
@@ -115,6 +115,17 @@ Each component should be autonomous (HTML + CSS + JS) and extensible.
   - Components are stateless by default
   - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
+
+## List of supported browsers
+
+Here is the list of browsers we tested this toolkit on:
+
+- Chrome 84+
+- Firefox 79+
+- Microsoft Edge 85+
+- Internet Explorer 11
+- Safari 13.1+
+- Opera 71+
 
 ## Contribute
 
