@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 const withClassDefault = (defaultClassName: string) => (BaseComponent: Function) => {
   const Hoc = (props: any) => {
@@ -6,9 +6,9 @@ const withClassDefault = (defaultClassName: string) => (BaseComponent: Function)
         ...{ className: defaultClassName },
       ...props,
     };
-    return <BaseComponent {...newProps} />
+    return <BaseComponent {...newProps} />;
   };
   return Hoc;
 };
 
-export default withClassDefault
+export default withClassDefault;

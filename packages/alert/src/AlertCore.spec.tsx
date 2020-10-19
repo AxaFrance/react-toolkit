@@ -17,9 +17,9 @@ describe('<AlertCore />', () => {
   it('renders an error alert with exclamation icon and title', () => {
     const component = create(
       <AlertCore
-        iconClassName='glyphicon glyphicon-exclamation-sign'
-        classModifier='error'
-        title='Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis'
+        iconClassName="glyphicon glyphicon-exclamation-sign"
+        classModifier="error"
+        title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis"
       />
     );
     const json = component.toJSON();

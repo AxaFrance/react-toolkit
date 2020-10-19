@@ -18,22 +18,6 @@ A post-install action is thrown. This action first install dependencies with `le
 
 At this point you are ready to contribute.
 
-## Additional installations
-
-This repository contains some projects used to display, explain components built previously.
-
-```
-└── storybook/
-    └── storybook : a storybook app to develop in isolated mode
-```
-
-If you want to use these projects, you must:
-
-```sh
-cd storybook/storybook
-npm ci
-```
-
 ## How to work on a component
 
 Into a terminal, to start to develop a component you can run

@@ -1,5 +1,5 @@
 import * as classManager from './ClassManager';
-import withProps  from './withProps.hoc';
+import withProps from './withProps.hoc';
 import compose from './compose';
 
 export interface WithClassModifierOptions {

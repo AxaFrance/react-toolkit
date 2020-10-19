@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface ClickEvent {
   id?: string;
@@ -24,9 +24,9 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseCom
   }, {});
 
   const Hoc = (props:TOutter) => {
-    let handlerWithProps: {[k: string]: any} = {} ;
+    const handlerWithProps: {[k: string]: any} = {} ;
 
-    for (let property in handler) {
+    for (const property in handler) {
       if( handler.hasOwnProperty( property ) ) {
         handlerWithProps[property] = handler[property](props);
       }
@@ -35,7 +35,7 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseCom
       ...props,
       ...handlerWithProps,
     };
-    return <BaseComponent {...newProps} />
+    return <BaseComponent {...newProps} />;
   };
 
   return Hoc;

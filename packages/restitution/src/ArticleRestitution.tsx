@@ -10,8 +10,8 @@ const DEFAULT_CLASSNAME = 'af-restitution';
 
 type ArticleRestitutionBaseProps = {
   className?: string;
-  children : React.ReactNode;
-}
+  children: React.ReactNode;
+};
 
 type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps ;
 

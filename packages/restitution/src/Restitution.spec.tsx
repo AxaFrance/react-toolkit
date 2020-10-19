@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '.';
-import {create} from "react-test-renderer";
+import {create} from 'react-test-renderer';
 
 const RightTitle = () => {
   return (<a className="af-link af-link--hasIconLeft" href="#">
     <i className="glyphicon glyphicon-pencil"></i>
     <span className="af-link__text">Modifier</span>
-  </a>)
+  </a>);
 };
 
 const Component = (<ArticleRestitution>

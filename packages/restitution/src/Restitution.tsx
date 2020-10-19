@@ -10,13 +10,13 @@ const DEFAULT_CLASSNAME = 'af-restitution__listdef';
 
 type RestitutionValuesProps = {
   values: string[];
-}
+};
 
 type RestitutionBaseProps = Partial<RestitutionValuesProps> & {
   label: string;
   value?: string;
   className?: string;
-}
+};
 
 const RestitutionValues = ({ values }: RestitutionValuesProps) => {
   const li = values.map((v: string) => (
