@@ -30,9 +30,7 @@ const getComponentClassName = (
   if (modifiers) {
     modifiers.forEach(modifier => {
       if (/\S/.test(modifier)) {
-        modifiersObject[
-          `${classWithoutModifier}--${modifier}`
-        ] = classNameToUse;
+        modifiersObject[`${classWithoutModifier}--${modifier}`] = classNameToUse;
       }
     }, this);
   }

@@ -11,8 +11,5 @@ export {
   WithClickIdProps,
 } from './withClickId.hoc';
 export { default as withClassDefault } from './withClassDefault.hoc';
-export {
-  default as withClassModifier,
-  WithClassModifierOptions,
-} from './withClassModifier.hoc';
+export { default as withClassModifier, WithClassModifierOptions } from './withClassModifier.hoc';
 export * from './Models';

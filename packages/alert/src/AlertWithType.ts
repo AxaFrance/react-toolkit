@@ -13,13 +13,18 @@ export enum TypeIcons {
   success = 'glyphicon glyphicon-ok',
 }
 
-export const setWithProps = ({ type, classModifier, iconClassName, ...otherProps }: AlertWithTypeProps): AlertCoreProps => ({
+export const setWithProps = ({
+  type,
+  classModifier,
+  iconClassName,
+  ...otherProps
+}: AlertWithTypeProps): AlertCoreProps => ({
   ...otherProps,
   classModifier: classnames(classModifier, type),
   iconClassName: iconClassName || TypeIcons[type as keyof typeof TypeIcons],
 });
 
-const enhance =  compose(withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps))(AlertCore);
+const enhance = compose(withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps))(AlertCore);
 
 enhance.defaultProps = {
   type: 'error',

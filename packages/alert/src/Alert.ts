@@ -1,9 +1,6 @@
 import AlertCore, { AlertCoreProps } from './AlertCore';
 import icons from './icons';
-import {
-  withProps,
-  compose,
-} from '@axa-fr/react-toolkit-core';
+import { withProps, compose } from '@axa-fr/react-toolkit-core';
 
 const defaultClassModifier = 'error';
 

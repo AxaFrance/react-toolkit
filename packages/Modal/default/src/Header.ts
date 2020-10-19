@@ -3,8 +3,7 @@ import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 const onCancelEvent = 'onCancel';
 
-export interface HeaderProps
-  extends WithClickIdProps<HeaderCoreProps, typeof onCancelEvent> {
+export interface HeaderProps extends WithClickIdProps<HeaderCoreProps, typeof onCancelEvent> {
   title: string;
 }
 
@@ -15,7 +14,7 @@ const setWithProps = (props: HeaderProps) => ({
 
 const enchance = compose<HeaderCoreProps, HeaderProps>(
   withClickId({ event: [onCancelEvent] }),
-  withProps<HeaderProps, HeaderCoreProps>(setWithProps),
+  withProps<HeaderProps, HeaderCoreProps>(setWithProps)
 )(HeaderCore);
 
 enchance.displayName = 'Header';
