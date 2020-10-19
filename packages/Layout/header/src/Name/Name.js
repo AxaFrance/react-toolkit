@@ -44,7 +44,7 @@ class Name extends React.Component {
         </a>
         <h2 className="af-header__title">
           {title}
-          <small className="af-header__subtitle">{subtitle}</small>
+          <span className="af-header__subtitle">{subtitle}</span>
         </h2>
       </div>
     );

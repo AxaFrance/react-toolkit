@@ -19,11 +19,11 @@ exports[`<Name> renders Name correctly 1`] = `
     className="af-header__title"
   >
     Nom de l'application
-    <small
+    <span
       className="af-header__subtitle"
     >
       Baseline
-    </small>
+    </span>
   </h2>
 </div>
 `;

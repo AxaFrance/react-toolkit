@@ -397,6 +397,12 @@ const others = [
     },
     {
       title: 'COLOR',
+      name: 'color-text-contract',
+      hex: '#4d4d4d',
+      default: true,
+    },
+    {
+      title: 'COLOR',
       name: 'color-deep-sapphire',
       hex: '#00005b',
       default: true,
