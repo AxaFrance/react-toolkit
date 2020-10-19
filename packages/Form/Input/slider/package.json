@@ -15,7 +15,7 @@
     "@axa-fr/react-toolkit-core": "1.3.23",
     "@axa-fr/react-toolkit-form-core": "1.3.23",
     "prop-types": "15.5.10",
-    "rc-slider": "8.6.4"
+    "rc-slider": "9.5.3"
   },
   "license": "MIT",
   "publishConfig": {
