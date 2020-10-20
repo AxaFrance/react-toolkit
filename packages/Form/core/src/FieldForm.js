@@ -82,6 +82,19 @@ class FieldForm extends Component {
     };
   }
 
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { forceDisplayMessage, message, messageType } = this.props;
+    if (forceDisplayMessage !== nextProps.forceDisplayMessage) {
+      this.setState({
+        memory: {
+          message,
+          messageType,
+        },
+      });
+    }
+  }
+
   onChange() {
     const { hasChange } = this.state;
     if (!hasChange) {
@@ -130,19 +143,6 @@ class FieldForm extends Component {
       message,
       messageType,
     };
-  }
-
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const { forceDisplayMessage, message, messageType } = this.props;
-    if (forceDisplayMessage !== nextProps.forceDisplayMessage) {
-      this.setState({
-        memory: {
-          message,
-          messageType,
-        },
-      });
-    }
   }
 
   render() {

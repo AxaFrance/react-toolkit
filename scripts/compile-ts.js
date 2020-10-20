@@ -37,7 +37,7 @@ function handleExit(code, errorCallback) {
 }
 
 function tscfy(options = {}) {
-  const { watch = false, silent = true, errorCallback } = options;
+  const { watch = false, silent = false, errorCallback } = options;
   const tsConfigFile = 'tsconfig.json';
   if (!fs.existsSync(tsConfigFile)) {
     if (!silent) console.log(`No ${tsConfigFile}`);
