@@ -14,14 +14,19 @@ type SectionRestitutionRowBaseProps = {
   title?: React.ReactNode;
   classNameContainer?: string;
   className?: string;
-}
+};
 
-const SectionRestitutionRow = ({ title, className, classNameContainer, children }:SectionRestitutionRowBaseProps) => (<div className={className}>
+const SectionRestitutionRow = ({
+  title,
+  className,
+  classNameContainer,
+  children,
+}: SectionRestitutionRowBaseProps) => (
+  <div className={className}>
     {title && <SectionRestitutionTitle title={title} />}
-    <div className={classNameContainer}>
-      {children}
-    </div>
-  </div>);
+    <div className={classNameContainer}>{children}</div>
+  </div>
+);
 
 type SectionRestitutionRowProps = WithClassModifierOptions & SectionRestitutionRowBaseProps;
 
@@ -32,7 +37,7 @@ const enhance = compose<SectionRestitutionRowBaseProps, SectionRestitutionRowPro
 
 const defaultProps: Partial<SectionRestitutionRowBaseProps> = {
   children: null,
-  classNameContainer: "row af-restitution__content-left",
+  classNameContainer: 'row af-restitution__content-left',
   className:DEFAULT_CLASSNAME
 };
 

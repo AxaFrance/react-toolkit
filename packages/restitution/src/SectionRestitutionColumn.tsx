@@ -13,9 +13,9 @@ type SectionRestitutionColumnBaseProps = {
   className?: string;
   title?: string;
   children?: React.ReactNode;
-}
+};
 
-export const SectionRestitutionColumn = ({ children, className, title } : SectionRestitutionColumnBaseProps) => (
+export const SectionRestitutionColumn = ({ children, className, title }: SectionRestitutionColumnBaseProps) => (
     <div className={className}>
         {title && <SectionRestitutionTitle title={title} />}
        {children}

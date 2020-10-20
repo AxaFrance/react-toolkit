@@ -23,7 +23,7 @@ const TitleRaw: React.FC<TitleBaseProps> = ({ children, ...otherProps }) => (
 
 TitleRaw.defaultProps = defaultProps;
 
-interface TitleProps extends WithClassModifierOptions, TitleBaseProps {}
+export interface TitleProps extends WithClassModifierOptions, TitleBaseProps {}
 
 const enhance = compose<TitleBaseProps, TitleProps>(
   withClassDefault(DEFAULT_CLASSNAME),

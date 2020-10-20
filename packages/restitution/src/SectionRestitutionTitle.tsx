@@ -11,9 +11,9 @@ const DEFAULT_CLASSNAME = 'af-restitution__content-title';
 type RestitutionBaseProps = {
   title: React.ReactNode;
   className?: string;
-}
+};
 
-const Restitution = ({ title, className } : RestitutionBaseProps) => (
+const Restitution = ({ title, className }: RestitutionBaseProps) => (
     <div className={className}>{title}</div>
   );
 

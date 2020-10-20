@@ -8,10 +8,11 @@ function getCommand(watch) {
 
   const args = [
     '--root-mode upward',
-    '--ignore __mocks__/,**.spec.js,tests/*,__tests__/,**.test.js,stories/,**.story.js,**.stories.js,__snapshots__,**.tsx,**.ts',
     './src --out-dir ./dist',
+    '--ignore "./src/**/*.stories.js","./src/**/*.spec.js",".src/__snapshots__"',
     '--source-maps',
     '--copy-files',
+    '--no-copy-ignored'
   ];
 
   if (watch) {

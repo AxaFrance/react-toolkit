@@ -35,15 +35,12 @@ steps:
       cliProjectKey: 'AxaGuilDEv_react-toolkit'
       cliProjectName: 'react-toolkit'
       extraProperties: |
-        sonar.exclusions=**/*.stories.js,**/*.spec.js,**/*.spec.ts,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
+        sonar.exclusions=**/*.stories.js,**/*.stories.tsx,**/*.spec.js,**/*.spec.ts,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
         sonar.javascript.lcov.reportPaths=coverage/lcov.info
         sonar.sourceEncoding=UTF-8
         sonar.verbose=true
         sonar.cfamily.build-wrapper-output.bypass=true
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
-
-  - script: cd storybook/storybook && npm ci
-    displayName: 'npm install storybook'
 
   - script: npm i
     displayName: 'npm install'

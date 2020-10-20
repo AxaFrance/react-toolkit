@@ -1,4 +1,4 @@
-import  * as React from 'react';
+import * as React from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -13,7 +13,7 @@ type HeaderRestitutionBaseProps = {
   title:React.ReactNode;
   subtitle?:React.ReactNode;
   rightTitle?:React.ReactNode;
-}
+};
 
 const HeaderRestitution = ({ title, subtitle, rightTitle, className }: HeaderRestitutionBaseProps) => (
     <header className={className}>

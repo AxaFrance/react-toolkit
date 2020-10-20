@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import TabsStateless, { TabsStatelessProps } from './TabsStateless';
 
-const DEFAULT_ACTIVE_INDEX: string = '0';
+const DEFAULT_ACTIVE_INDEX = '0';
 
 export type TabsCoreProps = Tabs & Omit<TabsStatelessProps, 'activeIndex'>;
 
