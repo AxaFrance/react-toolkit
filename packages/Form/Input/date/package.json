@@ -14,7 +14,7 @@
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.3.23",
     "@axa-fr/react-toolkit-form-core": "1.3.23",
-    "moment": "2.23.0",
+    "moment": "2.29.1",
     "prop-types": "15.5.10",
     "react-datepicker": "1.8.0"
   },
