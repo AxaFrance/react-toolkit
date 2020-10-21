@@ -15,6 +15,7 @@
     "import/named": "warn",
     "import/prefer-default-export": "off",
     "jsx-a11y/aria-role": 1,
+    "jsx-a11y/control-has-associated-label": 1,
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/label-has-for": 1,
     "jsx-a11y/no-autofocus": 1,
@@ -32,6 +33,7 @@
     "react/no-unused-prop-types": 1,
     "react/prop-types": 0,
     "react/no-unescaped-entities": 1,
-    "react/jsx-closing-tag-location": 0
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-props-no-spreading": 1
   }
 }
