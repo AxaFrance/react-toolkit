@@ -16,13 +16,15 @@ const propTypes = {
   value: PropTypes.object,
   viewValue: PropTypes.string,
   locale: PropTypes.string,
+  format: PropTypes.string,
 };
 
 const defaultProps = {
   ...FieldConstants.defaultProps,
   value: null,
   viewValue: null,
-  locale: 'fr-fr',
+  locale: 'fr',
+  format: 'dd/MM/yyyy',
 };
 
 const DateInput = (props) => {
@@ -44,6 +46,7 @@ const DateInput = (props) => {
     name,
     value,
     locale,
+    format,
     viewValue,
     onChange,
     readOnly,
@@ -86,6 +89,7 @@ const DateInput = (props) => {
           id={inputId}
           value={value}
           locale={locale}
+          format={format}
           viewValue={viewValue}
           onChange={onChange}
           readOnly={readOnly}
