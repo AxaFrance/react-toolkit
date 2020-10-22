@@ -1,6 +1,6 @@
 import * as React from 'react';
-import withClickId from './withClickId.hoc';
 import { shallow } from 'enzyme';
+import withClickId from './withClickId.hoc';
 
 describe('withClickId', () => {
   interface ComponentWrapperProps

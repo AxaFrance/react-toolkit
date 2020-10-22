@@ -1,7 +1,7 @@
 import * as React from 'react';
-import AlertWithType, { TypeIcons } from './AlertWithType';
 import { create } from 'react-test-renderer';
-import { setWithProps } from './AlertWithType';
+import AlertWithType, { TypeIcons , setWithProps } from './AlertWithType';
+
 
 describe('<AlertWithType>', () => {
   describe('typePropsToCoreProps', () => {

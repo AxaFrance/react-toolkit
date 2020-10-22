@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { create } from 'react-test-renderer';
 import TabStateless from './TabsStateless';
 import Tab from './Tab';
-import { create } from 'react-test-renderer';
 
 const noop = () => {};
 describe('<TabStateless>', () => {

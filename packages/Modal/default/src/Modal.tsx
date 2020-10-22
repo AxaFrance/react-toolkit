@@ -11,8 +11,11 @@ ReactModal.setAppElement('body');
 
 class Modal extends React.PureComponent<ModalCoreProps> {
   public static readonly Body = Body;
+
   public static readonly Footer = Footer;
+
   public static readonly Header = Header;
+
   public static readonly HeaderBase = HeaderBase;
 
   public render() {

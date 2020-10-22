@@ -15,7 +15,7 @@ describe('<Summary>', () => {
 
   it('Renders correctly when visible', () => {
     const messages = ['Sample message 1', '', 'Sample message 2', null];
-    const tree = renderer.create(<Summary messages={messages} isVisible={true} />).toJSON();
+    const tree = renderer.create(<Summary messages={messages} isVisible />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

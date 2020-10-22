@@ -1,4 +1,4 @@
-export enum Modes {
+const enum Modes {
   default = 'default',
   light = 'light',
 }

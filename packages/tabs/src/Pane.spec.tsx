@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Pane from './Pane';
 import { create } from 'react-test-renderer';
+import Pane from './Pane';
 
 describe('<Pane>', () => {
   it('should render component', () => {
     const component = create(
-      <Pane active={true}>
+      <Pane active>
         <div>Content</div>
       </Pane>
     );

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import withClassDefault from './withClassDefault.hoc';
 import { mount } from 'enzyme';
+import withClassDefault from './withClassDefault.hoc';
 
 interface ComponentProps {
   className?: string;

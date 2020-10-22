@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { create } from 'react-test-renderer';
-import HeaderCore from './HeaderCore';
 import { mount } from 'enzyme';
+import HeaderCore from './HeaderCore';
 
 describe('<HeaderCore', () => {
   it('should render header', () => {

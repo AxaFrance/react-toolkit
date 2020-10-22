@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Body from './Body';
 import {create} from 'react-test-renderer';
+import Body from './Body';
 
 describe('<Body>', () => {
   it('should render component', () => {
