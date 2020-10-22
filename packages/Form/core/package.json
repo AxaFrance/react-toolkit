@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.3.23",
-    "cuid": "2.1.3",
+    "cuid": "2.1.8",
     "prop-types": "15.5.10"
   },
   "license": "MIT",
