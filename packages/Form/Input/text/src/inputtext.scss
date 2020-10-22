@@ -63,7 +63,7 @@
 
   &__input-text {
     border: 1px solid $color-silver;
-    padding: 0.5625rem 1.2rem;
+    padding: 0.625rem 1.25rem;
     font-size: 1em;
     line-height: 20px;
 
@@ -86,6 +86,8 @@
     position: absolute;
     display: block;
     bottom: -20px;
+    color: $color-gray;
+    font-size: 0.8125em;
   }
 
   &__clear {
@@ -101,7 +103,7 @@
     .glyphicon {
       width: 19px;
       height: 100%;
-      padding-top: 0px;
+      padding-top: 0;
       display: inherit;
     }
   }
