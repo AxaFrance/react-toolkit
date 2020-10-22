@@ -1,6 +1,7 @@
 import React from 'react';
 import PopoverBase from './PopoverBase';
 import PopoverPlacements from './PopoverPlacements';
+import { Story } from '@storybook/react/types-6-0';
 import Readme from '../README.md';
 import './help-custom.scss';
 
@@ -30,7 +31,8 @@ export default {
   },
 };
 
-const Template = args => (
+type PopoverBaseProps = React.ComponentProps<typeof PopoverBase>;
+const Template: Story<PopoverBaseProps> = (args) => (
   <div>
     <PopoverBase {...args}>
       <PopoverBase.Pop>
