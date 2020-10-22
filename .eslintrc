@@ -1,12 +1,15 @@
 {
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "node": true,
     "es6": true,
     "jest": true
   },
-  "extends": ["airbnb", "prettier", "prettier/react", "react-app"],
+  "extends": ["airbnb-typescript", "prettier", "prettier/@typescript-eslint", "prettier/react", "react-app"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": ["react", "prettier"],
   "rules": {
     "linebreak-style": 0,
