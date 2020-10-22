@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@axa-fr/react-toolkit-core": "1.3.23",
-		"@popperjs/core": "2.4.0",
+		"@popperjs/core": "2.5.3",
 		"prop-types": "15.5.10",
 		"react-popper": "2.2.3"
 	},
