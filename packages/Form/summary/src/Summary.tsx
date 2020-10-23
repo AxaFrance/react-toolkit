@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
 
 const defaultClassName = 'af-alert';

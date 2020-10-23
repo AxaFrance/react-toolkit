@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import TabsCore, { TabsCoreProps } from './TabsCore';
 import Tab from './Tab';

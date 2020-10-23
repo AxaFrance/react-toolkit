@@ -1,4 +1,4 @@
-import * as cuid from 'cuid';
+import cuid from 'cuid';
 
 // create id compatible for every browsers
 const createId = () => cuid();

@@ -1,4 +1,4 @@
-const enum Modes {
+enum Modes {
   default = 'default',
   light = 'light',
 }

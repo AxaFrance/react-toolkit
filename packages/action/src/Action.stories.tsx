@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Story } from '@storybook/react';
 import Action, { ActionProps } from './Action';
 import Readme from '../README.md';

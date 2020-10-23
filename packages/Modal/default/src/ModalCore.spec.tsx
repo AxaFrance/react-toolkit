@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
-import * as ReactModal from 'react-modal';
+import ReactModal from 'react-modal';
 import ModalCore from './ModalCore';
 
 describe('<ModalCore>', () => {

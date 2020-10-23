@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { withClassDefault, compose } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-tabs__pane';

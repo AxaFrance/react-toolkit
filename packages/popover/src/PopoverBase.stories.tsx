@@ -1,7 +1,7 @@
 import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
 import PopoverBase from './PopoverBase';
 import PopoverPlacements from './PopoverPlacements';
-import { Story } from '@storybook/react/types-6-0';
 import Readme from '../README.md';
 import './help-custom.scss';
 

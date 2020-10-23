@@ -1,6 +1,6 @@
 import { create } from 'react-test-renderer';
 import { mount } from 'enzyme';
-import * as React from 'react';
+import React from 'react';
 import Button from './Button';
 
 describe('<ButtonBase>', () => {

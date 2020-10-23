@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 import { CollapseProps } from './CollapseCardBase';
 import { HeaderToggleElement } from './Header';

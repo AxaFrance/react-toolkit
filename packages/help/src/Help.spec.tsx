@@ -1,9 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { mount, shallow } from 'enzyme';
+import Popover from '@axa-fr/react-toolkit-popover';
 import EnhancedHelp from './Help.container';
 import Help from './Help';
-// @ts-ignore
-import Popover from '@axa-fr/react-toolkit-popover';
 
 /* Render Component with enhanced ************************************ */
 describe('<Help> Render', () => {

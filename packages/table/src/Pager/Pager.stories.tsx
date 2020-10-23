@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Story } from '@storybook/react';
 import Pager, { PagerProps } from './Pager';
 import Modes from './Modes';

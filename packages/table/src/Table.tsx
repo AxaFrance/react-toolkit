@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Tr from './Tr';
 import Td from './Td';
 import Th from './Th';
