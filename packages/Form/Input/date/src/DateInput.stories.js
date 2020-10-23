@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   FieldForm,
   HelpMessage,
@@ -44,8 +44,6 @@ const CustomTemplate = ({
 const dateStory = new Date('02/25/2010');
 
 export const DateInputStory = Template.bind({});
-export const DateInputStoryRequired = Template.bind({});
-export const CustomDateStory = CustomTemplate.bind({});
 
 DateInputStory.args = {
   label: 'Date de naissance',
@@ -63,10 +61,14 @@ DateInputStory.args = {
   yearDropdownItemNumber: 6,
 };
 
+export const DateInputStoryRequired = Template.bind({});
+
 DateInputStoryRequired.args = {
   ...DateInputStory.args,
   classModifier: 'required',
 };
+
+export const CustomDateStory = CustomTemplate.bind({});
 
 CustomDateStory.args = {
   name: 'birthday',
