@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Constants } from '@axa-fr/react-toolkit-core';
 import PopoverBase from './PopoverBase';
 import PopoverModes from './PopoverModes';
-import { Placement } from '@popperjs/core';
+import Placement from './PopoverPlacements';
 
 const defaultProps = {
   ...Constants.defaultProps,
@@ -15,12 +15,7 @@ type Props = Partial<typeof defaultProps> & {
   children?: React.ReactNode;
 };
 
-const PopoverClick = ({
-  children,
-  placement,
-  className,
-  classModifier,
-}: Props) => {
+const PopoverClick = ({ children, placement, className, classModifier }: Props) => {
   const wrapperRef = React.useRef(null);
   const [isOpen, setOpen] = React.useState(false);
   const [isHover, setHover] = React.useState(false);
@@ -33,7 +28,9 @@ const PopoverClick = ({
     }
   };
 
-  const handleClick = (event: MouseEvent | React.MouseEvent | React.KeyboardEvent<HTMLDivElement>) => {
+  const handleClick = (
+    event: MouseEvent | React.MouseEvent | React.KeyboardEvent<HTMLDivElement>
+  ) => {
     if (isPopoverHover) {
       event.stopPropagation();
       return;
@@ -72,26 +69,23 @@ const PopoverClick = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onKeyDown={handleClick}
-      onClick={handleClick}>
+      onClick={handleClick}
+    >
       <PopoverBase
         onMouseEnter={handleMouseEnterPopover}
         onMouseLeave={handleMouseLeavePopover}
         isOpen={isOpen}
         placement={placement}
         className={className}
-        classModifier={classModifier}>
+        classModifier={classModifier}
+      >
         {children}
       </PopoverBase>
     </div>
   );
 };
 
-const PopoverOver = ({
-  children,
-  placement,
-  className,
-  classModifier,
-}: Props) => {
+const PopoverOver = ({ children, placement, className, classModifier }: Props) => {
   const [isOpen, setOpen] = React.useState(false);
 
   const handleMouseEnter = () => {
@@ -106,12 +100,14 @@ const PopoverOver = ({
     <div
       className="af-popover__wrapper"
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
+      onMouseLeave={handleMouseLeave}
+    >
       <PopoverBase
         isOpen={isOpen}
         placement={placement}
         className={className}
-        classModifier={classModifier}>
+        classModifier={classModifier}
+      >
         {children}
       </PopoverBase>
     </div>
@@ -120,32 +116,24 @@ const PopoverOver = ({
 
 export { PopoverClick, PopoverOver };
 
-const Popover = ({
-  children,
-  placement,
-  className,
-  classModifier,
-  mode,
-}: Props) => {
+const Popover = ({ children, placement, className, classModifier, mode }: Props) => {
   return mode === PopoverModes.click ? (
-    <PopoverClick
-      className={className}
-      classModifier={classModifier}
-      placement={placement}>
+    <PopoverClick className={className} classModifier={classModifier} placement={placement}>
       {children}
     </PopoverClick>
   ) : (
-    <PopoverOver
-      className={className}
-      classModifier={classModifier}
-      placement={placement}>
+    <PopoverOver className={className} classModifier={classModifier} placement={placement}>
       {children}
     </PopoverOver>
   );
 };
 
 Popover.Pop = PopoverBase.Pop;
+Popover.Pop.displayName = 'Popover.Pop';
+
 Popover.Over = PopoverBase.Over;
+Popover.Over.displayName = 'Popover.Over';
+
 Popover.defaultProps = defaultProps;
 
 export default Popover;
