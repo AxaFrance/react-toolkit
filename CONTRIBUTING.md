@@ -163,23 +163,56 @@ Keep in mind, though, that your pull request will be squashed into master, so re
 
 ## Scripts
 
-| Script name       | Description                                                                                                 |
-| ----------------- | ----------------------------------------------------------------------------------------------------------- |
-| `publish`         | Used by the CI to generate a new version.                                                                   |
-| `postinstall`     | Clean and build all compoents within the `packages` folder. It is ran just after the `npm install` command. |
-| `clean`           | Removes all the generated `dist` folders within the `packages` folder                                       |
-| `style`           | Generates all `.css` file from the Sass `.scss` files.                                                      |
-| `storybook`       | Lauches the [Storybook](#storybook) tool.                                                                   |
-| `storybook:build` | Builds the [Storybook](#storybook) tool.                                                                    |
-| `test`            | Builds the [Design System](#design-system) tool.                                                            |
-| `cover`           | Used by the CI to generate coverage files.                                                                  |
-| `lint`            | Launches both JS and TS linters                                                                             |
-| `lint:js`         | Launches JS linters, will fix whatever is possible to fix, for you.                                         |
-| `lint:ts`         | Launches TS linters, will fix whatever is possible to fix, for you.                                         |
-| `dev`             | Launches both JS and TS components in watch mode.                                                           |
-| `dev:js`          | Launches JS components in watch mode.                                                                       |
-| `dev:ts`          | Launches TS components in watch mode.                                                                       |
-| `changelog`       | Used by the CI to generate the changelog using commit messages                                              |
+| Script name          | Description                                                                                                 |
+| -------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `publish`            | Used by the CI to generate a new version.                                                                   |
+| `postinstall`        | Clean and build all compoents within the `packages` folder. It is ran just after the `npm install` command. |
+| `clean`              | Removes all the generated `dist` folders and `node_modules` folders within the `packages`.                  |
+| `clean:dist`         | Removes all the generated `dist` folders within the `packages` folder.                                      |
+| `clean:node_modules` | Removes all the `node_modules` folders within the `packages` folder (uses `lerna clean`).                   |
+| `style`              | Generates all `.css` file from the Sass `.scss` files.                                                      |
+| `storybook`          | Lauches the [Storybook](#storybook) tool.                                                                   |
+| `storybook:build`    | Builds the [Storybook](#storybook) tool.                                                                    |
+| `test`               | Builds the [Design System](#design-system) tool.                                                            |
+| `cover`              | Used by the CI to generate coverage files.                                                                  |
+| `lint`               | Launches both JS and TS linters                                                                             |
+| `lint:js`            | Launches JS linters, will fix whatever is possible to fix, for you.                                         |
+| `lint:ts`            | Launches TS linters, will fix whatever is possible to fix, for you.                                         |
+| `dev`                | Launches both JS and TS components in watch mode.                                                           |
+| `dev:js`             | Launches JS components in watch mode.                                                                       |
+| `dev:ts`             | Launches TS components in watch mode.                                                                       |
+| `changelog`          | Used by the CI to generate the changelog using commit messages                                              |
+
+## Troubleshooting
+
+### Some tests are not working after I switched branch
+
+Aftet switching for one branch to another, you may have issues with tests. This is due to the fact that some dependencies may have changed.
+
+The quickest way to fix it is to make sure all your packages are correctly installed. For this, make sure you are in the root folder and then run this command:
+```sh
+npm ci
+```
+
+This will :
+
+- Erase your `node_modules` folder in the react-toolkit root folder;
+- Install dependencies from the `package-lock.json`in a fresh `node_modules` folder;
+- Erase all `node_modules` in all packages;
+- Erase all `dist` in all packages;
+- run `lerna bootstrap` to install all packages.
+
+Tests should run perfectly after this!
+
+
+### When `lerna clean` did not work...
+
+In some cases, `lerna clean` may fail... then you will have to remove manually all `node_modules`folders.
+
+Best way to do it on a Linux / Mac:
+```sh
+find . -name "node_modules" -type d -prune -exec rm -rf '{​​​​​​​​}​​​​​​​​' +
+```
 
 ## Pull Request
 
