@@ -66,7 +66,8 @@ class ModalBoolean extends React.Component {
       <Modal
         isOpen={isOpen}
         className={componentClassName}
-        onOutsideTap={this.onCancel}>
+        onOutsideTap={this.onCancel}
+        title={title}>
         <Modal.Header title={title} onCancel={this.onCancel} />
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
