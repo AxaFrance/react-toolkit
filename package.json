@@ -14,8 +14,6 @@
     "storybook": "start-storybook -p 9009 -s storybook-public",
     "storybook:build": "build-storybook -s storybook-public -c .storybook -o storybook-static && npm run toolkit:build",
     "toolkit:build": "node ./scripts/inject-version.js",
-    "design": "npm -C ./storybook/design-system run start",
-    "design:build": "npm -C ./storybook/design-system run build",
     "test": "jest --config jest.config.json",
     "cover": "jest --no-cache --config ./jest.config.json --coverage",
     "check": "npm run check:formatting && npm run check:quality",
