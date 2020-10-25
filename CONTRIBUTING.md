@@ -59,17 +59,21 @@ git fetch upstream
 git rebase upstream/master
 ```
 
+More information in github documentation: [Fork a repo#Keep your fork synced](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo#keep-your-fork-synced)
+
 ## How to work on a component
 
 ### Architecture of a component
 
+Here's an example in JS:
 ```text
 ├── dist/ : contains the generated JS/CSS files (in the postinstall process).
 ├── src/
     ├── __snapshots__ : generated storybook snapshots used to test the component.
-    ├── GreatComponent.js : contains the react component code.
+    ├── GreatComponent.js : the react component code.
     ├── GreatComponent.md : more documentation about the component (props, ...).
     ├── GreatComponent.spec.js : all unit tests for the component.
+    ├── GreatComponent.stories.js : examples to be shown in the Storybook tool.
     ├── great-component.scss : Sass file, complying to BEM convention
     └── index.js : should export your component(s).
 ├── LICENSE : specific license of the component (keep it MIT for now)
@@ -154,6 +158,8 @@ Do not forget to update the component status page, located in this repository at
             └─ markdown/
                 └─ content.md
 ```
+
+Direct link (on master branch): [content.md](https://github.com/AxaGuilDEv/design-system/blob/master/src/pages/get-started/component-status/markdown/content.md)
 
 ### Commit messages
 
