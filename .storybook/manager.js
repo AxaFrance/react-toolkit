@@ -4,7 +4,7 @@ import { create } from '@storybook/theming/create';
 const theme = create({
   base: 'light',
   brandTitle: '@axa-fr/react-toolkit-all',
-  brandUrl: 'https://www.axa.fr',
+  brandUrl: 'https://axaguildev.github.io/design-system/',
 });
 
 addons.setConfig({
