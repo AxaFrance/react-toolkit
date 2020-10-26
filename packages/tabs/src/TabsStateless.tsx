@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Constants, ClassManager } from '@axa-fr/react-toolkit-core';
 import { TabProps } from './Tab';
 import Title from './Title';

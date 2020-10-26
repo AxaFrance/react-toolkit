@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const withProps = <TInner extends {}, TOutter extends {}>(propsMapper: Function) => (BaseComponent: Function) => {
   const Hoc = (props:TOutter) => {

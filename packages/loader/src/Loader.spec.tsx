@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { render } from 'enzyme';
 import Loader from './Loader';
 import LoaderModes from './LoaderModes';
-import { render } from 'enzyme';
 
 describe('<Loader>', () => {
   it('renders Loader correctly', () => {

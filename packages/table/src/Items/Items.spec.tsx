@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import { create } from 'react-test-renderer';
 import Items from './Items';

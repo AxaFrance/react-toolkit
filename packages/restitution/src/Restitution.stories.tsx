@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { action } from '@storybook/addon-actions';
 import ArticleRestitution from './ArticleRestitution';
 import HeaderRestitution from './HeaderRestitution';

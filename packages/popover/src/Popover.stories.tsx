@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { Story } from '@storybook/react/types-6-0';
 import Popover from './Popover';
 import PopoverPlacements from './PopoverPlacements';
 import PopoverModes from './PopoverModes';
-import { Story } from '@storybook/react/types-6-0';
 import Readme from '../README.md';
 
 export default {

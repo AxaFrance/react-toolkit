@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const withClassDefault = (defaultClassName: string) => (BaseComponent: Function) => {
   const Hoc = (props: any) => {

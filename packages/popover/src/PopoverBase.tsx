@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { usePopper } from 'react-popper';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 import Placement from './PopoverPlacements';

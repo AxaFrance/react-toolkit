@@ -1,6 +1,6 @@
-import * as React from 'react';
-import withClassModifier, { WithClassModifierOptions } from './withClassModifier.hoc';
+import React from 'react';
 import { mount } from 'enzyme';
+import withClassModifier, { WithClassModifierOptions } from './withClassModifier.hoc';
 
 const CLASS_TEST = 'af-class-test';
 const CLASS_MODIFIER = 'blue';

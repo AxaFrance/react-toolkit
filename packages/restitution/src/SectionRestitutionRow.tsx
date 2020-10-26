@@ -1,11 +1,11 @@
-import * as React from 'react';
-import SectionRestitutionTitle from './SectionRestitutionTitle';
+import React from 'react';
 import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
   compose
 } from '@axa-fr/react-toolkit-core';
+import SectionRestitutionTitle from './SectionRestitutionTitle';
 
 const DEFAULT_CLASSNAME = 'col col-sm-12 col-md-12 col-lg-12 col-xl-12';
 

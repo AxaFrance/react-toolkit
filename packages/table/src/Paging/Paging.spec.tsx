@@ -1,7 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { create } from 'react-test-renderer';
 import Paging from './Paging';
-import Items from '../Items/Items';
 import Modes from '../Pager/Modes';
 
 describe('Table.Paging', () => {

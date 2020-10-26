@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   withClassDefault,
   withClickId,
@@ -29,6 +29,7 @@ const Title: React.SFC<TitleComponentProps & TitleHandlerProps> = ({
   id,
 }) => (
   <li className={className}>
+    {/* eslint-disable-next-line react/button-has-type */}
     <button id={id} className="af-tabs__link" onClick={onChange}>
       {children}
     </button>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Badge from '@axa-fr/react-toolkit-badge';
 import { Story } from '@storybook/react';
 import Tabs from './Tabs';

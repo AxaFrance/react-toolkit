@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { create } from 'react-test-renderer';
 import HeaderBase from './HeaderBase';
 
-import { create } from 'react-test-renderer';
 
 describe('<HeaderBase>', () => {
   it('should render header', () => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { text, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import Badge from './Badge';

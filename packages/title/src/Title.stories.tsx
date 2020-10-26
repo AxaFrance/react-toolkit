@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import { Story } from '@storybook/react';
 import Title, { TitleProps } from './Title';
 import Readme from '../README.md';
-import { Story } from '@storybook/react';
 
 export default {
   title: 'Title',

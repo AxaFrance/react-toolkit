@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { number, select, text } from '@storybook/addon-knobs';
 import Table from './Table';
 import Paging from './Paging/Paging';

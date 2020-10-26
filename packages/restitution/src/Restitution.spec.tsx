@@ -1,18 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 
-import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '.';
 import {create} from 'react-test-renderer';
+import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '.';
 
 const RightTitle = () => {
   return (<a className="af-link af-link--hasIconLeft" href="#">
-    <i className="glyphicon glyphicon-pencil"></i>
+    <i className="glyphicon glyphicon-pencil" />
     <span className="af-link__text">Modifier</span>
   </a>);
 };
 
 const Component = (<ArticleRestitution>
-  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTitle/>}>
-  </HeaderRestitution>
+  <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" rightTitle={<RightTitle/>} />
   <SectionRestitution >
     <SectionRestitutionRow title="Base de calcul des prestations">
       <SectionRestitutionColumn>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { withClassDefault, withClassModifier, PropsManager, compose, withProps } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'btn af-btn--circle';

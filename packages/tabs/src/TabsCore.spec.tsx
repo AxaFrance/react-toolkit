@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { create } from 'react-test-renderer';
 import TabsCore, { onChangeEvent } from './TabsCore';
 import Tab from './Tab';

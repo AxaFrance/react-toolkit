@@ -1,6 +1,6 @@
-import AlertCore, { AlertCoreProps } from './AlertCore';
 import { withProps, compose } from '@axa-fr/react-toolkit-core';
 import classnames from 'classnames';
+import AlertCore, { AlertCoreProps } from './AlertCore';
 
 export interface AlertWithTypeProps extends AlertCoreProps {
   type?: 'error' | 'danger' | 'info' | 'success';

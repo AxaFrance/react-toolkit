@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text, boolean } from '@storybook/addon-knobs';
 import Footer from './Footer';
 import FooterCore from './FooterCore';
-import { text, boolean } from '@storybook/addon-knobs';
 import readme from '../README.md';
 
 const FooterStory = () => (

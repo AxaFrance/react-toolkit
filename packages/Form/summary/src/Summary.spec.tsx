@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
+import React from 'react';
+import renderer from 'react-test-renderer';
 import { Summary } from './index';
 
 describe('<Summary>', () => {
@@ -15,7 +15,7 @@ describe('<Summary>', () => {
 
   it('Renders correctly when visible', () => {
     const messages = ['Sample message 1', '', 'Sample message 2', null];
-    const tree = renderer.create(<Summary messages={messages} isVisible={true} />).toJSON();
+    const tree = renderer.create(<Summary messages={messages} isVisible />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { WithVisibilityOption } from '@axa-fr/react-toolkit-core';
 
 export type LiPointProps = WithVisibilityOption &

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactModal from 'react-modal';
+import React from 'react';
+import ReactModal from 'react-modal';
 import {
   withClassDefault,
   withClassModifier,
