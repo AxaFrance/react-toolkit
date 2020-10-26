@@ -1,21 +1,16 @@
 import React from 'react';
-import { text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/react';
+import { Story } from '@storybook/react';
 import Modal from './Modal';
 import ModalCore from './ModalCore';
 import Body from './Body';
 import Footer from './Footer';
 import HeaderBase from './HeaderBase';
 import readme from '../README.md';
+import { ModalCoreProps } from '../dist';
 
-const CustomHeaderStory = () => (
+const CustomHeaderStoryTemplate: Story<ModalCoreProps> = (args) => (
   <div>
-    <Modal
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}
-      isOpen={boolean('isOpen', true)}
-      onOutsideTap={action('onOutsideTap')}>
+    <Modal {...args}>
       <Modal.HeaderBase id="headerId">
         <p>
           Ici je controle completement <b>le contenu</b>
@@ -43,13 +38,15 @@ const CustomHeaderStory = () => (
   </div>
 );
 
-const ModalCoreStory = () => (
+export const CustomHeaderStory = CustomHeaderStoryTemplate.bind({});
+CustomHeaderStory.args = {
+  isOpen: true,
+  title: 'Titre de la modale',
+};
+
+const ModalCoreStoryTemplate: Story<ModalCoreProps> = (args) => (
   <div>
-    <ModalCore
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}
-      isOpen={boolean('isOpen', true)}
-      onOutsideTap={action('onOutsideTap')}>
+    <ModalCore {...args}>
       <HeaderBase id="headerId">
         <p>
           Ici je controle completement <b>le contenu</b>
@@ -76,15 +73,22 @@ const ModalCoreStory = () => (
     </ModalCore>
   </div>
 );
+export const ModalCoreStrory = ModalCoreStoryTemplate.bind({});
+ModalCoreStrory.args = {
+  isOpen: true,
+  title: 'Titre de la modale',
+};
 
-const stories = storiesOf('Modal/Default', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
+export default {
+  title: 'Modal/Default',
+  component: Modal,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    options: {},
   },
-  options: {},
-});
-
-stories.add('Modal core', ModalCoreStory);
-stories.add('Custom header', CustomHeaderStory);
+  argTypes: {
+    onOutsideTap: { action: 'onOutsideTap' },
+  },
+};

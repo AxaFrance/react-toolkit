@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -8,16 +8,13 @@ import {
 
 const DEFAULT_CLASSNAME = 'af-modal__header';
 
-interface HeaderCoreComponentProps {
+type HeaderCoreComponentProps = {
   className?: string;
-  onCancel: React.MouseEventHandler<HTMLButtonElement>;
-}
+  onCancel: MouseEventHandler<HTMLButtonElement>;
+  children: ReactNode;
+};
 
-const HeaderCoreRaw: React.SFC<HeaderCoreProps> = ({
-  className,
-  children,
-  onCancel,
-}) => (
+const HeaderCoreRaw = ({ className, children, onCancel }: HeaderCoreProps) => (
   <div className={className}>
     <h4 className="af-modal__header-title">{children}</h4>
     <button

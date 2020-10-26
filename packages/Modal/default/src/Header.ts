@@ -8,10 +8,12 @@ import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 const onCancelEvent = 'onCancel';
 
-export interface HeaderProps
-  extends WithClickIdProps<HeaderCoreProps, typeof onCancelEvent> {
+export type HeaderProps = WithClickIdProps<
+  HeaderCoreProps,
+  typeof onCancelEvent
+> & {
   title: string;
-}
+};
 
 const setWithProps = (props: HeaderProps) => ({
   ...props,

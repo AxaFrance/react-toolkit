@@ -17,4 +17,5 @@ const enhance = compose<DivProps, FooterProps>(
 
 const Enhanced = enhance(Div);
 Enhanced.displayName = 'Footer';
+
 export default Enhanced;

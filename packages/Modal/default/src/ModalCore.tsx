@@ -1,24 +1,22 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import ReactModal from 'react-modal';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-} from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-modal';
 
 ReactModal.setAppElement('body');
 
-interface ModalCoreComponentProps {
+const defaultProps = {
+  className: DEFAULT_CLASSNAME,
+  title: '',
+};
+
+export type ModalCoreProps = Partial<typeof defaultProps> & {
   isOpen: boolean;
   onOutsideTap: (event: React.MouseEvent | React.KeyboardEvent) => void;
-  className?: string;
-  title?:string
-}
+  children: ReactNode;
+};
 
-const ModalCoreRaw: React.SFC<ModalCoreComponentProps> = (props) => (
+const ModalCoreRaw = (props: ModalCoreProps) => (
   <ReactModal
     className={props.className}
     isOpen={props.isOpen}
@@ -27,20 +25,12 @@ const ModalCoreRaw: React.SFC<ModalCoreComponentProps> = (props) => (
     }}
     contentLabel={props.title}
     onRequestClose={props.onOutsideTap}>
-
     <div className="af-modal__dialog">
       <div className="af-modal__content">{props.children}</div>
     </div>
   </ReactModal>
 );
 
-export type ModalCoreProps = ModalCoreComponentProps & WithClassModifierOptions;
+ModalCoreRaw.defaultProps = defaultProps;
 
-const enhance = compose<ModalCoreComponentProps, ModalCoreProps>(
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
-);
-
-const Enhanced = enhance(ModalCoreRaw);
-Enhanced.displayName = 'ModalCore';
-export default Enhanced;
+export default ModalCoreRaw;
