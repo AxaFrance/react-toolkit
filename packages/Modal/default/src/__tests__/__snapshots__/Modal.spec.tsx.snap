@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal> should render modal 1`] = `
+<DocumentFragment>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+    >
+      <div
+        aria-label=""
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open af-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="af-modal__dialog"
+        >
+          <div
+            class="af-modal__content"
+          >
+            Content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
