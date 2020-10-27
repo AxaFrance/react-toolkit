@@ -11,7 +11,7 @@ const defaultProps = {
   isVisible: true,
 };
 
-const HelpMessage = props => {
+const HelpMessage = (props) => {
   const { message, isVisible } = props;
   if (isVisible) {
     return <small className="af-form__help">{message}</small>;
@@ -22,7 +22,7 @@ const HelpMessage = props => {
 HelpMessage.propTypes = propTypes;
 HelpMessage.defaultProps = defaultProps;
 
-HelpMessage.Clone = data => {
+HelpMessage.Clone = (data) => {
   const { props, message, child } = data;
   return React.cloneElement(child, {
     ...props,

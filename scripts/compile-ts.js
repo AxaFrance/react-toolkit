@@ -15,7 +15,7 @@ function getCommand(watch) {
     '-d true',
     `--declarationDir ${output}`,
     '--declarationMap true',
-    "--listEmittedFiles true"
+    '--listEmittedFiles true',
   ];
 
   if (watch) {

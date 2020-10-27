@@ -5,7 +5,7 @@ import { typesField, strengthList } from './Constant';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const Pass = props => {
+const Pass = (props) => {
   const {
     id,
     name,
@@ -46,9 +46,9 @@ const Pass = props => {
         type="button"
         onClick={onToggleType}>
         <i
-          className={`glyphicon glyphicon-eye${type === 'text'
-            ? '-close'
-            : '-open'}`}
+          className={`glyphicon glyphicon-eye${
+            type === 'text' ? '-close' : '-open'
+          }`}
         />
       </button>
     </div>
@@ -78,7 +78,7 @@ const defaultProps = {
 };
 
 export const handlers = {
-  onToggleType: ({ onToggleType }) => e => {
+  onToggleType: ({ onToggleType }) => (e) => {
     e.preventDefault();
     e.stopPropagation();
     onToggleType();

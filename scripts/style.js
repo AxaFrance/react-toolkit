@@ -59,12 +59,12 @@ const getScssFiles = () => {
   }
 };
 
-const cleanPathScssPackagesFiles = allScssFiles =>
-  allScssFiles.map(file => file.replace(/\\/g, '/'));
+const cleanPathScssPackagesFiles = (allScssFiles) =>
+  allScssFiles.map((file) => file.replace(/\\/g, '/'));
 
-const getScssPackagesFiles = allScssFiles =>
+const getScssPackagesFiles = (allScssFiles) =>
   allScssFiles.filter(
-    pathFile =>
+    (pathFile) =>
       pathFile.includes(`/${src}`) &&
       !pathFile.includes(`${coreSrc}`) &&
       !pathFile.includes(`${packages}/all/${src}`) &&
@@ -76,9 +76,9 @@ const getScssPackagesFiles = allScssFiles =>
  * Transform all src/.../file.scss files founded and compile to dist/.../af-file.css
  * All .scss files are copied in /dist
  */
-const prepareStylePackages = packagesScssfiles => {
+const prepareStylePackages = (packagesScssfiles) => {
   logStart('Build style packages', true);
-  packagesScssfiles.forEach(scssFile => {
+  packagesScssfiles.forEach((scssFile) => {
     const outputPath = `${path
       .dirname(scssFile)
       .replace(`/${src}`, `/${dist}`)}`;
@@ -116,18 +116,18 @@ const renderSass = (file, outputPath, outputName) => {
 const writeCssFiles = (result, outFile) => {
   postcss([autoprefixer(autoprefixerConfig)])
     .process(result.css, { from: undefined })
-    .then(resultAutoprefixed => {
+    .then((resultAutoprefixed) => {
       fs.writeFile(
         outFile,
         new CleanCSS(cleanCssConfig).minify(resultAutoprefixed.css).styles,
-        err => {
+        (err) => {
           if (err) {
             console.log('ERR CSS', err);
           }
         }
       );
 
-      fs.writeFile(`${outFile}.map`, result.map, err => {
+      fs.writeFile(`${outFile}.map`, result.map, (err) => {
         if (err) {
           console.log('ERR MAP', err);
         }
@@ -139,7 +139,7 @@ const writeCssFiles = (result, outFile) => {
 /* Generate and Compile SCSS files to CSS files for /all package              */
 /**************************************************************************** */
 
-const setFileImport = filePath => {
+const setFileImport = (filePath) => {
   const fileSplit = filePath.split('/src/');
   const basePath = fileSplit[0]
     .replace('packages/', '')
@@ -151,10 +151,10 @@ const setFileImport = filePath => {
 /**
  * generation package /all Scss
  */
-const generateAfToolkitCore = packagesScssfiles => {
+const generateAfToolkitCore = (packagesScssfiles) => {
   logStart('af-toolkit-core', true);
   const imports = packagesScssfiles
-    .map(scssFile => setFileImport(scssFile))
+    .map((scssFile) => setFileImport(scssFile))
     .join('\n');
 
   generateContentScss(imports, 'af-toolkit-core');
@@ -187,10 +187,10 @@ const generateContentScss = (imports, name) => {
 const generateColorsSassFile = () => {
   logStart('Colors Sass File', true);
   const outputColors = ['// stylelint-disable color-no-hex'];
-  Object.keys(colors).forEach(key => {
+  Object.keys(colors).forEach((key) => {
     outputColors.push(`// ${key}`);
-    colors[key].forEach(listColors => {
-      listColors.forEach(color => {
+    colors[key].forEach((listColors) => {
+      listColors.forEach((color) => {
         outputColors.push(
           `$${color.name}: ${color.hex}${color.default ? ' !default' : ''};`
         );

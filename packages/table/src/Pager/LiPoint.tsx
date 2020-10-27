@@ -4,7 +4,7 @@ import { WithVisibilityOption } from '@axa-fr/react-toolkit-core';
 export type LiPointProps = WithVisibilityOption &
   React.HTMLProps<HTMLAnchorElement>;
 
-const LiPoint: React.SFC<LiPointProps> = props => {
+const LiPoint: React.SFC<LiPointProps> = (props) => {
   const { isVisible, children } = props;
   if (!isVisible) {
     return null;

@@ -119,8 +119,7 @@ const AccordionSingleStory = () => (
     classModifier={text('classModifier', '')}
     className={text('className', '')}
     onlyOne={boolean('onlyOne', true)}>
-    <CollapseCardBase
-      id="idcollaspe1">
+    <CollapseCardBase id="idcollaspe1">
       <CollapseCard.Header>
         {text(KNOBS_LABELS.collapse1.title, LABELS.collapse1.title)}
       </CollapseCard.Header>

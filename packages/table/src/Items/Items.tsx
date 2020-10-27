@@ -54,7 +54,7 @@ class Items extends React.PureComponent<ItemsComponentProps> {
       numberItems,
     } = this.props;
 
-    const content = items.map(item => (
+    const content = items.map((item) => (
       <option key={item} value={item}>
         {item}
       </option>

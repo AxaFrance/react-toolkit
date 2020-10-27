@@ -13,11 +13,15 @@ interface PaneComponentProps extends DivProps {
   className?: string;
   children?: React.ReactNode;
 }
-const Pane: React.SFC<PaneComponentProps> = ({ children, className, active }) => {
-  if(!active) {
+const Pane: React.SFC<PaneComponentProps> = ({
+  children,
+  className,
+  active,
+}) => {
+  if (!active) {
     return null;
   }
-  return (<div className={className}>{children}</div>);
+  return <div className={className}>{children}</div>;
 };
 
 const enchance = compose<PaneComponentProps, PaneComponentProps>(

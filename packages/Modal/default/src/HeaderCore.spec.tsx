@@ -5,7 +5,9 @@ import HeaderCore from './HeaderCore';
 
 describe('<HeaderCore', () => {
   it('should render header', () => {
-    const component = create(<HeaderCore onCancel={jest.fn()}>Title</HeaderCore>);
+    const component = create(
+      <HeaderCore onCancel={jest.fn()}>Title</HeaderCore>
+    );
     const json = component.toJSON();
     expect(json).toMatchSnapshot();
   });

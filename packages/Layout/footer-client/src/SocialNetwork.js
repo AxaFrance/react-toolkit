@@ -20,7 +20,7 @@ const icon = {
 };
 
 class SocialNetwork extends React.Component {
-  onClick = path => event => {
+  onClick = (path) => (event) => {
     const { onClick } = this.props;
     if (onClick) {
       onClick({ path, event });
@@ -32,7 +32,7 @@ class SocialNetwork extends React.Component {
     return (
       <ul className="social-network__list">
         {Object.keys(list).map(
-          key =>
+          (key) =>
             key && (
               <li className="social-network__item">
                 <a

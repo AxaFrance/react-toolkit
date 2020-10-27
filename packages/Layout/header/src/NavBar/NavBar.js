@@ -50,7 +50,7 @@ class NavBar extends Component {
   getValidChildren() {
     const { children } = this.props;
     if (children && children.length) {
-      return children.filter(c => !!c);
+      return children.filter((c) => !!c);
     }
     return children;
   }

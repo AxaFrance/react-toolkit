@@ -150,10 +150,7 @@ const SwitchInputStoryRequired = () => (
       KNOBS_LABELS.SwitchInput.isVisible,
       LABELS.SwitchInput.isVisible
     )}
-    classModifier={text(
-      KNOBS_LABELS.SwitchInput.classModifier,
-      'required'
-    )}
+    classModifier={text(KNOBS_LABELS.SwitchInput.classModifier, 'required')}
     className={text(
       KNOBS_LABELS.SwitchInput.className,
       LABELS.SwitchInput.className

@@ -24,7 +24,7 @@ const defaultProps = {
   value: null,
 };
 
-const SwitchInput = props => {
+const SwitchInput = (props) => {
   const {
     classModifier,
     message,

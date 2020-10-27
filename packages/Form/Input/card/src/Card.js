@@ -25,13 +25,13 @@ const defaultProps = {
 
 /**
  * Get a duplicate component from a children. If not, return null
-* @param {*} children
+ * @param {*} children
  */
 function getDuplicateComponent(children) {
   const array = [];
   let duplicateComponent = null;
 
-  children.forEach(child => {
+  children.forEach((child) => {
     const typeName = child.type.displayName;
 
     if (array.includes(typeName)) {
@@ -45,8 +45,8 @@ function getDuplicateComponent(children) {
 
 /**
  * Return a new array with removed index
-* @param {*} arr to evaluate
-* @param {*} index to remove
+ * @param {*} arr to evaluate
+ * @param {*} index to remove
  */
 function getArrayWithRemovedIndex(arr, index) {
   const newArr = [...arr];
@@ -55,14 +55,14 @@ function getArrayWithRemovedIndex(arr, index) {
 }
 
 /**
- * 
-* @param {*} children
+ *
+ * @param {*} children
  * Return an object with sorted children (header and other children)
  */
-const getSortedChildren = children => {
+const getSortedChildren = (children) => {
   const childrenArray = React.Children.toArray(children);
   const headerIndex = childrenArray.findIndex(
-    child => child.type === CardHeader
+    (child) => child.type === CardHeader
   );
 
   const header = childrenArray[headerIndex];
@@ -108,7 +108,7 @@ const Card = ({
     ...otherProps,
   });
 
-  const otherWithProps = React.Children.map(other, child =>
+  const otherWithProps = React.Children.map(other, (child) =>
     React.cloneElement(child, {
       id,
       type,
@@ -116,12 +116,13 @@ const Card = ({
   );
   const className = ClassManager.getComponentClassName(
     null,
-    `${cardClassModifier || ''}${isChecked?' active':''}${disabled?' disabled':''}`,
+    `${cardClassModifier || ''}${isChecked ? ' active' : ''}${
+      disabled ? ' disabled' : ''
+    }`,
     'af-rccard'
   );
   return (
-    <div
-      className={className}>
+    <div className={className}>
       {headerWithProps}
       {otherWithProps}
     </div>

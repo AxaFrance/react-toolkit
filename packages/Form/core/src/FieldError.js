@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
-import MessageTypes from "./MessageTypes";
+import MessageTypes from './MessageTypes';
 
 const propTypes = {
   message: PropTypes.string,
@@ -14,7 +14,7 @@ const propTypes = {
 
 const defaultProps = {
   message: null,
-  messageType: MessageTypes.error
+  messageType: MessageTypes.error,
 };
 
 const defaultClassName = 'af-form__message';
@@ -30,16 +30,16 @@ const FieldError = ({ message, messageType }) => {
 
   return message ? (
     <small className={className}>
-      <span className="glyphicon glyphicon-exclamation-sign"/>
+      <span className="glyphicon glyphicon-exclamation-sign" />
       <span className={classNameError}>{message}</span>
     </small>
   ) : null;
-}
+};
 
 FieldError.propTypes = propTypes;
 FieldError.defaultProps = defaultProps;
 
-FieldError.Clone = data => {
+FieldError.Clone = (data) => {
   const { props, message, child } = data;
   return React.cloneElement(child, {
     ...props,

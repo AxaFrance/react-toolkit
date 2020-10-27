@@ -1,7 +1,9 @@
 ## CustomDate
-* * *
+
+---
 
 ### Get started
+
 First to use, you have to import the component.
 
 ```js
@@ -18,11 +20,12 @@ npm install moment --save
 Do not forget the right local when starting your application. By default, "create-react-app" excludes locals ​​for lightening the version of your final application. Adding it explicitly allows the local file to be present in the final application.
 
 ```js
-require ('moment/locale/fr.js');
+require('moment/locale/fr.js');
 // in your start application file "index.js"
 ```
 
 The date is a special component. It actually has 2 important props:
+
 - viewValue: The value of the text field which is a string
 - value: The value of the date in momentjs format
 

@@ -73,14 +73,14 @@ const NavBarBase = ({
             </ToggleButton>
           </div>
           <ul
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               e.preventDefault();
               handleKeys(e.key);
             }}
-            onFocus={e => {
+            onFocus={(e) => {
               onFocus({ e });
             }}
-            onBlur={e => {
+            onBlur={(e) => {
               onBlur({ e });
             }}
             className={`af-nav__list ${

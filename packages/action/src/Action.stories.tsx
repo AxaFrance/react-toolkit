@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<ActionProps> = args => <Action {...args} />;
+const Template: Story<ActionProps> = (args) => <Action {...args} />;
 
 export const Link = Template.bind({});
 Link.args = {

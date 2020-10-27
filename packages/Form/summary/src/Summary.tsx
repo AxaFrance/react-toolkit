@@ -17,7 +17,7 @@ type MessagesProps = {
 const Messages = ({ messages }: MessagesProps) => {
   return (
     <>
-      {messages.map(message => (
+      {messages.map((message) => (
         <li className="af-summary__message-item" key={message}>
           <span>{message}</span>
         </li>
@@ -33,17 +33,29 @@ type SummaryProps = {
   className?: string;
   classModifier?: string;
 };
-const Summary = ({ messages, isVisible, className, classModifier, title }: SummaryProps) => {
+const Summary = ({
+  messages,
+  isVisible,
+  className,
+  classModifier,
+  title,
+}: SummaryProps) => {
   if (!messages || !isVisible) {
     return null;
   }
 
-  const messagesNotBlank = messages.filter(message => message !== null && message !== '');
+  const messagesNotBlank = messages.filter(
+    (message) => message !== null && message !== ''
+  );
   if (!messagesNotBlank.length) {
     return null;
   }
   return (
-    <Alert classModifier={classModifier} className={className} icon="warning-sign" title={title}>
+    <Alert
+      classModifier={classModifier}
+      className={className}
+      icon="warning-sign"
+      title={title}>
       <ul className="af-summary__message-list">
         <Messages messages={messagesNotBlank} />
       </ul>

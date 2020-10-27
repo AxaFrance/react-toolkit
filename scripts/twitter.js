@@ -20,7 +20,7 @@ const message = `Hey a new version (${json.version}) of the @axa-fr/react-toolki
 check out the new changelog https://github.com/AxaGuilDEv/react-toolkit/blob/master/CHANGELOG.md
 https://axaguildev.github.io`;
 
-T.post('statuses/update', { status: message }, err => {
+T.post('statuses/update', { status: message }, (err) => {
   if (!err) {
     console.log('Greate job'); // eslint-disable-line
   } else {

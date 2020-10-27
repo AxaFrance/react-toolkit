@@ -79,7 +79,8 @@
   }
 
   /* Custom */
-  &__checkbox-custom, &__checkbox-toggle {
+  &__checkbox-custom,
+  &__checkbox-toggle {
     display: inline-flex;
     align-items: center;
     margin: 0 0.3rem 0.3rem 0;
@@ -186,7 +187,7 @@
       border-radius: 100%;
       transition: 0.4s;
     }
-    .af-form__description{
+    .af-form__description {
       display: none;
     }
     .af-form__input-checkbox {
@@ -218,12 +219,12 @@
         box-shadow: none;
       }
     }
-    &--error{
+    &--error {
       .af-form__label {
         background-color: $color-red-error;
       }
     }
-    &--warning{
+    &--warning {
       .af-form__label {
         background-color: $color-orange-dark;
       }

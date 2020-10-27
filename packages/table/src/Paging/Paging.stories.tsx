@@ -30,7 +30,7 @@ export default {
   },
 };
 
-const Template: Story<PagingProps> = args => <Paging {...args} />;
+const Template: Story<PagingProps> = (args) => <Paging {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

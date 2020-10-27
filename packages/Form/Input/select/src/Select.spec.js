@@ -11,7 +11,7 @@ const options = [
 ];
 
 describe('<SelectBase>', () => {
-  const Comp = Compo => (
+  const Comp = (Compo) => (
     <Compo
       name="placeName"
       id="muid"

@@ -27,7 +27,7 @@ function logError(type, packageJson) {
   );
 }
 
-function copyReadmeToDist(){
+function copyReadmeToDist() {
   const modulePath = path.resolve('./');
   const readmePath = path.join(modulePath, 'README.md');
   if (fs.existsSync(readmePath)) {
@@ -37,7 +37,7 @@ function copyReadmeToDist(){
 
 const packageJson = getPackageJson();
 
-const tsFiles = shell.find('src').filter(tsFile => tsFile.match(/\.ts$/));
+const tsFiles = shell.find('src').filter((tsFile) => tsFile.match(/\.ts$/));
 
 if (tsFiles.length !== 0) {
   tscfy({ errorCallback: () => logError('ts', packageJson) });

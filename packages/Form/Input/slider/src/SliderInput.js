@@ -18,7 +18,7 @@ const defaultProps = {
   ...Constants.defaultProps,
 };
 
-const SliderInput = props => {
+const SliderInput = (props) => {
   const {
     id,
     children,

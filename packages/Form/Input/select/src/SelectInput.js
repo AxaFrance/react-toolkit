@@ -29,7 +29,7 @@ const defaultProps = {
   forceDisplayPlaceholder: Boolean(false),
 };
 
-const SelectInput = props => {
+const SelectInput = (props) => {
   const {
     classModifier,
     message,

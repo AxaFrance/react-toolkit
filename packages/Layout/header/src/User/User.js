@@ -36,7 +36,7 @@ const InnerUser = ({ name, profile }) => [
 ];
 
 class User extends React.Component {
-  onClick = event => {
+  onClick = (event) => {
     const { path, onClick } = this.props;
     if (onClick) {
       onClick({ path, event });

@@ -4,13 +4,11 @@ import TabsCore, { onChangeEvent } from './TabsCore';
 import Tab from './Tab';
 
 describe('TabsCore tests suite', () => {
-
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should init activate index in state function', () => {
-
     // given
     const givenActivateIndex = '3';
 
@@ -21,13 +19,10 @@ describe('TabsCore tests suite', () => {
 
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
 
-    const onChangeMock =  jest.fn(x => {});
+    const onChangeMock = jest.fn((x) => {});
 
     create(
-      <TabsCore
-        onChange={onChangeMock}
-        activeIndex={givenActivateIndex}
-      >
+      <TabsCore onChange={onChangeMock} activeIndex={givenActivateIndex}>
         <Tab title="title tab1" classModifier="modifier 1">
           <span>Content</span>
         </Tab>
@@ -44,11 +39,9 @@ describe('TabsCore tests suite', () => {
   });
 
   it('should return correct onChange function', () => {
-    const onChangeMock =  jest.fn(x => {});
-    const setStateMock = jest.fn(x => {});
-    onChangeEvent(onChangeMock)(setStateMock )(
-      { id: '3' }
-    );
+    const onChangeMock = jest.fn((x) => {});
+    const setStateMock = jest.fn((x) => {});
+    onChangeEvent(onChangeMock)(setStateMock)({ id: '3' });
     expect(setStateMock).toBeCalledWith('3');
     expect(onChangeMock).toBeCalledWith('3');
   });

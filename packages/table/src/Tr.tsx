@@ -3,7 +3,7 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
-  compose
+  compose,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-table__tr';
@@ -15,7 +15,7 @@ const defaultProps: Partial<TrComponentProps> = {
   id: null,
 };
 
-const Tr: React.SFC<TrComponentProps> = props => {
+const Tr: React.SFC<TrComponentProps> = (props) => {
   const { children, id, className, ...otherProps } = props;
   return (
     <tr className={className} key={id} {...otherProps}>

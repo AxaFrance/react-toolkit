@@ -1,7 +1,7 @@
 const endWith = (str, suffix) =>
   str.indexOf(suffix, str.length - suffix.length) !== -1;
 
-const isValidNumber = value => {
+const isValidNumber = (value) => {
   if (value === null || value === undefined) {
     return false;
   }
@@ -10,7 +10,7 @@ const isValidNumber = value => {
   return success;
 };
 
-const parseValueToNumber = value => {
+const parseValueToNumber = (value) => {
   if (!isValidNumber(value)) {
     return null;
   }

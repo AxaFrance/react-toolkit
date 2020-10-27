@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import NavBarItem from './NavBarItem';
 import readme from './NavBar.md';
 
-const withPreventDefaultClick = next => e => {
+const withPreventDefaultClick = (next) => (e) => {
   e.preventDefault();
   next(e);
 };

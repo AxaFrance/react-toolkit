@@ -8,7 +8,7 @@ const propTypes = {
 };
 
 class FooterClientItem extends React.Component {
-  onClick = e => {
+  onClick = (e) => {
     const { path, onClick } = this.props;
     if (onClick) {
       onClick({ path, event: e });

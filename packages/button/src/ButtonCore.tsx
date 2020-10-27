@@ -4,7 +4,7 @@ import {
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
-  compose
+  compose,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'btn af-btn';
@@ -13,11 +13,11 @@ const omitProperties = PropsManager.omit(['classModifier']);
 
 interface ButtonCoreComponentProps
   extends React.DetailedHTMLProps<
-      React.ButtonHTMLAttributes<HTMLButtonElement>,
-      HTMLButtonElement
-    > {}
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {}
 
-const ButtonRaw: React.SFC<ButtonCoreComponentProps> = props => {
+const ButtonRaw: React.SFC<ButtonCoreComponentProps> = (props) => {
   const buttonProps: ButtonCoreComponentProps = omitProperties(props);
   return <button {...buttonProps} />;
 };

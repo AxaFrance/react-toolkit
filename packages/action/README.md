@@ -20,7 +20,6 @@ ActionCore :
 onCick : React.MouseEventHandler<HTMLAnchorElement>;
 ```
 
-
 ### Sample Action
 
 ```javascript

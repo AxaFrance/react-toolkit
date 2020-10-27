@@ -19,7 +19,7 @@ describe('<ActionCore>', () => {
         onClick={callback}
       />
     );
-    wrapper.simulate('click', { preventDefault() { } });
+    wrapper.simulate('click', { preventDefault() {} });
     expect(callback).toHaveBeenCalled();
   });
   it('Should have icon', () => {
@@ -36,13 +36,21 @@ describe('<ActionCore>', () => {
 
   it('Should have href', () => {
     const wrapper = mount(
-      <ActionCore href="/toto" icon={actionLink.icon} title={actionLink.title} />
+      <ActionCore
+        href="/toto"
+        icon={actionLink.icon}
+        title={actionLink.title}
+      />
     );
     expect(wrapper.props()).toMatchObject({ href: '/toto' });
   });
   it('when onClick is define should have href', () => {
     const wrapper = mount(
-      <ActionCore icon={actionLink.icon} title={actionLink.title} onClick={jest.fn()} />
+      <ActionCore
+        icon={actionLink.icon}
+        title={actionLink.title}
+        onClick={jest.fn()}
+      />
     );
     expect(wrapper.find('a').prop('href')).toBe('#');
     expect(wrapper.find('a').prop('role')).toBe('button');

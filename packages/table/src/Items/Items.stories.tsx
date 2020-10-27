@@ -29,7 +29,7 @@ export default {
   },
 };
 
-const Template: Story<ItemsProps> = args => <Items {...args} />;
+const Template: Story<ItemsProps> = (args) => <Items {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

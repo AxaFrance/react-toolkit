@@ -5,7 +5,7 @@ import { Input, withInput, omit } from '@axa-fr/react-toolkit-form-core';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const Text = props => {
+const Text = (props) => {
   const {
     componentClassName,
     value,
@@ -49,9 +49,11 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
-  Text
-);
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(Text);
 
 EnhancedComponent.Clone = Input.Clone;
 EnhancedComponent.ContainerClassName = 'af-form__text';

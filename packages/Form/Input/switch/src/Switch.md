@@ -1,16 +1,15 @@
 ## SwitchInput
-* * *
+
+---
 
 ### Get started
+
 First to use, you have to import the component.
-
-
 
 This story show you the Action Button case.
 This isn't a link but a button where you can catch the event to do what you want.
 
 For more information about style component, you can see the [Action Button Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/button)
-
 
 ### Accessibility
 

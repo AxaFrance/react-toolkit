@@ -6,5 +6,5 @@ const CardContent = ({ id, children }) => (
   </label>
 );
 
-CardContent.displayName = "CardContent";
+CardContent.displayName = 'CardContent';
 export default CardContent;

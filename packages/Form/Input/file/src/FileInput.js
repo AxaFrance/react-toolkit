@@ -38,7 +38,7 @@ class FileInput extends Component {
 
   onDeleteClick(id, inputId) {
     const { values, name, onChange } = this.props;
-    const newValues = values.filter(element => element.id !== id);
+    const newValues = values.filter((element) => element.id !== id);
     onChange({
       values: newValues,
       name,
@@ -124,7 +124,7 @@ class FileInput extends Component {
         <FileTable
           errors={errors}
           values={values}
-          onClick={selectedId => this.onDeleteClick(selectedId, inputId)}
+          onClick={(selectedId) => this.onDeleteClick(selectedId, inputId)}
           classModifier={classModifier}
         />
       </Field>

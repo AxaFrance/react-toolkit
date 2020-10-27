@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, FieldConstants as Constants } from '@axa-fr/react-toolkit-form-core';
+import {
+  Field,
+  FieldConstants as Constants,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 import Choice from './Choice';
 
@@ -18,7 +21,7 @@ const defaultProps = {
   ],
 };
 
-const ChoiceInput = props => {
+const ChoiceInput = (props) => {
   const {
     mode,
     messageType,

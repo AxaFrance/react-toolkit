@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import {Input, omit, withInput} from '@axa-fr/react-toolkit-form-core';
+import { Input, omit, withInput } from '@axa-fr/react-toolkit-form-core';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const DatePhone = props => {
+const DatePhone = (props) => {
   const {
     className,
     classModifier,
@@ -28,7 +28,10 @@ const DatePhone = props => {
   if (value) {
     currentViewValue = value.format('YYYY-MM-DD');
   } else if (viewValue != null && viewValue != undefined) {
-    currentViewValue = viewValue.replace(". ", "-").replace("/", "-").replace(".", "-");
+    currentViewValue = viewValue
+      .replace('. ', '-')
+      .replace('/', '-')
+      .replace('.', '-');
   }
 
   return (
@@ -61,13 +64,13 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ id, name, onChange }) => e => {
+  onChange: ({ id, name, onChange }) => (e) => {
     const viewValue = e.target.value;
     const value = moment(viewValue);
 
     onChange({
       value,
-      viewValue: value.format("L"),
+      viewValue: value.format('L'),
       name,
       id,
     });

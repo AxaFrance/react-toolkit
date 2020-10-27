@@ -23,7 +23,7 @@ describe('Form/PassInput/Pass', () => {
   });
 });
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     onToggleType: () => {},
     name: 'password',
@@ -80,7 +80,7 @@ describe('<Pass />', () => {
   });
 });
 
-const createWrapperPassInputHOC = customProps => {
+const createWrapperPassInputHOC = (customProps) => {
   const defaultProps = {
     name: 'password',
     onToggleType: () => {},
@@ -125,7 +125,7 @@ describe('<PassInputHOC />', () => {
   });
 });
 
-const createWrapperPassInput = customProps => {
+const createWrapperPassInput = (customProps) => {
   const defaultProps = {
     strength: null,
     name: 'password',

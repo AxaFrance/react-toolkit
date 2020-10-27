@@ -10,28 +10,34 @@ const DEFAULT_CLASSNAME = 'af-restitution__header';
 
 type HeaderRestitutionBaseProps = {
   className?: string;
-  title:React.ReactNode;
-  subtitle?:React.ReactNode;
-  rightTitle?:React.ReactNode;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
+  rightTitle?: React.ReactNode;
 };
 
-const HeaderRestitution = ({ title, subtitle, rightTitle, className }: HeaderRestitutionBaseProps) => (
-    <header className={className}>
-      <div className="af-restitution__header-left">
-        <div className="af-restitution__title">
-          {title && <span className="af-restitution__title-title">{title}</span>}
-          <span className="af-restitution__title-subtitle">{subtitle}</span>
-        </div>
+const HeaderRestitution = ({
+  title,
+  subtitle,
+  rightTitle,
+  className,
+}: HeaderRestitutionBaseProps) => (
+  <header className={className}>
+    <div className="af-restitution__header-left">
+      <div className="af-restitution__title">
+        {title && <span className="af-restitution__title-title">{title}</span>}
+        <span className="af-restitution__title-subtitle">{subtitle}</span>
       </div>
-      {rightTitle && (<div className="af-restitution__header-right">
-        <span className="af-restitution__title">
-          {rightTitle}
-        </span>
-      </div>)}
-    </header>
-  );
+    </div>
+    {rightTitle && (
+      <div className="af-restitution__header-right">
+        <span className="af-restitution__title">{rightTitle}</span>
+      </div>
+    )}
+  </header>
+);
 
-type HeaderRestitutionProps = WithClassModifierOptions & HeaderRestitutionBaseProps;
+type HeaderRestitutionProps = WithClassModifierOptions &
+  HeaderRestitutionBaseProps;
 
 const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),
@@ -39,7 +45,7 @@ const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
 );
 
 const defaultProps: Partial<HeaderRestitutionProps> = {
-  className: DEFAULT_CLASSNAME
+  className: DEFAULT_CLASSNAME,
 };
 
 const Enhanced = enhance(HeaderRestitution);

@@ -87,7 +87,7 @@ export const NavBarItemBase = ({
    *
    * @param {node} ref
    */
-  const refCallBackFocus = ref => handleLinkFocus(ref, hasFocus, isMenuOpen);
+  const refCallBackFocus = (ref) => handleLinkFocus(ref, hasFocus, isMenuOpen);
 
   /**
    * On utilise le cloneElement afin d'ajouter les props sur l'élément enfant de l'item de menu (actionElt)
@@ -105,7 +105,7 @@ export const NavBarItemBase = ({
     <li
       className={`${componentClassName} ${openClass}`}
       role="none"
-      onKeyDown={e => {
+      onKeyDown={(e) => {
         e.preventDefault();
         handleKeys(e);
       }}>

@@ -37,7 +37,7 @@ const defaultProps = {
   classNameContainerInput: Constants.defaultProps.classNameContainerInput,
 };
 
-const Field = props => {
+const Field = (props) => {
   const {
     children,
     message,

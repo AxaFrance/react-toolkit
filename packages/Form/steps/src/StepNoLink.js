@@ -15,7 +15,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const StepNoLink = props => {
+const StepNoLink = (props) => {
   const { number, id, title, className, modifier, icon } = props;
 
   return (

@@ -17,8 +17,12 @@ type Props = Partial<typeof defaultProps> & {
   onMouseLeave?: (event: React.MouseEvent) => void;
 };
 
-const Pop: React.ComponentType<React.PropsWithChildren<{}>> = (props) => <>{props.children}</>;
-const Over: React.ComponentType<React.PropsWithChildren<{}>> = (props) => <>{props.children}</>;
+const Pop: React.ComponentType<React.PropsWithChildren<{}>> = (props) => (
+  <>{props.children}</>
+);
+const Over: React.ComponentType<React.PropsWithChildren<{}>> = (props) => (
+  <>{props.children}</>
+);
 
 const PopoverBase = ({
   children,
@@ -30,8 +34,12 @@ const PopoverBase = ({
   onMouseLeave,
 }: Props) => {
   const childs = React.Children.toArray(children);
-  const targetElement = childs.filter((c: React.ReactElement) => c.type === Over);
-  const contentElement = childs.filter((c: React.ReactElement) => c.type === Pop);
+  const targetElement = childs.filter(
+    (c: React.ReactElement) => c.type === Over
+  );
+  const contentElement = childs.filter(
+    (c: React.ReactElement) => c.type === Pop
+  );
   return (
     <AnimatedPopover
       target={targetElement}
@@ -40,8 +48,7 @@ const PopoverBase = ({
       className={className}
       classModifier={classModifier}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+      onMouseLeave={onMouseLeave}>
       {contentElement}
     </AnimatedPopover>
   );
@@ -94,7 +101,10 @@ export const AnimatedPopover = ({
 
   return (
     <div className={componentClassName}>
-      <div ref={setReferenceElement} className="af-popover__container-over" role="presentation">
+      <div
+        ref={setReferenceElement}
+        className="af-popover__container-over"
+        role="presentation">
         {target}
       </div>
 
@@ -106,10 +116,13 @@ export const AnimatedPopover = ({
           style={styles.popper}
           data-popper-placement={placement}
           className="af-popover__container-pop"
-          {...attributes.popper}
-        >
+          {...attributes.popper}>
           <div>{children}</div>
-          <div ref={setArrowElement} style={styles.arrow} className="af-popover__arrow" />
+          <div
+            ref={setArrowElement}
+            style={styles.arrow}
+            className="af-popover__arrow"
+          />
         </div>
       )}
     </div>

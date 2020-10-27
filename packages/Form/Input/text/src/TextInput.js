@@ -24,7 +24,7 @@ const defaultProps = {
   value: '',
 };
 
-const TextInput = props => {
+const TextInput = (props) => {
   const {
     classModifier,
     message,

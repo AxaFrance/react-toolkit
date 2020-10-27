@@ -5,10 +5,12 @@ import withClickId from './withClickId.hoc';
 describe('withClickId', () => {
   interface ComponentWrapperProps
     extends React.DetailedHTMLProps<
-        React.AnchorHTMLAttributes<HTMLAnchorElement>,
-        HTMLAnchorElement
-      > {}
-  const ComponentWrapper: React.SFC<ComponentWrapperProps> = props => <a {...props} />;
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    > {}
+  const ComponentWrapper: React.SFC<ComponentWrapperProps> = (props) => (
+    <a {...props} />
+  );
 
   it('onClick should return id', () => {
     const ComponentWithClickId = withClickId<ComponentWrapperProps>({

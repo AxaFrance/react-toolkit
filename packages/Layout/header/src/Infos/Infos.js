@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ClassManager, Constants, InputManager } from '@axa-fr/react-toolkit-core';
+import {
+  ClassManager,
+  Constants,
+  InputManager,
+} from '@axa-fr/react-toolkit-core';
 
 const propTypes = {
   ...Constants.propTypes,
@@ -20,7 +24,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const Infos = props => {
+const Infos = (props) => {
   const { infos, className, classModifier } = props;
   const componentClassName = ClassManager.getComponentClassName(
     className,
@@ -32,7 +36,7 @@ const Infos = props => {
     <div className={componentClassName}>
       <i className="glyphicon glyphicon-info-sign" />
       <dl className={`${defaultClassName}__list`}>
-        {infos.map(info => {
+        {infos.map((info) => {
           const word = (
             <dt
               key={`word_${InputManager.getInputId(info.id)}`}

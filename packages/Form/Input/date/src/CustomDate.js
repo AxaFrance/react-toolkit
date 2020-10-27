@@ -5,7 +5,7 @@ import moment from 'moment';
 
 import { Input, withInput } from '@axa-fr/react-toolkit-form-core';
 
-const CustomDate = props => {
+const CustomDate = (props) => {
   const {
     className,
     classModifier,
@@ -66,11 +66,11 @@ const defaultProps = {
   yearDropdownItemNumber: 6,
 };
 
-const localizeMoment = ({ locale }) => date =>
+const localizeMoment = ({ locale }) => (date) =>
   date.clone().locale(locale || moment.locale());
 
 const handlers = {
-  onChange: ({ id, name, onChange }) => date => {
+  onChange: ({ id, name, onChange }) => (date) => {
     const viewValue = date ? date.format('L') : '';
     onChange({
       value: date,
@@ -79,7 +79,7 @@ const handlers = {
       id,
     });
   },
-  onChangeRaw: ({ locale, id, name, onChange }) => event => {
+  onChangeRaw: ({ locale, id, name, onChange }) => (event) => {
     const momentLocal = moment();
     const localLocale = momentLocal.locale(locale);
     const localData = localLocale.localeData();

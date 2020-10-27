@@ -34,7 +34,7 @@ const getDistFolders = () => {
     return find
       .dirSync(/dist/g, packages)
       .filter(
-        dirPath => !dirPath.includes('node_modules') && dirPath.endsWith(dist)
+        (dirPath) => !dirPath.includes('node_modules') && dirPath.endsWith(dist)
       );
   } catch (err) {
     console.error(err);
@@ -47,7 +47,7 @@ const getDistFolders = () => {
 try {
   logStart('Clean all dist');
   const allDistFolders = getDistFolders() || [];
-  allDistFolders.map(distFolder => rimraf.sync(distFolder));
+  allDistFolders.map((distFolder) => rimraf.sync(distFolder));
 } catch (err) {
   console.error(err);
 } finally {

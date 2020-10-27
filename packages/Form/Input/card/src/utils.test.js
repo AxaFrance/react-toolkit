@@ -8,9 +8,11 @@ describe('utils testing', () => {
     expect(utils.castToArray(initValue)).toEqual([initValue]);
   });
   test('castToArray should not transform array', () => {
-    const initValue = [{
-      init: true,
-    }];
+    const initValue = [
+      {
+        init: true,
+      },
+    ];
     expect(utils.castToArray(initValue)).toEqual(initValue);
   });
 });

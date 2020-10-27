@@ -12,7 +12,7 @@ const omitProperties = omit([
   'forceDisplayPlaceholder',
 ]);
 
-const SelectBase = props => {
+const SelectBase = (props) => {
   const {
     componentClassName,
     name,
@@ -42,7 +42,7 @@ const SelectBase = props => {
         disabled={disabled}
         ref={inputRef}
         {...omitProperties(otherProps)}>
-        {options.map(opt => (
+        {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
           </option>
@@ -66,8 +66,10 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const EnhancedText = withInput(defaultClassName, propTypes, defaultProps)(
-  SelectBase
-);
+const EnhancedText = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(SelectBase);
 
 export default EnhancedText;

@@ -26,7 +26,7 @@ const defaultProps = {
   cols: 50,
 };
 
-const TextareaInput = props => {
+const TextareaInput = (props) => {
   const {
     classModifier,
     message,
@@ -57,7 +57,7 @@ const TextareaInput = props => {
     classModifier,
     disabled
   );
-  const onChange = e => {
+  const onChange = (e) => {
     props.onChange(e);
   };
   const rowModifier = `${classModifier} label-top`;

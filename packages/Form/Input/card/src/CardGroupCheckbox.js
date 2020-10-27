@@ -2,7 +2,7 @@ import React from 'react';
 import CardGroup from './CardGroup';
 import cardType from './Constants';
 
-const CardGroupCheckBox = props => {
+const CardGroupCheckBox = (props) => {
   const { children } = props;
   return (
     <CardGroup {...props} type={cardType.CHECKBOX}>

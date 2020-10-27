@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InputList, withInput, omit } from '@axa-fr/react-toolkit-form-core';
-import {RadioItem} from '@axa-fr/react-toolkit-form-input-radio';
+import { RadioItem } from '@axa-fr/react-toolkit-form-input-radio';
 
 const omitProperties = omit(['className', 'id']);
 
 const defaultClassName = 'af-form__radio-custom';
-const Choice = props => {
+const Choice = (props) => {
   const {
     isVisible,
     disabled,
@@ -21,7 +21,7 @@ const Choice = props => {
     onChange,
     ...otherProps
   } = props;
-  return options.map(option => (
+  return options.map((option) => (
     <RadioItem
       key={option.value}
       id={option.id}
@@ -48,18 +48,21 @@ const propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.bool,
-      label: PropTypes.string
+      label: PropTypes.string,
     })
   ),
 };
 const defaultProps = {
   value: null,
   className: defaultClassName,
-  options: [{ label: 'Oui', value: true }, { label: 'Non', value: false }],
+  options: [
+    { label: 'Oui', value: true },
+    { label: 'Non', value: false },
+  ],
 };
 
 const handlers = {
-  onChange: ({ onChange, name, id }) => e => {
+  onChange: ({ onChange, name, id }) => (e) => {
     const receivedValue = e.value;
     const newValue = receivedValue === '' ? null : receivedValue === 'true';
     onChange({
@@ -69,7 +72,6 @@ const handlers = {
     });
   },
 };
-
 
 const EnhancedComponent = withInput(
   defaultClassName,

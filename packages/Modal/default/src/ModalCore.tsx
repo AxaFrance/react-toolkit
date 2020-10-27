@@ -17,7 +17,7 @@ interface ModalCoreComponentProps {
   className?: string;
 }
 
-const ModalCoreRaw: React.SFC<ModalCoreComponentProps> = props => (
+const ModalCoreRaw: React.SFC<ModalCoreComponentProps> = (props) => (
   <ReactModal
     className={props.className}
     isOpen={props.isOpen}

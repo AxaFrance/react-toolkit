@@ -1,7 +1,7 @@
 import {
   withClassDefault,
   withClassModifier,
-  compose
+  compose,
 } from '@axa-fr/react-toolkit-core';
 import Help from './Help';
 

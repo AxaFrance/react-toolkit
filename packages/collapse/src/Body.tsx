@@ -7,13 +7,13 @@ const defaultClassName = 'af-accordion__collapse';
 const defaultProps = {
   ...Constants.defaultProps,
   collapse: true,
-  className: defaultClassName
+  className: defaultClassName,
 };
 
 export type BodyProps = Partial<typeof defaultProps> & {
   children: React.ReactNode;
   id?: string;
-  ariaLabelledby?: string
+  ariaLabelledby?: string;
 };
 
 const collapseAnimation = (

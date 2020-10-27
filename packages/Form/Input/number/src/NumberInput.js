@@ -25,7 +25,7 @@ const defaultProps = {
   viewValue: '',
 };
 
-const NumberInput = props => {
+const NumberInput = (props) => {
   const {
     classModifier,
     message,

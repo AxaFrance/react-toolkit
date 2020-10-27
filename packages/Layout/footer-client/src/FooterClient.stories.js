@@ -83,7 +83,7 @@ const socialNetworkList = {
   twitter: '#',
 };
 
-const onClick = e => {
+const onClick = (e) => {
   e.event.preventDefault();
   e.event = {};
   action('onClick')(e);
@@ -102,9 +102,9 @@ const ComplexStory = () => (
     bottomComponent={ComponentLanguageSelection()}
     copyright="Policy Privacy © 2016 AXA All Rights Reserved">
     {columns &&
-      columns.map(column => (
+      columns.map((column) => (
         <FooterClientList title={column.title} key={column.title}>
-          {column.links.map(link => (
+          {column.links.map((link) => (
             <FooterClientItem
               onClick={onClick}
               path={link.path}
@@ -123,9 +123,9 @@ const ComplexStory = () => (
 const SimpleStory = () => (
   <FooterClient>
     {columns &&
-      columns.map(column => (
+      columns.map((column) => (
         <FooterClientList title={column.title} key={column.title}>
-          {column.links.map(link => (
+          {column.links.map((link) => (
             <FooterClientItem
               onClick={onClick}
               path={link.path}
@@ -141,9 +141,9 @@ const SimpleStory = () => (
 const Withoutbottom = () => (
   <FooterClient>
     {columns &&
-      columns.map(column => (
+      columns.map((column) => (
         <FooterClientList title={column.title} key={column.title}>
-          {column.links.map(link => (
+          {column.links.map((link) => (
             <FooterClientItem
               onClick={onClick}
               path={link.path}

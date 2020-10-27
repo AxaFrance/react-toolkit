@@ -10,7 +10,7 @@ import {
 
 describe('<FooterClient>', () => {
   it('renders FooterClient correctly', () => {
-    const onClick = e => {
+    const onClick = (e) => {
       e.event.preventDefault();
       e.event = {};
     };

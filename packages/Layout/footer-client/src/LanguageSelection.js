@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 class Button extends React.Component {
-  onClick = e => {
+  onClick = (e) => {
     const { onClick, path } = this.props;
     if (onClick) {
       e.preventDefault();
@@ -27,7 +27,7 @@ const LanguageSelection = ({ onClick, languages, currentLanguage }) => (
   <div className="af-languageSelection">
     <h3 className="af-languageSelection__title"> Languages: </h3>
     <ul className="af-languageSelection__list">
-      {languages.map(language => (
+      {languages.map((language) => (
         <li
           key={language.value}
           className={classnames({

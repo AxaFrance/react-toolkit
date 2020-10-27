@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import User from './User';
 import readme from '../../README.md';
 
-const onClick = e => {
+const onClick = (e) => {
   e.event.preventDefault();
   e.event = {};
   action('onClick')(e);

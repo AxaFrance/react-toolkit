@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { InputList, InputConstants as Constants, withInput, omit } from '@axa-fr/react-toolkit-form-core';
+import {
+  InputList,
+  InputConstants as Constants,
+  withInput,
+  omit,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
 const omitProperties = omit([
@@ -9,25 +14,25 @@ const omitProperties = omit([
   'className',
   'isVisible',
   'helpMessage',
-  'options'
+  'options',
 ]);
 
 const RadioItem = ({
-                     optionClassName,
-                     disabled,
-                     value,
-                     isChecked,
-                     id,
-                     name,
-                     inputRef,
-                     readOnly,
-                     onChange,
-                     onBlur,
-                     onFocus,
-                     children,
-                     label,
-                     ...otherProps
-                   }) => {
+  optionClassName,
+  disabled,
+  value,
+  isChecked,
+  id,
+  name,
+  inputRef,
+  readOnly,
+  onChange,
+  onBlur,
+  onFocus,
+  children,
+  label,
+  ...otherProps
+}) => {
   const newLabel = children || label;
   const newId = InputManager.getInputId(id); // id is require on this component
   return (

@@ -8,7 +8,7 @@ describe('<File.FileTable>', () => {
       <FileTable
         errors={[{ file: { name: 'youhou.txt', size: 2 } }]}
         values={[{ file: {}, id: 'id' }]}
-        onClick={selectedId => console.log(selectedId)}
+        onClick={(selectedId) => console.log(selectedId)}
       />
     );
     expect(wrapper).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('<File.FileTable>', () => {
       <FileTable
         errors={[{ file: { name: 'youhou.txt', size: 2 } }]}
         values={[]}
-        onClick={selectedId => console.log(selectedId)}
+        onClick={(selectedId) => console.log(selectedId)}
       />
     );
     expect(wrapper).toMatchSnapshot();

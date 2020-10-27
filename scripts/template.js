@@ -5,7 +5,7 @@ function compile(template, model) {
 
   let updatedTemplate = template;
 
-  Object.keys(model).forEach(key => {
+  Object.keys(model).forEach((key) => {
     const re = new RegExp(`{${key}}`, 'g');
     updatedTemplate = updatedTemplate.replace(re, model[key]);
   });

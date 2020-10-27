@@ -4,5 +4,6 @@ coverage
 node_modules
 package-lock.json
 
+CHANGELOG.md
 packages/all/src/bootstrap/af-components.template.scss
 packages/all/src/bootstrap/af-toolkit-core.template.scss

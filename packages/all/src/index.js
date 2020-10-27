@@ -1,6 +1,9 @@
 export { TextInput, Text } from '@axa-fr/react-toolkit-form-input-text';
 export { CustomDate, DateInput } from '@axa-fr/react-toolkit-form-input-date';
-export { DatePhone, DatePhoneInput } from '@axa-fr/react-toolkit-form-input-date-phone';
+export {
+  DatePhone,
+  DatePhoneInput,
+} from '@axa-fr/react-toolkit-form-input-date-phone';
 export { ChoiceInput, Choice } from '@axa-fr/react-toolkit-form-input-choice';
 export {
   Select,
@@ -19,7 +22,10 @@ export {
   FileLine,
 } from '@axa-fr/react-toolkit-form-input-file';
 export { Slider, SliderInput } from '@axa-fr/react-toolkit-form-input-slider';
-export { Textarea, TextareaInput } from '@axa-fr/react-toolkit-form-input-textarea';
+export {
+  Textarea,
+  TextareaInput,
+} from '@axa-fr/react-toolkit-form-input-textarea';
 export {
   CheckboxItem,
   CheckboxInput,
@@ -33,7 +39,12 @@ export {
   RadioModes,
 } from '@axa-fr/react-toolkit-form-input-radio';
 export { Summary } from '@axa-fr/react-toolkit-form-summary';
-export { Steps, StepBase, Step, StepModes } from '@axa-fr/react-toolkit-form-steps';
+export {
+  Steps,
+  StepBase,
+  Step,
+  StepModes,
+} from '@axa-fr/react-toolkit-form-steps';
 export {
   FormClassManager,
   FieldConstants,
@@ -106,6 +117,17 @@ export { default as Alert } from '@axa-fr/react-toolkit-alert';
 export { default as Tabs } from '@axa-fr/react-toolkit-tabs';
 export { default as Badge } from '@axa-fr/react-toolkit-badge';
 export { default as Button } from '@axa-fr/react-toolkit-button';
-export { ClassManager, InputManager, Constants } from '@axa-fr/react-toolkit-core';
+export {
+  ClassManager,
+  InputManager,
+  Constants,
+} from '@axa-fr/react-toolkit-core';
 export { default as Icon } from '@axa-fr/react-toolkit-icon';
-export { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
+export {
+  ArticleRestitution,
+  HeaderRestitution,
+  SectionRestitution,
+  SectionRestitutionColumn,
+  SectionRestitutionRow,
+  Restitution,
+} from '@axa-fr/react-toolkit-restitution';

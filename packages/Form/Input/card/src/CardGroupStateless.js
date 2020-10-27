@@ -34,8 +34,8 @@ const CardGroupStateless = ({
   value,
   id,
 }) => {
-  const childrenArray = React.Children.map(children, child => child);
-  const indexMeta = childrenArray.findIndex(child => child.type === CardMeta);
+  const childrenArray = React.Children.map(children, (child) => child);
+  const indexMeta = childrenArray.findIndex((child) => child.type === CardMeta);
   const childrenMeta = childrenArray[indexMeta];
   const childrenWithoutMeta = childrenArray.slice();
   if (indexMeta !== -1) childrenWithoutMeta.splice(indexMeta, 1);
@@ -60,22 +60,22 @@ const CardGroupStateless = ({
   );
 
   /**
- *
-* @param {title} can be a string or a jsx Element
- * Return a jsx title
- */
-  const formatTitle = titleParam => {
+   *
+   * @param {title} can be a string or a jsx Element
+   * Return a jsx title
+   */
+  const formatTitle = (titleParam) => {
     if (React.isValidElement(titleParam)) {
       return React.cloneElement(titleParam, {
         className: classNames(title.props.className, 'af-rccard-group__title'),
       });
     }
-      return React.createElement(
-        'h3',
-        { className: 'af-rccard-group__title' },
-        titleParam
-      );
-    };
+    return React.createElement(
+      'h3',
+      { className: 'af-rccard-group__title' },
+      titleParam
+    );
+  };
 
   return (
     <div className={classNames(`af-rccard__${nbCards}`, propClassName)}>
