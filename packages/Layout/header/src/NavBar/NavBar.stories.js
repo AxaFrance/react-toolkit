@@ -11,6 +11,31 @@ const withPreventDefaultClick = (next) => (e) => {
   next(e);
 };
 
+/** ******************************************************************** */
+// LinkItem component is just an example for the demo
+/** ******************************************************************** */
+class LinkItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const { to, children, ...otherProps } = this.props;
+    return (
+      <a
+        href={to}
+        {...otherProps}
+        onClick={withPreventDefaultClick(action('onClick Action'))}>
+        {children}
+      </a>
+    );
+  }
+}
+/** ******************************************************************** */
+// LinkItem component is just an example for the demo
+/** ******************************************************************** */
+
 const NavBarBaseStory = () => (
   <NavBar
     isVisible={boolean('isVisible', true)}
@@ -304,31 +329,6 @@ const NavBarWithInitPosition = () => (
     </NavBarItem>
   </NavBar>
 );
-
-/** ******************************************************************** */
-// LinkItem component is just an example for the demo
-/** ******************************************************************** */
-class LinkItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { to, children, ...otherProps } = this.props;
-    return (
-      <a
-        href={to}
-        {...otherProps}
-        onClick={withPreventDefaultClick(action('onClick Action'))}>
-        {children}
-      </a>
-    );
-  }
-}
-/** ******************************************************************** */
-// LinkItem component is just an example for the demo
-/** ******************************************************************** */
 
 const NavBarWithCustomLinkItemStory = () => (
   <NavBar
