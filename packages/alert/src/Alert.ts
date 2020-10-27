@@ -4,7 +4,10 @@ import icons from './icons';
 
 const defaultClassModifier = 'error';
 
-type AlertProps = Pick<AlertCoreProps, Exclude<keyof AlertCoreProps, 'iconClassName'>> & {
+type AlertProps = Pick<
+  AlertCoreProps,
+  Exclude<keyof AlertCoreProps, 'iconClassName'>
+> & {
   icon?: string;
 };
 
@@ -16,7 +19,9 @@ const setWithProps = ({ icon, ...otherProps }: AlertProps): AlertCoreProps => {
   };
 };
 
-const Enhanced = compose(withProps<AlertProps, AlertCoreProps>(setWithProps))(AlertCore);
+const Enhanced = compose(withProps<AlertProps, AlertCoreProps>(setWithProps))(
+  AlertCore
+);
 
 Enhanced.displayName = 'Alert';
 Enhanced.defaultProps = {

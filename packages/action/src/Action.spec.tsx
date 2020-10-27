@@ -21,7 +21,7 @@ describe('<Action>', () => {
       />
     );
     wrapper.simulate('click', { preventDefault() {} });
-    expect(callback).toHaveBeenCalledWith({id: 'id2'});
+    expect(callback).toHaveBeenCalledWith({ id: 'id2' });
   });
   it('Should have icon', () => {
     const wrapper = mount(

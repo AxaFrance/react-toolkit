@@ -25,7 +25,7 @@ export const Errors = ({ errors }) => {
     return null;
   }
 
-  const errorList = errors.map(err => (
+  const errorList = errors.map((err) => (
     <li key={err}>
       {err.file.name} ({err.file.size})
     </li>

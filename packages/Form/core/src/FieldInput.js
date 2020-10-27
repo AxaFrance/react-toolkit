@@ -31,7 +31,7 @@ const defaultProps = {
   classModifier: '',
 };
 
-const Clone = data => {
+const Clone = (data) => {
   const { messageType, message, child, props } = data;
   const classModifier = FormClassManager.getMessageClassModifier(
     messageType,
@@ -44,7 +44,7 @@ const Clone = data => {
   });
 };
 
-const FieldInput = props => {
+const FieldInput = (props) => {
   const { children, className, classModifier, isVisible } = props;
   if (!isVisible) {
     return false;

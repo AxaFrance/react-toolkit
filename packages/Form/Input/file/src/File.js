@@ -10,7 +10,13 @@ import {
 import { InputManager } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 
-const omitProperties = omit(['classModifier', 'className', 'onChange', 'isVisible', 'inputRef']);
+const omitProperties = omit([
+  'classModifier',
+  'className',
+  'onChange',
+  'isVisible',
+  'inputRef',
+]);
 
 class File extends Component {
   constructor(props) {
@@ -51,7 +57,7 @@ class File extends Component {
           minSize={minSize}
           accept={accept}
           className="drop-box hidden-mobile"
-          ref={d => {
+          ref={(d) => {
             this.dropzone = d;
           }}
           readOnly={readOnly}
@@ -101,11 +107,11 @@ const defaultProps = {
 
 const handlers = {
   onDrop: ({ onChange, name, id }) => (acceptedFiles, rejectedFiles) => {
-    const values = acceptedFiles.map(file => ({
+    const values = acceptedFiles.map((file) => ({
       id: InputManager.createId(),
       file,
     }));
-    const errors = rejectedFiles.map(error => ({
+    const errors = rejectedFiles.map((error) => ({
       id: InputManager.createId(),
       file: error,
     }));

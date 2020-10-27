@@ -19,7 +19,7 @@ describe('<Help> Render', () => {
 /* Container ********************************************************* */
 describe('<Help> container', () => {
   it('Should className Help equal to "myclass myclass--modifier" , When mounted component use HOC enhance', () => {
-  const wrapper = mount(
+    const wrapper = mount(
       <EnhancedHelp className="myclass" classModifier="modifier">
         <div>HelpMock</div>
       </EnhancedHelp>

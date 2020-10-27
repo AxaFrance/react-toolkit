@@ -15,7 +15,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const StepBase = props => {
+const StepBase = (props) => {
   const { children, id, title, className, classModifier } = props;
   const componentClassName = ClassManager.getComponentClassName(
     className,

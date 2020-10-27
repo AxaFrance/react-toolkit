@@ -27,7 +27,7 @@ const defaultProps = {
   mode: RadioModes.default,
 };
 
-const RadioInput = props => {
+const RadioInput = (props) => {
   const {
     mode,
     messageType,

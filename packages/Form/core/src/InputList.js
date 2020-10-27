@@ -3,7 +3,7 @@ import { ClassManager } from '@axa-fr/react-toolkit-core';
 import FormClassManager from './FormClassManager';
 import Input from './Input';
 
-const Clone = data => {
+const Clone = (data) => {
   const { props, child, wrapper, messageType, message } = data;
   const classModifier = FormClassManager.getMessageClassModifier(
     messageType,

@@ -25,7 +25,7 @@ const defaultProps = {
   locale: 'fr-fr',
 };
 
-const DateInput = props => {
+const DateInput = (props) => {
   const {
     classModifier,
     message,

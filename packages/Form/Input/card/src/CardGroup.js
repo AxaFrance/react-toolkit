@@ -66,7 +66,7 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: props => e => {
+  onChange: (props) => (e) => {
     const { type, values, name, id, onChange } = props;
     if (type === cardType.CHECKBOX) {
       let newValues = [];

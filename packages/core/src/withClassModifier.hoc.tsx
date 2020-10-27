@@ -9,13 +9,19 @@ export interface WithClassModifierOptions {
 }
 
 const withClassModifier = compose(
-    withProps(({ className, classModifier, defaultClassName }: WithClassModifierOptions) => ({
+  withProps(
+    ({
+      className,
+      classModifier,
+      defaultClassName,
+    }: WithClassModifierOptions) => ({
       className: classManager.getComponentClassName(
         className,
         classModifier,
         defaultClassName
       ),
-    }))
+    })
+  )
 );
 
 export default withClassModifier;

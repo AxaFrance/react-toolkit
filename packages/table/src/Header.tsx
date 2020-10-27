@@ -12,7 +12,7 @@ const DEFAULT_CLASSNAME = 'af-table__thead';
 
 export type HeaderComponentProps = React.HTMLProps<HTMLTableSectionElement>;
 
-const Header: React.SFC<HeaderComponentProps> = props => {
+const Header: React.SFC<HeaderComponentProps> = (props) => {
   const { children, headers, className } = props;
 
   if (headers) {

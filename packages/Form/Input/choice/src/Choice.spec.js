@@ -10,7 +10,10 @@ describe('<ChoiceInput>', () => {
           label="Some label"
           id="xxx"
           name="xxx"
-          options={[{ label: 'Yes', value: true }, { label: 'No', value: false }]}
+          options={[
+            { label: 'Yes', value: true },
+            { label: 'No', value: false },
+          ]}
           onChange={() => {}}
         />
       )
@@ -25,7 +28,10 @@ describe('<ChoiceInput>', () => {
           label="Some label"
           id="xxx"
           name="xxx"
-          options={[{ label: 'Yes', value: true, id: 'xxx_Yes' }, { label: 'No', value: false, id: 'xxx_No' }]}
+          options={[
+            { label: 'Yes', value: true, id: 'xxx_Yes' },
+            { label: 'No', value: false, id: 'xxx_No' },
+          ]}
           onChange={() => {}}
         />
       )

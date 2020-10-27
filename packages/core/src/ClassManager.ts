@@ -4,7 +4,7 @@ const getClassWithoutModifier = (classNameToUse: string) => {
   let classWithoutModifier: string = null;
   if (classNameToUse) {
     const classes = classNameToUse.split(' ').reverse();
-    classWithoutModifier = classes.find(c => !!c);
+    classWithoutModifier = classes.find((c) => !!c);
   }
   return classWithoutModifier;
 };
@@ -28,9 +28,11 @@ const getComponentClassName = (
 
   const modifiersObject: any = {};
   if (modifiers) {
-    modifiers.forEach(modifier => {
+    modifiers.forEach((modifier) => {
       if (/\S/.test(modifier)) {
-        modifiersObject[`${classWithoutModifier}--${modifier}`] = classNameToUse;
+        modifiersObject[
+          `${classWithoutModifier}--${modifier}`
+        ] = classNameToUse;
       }
     }, this);
   }

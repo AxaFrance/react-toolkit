@@ -24,7 +24,9 @@ export const setWithProps = ({
   iconClassName: iconClassName || TypeIcons[type as keyof typeof TypeIcons],
 });
 
-const enhance = compose(withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps))(AlertCore);
+const enhance = compose(
+  withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps)
+)(AlertCore);
 
 enhance.defaultProps = {
   type: 'error',

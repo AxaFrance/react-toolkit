@@ -14,10 +14,11 @@ interface Option {
   id?: string | null;
 }
 
-const getFirstId = (options: Option[]) => (!options && options.length > 0 ? options[0].id : '');
+const getFirstId = (options: Option[]) =>
+  !options && options.length > 0 ? options[0].id : '';
 
 const getOptionsWithId = (options: Option[]) => {
-  return options.map(option => ({ ...option, id: getInputId(option.id) }));
+  return options.map((option) => ({ ...option, id: getInputId(option.id) }));
 };
 
 export default {

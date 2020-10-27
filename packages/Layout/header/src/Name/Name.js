@@ -23,7 +23,7 @@ const defaultProps = {
 };
 
 class Name extends React.Component {
-  onClick = e => {
+  onClick = (e) => {
     const { onClick } = this.props;
     if (onClick) {
       onClick({ event: e });
@@ -53,6 +53,6 @@ class Name extends React.Component {
 
 Name.propTypes = propTypes;
 Name.defaultProps = defaultProps;
-Name.displayName = "Name";
+Name.displayName = 'Name';
 
 export default Name;

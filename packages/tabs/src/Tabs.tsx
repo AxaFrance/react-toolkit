@@ -4,7 +4,6 @@ import TabsCore, { TabsCoreProps } from './TabsCore';
 import Tab from './Tab';
 
 class Tabs extends React.PureComponent<TabsCoreProps> {
-
   public static readonly Tab = Tab;
 
   public render() {

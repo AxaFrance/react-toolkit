@@ -36,7 +36,9 @@ export default {
 } as Meta;
 
 type HelpProps = React.ComponentProps<typeof Help>;
-const Template: Story<HelpProps> = ({ content, ...args }) => <Help {...args}>{content}</Help>;
+const Template: Story<HelpProps> = ({ content, ...args }) => (
+  <Help {...args}>{content}</Help>
+);
 
 export const TextStory = Template.bind({});
 TextStory.args = {

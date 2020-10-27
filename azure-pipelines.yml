@@ -48,8 +48,8 @@ steps:
   - script: npm test -- --coverage
     displayName: 'npm test'
 
-  - script: npm run lint
-    displayName: 'npm run lint'
+  - script: npm run check
+    displayName: 'npm run check'
 
   - script: npm run storybook:build
     displayName: 'build storybook'

@@ -27,7 +27,7 @@ const defaultProps = {
   mode: StepModes.link,
 };
 
-const Step = props => {
+const Step = (props) => {
   const {
     number,
     id,

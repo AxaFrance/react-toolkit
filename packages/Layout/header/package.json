@@ -1,28 +1,28 @@
 {
-	"name": "@axa-fr/react-toolkit-layout-header",
-	"version": "1.3.23",
-	"main": "dist/index.js",
-	"jsnext:main": "src/index.js",
-	"private": false,
-	"peerDependencies": {
-		"react": "16.8.0",
-		"react-dom": "16.8.0"
-	},
-	"scripts": {
-		"prepare": "node ../../../scripts/prepare.js"
-	},
-	"dependencies": {
-		"@axa-fr/react-toolkit-action": "1.3.23",
-		"@axa-fr/react-toolkit-core": "1.3.23",
-		"prop-types": "15.5.10"
-	},
-	"license": "MIT",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/AxaGuilDEv/react-toolkit.git"
-	}
+  "name": "@axa-fr/react-toolkit-layout-header",
+  "version": "1.3.23",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "private": false,
+  "peerDependencies": {
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
+  },
+  "scripts": {
+    "prepare": "node ../../../scripts/prepare.js"
+  },
+  "dependencies": {
+    "@axa-fr/react-toolkit-action": "1.3.23",
+    "@axa-fr/react-toolkit-core": "1.3.23",
+    "prop-types": "15.5.10"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
+  }
 }

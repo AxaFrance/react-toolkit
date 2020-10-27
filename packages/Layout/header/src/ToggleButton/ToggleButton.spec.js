@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ToggleButton from '.';
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     idControl: 'idctrl',
   };

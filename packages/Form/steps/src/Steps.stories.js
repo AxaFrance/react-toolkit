@@ -8,7 +8,7 @@ import StepBase from './StepBase';
 import StepModes from './StepModes';
 import readme from '../README.md';
 
-const withPreventDefaultClick = next => e => {
+const withPreventDefaultClick = (next) => (e) => {
   e.preventDefault();
   next(e);
 };

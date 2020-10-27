@@ -1,13 +1,19 @@
 import React from 'react';
-import { withClassDefault, withClassModifier, PropsManager, compose, withProps } from '@axa-fr/react-toolkit-core';
+import {
+  withClassDefault,
+  withClassModifier,
+  PropsManager,
+  compose,
+  withProps,
+} from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'btn af-btn--circle';
 
 export interface ActionCoreProps
   extends React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    > {
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
   icon: string;
   className?: string;
 }

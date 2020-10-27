@@ -1,9 +1,15 @@
-import { withClickId, WithClickIdProps, compose, withProps } from '@axa-fr/react-toolkit-core';
+import {
+  withClickId,
+  WithClickIdProps,
+  compose,
+  withProps,
+} from '@axa-fr/react-toolkit-core';
 import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 const onCancelEvent = 'onCancel';
 
-export interface HeaderProps extends WithClickIdProps<HeaderCoreProps, typeof onCancelEvent> {
+export interface HeaderProps
+  extends WithClickIdProps<HeaderCoreProps, typeof onCancelEvent> {
   title: string;
 }
 

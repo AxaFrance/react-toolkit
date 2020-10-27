@@ -9,10 +9,12 @@ export interface WithClickIdOption {
 }
 
 export type WithClickIdProps<TProps, TOption extends keyof TProps> = {
-  [T in keyof TProps]: T extends TOption ? (e: ClickEvent) => void : TProps[T]
+  [T in keyof TProps]: T extends TOption ? (e: ClickEvent) => void : TProps[T];
 };
 
-const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseComponent: Function) => {
+const withClickId = <TOutter extends {}>(option: WithClickIdOption) => (
+  BaseComponent: Function
+) => {
   const handler = option.event.reduce((previous: any, current: any) => {
     previous[current] = (props: any) => (event: React.MouseEvent<any>) => {
       if (props[current]) {
@@ -23,11 +25,11 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption)  => (BaseCom
     return previous;
   }, {});
 
-  const Hoc = (props:TOutter) => {
-    const handlerWithProps: {[k: string]: any} = {} ;
+  const Hoc = (props: TOutter) => {
+    const handlerWithProps: { [k: string]: any } = {};
 
     for (const property in handler) {
-      if( handler.hasOwnProperty( property ) ) {
+      if (handler.hasOwnProperty(property)) {
         handlerWithProps[property] = handler[property](props);
       }
     }

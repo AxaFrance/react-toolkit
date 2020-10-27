@@ -47,8 +47,7 @@ const Template: Story<PopoverProps> = (args) => (
           width: '200px',
           height: '200px',
           backgroundColor: 'green',
-        }}
-      >
+        }}>
         Exemple
       </div>
     </Popover.Over>

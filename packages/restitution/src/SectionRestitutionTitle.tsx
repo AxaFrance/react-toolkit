@@ -14,8 +14,8 @@ type RestitutionBaseProps = {
 };
 
 const Restitution = ({ title, className }: RestitutionBaseProps) => (
-    <div className={className}>{title}</div>
-  );
+  <div className={className}>{title}</div>
+);
 
 const enhance = compose<RestitutionBaseProps, RestitutionProps>(
   withClassDefault(DEFAULT_CLASSNAME),
@@ -25,7 +25,7 @@ const enhance = compose<RestitutionBaseProps, RestitutionProps>(
 type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
 
 const defaultProps: Partial<RestitutionProps> = {
-  className:DEFAULT_CLASSNAME
+  className: DEFAULT_CLASSNAME,
 };
 
 const Enhanced = enhance(Restitution);

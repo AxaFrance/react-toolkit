@@ -12,7 +12,7 @@ import {
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const MultiSelect = props => {
+const MultiSelect = (props) => {
   const {
     name,
     loadOptions,
@@ -36,7 +36,7 @@ const MultiSelect = props => {
 
   if (values != null) {
     const newValues = options.reduce((acc, opt) => {
-      const valueTemp = values.find(v => v === opt.value);
+      const valueTemp = values.find((v) => v === opt.value);
       if (valueTemp) {
         acc.push(opt);
       }
@@ -64,7 +64,7 @@ const MultiSelect = props => {
       />
     );
   }
-  const newValue = options.find(v => v.value === value) || '';
+  const newValue = options.find((v) => v.value === value) || '';
   return (
     <SelectComponent
       multi={false}
@@ -111,9 +111,9 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ values, name, id, onChange }) => newValue => {
+  onChange: ({ values, name, id, onChange }) => (newValue) => {
     if (values != null) {
-      const newValues = newValue.map(v => v.value);
+      const newValues = newValue.map((v) => v.value);
       onChange({
         values: newValues,
         name,

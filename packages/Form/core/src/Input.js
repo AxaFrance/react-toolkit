@@ -1,19 +1,19 @@
 import React from 'react';
 
 const eventWrapper = (wrapper, props) => ({
-  onChange: ev => {
+  onChange: (ev) => {
     wrapper.onChange(ev);
     if (props.onChange) {
       props.onChange(ev);
     }
   },
-  onBlur: ev => {
+  onBlur: (ev) => {
     wrapper.onBlur(ev);
     if (props.onBlur) {
       props.onBlur(ev);
     }
   },
-  onFocus: ev => {
+  onFocus: (ev) => {
     wrapper.onFocus(ev);
     if (props.onFocus) {
       props.onFocus(ev);
@@ -21,7 +21,7 @@ const eventWrapper = (wrapper, props) => ({
   },
 });
 
-const Clone = data => {
+const Clone = (data) => {
   const { props, child, wrapper } = data;
   return React.cloneElement(child, {
     ...props,

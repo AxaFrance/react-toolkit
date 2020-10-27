@@ -24,7 +24,7 @@ export default {
   },
 };
 
-const Template: Story<PagerProps> = args => <Pager {...args} />;
+const Template: Story<PagerProps> = (args) => <Pager {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

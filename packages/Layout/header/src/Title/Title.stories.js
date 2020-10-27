@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import Action from '@axa-fr/react-toolkit-action';
-import Title from './Title'
+import Title from './Title';
 import readme from '../../README.md';
 
 const actions = [
@@ -29,7 +29,10 @@ const TitleStory = () => (
 );
 
 const TitleComplexStory = () => (
-  <Title title="Toolkit Axa" subtitle="Sous titre" toggleMenu={action('onToggle')}>
+  <Title
+    title="Toolkit Axa"
+    subtitle="Sous titre"
+    toggleMenu={action('onToggle')}>
     <div className="af-title-bar__actions">
       <a className="af-title-bar__link" href="#lien" title="lien titlebar">
         lien titlebar

@@ -2,12 +2,12 @@ import React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Constants from './InputConstants';
 
-export const omit = keys => props => {
+export const omit = (keys) => (props) => {
   if (!keys) {
     return props;
   }
   const clonedProps = { ...props };
-  keys.forEach(element => {
+  keys.forEach((element) => {
     if (element in clonedProps) {
       delete clonedProps[element];
     }
@@ -15,7 +15,7 @@ export const omit = keys => props => {
   return clonedProps;
 };
 
-const defaultOnChange = ({ name, onChange }) => e =>
+const defaultOnChange = ({ name, onChange }) => (e) =>
   onChange({ value: e.target.value, name, id: e.target.id });
 
 export const withInput = (
@@ -24,7 +24,7 @@ export const withInput = (
   addDefaultProps = {},
   withHandlersOverride = {},
   withPropsOverride = null
-) => Component =>  {
+) => (Component) => {
   let defaultWithProps = ({ className, classModifier }) => ({
     componentClassName: ClassManager.getComponentClassName(
       className,
@@ -42,16 +42,18 @@ export const withInput = (
   };
 
   const NewComponent = (props) => {
-    const {isVisible} = props;
+    const { isVisible } = props;
     if (!isVisible) {
       return null;
     }
     const onHandlers = {};
     // eslint-disable-next-line guard-for-in
-    for (const propertyName in handlers){
+    for (const propertyName in handlers) {
       onHandlers[propertyName] = handlers[propertyName](props);
     }
-    return <Component {...props} {...defaultWithProps(props)} {...onHandlers} />;
+    return (
+      <Component {...props} {...defaultWithProps(props)} {...onHandlers} />
+    );
   };
 
   const propTypes = {
@@ -66,5 +68,5 @@ export const withInput = (
   };
   NewComponent.defaultProps = defaultProps;
 
- return NewComponent;
+  return NewComponent;
 };

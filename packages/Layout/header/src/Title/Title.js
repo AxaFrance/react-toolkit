@@ -21,7 +21,7 @@ const defaultProps = {
   toggleMenu: null,
 };
 
-const Title = props => {
+const Title = (props) => {
   const {
     title,
     subtitle,

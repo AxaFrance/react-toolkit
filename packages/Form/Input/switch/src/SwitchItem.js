@@ -4,7 +4,7 @@ import { InputManager } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-form__radio-custom';
 
-const SwitchItem = props => {
+const SwitchItem = (props) => {
   const {
     disabled,
     value,
@@ -21,7 +21,7 @@ const SwitchItem = props => {
     ? `${defaultClassName} af-form__radio-custom--disabled`
     : defaultClassName;
   return (
-    <div className={newClassName} key={value} >
+    <div className={newClassName} key={value}>
       <input
         className="af-form__input-radio"
         name={name}

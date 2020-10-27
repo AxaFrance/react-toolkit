@@ -7,7 +7,7 @@ describe('<Name>', () => {
     const tree = renderer
       .create(
         <Name
-          title="Nom de l&apos;application"
+          title="Nom de l'application"
           subtitle="Baseline"
           img="test.svg"
           alt="Logo React"

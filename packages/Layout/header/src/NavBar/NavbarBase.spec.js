@@ -4,7 +4,7 @@ import NavBarBase from './NavBarBase';
 
 const Custom = () => <div>Custom</div>;
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     isVisible: true,
     onClick: () => {},

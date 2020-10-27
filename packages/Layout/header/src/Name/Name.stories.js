@@ -11,7 +11,7 @@ const NameStory = () => (
     subtitle="Baseline"
     img={logo}
     alt="Logo React"
-    onClick={e => {
+    onClick={(e) => {
       e.event.preventDefault();
       e.event = {};
       action('onClick')(e);

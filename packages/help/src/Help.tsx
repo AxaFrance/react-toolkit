@@ -15,8 +15,18 @@ export type Props = Partial<typeof defaultProps> & {
   classModifier?: string;
   className?: string;
 };
-const Help = ({ className, classModifier, children, mode, placement }: Props) => (
-  <Popover className={className} classModifier={classModifier} placement={placement} mode={mode}>
+const Help = ({
+  className,
+  classModifier,
+  children,
+  mode,
+  placement,
+}: Props) => (
+  <Popover
+    className={className}
+    classModifier={classModifier}
+    placement={placement}
+    mode={mode}>
     <PopoverBase.Pop>{children}</PopoverBase.Pop>
     <PopoverBase.Over>
       <button className="btn af-btn--circle" type="button">

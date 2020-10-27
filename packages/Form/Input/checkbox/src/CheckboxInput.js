@@ -28,7 +28,7 @@ const defaultProps = {
   className: '',
 };
 
-const CheckboxInput = props => {
+const CheckboxInput = (props) => {
   const {
     mode,
     messageType,

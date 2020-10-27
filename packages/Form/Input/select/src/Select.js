@@ -86,7 +86,7 @@ const defaultProps = {
   forceDisplayPlaceholder: Boolean(false),
 };
 
-const Select = props => {
+const Select = (props) => {
   const { mode, children } = props;
   const DynamicComponent =
     mode === SelectModes.default ? SelectDefault : SelectBase;
@@ -94,7 +94,7 @@ const Select = props => {
 };
 
 const handlers = {
-  onChange: ({ name, id, onChange }) => e => {
+  onChange: ({ name, id, onChange }) => (e) => {
     onChange({
       value: e.value,
       name,

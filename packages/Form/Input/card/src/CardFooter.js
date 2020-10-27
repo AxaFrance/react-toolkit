@@ -6,5 +6,5 @@ const CardFooter = ({ children, id }) => (
   </footer>
 );
 
-CardFooter.displayName = "CardFooter";
+CardFooter.displayName = 'CardFooter';
 export default CardFooter;

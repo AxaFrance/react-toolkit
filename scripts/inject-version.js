@@ -30,7 +30,10 @@ const newHtml = html
     '<div id="root"></div>',
     template.compile(versionToInject, { version: lerna.version })
   )
-  .replace('<title>Storybook</title>', '<title>Storybook @axa-fr/react-toolkit</title>');
+  .replace(
+    '<title>Storybook</title>',
+    '<title>Storybook @axa-fr/react-toolkit</title>'
+  );
 console.log('Html templating output');
 console.log(newHtml);
 

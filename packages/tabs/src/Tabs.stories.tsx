@@ -42,7 +42,7 @@ const TabTitleIconBadge = (
   </span>
 );
 
-const Template: Story<TabsCoreProps> = args => (
+const Template: Story<TabsCoreProps> = (args) => (
   <Tabs {...args}>
     <Tabs.Tab
       title={TabTitleIconLeft}

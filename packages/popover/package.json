@@ -1,29 +1,29 @@
 {
-	"name": "@axa-fr/react-toolkit-popover",
-	"version": "1.3.23",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"private": false,
-	"scripts": {
-		"prepare": "node ../../scripts/prepare.js"
-	},
-	"peerDependencies": {
-		"react": "16.8.0",
-		"react-dom": "16.8.0"
-	},
-	"dependencies": {
-		"@axa-fr/react-toolkit-core": "1.3.23",
-		"@popperjs/core": "2.4.0",
-		"prop-types": "15.5.10",
-		"react-popper": "2.2.3"
+  "name": "@axa-fr/react-toolkit-popover",
+  "version": "1.3.23",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "prepare": "node ../../scripts/prepare.js"
   },
-	"license": "MIT",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/AxaGuilDEv/react-toolkit.git"
-	}
+  "peerDependencies": {
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
+  },
+  "dependencies": {
+    "@axa-fr/react-toolkit-core": "1.3.23",
+    "@popperjs/core": "2.4.0",
+    "prop-types": "15.5.10",
+    "react-popper": "2.2.3"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
+  }
 }

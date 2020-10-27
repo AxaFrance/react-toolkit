@@ -13,17 +13,19 @@ type ArticleRestitutionBaseProps = {
   children: React.ReactNode;
 };
 
-type ArticleRestitutionProps = WithClassModifierOptions & ArticleRestitutionBaseProps ;
+type ArticleRestitutionProps = WithClassModifierOptions &
+  ArticleRestitutionBaseProps;
 
-const ArticleRestitution= ({ children, className }:ArticleRestitutionBaseProps) => (
-    <article className={className}>
-    {children}
-    </article>
-  );
+const ArticleRestitution = ({
+  children,
+  className,
+}: ArticleRestitutionBaseProps) => (
+  <article className={className}>{children}</article>
+);
 
 const defaultProps: Partial<ArticleRestitutionProps> = {
   children: null,
-  className:DEFAULT_CLASSNAME
+  className: DEFAULT_CLASSNAME,
 };
 
 const enhance = compose<ArticleRestitutionBaseProps, ArticleRestitutionProps>(
@@ -35,4 +37,3 @@ const Enhanced = enhance(ArticleRestitution);
 Enhanced.displayName = 'ArticleRestitution';
 Enhanced.defaultProps = defaultProps;
 export default Enhanced;
-

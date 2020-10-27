@@ -19,7 +19,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const SwitchItems = props => {
+const SwitchItems = (props) => {
   const {
     options,
     value,
@@ -30,7 +30,7 @@ const SwitchItems = props => {
     disabled,
     ...otherProps
   } = props;
-  return options.map(option => {
+  return options.map((option) => {
     const isChecked = option.value === value;
     return (
       <SwitchItem
@@ -108,7 +108,7 @@ class Switch extends React.Component {
       <div className="af-form-switch" ref={this.ref}>
         <SwitchItems
           {...props}
-          onChange={e => this.handleChange(e, onChange)}
+          onChange={(e) => this.handleChange(e, onChange)}
           value={value}
         />
         <span className="af-btn-switch-slider" style={sliderStyle} />
@@ -117,9 +117,11 @@ class Switch extends React.Component {
   }
 }
 
-const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
-  Switch
-);
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(Switch);
 
 EnhancedComponent.displayName = 'SwitchInput';
 

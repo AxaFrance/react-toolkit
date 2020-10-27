@@ -13,7 +13,7 @@ export type TableCoreComponentProps = Pick<
   'className'
 >;
 
-const TableCore: React.SFC<TableCoreComponentProps> = props => {
+const TableCore: React.SFC<TableCoreComponentProps> = (props) => {
   const { className, children } = props;
   return <table className={className}>{children}</table>;
 };

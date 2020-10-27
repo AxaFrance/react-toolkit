@@ -11,7 +11,14 @@ For more information about style component, you can see the [Restitution Style o
 ### Import
 
 ```javascript
-import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
+import {
+  ArticleRestitution,
+  HeaderRestitution,
+  SectionRestitution,
+  SectionRestitutionColumn,
+  SectionRestitutionRow,
+  Restitution,
+} from '@axa-fr/react-toolkit-restitution';
 
 import '@axa-fr/react-toolkit-restitution/dist/restitution.scss';
 /* or */

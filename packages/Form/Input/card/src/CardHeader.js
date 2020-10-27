@@ -36,11 +36,11 @@ const defaultProps = {
   autoFocus: null,
 };
 
-const checkMeta = children =>
+const checkMeta = (children) =>
   utils
     .castToArray(children)
     .find(
-      child =>
+      (child) =>
         typeof child === 'object' &&
         child.props.className === 'af-rccard-header__meta'
     );

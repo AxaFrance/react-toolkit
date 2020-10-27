@@ -34,7 +34,7 @@ const defaultProps = {
   loadOptions: null,
 };
 
-const MultiSelectInput = props => {
+const MultiSelectInput = (props) => {
   const {
     classModifier,
     message,

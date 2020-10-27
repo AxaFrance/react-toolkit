@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, InputConstants as Constants, withInput, omit } from '@axa-fr/react-toolkit-form-core';
+import {
+  Input,
+  InputConstants as Constants,
+  withInput,
+  omit,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import parseValueToNumber from './NumberHelper';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const CustomNumber = props => {
+const CustomNumber = (props) => {
   const {
     componentClassName,
     id,
@@ -65,7 +70,7 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ onChange, name, id }) => e => {
+  onChange: ({ onChange, name, id }) => (e) => {
     const viewValue = e.target.value;
     const value = parseValueToNumber(viewValue);
 

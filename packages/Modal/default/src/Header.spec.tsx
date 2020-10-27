@@ -12,7 +12,11 @@ describe('<Header>', () => {
 
   it('should render id click onCancel', () => {
     const onCancel = jest.fn();
-    const wrapper = mount(<Header title="title" onCancel={onCancel} >header</Header>);
+    const wrapper = mount(
+      <Header title="title" onCancel={onCancel}>
+        header
+      </Header>
+    );
     wrapper.find('button').simulate('click', {});
     expect(onCancel).toHaveBeenCalledWith({ id: '' });
   });

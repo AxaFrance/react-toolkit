@@ -12,7 +12,7 @@ function getCommand(watch) {
     '--ignore "./src/**/*.stories.js","./src/**/*.spec.js",".src/__snapshots__"',
     '--source-maps',
     '--copy-files',
-    '--no-copy-ignored'
+    '--no-copy-ignored',
   ];
 
   if (watch) {

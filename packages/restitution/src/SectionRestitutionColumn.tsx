@@ -15,23 +15,28 @@ type SectionRestitutionColumnBaseProps = {
   children?: React.ReactNode;
 };
 
-export const SectionRestitutionColumn = ({ children, className, title }: SectionRestitutionColumnBaseProps) => (
-    <div className={className}>
-        {title && <SectionRestitutionTitle title={title} />}
-       {children}
-    </div>
-  );
-
-type SectionRestitutionColumnProps = WithClassModifierOptions & SectionRestitutionColumnBaseProps;
-
-const enhance = compose<SectionRestitutionColumnBaseProps, SectionRestitutionColumnProps>(
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+export const SectionRestitutionColumn = ({
+  children,
+  className,
+  title,
+}: SectionRestitutionColumnBaseProps) => (
+  <div className={className}>
+    {title && <SectionRestitutionTitle title={title} />}
+    {children}
+  </div>
 );
+
+type SectionRestitutionColumnProps = WithClassModifierOptions &
+  SectionRestitutionColumnBaseProps;
+
+const enhance = compose<
+  SectionRestitutionColumnBaseProps,
+  SectionRestitutionColumnProps
+>(withClassDefault(DEFAULT_CLASSNAME), withClassModifier);
 
 const defaultProps: Partial<SectionRestitutionColumnProps> = {
   children: null,
-  className: DEFAULT_CLASSNAME
+  className: DEFAULT_CLASSNAME,
 };
 
 const Enhanced = enhance(SectionRestitutionColumn);

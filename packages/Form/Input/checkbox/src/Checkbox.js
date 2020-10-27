@@ -9,26 +9,25 @@ import CheckboxItem from './CheckboxItem';
 const omitProperties = omit(['mode', 'id']);
 
 const Checkbox = ({
-                    classModifier,
-                    options,
-                    isVisible,
-                    disabled,
-                    name,
-                    onBlur,
-                    onFocus,
-                    readOnly,
-                    children,
-                    values,
-                    className,
-                    onChange,
-                    ...otherProps
-                  }) => {
-
+  classModifier,
+  options,
+  isVisible,
+  disabled,
+  name,
+  onBlur,
+  onFocus,
+  readOnly,
+  children,
+  values,
+  className,
+  onChange,
+  ...otherProps
+}) => {
   if (!options) {
     return null;
   }
 
-  return options.map(option => {
+  return options.map((option) => {
     const isChecked = values ? values.indexOf(option.value) >= 0 : false;
     return (
       <CheckboxItem
@@ -71,7 +70,7 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ onChange, name, values, id }) => e => {
+  onChange: ({ onChange, name, values, id }) => (e) => {
     let newValues = [];
     if (values) {
       newValues = [...values];

@@ -48,7 +48,7 @@ const Restitution = ({ label, value, values, className }: RestitutionProps) => {
 type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
 
 const defaultProps: Partial<RestitutionProps> = {
-  className:DEFAULT_CLASSNAME
+  className: DEFAULT_CLASSNAME,
 };
 
 const enhance = compose<RestitutionBaseProps, RestitutionProps>(

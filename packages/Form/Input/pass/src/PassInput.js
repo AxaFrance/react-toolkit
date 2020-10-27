@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Field,
@@ -31,7 +31,7 @@ const defaultProps = {
   score: null,
 };
 
-export const PassInput = props => {
+export const PassInput = (props) => {
   const {
     message,
     children,
@@ -112,11 +112,10 @@ PassInput.propTypes = propTypes;
 PassInput.defaultProps = defaultProps;
 
 const onToggleType = ({ type }) => () => ({
-  type:
-    type === typesField.PASSWORD ? typesField.TEXT : typesField.PASSWORD,
+  type: type === typesField.PASSWORD ? typesField.TEXT : typesField.PASSWORD,
 });
 
-const onChangeCore = (state, { onChange, score }) => payload => {
+const onChangeCore = (state, { onChange, score }) => (payload) => {
   const strength = score === null ? null : strengthList[parseInt(score, 10)];
   onChange(payload);
   return {
@@ -125,16 +124,26 @@ const onChangeCore = (state, { onChange, score }) => payload => {
 };
 
 const EnhancedComponent = (props) => {
-  const [state, setState] = useState({ type: typesField.PASSWORD, strength: null });
+  const [state, setState] = useState({
+    type: typesField.PASSWORD,
+    strength: null,
+  });
   const toggleType = (e) => {
     const newState = onToggleType(state)(e);
-    setState({ ...state, ...newState});
+    setState({ ...state, ...newState });
   };
   const change = (e) => {
     const newState = onChangeCore(state, props)(e);
-    setState({ ...state, ...newState});
+    setState({ ...state, ...newState });
   };
-  return (<PassInput {...props} {...state} onChange={change} onToggleType={toggleType} />);
+  return (
+    <PassInput
+      {...props}
+      {...state}
+      onChange={change}
+      onToggleType={toggleType}
+    />
+  );
 };
 
 EnhancedComponent.displayName = PassInput.name;

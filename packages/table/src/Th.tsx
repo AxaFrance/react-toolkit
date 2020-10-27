@@ -22,7 +22,7 @@ const defaultProps: Partial<ThComponentProps> = {
   return <span className="af-table-th-content">{children}</span>;
 }; */
 
-const Th: React.SFC<ThComponentProps> = props => {
+const Th: React.SFC<ThComponentProps> = (props) => {
   const { children, id, rowSpan, colSpan, className } = props;
 
   // A discuter mais je pense qu'il faut laisser les children gérer le contenu la cellule

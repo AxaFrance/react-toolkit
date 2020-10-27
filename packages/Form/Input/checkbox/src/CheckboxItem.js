@@ -12,7 +12,7 @@ const omitProperties = omit([
   'componentClassName',
 ]);
 
-const CheckboxItem = props => {
+const CheckboxItem = (props) => {
   const {
     optionClassName,
     disabled,
@@ -82,7 +82,7 @@ const props = ({ className, classModifier, disabled }) => ({
 });
 
 const handlers = {
-  onChange: ({ onChange, value, name, id }) => e => {
+  onChange: ({ onChange, value, name, id }) => (e) => {
     onChange({
       value,
       name,

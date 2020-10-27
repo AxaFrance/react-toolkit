@@ -14,7 +14,7 @@ const getInputClassModifier = (modifier, children) => {
   return modifier;
 };
 
-const getModifier = messageType => {
+const getModifier = (messageType) => {
   let modifier = 'error';
   switch (messageType) {
     case MessageTypes.success:

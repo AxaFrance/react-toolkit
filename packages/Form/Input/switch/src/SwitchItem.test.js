@@ -5,7 +5,7 @@ import SwitchItem from './SwitchItem';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     name: 'testSwitchItem',
     value: '0',

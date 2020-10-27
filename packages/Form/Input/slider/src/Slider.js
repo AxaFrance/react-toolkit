@@ -17,9 +17,9 @@ const omitProperties = omit([
   'options',
 ]);
 
-const mapOptions = options => options.map((o, index) => ({ index, ...o }));
+const mapOptions = (options) => options.map((o, index) => ({ index, ...o }));
 
-const CustomSlider = props => {
+const CustomSlider = (props) => {
   const {
     componentClassName,
     isVisible,
@@ -34,7 +34,7 @@ const CustomSlider = props => {
   } = props;
 
   const newOptions = mapOptions(options);
-  const indexes = newOptions.map(o => o.index);
+  const indexes = newOptions.map((o) => o.index);
 
   const min = Math.min(...indexes);
   const max = Math.max(...indexes);
@@ -45,12 +45,12 @@ const CustomSlider = props => {
       2: 'NICE',
       3: 'VERY NICE', */
   };
-  newOptions.forEach(element => {
+  newOptions.forEach((element) => {
     marks[element.index] = element.label;
   });
 
   let newValue = null;
-  newOptions.forEach(element => {
+  newOptions.forEach((element) => {
     if (element.value === value) {
       newValue = element.index;
     }
@@ -75,11 +75,11 @@ const CustomSlider = props => {
 };
 
 const handlers = {
-  onChange: ({ name, id, onChange, options }) => e => {
+  onChange: ({ name, id, onChange, options }) => (e) => {
     const newOptions = mapOptions(options);
 
     let option = null;
-    newOptions.forEach(o => {
+    newOptions.forEach((o) => {
       if (o.index === e) {
         option = o;
       }

@@ -15,7 +15,12 @@ type Props = Partial<typeof defaultProps> & {
   children?: React.ReactNode;
 };
 
-const PopoverClick = ({ children, placement, className, classModifier }: Props) => {
+const PopoverClick = ({
+  children,
+  placement,
+  className,
+  classModifier,
+}: Props) => {
   const wrapperRef = React.useRef(null);
   const [isOpen, setOpen] = React.useState(false);
   const [isHover, setHover] = React.useState(false);
@@ -69,23 +74,26 @@ const PopoverClick = ({ children, placement, className, classModifier }: Props) 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onKeyDown={handleClick}
-      onClick={handleClick}
-    >
+      onClick={handleClick}>
       <PopoverBase
         onMouseEnter={handleMouseEnterPopover}
         onMouseLeave={handleMouseLeavePopover}
         isOpen={isOpen}
         placement={placement}
         className={className}
-        classModifier={classModifier}
-      >
+        classModifier={classModifier}>
         {children}
       </PopoverBase>
     </div>
   );
 };
 
-const PopoverOver = ({ children, placement, className, classModifier }: Props) => {
+const PopoverOver = ({
+  children,
+  placement,
+  className,
+  classModifier,
+}: Props) => {
   const [isOpen, setOpen] = React.useState(false);
 
   const handleMouseEnter = () => {
@@ -100,14 +108,12 @@ const PopoverOver = ({ children, placement, className, classModifier }: Props) =
     <div
       className="af-popover__wrapper"
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+      onMouseLeave={handleMouseLeave}>
       <PopoverBase
         isOpen={isOpen}
         placement={placement}
         className={className}
-        classModifier={classModifier}
-      >
+        classModifier={classModifier}>
         {children}
       </PopoverBase>
     </div>
@@ -116,13 +122,25 @@ const PopoverOver = ({ children, placement, className, classModifier }: Props) =
 
 export { PopoverClick, PopoverOver };
 
-const Popover = ({ children, placement, className, classModifier, mode }: Props) => {
+const Popover = ({
+  children,
+  placement,
+  className,
+  classModifier,
+  mode,
+}: Props) => {
   return mode === PopoverModes.click ? (
-    <PopoverClick className={className} classModifier={classModifier} placement={placement}>
+    <PopoverClick
+      className={className}
+      classModifier={classModifier}
+      placement={placement}>
       {children}
     </PopoverClick>
   ) : (
-    <PopoverOver className={className} classModifier={classModifier} placement={placement}>
+    <PopoverOver
+      className={className}
+      classModifier={classModifier}
+      placement={placement}>
       {children}
     </PopoverOver>
   );

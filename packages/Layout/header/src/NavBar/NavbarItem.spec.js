@@ -4,7 +4,7 @@ import NavBarItem from './NavBarItem';
 
 const Custom = () => <div>Custom</div>;
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     label: 'Home',
     href: '/home',

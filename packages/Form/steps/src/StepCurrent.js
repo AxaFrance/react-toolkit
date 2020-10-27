@@ -16,7 +16,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const StepCurrent = props => {
+const StepCurrent = (props) => {
   const { number, id, title, className, modifier, icon } = props;
 
   return (

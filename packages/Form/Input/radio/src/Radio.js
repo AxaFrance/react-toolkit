@@ -26,7 +26,7 @@ const Radio = ({
   onChange,
   ...otherProps
 }) =>
-  options.map(option => {
+  options.map((option) => {
     const isChecked = option.value === value;
     return (
       <RadioItem

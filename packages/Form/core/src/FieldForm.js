@@ -26,7 +26,7 @@ function renderedChildren(children, wrapper, message, messageType) {
     return null;
   }
 
-  return React.Children.map(children, child => {
+  return React.Children.map(children, (child) => {
     // create a copy that includes addtional property values
     // as needed
 
@@ -43,7 +43,7 @@ function renderedChildren(children, wrapper, message, messageType) {
         child.props.children,
         wrapper,
         message,
-        messageType,
+        messageType
       );
       if (subChildren != null) {
         props.children = subChildren;
@@ -151,13 +151,13 @@ class FieldForm extends Component {
       children,
       this,
       message,
-      messageType,
+      messageType
     );
     const { className, classModifier } = this.props;
     const subComponentClassName = ClassManager.getComponentClassName(
       className,
       classModifier,
-      defaultClassName,
+      defaultClassName
     );
     return <div className={subComponentClassName}>{childrenCloned}</div>;
   }

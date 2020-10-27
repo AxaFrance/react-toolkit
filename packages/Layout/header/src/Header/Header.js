@@ -11,7 +11,7 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const Header = props => {
+const Header = (props) => {
   const { classModifier, className, children } = props;
   const componentClassName = ClassManager.getComponentClassName(
     className,

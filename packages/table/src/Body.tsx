@@ -11,7 +11,7 @@ const DEFAULT_CLASSNAME = 'af-table__body';
 
 export type BodyComponentProps = React.HTMLProps<HTMLTableSectionElement>;
 
-const Body: React.SFC<BodyComponentProps> = props => {
+const Body: React.SFC<BodyComponentProps> = (props) => {
   const { children, className } = props;
 
   return <tbody className={className}>{children}</tbody>;

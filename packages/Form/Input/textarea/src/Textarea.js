@@ -5,7 +5,7 @@ import { Input, withInput, omit } from '@axa-fr/react-toolkit-form-core';
 
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const Textarea = props => {
+const Textarea = (props) => {
   const {
     componentClassName,
     value,
@@ -54,9 +54,11 @@ const defaultProps = {
   placeholder: '',
 };
 
-const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
-  Textarea
-);
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(Textarea);
 
 EnhancedComponent.Clone = Input.Clone;
 EnhancedComponent.displayName = Textarea.name;

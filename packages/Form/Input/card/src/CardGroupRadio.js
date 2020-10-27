@@ -2,7 +2,7 @@ import React from 'react';
 import CardGroup from './CardGroup';
 import cardType from './Constants';
 
-const CardGroupRadio = props => {
+const CardGroupRadio = (props) => {
   const { children } = props;
   return (
     <CardGroup {...props} type={cardType.RADIO}>

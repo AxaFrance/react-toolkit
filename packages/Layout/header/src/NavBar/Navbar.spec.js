@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 
 const Custom = () => <div>Custom</div>;
 
-const createWrapper = customProps => {
+const createWrapper = (customProps) => {
   const defaultProps = {
     isVisible: true,
     onClick: () => {},
@@ -34,14 +34,18 @@ describe('NavBar', () => {
     it(' classModifier : initial child classModifier is kept if menu not active', () => {
       const wrapper = createWrapper();
       wrapper.setState({ position: 0, isMenuFocused: false });
-      const renderedChild = wrapper.instance().renderChild(<Custom classModifier="mod" />, 1);
-      expect(renderedChild.props.classModifier).toEqual("mod");
+      const renderedChild = wrapper
+        .instance()
+        .renderChild(<Custom classModifier="mod" />, 1);
+      expect(renderedChild.props.classModifier).toEqual('mod');
     });
     it(' classModifier : initial child classModifier is kept if menu active', () => {
       const wrapper = createWrapper();
       wrapper.setState({ position: 1, isMenuFocused: true });
-      const renderedChild = wrapper.instance().renderChild(<Custom classModifier="mod" />, 1);
-      expect(renderedChild.props.classModifier).toEqual("mod active");
+      const renderedChild = wrapper
+        .instance()
+        .renderChild(<Custom classModifier="mod" />, 1);
+      expect(renderedChild.props.classModifier).toEqual('mod active');
     });
     it(' hasFocus : state isMenuFocused is true, current position', () => {
       const wrapper = createWrapper();

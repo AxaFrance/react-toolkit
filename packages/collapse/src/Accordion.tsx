@@ -26,7 +26,7 @@ export const AccordionBase = ({
 }: Props) => {
   const renderedChildren = React.Children.map(children, (child, index) => {
     let mixCallback = handleToggle;
-    if(child.props.onToggle) {
+    if (child.props.onToggle) {
       mixCallback = (e: HeaderToggleElement) => {
         handleToggle(e);
         child.props.onToggle(e);
@@ -59,9 +59,10 @@ export const AccordionBase = ({
   );
 };
 
-export const handleToggleState = (collapses: boolean[], { onlyOne, children }: Props) => (
-  e: HeaderToggleElement
-): boolean[] => {
+export const handleToggleState = (
+  collapses: boolean[],
+  { onlyOne, children }: Props
+) => (e: HeaderToggleElement): boolean[] => {
   if (e.collapse && onlyOne) {
     if (Array.isArray(children)) {
       return children.map((_child, index) =>
@@ -90,7 +91,9 @@ const EnhancedComponent = (props: EnhancedProps) => {
     setCollapses(newCollapses);
   };
 
-  return <AccordionBase {...props} collapses={collapses} handleToggle={toggle} />;
+  return (
+    <AccordionBase {...props} collapses={collapses} handleToggle={toggle} />
+  );
 };
 
 EnhancedComponent.displayName = 'Accordion';
