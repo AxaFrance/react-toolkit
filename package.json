@@ -18,7 +18,9 @@
     "design:build": "npm -C ./storybook/design-system run build",
     "test": "jest --config jest.config.json",
     "cover": "jest --no-cache --config ./jest.config.json --coverage",
-    "lint": "cross-env NODE_ENV=production eslint packages --cache --cache-location=.cache/eslint --ext .js,.jsx,.ts,.tsx,.json --report-unused-disable-directives",
+    "check": "npm run check:formatting && npm run check:quality",
+    "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives",
     "dev": "concurrently --kill-others \"npm run dev:ts\" \"npm run dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
@@ -26,7 +28,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
     }
   },
   "devDependencies": {
@@ -81,8 +84,10 @@
     "jest-cli": "^26.6.0",
     "jest-enzyme": "^7.1.2",
     "lerna": "^3.22.1",
+    "lint-staged": "^10.5.0",
     "markdown-loader": "^6.0.0",
     "npmlog": "^4.1.2",
+    "package-lock-sanitizer": "^1.0.1",
     "postcss": "^8.1.2",
     "prettier": "^2.1.2",
     "react": "^16.14.0",
@@ -103,12 +108,23 @@
     "sass": "^1.27.0"
   },
   "engines": {
-    "node": ">=10.14.2 || ^12 || >=14"
+    "node": ">=10.14.2 || ^12 || ^14"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "lint-staged": {
+    "**/*.{css,scss,json,md,js,jsx,ts,tsx,json,md,yml}": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "package-lock.json": [
+      "package-lock-sanitizer -r https://registry.npmjs.org -l"
+    ]
+  }
 }

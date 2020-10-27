@@ -8,36 +8,30 @@
   },
   "extends": [
     "airbnb-typescript",
+    "react-app",
     "prettier",
     "prettier/@typescript-eslint",
-    "prettier/react",
-    "react-app"
+    "prettier/react"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    // https://github.com/eslint/eslint/blob/master/docs/rules/linebreak-style.md
-    "linebreak-style": "off",
-
     // https://github.com/eslint/eslint/blob/master/docs/rules/no-param-reassign.md
     "no-param-reassign": "warn",
 
     // https://github.com/eslint/eslint/blob/master/docs/rules/no-prototype-builtins.md
     "no-prototype-builtins": "warn",
 
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md
-    "import/named": "warn",
-
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    "import/no-extraneous-dependencies": "warn",
+    "import/no-extraneous-dependencies": "off",
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
     "import/no-named-as-default": "warn",
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
-    "import/no-unresolved": "warn",
+    "import/no-unresolved": "off",
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
     "import/prefer-default-export": "off",
@@ -51,20 +45,14 @@
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md
     "jsx-a11y/control-has-associated-label": "warn",
 
-    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
-    "jsx-a11y/label-has-associated-control": "warn",
-
-    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md
-    "jsx-a11y/no-autofocus": "warn",
-
-    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md
-    "jsx-a11y/no-noninteractive-element-interactions": "warn",
-
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/button-has-type.md
     "react/button-has-type": "warn",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     "react/destructuring-assignment": "warn",
+
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
+    "react/forbid-foreign-prop-types": "off",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     "react/jsx-filename-extension": [
@@ -84,7 +72,7 @@
     "react/jsx-closing-tag-location": "off",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
-    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-props-no-spreading": "off",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
     "react/no-multi-comp": "off",
