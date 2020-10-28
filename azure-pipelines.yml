@@ -80,8 +80,8 @@ steps:
 
   - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
     displayName: 'push documentation and changelog'
-    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
 
   - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
     displayName: 'Auto tweet'
-    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
