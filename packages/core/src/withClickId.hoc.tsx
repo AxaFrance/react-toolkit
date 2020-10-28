@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 
 export interface ClickEvent {
   id?: string;
@@ -12,9 +12,9 @@ export type WithClickIdProps<TProps, TOption extends keyof TProps> = {
   [T in keyof TProps]: T extends TOption ? (e: ClickEvent) => void : TProps[T];
 };
 
-const withClickId = <TOutter extends {}>(option: WithClickIdOption) => (
-  BaseComponent: Function
-) => {
+const withClickId = <T extends { [key: string]: any }>(
+  option: WithClickIdOption
+) => (BaseComponent: ComponentType<T>) => {
   const handler = option.event.reduce((previous: any, current: any) => {
     previous[current] = (props: any) => (event: React.MouseEvent<any>) => {
       if (props[current]) {
@@ -25,7 +25,7 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption) => (
     return previous;
   }, {});
 
-  const Hoc = (props: TOutter) => {
+  return (props: T) => {
     const handlerWithProps: { [k: string]: any } = {};
 
     for (const property in handler) {
@@ -39,8 +39,6 @@ const withClickId = <TOutter extends {}>(option: WithClickIdOption) => (
     };
     return <BaseComponent {...newProps} />;
   };
-
-  return Hoc;
 };
 
 export default withClickId;

@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 import SectionRestitutionTitle from './SectionRestitutionTitle';
 
@@ -29,10 +30,11 @@ export const SectionRestitutionColumn = ({
 type SectionRestitutionColumnProps = WithClassModifierOptions &
   SectionRestitutionColumnBaseProps;
 
-const enhance = compose<
-  SectionRestitutionColumnBaseProps,
-  SectionRestitutionColumnProps
->(withClassDefault(DEFAULT_CLASSNAME), withClassModifier);
+const enhance = compose(
+  identity<SectionRestitutionColumnBaseProps>(),
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier()
+);
 
 const defaultProps: Partial<SectionRestitutionColumnProps> = {
   children: null,

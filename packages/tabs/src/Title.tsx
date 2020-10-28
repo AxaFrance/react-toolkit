@@ -6,6 +6,7 @@ import {
   withClassModifier,
   compose,
   withProps,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const onChangeEvent = 'onChange';
@@ -16,18 +17,14 @@ export interface TitleComponentProps {
   className?: string;
   classModifier?: string;
   id?: string;
+  children?: React.ReactNode;
 }
 
 export interface TitleHandlerProps {
   onChange: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Title: React.SFC<TitleComponentProps & TitleHandlerProps> = ({
-  className,
-  onChange,
-  children,
-  id,
-}) => (
+const Title = ({ className, onChange, children, id }: TitleProps) => (
   <li className={className}>
     {/* eslint-disable-next-line react/button-has-type */}
     <button id={id} className="af-tabs__link" onClick={onChange}>
@@ -42,7 +39,7 @@ export type TitleProps = TitleComponentProps &
   TitleHandlerProps &
   WithClassModifierOptions;
 
-const setWithProps = (props: TitleComponentProps) => ({
+const setWithProps = (props: TitleProps) => ({
   ...props,
   classModifier: (props.classModifier || '').concat(
     (props.enable === false ? ' disabled' : '').concat(
@@ -51,11 +48,12 @@ const setWithProps = (props: TitleComponentProps) => ({
   ),
 });
 
-const enchance = compose<TitleComponentProps & TitleHandlerProps, TitleProps>(
-  withProps<TitleComponentProps, TitleProps>(setWithProps),
+const enchance = compose(
+  identity<TitleProps>(),
+  withProps(setWithProps),
   withClickId({ event: [onChangeEvent] }),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 )(Title);
 
 enchance.displayName = 'Title';

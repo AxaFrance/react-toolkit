@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution';
@@ -28,9 +29,10 @@ const defaultProps: Partial<ArticleRestitutionProps> = {
   className: DEFAULT_CLASSNAME,
 };
 
-const enhance = compose<ArticleRestitutionBaseProps, ArticleRestitutionProps>(
+const enhance = compose(
+  identity<ArticleRestitutionBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(ArticleRestitution);

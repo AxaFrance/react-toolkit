@@ -3,8 +3,8 @@ import {
   PropsManager,
   withClassDefault,
   withClassModifier,
-  WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-badge';
@@ -23,11 +23,10 @@ const BadgeRaw: React.SFC<BadgeBaseProps> = ({ children, ...otherProps }) => (
 
 BadgeRaw.defaultProps = defaultProps;
 
-interface BadgeProps extends WithClassModifierOptions, BadgeBaseProps {}
-
-const enhance = compose<BadgeBaseProps, BadgeProps>(
+const enhance = compose(
+  identity<BadgeBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(BadgeRaw);

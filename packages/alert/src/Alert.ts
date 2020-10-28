@@ -1,4 +1,4 @@
-import { withProps, compose } from '@axa-fr/react-toolkit-core';
+import { withProps, compose, identity } from '@axa-fr/react-toolkit-core';
 import AlertCore, { AlertCoreProps } from './AlertCore';
 import icons from './icons';
 
@@ -19,10 +19,9 @@ const setWithProps = ({ icon, ...otherProps }: AlertProps): AlertCoreProps => {
   };
 };
 
-const Enhanced = compose(withProps<AlertProps, AlertCoreProps>(setWithProps))(
-  AlertCore
-);
+const enhance = compose(identity<AlertProps>(), withProps(setWithProps));
 
+const Enhanced = enhance(AlertCore);
 Enhanced.displayName = 'Alert';
 Enhanced.defaultProps = {
   classModifier: defaultClassModifier,

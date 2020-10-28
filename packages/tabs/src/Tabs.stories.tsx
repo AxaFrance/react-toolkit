@@ -44,13 +44,10 @@ const TabTitleIconBadge = (
 
 const Template: Story<TabsCoreProps> = (args) => (
   <Tabs {...args}>
-    <Tabs.Tab
-      title={TabTitleIconLeft}
-      classModifier="has-icon-left"
-      disabled={false}>
+    <Tabs.Tab title={TabTitleIconLeft} classModifier="has-icon-left">
       Content of my first tab
     </Tabs.Tab>
-    <Tabs.Tab title={TabTitleIconRight} classModifier="has-icon-right" disabled>
+    <Tabs.Tab title={TabTitleIconRight} classModifier="has-icon-right">
       Content of my second tab
     </Tabs.Tab>
     <Tabs.Tab title={TabTitleBadge}>Content of my third tab </Tabs.Tab>

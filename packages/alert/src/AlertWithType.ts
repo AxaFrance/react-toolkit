@@ -1,4 +1,4 @@
-import { withProps, compose } from '@axa-fr/react-toolkit-core';
+import { withProps, compose, identity } from '@axa-fr/react-toolkit-core';
 import classnames from 'classnames';
 import AlertCore, { AlertCoreProps } from './AlertCore';
 
@@ -25,12 +25,13 @@ export const setWithProps = ({
 });
 
 const enhance = compose(
-  withProps<AlertWithTypeProps, AlertCoreProps>(setWithProps)
-)(AlertCore);
+  identity<AlertWithTypeProps>(),
+  withProps(setWithProps)
+);
 
-enhance.defaultProps = {
+const Enhanced = enhance(AlertCore);
+Enhanced.defaultProps = {
   type: 'error',
 };
-enhance.displayName = 'AlertWithType';
-
-export default enhance;
+Enhanced.displayName = 'AlertWithType';
+export default Enhanced;

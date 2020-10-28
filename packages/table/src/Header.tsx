@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 import Tr from './Tr';
@@ -26,9 +27,10 @@ const Header: React.SFC<HeaderComponentProps> = (props) => {
 };
 
 export type HeaderProps = HeaderComponentProps & WithClassModifierOptions;
-const enhance = compose<HeaderComponentProps, HeaderProps>(
+const enhance = compose(
+  identity<HeaderComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 Header.displayName = 'Table.Header';

@@ -1,6 +1,5 @@
 import classManager from './ClassManager';
 import withProps from './withProps.hoc';
-import compose from './compose';
 
 export interface WithClassModifierOptions {
   className?: string | null;
@@ -8,8 +7,11 @@ export interface WithClassModifierOptions {
   defaultClassName?: string | null;
 }
 
-const withClassModifier = compose(
-  withProps(
+export type ExtendedProps = {
+  className: string;
+};
+const withClassModifier = <T extends {}>() =>
+  withProps<T, ExtendedProps>(
     ({
       className,
       classModifier,
@@ -21,7 +23,6 @@ const withClassModifier = compose(
         defaultClassName
       ),
     })
-  )
-);
+  );
 
 export default withClassModifier;

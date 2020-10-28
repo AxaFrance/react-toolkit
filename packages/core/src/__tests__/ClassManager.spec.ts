@@ -1,4 +1,4 @@
-import ClassManager from './ClassManager';
+import ClassManager from '../ClassManager';
 
 describe('ClassManager', () => {
   it('Should return empty when no className and no defaultClassName', () => {

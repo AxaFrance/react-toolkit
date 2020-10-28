@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-footer';
@@ -42,7 +43,11 @@ const FooterCoreRaw = ({
 );
 FooterCoreRaw.defaultProps = defaultProps;
 
-const enhance = compose(withClassDefault(DEFAULT_CLASSNAME), withClassModifier);
+const enhance = compose(
+  identity<FooterCoreProps>(),
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier()
+);
 
 const Enhanced = enhance(FooterCoreRaw);
 Enhanced.displayName = 'FooterCore';

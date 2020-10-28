@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 
-const withProps = <TInner extends {}, TOutter extends {}>(
-  propsMapper: Function
-) => (BaseComponent: Function) => {
-  const Hoc = (props: TOutter) => {
+const withProps = <
+  T extends { [key: string]: any },
+  P extends { [key: string]: any }
+>(
+  propsMapper: (props: T) => P
+) => (BaseComponent: ComponentType<T>): ComponentType<T & Partial<P>> => {
+  const Hoc = (props: T) => {
     const newProps = {
       ...props,
       ...propsMapper(props),

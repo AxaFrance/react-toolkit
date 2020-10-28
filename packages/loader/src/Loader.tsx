@@ -4,6 +4,7 @@ import {
   compose,
   withClassDefault,
   withClassModifier,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 import LoaderModes from './LoaderModes';
 
@@ -65,6 +66,7 @@ const Loader = ({ className, text, mode, children }: Props) => {
 Loader.defaultProps = defaultProps;
 
 export default compose(
+  identity<Props>(),
   withClassDefault('af-loader'),
-  withClassModifier
+  withClassModifier()
 )(Loader);

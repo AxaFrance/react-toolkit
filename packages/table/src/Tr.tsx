@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-table__tr';
@@ -26,9 +27,10 @@ const Tr: React.SFC<TrComponentProps> = (props) => {
 
 export type TrProps = TrComponentProps & WithClassModifierOptions;
 
-const enhance = compose<TrComponentProps, TrProps>(
+const enhance = compose(
+  identity<TrComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 Tr.defaultProps = defaultProps;
 Tr.displayName = 'Table.Tr';

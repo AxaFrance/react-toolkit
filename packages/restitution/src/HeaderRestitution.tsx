@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution__header';
@@ -39,9 +40,10 @@ const HeaderRestitution = ({
 type HeaderRestitutionProps = WithClassModifierOptions &
   HeaderRestitutionBaseProps;
 
-const enhance = compose<HeaderRestitutionBaseProps, HeaderRestitutionProps>(
+const enhance = compose(
+  identity<HeaderRestitutionBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const defaultProps: Partial<HeaderRestitutionProps> = {

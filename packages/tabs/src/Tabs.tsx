@@ -1,14 +1,10 @@
 import React from 'react';
-
 import TabsCore, { TabsCoreProps } from './TabsCore';
-import Tab from './Tab';
+import Tab, { TabProps } from './Tab';
 
-class Tabs extends React.PureComponent<TabsCoreProps> {
-  public static readonly Tab = Tab;
+const Tabs = (props: TabsCoreProps) => <TabsCore {...props} />;
 
-  public render() {
-    return <TabsCore {...this.props} />;
-  }
-}
-
-export default Tabs;
+Tabs.Tab = Tab;
+export default Tabs as React.ComponentType<TabsCoreProps> & {
+  Tab: React.ComponentType<TabProps>;
+};

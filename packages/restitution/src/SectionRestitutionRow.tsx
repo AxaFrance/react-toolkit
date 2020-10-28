@@ -2,8 +2,8 @@ import React from 'react';
 import {
   withClassDefault,
   withClassModifier,
-  WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 import SectionRestitutionTitle from './SectionRestitutionTitle';
 
@@ -28,13 +28,11 @@ const SectionRestitutionRow = ({
   </div>
 );
 
-type SectionRestitutionRowProps = WithClassModifierOptions &
-  SectionRestitutionRowBaseProps;
-
-const enhance = compose<
-  SectionRestitutionRowBaseProps,
-  SectionRestitutionRowProps
->(withClassDefault(DEFAULT_CLASSNAME), withClassModifier);
+const enhance = compose(
+  identity<SectionRestitutionRowBaseProps>(),
+  withClassDefault(DEFAULT_CLASSNAME),
+  withClassModifier()
+);
 
 const defaultProps: Partial<SectionRestitutionRowBaseProps> = {
   children: null,
