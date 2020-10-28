@@ -6,16 +6,16 @@
   "setupFiles": ["<rootDir>/scripts/jest.init.js"],
   "collectCoverageFrom": [
     "packages/**/*.{js,jsx,tsx}",
-    "!**/dist/**",
+    "!packages/**/dist/**",
     "!**/core/css/**",
-    "!**/storybook/**",
+    "!packages/**/src/**/*.stories.*",
     "!packages/**/src/index.{js,ts}",
     "!packages/core/src/common/scss/colorsList.js"
   ],
   "collectCoverage": false,
   "globals": {
     "ts-jest": {
-      "tsConfig": "tsconfig.test.json"
+      "tsconfig": "tsconfig.test.json"
     }
   },
   "moduleFileExtensions": ["ts", "tsx", "js"],
