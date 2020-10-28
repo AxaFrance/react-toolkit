@@ -9,18 +9,11 @@ import Footer from './Footer';
 
 ReactModal.setAppElement('body');
 
-class Modal extends React.PureComponent<ModalCoreProps> {
-  public static readonly Body = Body;
+const Modal = (props: ModalCoreProps) => <ModalCore {...props} />;
 
-  public static readonly Footer = Footer;
-
-  public static readonly Header = Header;
-
-  public static readonly HeaderBase = HeaderBase;
-
-  public render() {
-    return <ModalCore {...this.props} />;
-  }
-}
+Modal.Body = Body;
+Modal.Footer = Footer;
+Modal.Header = Header;
+Modal.HeaderBase = HeaderBase;
 
 export default Modal;
