@@ -1,10 +1,7 @@
 import React from 'react';
 
-export type DivProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->;
+export type DivProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Div: React.SFC<DivProps> = (props) => <div {...props} />;
+const Div = (props: DivProps) => <div {...props} />;
 
 export default Div;
