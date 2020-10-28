@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-collapse",
-  "version": "1.3.23",
+  "version": "1.4.0-alpha.0",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "types": "dist/index.d.ts",
@@ -13,8 +13,8 @@
     "react-dom": "16.8.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-alert": "1.3.23",
-    "@axa-fr/react-toolkit-core": "1.3.23",
+    "@axa-fr/react-toolkit-alert": "1.4.0-alpha.0",
+    "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
     "@types/classnames": "^2.2.6",
     "classnames": "^2.2.6"
   },
