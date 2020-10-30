@@ -75,8 +75,12 @@ steps:
     condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
 
   - script: npm run publish -- $(Npm.Publish.Version) --exact --yes --concurrency 1 --force-publish
-    displayName: 'lerna publish'
-    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+    displayName: 'lerna publish latest'
+    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease')
+
+  - script: npm run publish -- $(Npm.Publish.Version) --dist-tag next --exact --yes --concurrency 1 --force-publish
+    displayName: 'lerna publish next'
+    condition: and(succeeded(), in(variables['Npm.Publish.Version'], 'premajor', 'preminor', 'prepatch', 'prerelease'))
 
   - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
     displayName: 'push documentation and changelog'
