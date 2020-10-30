@@ -27,7 +27,6 @@ const NumberInputStory = () => {
           setValue(e.value);
         }}
         value={number('value', value)}
-        viewValue={text('viewValue', '')}
         helpMessage={text(
           'helpMessage',
           'Enter the place name, ex : Webcenter'
@@ -65,7 +64,6 @@ const NumberInputStoryRequired = () => (
       id={text('id', 'uniqueid')}
       onChange={action('onChange')}
       value={number('value', null)}
-      viewValue={text('viewValue', '')}
       helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
       placeholder={text('placeholder', '')}
       message={text('message', '')}
@@ -103,7 +101,6 @@ const NumberStory = () => (
           name={text('name', 'placeName')}
           onChange={action('onChange')}
           value={number('value', 2.9)}
-          viewValue={text('viewValue', '2.9')}
           placeholder={text('placeholder', 'Paris')}
           readOnly={boolean('readOnly', false)}
           disabled={boolean('disabled', false)}

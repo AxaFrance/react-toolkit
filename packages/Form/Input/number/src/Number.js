@@ -14,7 +14,6 @@ const CustomNumber = ({
   componentClassName,
   id,
   name,
-  viewValue,
   value,
   onChange,
   onBlur,
@@ -48,14 +47,12 @@ const CustomNumber = ({
 const propTypes = {
   ...Constants.propTypes,
   value: PropTypes.number,
-  viewValue: PropTypes.string,
   placeholder: PropTypes.string,
 };
-const defaultClassName = 'af-form__input-text';
+const defaultClassName = 'af-form__input-number';
 const defaultProps = {
   ...Constants.defaultProps,
   value: null,
-  viewValue: '',
   className: defaultClassName,
   placeholder: '',
 };
@@ -64,7 +61,6 @@ const handlers = {
   onChange: ({ onChange, name, id }) => (e) =>
     onChange({
       value: e.target.value,
-      viewValue: e.target.value,
       name,
       id,
     }),

@@ -14,7 +14,6 @@ import Number from './Number';
 const propTypes = {
   ...Constants.propTypes,
   value: PropTypes.number,
-  viewValue: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
@@ -22,7 +21,6 @@ const defaultProps = {
   ...Constants.defaultProps,
   placeholder: null,
   value: null,
-  viewValue: '',
 };
 
 const NumberInput = (props) => {
@@ -42,7 +40,6 @@ const NumberInput = (props) => {
     isVisible,
     className,
     value,
-    viewValue,
     onChange,
     readOnly,
     placeholder,
@@ -80,7 +77,6 @@ const NumberInput = (props) => {
           name={name}
           id={inputId}
           value={value}
-          viewValue={viewValue}
           onChange={onChange}
           readOnly={readOnly}
           disabled={disabled}

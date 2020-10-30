@@ -22,7 +22,7 @@ exports[`<NumberInput> renders NumberInput correctly 1`] = `
     >
       <input
         autoFocus={null}
-        className="af-form__input-text"
+        className="af-form__input-number"
         disabled={false}
         id="iddateinput"
         name="placeImage"
