@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, number, boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
@@ -14,39 +14,48 @@ import Number from './Number';
 import NumberInput from './NumberInput';
 import readme from '../README.md';
 
-const NumberInputStory = () => (
-  <form className="af-form" name="myform">
-    <NumberInput
-      label={text('label', 'Place name')}
-      name={text('name', 'placeName')}
-      id={text('id', 'uniqueid')}
-      onChange={action('onChange')}
-      value={number('value', null)}
-      viewValue={text('viewValue', '')}
-      helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
-      placeholder={text('placeholder', '')}
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.error)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}
-      readOnly={boolean('readOnly', false)}
-      disabled={boolean('disabled', false)}
-      isVisible={boolean('isVisible', true)}
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}
-      tabIndex={text('tabIndex', '')}
-      autoFocus={boolean('autoFocus', true)}
-      classNameContainerLabel={text(
-        'classNameContainerLabel',
-        InputConstants.defaultProps.classNameContainerLabel
-      )}
-      classNameContainerInput={text(
-        'classNameContainerInput',
-        InputConstants.defaultProps.classNameContainerInput
-      )}>
-      <Help>tooltip avec du text</Help>
-    </NumberInput>
-  </form>
-);
+const NumberInputStory = () => {
+  const [value, setValue] = useState(null);
+  return (
+    <form className="af-form" name="myform">
+      <NumberInput
+        label={text('label', 'Place name')}
+        name={text('name', 'placeName')}
+        id={text('id', 'uniqueid')}
+        onChange={(e) => {
+          action('onChange')(e);
+          setValue(e.value);
+        }}
+        value={number('value', value)}
+        viewValue={text('viewValue', '')}
+        helpMessage={text(
+          'helpMessage',
+          'Enter the place name, ex : Webcenter'
+        )}
+        placeholder={text('placeholder', '')}
+        message={text('message', '')}
+        messageType={select('messageType', MessageTypes, MessageTypes.error)}
+        forceDisplayMessage={boolean('forceDisplayMessage', false)}
+        readOnly={boolean('readOnly', false)}
+        disabled={boolean('disabled', false)}
+        isVisible={boolean('isVisible', true)}
+        classModifier={text('classModifier', '')}
+        className={text('className', '')}
+        tabIndex={text('tabIndex', '')}
+        autoFocus={boolean('autoFocus', true)}
+        classNameContainerLabel={text(
+          'classNameContainerLabel',
+          InputConstants.defaultProps.classNameContainerLabel
+        )}
+        classNameContainerInput={text(
+          'classNameContainerInput',
+          InputConstants.defaultProps.classNameContainerInput
+        )}>
+        <Help>tooltip avec du text</Help>
+      </NumberInput>
+    </form>
+  );
+};
 
 const NumberInputStoryRequired = () => (
   <form className="af-form" name="myform">
