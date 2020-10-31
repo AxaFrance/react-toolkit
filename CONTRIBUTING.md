@@ -66,6 +66,7 @@ More information in github documentation: [Fork a repo / Keep your fork synced](
 ### Architecture of a component
 
 Here's an example in JS:
+
 ```text
 ├── dist/ : contains the generated JS/CSS files (in the postinstall process).
 ├── src/
@@ -148,18 +149,7 @@ After working on a component, you are expected to update the documentation.
 
 Documentation can be found in the [Design System](https://github.com/AxaGuilDEv/design-system) repository.
 
-Do not forget to update the component status page, located in this repository at:
-
-```text
-└─ src/
-    └─ pages/
-      └─ get-started/
-          └─ component-status/
-            └─ markdown/
-                └─ content.md
-```
-
-Direct link (on master branch): [content.md](https://github.com/AxaGuilDEv/design-system/blob/master/src/pages/get-started/component-status/markdown/content.md)
+There, do not forget to update the component status page, please!
 
 ### Commit messages
 
@@ -196,6 +186,7 @@ Keep in mind, though, that your pull request will be squashed into master, so re
 Aftet switching for one branch to another, you may have issues with tests. This is due to the fact that some dependencies may have changed.
 
 The quickest way to fix it is to make sure all your packages are correctly installed. For this, make sure you are in the root folder and then run this command:
+
 ```sh
 npm ci
 ```
@@ -210,12 +201,12 @@ This will :
 
 Tests should run perfectly after this!
 
-
 ### When `lerna clean` did not work...
 
 In some cases, `lerna clean` may fail... then you will have to remove manually all `node_modules`folders.
 
 Best way to do it on a Linux / Mac:
+
 ```sh
 find . -name "node_modules" -type d -prune -exec rm -rf '{​​​​​​​​}​​​​​​​​' +
 ```
