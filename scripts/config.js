@@ -12,6 +12,7 @@ const coreDist = `${packages}/${core}/${dist}`;
 const allSrc = `${packages}/${all}/${src}`;
 const allDist = `${packages}/${all}/${dist}`;
 const assets = `${coreSrc}/common`;
+const legacyBoostrapCoreSrcCss = `${assets}/legacy`;
 const bootstrap = `${coreSrc}/bootstrap`;
 
 const autoprefixerConfig = {
@@ -51,4 +52,5 @@ module.exports = {
   cleanCssConfig,
   autoprefixerConfig,
   bootstrapModulesDistCss,
+  legacyBoostrapCoreSrcCss,
 };

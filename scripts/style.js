@@ -19,7 +19,7 @@ const {
   autoprefixerConfig,
   cleanCssConfig,
   sassConfig,
-  bootstrapModulesDistCss,
+  legacyBoostrapCoreSrcCss,
 } = require('./config');
 
 const colors = require(`../${assets}/scss/colorsList.js`);
@@ -268,12 +268,12 @@ const copyBootstrapFiles = () => {
     }
 
     fs.copySync(
-      path.join(bootstrapModulesDistCss, 'bootstrap-grid.min.css'),
+      path.join(legacyBoostrapCoreSrcCss, 'grid.css'),
       path.join(outputPathBootstrap, 'grid.css')
     );
 
     fs.copySync(
-      path.join(bootstrapModulesDistCss, 'bootstrap-reboot.min.css'),
+      path.join(legacyBoostrapCoreSrcCss, 'reboot.css'),
       path.join(outputPathBootstrap, 'reboot.css')
     );
   } catch (err) {
