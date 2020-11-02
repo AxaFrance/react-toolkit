@@ -5,7 +5,7 @@
   "testPathIgnorePatterns": ["/node_modules/", "/dist/", "/core/css/"],
   "setupFiles": ["<rootDir>/scripts/jest.init.js"],
   "collectCoverageFrom": [
-    "packages/**/*.{js,jsx,tsx}",
+    "packages/**/*.{js,jsx,ts,tsx}",
     "!packages/**/dist/**",
     "!**/core/css/**",
     "!packages/**/src/**/*.stories.*",
