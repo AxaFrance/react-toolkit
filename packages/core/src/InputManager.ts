@@ -1,6 +1,5 @@
 import cuid from 'cuid';
 
-// create id compatible for every browsers
 const createId = () => cuid();
 
 const getInputId = (id: string) => {
@@ -10,14 +9,23 @@ const getInputId = (id: string) => {
   return createId();
 };
 
-interface Option {
+export type Option = {
   id?: string | null;
-}
+} & { [key: string]: any };
 
-const getFirstId = (options: Option[]) =>
-  !options && options.length > 0 ? options[0].id : '';
+const getFirstId = (options: Option[]) => {
+  if (!options || options.length === 0) {
+    return '';
+  }
 
-const getOptionsWithId = (options: Option[]) => {
+  return options[0].id;
+};
+
+const getOptionsWithId = (options: Option[]): Option[] => {
+  if (!options) {
+    return [];
+  }
+
   return options.map((option) => ({ ...option, id: getInputId(option.id) }));
 };
 

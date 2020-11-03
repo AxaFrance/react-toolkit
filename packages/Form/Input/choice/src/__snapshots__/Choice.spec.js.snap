@@ -9,7 +9,7 @@ exports[`<ChoiceInput> renders ChoiceInput correctly when passing options with I
   >
     <label
       className="af-form__group-label"
-      htmlFor=""
+      htmlFor="xxx_Yes"
     >
       Some label
     </label>
@@ -90,7 +90,7 @@ exports[`<ChoiceInput> renders ChoiceInput correctly when passing options withou
   >
     <label
       className="af-form__group-label"
-      htmlFor=""
+      htmlFor="xxx_0"
     >
       Some label
     </label>
@@ -171,7 +171,7 @@ exports[`<ChoiceInput> renders ChoiceInput correctly with default options 1`] = 
   >
     <label
       className="af-form__group-label"
-      htmlFor=""
+      htmlFor="xxx_0"
     >
       Some label
     </label>
