@@ -9,7 +9,7 @@ exports[`<RadioInput /> renders RadioInput correctly 1`] = `
   >
     <label
       className="af-form__group-label"
-      htmlFor=""
+      htmlFor="option1_id"
     >
       Label
     </label>
