@@ -1,34 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 
-type HelpMessageProps = Partial<typeof defaultProps>;
-
-const defaultProps = {
-  message: null as string,
-  isVisible: true,
+type HelpProps = {
+  message?: string;
+  isVisible?: boolean;
 };
 
-const HelpMessage = (props: HelpMessageProps) => {
-  const { message, isVisible } = props;
+const HelpMessage = ({ message, isVisible = true }: HelpProps) => {
   if (isVisible) {
     return <small className="af-form__help">{message}</small>;
   }
-  return null;
-};
-
-HelpMessage.defaultProps = defaultProps;
-
-type HelpMessageCloneProps = {
-  message: string;
-  props: HelpMessageProps;
-  child: React.ReactElement;
-};
-
-HelpMessage.Clone = (data: HelpMessageCloneProps) => {
-  const { props, message, child } = data;
-  return React.cloneElement(child, {
-    ...props,
-    isVisible: !message,
-  });
+  return <></>;
 };
 
 export default HelpMessage;
