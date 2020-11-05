@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Body> should render component 1`] = `
-<div
-  className="af-modal__body"
->
-  content
-</div>
-`;
