@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
-    "@popperjs/core": "2.4.0",
-    "prop-types": "15.5.10",
+    "@popperjs/core": "2.5.4",
+    "prop-types": "15.7.2",
     "react-popper": "2.2.3"
   },
   "license": "MIT",

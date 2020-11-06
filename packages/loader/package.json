@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
-    "classnames": "^2.2.6"
+    "classnames": "2.2.6"
   },
   "license": "MIT",
   "publishConfig": {
