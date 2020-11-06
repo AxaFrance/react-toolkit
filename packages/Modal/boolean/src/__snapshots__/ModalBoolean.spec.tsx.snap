@@ -1,339 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BooleanModal> should render boolean modal 1`] = `
-<ModalBoolean
-  cancelTitle="Cancel"
-  classModifier={null}
-  className="af-modal"
-  id="uniqueID"
-  isOpen={true}
-  onCancel={[Function]}
-  onSubmit={[Function]}
-  submitTitle="Submit"
-  title="Modal Title"
->
-  <Modal
-    className="af-modal"
-    isOpen={true}
-    onOutsideTap={[Function]}
-    title="Modal Title"
+<DocumentFragment>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="ReactModalPortal"
   >
-    <ModalCoreRaw
-      className="af-modal"
-      isOpen={true}
-      onOutsideTap={[Function]}
-      title="Modal Title"
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
     >
-      <Modal
-        aria={
-          Object {
-            "modal": true,
-          }
-        }
-        ariaHideApp={true}
-        bodyOpenClassName="ReactModal__Body--open"
-        className="af-modal"
-        closeTimeoutMS={0}
-        contentLabel="Modal Title"
-        isOpen={true}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
+      <div
+        aria-label="Modal Title"
+        aria-modal="true"
+        class="ReactModal__Content ReactModal__Content--after-open af-modal"
         role="dialog"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
-        shouldFocusAfterRender={true}
-        shouldReturnFocusAfterClose={true}
+        tabindex="-1"
       >
-        <Portal
-          containerInfo={
-            <div
-              class="ReactModalPortal"
-            >
-              <div
-                class="ReactModal__Overlay ReactModal__Overlay--after-open"
-                style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
-              >
-                <div
-                  aria-label="Modal Title"
-                  aria-modal="true"
-                  class="ReactModal__Content ReactModal__Content--after-open af-modal"
-                  role="dialog"
-                  tabindex="-1"
-                >
-                  <div
-                    class="af-modal__dialog"
-                  >
-                    <div
-                      class="af-modal__content"
-                    >
-                      <div
-                        class="af-modal__header"
-                      >
-                        <h4
-                          class="af-modal__header-title"
-                        >
-                          Modal Title
-                        </h4>
-                        <button
-                          aria-label="Close"
-                          class="af-modal__header-close-btn"
-                          type="button"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="glyphicon glyphicon-close"
-                          />
-                        </button>
-                      </div>
-                      <div
-                        class="af-modal__body"
-                      >
-                        Content
-                      </div>
-                      <div
-                        class="af-modal__footer"
-                      >
-                        <button
-                          class="btn af-btn af-btn--reverse"
-                        >
-                          Cancel
-                        </button>
-                        <button
-                          class="btn af-btn"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
+        <div
+          class="af-modal__dialog"
         >
-          <ModalPortal
-            aria={
-              Object {
-                "modal": true,
-              }
-            }
-            ariaHideApp={true}
-            bodyOpenClassName="ReactModal__Body--open"
-            className="af-modal"
-            closeTimeoutMS={0}
-            contentLabel="Modal Title"
-            defaultStyles={
-              Object {
-                "content": Object {
-                  "WebkitOverflowScrolling": "touch",
-                  "background": "#fff",
-                  "border": "1px solid #ccc",
-                  "borderRadius": "4px",
-                  "bottom": "40px",
-                  "left": "40px",
-                  "outline": "none",
-                  "overflow": "auto",
-                  "padding": "20px",
-                  "position": "absolute",
-                  "right": "40px",
-                  "top": "40px",
-                },
-                "overlay": Object {
-                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                  "bottom": 0,
-                  "left": 0,
-                  "position": "fixed",
-                  "right": 0,
-                  "top": 0,
-                },
-              }
-            }
-            isOpen={true}
-            onRequestClose={[Function]}
-            parentSelector={[Function]}
-            portalClassName="ReactModalPortal"
-            role="dialog"
-            shouldCloseOnEsc={true}
-            shouldCloseOnOverlayClick={true}
-            shouldFocusAfterRender={true}
-            shouldReturnFocusAfterClose={true}
-            style={
-              Object {
-                "content": Object {},
-                "overlay": Object {},
-              }
-            }
+          <div
+            class="af-modal__content"
           >
             <div
-              className="ReactModal__Overlay ReactModal__Overlay--after-open"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              style={
-                Object {
-                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                  "bottom": 0,
-                  "left": 0,
-                  "position": "fixed",
-                  "right": 0,
-                  "top": 0,
-                }
-              }
+              class="af-modal__header"
             >
-              <div
-                aria-label="Modal Title"
-                aria-modal={true}
-                className="ReactModal__Content ReactModal__Content--after-open af-modal"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                role="dialog"
-                style={Object {}}
-                tabIndex="-1"
+              <h4
+                class="af-modal__header-title"
               >
-                <div
-                  className="af-modal__dialog"
-                >
-                  <div
-                    className="af-modal__content"
-                  >
-                    <Header
-                      onCancel={[Function]}
-                      title="Modal Title"
-                    >
-                      <Hoc
-                        onCancel={[Function]}
-                        title="Modal Title"
-                      >
-                        <HeaderCore
-                          onCancel={[Function]}
-                          title="Modal Title"
-                        >
-                          <Hoc
-                            className="af-modal__header"
-                            onCancel={[Function]}
-                            title="Modal Title"
-                          >
-                            <HeaderCoreRaw
-                              className="af-modal__header"
-                              onCancel={[Function]}
-                              title="Modal Title"
-                            >
-                              <div
-                                className="af-modal__header"
-                              >
-                                <h4
-                                  className="af-modal__header-title"
-                                >
-                                  Modal Title
-                                </h4>
-                                <button
-                                  aria-label="Close"
-                                  className="af-modal__header-close-btn"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  <span
-                                    aria-hidden="true"
-                                    className="glyphicon glyphicon-close"
-                                  />
-                                </button>
-                              </div>
-                            </HeaderCoreRaw>
-                          </Hoc>
-                        </HeaderCore>
-                      </Hoc>
-                    </Header>
-                    <Body>
-                      <Hoc
-                        className="af-modal__body"
-                      >
-                        <Div
-                          className="af-modal__body"
-                        >
-                          <div
-                            className="af-modal__body"
-                          >
-                            Content
-                          </div>
-                        </Div>
-                      </Hoc>
-                    </Body>
-                    <Footer>
-                      <Hoc
-                        className="af-modal__footer"
-                      >
-                        <Div
-                          className="af-modal__footer"
-                        >
-                          <div
-                            className="af-modal__footer"
-                          >
-                            <Button
-                              classModifier="reverse"
-                              onClick={[Function]}
-                            >
-                              <ButtonCore
-                                classModifier="reverse"
-                                onClick={[Function]}
-                              >
-                                <Hoc
-                                  classModifier="reverse"
-                                  className="btn af-btn"
-                                  onClick={[Function]}
-                                >
-                                  <ButtonRaw
-                                    classModifier="reverse"
-                                    className="btn af-btn af-btn--reverse"
-                                    onClick={[Function]}
-                                  >
-                                    <button
-                                      className="btn af-btn af-btn--reverse"
-                                      onClick={[Function]}
-                                    >
-                                      Cancel
-                                    </button>
-                                  </ButtonRaw>
-                                </Hoc>
-                              </ButtonCore>
-                            </Button>
-                            <Button
-                              onClick={[Function]}
-                            >
-                              <ButtonCore
-                                onClick={[Function]}
-                              >
-                                <Hoc
-                                  className="btn af-btn"
-                                  onClick={[Function]}
-                                >
-                                  <ButtonRaw
-                                    className="btn af-btn"
-                                    onClick={[Function]}
-                                  >
-                                    <button
-                                      className="btn af-btn"
-                                      onClick={[Function]}
-                                    >
-                                      Submit
-                                    </button>
-                                  </ButtonRaw>
-                                </Hoc>
-                              </ButtonCore>
-                            </Button>
-                          </div>
-                        </Div>
-                      </Hoc>
-                    </Footer>
-                  </div>
-                </div>
-              </div>
+                Modal Title
+              </h4>
+              <button
+                aria-label="Close"
+                class="af-modal__header-close-btn"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="glyphicon glyphicon-close"
+                />
+              </button>
             </div>
-          </ModalPortal>
-        </Portal>
-      </Modal>
-    </ModalCoreRaw>
-  </Modal>
-</ModalBoolean>
+            <div
+              class="af-modal__body"
+            >
+              Content
+            </div>
+            <div
+              class="af-modal__footer"
+            >
+              <button
+                class="btn af-btn af-btn--reverse"
+              >
+                Cancel
+              </button>
+              <button
+                class="btn af-btn"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
