@@ -76,7 +76,7 @@ steps:
 
   - script: npm run publish -- $(Npm.Publish.Version) --exact --yes --concurrency 1 --force-publish
     displayName: 'lerna publish latest'
-    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease')
+    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
 
   - script: npm run publish -- $(Npm.Publish.Version) --dist-tag next --exact --yes --concurrency 1 --force-publish
     displayName: 'lerna publish next'
