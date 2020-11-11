@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
-    "cuid": "2.1.3",
-    "prop-types": "15.5.10"
+    "cuid": "2.1.8",
+    "prop-types": "15.7.2"
   },
   "license": "MIT",
   "publishConfig": {

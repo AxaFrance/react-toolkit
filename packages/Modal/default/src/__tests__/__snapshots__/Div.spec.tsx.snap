@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Div> should render div 1`] = `
-<div>
-  content
-</div>
+<DocumentFragment>
+  <div>
+    content
+  </div>
+</DocumentFragment>
 `;

@@ -16,17 +16,23 @@ export type ModalCoreProps = Partial<typeof defaultProps> & {
   children: ReactNode;
 };
 
-const ModalCoreRaw = (props: ModalCoreProps) => (
+const ModalCoreRaw = ({
+  className,
+  isOpen,
+  title,
+  onOutsideTap,
+  children,
+}: ModalCoreProps) => (
   <ReactModal
-    className={props.className}
-    isOpen={props.isOpen}
+    className={className}
+    isOpen={isOpen}
     aria={{
-      modal: props.isOpen,
+      modal: isOpen,
     }}
-    contentLabel={props.title}
-    onRequestClose={props.onOutsideTap}>
+    contentLabel={title}
+    onRequestClose={onOutsideTap}>
     <div className="af-modal__dialog">
-      <div className="af-modal__content">{props.children}</div>
+      <div className="af-modal__content">{children}</div>
     </div>
   </ReactModal>
 );

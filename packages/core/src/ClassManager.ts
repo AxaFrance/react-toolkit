@@ -1,44 +1,46 @@
 import classNames from 'classnames';
 
-const getClassWithoutModifier = (classNameToUse: string) => {
-  let classWithoutModifier: string = null;
-  if (classNameToUse) {
-    const classes = classNameToUse.split(' ').reverse();
-    classWithoutModifier = classes.find((c) => !!c);
+const getLastClassName = (classNameToUse: string) => {
+  if (!classNameToUse) {
+    return null;
   }
-  return classWithoutModifier;
+
+  return classNameToUse
+    .split(' ')
+    .reverse()
+    .find((it) => !!it);
 };
 
 const listClassModifier = (classModifier: string) => {
-  if (classModifier) {
-    return classModifier.split(' ');
+  if (!classModifier) {
+    return [];
   }
-  return null;
+
+  return classModifier.split(' ');
 };
 
 const getComponentClassName = (
-  className?: string | null,
-  classModifier?: string | null,
-  defaultClassName?: string | null
+  className: string,
+  classModifier: string,
+  defaultClassName: string
 ) => {
-  const classNameToUse = className || defaultClassName || null;
+  const classNameToUse = className || defaultClassName;
 
-  const classWithoutModifier = getClassWithoutModifier(classNameToUse);
-  const modifiers = listClassModifier(classModifier);
-
-  const modifiersObject: any = {};
-  if (modifiers) {
-    modifiers.forEach((modifier) => {
-      if (/\S/.test(modifier)) {
-        modifiersObject[
-          `${classWithoutModifier}--${modifier}`
-        ] = classNameToUse;
-      }
-    }, this);
+  // Fail fast, when no className or defaultClassName we don't want to loop on modifier
+  if (!classNameToUse) {
+    return '';
   }
 
-  const componentClassName = classNames(classNameToUse, modifiersObject);
-  return componentClassName;
+  const classWithoutModifier = getLastClassName(classNameToUse);
+  const modifiers = listClassModifier(classModifier);
+
+  const modifiersObject = modifiers
+    .filter((it) => /\S/.test(it))
+    .map((it) => {
+      return `${classWithoutModifier}--${it}`;
+    });
+
+  return classNames(classNameToUse, modifiersObject);
 };
 
 export default {
