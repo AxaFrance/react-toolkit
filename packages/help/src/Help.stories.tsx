@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
-import Help from './Help.container';
+import Help from './Help';
 import readme from '../README.md';
 import './help-custom.scss';
 
@@ -36,13 +36,15 @@ export default {
 } as Meta;
 
 type HelpProps = React.ComponentProps<typeof Help>;
-const Template: Story<HelpProps> = ({ content, ...args }) => (
-  <Help {...args}>{content}</Help>
+const Template: Story<HelpProps> = ({ children, ...args }) => (
+  <Help {...args}>{children}</Help>
 );
 
-export const TextStory = Template.bind({});
+export const TextStory: Story<HelpProps> = Template.bind({});
 TextStory.args = {
-  content: 'Lorem ipsum dolor sit amet',
+  children: 'Lorem ipsum dolor sit amet',
+  mode: PopoverModes.click,
+  placement: PopoverPlacements.right,
 };
 
 const htmlChild = (
@@ -65,8 +67,10 @@ const htmlChild = (
   </div>
 );
 
-export const HtmlStory = Template.bind({});
+export const HtmlStory: Story<HelpProps> = Template.bind({});
 HtmlStory.args = {
-  content: htmlChild,
+  children: htmlChild,
   classModifier: 'custom',
+  mode: PopoverModes.over,
+  placement: PopoverPlacements.right,
 };
