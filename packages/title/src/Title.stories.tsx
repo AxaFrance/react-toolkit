@@ -17,7 +17,7 @@ export default {
 type TitleStoryProps = TitleProps & {
   title: string;
 };
-const Template: Story<TitleStoryProps> = ({ title, args }) => (
+const Template: Story<TitleStoryProps> = ({ title, ...args }) => (
   <Title {...args}>{title}</Title>
 );
 
