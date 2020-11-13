@@ -4,6 +4,7 @@
 .ReactModal__Overlay {
   animation: fademodal 0.1s linear;
   z-index: 3;
+  overflow: auto;
 }
 
 .ReactModal__Body {
@@ -11,10 +12,11 @@
     overflow: hidden;
   }
 }
+
 // stylelint-enable selector-class-pattern
 
 .af-modal {
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1050;
@@ -80,9 +82,11 @@
       box-shadow: none;
       background: none;
       padding: 0.5rem;
+
       &:hover {
         background-color: $gray-lighter;
       }
+
       .glyphicon-close {
         width: 17px;
       }
@@ -124,6 +128,7 @@
     }
   }
 }
+
 @include media-breakpoint-up(lg) {
   .af-modal {
     &--lg {
@@ -149,6 +154,7 @@
     opacity: 1;
   }
 }
+
 @keyframes fademodal {
   from {
     opacity: 0;
