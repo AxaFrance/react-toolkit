@@ -62,7 +62,7 @@
     "auto-changelog": "^2.2.1",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "4.3.1",
     "browser-sync": "^2.26.13",
     "chalk": "^4.1.0",
     "concurrently": "^5.3.0",
