@@ -89,6 +89,8 @@ const SliderStory = () => (
       options={options}
       id={text('id', 'uniqueid')}
       onChange={action('onChange')}
+      onBlur={action('onBlur')}
+      onFocus={action('onFocus')}
       value={number('value', '2048')}
       placeholder={text('placeholder', 'Paris')}
       readOnly={boolean('readOnly', false)}
