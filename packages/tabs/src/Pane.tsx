@@ -1,5 +1,9 @@
 import React from 'react';
-import { withClassDefault, compose } from '@axa-fr/react-toolkit-core';
+import {
+  withClassDefault,
+  compose,
+  identity,
+} from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-tabs__pane';
 
@@ -24,7 +28,8 @@ const Pane: React.SFC<PaneComponentProps> = ({
   return <div className={className}>{children}</div>;
 };
 
-const enchance = compose<PaneComponentProps, PaneComponentProps>(
+const enchance = compose(
+  identity<PaneComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME)
 )(Pane);
 

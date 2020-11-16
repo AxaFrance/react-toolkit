@@ -1,4 +1,4 @@
-import { withProps, compose } from '@axa-fr/react-toolkit-core';
+import { withProps, compose, identity } from '@axa-fr/react-toolkit-core';
 import FooterCore, { FooterCoreProps } from './FooterCore';
 
 export interface FooterProps extends FooterCoreProps {
@@ -12,10 +12,8 @@ export const setWithProps = ({
   ...otherProps,
   children: copyright,
 });
-const enhanced = compose(withProps<FooterProps, FooterCoreProps>(setWithProps))(
-  FooterCore
-);
+const enhance = compose(identity<FooterProps>(), withProps(setWithProps));
 
-enhanced.displayName = 'Footer';
-
-export default enhanced;
+const Enhanced = enhance(FooterCore);
+Enhanced.displayName = 'Footer';
+export default Enhanced;

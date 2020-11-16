@@ -1,4 +1,4 @@
-import PropsManager from './PropsManager';
+import PropsManager from '../PropsManager';
 
 describe('PropsManager', () => {
   describe('omit', () => {

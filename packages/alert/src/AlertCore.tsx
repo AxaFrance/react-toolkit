@@ -4,16 +4,18 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-alert';
 
-export interface AlertCoreComponentProps {
+export type AlertCoreComponentProps = {
   title: string;
   iconClassName?: string;
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
-}
+} & WithClassModifierOptions;
+export type AlertCoreProps = AlertCoreComponentProps;
 
 const AlertCoreRaw: React.SFC<AlertCoreComponentProps> = ({
   className,
@@ -43,11 +45,10 @@ const AlertCoreRaw: React.SFC<AlertCoreComponentProps> = ({
   </div>
 );
 
-export type AlertCoreProps = AlertCoreComponentProps & WithClassModifierOptions;
-
-const enhance = compose<AlertCoreComponentProps, AlertCoreProps>(
+const enhance = compose(
+  identity<AlertCoreComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(AlertCoreRaw);

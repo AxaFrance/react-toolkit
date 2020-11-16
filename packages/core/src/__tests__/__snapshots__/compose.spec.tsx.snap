@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compose should apply all HOC 1`] = `
+<DocumentFragment>
+  <span>
+    bar
+  </span>
+</DocumentFragment>
+`;
+
+exports[`compose should loose type of props when more than HOC 1`] = `
+<DocumentFragment>
+  <span />
+</DocumentFragment>
+`;

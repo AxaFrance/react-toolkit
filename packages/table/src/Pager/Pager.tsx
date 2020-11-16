@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   compose,
+  identity,
   OnChangeCustomEvent,
   withClassDefault,
   withClassModifier,
@@ -136,9 +137,10 @@ const Pager = (props: PagerComponentProps) => {
 
 export type PagerProps = PagerComponentProps & WithClassModifierOptions;
 
-const enhance = compose<PagerComponentProps, PagerProps>(
+const enhance = compose(
+  identity<PagerComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 Pager.defaultProps = defaultProps;
 const Enhance = enhance(Pager);

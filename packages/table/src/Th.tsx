@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-table__th';
@@ -41,9 +42,10 @@ const Th: React.SFC<ThComponentProps> = (props) => {
   );
 };
 export type ThProps = ThComponentProps & WithClassModifierOptions;
-const enhance = compose<ThComponentProps, ThProps>(
+const enhance = compose(
+  identity<ThComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 Th.defaultProps = defaultProps;

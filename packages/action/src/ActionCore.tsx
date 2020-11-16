@@ -5,6 +5,7 @@ import {
   PropsManager,
   compose,
   withProps,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'btn af-btn--circle';
@@ -33,10 +34,11 @@ const ActionCore: React.FC<ActionCoreProps> = ({ icon, ...otherProps }) => (
 
 ActionCore.defaultProps = defaultProps;
 
-const enhance = compose<ActionCoreProps, ActionCoreProps>(
+const enhance = compose(
+  identity<ActionCoreProps>(),
   withClassDefault(defaultClassName),
-  withClassModifier,
-  withProps(({ onClick, href, role }: ActionCoreProps) => ({
+  withClassModifier(),
+  withProps(({ onClick, href, role }) => ({
     href: onClick ? '#' : href || undefined,
     role: onClick ? 'button' : role || undefined,
   }))

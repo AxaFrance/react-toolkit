@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-table';
@@ -20,9 +21,10 @@ const TableCore: React.SFC<TableCoreComponentProps> = (props) => {
 
 export type TableCoreProps = TableCoreComponentProps & WithClassModifierOptions;
 
-const enhance = compose<TableCoreComponentProps, TableCoreProps>(
+const enhance = compose(
+  identity<TableCoreComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 TableCore.displayName = 'TableCore';
 export default enhance(TableCore);

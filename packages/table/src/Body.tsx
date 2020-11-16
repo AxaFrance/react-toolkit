@@ -5,6 +5,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-table__body';
@@ -18,9 +19,10 @@ const Body: React.SFC<BodyComponentProps> = (props) => {
 };
 
 export type BodyProps = BodyComponentProps & WithClassModifierOptions;
-const enhance = compose<BodyComponentProps, BodyProps>(
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+const enhance = compose(
+  identity<BodyComponentProps>(),
+  withClassDefault<BodyComponentProps>(DEFAULT_CLASSNAME),
+  withClassModifier()
 );
 
 Body.displayName = 'Table.Body';

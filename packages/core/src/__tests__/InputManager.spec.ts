@@ -1,4 +1,4 @@
-import InputManager, { Option } from './InputManager';
+import InputManager, { Option } from '../InputManager';
 
 describe('InputManager', () => {
   describe('createId', () => {

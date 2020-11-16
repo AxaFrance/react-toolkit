@@ -7,6 +7,7 @@ import {
   WithOnChangeEvent,
   OnChangeCustomEvent,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 export type ItemsComponentProps = Pick<
@@ -93,9 +94,10 @@ class Items extends React.PureComponent<ItemsComponentProps> {
 }
 export type ItemsProps = ItemsComponentProps & WithClassModifierOptions;
 
-const enhance = compose<ItemsComponentProps, ItemsProps>(
+const enhance = compose(
+  identity<ItemsComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 const Enhance = enhance(Items);
 Enhance.defaultProps = defaultProps;

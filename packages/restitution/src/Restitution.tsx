@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution__listdef';
@@ -12,11 +13,12 @@ type RestitutionValuesProps = {
   values: string[];
 };
 
-type RestitutionBaseProps = Partial<RestitutionValuesProps> & {
-  label: string;
-  value?: string;
-  className?: string;
-};
+type RestitutionProps = WithClassModifierOptions &
+  Partial<RestitutionValuesProps> & {
+    label: string;
+    value?: string;
+    className?: string;
+  };
 
 const RestitutionValues = ({ values }: RestitutionValuesProps) => {
   const li = values.map((v: string) => (
@@ -45,15 +47,14 @@ const Restitution = ({ label, value, values, className }: RestitutionProps) => {
   );
 };
 
-type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
-
 const defaultProps: Partial<RestitutionProps> = {
   className: DEFAULT_CLASSNAME,
 };
 
-const enhance = compose<RestitutionBaseProps, RestitutionProps>(
+const enhance = compose(
+  identity<RestitutionProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(Restitution);

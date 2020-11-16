@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution__content';
@@ -23,9 +24,10 @@ const SectionRestitution = ({
 type SectionRestitutionProps = WithClassModifierOptions &
   SectionRestitutionBaseProps;
 
-const enhance = compose<SectionRestitutionBaseProps, SectionRestitutionProps>(
+const enhance = compose(
+  identity<SectionRestitutionBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const defaultProps: Partial<SectionRestitutionProps> = {

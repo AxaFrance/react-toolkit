@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 
-const withClassDefault = (defaultClassName: string) => (
-  BaseComponent: Function
-) => {
-  const Hoc = (props: any) => {
+export type WithClassDefaultProps = {
+  className?: string;
+};
+const withClassDefault = <T extends { [key: string]: any }>(
+  defaultClassName: string
+) => (
+  BaseComponent: ComponentType<T>
+): ComponentType<T & WithClassDefaultProps> => {
+  return (props: T) => {
     const newProps = {
-      ...{ className: defaultClassName },
+      className: defaultClassName,
       ...props,
     };
     return <BaseComponent {...newProps} />;
   };
-  return Hoc;
 };
 
 export default withClassDefault;

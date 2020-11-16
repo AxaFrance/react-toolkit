@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-modal__header';
@@ -11,7 +12,8 @@ const DEFAULT_CLASSNAME = 'af-modal__header';
 type HeaderCoreComponentProps = {
   className?: string;
   onCancel: MouseEventHandler<HTMLButtonElement>;
-  children: ReactNode;
+  children?: ReactNode;
+  title?: string;
 };
 
 const HeaderCoreRaw = ({ className, children, onCancel }: HeaderCoreProps) => (
@@ -30,9 +32,10 @@ const HeaderCoreRaw = ({ className, children, onCancel }: HeaderCoreProps) => (
 export type HeaderCoreProps = HeaderCoreComponentProps &
   WithClassModifierOptions;
 
-const enhance = compose<HeaderCoreComponentProps, HeaderCoreProps>(
+const enhance = compose(
+  identity<HeaderCoreComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(HeaderCoreRaw);

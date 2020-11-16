@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution__content-title';
@@ -17,9 +18,10 @@ const Restitution = ({ title, className }: RestitutionBaseProps) => (
   <div className={className}>{title}</div>
 );
 
-const enhance = compose<RestitutionBaseProps, RestitutionProps>(
+const enhance = compose(
+  identity<RestitutionBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;

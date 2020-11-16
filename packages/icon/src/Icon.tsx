@@ -4,6 +4,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-icons';
@@ -27,9 +28,10 @@ IconRaw.defaultProps = defaultProps;
 
 export type IconProps = IconBaseProps & WithClassModifierOptions;
 
-const enhance = compose<IconBaseProps, IconProps>(
+const enhance = compose(
+  identity<IconBaseProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(IconRaw);

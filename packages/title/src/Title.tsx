@@ -1,33 +1,27 @@
 import React from 'react';
 import {
-  PropsManager,
   withClassDefault,
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-title';
 
-interface TitleBaseProps extends React.HTMLProps<HTMLHeadingElement> {}
+export type TitleProps = React.HTMLProps<HTMLHeadingElement> &
+  WithClassModifierOptions;
 
-const defaultProps: Partial<TitleBaseProps> = {
-  children: null,
-};
+const TitleRaw: React.FC<TitleProps> = ({
+  classModifier,
+  children,
+  ...otherProps
+}) => <h1 {...otherProps}>{children}</h1>;
 
-const omitProperties = PropsManager.omit(['classModifier']);
-
-const TitleRaw: React.FC<TitleBaseProps> = ({ children, ...otherProps }) => (
-  <h1 {...omitProperties(otherProps)}>{children}</h1>
-);
-
-TitleRaw.defaultProps = defaultProps;
-
-export interface TitleProps extends WithClassModifierOptions, TitleBaseProps {}
-
-const enhance = compose<TitleBaseProps, TitleProps>(
+const enhance = compose(
+  identity<TitleProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(TitleRaw);

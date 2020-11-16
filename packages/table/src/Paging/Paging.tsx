@@ -6,6 +6,7 @@ import {
   WithOnChangeEvent,
   OnChangeCustomEvent,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 import Pager, { PagerComponentProps } from '../Pager/Pager';
 import Items, { ItemsComponentProps } from '../Items/Items';
@@ -96,9 +97,10 @@ class Paging extends React.PureComponent<PagingComponentProps> {
 
 export type PagingProps = PagingComponentProps & WithClassModifierOptions;
 
-const enhance = compose<PagingComponentProps, PagingProps>(
+const enhance = compose(
+  identity<PagingComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 const Enhance = enhance(Paging);
 Enhance.defaultProps = defaultProps;

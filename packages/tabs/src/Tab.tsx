@@ -4,24 +4,26 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 interface TabComponentProps {
   className?: string;
-  title: string;
+  title: React.ReactNode;
   children?: React.ReactNode;
   classModifier?: string;
 }
 
-const Tab: React.SFC<TabComponentProps> = () => <span />;
+const Tab = (_props: TabComponentProps) => <span />;
 
 const DEFAULT_CLASSNAME = 'af-tabs__pane';
 
 export type TabProps = TabComponentProps & WithClassModifierOptions;
 
-const enhance = compose<TabComponentProps, TabProps>(
+const enhance = compose(
+  identity<TabComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(Tab);

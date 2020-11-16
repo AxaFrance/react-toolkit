@@ -5,6 +5,7 @@ import {
   withClassModifier,
   WithClassModifierOptions,
   compose,
+  identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'btn af-btn';
@@ -25,9 +26,10 @@ const ButtonRaw: React.SFC<ButtonCoreComponentProps> = (props) => {
 export type ButtonCoreProps = ButtonCoreComponentProps &
   WithClassModifierOptions;
 
-const enhance = compose<ButtonCoreComponentProps, ButtonCoreProps>(
+const enhance = compose(
+  identity<ButtonCoreComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier
+  withClassModifier()
 );
 
 const Enhanced = enhance(ButtonRaw);
