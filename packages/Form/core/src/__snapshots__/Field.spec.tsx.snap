@@ -9,7 +9,7 @@ exports[`<Field> renders Field correctly 1`] = `
   >
     <label
       className="af-form__group-label"
-      htmlFor=""
+      htmlFor="id"
     >
       label
     </label>
