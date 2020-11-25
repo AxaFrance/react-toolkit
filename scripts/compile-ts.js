@@ -2,28 +2,21 @@
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
+const { dist, tsConfigFile } = require('./config');
 
-function getCommand(watch) {
+function getCommand(watch, outDir) {
   const tsc = path.join(__dirname, '..', 'node_modules', '.bin', 'tsc');
 
-  const currentDirectory = process.cwd();
-  const output = path.join(currentDirectory, 'dist');
-  const tsconfig = path.join(currentDirectory, 'tsconfig.json');
   const args = [
-    `-p ${tsconfig}`,
-    `--outDir ${output}`,
-    '-d true',
-    `--declarationDir ${output}`,
-    '--declarationMap true',
-    '--listEmittedFiles true',
+    `-p ${tsConfigFile}`,
+    `--outDir ${outDir}`,
+    `--declarationDir ${outDir}`,
   ];
 
   if (watch) {
     args.push('-w');
   }
-  const command = `${tsc} ${args.join(' ')}`;
-
-  return command;
+  return `${tsc} ${args.join(' ')}`;
 }
 
 function handleExit(code, errorCallback) {
@@ -37,14 +30,19 @@ function handleExit(code, errorCallback) {
 }
 
 function tscfy(options = {}) {
-  const { watch = false, silent = false, errorCallback } = options;
-  const tsConfigFile = 'tsconfig.json';
+  const {
+    watch = false,
+    silent = false,
+    errorCallback,
+    outDir = dist,
+  } = options;
+
   if (!fs.existsSync(tsConfigFile)) {
     if (!silent) console.log(`No ${tsConfigFile}`);
     return;
   }
 
-  const command = getCommand(watch);
+  const command = getCommand(watch, outDir);
   const { code } = shell.exec(command, { silent });
 
   handleExit(code, errorCallback);

@@ -2,6 +2,7 @@
 
 - [From version 1.x to 2.0.x](#from-version-1x-to-20x)
   - [Date Input](#date-input)
+  - [All](#package-react-toolkit-all)
 
 # From version 1.x to 2.0.x
 
@@ -32,4 +33,13 @@ In 2.0.x
   value={new Date('11-26-2017')}
   format="dd/MM/yyyyy"
 />
+```
+
+## Package `react-toolkit-all`
+
+The component `Title` (from `@axa-fr/react-toolkit-layout-header`) has been renamed to `HeaderTitle` to add `@axa-fr/react-toolkit-title` to the `@axa-fr/react-toolkit-all` package.
+
+```diff
+- import { Title } from '@axa-fr/react-toolkit-all';
++ import { HeaderTitle } from '@axa-fr/react-toolkit-all';
 ```

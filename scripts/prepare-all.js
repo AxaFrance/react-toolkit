@@ -1,16 +1,12 @@
 /* eslint-disable no-console */
 require('shelljs');
 const chalk = require('chalk');
-const {
-  getPackageJson,
-  compile,
-  copyLicence,
-  copyReadmeToDist,
-} = require('./prepare-common');
+const { getPackageJson, compile, copyLicence } = require('./prepare-common');
+const { componentDistAll } = require('./config');
 
 const packageJson = getPackageJson();
 
-compile(packageJson);
+compile(packageJson, componentDistAll);
 
 copyLicence();
 
