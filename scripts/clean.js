@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const find = require('find');
 const rimraf = require('rimraf');
 
-const { packages, dist } = require('./config');
+const { packages, dist, allPackage, componentDistAll } = require('./config');
 
 const log = (prefix, message, inverse) => {
   const darkGray = '#111111';
@@ -31,11 +31,19 @@ const logFinished = (prefix, inverse = false) =>
 
 const getDistFolders = () => {
   try {
-    return find
-      .dirSync(/dist/g, packages)
+    const distExceptAll = find
+      .dirSync(new RegExp(dist, 'g'), packages)
       .filter(
         (dirPath) => !dirPath.includes('node_modules') && dirPath.endsWith(dist)
       );
+    const distComponentAll = find
+      .dirSync(new RegExp(componentDistAll, 'g'), allPackage)
+      .filter(
+        (dirPath) =>
+          !dirPath.includes('node_modules') &&
+          dirPath.endsWith(componentDistAll)
+      );
+    return [].concat(distExceptAll, distComponentAll);
   } catch (err) {
     console.error(err);
   }
@@ -47,6 +55,7 @@ const getDistFolders = () => {
 try {
   logStart('Clean all dist');
   const allDistFolders = getDistFolders() || [];
+  console.log('Folders to remove: ', allDistFolders);
   allDistFolders.map((distFolder) => rimraf.sync(distFolder));
 } catch (err) {
   console.error(err);

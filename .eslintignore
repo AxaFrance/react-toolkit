@@ -12,3 +12,6 @@ tsconfig.json
 tsconfig.dev.json
 tsconfig.test.json
 package.json
+
+# react-toolkit-all
+packages/all/component

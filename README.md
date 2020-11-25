@@ -15,40 +15,54 @@
 
 ## About
 
-A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each components are autonomous and extensible. Pick and use only what you need!
+A set of independent components. Awesome library based on HTML and CSS using BEM convention with the JavaScript ReactJS implementation. Each component is autonomous and extensible. Pick and use only what you need!
 
 **How _React-toolkit_ does CSS isolation?**
 
-Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need of the intricate technologies, just pragatism.
+Only by using [BEM (Block Element Modifier)](http://getbem.com) CSS convention. No need for intricate technologies, just pragmatism.
 
-Components are simple to use (just drag and drog it), simple to customize (by using CSS modifier) to your own need. Each component may evaluate internally (HTML, CSS, JS) and minimize an impact on your application.
+Components are simple to use (just drag and drop it), simple to customize (by using CSS modifier) to your own need. Each component may evaluate internally (HTML, CSS, JS) and minimize any impact on your application.
 
-You can easily build a new app from scratch or integrate some component into existing application.
+You can easily build a new app from scratch or integrate some components into an existing application.
 
 [html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
 [react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## Getting Started
 
-Install what you need
+You can either install everything and use only what you need. If you do that you will be able to use tree shaking to have a smaller bundle.
+However, you will need to import all the styles and not only the style related to your component.
+
+```sh
+npm install @axa-fr/react-toolkit-all --save
+```
+
+```javascript
+import React from 'react';
+
+// Load only the component alert (smaller bundle size)
+import { Alert } from '@axa-fr/react-toolkit-all/component/alert';
+
+// Load all the toolkit (bigger bundle size)
+import { Alert } from '@axa-fr/react-toolkit-all';
+
+import '@axa-fr/react-toolkit-all/dist/style/af-toolkit-core.scss';
+
+const MyAlertComponent = () => <Alert icon="ok" title="This is an alert" />;
+```
+
+Or you can install only the components you need:
 
 ```sh
 npm install @axa-fr/react-toolkit-alert --save
 ```
-
-Use only what you need
 
 ```javascript
 import React from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
 import '@axa-fr/react-toolkit-alert/dist/alert.scss';
 
-const MyAlertComponent => () => (
-<Alert
-    icon="ok"
-    title="This is an alert"
-  />
-)
+const MyAlertComponent = () => <Alert icon="ok" title="This is an alert" />;
 ```
 
 ## Packages
@@ -113,7 +127,7 @@ Each component should be autonomous (HTML + CSS + JS) and extensible.
 
 - React :
   - Components are stateless by default
-  - Some Higher Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
+  - Some Higher-Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
   - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
 
 ## List of supported browsers
