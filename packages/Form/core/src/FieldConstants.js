@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import MessageTypes from './MessageTypes';
 
 const propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   helpMessage: PropTypes.string,

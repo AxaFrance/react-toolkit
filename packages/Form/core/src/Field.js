@@ -7,7 +7,7 @@ import FieldForm from './FieldForm';
 import Constants from './FieldConstants';
 
 const propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
   children: PropTypes.node.isRequired,
   message: PropTypes.string,
   messageType: PropTypes.oneOf([
