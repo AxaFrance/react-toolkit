@@ -60,9 +60,7 @@ const Field = ({
       </div>
       <div className={classNameContainerInput}>
         {children}
-        {forceDisplayMessage && (
-          <FieldError message={message} messageType={messageType} />
-        )}
+        {message && <FieldError message={message} messageType={messageType} />}
       </div>
     </div>
   );
