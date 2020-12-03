@@ -2,8 +2,7 @@
   "name": "@axa-fr/react-toolkit-form-summary",
   "version": "1.4.0-alpha.0",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.ts",
-  "module": "src/index.ts",
+  "jsnext:main": "src/index.js",
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
