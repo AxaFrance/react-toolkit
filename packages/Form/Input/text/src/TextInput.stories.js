@@ -114,6 +114,44 @@ const TextInputErrorStory = () => (
   </form>
 );
 
+const richLabel = (
+  <span>
+    Place name <i>optional</i>
+  </span>
+);
+
+const TextRichLabelStory = () => (
+  <form className="af-form" name="myform">
+    <TextInput
+      id={text('id', 'uniqueid')}
+      label={richLabel}
+      name={text('name', 'placeName')}
+      onChange={action('onChange')}
+      value={text('value', '')}
+      helpMessage={text('helpMessage', 'Enter the place name, ex : Webcenter')}
+      placeholder={text('placeholder', '')}
+      message={text('message', 'Le champ est obligatoire')}
+      messageType={select('messageType', MessageTypes, MessageTypes.error)}
+      forceDisplayMessage={boolean('forceDisplayMessage', true)}
+      readOnly={boolean('readOnly', false)}
+      disabled={boolean('disabled', false)}
+      isVisible={boolean('isVisible', true)}
+      className={text('className', '')}
+      tabIndex={text('tabIndex', '')}
+      autoFocus={boolean('autoFocus', false)}
+      classNameContainerLabel={text(
+        'classNameContainerLabel',
+        Constants.defaultProps.classNameContainerLabel
+      )}
+      classNameContainerInput={text(
+        'classNameContainerInput',
+        Constants.defaultProps.classNameContainerInput
+      )}>
+      <HelpButton>tooltip avec du text</HelpButton>
+    </TextInput>
+  </form>
+);
+
 const TextStory = () => (
   <form className="af-form" name="myform">
     <FieldForm
@@ -254,3 +292,4 @@ stories.add('Text Disabled', TextDisabledStory);
 stories.add('TextInput', TextInputStory);
 stories.add('TextInput Required', TextInputStoryRequired);
 stories.add('TextInput Error', TextInputErrorStory);
+stories.add('TextInput Rich Label', TextRichLabelStory);
