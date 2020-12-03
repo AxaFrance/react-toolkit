@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form/PassInput/Pass Pass display correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__pass"
+  >
+    <div
+      class="af-form__pass-strength"
+    />
+    <input
+      class="af-form__input-text"
+      name="passwordtest"
+      role="password"
+      type="password"
+    />
+    <button
+      aria-label="show password"
+      class="af-form__pass-btn"
+      type="button"
+    >
+      <i
+        class="glyphicon glyphicon-eye-open"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;
