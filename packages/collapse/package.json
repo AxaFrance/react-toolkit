@@ -2,7 +2,8 @@
   "name": "@axa-fr/react-toolkit-collapse",
   "version": "1.4.0-alpha.0",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "jsnext:main": "src/index.ts",
+  "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
