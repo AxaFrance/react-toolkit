@@ -1,30 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
-
-const propTypes = {
-  ...Constants.propTypes,
-  bottomComponent: PropTypes.element,
-  children: PropTypes.array,
-  copyright: PropTypes.string,
-};
-
-const defaultProps = {
-  bottomComponent: null,
-  children: null,
-  copyright: 'Policy Privacy © 2018 AXA All Rights Reserved',
-};
+import React, { ReactNode } from 'react';
+import { ClassManager } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-footer-client';
 
+type Props = {
+  bottomComponent?: ReactNode;
+  children: ReactNode;
+  className?: string;
+  classModifier?: string;
+  copyright?: ReactNode;
+};
 const FooterClient = ({
   bottomComponent,
   children,
   className,
   classModifier,
-  copyright,
-}) => {
+  copyright = 'Policy Privacy © 2018 AXA All Rights Reserved',
+}: Props) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
@@ -51,8 +43,5 @@ const FooterClient = ({
     </footer>
   );
 };
-
-FooterClient.propTypes = propTypes;
-FooterClient.defaultProps = defaultProps;
 
 export default FooterClient;
