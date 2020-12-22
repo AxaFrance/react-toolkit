@@ -33,7 +33,7 @@ module.exports = {
     '../packages/icon/src/*.stories.@(ts|tsx|js)',
     '../packages/Layout/footer/src/*.stories.@(ts|tsx|js)',
     '../packages/Layout/footer-client/src/*.stories.@(ts|tsx|js)',
-    '../packages/Layout/header/src/*.stories.@(ts|tsx|js)',
+    '../packages/Layout/header/src/**/*.stories.@(ts|tsx|js)',
     '../packages/link/src/*.stories.@(ts|tsx|js)',
     '../packages/list/src/*.stories.@(ts|tsx|js)',
     '../packages/loader/src/*.stories.@(ts|tsx|js)',

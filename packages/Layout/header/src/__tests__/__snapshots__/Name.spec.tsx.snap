@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Name> renders Name correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-header__name"
+  >
+    <a
+      class="af-logo"
+      href="/"
+    >
+      <img
+        alt="Logo React"
+        class="af-logo__brand"
+        src="test.svg"
+      />
+    </a>
+    <h2
+      class="af-header__title"
+    >
+      Nom de l'application
+      <span
+        class="af-header__subtitle"
+      >
+        Baseline
+      </span>
+    </h2>
+  </div>
+</DocumentFragment>
+`;
