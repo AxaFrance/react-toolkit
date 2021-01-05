@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-popover",
-  "version": "1.4.0-alpha.0",
+  "version": "1.4.0-alpha.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -12,7 +12,7 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
+    "@axa-fr/react-toolkit-core": "1.4.0-alpha.1",
     "@popperjs/core": "2.5.4",
     "prop-types": "15.7.2",
     "react-popper": "2.2.3"

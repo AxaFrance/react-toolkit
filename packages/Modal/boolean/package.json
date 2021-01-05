@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-modal-boolean",
-  "version": "1.4.0-alpha.0",
+  "version": "1.4.0-alpha.1",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "types": "dist/index.d.ts",
@@ -13,9 +13,9 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-button": "1.4.0-alpha.0",
-    "@axa-fr/react-toolkit-core": "1.4.0-alpha.0",
-    "@axa-fr/react-toolkit-modal-default": "1.4.0-alpha.0"
+    "@axa-fr/react-toolkit-button": "1.4.0-alpha.1",
+    "@axa-fr/react-toolkit-core": "1.4.0-alpha.1",
+    "@axa-fr/react-toolkit-modal-default": "1.4.0-alpha.1"
   },
   "license": "MIT",
   "publishConfig": {
