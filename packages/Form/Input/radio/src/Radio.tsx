@@ -3,8 +3,13 @@ import RadioItem from './RadioItem';
 import RadioModes from './RadioModes';
 
 type Option = import('@axa-fr/react-toolkit-core/dist/InputManager').Option;
-interface RadioProps extends Omit<ComponentProps<typeof RadioItem>, 'label'> {
+interface RadioProps
+  extends Pick<
+    ComponentProps<typeof RadioItem>,
+    'value' | 'name' | 'disabled'
+  > {
   className?: string;
+  classModifier?: string;
   options: Option[];
   mode?: string;
 }
