@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FileInput> renders FileInput correctly 1`] = `
+<FileInput
+  accept="image/jpeg, image/png, application/*"
+  id="id"
+  inputClassModifier="undefined "
+  inputFieldClassModifier="undefined "
+  label="File *"
+  name="file"
+  onChange={[Function]}
+/>
+`;

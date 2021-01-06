@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FileInput from './FileInput';
+import FileInput from '../FileInput';
 
 describe('<FileInput>', () => {
   it('renders FileInput correctly', () => {
@@ -11,7 +11,6 @@ describe('<FileInput>', () => {
         name="file"
         onChange={() => {}}
         accept="image/jpeg, image/png, application/*"
-        multiple
       />
     );
     expect(wrapper).toMatchSnapshot();
