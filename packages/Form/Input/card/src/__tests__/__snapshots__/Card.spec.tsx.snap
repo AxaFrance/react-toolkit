@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DateInput> renders DateInput correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-rccard__1 af-rccard-group af-rccard-group--active"
+  >
+    <div
+      class="af-rccard-group__content"
+    >
+      <div
+        class="af-rccard af-rccard--active"
+      >
+        <header
+          class="af-rccard-header"
+        >
+          <div
+            class="af-form__checkbox af-form__checkbox--undefined"
+          >
+            <input
+              checked=""
+              class="af-form__checkbox"
+              disabled=""
+              id="name"
+              name="defaultName"
+              type="checkbox"
+            />
+            <label
+              class="af-form__label"
+              for="name"
+            >
+              <span
+                class="af-form__indicator"
+              >
+                <i
+                  class="glyphicon glyphicon-ok"
+                />
+              </span>
+              <span
+                class="af-form__description"
+              >
+                <p
+                  class="af-rccard-header__title"
+                >
+                   Référence
+                </p>
+                <p
+                  class="af-rccard-header__subtitle"
+                >
+                  50 € / mois
+                </p>
+              </span>
+            </label>
+          </div>
+        </header>
+        <label
+          class="af-rccard-content"
+          for="name"
+        >
+          <p>
+            John Doe
+          </p>
+          <dl>
+            <dt
+              class="af-rccard__term"
+            >
+               Statut: 
+            </dt>
+            <dd
+              class="af-rccard__def"
+            >
+               En cours 
+            </dd>
+            <dt
+              class="af-rccard__term"
+            >
+               Epargne atteinte: 
+            </dt>
+            <dd
+              class="af-rccard__def"
+            >
+               125 000 € 
+            </dd>
+          </dl>
+        </label>
+        <footer
+          class="af-rccard-footer"
+        >
+          <label
+            for="name"
+          >
+            <p>
+               Sortie en rente obligatoire 
+            </p>
+          </label>
+        </footer>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
