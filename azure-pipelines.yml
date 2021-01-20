@@ -12,19 +12,6 @@ steps:
       versionSpec: '12.x'
     displayName: 'Install Node.js'
 
-  - task: jessehouwing.jessehouwing-vsts-variable-tasks.vsts-variable-transform.VariableTransformTask@1
-    displayName: 'Transform value $(Build.SourceBranch) and assign to variable: SmartBrancheName'
-    inputs:
-      value: '$(Build.SourceBranch)'
-      variableName: SmartBranchName
-      searchReplace: true
-      searchValue: refs/heads/
-      trim: true
-      slice: false
-      substring: false
-      casing: false
-      pad: false
-
   - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
     displayName: 'Prepare analysis on SonarCloud'
     inputs:
@@ -59,7 +46,7 @@ steps:
       git config --global user.name "Build-CI"
       git reset --hard
       git remote set-url origin https://$(Github.Token)@github.com/AxaGuilDEv/react-toolkit.git
-      git checkout $(SmartBranchName)
+      git checkout $(Build.SourceBranchName)
       node ./scripts/npm.js $(NPM_TOKEN)
       cp .npmrc $HOME/.npmrc
       git status
@@ -76,11 +63,11 @@ steps:
 
   - script: npm run publish -- $(Npm.Publish.Version) --exact --yes --concurrency 1 --force-publish
     displayName: 'lerna publish latest'
-    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
+    condition: and(succeeded(), startsWith(variables.Build.SourceBranchName, 'release/'), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
 
   - script: npm run publish -- $(Npm.Publish.Version) --dist-tag next --exact --yes --concurrency 1 --force-publish
     displayName: 'lerna publish next'
-    condition: and(succeeded(), in(variables['Npm.Publish.Version'], 'premajor', 'preminor', 'prepatch', 'prerelease'))
+    condition: and(succeeded(), eq(variables.Build.SourceBranchName, 'master'), in(variables['Npm.Publish.Version'], 'premajor', 'preminor', 'prepatch', 'prerelease'))
 
   - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
     displayName: 'push documentation and changelog'
