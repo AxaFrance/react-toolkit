@@ -6,15 +6,10 @@ exports[`<SelectBase> renders SelectBase correctly 1`] = `
 >
   <select
     className="af-form__input-select"
-    disabled={false}
     id="muid"
     name="placeName"
-    onBlur={null}
     onChange={[Function]}
-    onFocus={null}
-    readOnly={false}
     value="myvalue"
-    values={null}
   >
     <option
       value="fun"
@@ -45,15 +40,10 @@ exports[`<SelectBase> renders SelectBase correctly 2`] = `
 >
   <select
     className="af-form__input-select"
-    disabled={false}
     id="muid"
     name="placeName"
-    onBlur={null}
     onChange={[Function]}
-    onFocus={null}
-    readOnly={false}
     value="myvalue"
-    values={null}
   >
     <option
       value="fun"
@@ -80,7 +70,7 @@ exports[`<SelectBase> renders SelectBase correctly 2`] = `
 
 exports[`<SelectBase> renders SelectBase correctly 3`] = `
 <div
-  className="row af-form__group"
+  className="row af-form__group af-form__group--undefined"
 >
   <div
     className="col-md-2"
@@ -88,30 +78,26 @@ exports[`<SelectBase> renders SelectBase correctly 3`] = `
     <label
       className="af-form__group-label"
       htmlFor="muid"
-    />
+    >
+      label
+    </label>
   </div>
   <div
     className="col-md-10"
   >
     <div
-      className="af-form__select"
+      className="af-form__select af-form__select--undefined"
     >
       <div
         className="af-form__select-container"
       >
         <select
-          autoFocus={null}
+          classModifier="undefined "
           className="af-form__input-select"
-          disabled={false}
           id="muid"
           name="placeName"
-          onBlur={[Function]}
           onChange={[Function]}
-          onFocus={[Function]}
-          readOnly={false}
-          tabIndex={null}
           value="myvalue"
-          values={null}
         >
           <option
             value="fun"
