@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Dropzone from 'react-dropzone';
+import { useDropzone } from 'react-dropzone';
 import {
   Input,
   InputConstants as Constants,
@@ -18,65 +18,50 @@ const omitProperties = omit([
   'inputRef',
 ]);
 
-class File extends Component {
-  constructor(props) {
-    super(props);
-    this.onOpenClick = this.onOpenClick.bind(this);
-  }
+const File = ({
+  componentClassName,
+  id,
+  name,
+  disabled,
+  onDrop,
+  multiple,
+  maxSize,
+  minSize,
+  accept,
+  readOnly,
+  placeholder,
+  label,
+  icon,
+  ...otherProps
+}) => {
+  const { getRootProps, getInputProps, open } = useDropzone({
+    onDrop,
+    minSize,
+    maxSize,
+    multiple,
+    accept,
+    disabled,
+  });
 
-  onOpenClick() {
-    this.dropzone.open();
-  }
-
-  render() {
-    const {
-      componentClassName,
-      id,
-      name,
-      disabled,
-      onDrop,
-      multiple,
-      maxSize,
-      minSize,
-      accept,
-      readOnly,
-      placeholder,
-      label,
-      icon,
-      ...otherProps
-    } = this.props;
-
-    return (
-      <div className={componentClassName}>
-        <Dropzone
-          onDrop={onDrop}
-          id={id}
-          name={name}
-          multiple={multiple}
-          maxSize={maxSize}
-          minSize={minSize}
-          accept={accept}
-          className="drop-box hidden-mobile"
-          ref={(d) => {
-            this.dropzone = d;
-          }}
-          readOnly={readOnly}
-          disabled={disabled}
-          {...omitProperties(otherProps)}>
-          <div>{placeholder} </div>
-        </Dropzone>
-        <Button
-          type="button"
-          className="af-btn"
-          classModifier="file hasiconLeft"
-          onClick={this.onOpenClick}
-          disabled={disabled}>
-          <i className={`glyphicon glyphicon-${icon}`} /> {label}
-        </Button>
+  return (
+    <div className={componentClassName}>
+      <div {...getRootProps({ id, className: 'drop-box hidden-mobile' })}>
+        <input
+          {...getInputProps({ name, readOnly, ...omitProperties(otherProps) })}
+        />
+        <div>{placeholder}</div>
       </div>
-    );
-  }
-}
+      <Button
+        type="button"
+        className="af-btn"
+        classModifier="file hasiconLeft"
+        onClick={open}
+        disabled={disabled}>
+        <i className={`glyphicon glyphicon-${icon}`} /> {label}
+      </Button>
+    </div>
+  );
+};
 
 const propTypes = {
   ...Constants.propTypes,
@@ -107,10 +92,13 @@ const defaultProps = {
 
 const handlers = {
   onDrop: ({ onChange, name, id }) => (acceptedFiles, rejectedFiles) => {
-    const values = acceptedFiles.map((file) => ({
-      id: InputManager.createId(),
-      file,
-    }));
+    const values = acceptedFiles.map((file) => {
+      file.preview = URL.createObjectURL(file);
+      return {
+        id: InputManager.createId(),
+        file,
+      };
+    });
     const errors = rejectedFiles.map((error) => ({
       id: InputManager.createId(),
       file: error,
