@@ -6,12 +6,7 @@ describe('<TextInput>', () => {
   it('renders SwitchInput correctly', () => {
     const tree = renderer
       .create(
-        <TextInput
-          label="Image *"
-          id="iddateinput"
-          value="ici le text"
-          onChange={() => {}}
-        />
+        <TextInput label="Image *" id="iddateinput" value="ici le text" />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
