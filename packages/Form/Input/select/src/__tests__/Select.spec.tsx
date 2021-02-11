@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Select from './Select';
-import SelectBase from './SelectBase';
-import SelectInput from './SelectInput';
+import Select from '../Select';
+import SelectBase from '../SelectBase';
+import SelectInput from '../SelectInput';
 
 const options = [
   { value: 'fun', label: 'For fun' },
@@ -11,23 +11,33 @@ const options = [
 ];
 
 describe('<SelectBase>', () => {
-  const Comp = (Compo) => (
-    <Compo
-      name="placeName"
-      id="muid"
-      onChange={() => null}
-      options={options}
-      value="myvalue"
-    />
-  );
-
   it('renders SelectBase correctly', () => {
-    const tree = renderer.create(Comp(Select)).toJSON();
+    const tree = renderer
+      .create(
+        <Select
+          name="placeName"
+          id="muid"
+          onChange={() => null}
+          options={options}
+          value="myvalue"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders SelectBase correctly', () => {
-    const tree = renderer.create(Comp(SelectBase)).toJSON();
+    const tree = renderer
+      .create(
+        <SelectBase
+          name="placeName"
+          id="muid"
+          onChange={() => null}
+          options={options}
+          value="myvalue"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -35,6 +45,7 @@ describe('<SelectBase>', () => {
     const tree = renderer
       .create(
         <SelectInput
+          label="label"
           name="placeName"
           id="muid"
           onChange={() => null}

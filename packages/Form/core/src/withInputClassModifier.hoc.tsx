@@ -1,16 +1,19 @@
-import { withProps } from '@axa-fr/react-toolkit-core';
-import { ReactNode } from 'react';
+import React, { ComponentType, ReactNode } from 'react';
 
-export const withInputClassModifier = withProps(
-  <
-    P extends {
-      classModifier?: string;
-      children?: ReactNode;
-      disabled?: boolean;
-    }
-  >(
-    props: P
-  ) => ({
+export const withInputClassModifier = <
+  P extends {
+    classModifier?: string;
+    children?: ReactNode;
+    disabled?: boolean;
+    inputClassModifier: string;
+    inputFieldClassModifier: string;
+  }
+>(
+  BaseComponent: ComponentType<P>
+): ComponentType<Omit<P, 'inputFieldClassModifier' | 'inputClassModifier'>> => (
+  props: P
+) => {
+  const newProps = {
     ...props,
     inputClassModifier: `${props.classModifier} ${
       props.children ? 'hasinfobulle' : ''
@@ -18,5 +21,6 @@ export const withInputClassModifier = withProps(
     inputFieldClassModifier: `${props.classModifier} ${
       props.disabled ? 'disabled' : ''
     }`,
-  })
-);
+  };
+  return <BaseComponent {...newProps} />;
+};
