@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import {
   ArticleRestitution,
   HeaderRestitution,
@@ -8,11 +7,11 @@ import {
   SectionRestitutionColumn,
   SectionRestitutionRow,
   Restitution,
-} from '.';
+} from '..';
 
 const RightTitle = () => {
   return (
-    <a className="af-link af-link--hasIconLeft" href="#">
+    <a className="af-link af-link--hasIconLeft" href="#anchor">
       <i className="glyphicon glyphicon-pencil" />
       <span className="af-link__text">Modifier</span>
     </a>
@@ -99,8 +98,8 @@ const Component = (
 
 describe('<ArticleRestitution />', () => {
   it('should render component', () => {
-    const component = create(Component);
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    const { asFragment } = render(Component);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
