@@ -25,7 +25,7 @@ const HeaderRestitution = ({
   <header className={className}>
     <div className="af-restitution__header-left">
       <div className="af-restitution__title">
-        {title && <span className="af-restitution__title-title">{title}</span>}
+        {title && <span className="af-restitution__title-main">{title}</span>}
         <span className="af-restitution__title-subtitle">{subtitle}</span>
       </div>
     </div>

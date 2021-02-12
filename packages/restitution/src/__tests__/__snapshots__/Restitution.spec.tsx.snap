@@ -15,7 +15,7 @@ exports[`<ArticleRestitution /> should render component 1`] = `
           class="af-restitution__title"
         >
           <span
-            class="af-restitution__title-title"
+            class="af-restitution__title-main"
           >
             Tarifs
           </span>

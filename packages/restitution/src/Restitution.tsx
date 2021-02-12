@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -19,7 +19,7 @@ const RestitutionValues = ({ values }: Pick<RestitutionProps, 'values'>) => {
   return <ul className="af-restitution__listul">{li}</ul>;
 };
 
-type RestitutionProps = HTMLProps<HTMLDListElement> & {
+type RestitutionProps = ComponentPropsWithoutRef<'dl'> & {
   label: string;
   value?: string;
   values?: string[];
