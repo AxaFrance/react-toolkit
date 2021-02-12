@@ -1,6 +1,6 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import Paging from './Paging';
+import { render } from '@testing-library/react';
+import Paging from '../Paging/Paging';
 import Modes from '../Pager/Modes';
 
 describe('Table.Paging', () => {
@@ -8,7 +8,7 @@ describe('Table.Paging', () => {
     const handleOnChangeMock = jest.fn();
     handleOnChangeMock.mockImplementationOnce(() => 'My mock is called');
 
-    const component = create(
+    const { asFragment } = render(
       <Paging
         numberItems={20}
         numberPages={10}
@@ -18,14 +18,14 @@ describe('Table.Paging', () => {
       />
     );
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders correctly with custom values', () => {
     const handleOnChangeMock = jest.fn();
     handleOnChangeMock.mockImplementationOnce(() => 'My mock is called');
 
-    const component = create(
+    const { asFragment } = render(
       <Paging
         numberItems={20}
         numberPages={10}
@@ -41,6 +41,6 @@ describe('Table.Paging', () => {
       />
     );
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

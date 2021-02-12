@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, HTMLProps } from 'react';
 
 import {
   withClassDefault,
@@ -10,18 +10,22 @@ import {
 
 const DEFAULT_CLASSNAME = 'af-table__body';
 
-export type BodyComponentProps = React.HTMLProps<HTMLTableSectionElement>;
+type BodyComponentProps = HTMLProps<HTMLTableSectionElement>;
 
-const Body: React.SFC<BodyComponentProps> = (props) => {
-  const { children, className } = props;
+const Body: FC<BodyComponentProps> = ({
+  children,
+  className,
+  ...otherProps
+}) => (
+  <tbody className={className} {...otherProps}>
+    {children}
+  </tbody>
+);
 
-  return <tbody className={className}>{children}</tbody>;
-};
-
-export type BodyProps = BodyComponentProps & WithClassModifierOptions;
+type BodyProps = BodyComponentProps & WithClassModifierOptions;
 const enhance = compose(
-  identity<BodyComponentProps>(),
-  withClassDefault<BodyComponentProps>(DEFAULT_CLASSNAME),
+  identity<BodyProps>(),
+  withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );
 
