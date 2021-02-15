@@ -2,7 +2,7 @@
   "name": "@axa-fr/react-toolkit-form-input-radio",
   "version": "2.0.0-alpha.1",
   "main": "dist/index.js",
-  "jsnext:main": "src/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
     "prepare": "node ../../../../scripts/prepare.js"
@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "2.0.0-alpha.1",
-    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.1",
-    "moment": "2.29.1",
-    "prop-types": "15.7.2"
+    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.1"
   },
   "devDependencies": {
     "@axa-fr/react-toolkit-help": "2.0.0-alpha.1"
