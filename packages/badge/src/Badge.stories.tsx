@@ -1,50 +1,43 @@
-import React from 'react';
-import { text, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
 import Badge from './Badge';
 import readme from '../README.md';
 
-const LABELS = {
-  listClass: ['success', 'info', 'danger', 'error'],
-  defaultClass: 'success',
-  title: 'Lorem ipsum',
-};
-
-const KNOBS_LABELS = {
-  classModifier: 'classModifier',
-  title: 'title',
-};
-
-const BadgeStory = () => (
-  <Badge
-    classModifier={select(
-      KNOBS_LABELS.classModifier,
-      LABELS.listClass,
-      LABELS.defaultClass
-    )}>
-    {text(KNOBS_LABELS.title, LABELS.title)}
-  </Badge>
-);
-
-const BadgeIconStory = () => (
-  <Badge
-    classModifier={select(
-      KNOBS_LABELS.classModifier,
-      LABELS.listClass,
-      'error'
-    )}>
-    <i className="glyphicon glyphicon-bell" />
-  </Badge>
-);
-
-const stories = storiesOf('Badge', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
+export default {
+  title: 'Badge',
+  component: Badge,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    options: {},
   },
-  options: {},
-});
+  argTypes: {
+    classModifier: {
+      control: {
+        type: 'select',
+        options: ['success', 'info', 'danger', 'error'],
+      },
+      defaultValue: 'succes',
+    },
+  },
+} as Meta;
 
-stories.add('Simple badge', BadgeStory);
-stories.add('With Icon', BadgeIconStory);
+type BadgeProps = ComponentProps<typeof Badge>;
+const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
+
+export const BadgeStory: Story<BadgeProps> = Template.bind({});
+BadgeStory.storyName = 'Simple badge';
+BadgeStory.args = {
+  children: 'Lorem ipsum',
+  classModifier: 'success',
+  disabled: false,
+};
+
+export const BadgeIconStory: Story<BadgeProps> = Template.bind({});
+BadgeIconStory.storyName = 'With Icon';
+BadgeIconStory.args = {
+  children: <i className="glyphicon glyphicon-bell" />,
+  classModifier: 'error',
+  disabled: false,
+};

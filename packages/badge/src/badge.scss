@@ -18,6 +18,11 @@ $types: (
       background-color: nth($type, 2);
     }
   }
+
+  &[disabled] {
+    opacity: 0.65;
+  }
+
   &--hasIcon {
     display: inline-block;
     min-width: 38px;
