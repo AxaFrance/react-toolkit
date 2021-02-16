@@ -48,7 +48,7 @@ const SelectBase = (props) => {
           </option>
         ))}
       </select>
-      <span className="glyphicon glyphicon-menu-down" />
+      <span aria-controls={id} className="glyphicon glyphicon-menu-down" />
     </div>
   );
 };

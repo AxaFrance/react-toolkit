@@ -66,6 +66,9 @@
 
     &--error {
       @include _set-message-type($color-red-axa);
+      select {
+        color: $color-red-axa;
+      }
     }
 
     &--warning {
@@ -74,11 +77,10 @@
 
     .glyphicon-menu-down {
       position: absolute;
-      right: 0.5rem;
+      right: 1em;
       font-size: 0.7em;
       top: 50%;
-      transform: translate(0, -50%);
-      width: 11px;
+      transform: translateY(-50%);
     }
   }
 
@@ -87,14 +89,11 @@
     background: transparent;
     position: relative;
     z-index: 1;
-    padding: 0.6rem 1.8rem 0.55rem 0.5rem;
-    width: 100%;
+    padding: 0.5em 2.7em 0.5em 1em;
     font-size: 1em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
 
     &::-ms-expand {
       display: none;
