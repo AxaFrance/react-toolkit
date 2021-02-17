@@ -27,8 +27,7 @@ $typesLite: (
 
         .af-alert__content__left {
           background: nth($typeLite, 2);
-          width: 4.813rem;
-          min-width: 4.813rem;
+          width: 4.2rem;
         }
       }
 
@@ -36,7 +35,7 @@ $typesLite: (
         &-icon {
           background-color: nth($typeLite, 2);
           color: $white;
-          min-width: 4.813rem;
+          width: 4rem;
 
           &::after {
             border-left-color: nth($typeLite, 2);
@@ -44,18 +43,6 @@ $typesLite: (
         }
       }
     }
-  }
-
-  &__icon-close {
-    position: absolute;
-    right: 8px;
-    top: 8px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    color: inherit;
-    width: 25px;
   }
 
   &__title {
@@ -67,32 +54,41 @@ $typesLite: (
 
     &-icon {
       position: relative;
-      font-size: 1.3rem;
-      padding: 0 1.5rem 0 1.688rem;
+      padding: 0 1.3rem;
 
       &::after {
         content: '';
         position: absolute;
-        width: 30px;
-        height: 30px;
-        left: 98%;
+        right: -1rem;
         top: 50%;
-        margin-top: -40%;
-        border: 30px solid transparent;
-        border-right-width: 0;
+        transform: translateY(-50%);
+        height: 0;
+        width: 0;
+        border-top: 2rem solid transparent;
+        border-bottom: 2rem solid transparent;
+        border-left: 1rem solid transparent;
       }
 
       .glyphicon {
         top: 50%;
-        margin-top: -50%;
-        display: block;
-        width: 22px;
+        transform: translateY(-50%);
+      }
+
+      &-close {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+        background: none;
+        border: 0;
+        color: inherit;
       }
     }
 
     &-text {
       line-height: 24px;
-      padding: 0.9375rem 1.5rem 0.9375rem 2.75rem;
+      padding: 0.9rem 1.5rem 0.9rem 2.75rem;
       font-weight: 600;
     }
   }
@@ -101,7 +97,7 @@ $typesLite: (
     display: flex;
 
     .af-alert__content__right {
-      padding: 0 1.5rem 0 1.188rem;
+      padding: 0 1.5rem;
     }
   }
 }

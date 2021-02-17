@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlertCore /> renders an error alert with exclamation icon and title 1`] = `
+<DocumentFragment>
+  <div
+    class="af-alert af-alert--error"
+    role="alert"
+  >
+    <div
+      class="af-alert__title"
+    >
+      <div
+        class="af-alert__title-icon"
+      >
+        <i
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+      </div>
+      <div
+        class="af-alert__title-text"
+      >
+        Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
