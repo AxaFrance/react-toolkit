@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabStateless> should render component 1`] = `
+<DocumentFragment>
+  <li
+    class="af-tabs__item af-tabs__item--active"
+  >
+    <button
+      class="af-tabs__link"
+    >
+      Title displayed
+    </button>
+  </li>
+</DocumentFragment>
+`;

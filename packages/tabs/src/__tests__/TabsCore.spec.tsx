@@ -1,7 +1,7 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import TabsCore, { onChangeEvent } from './TabsCore';
-import Tab from './Tab';
+import { render } from '@testing-library/react';
+import TabsCore, { onChangeEvent } from '../TabsCore';
+import Tab from '../Tab';
 
 describe('TabsCore tests suite', () => {
   afterEach(() => {
@@ -21,7 +21,7 @@ describe('TabsCore tests suite', () => {
 
     const onChangeMock = jest.fn((x) => {});
 
-    create(
+    render(
       <TabsCore onChange={onChangeMock} activeIndex={givenActivateIndex}>
         <Tab title="title tab1" classModifier="modifier 1">
           <span>Content</span>

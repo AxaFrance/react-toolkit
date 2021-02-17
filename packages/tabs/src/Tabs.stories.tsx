@@ -61,3 +61,11 @@ export const Default = Template.bind({});
 Default.args = {
   activeIndex: '1',
 };
+
+export const OnlyOneTab: Story<TabsCoreProps> = (args) => (
+  <Tabs {...args}>
+    <Tabs.Tab title={TabTitleIconRight} classModifier="has-icon-right">
+      Content of my unique tab
+    </Tabs.Tab>
+  </Tabs>
+);
