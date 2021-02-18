@@ -22,7 +22,7 @@ exports[`<NumberInput> renders NumberInput correctly 1`] = `
     >
       <input
         autoFocus={null}
-        className="af-form__input-text"
+        className="af-form__input-number"
         disabled={false}
         id="iddateinput"
         name="placeImage"
@@ -32,8 +32,8 @@ exports[`<NumberInput> renders NumberInput correctly 1`] = `
         placeholder={null}
         readOnly={false}
         tabIndex={null}
-        type="text"
-        value="2"
+        type="number"
+        value={2}
       />
     </div>
     <small

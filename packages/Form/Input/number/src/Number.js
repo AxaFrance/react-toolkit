@@ -8,40 +8,30 @@ import {
 } from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
-import parseValueToNumber from './NumberHelper';
-
 const omitProperties = omit(['classModifier', 'className', 'isVisible']);
 
-const CustomNumber = (props) => {
-  const {
-    componentClassName,
-    id,
-    name,
-    viewValue,
-    value,
-    onChange,
-    onBlur,
-    onFocus,
-    readOnly,
-    disabled,
-    placeholder,
-    inputRef,
-    ...otherProps
-  } = props;
-  let currentViewValue = '';
-  if (value !== undefined && value !== null) {
-    currentViewValue = value.toString();
-  } else if (viewValue !== null && viewValue !== undefined) {
-    currentViewValue = props.viewValue;
-  }
+const CustomNumber = ({
+  componentClassName,
+  id,
+  name,
+  value,
+  onChange,
+  onBlur,
+  onFocus,
+  readOnly,
+  disabled,
+  placeholder,
+  inputRef,
+  ...otherProps
+}) => {
   const inputId = InputManager.getInputId(id);
   return (
     <input
       className={componentClassName}
       name={name}
       id={inputId}
-      type="text"
-      value={currentViewValue}
+      type="number"
+      value={value}
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
@@ -57,30 +47,23 @@ const CustomNumber = (props) => {
 const propTypes = {
   ...Constants.propTypes,
   value: PropTypes.number,
-  viewValue: PropTypes.string,
   placeholder: PropTypes.string,
 };
-const defaultClassName = 'af-form__input-text';
+const defaultClassName = 'af-form__input-number';
 const defaultProps = {
   ...Constants.defaultProps,
   value: null,
-  viewValue: '',
   className: defaultClassName,
   placeholder: '',
 };
 
 const handlers = {
-  onChange: ({ onChange, name, id }) => (e) => {
-    const viewValue = e.target.value;
-    const value = parseValueToNumber(viewValue);
-
+  onChange: ({ onChange, name, id }) => (e) =>
     onChange({
-      value,
-      viewValue,
+      value: e.target.value,
       name,
       id,
-    });
-  },
+    }),
 };
 
 const EnhancedComponent = withInput(
