@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Badge> should render component 1`] = `
-<span
-  className="af-badge"
->
-  50
-</span>
-`;
