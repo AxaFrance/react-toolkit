@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table.Pager renders correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="af-pager"
+  >
+    <ul
+      class="af-pager__pagination"
+    >
+      <li
+        class="af-pager__item af-pager__item--disabled"
+      >
+        <span
+          class="af-pager__item-nolink"
+        >
+          « Précédent
+        </span>
+      </li>
+      <li
+        class="af-pager__item af-pager__item--active"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            1
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            2
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item af-pager__item--disabled"
+      >
+        <span
+          class="af-pager__item-link"
+        >
+          ...
+        </span>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            10
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+          role="button"
+        >
+          Suivant »
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Table.Pager renders correctly with custom label 1`] = `
+<DocumentFragment>
+  <nav
+    class="af-pager"
+  >
+    <ul
+      class="af-pager__pagination"
+    >
+      <li
+        class="af-pager__item af-pager__item--disabled"
+      >
+        <span
+          class="af-pager__item-nolink"
+        >
+          &lt; Previous
+        </span>
+      </li>
+      <li
+        class="af-pager__item af-pager__item--active"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            1
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            2
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item af-pager__item--disabled"
+      >
+        <span
+          class="af-pager__item-link"
+        >
+          ...
+        </span>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+        >
+          <span>
+            10
+          </span>
+        </a>
+      </li>
+      <li
+        class="af-pager__item"
+      >
+        <a
+          class="af-pager__item-link"
+          href="#"
+          role="button"
+        >
+          Next &gt;
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

@@ -39,14 +39,14 @@ export const Simple = () => (
     className={text('className', 'af-table')}>
     <Table.Header>
       <Table.Tr>
-        <Table.Th colSpan="3">
+        <Table.Th colSpan={3}>
           <span className="af-table-th-content">Some text</span>
         </Table.Th>
       </Table.Tr>
     </Table.Header>
     <Table.Body>
       <Table.Tr>
-        <Table.Td rowSpan="2">
+        <Table.Td rowSpan={2}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
         <Table.Td>

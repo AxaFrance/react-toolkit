@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, HTMLProps } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -7,28 +7,23 @@ import {
   identity,
 } from '@axa-fr/react-toolkit-core';
 
-import Tr from './Tr';
+const DEFAULT_CLASSNAME = 'af-table-thead';
 
-const DEFAULT_CLASSNAME = 'af-table__thead';
+type HeaderComponentProps = HTMLProps<HTMLTableSectionElement>;
 
-export type HeaderComponentProps = React.HTMLProps<HTMLTableSectionElement>;
+const Header: FC<HeaderComponentProps> = ({
+  children,
+  className,
+  ...otherProps
+}) => (
+  <thead className={className} {...otherProps}>
+    {children}
+  </thead>
+);
 
-const Header: React.SFC<HeaderComponentProps> = (props) => {
-  const { children, headers, className } = props;
-
-  if (headers) {
-    return (
-      <thead className={className}>
-        <Tr>{children}</Tr>
-      </thead>
-    );
-  }
-  return <thead className="af-table-thead">{children}</thead>;
-};
-
-export type HeaderProps = HeaderComponentProps & WithClassModifierOptions;
+type HeaderProps = HeaderComponentProps & WithClassModifierOptions;
 const enhance = compose(
-  identity<HeaderComponentProps>(),
+  identity<HeaderProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, HTMLProps } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -9,20 +9,21 @@ import {
 
 const DEFAULT_CLASSNAME = 'af-table';
 
-export type TableCoreComponentProps = Pick<
-  React.HTMLProps<HTMLTableElement>,
-  'className'
->;
+type TableCoreComponentProps = HTMLProps<HTMLTableElement>;
 
-const TableCore: React.SFC<TableCoreComponentProps> = (props) => {
-  const { className, children } = props;
-  return <table className={className}>{children}</table>;
-};
+const TableCore: FC<TableCoreComponentProps> = ({
+  className,
+  children,
+  ...othersProps
+}) => (
+  <table className={className} {...othersProps}>
+    {children}
+  </table>
+);
 
-export type TableCoreProps = TableCoreComponentProps & WithClassModifierOptions;
-
+type TableCoreProps = TableCoreComponentProps & WithClassModifierOptions;
 const enhance = compose(
-  identity<TableCoreComponentProps>(),
+  identity<TableCoreProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );
