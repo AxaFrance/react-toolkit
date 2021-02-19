@@ -59,10 +59,10 @@ export const Default = () => (
             ]}
           />
         </SectionRestitutionColumn>
-        <SectionRestitutionColumn>
+        <SectionRestitutionColumn classModifier="test">
           <Restitution label="TA" value="99,99 %" />
           <Restitution label="EURO" value="EURO" />
-          <Restitution label="TT" value="" />
+          <Restitution label="TT" value={undefined} />
           <Restitution
             label="Garanties complémentaires"
             classModifier="marge"

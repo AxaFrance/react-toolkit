@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleRestitution /> should render component 1`] = `
+<DocumentFragment>
+  <article
+    class="af-restitution"
+  >
+    <header
+      class="af-restitution__header"
+    >
+      <div
+        class="af-restitution__header-left"
+      >
+        <div
+          class="af-restitution__title"
+        >
+          <span
+            class="af-restitution__title-main"
+          >
+            Tarifs
+          </span>
+          <span
+            class="af-restitution__title-subtitle"
+          >
+            Tout adhérent, assuré, base (sans EAC ou sans PAC)
+          </span>
+        </div>
+      </div>
+      <div
+        class="af-restitution__header-right"
+      >
+        <span
+          class="af-restitution__title"
+        >
+          <a
+            class="af-link af-link--hasIconLeft"
+            href="#anchor"
+          >
+            <i
+              class="glyphicon glyphicon-pencil"
+            />
+            <span
+              class="af-link__text"
+            >
+              Modifier
+            </span>
+          </a>
+        </span>
+      </div>
+    </header>
+    <section
+      class="af-restitution__content"
+    >
+      <div
+        class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"
+      >
+        <div
+          class="af-restitution__content-title"
+        >
+          Base de calcul des prestations
+        </div>
+        <div
+          class="row af-restitution__content-left"
+        >
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                EURO
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TT
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              />
+            </dl>
+            <dl
+              class="af-restitution__listdef af-restitution__listdef--marge"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  Garanties complémentaires
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                <ul
+                  class="af-restitution__listul"
+                >
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol au domicile
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol étendu aux appareils nomades
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Bris des glaces
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Plomberie et électricité
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Jardin
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                EURO
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TT
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              />
+            </dl>
+            <dl
+              class="af-restitution__listdef af-restitution__listdef--marge"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  Garanties complémentaires
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                <ul
+                  class="af-restitution__listul"
+                >
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol au domicile
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol étendu aux appareils nomades
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Bris des glaces
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Plomberie et électricité
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Jardin
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"
+      >
+        <div
+          class="af-restitution__content-title"
+        >
+          Base de calcul des prestations
+        </div>
+        <div
+          class="row af-restitution__content-left"
+        >
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                EURO
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  Garanties complémentaires
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                <ul
+                  class="af-restitution__listul"
+                >
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol au domicile
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol étendu aux appareils nomades
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Bris des glaces
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Plomberie et électricité
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Jardin
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                EURO
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef af-restitution__listdef--marge"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  Garanties complémentaires
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                <ul
+                  class="af-restitution__listul"
+                >
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol au domicile
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Vol étendu aux appareils nomades
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Bris des glaces
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Plomberie et électricité
+                  </li>
+                  <li
+                    class="af-restitution__listul-item"
+                  >
+                    Jardin
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</DocumentFragment>
+`;
