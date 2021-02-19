@@ -54,28 +54,6 @@ class NavBarItem extends Component {
     };
   }
 
-  moveBykey(key) {
-    const { children } = this.props;
-    const { position } = this.state;
-    const newPositionv = setPosition(
-      React.Children.count(children),
-      position,
-      key
-    );
-    this.setState({ position: newPositionv });
-  }
-
-  openMenu() {
-    const { children } = this.props;
-    if (children) {
-      this.setState({ isMenuOpen: true });
-    }
-  }
-
-  closeMenu() {
-    this.setState({ isMenuOpen: false, position: 0 });
-  }
-
   handleKeys(e) {
     const { position, isMenuOpen } = this.state;
     const { children } = this.props;
@@ -104,6 +82,28 @@ class NavBarItem extends Component {
     if (key === 'ArrowRight' || key === 'ArrowLeft' || key === 'Escape') {
       this.closeMenu();
     }
+  }
+
+  openMenu() {
+    const { children } = this.props;
+    if (children) {
+      this.setState({ isMenuOpen: true });
+    }
+  }
+
+  closeMenu() {
+    this.setState({ isMenuOpen: false, position: 0 });
+  }
+
+  moveBykey(key) {
+    const { children } = this.props;
+    const { position } = this.state;
+    const newPositionv = setPosition(
+      React.Children.count(children),
+      position,
+      key
+    );
+    this.setState({ position: newPositionv });
   }
 
   renderChild(child, index) {

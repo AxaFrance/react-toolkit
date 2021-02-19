@@ -11,7 +11,8 @@
     "bootstrap": {
       "ignore": "component-*",
       "npmClientArgs": [
-        "--no-package-lock"
+        "--no-package-lock",
+        "--legacy-peer-deps"
       ]
     }
   },
