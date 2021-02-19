@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer> should render a footer with copyright prop as content 1`] = `
+<DocumentFragment>
+  <footer
+    class="af-footer"
+  >
+    <div
+      class="container-fluid container"
+    >
+      <a
+        class="af-logo"
+        href="https://www.axa.fr/"
+        target="blank"
+        title="Site Axa"
+      >
+        <img
+          alt="Logo Axa"
+          class="af-logo__brand"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        class="af-footer-content"
+      >
+        Test
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

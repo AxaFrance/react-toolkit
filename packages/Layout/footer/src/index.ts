@@ -1,2 +1,2 @@
-export { default as Footer, FooterProps } from './Footer';
-export { default as FooterCore, FooterCoreProps } from './FooterCore';
+export { default as Footer } from './Footer';
+export { default as FooterCore } from './FooterCore';
