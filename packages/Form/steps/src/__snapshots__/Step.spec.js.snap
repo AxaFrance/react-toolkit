@@ -8,7 +8,7 @@ exports[`<Steps> renders Steps correctly 1`] = `
     className="af-steps-list"
   >
     <li
-      className="past af-steps-list-step"
+      className="past af-steps-list-step number"
       title="Previous step"
     >
       <a
@@ -52,7 +52,7 @@ exports[`<Steps> renders Steps correctly 1`] = `
       </a>
     </li>
     <li
-      className="af-steps-list-step"
+      className="af-steps-list-step number"
       title="Final step"
     >
       <div
