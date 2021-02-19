@@ -2,6 +2,7 @@ const path = require('path');
 
 const src = 'src';
 const dist = 'dist';
+const componentDistAll = 'component';
 const packages = 'packages';
 const core = 'core';
 const all = 'all';
@@ -9,10 +10,12 @@ const tasks = './scripts/tasks';
 const bootstrapModulesDistCss = 'node_modules/bootstrap/dist/css';
 const coreSrc = `${packages}/${core}/${src}`;
 const coreDist = `${packages}/${core}/${dist}`;
+const allPackage = `${packages}/${all}`;
 const allSrc = `${packages}/${all}/${src}`;
 const allDist = `${packages}/${all}/${dist}`;
 const assets = `${coreSrc}/common`;
 const bootstrap = `${coreSrc}/bootstrap`;
+const tsConfigFile = 'tsconfig.json';
 
 const autoprefixerConfig = {
   overrideBrowserslist: ['last 2 versions', '> 2%', 'IE 9'],
@@ -51,4 +54,7 @@ module.exports = {
   cleanCssConfig,
   autoprefixerConfig,
   bootstrapModulesDistCss,
+  tsConfigFile,
+  componentDistAll,
+  allPackage,
 };

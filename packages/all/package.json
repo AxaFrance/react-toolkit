@@ -1,11 +1,11 @@
 {
   "name": "@axa-fr/react-toolkit-all",
   "version": "1.4.0-alpha.1",
-  "main": "dist/index.js",
+  "main": "component/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
   "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
+    "prepare": "node ../../scripts/prepare-all.js"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",

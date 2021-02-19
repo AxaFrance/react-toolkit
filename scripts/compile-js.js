@@ -2,17 +2,18 @@
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
+const { src, dist } = require('./config');
 
-function getCommand(watch) {
+function getCommand(watch, outDir) {
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
   const args = [
     '--root-mode upward',
-    './src --out-dir ./dist',
-    '--ignore "./src/**/*.stories.js","./src/**/*.spec.js",".src/__snapshots__"',
-    '--source-maps',
-    '--copy-files',
-    '--no-copy-ignored',
+    src,
+    `--out-dir ${outDir}`,
+    '--source-maps true',
+    '--extensions ".js,.ts,.tsx"',
+    '--ignore "**/*.spec.js,**/*.spec.ts,**/*.spec.tsx,**/*.stories.js,**/*.stories.ts,**/*.stories.tsx"',
   ];
 
   if (watch) {
@@ -33,14 +34,19 @@ function handleExit(code, errorCallback) {
 }
 
 function babelify(options = {}) {
-  const { watch = false, silent = false, errorCallback } = options;
+  const {
+    watch = false,
+    silent = false,
+    errorCallback,
+    outDir = dist,
+  } = options;
 
   if (!fs.existsSync('src')) {
     if (!silent) console.log('No src dir');
     return;
   }
 
-  const command = getCommand(watch);
+  const command = getCommand(watch, outDir);
   const { code } = shell.exec(command, { silent });
 
   handleExit(code, errorCallback);
