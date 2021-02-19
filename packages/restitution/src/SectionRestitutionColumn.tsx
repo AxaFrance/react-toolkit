@@ -16,7 +16,7 @@ type SectionRestitutionColumnBaseProps = {
   children?: React.ReactNode;
 };
 
-export const SectionRestitutionColumn = ({
+const SectionRestitutionColumn = ({
   children,
   className,
   title,
@@ -31,18 +31,12 @@ type SectionRestitutionColumnProps = WithClassModifierOptions &
   SectionRestitutionColumnBaseProps;
 
 const enhance = compose(
-  identity<SectionRestitutionColumnBaseProps>(),
+  identity<SectionRestitutionColumnProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );
 
-const defaultProps: Partial<SectionRestitutionColumnProps> = {
-  children: null,
-  className: DEFAULT_CLASSNAME,
-};
-
 const Enhanced = enhance(SectionRestitutionColumn);
 Enhanced.displayName = 'SectionRestitutionColumn';
-Enhanced.defaultProps = defaultProps;
 
 export default Enhanced;
