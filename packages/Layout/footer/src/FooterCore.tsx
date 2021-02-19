@@ -1,38 +1,25 @@
-import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import React, { ReactNode } from 'react';
 
-const DEFAULT_CLASSNAME = 'af-footer';
-
-export type FooterCoreProps = Partial<typeof defaultProps> &
-  WithClassModifierOptions;
-
-const defaultProps = {
-  children: `© ${new Date().getFullYear()} AXA Tous droits réservés` as React.ReactNode,
-  href: 'https://www.axa.fr/',
-  title: 'Site Axa',
-  icon: 'assets/logo-axa.svg',
-  alt: 'Logo Axa',
-  isIconHidden: false,
+type FooterCoreProps = {
+  href?: string;
+  title?: string;
+  alt?: string;
+  icon?: string;
+  className?: string;
+  children?: ReactNode;
 };
 
-const FooterCoreRaw = ({
-  className,
-  href,
-  title,
+const FooterCore = ({
+  className = 'af-footer',
+  href = 'https://www.axa.fr/',
+  title = 'Site Axa',
   icon,
-  isIconHidden,
-  alt,
-  children,
+  alt = 'Logo Axa',
+  children = `© ${new Date().getFullYear()} AXA Tous droits réservés`,
 }: FooterCoreProps) => (
   <footer className={className}>
     <div className="container-fluid container">
-      {!isIconHidden && (
+      {!!icon && (
         <a className="af-logo" href={href} title={title} target="blank">
           <img className="af-logo__brand" src={icon} alt={alt} />
         </a>
@@ -41,14 +28,5 @@ const FooterCoreRaw = ({
     </div>
   </footer>
 );
-FooterCoreRaw.defaultProps = defaultProps;
 
-const enhance = compose(
-  identity<FooterCoreProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(FooterCoreRaw);
-Enhanced.displayName = 'FooterCore';
-export default Enhanced;
+export default FooterCore;

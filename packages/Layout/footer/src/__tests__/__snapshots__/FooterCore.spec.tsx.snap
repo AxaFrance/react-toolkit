@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FooterCore> should render a footer with children as content 1`] = `
+<DocumentFragment>
+  <footer
+    class="af-footer"
+  >
+    <div
+      class="container-fluid container"
+    >
+      <div
+        class="af-footer-content"
+      >
+        <strong>
+          Test
+        </strong>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
