@@ -1,56 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DateInput> renders DateInput correctly 1`] = `
-<div
-  className="row af-form__group"
->
+<DocumentFragment>
   <div
-    className="col-md-2"
-  >
-    <label
-      className="af-form__group-label"
-      htmlFor="iddateinput"
-    >
-      Image *
-    </label>
-  </div>
-  <div
-    className="col-md-10"
+    class="row af-form__group"
   >
     <div
-      className="af-datepicker__container"
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="iddateinput"
+      >
+        date de naissance
+      </label>
+    </div>
+    <div
+      class="col-md-10"
     >
       <div
-        className="react-datepicker-wrapper"
+        class="af-datepicker__container"
       >
         <div
-          className="react-datepicker__input-container"
+          class="react-datepicker-wrapper"
         >
-          <input
-            autoFocus={null}
-            className="af-datepicker"
-            disabled={false}
-            id="iddateinput"
-            name="placeImage"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            readOnly={false}
-            tabIndex={null}
-            type="text"
-            value=""
-          />
+          <div
+            class="react-datepicker__input-container"
+          >
+            <input
+              class="af-datepicker"
+              id="iddateinput"
+              name="placeImage"
+              type="text"
+              value=""
+            />
+          </div>
         </div>
+        <span
+          class="glyphicon glyphicon-calendar"
+        />
       </div>
-      <span
-        className="glyphicon glyphicon-calendar"
+      <small
+        class="af-form__help"
       />
     </div>
-    <small
-      className="af-form__help"
-    />
   </div>
-</div>
+</DocumentFragment>
 `;
