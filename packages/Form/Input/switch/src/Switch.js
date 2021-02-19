@@ -84,6 +84,14 @@ class Switch extends React.Component {
     });
   }
 
+  handleChange(e, onChange) {
+    this.setState({
+      selectedValue: e.currentTarget.value,
+      sliderStyle: this.getSliderStyle(),
+    });
+    onChange(e);
+  }
+
   getSliderStyle() {
     const { name } = this.props;
     const sliderPosition = getSliderPosition(name, this.ref);
@@ -91,14 +99,6 @@ class Switch extends React.Component {
       width: `${sliderPosition.width}px`,
       left: `${sliderPosition.left}px`,
     };
-  }
-
-  handleChange(e, onChange) {
-    this.setState({
-      selectedValue: e.currentTarget.value,
-      sliderStyle: this.getSliderStyle(),
-    });
-    onChange(e);
   }
 
   render() {
