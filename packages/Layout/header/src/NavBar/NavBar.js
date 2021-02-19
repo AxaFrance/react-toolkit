@@ -39,12 +39,21 @@ class NavBar extends Component {
     };
   }
 
-  onFocus() {
-    this.setState({ isMenuFocused: true });
+  handleKeys(key) {
+    if (key === 'Escape') {
+      this.onBlur();
+    }
+    if (key === 'ArrowRight' || key === 'ArrowLeft') {
+      this.moveBykey(key);
+    }
   }
 
   onBlur() {
     this.setState({ isMenuFocused: false });
+  }
+
+  onFocus() {
+    this.setState({ isMenuFocused: true });
   }
 
   getValidChildren() {
@@ -64,15 +73,6 @@ class NavBar extends Component {
     );
 
     this.setState({ position: newPosition });
-  }
-
-  handleKeys(key) {
-    if (key === 'Escape') {
-      this.onBlur();
-    }
-    if (key === 'ArrowRight' || key === 'ArrowLeft') {
-      this.moveBykey(key);
-    }
   }
 
   renderChild(child, index) {
