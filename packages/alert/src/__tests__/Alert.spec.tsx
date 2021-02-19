@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Alert from './Alert';
+import Alert from '../Alert';
 
 describe('<Alert />', () => {
   it('renders an error alert with exclamation icon and title', () => {

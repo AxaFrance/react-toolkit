@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -12,29 +12,33 @@ const DEFAULT_CLASSNAME = 'af-alert';
 export type AlertCoreComponentProps = {
   title: string;
   iconClassName?: string;
-  onClose?: React.MouseEventHandler<HTMLButtonElement>;
+  onClose?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
+  children?: ReactNode;
 } & WithClassModifierOptions;
 export type AlertCoreProps = AlertCoreComponentProps;
 
-const AlertCoreRaw: React.SFC<AlertCoreComponentProps> = ({
+const AlertCoreRaw = ({
   className,
   onClose,
   iconClassName,
   title,
   children,
-}) => (
+}: AlertCoreComponentProps) => (
   <div className={className} role="alert">
-    {onClose && (
-      <button className="af-alert__icon-close" onClick={onClose}>
-        <i className="glyphicon glyphicon-close" />
-      </button>
-    )}
     <div className="af-alert__title">
       <div className="af-alert__title-icon">
         <i className={iconClassName} />
       </div>
       <div className="af-alert__title-text">{title}</div>
+      {onClose && (
+        <button
+          type="button"
+          className="af-alert__title-icon-close"
+          onClick={onClose}>
+          <i className="glyphicon glyphicon-close" />
+        </button>
+      )}
     </div>
     {children && (
       <div className="af-alert__content">
