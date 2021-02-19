@@ -160,8 +160,8 @@ $active-sort-table-th: $color-table-sorting !default;
 
   &--circle {
     display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     border: 1px solid $white;
     background: $color-azur;
@@ -298,6 +298,9 @@ $active-sort-table-th: $color-table-sorting !default;
 }
 
 .af-more-help {
-  font: italic normal 0.9375rem/16px $font-family-sans-serif;
-  cursor: pointer;
+  font-weight: bold;
+  font-family: $font-family-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  vertical-align: middle;
 }
