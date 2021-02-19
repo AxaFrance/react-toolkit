@@ -21,7 +21,7 @@ const getFirstId = (options: Option[]) => {
   return options[0].id;
 };
 
-const getOptionsWithId = (options: Option[]): Option[] => {
+const getOptionsWithId = <T extends { id?: string }>(options: T[]): T[] => {
   if (!options) {
     return [];
   }
