@@ -33,6 +33,7 @@ exports[`<SelectBase> renders SelectBase correctly 1`] = `
     </option>
   </select>
   <span
+    aria-controls="muid"
     className="glyphicon glyphicon-menu-down"
   />
 </div>
@@ -71,6 +72,7 @@ exports[`<SelectBase> renders SelectBase correctly 2`] = `
     </option>
   </select>
   <span
+    aria-controls="muid"
     className="glyphicon glyphicon-menu-down"
   />
 </div>
@@ -128,6 +130,7 @@ exports[`<SelectBase> renders SelectBase correctly 3`] = `
           </option>
         </select>
         <span
+          aria-controls="muid"
           className="glyphicon glyphicon-menu-down"
         />
       </div>
