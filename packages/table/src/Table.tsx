@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef, PureComponent } from 'react';
 import Tr from './Tr';
 import Td from './Td';
 import Th from './Th';
 import Header from './Header';
 import Body from './Body';
-import TableCore, { TableCoreProps } from './TableCore';
+import TableCore from './TableCore';
 
-class Table extends React.PureComponent<TableCoreProps> {
+class Table extends PureComponent<ComponentPropsWithoutRef<typeof TableCore>> {
   public static readonly Header = Header;
 
   public static readonly Body = Body;
