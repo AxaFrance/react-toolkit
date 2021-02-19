@@ -8,22 +8,22 @@ $types: (
 );
 
 .af-badge {
+  display: inline-block;
   color: $white;
   border-radius: 16px;
   padding: 0.2rem 0.7rem;
-  height: 28px;
   line-height: 1.25rem;
   @each $type in $types {
     &--#{nth($type, 1)} {
       background-color: nth($type, 2);
     }
   }
-  &--hasIcon {
-    display: inline-block;
-    min-width: 38px;
-    padding-top: 0.4rem;
-    .glyphicon {
-      width: 22px;
-    }
+
+  &[disabled] {
+    opacity: 0.65;
+  }
+
+  & > * {
+    vertical-align: middle;
   }
 }
