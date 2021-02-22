@@ -9,9 +9,8 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string,
 };
 const defaultClassName = 'past af-steps-list-step';
 const defaultProps = {
@@ -37,17 +36,20 @@ class StepLink extends Component {
   }
 
   render() {
-    const { id, href, number, title, className, modifier, icon } = this.props;
+    const { id, href, number, title, className, modifier } = this.props;
 
     return (
-      <StepBase id={id} className={className} title={title} modifier={modifier}>
+      <StepBase
+        id={id}
+        className={`${className} ${number ? 'number' : ''}`}
+        title={title}
+        modifier={modifier}>
         <a
           className="af-steps-list-stepLabel"
           href={href}
           onClick={this.onClick}>
-          <div className="af-steps-list-stepNumber">{number}</div>
+          {!!number && <div className="af-steps-list-stepNumber">{number}</div>}
           <div className="af-steps-list-stepTitle">{title}</div>
-          {icon && <i className={`icons-list__item-icon glyphicon ${icon}`} />}
         </a>
       </StepBase>
     );
