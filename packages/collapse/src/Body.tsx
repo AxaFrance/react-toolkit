@@ -16,18 +16,6 @@ export type BodyProps = Partial<typeof defaultProps> & {
   ariaLabelledby?: string;
 };
 
-const collapseAnimation = (
-  collapse: boolean,
-  panel: React.MutableRefObject<HTMLDivElement>
-) => {
-  if (panel) {
-    const currentPanel = panel.current;
-    currentPanel.style.maxHeight = collapse
-      ? `${currentPanel.scrollHeight}px`
-      : '0px';
-  }
-};
-
 const Body = ({
   children,
   collapse,
@@ -39,7 +27,9 @@ const Body = ({
   const panel = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    collapseAnimation(collapse, panel);
+    if (panel) {
+      panel.current.style.maxHeight = collapse ? '100vh' : '0';
+    }
   }, [collapse]);
 
   let newClassModifier = collapse ? 'open' : 'close';
