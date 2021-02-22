@@ -4,8 +4,8 @@
 // --------------------------------------------------
 $steps-bg: $gray-lighter;
 $steps-bg-active: $white;
-$font-size-step: $font-size-base + 0.1rem;
-$font-size-step-number: $font-size-base + 0.4rem;
+$font-size-step: $font-size-base;
+$font-size-step-number: $font-size-base + 0.2rem;
 $steps-color: $gray-dark;
 $steps-color-active: mix($black, $brand-primary, 20%);
 
@@ -14,63 +14,79 @@ $steps-color-active: mix($black, $brand-primary, 20%);
   background: white;
 
   .af-steps-list {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    line-height: 3rem;
     padding: 0;
     margin: 0;
     border-bottom: 1px solid $steps-bg;
+    list-style: none;
+    counter-reset: stepper-counter;
 
     &-step {
-      display: table-cell;
+      display: inline-flex;
       font-size: $font-size-step;
       color: $steps-color;
-      padding-left: 1rem;
+      counter-increment: stepper-counter;
+
+      &.number {
+        &::before {
+          content: none;
+        }
+      }
+
+      &::before {
+        content: counter(stepper-counter);
+        color: $steps-color;
+        margin-right: 0.8rem;
+        font-size: $font-size-step-number;
+        font-weight: 600;
+      }
+
+      &::after {
+        content: '\EA12';
+        font-family: icons;
+      }
 
       &.on {
         color: $steps-color-active;
 
-        .glyphicon-success,
-        &:last-child {
-          color: $color-btn-success;
-
-          .af-steps-list-stepTitle {
-            padding-right: 0;
-          }
-        }
-
-        .af-steps-list-stepTitle {
-          padding-right: 1rem;
+        &::before,
+        * {
+          color: $steps-color-active;
         }
       }
 
       &.past {
         color: $color-pager-link;
 
+        &::before {
+          color: $color-pager-link;
+        }
+
         &:hover {
           color: $steps-color-active;
-          cursor: pointer;
         }
       }
 
       &.disabled {
         color: $color-btn-disabled;
+
+        &::before {
+          color: $color-btn-disabled;
+        }
       }
 
       &Label {
-        position: relative;
-        width: 100%;
-        vertical-align: middle;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: inline-flex;
+        padding-right: 2rem;
       }
 
       &Number {
-        margin-right: 0.3125rem;
+        margin-right: 0.6rem;
         font-size: $font-size-step-number;
         font-weight: 600;
+        color: $steps-color;
 
         .glyphicon {
           font-size: 1.5rem;
@@ -80,21 +96,27 @@ $steps-color-active: mix($black, $brand-primary, 20%);
 
       &Title {
         font-weight: 600;
-      }
+        color: $steps-color;
 
-      .af-steps-list-stepLabel {
-        padding-right: 1rem;
-
-        > .glyphicon {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          margin: -8px 0 0;
-          width: 17px;
+        &:hover {
+          color: $steps-color-active;
         }
       }
 
       &:last-child {
+        &.on::before {
+          color: $color-btn-success;
+        }
+
+        &::before {
+          content: '\EABA';
+          font-family: icons;
+        }
+
+        &::after {
+          content: none;
+        }
+
         .af-steps-list-stepLabel {
           padding-right: 0;
 

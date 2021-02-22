@@ -11,7 +11,7 @@ import StepModes from './StepModes';
 const propTypes = {
   ...Constants.propTypes,
   id: PropTypes.string.isRequired,
-  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   title: PropTypes.string.isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,

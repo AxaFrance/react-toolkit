@@ -7,7 +7,7 @@ import StepNoLink from './StepNoLink';
 const propTypes = {
   ...Constants.propTypes,
   id: PropTypes.string.isRequired,
-  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  number: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   title: PropTypes.string.isRequired,
 };
 const defaultClassName = 'on af-steps-list-step';
