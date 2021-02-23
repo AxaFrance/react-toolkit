@@ -21,16 +21,13 @@ variables:
   - name: enablePublish
     value: $[or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))]
 
-  - name: isAlphaRelease
-    value: $[in(parameters.npm_release_type, 'premajor', 'preminor', 'prepatch', 'prerelease')]
-
 pool:
-  name: 'ubuntu-latest'
+  vmImage: 'ubuntu-20.04'
 
 stages:
-  - stage: Compatibility with npm versions
+  - stage: Compatibility_with_npm_versions
     jobs:
-      - job: npm_compatibility
+      - job: npmCompatibility
         displayName: Npm Compatibility matrix
         strategy:
           matrix:
@@ -47,11 +44,13 @@ stages:
 
           - script: npm ci
 
-  - stage: Build & publish
+  - stage: Build_and_publish
+    dependsOn: []
     jobs:
       - job: Build
         displayName: Build Toolkit packages & Storybook
-        workspace: clean
+        workspace:
+          clean: all
         steps:
           - task: NodeTool@0
             inputs:
@@ -75,11 +74,11 @@ stages:
                 sonar.cfamily.build-wrapper-output.bypass=true
             condition: and(succeeded(), not(variables.IsFork))
 
-          - script: npm run check
-            displayName: 'npm run check'
-
           - script: npm ci
             displayName: 'npm install'
+
+          - script: npm run check
+            displayName: 'npm run check'
 
           - script: npm test -- --coverage
             displayName: 'npm test'
@@ -95,29 +94,33 @@ stages:
             displayName: 'Publish Quality Gate Result'
             condition: and(succeeded(), not(variables.IsFork))
 
-          - ? ${{ if and(variables.enablePublish, ne(parameters.npm_release_type, 'none')) }}
-            : - script: |
-                  git config --global user.email "build-ci@axa.fr"
-                  git config --global user.name "Build-CI"
-                  git reset --hard
-                  git remote set-url origin https://$(Github.Token)@github.com/AxaGuilDEv/react-toolkit.git
-                  git checkout $(Build.SourceBranchName)
-                  git status
-                displayName: 'configuration'
+          - ${{ if ne(parameters.npm_release_type, 'none') }}:
+            - script: |
+                    git config --global user.email "build-ci@axa.fr"
+                    git config --global user.name "Build-CI"
+                    git reset --hard
+                    git remote set-url origin https://$(Github.Token)@github.com/AxaGuilDEv/react-toolkit.git
+                    git checkout $(Build.SourceBranchName)
+                    git status
+              displayName: 'configuration'
+              condition: and(succeeded(), variables.enablePublish)
 
-              - script: npm run publish -- ${{parameters.npm_release_type}} --exact --yes --concurrency 1 --force-publish
-                displayName: 'lerna publish latest'
-                condition: and(succeeded(), not(variables.isAlphaRelease))
+          - ${{ if in(parameters.npm_release_type, 'major', 'minor', 'patch', 'release') }}:
+            - script: npm run publish -- ${{parameters.npm_release_type}} --exact --yes --concurrency 1 --force-publish
+              displayName: 'lerna publish latest'
+              condition: and(succeeded(), variables.enablePublish)
 
-              - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
-                displayName: 'push documentation and changelog'
-                depends:
-                condition: and(succeeded(), not(variables.isAlphaRelease))
+          - ${{ if in(parameters.npm_release_type, 'major', 'minor', 'patch', 'release') }}:
+            - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
+              displayName: 'push documentation and changelog'
+              condition: and(succeeded(), variables.enablePublish)
 
-              - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
-                displayName: 'Auto tweet'
-                condition: and(succeeded(), not(variables.isAlphaRelease))
+          - ${{ if in(parameters.npm_release_type, 'major', 'minor', 'patch', 'release') }}:
+            - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
+              displayName: 'Auto tweet'
+              condition: and(succeeded(), variables.enablePublish)
 
-              - script: npm run publish -- ${{parameters.npm_release_type}} --dist-tag next --exact --yes --concurrency 1 --force-publish
-                displayName: 'lerna publish next'
-                condition: and(succeeded(), variables.isAlphaRelease)
+          - ${{ if in(parameters.npm_release_type, 'premajor', 'preminor', 'prepatch', 'prerelease') }}:
+            - script: npm run publish -- ${{parameters.npm_release_type}} --dist-tag next --exact --yes --concurrency 1 --force-publish
+              displayName: 'lerna publish next'
+              condition: and(succeeded(), variables.enablePublish)
