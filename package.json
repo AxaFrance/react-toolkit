@@ -19,7 +19,7 @@
     "test": "jest --config jest.config.json",
     "cover": "jest --no-cache --config ./jest.config.json --coverage",
     "check": "npm run check:formatting && npm run check:quality",
-    "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md,yml}\"",
+    "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
     "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives",
     "dev": "concurrently --kill-others \"npm run dev:ts\" \"npm run dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
@@ -120,7 +120,7 @@
     "last 2 versions"
   ],
   "lint-staged": {
-    "**/*.{css,scss,json,md,js,jsx,ts,tsx,json,md,yml}": [
+    "**/*.{css,scss,json,md,js,jsx,ts,tsx,json,md}": [
       "prettier --write"
     ],
     "**/*.{js,jsx,ts,tsx}": [
