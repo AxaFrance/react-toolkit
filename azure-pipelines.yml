@@ -1,78 +1,123 @@
-# Node.js with React
-# Build a Node.js project that uses React.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+parameters:
+  - name: npm_release_type
+    displayName: Npm Release version type
+    type: string
+    default: none
+    values:
+      - none
+      - premajor
+      - preminor
+      - prepatch
+      - prerelease
+      - major
+      - minor
+      - patch
+      - release
+
+variables:
+  - name: isFork
+    value: $[eq(variables['System.PullRequest.IsFork'], 'True')]
+
+  - name: enablePublish
+    value: $[or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))]
+
+  - name: isAlphaRelease
+    value: $[in(parameters.npm_release_type, 'premajor', 'preminor', 'prepatch', 'prerelease')]
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  name: 'ubuntu-latest'
 
-steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '12.x'
-    displayName: 'Install Node.js'
+stages:
+  - stage: Compatibility with npm versions
+    jobs:
+      - job: npm_compatibility
+        displayName: Npm Compatibility matrix
+        strategy:
+          matrix:
+            node13:
+              node_version: 13.x
+            node14:
+              node_version: 14.x
+            node15:
+              node_version: 15.x
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: $(node_version)
 
-  - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
-    displayName: 'Prepare analysis on SonarCloud'
-    inputs:
-      SonarCloud: SonarCloud
-      organization: axaguildev
-      scannerMode: CLI
-      configMode: manual
-      cliProjectKey: 'AxaGuilDEv_react-toolkit'
-      cliProjectName: 'react-toolkit'
-      extraProperties: |
-        sonar.exclusions=**/*.stories.*,**/*.spec.*,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
-        sonar.javascript.lcov.reportPaths=coverage/lcov.info
-        sonar.sourceEncoding=UTF-8
-        sonar.verbose=true
-        sonar.cfamily.build-wrapper-output.bypass=true
-    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
+          - script: npm ci
 
-  - script: npm ci
-    displayName: 'npm install'
+  - stage: Build & publish
+    jobs:
+      - job: Build
+        displayName: Build Toolkit packages & Storybook
+        workspace: clean
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '14.x'
+            displayName: 'Install Node.js'
 
-  - script: npm test -- --coverage
-    displayName: 'npm test'
+          - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
+            displayName: 'Prepare analysis on SonarCloud'
+            inputs:
+              SonarCloud: SonarCloud
+              organization: axaguildev
+              scannerMode: CLI
+              configMode: manual
+              cliProjectKey: 'AxaGuilDEv_react-toolkit'
+              cliProjectName: 'react-toolkit'
+              extraProperties: |
+                sonar.exclusions=**/*.stories.*,**/*.spec.*,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
+                sonar.javascript.lcov.reportPaths=coverage/lcov.info
+                sonar.sourceEncoding=UTF-8
+                sonar.verbose=true
+                sonar.cfamily.build-wrapper-output.bypass=true
+            condition: and(succeeded(), not(variables.IsFork))
 
-  - script: npm run check
-    displayName: 'npm run check'
+          - script: npm run check
+            displayName: 'npm run check'
 
-  - script: npm run storybook:build
-    displayName: 'build storybook'
+          - script: npm ci
+            displayName: 'npm install'
 
-  - script: |
-      git config --global user.email "build-ci@axa.fr"
-      git config --global user.name "Build-CI"
-      git reset --hard
-      git remote set-url origin https://$(Github.Token)@github.com/AxaGuilDEv/react-toolkit.git
-      git checkout $(Build.SourceBranchName)
-      node ./scripts/npm.js $(NPM_TOKEN)
-      cp .npmrc $HOME/.npmrc
-      git status
-    displayName: 'configuration'
-    condition: and(succeeded(), ne(variables['Npm.Publish.Version'], 'none'))
+          - script: npm test -- --coverage
+            displayName: 'npm test'
 
-  - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
-    displayName: 'Run Code Analysis'
-    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
+          - script: npm run storybook:build
+            displayName: 'build storybook'
 
-  - task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
-    displayName: 'Publish Quality Gate Result'
-    condition: and(succeeded(), eq(variables['System.PullRequest.IsFork'], 'False'))
+          - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
+            displayName: 'Run Code Analysis'
+            condition: and(succeeded(), not(variables.IsFork))
 
-  - script: npm run publish -- $(Npm.Publish.Version) --exact --yes --concurrency 1 --force-publish
-    displayName: 'lerna publish latest'
-    condition: and(succeeded(), startsWith(variables.Build.SourceBranchName, 'release/'), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
+          - task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+            displayName: 'Publish Quality Gate Result'
+            condition: and(succeeded(), not(variables.IsFork))
 
-  - script: npm run publish -- $(Npm.Publish.Version) --dist-tag next --exact --yes --concurrency 1 --force-publish
-    displayName: 'lerna publish next'
-    condition: and(succeeded(), eq(variables.Build.SourceBranchName, 'master'), in(variables['Npm.Publish.Version'], 'premajor', 'preminor', 'prepatch', 'prerelease'))
+          - ? ${{ if and(variables.enablePublish, ne(parameters.npm_release_type, 'none')) }}
+            : - script: |
+                  git config --global user.email "build-ci@axa.fr"
+                  git config --global user.name "Build-CI"
+                  git reset --hard
+                  git remote set-url origin https://$(Github.Token)@github.com/AxaGuilDEv/react-toolkit.git
+                  git checkout $(Build.SourceBranchName)
+                  git status
+                displayName: 'configuration'
 
-  - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
-    displayName: 'push documentation and changelog'
-    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
+              - script: npm run publish -- ${{parameters.npm_release_type}} --exact --yes --concurrency 1 --force-publish
+                displayName: 'lerna publish latest'
+                condition: and(succeeded(), not(variables.isAlphaRelease))
 
-  - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
-    displayName: 'Auto tweet'
-    condition: and(succeeded(), notIn(variables['Npm.Publish.Version'], 'none', 'premajor', 'preminor', 'prepatch', 'prerelease'))
+              - script: node ./scripts/publish-docs.js $(Github.Token) && node ./scripts/publish-changelog.js $(Github.Token)
+                displayName: 'push documentation and changelog'
+                depends:
+                condition: and(succeeded(), not(variables.isAlphaRelease))
+
+              - script: node ./scripts/twitter.js $(Twitter.consumer_key) $(Twitter.consumer_secret) $(Twitter.access_token) $(Twitter.access_token_secret)
+                displayName: 'Auto tweet'
+                condition: and(succeeded(), not(variables.isAlphaRelease))
+
+              - script: npm run publish -- ${{parameters.npm_release_type}} --dist-tag next --exact --yes --concurrency 1 --force-publish
+                displayName: 'lerna publish next'
+                condition: and(succeeded(), variables.isAlphaRelease)
