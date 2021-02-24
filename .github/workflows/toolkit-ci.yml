@@ -3,7 +3,7 @@ name: Axa React Toolkit CI
 on:
   push:
     branches: [master]
-  pull_requests:
+  pull_request:
     branches: [master]
 
 jobs:
