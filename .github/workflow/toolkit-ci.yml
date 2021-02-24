@@ -1,0 +1,32 @@
+name: Axa React Toolkit CI
+
+on:
+  push:
+    branches: [master]
+  pull_requests:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Use Node.js 14.x
+        uses: action/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: npm ci
+      - run: npm run check
+      - run: npm test -- --coverage
+      - run: npm run storybook:build
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1.5
+        with:
+          args: >
+            -Dsonar.organization=axaguildev
+            -Dsonar.projectKey=AxaGuilDEv_react-toolkit
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.exclusions=**/*.stories.*,**/*.spec.*,scripts/**,coverage/**,**/node_modules/**,**/dist/**,**/__mocks__/**,examples/**,storybook/**,jest.config.js,gulpfile.js,**/*.scss,**/__snapshots__/**,**/*.svg,**/*.txt,**/*.woff,**/*.ico
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
