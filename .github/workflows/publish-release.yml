@@ -1,0 +1,25 @@
+name: Publish Toolkit packages to Npm registry
+
+on:
+  create:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+env:
+  NODE_VERSION: 14.x
+
+jobs:
+  publish:
+    environment:
+      name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js specific version
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci
+      - run: npm run check
+      - run: npm test -- --coverage
+      - run: npm run storybook:build
