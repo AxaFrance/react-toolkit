@@ -7,6 +7,7 @@ on:
 
 env:
   NODE_VERSION: 14.x
+  STORYBOOK_BUILD: storybook-static
 
 jobs:
   publish:
@@ -14,12 +15,99 @@ jobs:
       name: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Set release version variable
+        run: |
+          version=${GITHUB_REF#refs/tags/v}
+          echo "RELEASE_VERSION="$version >> $GITHUB_ENV
+          [[ "$version" == "${version#*"-"}" ]] >> isPreVersion` 
+          echo "IS_PRE_VERSION="$isPreVersion >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run check
       - run: npm test -- --coverage
       - run: npm run storybook:build
+      - name: Upload Storybook into workflow artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-v${{env.RELEASE_VERSION}}
+          path: ${{env.STORYBOOK_BUILD}}
+      - name: Publish pre-release packages to npm
+        if: env.IS_PRE_VERSION
+        run: npx lerna publish from-git --dist-tag next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish release packages to npm
+        if: !env.IS_PRE_VERSION
+        run: npx lerna publish from-git
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    needs: publish
+    if: !env.IS_PRE_VERSION
+    defaults:
+      run:
+        working-directory: gh-pages/react-toolkit
+    steps:
+      - name: Checkout Axa Github Pages
+        uses: actions/checkout@v2
+        with:
+          repository: AxaGuilDEv/AxaGuilDEv.github.io
+          ref: master
+          path: gh-pages
+      - name: Rename latest Storybook folder
+        run: |
+          prevVersion=`node -p "require('./latest/version.json').version"`
+          echo "PREVIOUS_VERSION="$prevVersion >> $GITHUB_ENV
+          mv latest v$prevVersion
+      - uses: actions/download-artifact@v2
+        with:
+          name: storybook-v${{env.RELEASE_VERSION}}
+          path: gh-pages/react-toolkit/latest
+      - name: Add version json file into latest
+        run: |
+          echo {\"version\":\"$env.RELEASE_VERSION\"} >> ./latest/version.json
+      - name: Commit changes
+        run: |
+          git config user.name "Build-CI"
+          git config user.email build-ci@axa.fr
+          git add .
+          git commit –message "doc(toolkit): publish storybook v${{ env.RELEASE_VERSION }}"
+          git push
+
+  release-gh:
+    runs-on: ubuntu-latest
+    needs: deploy-storybook
+    if: !env.IS_PRE_VERSION
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create changelog
+        id: create-changelog
+        run: |
+          git fetch --all --tags
+          changelog=$(git log v$PREV_VERSION...v$NEW_VERSION --pretty=format:'- %s _by %aN_')
+          changelog="${changelog//'%'/'%25'}"
+          changelog="${changelog//$'\n'/'%0A'}"
+          changelog="${changelog//$'\r'/'%0D'}"
+          echo "::set-output name=CHANGELOG::$changelog"
+        env:
+          PREV_VERSION: ${{ env.PREVIOUS_VERSION }}
+          NEW_VERSION: ${{ env.RELEASE_VERSION }}
+      - name: Create Github release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.RELEASE_VERSION }}
+          release_name: Release ${{ env.RELEASE_VERSION }}
+          body: |
+            ${{ steps.create-changelog.outputs.CHANGELOG }}
+          draft: false
+          prerelease: false
