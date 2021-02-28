@@ -18,9 +18,10 @@ jobs:
       - name: Set release version variable
         run: |
           version=${GITHUB_REF#refs/tags/v}
-          echo "RELEASE_VERSION="$version >> $GITHUB_ENV
-          [[ "$version" == "${version#*"-"}" ]] >> isPreVersion` 
+          echo "RELEASE_VERSION=$version" >> $GITHUB_ENV
+          isPreVersion=$([[ "$version" != "${version#*"-"}" ]] && echo true || echo false)
           echo "IS_PRE_VERSION="$isPreVersion >> $GITHUB_ENV
+          echo "is a pre release: $isPreVersion"
       - uses: actions/checkout@v2
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
@@ -37,12 +38,12 @@ jobs:
           name: storybook-v${{env.RELEASE_VERSION}}
           path: ${{env.STORYBOOK_BUILD}}
       - name: Publish pre-release packages to npm
-        if: env.IS_PRE_VERSION
+        if: env.IS_PRE_VERSION == true
         run: npx lerna publish from-git --dist-tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
-        if: !env.IS_PRE_VERSION
+        if: env.IS_PRE_VERSION == false
         run: npx lerna publish from-git
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -50,7 +51,7 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     needs: publish
-    if: !env.IS_PRE_VERSION
+    if: env.IS_PRE_VERSION == false
     defaults:
       run:
         working-directory: gh-pages/react-toolkit
@@ -64,7 +65,7 @@ jobs:
       - name: Rename latest Storybook folder
         run: |
           prevVersion=`node -p "require('./latest/version.json').version"`
-          echo "PREVIOUS_VERSION="$prevVersion >> $GITHUB_ENV
+          echo "PREVIOUS_VERSION=$prevVersion" >> $GITHUB_ENV
           mv latest v$prevVersion
       - uses: actions/download-artifact@v2
         with:
@@ -84,7 +85,7 @@ jobs:
   release-gh:
     runs-on: ubuntu-latest
     needs: deploy-storybook
-    if: !env.IS_PRE_VERSION
+    if: env.IS_PRE_VERSION == false
     steps:
       - uses: actions/checkout@v2
       - name: Create changelog
