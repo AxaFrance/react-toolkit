@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-choice",
-  "version": "2.0.0-alpha.0",
+  "version": "1.4.0-alpha.1",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -14,7 +14,7 @@
   "dependencies": {
     "@axa-fr/react-toolkit-core": "1.4.0-alpha.1",
     "@axa-fr/react-toolkit-form-core": "1.4.0-alpha.1",
-    "@axa-fr/react-toolkit-form-input-radio": "2.0.0-alpha.0",
+    "@axa-fr/react-toolkit-form-input-radio": "1.4.0-alpha.1",
     "prop-types": "15.7.2"
   },
   "license": "MIT",
