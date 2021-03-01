@@ -14,14 +14,18 @@ jobs:
     environment:
       name: Release
     runs-on: ubuntu-latest
+    outputs:
+      isPreRelease: ${{ steps.release_var.outputs.isPreVersion }}
+      releaseVersion: ${{ steps.release_var.output.version}}
     steps:
       - name: Set release version variable
+        id: release_var
         run: |
           version=${GITHUB_REF#refs/tags/v}
-          echo "RELEASE_VERSION=$version" >> $GITHUB_ENV
+          echo "::set-output name=version::$version"
           isPreVersion=$([[ "$version" != "${version#*"-"}" ]] && echo true || echo false)
-          echo "IS_PRE_VERSION="$isPreVersion >> $GITHUB_ENV
-          echo "is a pre release: $isPreVersion"
+          echo "it's a pre release: $isPreVersion"
+          echo "::set-output name=isPreRelease::$isPreVersion"
       - uses: actions/checkout@v2
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
@@ -35,15 +39,15 @@ jobs:
       - name: Upload Storybook into workflow artifact
         uses: actions/upload-artifact@v2
         with:
-          name: storybook-v${{env.RELEASE_VERSION}}
+          name: storybook-v${{steps.release_var.outputs.releaseVersion}}
           path: ${{env.STORYBOOK_BUILD}}
       - name: Publish pre-release packages to npm
-        if: env.IS_PRE_VERSION == true
+        if: ${{ steps.release_var.outputs.isPreRelease }} == true
         run: npx lerna publish from-git --dist-tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
-        if: env.IS_PRE_VERSION == false
+        if: ${{ steps.release_var.outputs.isPreRelease }} == false
         run: npx lerna publish from-git
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -51,10 +55,14 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     needs: publish
-    if: env.IS_PRE_VERSION == false
+    if: ${{ needs.publish.outputs.isPreRelease }} == false
+    env:
+      RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
     defaults:
       run:
         working-directory: gh-pages/react-toolkit
+    outputs:
+      previousVersion: ${{ steps.rename-latest-storybook.outputs.prevVersion }}
     steps:
       - name: Checkout Axa Github Pages
         uses: actions/checkout@v2
@@ -63,43 +71,44 @@ jobs:
           ref: master
           path: gh-pages
       - name: Rename latest Storybook folder
+        id: rename-latest-storybook
         run: |
           prevVersion=`node -p "require('./latest/version.json').version"`
-          echo "PREVIOUS_VERSION=$prevVersion" >> $GITHUB_ENV
           mv latest v$prevVersion
+          echo "::set-output name=prevVersion::$prevVersion"
       - uses: actions/download-artifact@v2
         with:
           name: storybook-v${{env.RELEASE_VERSION}}
           path: gh-pages/react-toolkit/latest
       - name: Add version json file into latest
         run: |
-          echo {\"version\":\"$env.RELEASE_VERSION\"} >> ./latest/version.json
+          echo {\"version\":\"$RELEASE_VERSION\"} >> ./latest/version.json
       - name: Commit changes
         run: |
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
           git add .
-          git commit –message "doc(toolkit): publish storybook v${{ env.RELEASE_VERSION }}"
+          git commit –message "doc(toolkit): publish storybook v$RELEASE_VERSION"
           git push
 
   release-gh:
     runs-on: ubuntu-latest
-    needs: deploy-storybook
-    if: env.IS_PRE_VERSION == false
+    needs: [publish, deploy-storybook]
+    if: ${{ needs.publish.outputs.isPreRelease }} == false
+    env:
+      PREVIOUS_VERSION: ${{ needs.deploy-storybook.outputs.previousVersion }}
+      RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
     steps:
       - uses: actions/checkout@v2
       - name: Create changelog
         id: create-changelog
         run: |
           git fetch --all --tags
-          changelog=$(git log v$PREV_VERSION...v$NEW_VERSION --pretty=format:'- %s _by %aN_')
+          changelog=$(git log v$PREVIOUS_VERSION...v$RELEASE_VERSION --pretty=format:'- %s _by %aN_')
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
           echo "::set-output name=CHANGELOG::$changelog"
-        env:
-          PREV_VERSION: ${{ env.PREVIOUS_VERSION }}
-          NEW_VERSION: ${{ env.RELEASE_VERSION }}
       - name: Create Github release
         id: create_release
         uses: actions/create-release@v1
