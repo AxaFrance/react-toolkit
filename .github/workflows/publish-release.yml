@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       isPreRelease: ${{ steps.release_var.outputs.isPreVersion }}
-      releaseVersion: ${{ steps.release_var.output.version}}
+      releaseVersion: ${{ steps.release_var.outputs.version}}
     steps:
       - name: Set release version variable
         id: release_var
@@ -36,21 +36,21 @@ jobs:
       - run: npm run check
       - run: npm test -- --coverage
       - name: Build storybook
-        if: ${{ steps.release_var.outputs.isPreRelease == false }}
+        if: ${{ steps.release_var.outputs.isPreRelease == 'false' }}
         run: npm run storybook:build
       - name: Upload Storybook into workflow artifact
-        if: ${{ steps.release_var.outputs.isPreRelease == false }}
+        if: ${{ steps.release_var.outputs.isPreRelease == 'false' }}
         uses: actions/upload-artifact@v2
         with:
           name: storybook
           path: ${{env.STORYBOOK_BUILD}}
       - name: Publish pre-release packages to npm
-        if: ${{ steps.release_var.outputs.isPreRelease == true }}
+        if: ${{ steps.release_var.outputs.isPreRelease == 'true' }}
         run: npx lerna publish from-git --dist-tag next --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
-        if: ${{ steps.release_var.outputs.isPreRelease == false }}
+        if: ${{ steps.release_var.outputs.isPreRelease == 'false'}}
         run: npx lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -58,7 +58,7 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     needs: publish
-    if: ${{ needs.publish.outputs.isPreRelease == false }}
+    if: ${{ needs.publish.outputs.isPreRelease == 'false'}}
     env:
       RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
     defaults:
@@ -98,7 +98,7 @@ jobs:
   release-gh:
     runs-on: ubuntu-latest
     needs: [publish, deploy-storybook]
-    if: ${{ needs.publish.outputs.isPreRelease == false }}
+    if: ${{ needs.publish.outputs.isPreRelease == 'false'}}
     env:
       PREVIOUS_VERSION: ${{ needs.deploy-storybook.outputs.previousVersion }}
       RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
