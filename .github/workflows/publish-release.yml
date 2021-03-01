@@ -47,14 +47,14 @@ jobs:
       - name: Publish pre-release packages to npm
         if: ${{ steps.release_var.outputs.isPreRelease == 'true' }}
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+          npm config -g set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
           npx lerna publish from-git --dist-tag next --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
         if: ${{ steps.release_var.outputs.isPreRelease == 'false'}}
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+          npm config -g set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
           npx lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
