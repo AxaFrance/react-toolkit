@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-card",
-  "version": "1.4.0-alpha.1",
+  "version": "1.4.0",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,10 +12,10 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "1.4.0-alpha.1",
-    "@axa-fr/react-toolkit-form-core": "1.4.0-alpha.1",
-    "@axa-fr/react-toolkit-form-input-checkbox": "1.4.0-alpha.1",
-    "@axa-fr/react-toolkit-form-input-radio": "1.4.0-alpha.1",
+    "@axa-fr/react-toolkit-core": "1.4.0",
+    "@axa-fr/react-toolkit-form-core": "1.4.0",
+    "@axa-fr/react-toolkit-form-input-checkbox": "1.4.0",
+    "@axa-fr/react-toolkit-form-input-radio": "1.4.0",
     "@types/classnames": "2.2.11",
     "classnames": "2.2.6",
     "prop-types": "15.7.2"

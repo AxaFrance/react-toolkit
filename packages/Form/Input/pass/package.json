@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-pass",
-  "version": "1.4.0-alpha.1",
+  "version": "1.4.0",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "private": false,
@@ -12,13 +12,13 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "1.4.0-alpha.1",
-    "@axa-fr/react-toolkit-form-core": "1.4.0-alpha.1",
+    "@axa-fr/react-toolkit-core": "1.4.0",
+    "@axa-fr/react-toolkit-form-core": "1.4.0",
     "moment": "2.29.1",
     "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@axa-fr/react-toolkit-help": "1.4.0-alpha.1"
+    "@axa-fr/react-toolkit-help": "1.4.0"
   },
   "license": "MIT",
   "publishConfig": {
