@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DateInput> renders DateInput correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--undefined"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+      >
+        Image *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    />
+  </div>
+</DocumentFragment>
+`;
