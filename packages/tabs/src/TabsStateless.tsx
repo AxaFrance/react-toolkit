@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { Children, isValidElement, ReactNode } from 'react';
 import { Constants, ClassManager } from '@axa-fr/react-toolkit-core';
-import { TabProps } from './Tab';
 import Title from './Title';
 import Pane from './Pane';
 
 const defaultClassName = 'af-tabs';
 
 export interface TabsStatelessProps {
-  children: React.ReactElement<TabProps>[];
+  children: ReactNode;
   activeIndex: string;
   className?: string;
   classModifier?: string;
@@ -22,34 +21,50 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const TabsStateless: React.FunctionComponent<
-  TabsStatelessProps & TabsStatelessHandlers
-> = ({ activeIndex, className, classModifier, children, onChange }) => {
+type Props = TabsStatelessProps & TabsStatelessHandlers;
+const TabsStateless = ({
+  activeIndex,
+  className,
+  classModifier,
+  children,
+  onChange,
+}: Props) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
     defaultClassName
   );
+
   return (
     <div className={componentClassName}>
       <ul className="af-tabs__control">
-        {children.map((item, index) => (
-          <Title
-            active={activeIndex === index.toString()}
-            onChange={onChange}
-            id={`${index}`}
-            classModifier={item.props.classModifier}
-            key={`title-${index}`}>
-            {item.props.title}
-          </Title>
-        ))}
+        {Children.map(
+          children,
+          (child, index) =>
+            isValidElement(child) && (
+              <Title
+                active={activeIndex === index.toString()}
+                onChange={onChange}
+                id={`${index}`}
+                classModifier={child.props.classModifier}
+                key={`title-${index}`}>
+                {child.props.title}
+              </Title>
+            )
+        )}
       </ul>
       <div className="af-tabs__content">
-        {children.map((item, index) => (
-          <Pane active={activeIndex === index.toString()} key={`pane-${index}`}>
-            {item.props.children}
-          </Pane>
-        ))}
+        {Children.map(
+          children,
+          (child, index) =>
+            isValidElement(child) && (
+              <Pane
+                active={activeIndex === index.toString()}
+                key={`pane-${index}`}>
+                {child.props.children}
+              </Pane>
+            )
+        )}
       </div>
     </div>
   );

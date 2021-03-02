@@ -1,28 +1,26 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { create } from 'react-test-renderer';
-import Title from './Title';
+import { fireEvent, render } from '@testing-library/react';
+import Title from '../Title';
 
 const noop = () => {};
 describe('<TabStateless>', () => {
   it('should render component', () => {
-    const component = create(
+    const { asFragment } = render(
       <Title onChange={noop} active>
         Title displayed
       </Title>
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render id click onCancel', () => {
     const onChange = jest.fn();
-    const wrapper = mount(
+    const { getByRole } = render(
       <Title active onChange={onChange}>
         header
       </Title>
     );
-    wrapper.find('button').simulate('click', {});
+    fireEvent.click(getByRole('button'));
     expect(onChange).toHaveBeenCalledWith({ id: '' });
   });
 });
