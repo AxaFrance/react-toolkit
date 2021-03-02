@@ -1,19 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import File from './File';
+import { render } from '@testing-library/react';
+import File from '../File';
 
 describe('<File.File>', () => {
   it('renders File.File correctly', () => {
-    const wrapper = shallow(
+    const { asFragment } = render(
       <File
         label="File *"
         id="id"
         name="file"
-        onOpenClick={() => {}}
+        onChange={() => {}}
         accept="image/jpeg, image/png, application/*"
         multiple
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

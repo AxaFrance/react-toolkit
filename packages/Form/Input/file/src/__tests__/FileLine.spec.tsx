@@ -1,39 +1,37 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 
-import Button from '@axa-fr/react-toolkit-button';
-import Popover from '@axa-fr/react-toolkit-popover';
-import FileLine, { Preview } from './FileLine';
+import FileLine, { Preview } from '../FileLine';
 
 describe('<File.FileInput>', () => {
   it('renders File.FileInput correctly', () => {
-    const wrapper = shallow(
+    const { asFragment } = render(
       <FileLine file={{ name: 'name', size: 1, preview: '#' }} id="id" />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should called onClick function when button have been clicked', () => {
     const onClickMock = jest.fn();
 
-    const wrapper = shallow(
+    const { getByRole } = render(
       <FileLine
         file={{ name: 'name', size: 1, preview: '#' }}
         id="id"
         onClick={onClickMock}
       />
     );
-    wrapper.find(Button).simulate('click');
+    fireEvent.click(getByRole('button'));
     expect(onClickMock).toBeCalled();
   });
 
   it('renders Preview correctly for type image', () => {
-    const file = { type: 'image' };
-    const wrapper = shallow(<Preview file={file} />);
-    expect(wrapper).toMatchSnapshot();
+    const file = { type: 'image', preview: '', name: 'test', size: 2 };
+    const { asFragment } = render(<Preview file={file} />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('renders Preview correctly for other type', () => {
-    const file = { type: 'pdf' };
-    const wrapper = shallow(<Preview file={file} />);
-    expect(wrapper).toMatchSnapshot();
+    const file = { type: 'pdf', preview: '', name: 'test', size: 2 };
+    const { asFragment } = render(<Preview file={file} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
