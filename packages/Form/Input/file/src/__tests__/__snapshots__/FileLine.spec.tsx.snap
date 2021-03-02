@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<File.FileInput> renders File.FileInput correctly 1`] = `
+<DocumentFragment>
+  <li
+    class="af-form__file-line"
+  >
+    <i
+      class="glyphicon glyphicon-file"
+    />
+    <span>
+      name
+    </span>
+    <span>
+      1
+    </span>
+    <button
+      class="af-link af-link--delete-file"
+      type="button"
+    >
+      <span
+        class="af-link__text"
+      >
+        Supprimer
+      </span>
+    </button>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`<File.FileInput> renders Preview correctly for other type 1`] = `
+<DocumentFragment>
+  <i
+    class="glyphicon glyphicon-file"
+  />
+</DocumentFragment>
+`;
+
+exports[`<File.FileInput> renders Preview correctly for type image 1`] = `
+<DocumentFragment>
+  <div
+    class="af-popover__wrapper"
+  >
+    <div
+      class="af-popover__container"
+    >
+      <div
+        class="af-popover__container-over"
+        role="presentation"
+      >
+        <i
+          class="glyphicon glyphicon-picture"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

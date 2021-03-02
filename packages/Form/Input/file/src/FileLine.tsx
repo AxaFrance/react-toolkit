@@ -1,30 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import Popover from '@axa-fr/react-toolkit-popover';
 
-const propTypes = {
-  file: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  classModifier: PropTypes.string,
-};
 const defaultClassName = 'af-form__file-line';
-const defaultProps = {
-  disabled: false,
-  className: defaultClassName,
-  classModifier: null,
-};
-
 const style = {
   maxWidth: '200px',
   maxHeight: '200px',
 };
 
-export const Preview = ({ file }) => {
+type PreviewProps = Pick<Props, 'file'>;
+
+export const Preview = ({ file }: PreviewProps) => {
   if (file && file.type && file.type.startsWith('image')) {
     return (
       <Popover mode="hover">
@@ -45,6 +32,15 @@ export const Preview = ({ file }) => {
   return <i className="glyphicon glyphicon-file" />;
 };
 
+type File = { type?: string; preview: string; name: string; size: number };
+type Props = {
+  file: File;
+  id: string;
+  onClick?: (id: string) => void;
+  className?: string;
+  classModifier?: string;
+  disabled?: boolean;
+};
 const FileLine = ({
   className,
   classModifier,
@@ -52,7 +48,7 @@ const FileLine = ({
   disabled,
   id,
   onClick,
-}) => {
+}: Props) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
@@ -75,8 +71,5 @@ const FileLine = ({
     </li>
   );
 };
-
-FileLine.propTypes = propTypes;
-FileLine.defaultProps = defaultProps;
 
 export default FileLine;
