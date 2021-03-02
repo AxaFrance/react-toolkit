@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<File.FileTable> renders Errors correctly with empty errors 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-table-file af-file-table"
+  >
+    <ul
+      class="af-form__file-list"
+    >
+      <li
+        class="af-form__file-line"
+      >
+        <i
+          class="glyphicon glyphicon-file"
+        />
+        <span>
+          youhou.txt
+        </span>
+        <span>
+          2
+        </span>
+        <button
+          class="af-link af-link--delete-file"
+          type="button"
+        >
+          <span
+            class="af-link__text"
+          >
+            Supprimer
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<File.FileTable> renders File.FileTable correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-table-file af-file-table"
+  >
+    <div
+      class="af-form__file-errors"
+    >
+      <span>
+        Le chargement de certains fichiers a échoué : 
+      </span>
+      <ul
+        class="af-form__file-errors-list"
+      >
+        <li>
+          youhou.txt (2)
+        </li>
+      </ul>
+    </div>
+    <ul
+      class="af-form__file-list"
+    >
+      <li
+        class="af-form__file-line"
+      >
+        <i
+          class="glyphicon glyphicon-file"
+        />
+        <span>
+          superfile.pdf
+        </span>
+        <span>
+          2
+        </span>
+        <button
+          class="af-link af-link--delete-file"
+          type="button"
+        >
+          <span
+            class="af-link__text"
+          >
+            Supprimer
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<File.FileTable> renders File.FileTable correctly when no have values 1`] = `
+<DocumentFragment>
+  <div
+    class="custom-table-file af-file-table"
+  >
+    <div
+      class="af-form__file-errors"
+    >
+      <span>
+        Le chargement de certains fichiers a échoué : 
+      </span>
+      <ul
+        class="af-form__file-errors-list"
+      >
+        <li>
+          youhou.txt (2)
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;

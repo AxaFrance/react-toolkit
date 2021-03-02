@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<File.File> renders File.File correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__file-input"
+  >
+    <div
+      class="drop-box hidden-mobile"
+      id="id"
+      tabindex="0"
+    >
+      <input
+        accept="image/jpeg, image/png, application/*"
+        autocomplete="off"
+        multiple=""
+        name="file"
+        style="display: none;"
+        tabindex="-1"
+        type="file"
+      />
+      <div>
+        Glissez/déposez vos fichiers
+      </div>
+    </div>
+    <button
+      class="af-btn af-btn--file af-btn--hasiconLeft"
+      type="button"
+    >
+      <i
+        class="glyphicon glyphicon-open"
+      />
+       File *
+    </button>
+  </div>
+</DocumentFragment>
+`;
