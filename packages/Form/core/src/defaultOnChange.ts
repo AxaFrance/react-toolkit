@@ -1,9 +1,16 @@
 import { ChangeEvent } from 'react';
 
-export type CustomFormEvent = {
-  value: string;
+type BaseCustomFormEvent = {
   name: string;
   id: string;
+};
+
+export type CustomFormEventValues = BaseCustomFormEvent & {
+  values: string[];
+};
+
+export type CustomFormEvent = BaseCustomFormEvent & {
+  value: string;
 };
 
 export const defaultOnChange = (onChange: (event: CustomFormEvent) => void) => (
