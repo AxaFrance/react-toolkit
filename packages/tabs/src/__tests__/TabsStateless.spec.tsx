@@ -1,14 +1,13 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import TabStateless from './TabsStateless';
-import Tab from './Tab';
+import { render } from '@testing-library/react';
+import TabStateless from '../TabsStateless';
+import Tab from '../Tab';
 
-const noop = () => {};
 describe('<TabStateless>', () => {
   it('should render component', () => {
-    const component = create(
+    const { asFragment } = render(
       <TabStateless
-        onChange={noop}
+        onChange={jest.fn()}
         className="className"
         activeIndex="1"
         classModifier="withIcon">
@@ -23,7 +22,6 @@ describe('<TabStateless>', () => {
         </Tab>
       </TabStateless>
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
