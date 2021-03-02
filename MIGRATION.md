@@ -35,6 +35,34 @@ In 2.0.x
 />
 ```
 
+## Collapse
+
+We merged CollapseCard and CollapseCardBase so now there is just CollapseCard. You can now use `onToggle` prop on CollapseCard.
+
+**Breaking Change : `collapse` prop is now replaced by `isOpen` who is easier to understand.**
+
+Don't just replace the prop name ! Be sure that you have the expected behaviour.
+
+In 1.X
+
+```javascript
+<CollapseCardBase
+  collapse={true}
+  onToggle={() => {}}
+  ...
+/>
+```
+
+In 2.0.X:
+
+```javascript
+<CollapseCard
+  isOpen={true}
+  onToggle={() => {}}
+  ...
+/>
+```
+
 ## Package `react-toolkit-all`
 
 The component `Title` (from `@axa-fr/react-toolkit-layout-header`) has been renamed to `HeaderTitle` to add `@axa-fr/react-toolkit-title` to the `@axa-fr/react-toolkit-all` package.
