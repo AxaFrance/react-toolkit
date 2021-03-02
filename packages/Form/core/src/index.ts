@@ -10,4 +10,5 @@ export {
 } from './defaultOnChange';
 export { default as withComponentClassName } from './withComponentClassName';
 export { withInputClassModifier } from './withInputClassModifier.hoc';
+export { default as withOptionClassName } from './withOptionClassName.hoc';
 export { InputManager, ClassManager } from '@axa-fr/react-toolkit-core';
