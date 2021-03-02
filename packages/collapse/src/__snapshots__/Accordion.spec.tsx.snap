@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion renders Accordion correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-multiselectable="true"
+    class="af-accordion"
+    role="tablist"
+  >
+    <div
+      class="af-accordion__item af-accordion__item--open"
+    >
+      <div
+        class="af-accordion__item-header"
+        id="one"
+        role="tab"
+      >
+        <a
+          aria-controls="onebody"
+          aria-expanded="true"
+          class="af-accordion__item-toggle"
+          data-toggle="isOpen"
+          href="#onebody"
+        >
+          <h3
+            class="af-accordion__item-title"
+          >
+            <span
+              class="glyphicon glyphicon-menu-up"
+            />
+            Header 1
+          </h3>
+        </a>
+      </div>
+      <div
+        aria-labelledby="one"
+        class="af-accordion__collapse af-accordion__collapse--open"
+        id="onebody"
+        role="tabpanel"
+        style="max-height: 0px;"
+      >
+        <div
+          class="af-accordion__block"
+        >
+          Text 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="af-accordion__item"
+    >
+      <div
+        class="af-accordion__item-header"
+        id="two"
+        role="tab"
+      >
+        <a
+          aria-controls="twobody"
+          aria-expanded="false"
+          class="af-accordion__item-toggle"
+          data-toggle="isOpen"
+          href="#twobody"
+        >
+          <h3
+            class="af-accordion__item-title"
+          >
+            <span
+              class="glyphicon glyphicon-menu-down"
+            />
+            Header 2
+          </h3>
+        </a>
+      </div>
+      <div
+        aria-labelledby="two"
+        class="af-accordion__collapse af-accordion__collapse--close"
+        id="twobody"
+        role="tabpanel"
+        style="max-height: 0px;"
+      >
+        <div
+          class="af-accordion__block"
+        >
+          Text 2
+        </div>
+      </div>
+    </div>
+    <div
+      class="af-accordion__item"
+    >
+      <div
+        class="af-accordion__item-header"
+        id="three"
+        role="tab"
+      >
+        <a
+          aria-controls="threebody"
+          aria-expanded="false"
+          class="af-accordion__item-toggle"
+          data-toggle="isOpen"
+          href="#threebody"
+        >
+          <h3
+            class="af-accordion__item-title"
+          >
+            <span
+              class="glyphicon glyphicon-menu-down"
+            />
+            Header 3
+          </h3>
+        </a>
+      </div>
+      <div
+        aria-labelledby="three"
+        class="af-accordion__collapse af-accordion__collapse--close"
+        id="threebody"
+        role="tabpanel"
+        style="max-height: 0px;"
+      >
+        <div
+          class="af-accordion__block"
+        >
+          Text 3
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

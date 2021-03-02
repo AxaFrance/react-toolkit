@@ -6,7 +6,7 @@ const defaultClassName = 'af-accordion__collapse';
 
 const defaultProps = {
   ...Constants.defaultProps,
-  collapse: true,
+  isOpen: false,
   className: defaultClassName,
 };
 
@@ -17,20 +17,18 @@ export type BodyProps = Partial<typeof defaultProps> & {
 };
 
 const collapseAnimation = (
-  collapse: boolean,
+  isOpen: boolean,
   panel: React.MutableRefObject<HTMLDivElement>
 ) => {
-  if (panel) {
-    const currentPanel = panel.current;
-    currentPanel.style.maxHeight = collapse
-      ? `${currentPanel.scrollHeight}px`
-      : '0px';
-  }
+  const currentPanel = panel.current;
+  currentPanel.style.maxHeight = isOpen
+    ? `${currentPanel.scrollHeight}px`
+    : '0px';
 };
 
 const Body = ({
   children,
-  collapse,
+  isOpen,
   className,
   classModifier,
   ariaLabelledby,
@@ -39,10 +37,10 @@ const Body = ({
   const panel = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    collapseAnimation(collapse, panel);
-  }, [collapse]);
+    collapseAnimation(isOpen, panel);
+  }, [isOpen]);
 
-  let newClassModifier = collapse ? 'open' : 'close';
+  let newClassModifier = isOpen ? 'open' : 'close';
   if (classModifier) {
     newClassModifier = `${newClassModifier} ${classModifier}`;
   }

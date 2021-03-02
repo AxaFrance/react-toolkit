@@ -1,16 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Accordion.Body renders Accordion.Body correctly 1`] = `
-<div
-  className="af-accordion__collapse af-accordion__collapse--open"
-  role="tabpanel"
->
+<DocumentFragment>
   <div
-    className="af-accordion__block"
+    class="af-accordion__collapse af-accordion__collapse--close af-accordion__collapse--class"
+    role="tabpanel"
+    style="max-height: 0px;"
   >
-    <b>
-      Content
-    </b>
+    <div
+      class="af-accordion__block"
+    >
+      Body
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,49 +1,95 @@
 import React from 'react';
 
-import { Constants } from '@axa-fr/react-toolkit-core';
-import CollapseCardBase from './CollapseCardBase';
-import Body from './Body';
-import Header from './Header';
+import {
+  Constants,
+  InputManager,
+  ClassManager,
+} from '@axa-fr/react-toolkit-core';
+import Body, { BodyProps } from './Body';
+import Header, { HeaderProps, HeaderToggleElement } from './Header';
+
+const defaultClassName = 'af-accordion__item';
 
 const defaultProps = {
   ...Constants.defaultProps,
-  defaultCollapse: true,
+  className: defaultClassName,
   index: 0,
+  isOpen: false,
 };
 
-type Props = Partial<typeof defaultProps> & {
-  children?: React.ReactNode[];
-  title?: string;
+export type CollapseProps = Partial<typeof defaultProps> & {
   id?: string;
+  children?: React.ReactNode[];
+  onToggle?: (element: HeaderToggleElement) => void;
 };
 
 const CollapseCard = ({
-  title,
-  className,
   id,
+  className,
   classModifier,
-  defaultCollapse,
+  isOpen,
   children,
   index,
-}: Props) => {
-  const [collapse, setCollapse] = React.useState(defaultCollapse);
+  onToggle,
+}: CollapseProps) => {
+  const [headerId, setHeaderId] = React.useState(InputManager.getInputId(id));
+  const [open, setOpen] = React.useState(isOpen);
 
-  return (
-    <CollapseCardBase
-      collapse={collapse}
-      onToggle={() => setCollapse(!collapse)}
-      title={title}
-      className={className}
-      id={id}
-      classModifier={classModifier}
-      index={index}>
-      {children}
-    </CollapseCardBase>
+  React.useEffect(() => {
+    setHeaderId(InputManager.getInputId(id));
+  }, [id]);
+
+  React.useEffect(() => {
+    setOpen(isOpen);
+  }, [isOpen]);
+
+  const handleToggle = (e: HeaderToggleElement) => {
+    onToggle && onToggle(e);
+    setOpen(!open);
+  };
+
+  const renderChild = (child: React.ReactElement<HeaderProps | BodyProps>) => {
+    const bodyId = `${headerId}body`;
+    switch (child.type) {
+      case Header:
+        return React.cloneElement(child, {
+          isOpen: open,
+          onToggle: (e: HeaderToggleElement) => handleToggle(e),
+          classModifier,
+          id: headerId,
+          index,
+          href: `#${bodyId}`,
+          ariaControls: bodyId,
+          key: headerId,
+        });
+      case Body:
+        return React.cloneElement(child, {
+          isOpen: open,
+          classModifier,
+          ariaLabelledby: headerId,
+          id: bodyId,
+          key: bodyId,
+        });
+      default:
+        return child;
+    }
+  };
+
+  let newClassModifier = open ? 'open' : '';
+  newClassModifier = classModifier
+    ? `${newClassModifier} ${classModifier}`
+    : `${newClassModifier}`;
+
+  const componentClassName = ClassManager.getComponentClassName(
+    className,
+    newClassModifier,
+    defaultClassName
   );
+
+  return <div className={componentClassName}>{children.map(renderChild)}</div>;
 };
 
 CollapseCard.defaultProps = defaultProps;
-
 CollapseCard.Body = Body;
 CollapseCard.Header = Header;
 
