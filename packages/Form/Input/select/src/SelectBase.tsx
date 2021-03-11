@@ -14,10 +14,17 @@ type Props = Omit<InputHTMLAttributes<HTMLSelectElement>, 'onChange'> & {
   options: OptionHTMLAttributes<HTMLOptionElement>[];
 };
 
-const SelectBase = ({ options, inputRef, onChange, ...otherProps }: Props) => (
+const SelectBase = ({
+  options,
+  inputRef,
+  onChange,
+  id,
+  ...otherProps
+}: Props) => (
   <div className="af-form__select-container">
     <select
       {...otherProps}
+      id={id}
       className="af-form__input-select"
       ref={inputRef}
       onChange={defaultOnChange(onChange)}>

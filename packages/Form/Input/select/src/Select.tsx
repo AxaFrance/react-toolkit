@@ -2,8 +2,8 @@ import React, { ComponentProps, useState } from 'react';
 import {
   CustomFormEvent,
   withComponentClassName,
+  InputManager,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import SelectBase from './SelectBase';
 

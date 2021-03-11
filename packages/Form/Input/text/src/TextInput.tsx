@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import {
   Field,
   HelpMessage,
@@ -7,7 +7,6 @@ import {
 } from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
-import { ComponentType } from 'enzyme';
 import Text from './Text';
 
 type Props = ComponentProps<typeof Field> &
