@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Slider from './Slider';
 
 describe('<Slider>', () => {
   it('renders Slider correctly', () => {
-    const wrapper = shallow(
+    const { asFragment } = render(
       <Slider
         label="File *"
         id="id"
@@ -13,6 +13,6 @@ describe('<Slider>', () => {
         onChange={() => {}}
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
