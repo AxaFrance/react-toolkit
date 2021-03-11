@@ -3,8 +3,8 @@ import {
   Field,
   FieldInput,
   HelpMessage,
+  InputManager,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import Select from './Select';
 
