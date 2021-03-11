@@ -1,7 +1,7 @@
 name: Publish Toolkit packages to Npm registry
 
 on:
-  create:
+  push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
@@ -25,7 +25,7 @@ jobs:
           echo "::set-output name=version::$version"
           isPreVersion=$([[ "$version" != "${version#*"-"}" ]] && echo true || echo false)
           echo "it's a pre release: $isPreVersion"
-          echo "::set-output name=isPreRelease::$isPreVersion"
+          echo "::set-output name=isPreVersion::$isPreVersion"
       - uses: actions/checkout@v2
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
@@ -36,21 +36,21 @@ jobs:
       - run: npm run check
       - run: npm test -- --coverage
       - name: Build storybook
-        if: ${{ steps.release_var.outputs.isPreRelease == 'false' }}
+        if: ${{ steps.release_var.outputs.isPreVersion == 'false' }}
         run: npm run storybook:build
       - name: Upload Storybook into workflow artifact
-        if: ${{ steps.release_var.outputs.isPreRelease == 'false' }}
+        if: ${{ steps.release_var.outputs.isPreVersion == 'false' }}
         uses: actions/upload-artifact@v2
         with:
           name: storybook
           path: ${{env.STORYBOOK_BUILD}}
       - name: Publish pre-release packages to npm
-        if: ${{ steps.release_var.outputs.isPreRelease == 'true' }}
+        if: ${{ steps.release_var.outputs.isPreVersion == 'true' }}
         run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
-        if: ${{ steps.release_var.outputs.isPreRelease == 'false'}}
+        if: ${{ steps.release_var.outputs.isPreVersion == 'false'}}
         run: npx lerna publish from-git --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
