@@ -1,6 +1,6 @@
-import React from 'react';
-import { Story } from '@storybook/react';
-import ActionCore, { ActionCoreProps } from './ActionCore';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
+import ActionCore from './ActionCore';
 import Readme from '../README.md';
 
 export default {
@@ -15,8 +15,9 @@ export default {
   argTypes: {
     onClick: { action: 'clicked' },
   },
-};
+} as Meta;
 
+type ActionCoreProps = ComponentProps<typeof ActionCore>;
 const Template: Story<ActionCoreProps> = (args) => <ActionCore {...args} />;
 
 export const Link = Template.bind({});

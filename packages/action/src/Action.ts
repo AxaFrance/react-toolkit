@@ -1,17 +1,11 @@
-import {
-  WithClickIdProps,
-  withClickId,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
-import ActionCore, { ActionCoreProps } from './ActionCore';
+import { withClickId } from '@axa-fr/react-toolkit-core';
+import { ComponentProps } from 'react';
+import ActionCore from './ActionCore';
 
-export type ActionProps = WithClickIdProps<ActionCoreProps, 'onClick'>;
+export type ActionProps = ComponentProps<typeof Action>;
 
-const Action = compose(
-  identity<ActionCoreProps>(),
-  withClickId({ event: ['onClick'] })
-)(ActionCore);
-Action.displayName = 'Action';
+const Action = withClickId<ComponentProps<typeof ActionCore>>({
+  event: ['onClick'],
+})(ActionCore);
 
 export default Action;
