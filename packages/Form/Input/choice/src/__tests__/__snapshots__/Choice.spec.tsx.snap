@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChoiceInput> renders ChoiceInput correctly when passing options with ID 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="xxx_Yes"
+      >
+        Some label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="xxx_Yes"
+          type="radio"
+          value="true"
+        />
+        <label
+          class="af-form__label"
+          for="xxx_Yes"
+        >
+          <span
+            class="af-form__description"
+          >
+            Yes
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="xxx_No"
+          type="radio"
+          value="false"
+        />
+        <label
+          class="af-form__label"
+          for="xxx_No"
+        >
+          <span
+            class="af-form__description"
+          >
+            No
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ChoiceInput> renders ChoiceInput correctly when passing options without ID 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="ckjlrsvr70000akedbj5val25"
+      >
+        Some label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="ckjlrsvr70000akedbj5val25"
+          type="radio"
+          value="true"
+        />
+        <label
+          class="af-form__label"
+          for="ckjlrsvr70000akedbj5val25"
+        >
+          <span
+            class="af-form__description"
+          >
+            Yes
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="ckjlrsvr70001aked7k69f4o3"
+          type="radio"
+          value="false"
+        />
+        <label
+          class="af-form__label"
+          for="ckjlrsvr70001aked7k69f4o3"
+        >
+          <span
+            class="af-form__description"
+          >
+            No
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ChoiceInput> renders ChoiceInput correctly with default options 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        Some label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    />
+  </div>
+</DocumentFragment>
+`;
