@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NumberInput> renders NumberInput correctly 1`] = `
+exports[`<TextInput> renders SwitchInput correctly 1`] = `
 <div
   className="row af-form__group"
 >
@@ -18,22 +18,14 @@ exports[`<NumberInput> renders NumberInput correctly 1`] = `
     className="col-md-10"
   >
     <div
-      className="af-form__text"
+      className="af-form__text af-form__text--undefined"
     >
       <input
-        autoFocus={null}
-        className="af-form__input-number"
-        disabled={false}
+        className="af-form__input-text af-form__input-text--undefined"
         id="iddateinput"
-        name="placeImage"
-        onBlur={[Function]}
         onChange={[Function]}
-        onFocus={[Function]}
-        placeholder={null}
-        readOnly={false}
-        tabIndex={null}
-        type="number"
-        value={2}
+        type="text"
+        value="ici le text"
       />
     </div>
     <small

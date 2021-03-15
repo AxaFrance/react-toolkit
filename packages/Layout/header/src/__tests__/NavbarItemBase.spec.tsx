@@ -80,8 +80,7 @@ describe('NavBarItemBase', () => {
       const { baseElement, container, debug } = createWrapper({
         actionElt: <Link>Test</Link>,
       });
-      debug(container);
-      handleLinkFocus(baseElement, true, false);
+      handleLinkFocus(baseElement as HTMLElement, true, false);
       // expect(container).toHaveClass('af-nav__item');
       expect(container).toHaveFocus();
     });

@@ -11,8 +11,8 @@ describe('<ChoiceInput>', () => {
         id="xxx"
         name="xxx"
         options={[
-          { label: 'Yes', value: true },
-          { label: 'No', value: false },
+          { label: 'Yes', value: true, id: '1' },
+          { label: 'No', value: false, id: '2' },
         ]}
         onChange={() => {}}
       />
