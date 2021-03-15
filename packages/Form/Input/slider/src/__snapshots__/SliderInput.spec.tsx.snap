@@ -2,35 +2,34 @@
 
 exports[`<SliderInput> renders SliderInput correctly 1`] = `
 <Field
-  classModifier={null}
-  className={null}
+  className="row af-form__group"
   classNameContainerInput="col-md-10"
   classNameContainerLabel="col-md-2"
   forceDisplayMessage={false}
-  id=""
+  id="id"
   isVisible={true}
   label="File *"
-  message={null}
   messageType="error"
 >
-  <ComponentEnhancer
-    autoFocus={null}
-    classModifier={null}
-    className={null}
-    disabled={false}
+  <Component
     id="id"
-    inputRef={null}
-    isVisible={true}
     name="file"
-    onBlur={null}
     onChange={[Function]}
-    onFocus={null}
-    readOnly={false}
-    tabIndex={null}
+    options={
+      Array [
+        Object {
+          "label": "15",
+          "value": 15,
+        },
+        Object {
+          "label": 1,
+          "value": 1,
+        },
+      ]
+    }
   />
   <HelpMessage
     isVisible={true}
-    message={null}
   />
 </Field>
 `;

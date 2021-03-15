@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        Image *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__text"
+      >
+        <div
+          class="af-form-switch"
+        >
+          <span
+            class="af-btn-switch-slider"
+            style="width: 0px; left: 0px;"
+          />
+        </div>
+      </div>
+      <small
+        class="af-form__help"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

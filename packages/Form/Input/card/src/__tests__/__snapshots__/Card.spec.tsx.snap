@@ -15,15 +15,15 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
           class="af-rccard-header"
         >
           <div
-            class="af-form__checkbox af-form__checkbox--undefined"
+            class="af-form__checkbox"
           >
             <input
               checked=""
-              class="af-form__checkbox"
-              disabled=""
+              class="af-form__input-checkbox"
               id="name"
               name="defaultName"
               type="checkbox"
+              value="1"
             />
             <label
               class="af-form__label"
