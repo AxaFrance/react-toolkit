@@ -1,28 +1,39 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import Step from './Step';
 import Steps from './Steps';
 import StepBase from './StepBase';
-import StepModes from './StepModes';
 import readme from '../README.md';
 
-const withPreventDefaultClick = (next) => (e) => {
-  e.preventDefault();
-  next(e);
-};
+export default {
+  title: 'Form/Steps',
+  component: Steps,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    options: {},
+  },
+} as Meta;
 
-const OldStepsStory = () => (
-  <Steps
-    classModifier={text('classModifier', '')}
-    className={text('className', '')}>
+type OldStepsProps = {
+  classModifier: string;
+  className: string;
+  mode: 'link' | 'active' | 'disabled';
+};
+export const OldStepsStory: Story<OldStepsProps> = ({
+  classModifier,
+  className,
+  mode,
+}) => (
+  <Steps classModifier={classModifier} className={className}>
     <Step
       id="id1"
       href="/etape1"
       onClick={action('onClick')}
       number="1"
-      mode={select('modes', StepModes, StepModes.link)}
+      mode={mode}
       title="Previous step"
     />
     <Step
@@ -31,31 +42,45 @@ const OldStepsStory = () => (
       number="2"
       onClick={action('onClick')}
       title="Previous step"
-      modes={StepModes.link}
+      mode="link"
     />
     <Step
       id="id3"
       number="3"
       onClick={action('onClick')}
       title="Current step"
-      mode={StepModes.active}
+      mode="active"
     />
     <StepBase id="idf4" title="Un titre">
       <a
         className="af-steps-list-stepLabel"
         href="#/"
-        onClick={withPreventDefaultClick(action('onClick Action'))}>
+        onClick={action('onClick Action')}>
         <span className="af-steps-list-stepNumber">
           <i className="glyphicon glyphicon-ok" />
         </span>
         <span className="af-steps-list-stepTitle">Custom</span>
       </a>
     </StepBase>
-    <Step id="id5" number="5" title="Final step" mode={StepModes.disabled} />
+    <Step id="id5" number="5" title="Final step" mode="disabled" />
   </Steps>
 );
+OldStepsStory.storyName = 'Old Design Steps';
+OldStepsStory.args = {
+  classModifier: '',
+  className: '',
+};
+OldStepsStory.argTypes = {
+  onClick: { action: 'clicked' },
+  mode: {
+    control: {
+      type: 'select',
+      options: ['link', 'active', 'disabled'],
+    },
+  },
+};
 
-const NewStepsStory = () => (
+export const NewStepsStory = () => (
   <Steps
     classModifier={text('classModifier', '')}
     className={text('className', 'af-steps-new')}>
@@ -94,15 +119,3 @@ const NewStepsStory = () => (
     <Step id="id5" title="Final step" mode={StepModes.disabled} />
   </Steps>
 );
-
-const stories = storiesOf('Form/Steps', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
-  },
-  options: {},
-});
-
-stories.add('Old Design Steps', OldStepsStory);
-stories.add('New Design Steps', NewStepsStory);
