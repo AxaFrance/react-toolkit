@@ -16,6 +16,7 @@
       ]
     }
   },
+  "useWorkspaces": true,
   "packages": [
     "packages/*",
     "packages/Form/*",

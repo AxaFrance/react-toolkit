@@ -6,12 +6,16 @@
     "type": "git",
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
   },
+  "workspaces": [
+    "packages/*",
+    "packages/Form/*",
+    "packages/Form/Input/*",
+    "packages/Layout/*",
+    "packages/Modal/*"
+  ],
   "scripts": {
-    "postinstall": "npm run clean && lerna bootstrap --no-ci && npm run style",
+    "postinstall": "lerna run build & npm run style",
     "version": "lerna version --exact --force-publish",
-    "clean": "npm run clean:node_modules && npm run clean:dist",
-    "clean:dist": "node ./scripts/clean.js",
-    "clean:node_modules": "lerna clean --yes",
     "style": "node ./scripts/style.js",
     "storybook": "start-storybook -p 9009 -s storybook-public",
     "storybook:build": "build-storybook -s storybook-public -c .storybook -o storybook-static && npm run toolkit:build",
@@ -20,10 +24,7 @@
     "cover": "jest --no-cache --config ./jest.config.json --coverage",
     "check": "npm run check:formatting && npm run check:quality",
     "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
-    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives",
-    "dev": "concurrently --kill-others \"npm run dev:ts\" \"npm run dev:js\"",
-    "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
-    "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js"
+    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives"
   },
   "husky": {
     "hooks": {
@@ -112,7 +113,7 @@
     "sass": "^1.29.0"
   },
   "engines": {
-    "node": ">=10.14.2 || ^12 || ^14"
+    "node": ">=15"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

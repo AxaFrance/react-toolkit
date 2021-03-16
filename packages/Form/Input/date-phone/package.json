@@ -5,7 +5,7 @@
   "jsnext:main": "src/index.js",
   "private": false,
   "scripts": {
-    "prepare": "node ../../../../scripts/prepare.js"
+    "build": "echo deprecated"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",

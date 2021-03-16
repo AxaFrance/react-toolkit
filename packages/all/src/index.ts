@@ -11,7 +11,6 @@ export * from './form-input-card';
 export * from './form-input-checkbox';
 export * from './form-input-choice';
 export * from './form-input-date';
-export * from './form-input-date-phone';
 export * from './form-input-file';
 export * from './form-input-number';
 export * from './form-input-pass';
