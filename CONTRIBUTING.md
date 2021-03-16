@@ -1,5 +1,12 @@
 # Contributing to @axa-fr/react-toolkit
 
+**Table of Contents**
+
+- [Prerequisite](#prerequisite)
+- [Installation](#installation)
+- [How to work on a component](#how-to-work-on-a-component)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisite
 
 You must use a version of Node.js respecting the following rule `>=10.14.2` or `12.x` or `>=14`.
