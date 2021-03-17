@@ -21,9 +21,8 @@ describe('NavBar', () => {
   });
 
   it('Should state isMenuFocused be true when menu is focused', () => {
-    const { getByRole, debug } = createWrapper();
+    const { getByRole } = createWrapper();
     fireEvent.focus(getByRole('menubar'));
-    debug();
     expect(getByRole('menubar')).toHaveClass('af-nav__list--focused');
   });
 
@@ -67,7 +66,7 @@ describe('NavBar', () => {
       expect(getByRole('menubar')).not.toHaveClass('af-nav__list--focused');
     });
     it('Call onBlur when keydown ArrowRight', () => {
-      const { getByRole, getByTestId, debug } = createWrapper({
+      const { getByRole, getByTestId } = createWrapper({
         children: [
           <NavBarItem actionElt={<div>Custom</div>} />,
           <NavBarItem actionElt={<div>Custom</div>} data-testid="2nd-custom" />,
@@ -79,7 +78,6 @@ describe('NavBar', () => {
         key: 'ArrowRight',
         code: 'ArrowRight',
       });
-      debug();
       expect(getByTestId('2nd-custom').parentElement).toHaveClass(
         'af-nav__item--active'
       );

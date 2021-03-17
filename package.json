@@ -20,8 +20,8 @@
     "storybook": "start-storybook -p 9009 -s storybook-public",
     "storybook:build": "build-storybook -s storybook-public -c .storybook -o storybook-static && npm run toolkit:build",
     "toolkit:build": "node ./scripts/inject-version.js",
-    "test": "jest --config jest.config.json",
-    "cover": "jest --no-cache --config ./jest.config.json --coverage",
+    "test": "jest",
+    "cover": "jest --no-cache --coverage",
     "check": "npm run check:formatting && npm run check:quality",
     "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
     "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives"
@@ -33,9 +33,6 @@
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-async-to-generator": "^7.12.1",
@@ -55,8 +52,8 @@
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^12.2.0",
     "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.15",
-    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
     "@types/react-test-renderer": "^16.9.3",
@@ -65,10 +62,6 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
     "bootstrap": "4.3.1",
-    "browser-sync": "^2.26.13",
-    "chalk": "^4.1.0",
-    "concurrently": "^5.3.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^5.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
@@ -77,16 +70,13 @@
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^9.0.1",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
-    "jest-cli": "^26.6.3",
     "jest-enzyme": "^7.1.2",
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.1",
@@ -100,10 +90,9 @@
     "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2",
     "sass-loader": "^10.0.5",
-    "shelljs": "^0.8.4",
     "storybook-readme": "^5.0.8",
     "ts-jest": "^26.4.3",
-    "twit": "^2.2.11",
+    "ts-node": "^9.1.1",
     "typescript": "^4.0.5"
   },
   "dependencies": {
@@ -113,7 +102,7 @@
     "sass": "^1.29.0"
   },
   "engines": {
-    "node": ">=15"
+    "npm": ">=7.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
