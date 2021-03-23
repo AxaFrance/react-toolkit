@@ -5,29 +5,34 @@ import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-accordion__item-header';
 
-const defaultProps = {
-  ...Constants.defaultProps,
-  collapse: true,
-  className: defaultClassName,
-  href: '#collapseOne',
-};
-
 export type HeaderToggleElement = {
-  collapse: boolean;
+  isOpen: boolean;
   index: number;
   id: string;
 };
 
-export type HeaderProps = Partial<typeof defaultProps & { index: number }> & {
+const defaultProps = {
+  ...Constants.defaultProps,
+  className: defaultClassName,
+  isOpen: false,
+  href: '#collapseOne',
+};
+
+export type HeaderProps = Partial<typeof defaultProps> & {
   children: React.ReactNode;
-  onToggle?: (element: HeaderToggleElement) => void;
-  ariaControls?: string;
+  isOpen?: boolean;
+  className?: string;
+  classModifier?: string;
   id?: string;
+  href?: string;
+  ariaControls?: string;
+  index?: number;
+  onToggle?: (element: HeaderToggleElement) => void;
 };
 
 const Header = ({
   children,
-  collapse,
+  isOpen,
   className,
   classModifier,
   id,
@@ -38,31 +43,29 @@ const Header = ({
 }: HeaderProps) => {
   const onToggleEvent = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (onToggle) {
+    onToggle &&
       onToggle({
-        collapse: !collapse,
+        isOpen: !isOpen,
         id,
         index,
       });
-    }
   };
 
   const onKeyToggle = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault();
-      if (onToggle) {
+      onToggle &&
         onToggle({
-          collapse: !collapse,
+          isOpen: !isOpen,
           id,
           index,
         });
-      }
     }
   };
 
   const chevronClassName = classNames('glyphicon', {
-    'glyphicon-menu-down': !collapse,
-    'glyphicon-menu-up': collapse,
+    'glyphicon-menu-down': !isOpen,
+    'glyphicon-menu-up': isOpen,
   });
 
   const componentClassName = ClassManager.getComponentClassName(
@@ -73,19 +76,19 @@ const Header = ({
 
   return (
     <div className={componentClassName} role="tab" id={id}>
-      <h3 className="af-accordion__item-title" role="intera">
-        <span className={chevronClassName} />
-        <a
-          className="af-accordion__item-toggle"
-          data-toggle="collapse"
-          href={href}
-          aria-expanded={collapse}
-          aria-controls={ariaControls}
-          onClick={onToggleEvent}
-          onKeyDown={onKeyToggle}>
+      <a
+        className="af-accordion__item-toggle"
+        data-toggle="isOpen"
+        href={href}
+        aria-expanded={isOpen}
+        aria-controls={ariaControls}
+        onClick={onToggleEvent}
+        onKeyDown={onKeyToggle}>
+        <h3 className="af-accordion__item-title">
+          <span className={chevronClassName} />
           {children}
-        </a>
-      </h3>
+        </h3>
+      </a>
     </div>
   );
 };

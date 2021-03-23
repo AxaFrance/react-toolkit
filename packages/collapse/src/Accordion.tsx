@@ -1,29 +1,31 @@
 import React from 'react';
 import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
-import { CollapseProps } from './CollapseCardBase';
+import { CollapseProps } from './CollapseCard';
 import { HeaderToggleElement } from './Header';
 
 const defaultClassName = 'af-accordion';
+
 const defaultProps = {
   ...Constants.defaultProps,
-  defaultCollapse: true,
-  onlyOne: true,
+  onlyOne: false,
   className: defaultClassName,
 };
 
-type Props = Partial<typeof defaultProps> & {
+type AccordionProps = {
+  className: string;
+  classModifier: string;
   children: React.ReactElement<CollapseProps>[];
   handleToggle: (e: HeaderToggleElement) => void;
   collapses: boolean[];
 };
 
-export const AccordionBase = ({
-  children,
+const Accordion = ({
   className,
   classModifier,
+  children,
   handleToggle,
   collapses,
-}: Props) => {
+}: AccordionProps) => {
   const renderedChildren = React.Children.map(children, (child, index) => {
     let mixCallback = handleToggle;
     if (child.props.onToggle) {
@@ -36,10 +38,8 @@ export const AccordionBase = ({
       ...child.props,
       index,
       onToggle: mixCallback,
-      collapse:
-        collapses[index] !== undefined
-          ? collapses[index]
-          : child.props.collapse,
+      isOpen:
+        collapses[index] !== undefined ? collapses[index] : child.props.isOpen,
       className: child.props.className,
       classModifier: child.props.classModifier,
     });
@@ -59,30 +59,32 @@ export const AccordionBase = ({
   );
 };
 
+Accordion.defaultProps = defaultProps;
+
 export const handleToggleState = (
   collapses: boolean[],
-  { onlyOne, children }: Props
+  { onlyOne, children }: EnhancedProps
 ) => (e: HeaderToggleElement): boolean[] => {
-  if (e.collapse && onlyOne) {
+  if (e.isOpen && onlyOne) {
     if (Array.isArray(children)) {
       return children.map((_child, index) =>
-        e.index === index ? e.collapse : false
+        e.index === index ? e.isOpen : false
       );
     }
-    if (children) {
-      return [e.collapse];
-    }
+    return [e.isOpen];
   }
   const newCollapses = [...collapses];
-  newCollapses[e.index] = e.collapse;
+  newCollapses[e.index] = e.isOpen;
   return newCollapses;
 };
 
-AccordionBase.defaultProps = defaultProps;
-
-type EnhancedProps = Props & {
-  onlyOne: boolean;
+export type EnhancedProps = Partial<typeof defaultProps> & {
+  onlyOne?: boolean;
+  className?: string;
+  classModifier?: string;
+  children: React.ReactElement<CollapseProps>[];
 };
+
 const EnhancedComponent = (props: EnhancedProps) => {
   const [collapses, setCollapses] = React.useState<boolean[]>([]);
 
@@ -91,9 +93,7 @@ const EnhancedComponent = (props: EnhancedProps) => {
     setCollapses(newCollapses);
   };
 
-  return (
-    <AccordionBase {...props} collapses={collapses} handleToggle={toggle} />
-  );
+  return <Accordion {...props} collapses={collapses} handleToggle={toggle} />;
 };
 
 EnhancedComponent.displayName = 'Accordion';

@@ -6,7 +6,7 @@ const defaultClassName = 'af-accordion__collapse';
 
 const defaultProps = {
   ...Constants.defaultProps,
-  collapse: true,
+  isOpen: false,
   className: defaultClassName,
 };
 
@@ -18,7 +18,7 @@ export type BodyProps = Partial<typeof defaultProps> & {
 
 const Body = ({
   children,
-  collapse,
+  isOpen,
   className,
   classModifier,
   ariaLabelledby,
@@ -27,12 +27,12 @@ const Body = ({
   const panel = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    if (panel) {
-      panel.current.style.maxHeight = collapse ? '100vh' : '0';
+    if (panel & panel.current) {
+      panel.current.style.maxHeight = isOpen ? '100vh' : '0';
     }
-  }, [collapse]);
+  }, [isOpen]);
 
-  let newClassModifier = collapse ? 'open' : 'close';
+  let newClassModifier = isOpen ? 'open' : 'close';
   if (classModifier) {
     newClassModifier = `${newClassModifier} ${classModifier}`;
   }
