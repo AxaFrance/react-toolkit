@@ -37,7 +37,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__collapse af-accordion__collapse--open"
         id="onebody"
         role="tabpanel"
-        style="max-height: 0px;"
+        style="max-height: 100vh;"
       >
         <div
           class="af-accordion__block"
@@ -76,7 +76,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__collapse af-accordion__collapse--close"
         id="twobody"
         role="tabpanel"
-        style="max-height: 0px;"
+        style="max-height: 0;"
       >
         <div
           class="af-accordion__block"
@@ -115,7 +115,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__collapse af-accordion__collapse--close"
         id="threebody"
         role="tabpanel"
-        style="max-height: 0px;"
+        style="max-height: 0;"
       >
         <div
           class="af-accordion__block"

@@ -32,7 +32,7 @@ exports[`CollapseCard renders CollapseCard correctly 1`] = `
       class="af-accordion__collapse af-accordion__collapse--close"
       id="collapse1body"
       role="tabpanel"
-      style="max-height: 0px;"
+      style="max-height: 0;"
     >
       <div
         class="af-accordion__block"
