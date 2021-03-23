@@ -27,7 +27,7 @@ const Body = ({
   const panel = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    if (panel & panel.current) {
+    if (panel && panel.current) {
       panel.current.style.maxHeight = isOpen ? '100vh' : '0';
     }
   }, [isOpen]);
