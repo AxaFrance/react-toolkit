@@ -27,7 +27,7 @@ const Body = ({
   const panel = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    if (panel) {
+    if (panel && panel.current) {
       panel.current.style.maxHeight = collapse ? '100vh' : '0';
     }
   }, [collapse]);
