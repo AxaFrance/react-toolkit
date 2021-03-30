@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
-    "prepare": "node ../../../scripts/prepare.js"
+    "build": "rimraf ./dist && tsc --outDir ./dist"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",

@@ -9,7 +9,7 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "scripts": {
-    "prepare": "node ../../../scripts/prepare.js"
+    "build": "rimraf ./dist && tsc --outDir ./dist"
   },
   "dependencies": {
     "@axa-fr/react-toolkit-action": "2.0.0-alpha.1",

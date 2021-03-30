@@ -1,6 +1,1 @@
-export {
-  Steps,
-  StepBase,
-  Step,
-  StepModes,
-} from '@axa-fr/react-toolkit-form-steps';
+export { Steps, StepBase, Step } from '@axa-fr/react-toolkit-form-steps';
