@@ -11,3 +11,7 @@ lerna.json
 packages/all/src/bootstrap/af-components.template.scss
 packages/all/src/bootstrap/af-toolkit-core.template.scss
 packages/all/component
+
+#netlify lerna
+netlify-lerna-restore
+netlify-lerna-cache
