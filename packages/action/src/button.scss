@@ -58,11 +58,13 @@ $active-sort-table-th: $color-table-sorting !default;
     }
   }
 
-  &--hasiconLeft {
+  &--hasiconLeft,
+  &--hasIconLeft {
     @include hasIcon('left');
   }
 
-  &--hasiconRight {
+  &--hasiconRight,
+  &--hasIconRight {
     @include hasIcon('right');
   }
 
@@ -141,13 +143,15 @@ $active-sort-table-th: $color-table-sorting !default;
     border-bottom: none;
   }
 
-  &--reverse.af-btn--hasiconLeft {
+  &--reverse.af-btn--hasiconLeft,
+  &--reverse.af-btn--hasIconLeft {
     @include hasIcon('left');
 
     padding-right: 1.2rem;
   }
 
-  &--reverse.af-btn--hasiconRight {
+  &--reverse.af-btn--hasiconRight,
+  &--reverse.af-btn--hasIconRight {
     @include hasIcon('right');
 
     padding-left: 1.2rem;

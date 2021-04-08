@@ -54,7 +54,7 @@ const File = ({
       <Button
         type="button"
         className="af-btn"
-        classModifier="file hasiconLeft"
+        classModifier="file hasIconLeft"
         onClick={open}
         disabled={disabled}>
         <i className={`glyphicon glyphicon-${icon}`} /> {label}
