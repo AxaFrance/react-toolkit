@@ -7,6 +7,9 @@
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
   },
   "scripts": {
+    "lerna:cache": "[ $NETLIFY_RESTORE = 1 ] && ./netlify-lerna-cache || :",
+    "lerna:restore": "[ $NETLIFY_RESTORE = 1 ] && ./netlify-lerna-restore || :",
+    "preinstall": "npm run lerna:restore",
     "postinstall": "npm run clean && lerna bootstrap --no-ci && npm run style",
     "version": "lerna version --exact --force-publish",
     "clean": "npm run clean:node_modules && npm run clean:dist",
