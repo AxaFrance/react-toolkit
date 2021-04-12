@@ -10,6 +10,7 @@
     justify-content: flex-start;
 
     .glyphicon {
+      margin-right: 0.3rem;
       font-size: 0.9em;
       width: 17px;
     }
@@ -20,18 +21,6 @@
       .af-link__text {
         text-decoration: underline;
       }
-    }
-  }
-
-  &--hasIconLeft {
-    .glyphicon {
-      margin-right: 0.3rem;
-    }
-  }
-
-  &--hasIconRight {
-    .glyphicon {
-      margin-left: 0.3rem;
     }
   }
 }
