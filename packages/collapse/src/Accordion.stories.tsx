@@ -6,7 +6,7 @@ import CollapseCard from './CollapseCard';
 import readme from '../README.md';
 
 export default {
-  title: 'Accordion',
+  title: 'Components/Accordion',
   component: Accordion,
   parameters: {
     readme: {
@@ -65,7 +65,7 @@ const Template: Story<TemplateProps> = ({ ...args }) => (
 );
 
 export const AccordionStory = Template.bind({}) as typeof Template;
-AccordionStory.storyName = 'Default';
+AccordionStory.storyName = 'Accordion';
 AccordionStory.args = {
   onlyOne: true,
   className: '',

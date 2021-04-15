@@ -8,7 +8,7 @@ import RadioInput from './RadioInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/RadioInput',
+  title: 'Form elements/Radio',
   component: RadioInput,
   parameters: {
     readme: {

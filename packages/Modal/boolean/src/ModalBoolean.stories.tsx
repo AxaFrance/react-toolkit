@@ -4,7 +4,7 @@ import BooleanModal from './ModalBoolean';
 import readme from '../README.md';
 
 export default {
-  title: 'Modal/Boolean',
+  title: 'Components/Modal/Boolean',
   component: BooleanModal,
   parameters: {
     readme: {

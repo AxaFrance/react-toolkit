@@ -6,7 +6,7 @@ import readme from '../README.md';
 import './help-custom.scss';
 
 export default {
-  title: 'Help',
+  title: 'Components/Help',
   component: Help,
   parameters: {
     readme: {

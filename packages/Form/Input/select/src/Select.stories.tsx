@@ -14,7 +14,7 @@ const options = [
 ];
 
 export default {
-  title: 'Form/Input/Select',
+  title: 'Form elements/Select',
   component: Select,
   argTypes: {
     onChange: { action: 'onChange' },

@@ -4,7 +4,7 @@ import { NavBar, NavBarItem } from './NavBar';
 import { Title } from './Title';
 
 export default {
-  title: 'Layout/Header/MenuTitleWrapper',
+  title: 'Structure/Header/MenuTitleWrapper',
   component: NavBar,
   parameters: {
     viewport: {

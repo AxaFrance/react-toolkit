@@ -32,7 +32,7 @@ const options = [
 const values = ['1', '3'];
 
 export default {
-  title: 'Form/Input/Checkbox',
+  title: 'Form elements/Checkbox',
   component: CheckboxInput,
   parameters: {
     readme: {

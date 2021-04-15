@@ -4,7 +4,7 @@ import Action, { ActionProps } from './Action';
 import Readme from '../README.md';
 
 export default {
-  title: 'Action/Action',
+  title: 'Components/Action',
   component: Action,
   parameters: {
     readme: {

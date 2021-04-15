@@ -18,5 +18,15 @@ export const parameters = {
   docs: {
     inlineStories: false,
   },
-  options: {},
+  options: {
+    storySort: {
+      order: [
+        'Components',
+        'Form elements',
+        'Structure',
+        'Pages',
+        'Components low level',
+      ],
+    },
+  },
 };

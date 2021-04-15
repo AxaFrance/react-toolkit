@@ -5,7 +5,7 @@ import RadioInput from './RadioInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/RadioInput/Radio/RadioItem',
+  title: 'Components low level/Radio/RadioItem',
   component: RadioInput,
   parameters: {
     readme: {

@@ -5,7 +5,7 @@ import Loader from './Loader';
 import LoaderModes from './LoaderModes';
 import readme from '../README.md';
 
-const stories = storiesOf('Loader', module);
+const stories = storiesOf('Components/Loader', module);
 
 stories.addParameters({
   readme: {

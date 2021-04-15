@@ -7,7 +7,7 @@ import readme from '../README.md';
 import './footer.scss';
 
 export default {
-  title: 'Layout/Footer',
+  title: 'Structure/Footer',
   component: Footer,
   parameters: {
     readme: {

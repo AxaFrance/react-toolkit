@@ -5,7 +5,7 @@ import CollapseCard from './CollapseCard';
 import readme from '../README.md';
 
 export default {
-  title: 'Collapse',
+  title: 'Components low level/Collapse',
   component: CollapseCard,
   parameters: {
     readme: {
@@ -34,4 +34,4 @@ const Template: Story<TemplateProps> = ({ ...args }) => (
 );
 
 export const CollapseCardStory = Template.bind({}) as typeof Template;
-CollapseCardStory.storyName = 'Default';
+CollapseCardStory.storyName = 'Collapse';

@@ -9,7 +9,7 @@ import CardFooter from './CardFooter';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/Checkbox Card',
+  title: 'Form elements/Card',
   component: Card,
   parameters: {
     readme: {

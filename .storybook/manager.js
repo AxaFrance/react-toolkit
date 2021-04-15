@@ -11,6 +11,5 @@ addons.setConfig({
   isFullscreen: false,
   panelPosition: 'bottom',
   isToolshown: true,
-  showRoots: false,
   theme,
 });

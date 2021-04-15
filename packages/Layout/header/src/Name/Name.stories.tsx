@@ -4,7 +4,7 @@ import Name from './Name';
 import readme from '../../README.md';
 
 export default {
-  title: 'Layout/Header/Name',
+  title: 'Structure/Header/Name',
   component: Name,
   parameters: {
     readme: {

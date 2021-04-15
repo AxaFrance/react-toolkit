@@ -56,7 +56,7 @@ const AlertCoreWithDetailStory = () => (
   </AlertCore>
 );
 
-const stories = storiesOf('Alert/AlertCore', module);
+const stories = storiesOf('Components low level/Alert/AlertCore', module);
 
 stories.addParameters({
   readme: {

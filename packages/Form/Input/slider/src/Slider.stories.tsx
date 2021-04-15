@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import Slider from './Slider';
 
 export default {
-  title: 'Form/Input/Slider',
+  title: 'Components/Slider',
   component: Slider,
 } as Meta;
 

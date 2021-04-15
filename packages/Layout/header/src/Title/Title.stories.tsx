@@ -6,7 +6,7 @@ import Title from './Title';
 import readme from '../../README.md';
 
 export default {
-  title: 'Layout/Header/Title',
+  title: 'Structure/Title Bar',
   component: Title,
   parameters: {
     readme: {

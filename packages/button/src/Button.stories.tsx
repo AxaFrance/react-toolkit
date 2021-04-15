@@ -111,7 +111,7 @@ const ButtonCircleStory = () => (
   </Button>
 );
 
-const stories = storiesOf('Button', module);
+const stories = storiesOf('Components/Button', module);
 
 stories.addParameters({
   readme: {

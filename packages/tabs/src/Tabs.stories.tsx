@@ -6,7 +6,7 @@ import Readme from '../README.md';
 import { TabsCoreProps } from './TabsCore';
 
 export default {
-  title: 'Tabs',
+  title: 'Components/Tabs',
   component: Tabs,
   parameters: {
     readme: {
