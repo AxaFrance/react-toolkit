@@ -10,11 +10,11 @@ import SectionRestitutionTitle from './SectionRestitutionTitle';
 
 const DEFAULT_CLASSNAME = 'col-sm-12 col-md-12 col-lg-6 col-xl-6';
 
-type SectionRestitutionColumnBaseProps = {
+interface SectionRestitutionColumnBaseProps {
   className?: string;
   title?: string;
   children?: React.ReactNode;
-};
+}
 
 const SectionRestitutionColumn = ({
   children,

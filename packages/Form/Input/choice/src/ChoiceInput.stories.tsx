@@ -31,9 +31,9 @@ ChoiceStory.argTypes = {
   onChange: { action: 'onChange' },
 };
 
-export const ChoiceInputStory: Story<ComponentPropsWithoutRef<
-  typeof ChoiceInput
->> = (args) => (
+export const ChoiceInputStory: Story<
+  ComponentPropsWithoutRef<typeof ChoiceInput>
+> = (args) => (
   <form className="af-form" name="myform">
     <ChoiceInput {...args} />
   </form>

@@ -2,7 +2,6 @@ import React, {
   Children,
   cloneElement,
   ComponentProps,
-  ComponentType,
   isValidElement,
   ReactElement,
   ReactNode,
@@ -53,9 +52,9 @@ const getSortedChildren = (children: ReactNode[]) => {
     (child) => isValidElement(child) && child.type === CardHeader
   );
 
-  const headerCard = childrenArray[headerIndex] as ReactElement<
-    CardHeaderProps
-  >;
+  const headerCard = childrenArray[
+    headerIndex
+  ] as ReactElement<CardHeaderProps>;
   const other = getArrayWithRemovedIndex(childrenArray, headerIndex);
 
   return {

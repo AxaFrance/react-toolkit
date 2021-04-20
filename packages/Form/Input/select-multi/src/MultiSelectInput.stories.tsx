@@ -25,9 +25,9 @@ const options = [
 
 const values = ['fun', 'drink'];
 
-export const MultiSelectInputStory: Story<ComponentProps<
-  typeof MultiSelectInput
->> = (args) => (
+export const MultiSelectInputStory: Story<
+  ComponentProps<typeof MultiSelectInput>
+> = (args) => (
   <form className="af-form" name="myform">
     <MultiSelectInput {...args} />
   </form>
