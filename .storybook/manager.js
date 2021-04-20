@@ -1,16 +1,7 @@
 import addons from '@storybook/addons';
-import { create } from '@storybook/theming/create';
-
-const theme = create({
-  base: 'light',
-  brandTitle: '@axa-fr/react-toolkit-all',
-  brandUrl: 'https://axaguildev.github.io/design-system/',
-});
+import toolkitTheme from './toolkit-theme';
 
 addons.setConfig({
-  isFullscreen: false,
-  panelPosition: 'bottom',
-  isToolshown: true,
   showRoots: false,
-  theme,
+  theme: toolkitTheme,
 });
