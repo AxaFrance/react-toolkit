@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { Story } from '@storybook/react';
 import Modal from './Modal';
 import ModalCore from './ModalCore';
@@ -6,9 +6,10 @@ import Body from './Body';
 import Footer from './Footer';
 import HeaderBase from './HeaderBase';
 import readme from '../README.md';
-import { ModalCoreProps } from '../dist';
 
-const CustomHeaderStoryTemplate: Story<ModalCoreProps> = (args) => (
+const CustomHeaderStoryTemplate: Story<
+  ComponentPropsWithoutRef<typeof ModalCore>
+> = (args) => (
   <div>
     <Modal {...args}>
       <Modal.HeaderBase id="headerId">
