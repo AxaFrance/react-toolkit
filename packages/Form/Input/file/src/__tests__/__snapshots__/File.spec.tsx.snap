@@ -24,7 +24,7 @@ exports[`<File.File> renders File.File correctly 1`] = `
       </div>
     </div>
     <button
-      class="af-btn af-btn--file af-btn--hasiconLeft"
+      class="af-btn af-btn--file af-btn--hasIconLeft"
       type="button"
     >
       <i
