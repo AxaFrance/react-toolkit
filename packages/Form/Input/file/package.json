@@ -16,7 +16,7 @@
     "@axa-fr/react-toolkit-core": "2.0.0-alpha.1",
     "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.1",
     "@axa-fr/react-toolkit-popover": "2.0.0-alpha.1",
-    "react-dropzone": "11.2.4"
+    "react-dropzone": "11.3.2"
   },
   "license": "MIT",
   "publishConfig": {
