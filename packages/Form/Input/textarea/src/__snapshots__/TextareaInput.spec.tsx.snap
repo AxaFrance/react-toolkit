@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
+<div
+  className="row af-form__group af-form__group--undefined af-form__group--label-top"
+>
+  <div
+    className="col-md-2"
+  >
+    <label
+      className="af-form__group-label"
+      htmlFor="iddateinput"
+    >
+      Image *
+    </label>
+  </div>
+  <div
+    className="col-md-10"
+  >
+    <div
+      className="af-form__textarea af-form__textarea--undefined"
+    >
+      <textarea
+        className="af-form__input-textarea af-form__input-textarea--undefined"
+        cols={50}
+        id="iddateinput"
+        name="sample"
+        onChange={[Function]}
+        rows={5}
+        value="ici le text"
+      />
+    </div>
+    <small
+      className="af-form__help"
+    />
+  </div>
+</div>
+`;

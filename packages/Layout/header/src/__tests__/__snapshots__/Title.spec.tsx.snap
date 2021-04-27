@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title> renders Title correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-title-bar"
+  >
+    <div
+      class="container af-title-bar__wrapper"
+    >
+      <div
+        class="burger-container"
+      >
+        <a
+          aria-controls="mainmenu"
+          aria-haspopup="true"
+          class="btn af-title-bar__mobile-menu af-btn--circle"
+          href="#"
+          id="togglemenu"
+          role="button"
+          tabindex="0"
+          title="Toggle menu"
+        >
+          <i
+            class="glyphicon glyphicon-menu-hamburger"
+          />
+        </a>
+      </div>
+      <h1
+        class="af-title-bar__title"
+      >
+        Toolkit Axa
+        <small
+          class="af-title-bar__subtitle"
+        >
+          Info complémentaire
+        </small>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Title> renders Title correctly without menu 1`] = `
+<DocumentFragment>
+  <div
+    class="af-title-bar"
+  >
+    <div
+      class="container af-title-bar__wrapper"
+    >
+      <h1
+        class="af-title-bar__title"
+      >
+        Toolkit Axa
+        <small
+          class="af-title-bar__subtitle"
+        >
+          Info complémentaire
+        </small>
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -3,9 +3,7 @@ import React, { ComponentType } from 'react';
 export type WithClassDefaultProps = {
   className?: string;
 };
-const withClassDefault = <T extends { [key: string]: any }>(
-  defaultClassName: string
-) => (
+const withClassDefault = <T extends {}>(defaultClassName: string) => (
   BaseComponent: ComponentType<T>
 ): ComponentType<T & WithClassDefaultProps> => {
   return (props: T) => {

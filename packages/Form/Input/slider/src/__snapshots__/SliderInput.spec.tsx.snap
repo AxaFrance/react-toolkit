@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SliderInput> renders SliderInput correctly 1`] = `
+<Field
+  className="row af-form__group"
+  classNameContainerInput="col-md-10"
+  classNameContainerLabel="col-md-2"
+  forceDisplayMessage={false}
+  id="id"
+  isVisible={true}
+  label="File *"
+  messageType="error"
+>
+  <Component
+    id="id"
+    name="file"
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "15",
+          "value": 15,
+        },
+        Object {
+          "label": 1,
+          "value": 1,
+        },
+      ]
+    }
+  />
+  <HelpMessage
+    isVisible={true}
+  />
+</Field>
+`;

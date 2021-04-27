@@ -1,9 +1,6 @@
 import React, { ComponentType } from 'react';
 
-const withProps = <
-  T extends { [key: string]: any },
-  P extends { [key: string]: any }
->(
+const withProps = <T extends {}, P extends {}>(
   propsMapper: (props: T) => P
 ) => (BaseComponent: ComponentType<T>): ComponentType<T & Partial<P>> => {
   const Hoc = (props: T) => {

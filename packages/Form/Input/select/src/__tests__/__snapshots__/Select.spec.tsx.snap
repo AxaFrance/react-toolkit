@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectBase> renders SelectBase correctly 1`] = `
+<div
+  className="af-form__select-container"
+>
+  <select
+    className="af-form__input-select"
+    id="muid"
+    name="placeName"
+    onChange={[Function]}
+    value="myvalue"
+  >
+    <option
+      value="fun"
+    >
+      For fun
+    </option>
+    <option
+      value="work"
+    >
+      For work
+    </option>
+    <option
+      value="drink"
+    >
+      For drink
+    </option>
+  </select>
+  <span
+    aria-controls="muid"
+    className="glyphicon glyphicon-menu-down"
+  />
+</div>
+`;
+
+exports[`<SelectBase> renders SelectBase correctly 2`] = `
+<div
+  className="af-form__select-container"
+>
+  <select
+    className="af-form__input-select"
+    id="muid"
+    name="placeName"
+    onChange={[Function]}
+    value="myvalue"
+  >
+    <option
+      value="fun"
+    >
+      For fun
+    </option>
+    <option
+      value="work"
+    >
+      For work
+    </option>
+    <option
+      value="drink"
+    >
+      For drink
+    </option>
+  </select>
+  <span
+    aria-controls="muid"
+    className="glyphicon glyphicon-menu-down"
+  />
+</div>
+`;
+
+exports[`<SelectBase> renders SelectBase correctly 3`] = `
+<div
+  className="row af-form__group af-form__group--undefined"
+>
+  <div
+    className="col-md-2"
+  >
+    <label
+      className="af-form__group-label"
+      htmlFor="muid"
+    >
+      label
+    </label>
+  </div>
+  <div
+    className="col-md-10"
+  >
+    <div
+      className="af-form__select af-form__select--undefined"
+    >
+      <div
+        className="af-form__select-container"
+      >
+        <select
+          classModifier="undefined "
+          className="af-form__input-select"
+          id="muid"
+          name="placeName"
+          onChange={[Function]}
+          value="myvalue"
+        >
+          <option
+            value="fun"
+          >
+            For fun
+          </option>
+          <option
+            value="work"
+          >
+            For work
+          </option>
+          <option
+            value="drink"
+          >
+            For drink
+          </option>
+        </select>
+        <span
+          aria-controls="muid"
+          className="glyphicon glyphicon-menu-down"
+        />
+      </div>
+    </div>
+    <small
+      className="af-form__help"
+    >
+      Enter the place type
+    </small>
+  </div>
+</div>
+`;

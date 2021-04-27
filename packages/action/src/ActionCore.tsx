@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 import {
   withClassDefault,
   withClassModifier,
-  PropsManager,
   compose,
   withProps,
   identity,
@@ -10,40 +9,30 @@ import {
 
 const defaultClassName = 'btn af-btn--circle';
 
-export interface ActionCoreProps
-  extends React.DetailedHTMLProps<
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    HTMLAnchorElement
-  > {
+type ActionCoreProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   icon: string;
-  className?: string;
-}
-
-const defaultProps: Partial<ActionCoreProps> = {
-  tabIndex: 0,
-  href: '#',
 };
 
-const omitProperties = PropsManager.omit(['classModifier']);
-
-const ActionCore: React.FC<ActionCoreProps> = ({ icon, ...otherProps }) => (
-  <a {...omitProperties(otherProps)}>
+const ActionCore = ({
+  icon,
+  href = '#',
+  tabIndex = 0,
+  ...otherProps
+}: ActionCoreProps) => (
+  <a {...otherProps} href={href} tabIndex={tabIndex}>
     <i className={`glyphicon glyphicon-${icon}`} />
   </a>
 );
 
-ActionCore.defaultProps = defaultProps;
-
 const enhance = compose(
-  identity<ActionCoreProps>(),
+  identity<ActionCoreProps & { classModifier?: string }>(),
   withClassDefault(defaultClassName),
   withClassModifier(),
   withProps(({ onClick, href, role }) => ({
-    href: onClick ? '#' : href || undefined,
-    role: onClick ? 'button' : role || undefined,
+    href: onClick ? '#' : href,
+    role: onClick ? 'button' : role,
   }))
-);
+)(ActionCore);
 
-const Enhanced = enhance(ActionCore);
-Enhanced.displayName = 'ActionCore';
-export default Enhanced;
+enhance.displayName = 'ActionCore';
+export default enhance;

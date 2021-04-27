@@ -90,7 +90,7 @@
     "react/prop-types": "off",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-    "react/require-default-props": "warn",
+    "react/require-default-props": "off",
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
     "@typescript-eslint/no-unused-vars": "warn",

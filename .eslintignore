@@ -9,8 +9,6 @@ babel.config.json
 jest.config.json
 lerna.json
 tsconfig.json
-tsconfig.dev.json
-tsconfig.test.json
 package.json
 
 # react-toolkit-all
