@@ -11,15 +11,14 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const Header = props => {
-  const { classModifier, className, children } = props;
+const Header = ({ classModifier, className, children, id }) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
     defaultClassName
   );
   return (
-    <div className={componentClassName}>
+    <div className={componentClassName} id={id}>
       <div className="container af-header__wrapper">
         <header className="af-header__content" role="banner">
           {children}
