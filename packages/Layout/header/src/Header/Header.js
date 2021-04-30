@@ -1,13 +1,8 @@
 import React from 'react';
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
-
-const propTypes = {
-  ...Constants.propTypes,
-};
+import { ClassManager } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-header';
 const defaultProps = {
-  ...Constants.defaultProps,
   className: defaultClassName,
 };
 
@@ -28,7 +23,6 @@ const Header = ({ classModifier, className, children, id }) => {
   );
 };
 
-Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
 
 export default Header;
