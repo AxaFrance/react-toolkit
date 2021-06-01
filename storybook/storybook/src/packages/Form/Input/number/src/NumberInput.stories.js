@@ -34,6 +34,7 @@ const NumberInputStory = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', true)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         InputConstants.defaultProps.classNameContainerLabel
@@ -68,6 +69,7 @@ const NumberInputStoryRequired = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', true)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         InputConstants.defaultProps.classNameContainerLabel
@@ -102,6 +104,7 @@ const NumberStory = () => (
           className={text('className', '')}
           tabIndex={text('tabIndex', '')}
           autoFocus={boolean('autoFocus', true)}
+          maxLength={text('maxLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}

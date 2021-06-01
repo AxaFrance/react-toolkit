@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, InputConstants as Constants, withInput, omit } from '@axa-fr/react-toolkit-form-core';
+import {
+  Input,
+  InputConstants as Constants,
+  withInput,
+  omit,
+} from '@axa-fr/react-toolkit-form-core';
 import { InputManager } from '@axa-fr/react-toolkit-core';
 
 import parseValueToNumber from './NumberHelper';
@@ -21,6 +26,7 @@ const CustomNumber = props => {
     disabled,
     placeholder,
     inputRef,
+    maxLength,
     ...otherProps
   } = props;
   let currentViewValue = '';
@@ -44,6 +50,7 @@ const CustomNumber = props => {
       disabled={disabled}
       placeholder={placeholder}
       ref={inputRef}
+      maxLength={maxLength}
       {...omitProperties(otherProps)}
     />
   );

@@ -46,6 +46,7 @@ const NumberInput = props => {
     onChange,
     readOnly,
     placeholder,
+    maxLength,
     ...otherProps
   } = props;
   const inputClassModifier = FormClassManager.getInputClassModifier(
@@ -86,6 +87,7 @@ const NumberInput = props => {
           disabled={disabled}
           placeholder={placeholder}
           classModifier={inputClassModifier}
+          maxLength={maxLength}
           {...otherProps}
         />
         {children}
