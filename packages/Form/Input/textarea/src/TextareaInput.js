@@ -48,6 +48,7 @@ const TextareaInput = props => {
     readOnly,
     placeholder,
     maxLength,
+    minLength,
     ...otherProps
   } = props;
   const inputClassModifier = FormClassManager.getInputClassModifier(
@@ -93,6 +94,7 @@ const TextareaInput = props => {
           placeholder={placeholder}
           classModifier={inputClassModifier}
           maxLength={maxLength}
+          minLength={minLength}
           {...otherProps}
         />
         {children}

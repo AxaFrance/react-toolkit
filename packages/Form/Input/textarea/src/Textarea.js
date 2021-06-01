@@ -21,6 +21,7 @@ const Textarea = props => {
     rows,
     cols,
     maxLength,
+    minLength,
     ...otherProps
   } = props;
 
@@ -40,6 +41,7 @@ const Textarea = props => {
       placeholder={placeholder}
       ref={inputRef}
       maxLength={maxLength}
+      minLength={minLength}
       {...omitProperties(otherProps)}
     />
   );
