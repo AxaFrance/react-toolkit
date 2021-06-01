@@ -27,6 +27,7 @@ const CustomNumber = props => {
     placeholder,
     inputRef,
     maxLength,
+    minLength,
     ...otherProps
   } = props;
   let currentViewValue = '';
@@ -51,6 +52,7 @@ const CustomNumber = props => {
       placeholder={placeholder}
       ref={inputRef}
       maxLength={maxLength}
+      minLength={minLength}
       {...omitProperties(otherProps)}
     />
   );
