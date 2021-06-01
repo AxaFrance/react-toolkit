@@ -19,6 +19,7 @@ const Text = props => {
     inputRef,
     onChange,
     maxLength,
+    minLength,
     ...otherProps
   } = props;
 
@@ -37,6 +38,7 @@ const Text = props => {
       placeholder={placeholder}
       ref={inputRef}
       maxLength={maxLength}
+      minLength={minLength}
       {...omitProperties(otherProps)}
     />
   );

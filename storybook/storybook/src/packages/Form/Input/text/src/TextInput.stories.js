@@ -234,6 +234,7 @@ const TextDisabledStory = () => (
           tabIndex={text('tabIndex', null)}
           autoFocus={boolean('autoFocus', false)}
           maxLength={text('maxLength', '')}
+          minLength={text('minLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
