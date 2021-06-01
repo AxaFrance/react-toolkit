@@ -44,6 +44,7 @@ const TextInput = props => {
     isVisible,
     className,
     forceDisplayMessage,
+    maxLength,
     ...otherProps
   } = props;
   const inputClassModifier = FormClassManager.getInputClassModifier(
@@ -84,6 +85,7 @@ const TextInput = props => {
           disabled={disabled}
           placeholder={placeholder}
           classModifier={inputClassModifier}
+          maxLength={maxLength}
           {...otherProps}
         />
         {children}

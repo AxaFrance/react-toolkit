@@ -34,6 +34,7 @@ const TextInputStory = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', true)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         Constants.defaultProps.classNameContainerLabel
@@ -67,6 +68,7 @@ const TextInputStoryRequired = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', true)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         Constants.defaultProps.classNameContainerLabel
@@ -100,6 +102,7 @@ const TextInputErrorStory = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', '')}
       autoFocus={boolean('autoFocus', false)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         Constants.defaultProps.classNameContainerLabel
@@ -134,6 +137,7 @@ const TextStory = () => (
           className={text('className', '')}
           tabIndex={text('tabIndex', null)}
           autoFocus={boolean('autoFocus', true)}
+          maxLength={text('maxLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
@@ -165,6 +169,7 @@ const TextErrorStory = () => (
           className={text('className', '')}
           tabIndex={text('tabIndex', null)}
           autoFocus={boolean('autoFocus', false)}
+          maxLength={text('maxLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
@@ -196,6 +201,7 @@ const TextSuccessStory = () => (
           className={text('className', '')}
           tabIndex={text('tabIndex', null)}
           autoFocus={boolean('autoFocus', false)}
+          maxLength={text('maxLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
@@ -227,6 +233,7 @@ const TextDisabledStory = () => (
           className={text('className', '')}
           tabIndex={text('tabIndex', null)}
           autoFocus={boolean('autoFocus', false)}
+          maxLength={text('maxLength', '')}
         />
         <HelpMessage
           message={text('helpMessage', 'Enter the place name, ex : Webcenter')}

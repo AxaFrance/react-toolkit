@@ -18,6 +18,7 @@ const Text = props => {
     placeholder,
     inputRef,
     onChange,
+    maxLength,
     ...otherProps
   } = props;
 
@@ -35,6 +36,7 @@ const Text = props => {
       disabled={disabled}
       placeholder={placeholder}
       ref={inputRef}
+      maxLength={maxLength}
       {...omitProperties(otherProps)}
     />
   );
@@ -49,9 +51,11 @@ const defaultProps = {
   className: defaultClassName,
 };
 
-const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
-  Text
-);
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(Text);
 
 EnhancedComponent.Clone = Input.Clone;
 EnhancedComponent.ContainerClassName = 'af-form__text';
