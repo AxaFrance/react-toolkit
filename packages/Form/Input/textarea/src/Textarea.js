@@ -20,6 +20,7 @@ const Textarea = props => {
     onChange,
     rows,
     cols,
+    maxLength,
     ...otherProps
   } = props;
 
@@ -38,6 +39,7 @@ const Textarea = props => {
       disabled={disabled}
       placeholder={placeholder}
       ref={inputRef}
+      maxLength={maxLength}
       {...omitProperties(otherProps)}
     />
   );
@@ -54,9 +56,11 @@ const defaultProps = {
   placeholder: '',
 };
 
-const EnhancedComponent = withInput(defaultClassName, propTypes, defaultProps)(
-  Textarea
-);
+const EnhancedComponent = withInput(
+  defaultClassName,
+  propTypes,
+  defaultProps
+)(Textarea);
 
 EnhancedComponent.Clone = Input.Clone;
 EnhancedComponent.displayName = Textarea.name;

@@ -38,6 +38,7 @@ const TextareaInputStory = () => (
       className={text('className', '')}
       tabIndex={text('tabIndex', null)}
       autoFocus={boolean('autoFocus', true)}
+      maxLength={text('maxLength', '')}
       classNameContainerLabel={text(
         'classNameContainerLabel',
         InputConstants.defaultProps.classNameContainerLabel
