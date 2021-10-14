@@ -1,39 +1,108 @@
-## Form Input Date
+# `@axa-fr/react-toolkit-form-input-date`
 
----
+**For the use of the date, we use the moment.js library you find the documentation below** :
+[Moment.js documentation](https://momentjs.com/docs/)
 
-### Get started
+1. [DateInputStory](#dateinputstory)
+2. [DateInputStory Required](#dateinputstory-required)
+3. [CustomDateStory](#customdatestory)
 
-```sh
+## DateInputStory
+
+### Installation
+
+```shell script
 npm i @axa-fr/react-toolkit-form-input-date
+npm i @axa-fr/react-toolkit-form-core
+npm install moment
 ```
 
-First to use, you have to import the component.
+### Import
 
-```js
-import { CustomDate, DateInput } from '@axa-fr/react-toolkit-form-input-date';
-import '@axa-fr/react-toolkit-form-input-date-phone/dist/datepicker.scss';
+```javascript
+import { DateInput } from '@axa-fr/react-toolkit-form-input-date';
+import moment from 'moment';
+import '@axa-fr/react-toolkit-form-input-date/dist/af-datepicker.css';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
 ```
 
-The component reuses the following library:
+### Use
 
-- react-datepicker: https://reactdatepicker.com
+```javascript
+const DateInputStory = () => {
+  const dateNow = moment().toDate();
+  return (
+    <form className="af-form" name="myform">
+      <DateInput
+        id="uniqueId"
+        label="Place name"
+        className="DateInput"
+        helpMessage="jj/mm/aaaa"
+        value={dateNow}
+        locale="fr"
+        onChange={(e: any) => {
+          console.log(e);
+        }}
+      />
+    </form>
+  );
+};
+export default DateInputStory;
+```
 
-The date is a special component. It actually has 2 important props:
+### DateInputStory Required
 
-- viewValue: The value of the text field which is a string
-- value: The value of the date in momentjs format
+To achieve DateInputStory Required, you need to add this :
 
-This allows you to have control of what happens and to respond to all use cases. If you are an individual, you can use the "viewValue" or "value" property. In any case if "viewValue" is not a valid date in the current language, the value of "value" returned will always be "null".
+```javascript
+classModifier = 'required';
+```
 
-### Supported Languages
+to the **DateInputStory** component
 
-The Date input allows to use various languages. French is the default locale, but you can change it using the `locale` property. You can find the available languages full list on [DateFns's website](https://date-fns.org/v2.0.0-alpha.18/docs/I18n#supported-languages).
+## CustomDateStory
 
-This feature uses the [dynamic import](https://reactjs.org/docs/code-splitting.html#import) in order to import only the locales needed by the user. Be sure that your project is able to manage that with an approriate tool (like Webpack).
+### Installation
 
-### Format
+```shell script
+npm i "@axa-fr/react-toolkit-form-input-date"
+npm i "@axa-fr/react-toolkit-form-core"
+npm install moment
+```
 
-Since Version 2.0, DateInput uses [Date-Fns](https://date-fns.org/) and returns a Javascript Date object. Moment is not required anymore. You can specify the string format for viewValue in the format property. The default format is "dd/MM/YYYY" you can find the list on the [Date-fns](https://date-fns.org/docs/format) Website
+### Import
 
-For more information about style component, you can see the [Form Date Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/form)
+```javascript
+import { CustomDate } from '@axa-fr/react-toolkit-form-input-date';
+import '@axa-fr/react-toolkit-form-input-date/dist/af-datepicker.css';
+import {
+  HelpMessage,
+  Field,
+  FieldError,
+} from '@axa-fr/react-toolkit-form-core';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+import moment from 'moment';
+```
+
+### Use
+
+```javascript
+const CustomDateStory = () => {
+  const dateNow = moment().toDate();
+  return (
+    <form className="af-form" name="myform">
+      <Field id="customDateId" label="Choix d'une date" message="">
+        <div className="col-md-10">
+          <div className="af-datepicker__container">
+            <CustomDate value={dateNow} />
+            <span className="glyphicon glyphicon-calendar" />
+          </div>
+          <HelpMessage message="jj/mm/aaaa" />
+          <FieldError />
+        </div>
+      </Field>
+    </form>
+  );
+};
+export default CustomDateStory;
+```
