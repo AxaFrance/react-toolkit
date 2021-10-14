@@ -1,9 +1,68 @@
-## Collapse
+# `@axa-fr/react-toolkit-collapse`
 
-### Get started
+1. [Installation](#installation)
+2. [Collapse](#collapse)
+3. [Accordion](#accordion)
 
-```sh
-npm i "@axa-fr/react-toolkit-collapse"
+## Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-collapse
 ```
 
-For more information about style component, you can see the [Collapse Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/collapse)
+## Collapse
+
+### Import
+
+```javascript
+import { CollapseCard } from '@axa-fr/react-toolkit-collapse';
+import '@axa-fr/react-toolkit-collapse/dist/af-accordion.css';
+```
+
+### Use
+
+```javascript
+const Collapse = () => (
+  <CollapseCard>
+    <CollapseCard.Header>Your Header Text #1</CollapseCard.Header>
+    <CollapseCard.Body>
+      Your Body Text <b>Your Bold Text</b>
+    </CollapseCard.Body>
+  </CollapseCard>
+);
+export default Collapse;
+```
+
+## Accordion
+
+### Import
+
+```javascript
+import { Accordion, CollapseCard } from '@axa-fr/react-toolkit-collapse';
+import '@axa-fr/react-toolkit-collapse/dist/af-accordion.css';
+```
+
+### Use
+
+```javascript
+const AccordionCollapse = () => (
+  <Accordion
+    collapses={[]}
+    handleToggle={() => console.log('your function')}
+    onlyOne={true}>
+    <CollapseCard>
+      <CollapseCard.Header>CollpaseCard #1 Title</CollapseCard.Header>
+      <CollapseCard.Body>Your Body Text #1</CollapseCard.Body>
+    </CollapseCard>
+    <CollapseCard>
+      <CollapseCard.Header>CollpaseCard #2 Title</CollapseCard.Header>
+      <CollapseCard.Body>Your Body Text #2</CollapseCard.Body>
+    </CollapseCard>
+    <CollapseCard>
+      <CollapseCard.Header>CollpaseCard #3 Title</CollapseCard.Header>
+      <CollapseCard.Body>Your Body Text #3</CollapseCard.Body>
+    </CollapseCard>
+  </Accordion>
+);
+export default AccordionCollapse;
+```
