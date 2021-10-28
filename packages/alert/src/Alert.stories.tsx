@@ -58,7 +58,7 @@ const AlertWithDetailStory = () => (
   </Alert>
 );
 
-const stories = storiesOf('Alert/Alert', module);
+const stories = storiesOf('Components/Alert', module);
 
 stories.addParameters({
   readme: {

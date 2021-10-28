@@ -5,7 +5,7 @@ import Modes from './Modes';
 import Readme from './README.md';
 
 export default {
-  title: 'Table/Pager',
+  title: 'Components/Pager',
   component: Pager,
   parameters: {
     readme: {

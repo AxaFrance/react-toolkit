@@ -6,7 +6,7 @@ import NavBarItem from './NavBarItem';
 import readme from './NavBar.md';
 
 export default {
-  title: 'Layout/Header/NavBar',
+  title: 'Structure/Navigation',
   component: NavBar,
   args: {
     isVisible: true,

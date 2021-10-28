@@ -4,7 +4,7 @@ import MultiSelect from './MultiSelect';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/SelectMulti',
+  title: 'Form elements/SelectMulti',
   component: MultiSelect,
   parameters: {
     readme: {

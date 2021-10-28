@@ -4,7 +4,7 @@ import Title, { TitleProps } from './Title';
 import Readme from '../README.md';
 
 export default {
-  title: 'Title',
+  title: 'Components/Title',
   component: Title,
   parameters: {
     readme: {

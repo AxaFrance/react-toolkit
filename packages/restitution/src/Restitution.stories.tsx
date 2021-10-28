@@ -14,7 +14,7 @@ const withPreventDefaultClick = (next: any) => (e: any) => {
 };
 
 export default {
-  title: 'Restitution',
+  title: 'Components/Restitution',
   component: Restitution,
   parameters: {
     readme: {

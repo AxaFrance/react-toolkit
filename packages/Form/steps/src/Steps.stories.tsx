@@ -7,7 +7,7 @@ import StepBase from './StepBase';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Steps',
+  title: 'Form elements/Steps',
   component: Steps,
   parameters: {
     readme: {
@@ -15,18 +15,23 @@ export default {
     },
     options: {},
   },
+  argTypes: {
+    onClick: { action: 'clicked' },
+    mode: {
+      control: {
+        type: 'select',
+        options: ['link', 'active', 'disabled'],
+      },
+    },
+  },
 } as Meta;
 
-type OldStepsProps = {
+type StepsProps = {
   classModifier: string;
   className: string;
   mode: 'link' | 'active' | 'disabled';
 };
-export const OldStepsStory: Story<OldStepsProps> = ({
-  classModifier,
-  className,
-  mode,
-}) => (
+const Template: Story<StepsProps> = ({ classModifier, className, mode }) => (
   <Steps classModifier={classModifier} className={className}>
     <Step
       id="id1"
@@ -65,57 +70,17 @@ export const OldStepsStory: Story<OldStepsProps> = ({
     <Step id="id5" number="5" title="Final step" mode="disabled" />
   </Steps>
 );
+
+export const OldStepsStory = Template.bind({}) as typeof Template;
 OldStepsStory.storyName = 'Old Design Steps';
 OldStepsStory.args = {
   classModifier: '',
-  className: '',
-};
-OldStepsStory.argTypes = {
-  onClick: { action: 'clicked' },
-  mode: {
-    control: {
-      type: 'select',
-      options: ['link', 'active', 'disabled'],
-    },
-  },
+  className: 'af-steps-new',
 };
 
-export const NewStepsStory = () => (
-  <Steps
-    classModifier={text('classModifier', '')}
-    className={text('className', 'af-steps-new')}>
-    <Step
-      id="id1"
-      href="/etape1"
-      onClick={action('onClick')}
-      mode={select('modes', StepModes, StepModes.link)}
-      title="Previous step"
-    />
-    <Step
-      id="id2"
-      href="/etape2"
-      onClick={action('onClick')}
-      title="Previous step"
-      modes={StepModes.link}
-    />
-    <Step
-      id="id3"
-      number="13"
-      onClick={action('onClick')}
-      title="Current step"
-      mode={StepModes.active}
-    />
-    <StepBase id="idf4" title="Un titre">
-      <a
-        className="af-steps-list-stepLabel"
-        href="#/"
-        onClick={withPreventDefaultClick(action('onClick Action'))}>
-        <span className="af-steps-list-stepNumber">
-          <i className="glyphicon glyphicon-ok" />
-        </span>
-        <span className="af-steps-list-stepTitle">Custom</span>
-      </a>
-    </StepBase>
-    <Step id="id5" title="Final step" mode={StepModes.disabled} />
-  </Steps>
-);
+export const NewStepsStory = Template.bind({}) as typeof Template;
+NewStepsStory.storyName = 'Old Design Steps';
+NewStepsStory.args = {
+  classModifier: '',
+  className: '',
+};

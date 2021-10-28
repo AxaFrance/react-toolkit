@@ -5,7 +5,7 @@ import ToggleButton from '.';
 import readme from './ToggleButton.md';
 
 export default {
-  title: 'Layout/Header/ToggleButton',
+  title: 'Structure/Header/ToggleButton',
   component: ToggleButton,
   parameters: {
     readme: {

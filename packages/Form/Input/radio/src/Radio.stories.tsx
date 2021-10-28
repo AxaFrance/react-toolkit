@@ -5,7 +5,7 @@ import readme from '../README.md';
 import { Option } from '../../../../core/src/InputManager';
 
 export default {
-  title: 'Form/Input/RadioInput/Radio',
+  title: 'Form elements/Radio',
   component: Radio,
   parameters: {
     readme: {

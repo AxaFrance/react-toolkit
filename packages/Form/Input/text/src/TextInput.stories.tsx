@@ -6,7 +6,7 @@ import TextInput from './TextInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/Text',
+  title: 'Form elements/Input Text',
   component: TextInput,
   parameters: {
     readme: {

@@ -99,7 +99,7 @@ const DatePhoneStory = () => (
     </FieldForm>
   </form>
 );
-const stories = storiesOf('Form/Input/DatePhone', module);
+const stories = storiesOf('Form elements/Datepicker', module);
 stories.addParameters({
   readme: {
     sidebar: readme,

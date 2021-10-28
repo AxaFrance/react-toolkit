@@ -6,7 +6,7 @@ import PassInput from './PassInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/Pass',
+  title: 'Form elements/Pass',
   component: PassInput,
   parameters: {
     readme: {

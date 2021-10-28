@@ -6,7 +6,7 @@ import readme from '../README.md';
 
 const messages = ['Field Author is required', 'Field PlaceName is required'];
 
-const stories = storiesOf('Form', module);
+const stories = storiesOf('Form elements/Summary', module);
 
 stories.addParameters({
   readme: {

@@ -6,7 +6,7 @@ import Readme from '../README.md';
 import './help-custom.scss';
 
 export default {
-  title: 'Popover/PopoverBase',
+  title: 'Components low level/Popover',
   component: PopoverBase,
   parameters: {
     readme: {
@@ -63,7 +63,8 @@ const Template: Story<PopoverBaseProps> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({});
+export const Default = Template.bind({}) as typeof Template;
+Default.storyName = 'PopoverBase';
 Default.args = {
   classModifier: 'custom',
   className: '',

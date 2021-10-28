@@ -6,7 +6,7 @@ import readme from '../README.md';
 import './select.scss';
 
 export default {
-  title: 'Form/Input/SelectMulti',
+  title: 'Form elements/Select',
   component: MultiSelectInput,
   parameters: {
     readme: {

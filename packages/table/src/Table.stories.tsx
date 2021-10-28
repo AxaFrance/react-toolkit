@@ -23,7 +23,7 @@ const modifiers = [
 ];
 
 export default {
-  title: 'Table/Table',
+  title: 'Components/Table',
   component: Table,
   parameters: {
     readme: {

@@ -6,7 +6,7 @@ import { Infos } from '../Infos';
 import readme from '../../README.md';
 
 export default {
-  title: 'Layout/Header/Header',
+  title: 'Structure/Header',
   component: Header,
   parameters: {
     readme: {

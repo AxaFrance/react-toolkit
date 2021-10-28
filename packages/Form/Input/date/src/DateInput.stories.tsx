@@ -10,7 +10,7 @@ import CustomDate from './CustomDate';
 import Readme from '../README.md';
 
 export default {
-  title: 'Form/Input/Date Input',
+  title: 'Form elements/Datepicker',
   component: DateInput,
   parameters: {
     readme: {

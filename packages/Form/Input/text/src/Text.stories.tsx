@@ -4,7 +4,7 @@ import Text from './Text';
 import readme from '../README.md';
 
 export default {
-  title: 'Form/Input/Text',
+  title: 'Form elements/Text',
   component: Text,
   parameters: {
     readme: {
