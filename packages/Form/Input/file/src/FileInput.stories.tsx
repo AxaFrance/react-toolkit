@@ -2,11 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import {
-  MessageTypes,
-  HelpMessage,
-  InputConstants,
-} from '@axa-fr/react-toolkit-form-core';
+import { MessageTypes, HelpMessage } from '@axa-fr/react-toolkit-form-core';
 import FileInput from './FileInput';
 import File from './File';
 import FileTable from './FileTable';
@@ -30,14 +26,8 @@ const FileInputStory = () => (
       disabled={boolean('disabled', false)}
       classModifier={text('classModifier', '')}
       className={text('className', '')}
-      classNameContainerLabel={text(
-        'classNameContainerLabel',
-        InputConstants.defaultProps.classNameContainerLabel
-      )}
-      classNameContainerInput={text(
-        'classNameContainerInput',
-        InputConstants.defaultProps.classNameContainerInput
-      )}
+      classNameContainerLabel={text('classNameContainerLabel', 'col-md-2')}
+      classNameContainerInput={text('classNameContainerInput', 'col-md-10')}
     />
   </form>
 );
@@ -60,14 +50,8 @@ const FileInputStoryRequired = () => (
       disabled={boolean('disabled', false)}
       classModifier={text('classModifier', 'required')}
       className={text('className', '')}
-      classNameContainerLabel={text(
-        'classNameContainerLabel',
-        InputConstants.defaultProps.classNameContainerLabel
-      )}
-      classNameContainerInput={text(
-        'classNameContainerInput',
-        InputConstants.defaultProps.classNameContainerInput
-      )}
+      classNameContainerLabel={text('classNameContainerLabel', 'col-md-2')}
+      classNameContainerInput={text('classNameContainerInput', 'col-md-10')}
     />
   </form>
 );
@@ -81,7 +65,6 @@ const FileStory = () => (
         accept={text('accept', 'image/jpeg, image/png, application/*')}
         onChange={action('onChange')}
         multiple={boolean('multiple', false)}
-        isVisible={boolean('isVisible', true)}
         readOnly={boolean('readOnly', false)}
         disabled={boolean('disabled', false)}
         classModifier={text('classModifier', '')}
@@ -95,24 +78,24 @@ const FileStory = () => (
 
 const errors = [
   {
-    id: '000001',
     file: {
       name: 'refused-extension-file.svg',
-      size: '100ko',
+      preview: '',
+      size: 100,
     },
   },
   {
-    id: '000002',
     file: {
       name: 'too-big-file.jpg',
-      size: '100Mo',
+      preview: '',
+      size: 100,
     },
   },
   {
-    id: '000003',
     file: {
       name: 'error-file.jpg',
-      size: '100Mo',
+      preview: '',
+      size: 100,
     },
   },
 ];
@@ -122,7 +105,7 @@ const values = [
     id: '000003',
     file: {
       name: 'error-file.jpg',
-      size: '100Mo',
+      size: 100,
       preview: 'https://via.placeholder.com/150Cx50',
       type: 'image',
     },
@@ -131,7 +114,7 @@ const values = [
     id: '000004',
     file: {
       name: 'fichier.png',
-      size: '100Mo',
+      size: 100,
       preview: 'https://via.placeholder.com/150Cx50',
       type: 'image',
     },
@@ -140,7 +123,8 @@ const values = [
     id: '000005',
     file: {
       name: 'fichier.csv',
-      size: '100ko',
+      preview: 'https://via.placeholder.com/150Cx50',
+      size: 100,
     },
   },
 ];
@@ -154,7 +138,6 @@ const FileWithValuesStory = () => (
         accept={text('accept', 'image/jpeg, image/png, application/*')}
         onChange={action('onChange')}
         multiple={boolean('multiple', false)}
-        isVisible={boolean('isVisible', true)}
         readOnly={boolean('readOnly', false)}
         disabled={boolean('disabled', false)}
         classModifier={text('classModifier', '')}
@@ -184,7 +167,6 @@ const FileWithErrorsStory = () => (
         accept={text('accept', 'image/jpeg, image/png, application/*')}
         onChange={action('onChange')}
         multiple={boolean('multiple', false)}
-        isVisible={boolean('isVisible', true)}
         readOnly={boolean('readOnly', false)}
         disabled={boolean('disabled', false)}
         classModifier={text('classModifier', '')}
