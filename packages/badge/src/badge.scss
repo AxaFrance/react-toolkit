@@ -12,7 +12,7 @@ $types: (
   color: $white;
   border-radius: 16px;
   padding: 0.2rem 0.7rem;
-  line-height: 1.25rem;
+  line-height: 1.2rem;
   @each $type in $types {
     &--#{nth($type, 1)} {
       background-color: nth($type, 2);
