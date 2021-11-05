@@ -1,9 +1,8 @@
 name: Publish Toolkit packages to Npm registry
 
 on:
+  workflow_dispatch:
   push:
-    branches-ignore:
-      - '*'
     tags:
       - '*'
 
