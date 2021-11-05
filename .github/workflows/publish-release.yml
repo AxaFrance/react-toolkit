@@ -2,10 +2,8 @@ name: Publish Toolkit packages to Npm registry
 
 on:
   push:
-    branches-ignore:
-      - '*'
     tags:
-      - 'v*'
+      - '*'
 
 env:
   NODE_VERSION: 16.x
