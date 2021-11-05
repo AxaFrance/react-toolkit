@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-layout-header",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -12,8 +12,8 @@
     "build": "rimraf ./dist && tsc --outDir ./dist"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-action": "2.0.0-alpha.2",
-    "@axa-fr/react-toolkit-core": "2.0.0-alpha.2"
+    "@axa-fr/react-toolkit-action": "2.0.0-alpha.1",
+    "@axa-fr/react-toolkit-core": "2.0.0-alpha.1"
   },
   "license": "MIT",
   "publishConfig": {
