@@ -4,39 +4,40 @@ import CardGroupStateless from './CardGroupStateless';
 
 const defaultClassName = 'af-rccard-group';
 
-type CustomFormEvent = import('@axa-fr/react-toolkit-form-core').CustomFormEvent;
+type CustomFormEvent =
+  import('@axa-fr/react-toolkit-form-core').CustomFormEvent;
 type CheckboxOnChange = Pick<
   ComponentProps<
     typeof import('@axa-fr/react-toolkit-form-input-checkbox').Checkbox
   >,
   'onChange'
 >;
-const customOnChange = ({ onChange, type, values }: Partial<Props>) => (
-  e: CustomFormEvent
-) => {
-  if (type === 'checkbox') {
-    const newValues = values?.slice() || [];
+const customOnChange =
+  ({ onChange, type, values }: Partial<Props>) =>
+  (e: CustomFormEvent) => {
+    if (type === 'checkbox') {
+      const newValues = values?.slice() || [];
 
-    const index = newValues.indexOf(e.value);
-    const checked = index <= -1;
-    if (checked) {
-      newValues.push(e.value);
+      const index = newValues.indexOf(e.value);
+      const checked = index <= -1;
+      if (checked) {
+        newValues.push(e.value);
+      } else {
+        newValues.splice(index, 1);
+      }
+      onChange({
+        values: newValues,
+        target: {
+          value: e.value,
+          checked,
+        },
+        name: e.name,
+        id: e.id,
+      });
     } else {
-      newValues.splice(index, 1);
+      onChange(e);
     }
-    onChange({
-      values: newValues,
-      target: {
-        value: e.value,
-        checked,
-      },
-      name: e.name,
-      id: e.id,
-    });
-  } else {
-    onChange(e);
-  }
-};
+  };
 
 type Props = ComponentProps<typeof CardGroupStateless> &
   Partial<CheckboxOnChange>;

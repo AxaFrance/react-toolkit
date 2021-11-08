@@ -6,15 +6,14 @@ type LanguageSelectionProps = {
   onClick: (action: { path: string }) => void;
 };
 
-const onClickHandler = (
-  onClick: (action: { path: string }) => void,
-  path: string
-) => (e: MouseEvent<HTMLButtonElement>) => {
-  if (onClick) {
-    e.preventDefault();
-    onClick({ path });
-  }
-};
+const onClickHandler =
+  (onClick: (action: { path: string }) => void, path: string) =>
+  (e: MouseEvent<HTMLButtonElement>) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick({ path });
+    }
+  };
 
 const LanguageSelection = ({
   onClick,

@@ -10,14 +10,13 @@ interface Tabs {
   activeIndex?: string;
 }
 
-export const onChangeEvent = (onChange: Function) => (setState: Function) => (
-  e: any
-) => {
-  if (onChange) {
-    onChange(e.id);
-  }
-  setState(e.id);
-};
+export const onChangeEvent =
+  (onChange: Function) => (setState: Function) => (e: any) => {
+    if (onChange) {
+      onChange(e.id);
+    }
+    setState(e.id);
+  };
 
 const TabsCore: React.FunctionComponent<TabsCoreProps> = ({
   activeIndex = DEFAULT_ACTIVE_INDEX,

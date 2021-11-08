@@ -13,3 +13,5 @@ package.json
 
 # react-toolkit-all
 packages/all/component
+
+storybook-static
