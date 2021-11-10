@@ -61,22 +61,21 @@ const Accordion = ({
 
 Accordion.defaultProps = defaultProps;
 
-export const handleToggleState = (
-  collapses: boolean[],
-  { onlyOne, children }: EnhancedProps
-) => (e: HeaderToggleElement): boolean[] => {
-  if (e.isOpen && onlyOne) {
-    if (Array.isArray(children)) {
-      return children.map((_child, index) =>
-        e.index === index ? e.isOpen : false
-      );
+export const handleToggleState =
+  (collapses: boolean[], { onlyOne, children }: EnhancedProps) =>
+  (e: HeaderToggleElement): boolean[] => {
+    if (e.isOpen && onlyOne) {
+      if (Array.isArray(children)) {
+        return children.map((_child, index) =>
+          e.index === index ? e.isOpen : false
+        );
+      }
+      return [e.isOpen];
     }
-    return [e.isOpen];
-  }
-  const newCollapses = [...collapses];
-  newCollapses[e.index] = e.isOpen;
-  return newCollapses;
-};
+    const newCollapses = [...collapses];
+    newCollapses[e.index] = e.isOpen;
+    return newCollapses;
+  };
 
 export type EnhancedProps = Partial<typeof defaultProps> & {
   onlyOne?: boolean;

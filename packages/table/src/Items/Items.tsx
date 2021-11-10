@@ -46,14 +46,8 @@ class Items extends React.PureComponent<ItemsComponentProps> {
   }
 
   render() {
-    const {
-      className,
-      displayLabel,
-      elementsLabel,
-      id,
-      items,
-      numberItems,
-    } = this.props;
+    const { className, displayLabel, elementsLabel, id, items, numberItems } =
+      this.props;
 
     const content = items.map((item) => (
       <option key={item} value={item}>

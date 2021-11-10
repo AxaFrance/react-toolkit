@@ -50,7 +50,9 @@ function compose(
 ): (BaseComponent: React.ComponentType<any>) => React.ComponentType<any>;
 function compose(...fns: any) {
   return fns.reduce(
-    (a: any, b: any) => (...args: any) => a(b(...args)),
+    (a: any, b: any) =>
+      (...args: any) =>
+        a(b(...args)),
     (arg: any) => arg
   );
 }

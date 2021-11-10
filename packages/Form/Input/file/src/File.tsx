@@ -15,28 +15,27 @@ type OnDropOptions = {
   onChange: OnChangeFile;
   id?: string;
 };
-const onDrop = ({ onChange, name, id }: OnDropOptions) => (
-  acceptedFiles: any[],
-  rejectedFiles: any[]
-) => {
-  const values = acceptedFiles.map((file) => ({
-    id: InputManager.createId(),
-    file: {
-      ...file,
-      preview: URL.createObjectURL(file),
-    },
-  }));
-  const errors = rejectedFiles.map((error) => ({
-    id: InputManager.createId(),
-    file: error,
-  }));
-  onChange({
-    values,
-    errors,
-    name,
-    id,
-  });
-};
+const onDrop =
+  ({ onChange, name, id }: OnDropOptions) =>
+  (acceptedFiles: any[], rejectedFiles: any[]) => {
+    const values = acceptedFiles.map((file) => ({
+      id: InputManager.createId(),
+      file: {
+        ...file,
+        preview: URL.createObjectURL(file),
+      },
+    }));
+    const errors = rejectedFiles.map((error) => ({
+      id: InputManager.createId(),
+      file: error,
+    }));
+    onChange({
+      values,
+      errors,
+      name,
+      id,
+    });
+  };
 
 const defaultClassName = 'af-form__file-input';
 type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {

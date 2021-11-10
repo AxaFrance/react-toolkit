@@ -13,13 +13,15 @@ export type CustomFormEvent = BaseCustomFormEvent & {
   value: string;
 };
 
-export const defaultOnChange = (onChange: (event: CustomFormEvent) => void) => (
-  e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-) => {
-  onChange &&
-    onChange({
-      value: e.currentTarget.value,
-      name: e.currentTarget.name,
-      id: e.currentTarget.id,
-    });
-};
+export const defaultOnChange =
+  (onChange: (event: CustomFormEvent) => void) =>
+  (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    onChange &&
+      onChange({
+        value: e.currentTarget.value,
+        name: e.currentTarget.name,
+        id: e.currentTarget.id,
+      });
+  };

@@ -64,17 +64,19 @@ const defaultProps = {
 };
 
 const handlers = {
-  onChange: ({ id, name, onChange }) => (e) => {
-    const viewValue = e.target.value;
-    const value = moment(viewValue);
+  onChange:
+    ({ id, name, onChange }) =>
+    (e) => {
+      const viewValue = e.target.value;
+      const value = moment(viewValue);
 
-    onChange({
-      value,
-      viewValue: value.format('L'),
-      name,
-      id,
-    });
-  },
+      onChange({
+        value,
+        viewValue: value.format('L'),
+        name,
+        id,
+      });
+    },
 };
 
 const EnhancedComponent = withInput(

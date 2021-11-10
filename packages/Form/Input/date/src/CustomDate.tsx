@@ -99,31 +99,31 @@ type OnChangeProps = {
   format: string;
 };
 
-const onChangeDate = ({ id, name, onChange, format }: OnChangeProps) => (
-  date: Date
-) => {
-  const viewValue = date ? dateFormat(date, format) : '';
-  onChange({
-    value: date,
-    viewValue,
-    name,
-    id,
-  });
-};
-
-const onChangeRaw = ({ format, id, name, onChange }: OnChangeProps) => (
-  event: FocusEvent<HTMLInputElement>
-) => {
-  const dateString = event.target.value;
-  if (dateString) {
-    const date = parse(dateString, format, new Date());
+const onChangeDate =
+  ({ id, name, onChange, format }: OnChangeProps) =>
+  (date: Date) => {
+    const viewValue = date ? dateFormat(date, format) : '';
     onChange({
       value: date,
-      viewValue: dateString,
+      viewValue,
       name,
       id,
     });
-  }
-};
+  };
+
+const onChangeRaw =
+  ({ format, id, name, onChange }: OnChangeProps) =>
+  (event: FocusEvent<HTMLInputElement>) => {
+    const dateString = event.target.value;
+    if (dateString) {
+      const date = parse(dateString, format, new Date());
+      onChange({
+        value: date,
+        viewValue: dateString,
+        name,
+        id,
+      });
+    }
+  };
 
 export default CustomDate;
