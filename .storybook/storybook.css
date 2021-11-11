@@ -12,3 +12,7 @@
 .af-form {
   padding-bottom: 5rem;
 }
+
+pre code {
+  color: #ccc;
+}
