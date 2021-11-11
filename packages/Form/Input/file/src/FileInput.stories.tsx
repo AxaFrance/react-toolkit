@@ -1,80 +1,103 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import { MessageTypes, HelpMessage } from '@axa-fr/react-toolkit-form-core';
 import FileInput from './FileInput';
 import File from './File';
 import FileTable from './FileTable';
 import readme from '../README.md';
 
-const FileInputStory = () => (
+export default {
+  title: 'Form elements/File',
+  component: FileInput,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    actions: { argTypesRegex: '^on.*' },
+  },
+  argTypes: {
+    messageType: {
+      control: { type: 'select', options: Object.values(MessageTypes) },
+    },
+  },
+} as Meta;
+
+const TemplateFileInput: Story<ComponentProps<typeof FileInput>> = (args) => (
   <form className="af-form" name="myform">
-    <FileInput
-      label={text('label', 'Image')}
-      name={text('name', 'placeImage')}
-      id={text('id', 'uniqueid')}
-      accept={text('accept', 'image/jpeg, image/png, application/*')}
-      onChange={action('onChange')}
-      helpMessage={text('helpMessage', 'Take a photo af a place')}
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.error)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}
-      multiple={boolean('multiple', true)}
-      isVisible={boolean('isVisible', true)}
-      readOnly={boolean('readOnly', false)}
-      disabled={boolean('disabled', false)}
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}
-      classNameContainerLabel={text('classNameContainerLabel', 'col-md-2')}
-      classNameContainerInput={text('classNameContainerInput', 'col-md-10')}
-    />
+    <FileInput {...args} />
   </form>
 );
 
-const FileInputStoryRequired = () => (
-  <form className="af-form" name="myform">
-    <FileInput
-      label={text('label', 'Image')}
-      name={text('name', 'placeImage')}
-      id={text('id', 'uniqueid')}
-      accept={text('accept', 'image/jpeg, image/png, application/*')}
-      onChange={action('onChange')}
-      helpMessage={text('helpMessage', 'Take a photo af a place')}
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.error)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}
-      multiple={boolean('multiple', true)}
-      isVisible={boolean('isVisible', true)}
-      readOnly={boolean('readOnly', false)}
-      disabled={boolean('disabled', false)}
-      classModifier={text('classModifier', 'required')}
-      className={text('className', '')}
-      classNameContainerLabel={text('classNameContainerLabel', 'col-md-2')}
-      classNameContainerInput={text('classNameContainerInput', 'col-md-10')}
-    />
-  </form>
-);
+export const FileInputStory = TemplateFileInput.bind(
+  {}
+) as typeof TemplateFileInput;
+FileInputStory.storyName = 'FileInput';
+FileInputStory.args = {
+  label: 'Image',
+  name: 'placeImage',
+  id: 'inputuniqueid',
+  accept: 'image/jpeg, image/png, application/*',
+  helpMessage: 'Take a photo af a place',
+  message: '',
+  messageType: MessageTypes.error,
+  forceDisplayMessage: false,
+  multiple: true,
+  isVisible: true,
+  readOnly: false,
+  disabled: false,
+  classModifier: '',
+  className: '',
+  classNameContainerLabel: 'col-md-2',
+  classNameContainerInput: 'col-md-10',
+};
 
-const FileStory = () => (
+export const FileInputStoryRequired = TemplateFileInput.bind(
+  {}
+) as typeof TemplateFileInput;
+FileInputStoryRequired.storyName = 'FileInput required';
+FileInputStoryRequired.args = {
+  label: 'Image',
+  name: 'placeImage',
+  id: 'inputuniqueid',
+  accept: 'image/jpeg, image/png, application/*',
+  helpMessage: 'Take a photo af a place',
+  message: '',
+  messageType: MessageTypes.error,
+  forceDisplayMessage: false,
+  multiple: true,
+  isVisible: true,
+  readOnly: false,
+  disabled: false,
+  classModifier: 'required',
+  className: '',
+  classNameContainerLabel: 'col-md-2',
+  classNameContainerInput: 'col-md-10',
+};
+
+const TemplateFile: Story<ComponentProps<typeof File>> = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File
-        id={text('id', 'uniqueid')}
-        name={text('name', 'placeImage')}
-        accept={text('accept', 'image/jpeg, image/png, application/*')}
-        onChange={action('onChange')}
-        multiple={boolean('multiple', false)}
-        readOnly={boolean('readOnly', false)}
-        disabled={boolean('disabled', false)}
-        classModifier={text('classModifier', '')}
-        className={text('className', '')}
-        label={text('label', 'Parcourir')}
-        icon={text('icon', 'open')}
-      />
+      <File {...args} />
     </div>
   </form>
 );
+
+export const FileStory = TemplateFile.bind({}) as typeof TemplateFile;
+FileStory.storyName = 'File';
+FileStory.args = {
+  label: 'Image',
+  name: 'placeImage',
+  id: 'inputuniqueid',
+  accept: 'image/jpeg, image/png, application/*',
+  multiple: true,
+  isVisible: true,
+  readOnly: false,
+  disabled: false,
+  classModifier: '',
+  className: '',
+  icon: 'open',
+};
 
 const errors = [
   {
@@ -129,75 +152,68 @@ const values = [
   },
 ];
 
-const FileWithValuesStory = () => (
+const TemplateFileTable: Story<ComponentProps<typeof File>> = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File
-        id={text('id', 'uniqueid')}
-        name={text('name', 'placeImage')}
-        accept={text('accept', 'image/jpeg, image/png, application/*')}
-        onChange={action('onChange')}
-        multiple={boolean('multiple', false)}
-        readOnly={boolean('readOnly', false)}
-        disabled={boolean('disabled', false)}
-        classModifier={text('classModifier', '')}
-        className={text('className', '')}
-        label={text('label', 'Parcourir')}
-        icon={text('icon', 'open')}
-      />
-      <HelpMessage
-        message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
-      />
+      <File {...args} />
+      <HelpMessage message="Enter the place name, ex : Webcenter" />
       <FileTable
         errors={[]}
         values={values}
         onClick={action('onClick')}
-        classModifier={text('classModifier', '')}
+        classModifier=""
       />
     </div>
   </form>
 );
 
-const FileWithErrorsStory = () => (
+export const FileWithValuesStory = TemplateFileTable.bind(
+  {}
+) as typeof TemplateFileTable;
+FileWithValuesStory.storyName = 'File with values';
+FileWithValuesStory.args = {
+  label: 'Parcourir',
+  name: 'placeImage',
+  id: 'inputuniqueid',
+  accept: 'image/jpeg, image/png, application/*',
+  multiple: false,
+  isVisible: true,
+  readOnly: false,
+  disabled: false,
+  classModifier: '',
+  className: '',
+  icon: 'open',
+};
+
+const TemplateFileTableErrors: Story<ComponentProps<typeof File>> = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File
-        id={text('id', 'uniqueid')}
-        name={text('name', 'placeImage')}
-        accept={text('accept', 'image/jpeg, image/png, application/*')}
-        onChange={action('onChange')}
-        multiple={boolean('multiple', false)}
-        readOnly={boolean('readOnly', false)}
-        disabled={boolean('disabled', false)}
-        classModifier={text('classModifier', '')}
-        className={text('className', '')}
-        label={text('label', 'Parcourir')}
-        icon={text('icon', 'open')}
-      />
-      <HelpMessage
-        message={text('helpMessage', 'Enter the place name, ex : Webcenter')}
-      />
+      <File {...args} />
+      <HelpMessage message="Enter the place name, ex : Webcenter" />
       <FileTable
         errors={errors}
         values={values}
         onClick={action('onClick')}
-        classModifier={text('classModifier', '')}
+        classModifier=""
       />
     </div>
   </form>
 );
 
-const stories = storiesOf('Form elements/File', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
-  },
-  options: {},
-});
-
-stories.add('File', FileStory);
-stories.add('File with values', FileWithValuesStory);
-stories.add('File with errors', FileWithErrorsStory);
-stories.add('FileInput', FileInputStory);
-stories.add('FileInput Required', FileInputStoryRequired);
+export const FileWithErrorsStory = TemplateFileTableErrors.bind(
+  {}
+) as typeof TemplateFileTableErrors;
+FileWithErrorsStory.storyName = 'File with errors';
+FileWithErrorsStory.args = {
+  label: 'Parcourir',
+  name: 'placeImage',
+  id: 'inputuniqueid',
+  accept: 'image/jpeg, image/png, application/*',
+  multiple: false,
+  isVisible: true,
+  readOnly: false,
+  disabled: false,
+  classModifier: '',
+  className: '',
+  icon: 'open',
+};
