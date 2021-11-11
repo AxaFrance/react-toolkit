@@ -1,7 +1,5 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
-import moment from 'moment';
 import { storiesOf } from '@storybook/react';
 import {
   FieldError,
@@ -14,32 +12,34 @@ import DatePhone from './DatePhone';
 import DatePhoneInput from './DatePhoneInput';
 import readme from '../README.md';
 
+const commonProps = {
+  name: 'placeName',
+  id: 'uniqueid',
+  locale: 'fr-fr',
+  value: new Date('02/25/2010'),
+  onChange: action('onChange'),
+  readOnly: false,
+  disabled: false,
+  isVisible: true,
+  className: '',
+  classModifier: '',
+};
+
 const DatePhoneInputStory = () => (
   <form className="af-form" name="myform">
     <DatePhoneInput
-      label={text('label', 'Place name')}
-      name={text('name', 'placeName')}
-      id={text('id', 'uniqueid')}
-      locale={text('locale', 'fr-fr')}
-      value={moment('11/26/2017', 'MM/DD/YYYY')}
-      onChange={action('onChange')}
-      helpMessage={text('helpMessage', 'jj/mm/aaaa')}
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.success)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}
-      readOnly={boolean('readOnly', false)}
-      disabled={boolean('disabled', false)}
-      isVisible={boolean('isVisible', true)}
-      classModifier={text('classModifier', '')}
-      className={text('className', '')}
-      classNameContainerLabel={text(
-        'classNameContainerLabel',
+      {...commonProps}
+      label="Place name"
+      helpMessage="jj/mm/aaaa"
+      message=""
+      messageType={MessageTypes.success}
+      forceDisplayMessage={false}
+      classNameContainerLabel={
         InputConstants.defaultProps.classNameContainerLabel
-      )}
-      classNameContainerInput={text(
-        'classNameContainerInput',
+      }
+      classNameContainerInput={
         InputConstants.defaultProps.classNameContainerInput
-      )}
+      }
     />
   </form>
 );
@@ -47,29 +47,19 @@ const DatePhoneInputStory = () => (
 const DatePhoneInputStoryRequired = () => (
   <form className="af-form" name="myform">
     <DatePhoneInput
-      label={text('label', 'Place name')}
-      name={text('name', 'placeName')}
-      id={text('id', 'uniqueid')}
-      locale={text('locale', 'fr-fr')}
-      value={moment('11/26/2017', 'MM/DD/YYYY')}
-      onChange={action('onChange')}
-      helpMessage={text('helpMessage', 'jj/mm/aaaa')}
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.success)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}
-      readOnly={boolean('readOnly', false)}
-      disabled={boolean('disabled', false)}
-      isVisible={boolean('isVisible', true)}
-      classModifier={text('classModifier', 'required')}
-      className={text('className', '')}
-      classNameContainerLabel={text(
-        'classNameContainerLabel',
+      {...commonProps}
+      label="Place name"
+      helpMessage="jj/mm/aaaa"
+      message=""
+      messageType={MessageTypes.success}
+      forceDisplayMessage={false}
+      classModifier="required"
+      classNameContainerLabel={
         InputConstants.defaultProps.classNameContainerLabel
-      )}
-      classNameContainerInput={text(
-        'classNameContainerInput',
+      }
+      classNameContainerInput={
         InputConstants.defaultProps.classNameContainerInput
-      )}
+      }
     />
   </form>
 );
@@ -77,29 +67,19 @@ const DatePhoneInputStoryRequired = () => (
 const DatePhoneStory = () => (
   <form className="af-form" name="myform">
     <FieldForm
-      message={text('message', '')}
-      messageType={select('messageType', MessageTypes, MessageTypes.error)}
-      forceDisplayMessage={boolean('forceDisplayMessage', false)}>
+      message=""
+      messageType={MessageTypes.error}
+      forceDisplayMessage={false}>
       <div className="col-md-10">
-        <DatePhone
-          name={text('name', 'date')}
-          onChange={action('onChange')}
-          id={text('id', 'uniqueid')}
-          value={moment('11/26/2017', 'MM/DD/YYYY')}
-          placeholder={text('placeholder', '12/08/2017')}
-          readOnly={boolean('readOnly', false)}
-          disabled={boolean('disabled', false)}
-          isVisible={boolean('isVisible', true)}
-          classModifier={text('classModifier', '')}
-          className={text('className', '')}
-        />
-        <HelpMessage message={text('helpMessage', 'jj/mm/aaaa')} />
+        <DatePhone {...commonProps} name="date" placeholder="12/08/2017" />
+        <HelpMessage message="jj/mm/aaaa" />
         <FieldError />
       </div>
     </FieldForm>
   </form>
 );
-const stories = storiesOf('Form elements/Datepicker', module);
+
+const stories = storiesOf('Form elements/Datephone', module);
 stories.addParameters({
   readme: {
     sidebar: readme,
