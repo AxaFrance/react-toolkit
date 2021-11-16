@@ -57,22 +57,8 @@ export const FileInputStoryRequired = TemplateFileInput.bind(
 ) as typeof TemplateFileInput;
 FileInputStoryRequired.storyName = 'FileInput required';
 FileInputStoryRequired.args = {
-  label: 'Image',
-  name: 'placeImage',
-  id: 'inputuniqueid',
-  accept: 'image/jpeg, image/png, application/*',
-  helpMessage: 'Take a photo af a place',
-  message: '',
-  messageType: MessageTypes.error,
-  forceDisplayMessage: false,
-  multiple: true,
-  isVisible: true,
-  readOnly: false,
-  disabled: false,
+  ...FileInputStory.args,
   classModifier: 'required',
-  className: '',
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
 };
 
 const TemplateFile: Story<ComponentProps<typeof File>> = (args) => (
