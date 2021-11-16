@@ -25,3 +25,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: c1bdcd65f3ab
+          exitOnceUploaded: true
