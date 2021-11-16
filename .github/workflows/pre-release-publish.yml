@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
         with:
@@ -22,6 +24,11 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run check
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: c1bdcd65f3ab
       - run: npx lerna version prerelease --exact --force-publish --no-push --amend --yes
       - name: Publish pre-release packages to npm
         run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
