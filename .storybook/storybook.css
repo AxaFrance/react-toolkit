@@ -13,6 +13,8 @@
   padding-bottom: 5rem;
 }
 
-pre code {
-  color: #ccc;
+code[class*='language-'],
+pre[class*='language-'] {
+  text-shadow: none !important;
+  color: lightgray !important;
 }
