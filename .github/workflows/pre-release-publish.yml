@@ -1,0 +1,41 @@
+name: Publish pre-release version to npm registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+env:
+  NODE_VERSION: 16.x
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
+      - name: Use Node.js specific version
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run check
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: c1bdcd65f3ab
+          exitOnceUploaded: true
+      - run: npx lerna version prerelease --exact --force-publish --no-push --amend --yes
+      - name: Publish pre-release packages to npm
+        run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Push pre-release commit
+        run: git push -f
+      - name: Push last created tag
+        run: git push $(git tag --sort=creatordate | tail -n 1)
