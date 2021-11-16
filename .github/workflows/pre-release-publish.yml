@@ -30,7 +30,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: c1bdcd65f3ab
           exitOnceUploaded: true
-      - run: npx lerna version prerelease --exact --force-publish --no-push --amend --yes
+      - run: |
+          git config user.name "Build-CI"
+          git config user.email build-ci@axa.fr
+      - name: Create new pre release
+        run: npx lerna version prerelease --exact --force-publish --no-push --amend --yes
       - name: Publish pre-release packages to npm
         run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
