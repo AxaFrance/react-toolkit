@@ -1,56 +1,38 @@
 name: Publish Toolkit packages to Npm registry
 
 on:
-  workflow_dispatch:
   push:
     tags:
-      - '*'
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   NODE_VERSION: 16.x
+  TOOLKIT_VERSION: ${{ GITHUB_REF_NAME }}
 
 jobs:
   publish:
     environment:
       name: Release
     runs-on: ubuntu-latest
-    outputs:
-      isPreRelease: ${{ steps.release_var.outputs.isPreVersion }}
-      releaseVersion: ${{ steps.release_var.outputs.version}}
     steps:
-      - name: Set release version variable
-        id: release_var
-        run: |
-          version=${GITHUB_REF#refs/tags/v}
-          echo "::set-output name=version::$version"
-          isPreVersion=$([[ "$version" != "${version#*"-"}" ]] && echo true || echo false)
-          echo "it's a pre release: $isPreVersion"
-          echo "::set-output name=isPreVersion::$isPreVersion"
       - uses: actions/checkout@v2
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
       - run: npm ci
       - run: npm run check
       - run: npm test -- --coverage
       - name: Build storybook
-        if: ${{ steps.release_var.outputs.isPreVersion == 'false' }}
         run: npm run storybook:build
       - name: Upload Storybook into workflow artifact
-        if: ${{ steps.release_var.outputs.isPreVersion == 'false' }}
         uses: actions/upload-artifact@v2
         with:
           name: storybook
           path: storybook-static
-      - name: Publish pre-release packages to npm
-        if: ${{ steps.release_var.outputs.isPreVersion == 'true' }}
-        run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish release packages to npm
-        if: ${{ steps.release_var.outputs.isPreVersion == 'false'}}
         run: npx lerna publish from-git --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -58,9 +40,6 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     needs: publish
-    if: ${{ needs.publish.outputs.isPreRelease == 'false'}}
-    env:
-      RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
     defaults:
       run:
         working-directory: gh-pages/react-toolkit
@@ -85,29 +64,27 @@ jobs:
           path: gh-pages/react-toolkit/latest
       - name: Add version json file into latest
         run: |
-          echo {\"version\":\"$RELEASE_VERSION\"} >> ./latest/version.json
+          echo {\"version\":\"${TOOLKIT_VERSION#v}\"} >> ./latest/version.json
       - name: Commit changes
         run: |
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
           git add .
-          git commit –message "doc(toolkit): publish storybook v$RELEASE_VERSION"
+          git commit –message "doc(toolkit): publish storybook $TOOLKIT_VERSION"
           git push
 
   release-gh:
     runs-on: ubuntu-latest
-    needs: [publish, deploy-storybook]
-    if: ${{ needs.publish.outputs.isPreRelease == 'false'}}
+    needs: deploy-storybook
     env:
       PREVIOUS_VERSION: ${{ needs.deploy-storybook.outputs.previousVersion }}
-      RELEASE_VERSION: ${{ needs.publish.outputs.releaseVersion }}
     steps:
       - uses: actions/checkout@v2
       - name: Create changelog
         id: create-changelog
         run: |
           git fetch --all --tags
-          changelog=$(git log v$PREVIOUS_VERSION...v$RELEASE_VERSION --pretty=format:'- %s _by %aN_')
+          changelog=$(git log v$PREVIOUS_VERSION...$TOOLKIT_VERSION --pretty=format:'- %s _by %a')
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A'}"
           changelog="${changelog//$'\r'/'%0D'}"
@@ -118,7 +95,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ env.RELEASE_VERSION }}
+          tag_name: ${{ env.TOOLKIT_VERSION }}
           release_name: Release ${{ env.RELEASE_VERSION }}
           body: |
             ${{ steps.create-changelog.outputs.CHANGELOG }}
