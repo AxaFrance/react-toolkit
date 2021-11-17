@@ -1,9 +1,8 @@
 name: Axa React Toolkit Sonar Analysis
 
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: '10 12 * * SAT'
 
 jobs:
   build:
