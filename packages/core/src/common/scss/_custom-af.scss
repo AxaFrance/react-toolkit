@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import './_custom-af-colorsvariables';
 
 $gray-lighter: #eceeef !default;
@@ -56,7 +58,7 @@ $universes: (
 }
 
 @function rem($size) {
-  $remSize: $size / 16px;
+  $remSize: math.div($size, 16px);
   @return #{$remSize}rem;
 }
 

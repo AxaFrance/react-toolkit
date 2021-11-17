@@ -90,6 +90,7 @@
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2",
+    "sass": "^1.43.4",
     "sass-loader": "^10.0.5",
     "storybook-readme": "^5.0.9",
     "ts-jest": "^26.4.3",
@@ -99,8 +100,7 @@
   "dependencies": {
     "autoprefixer": "^10.0.1",
     "clean-css": "^4.2.3",
-    "find": "^0.3.0",
-    "sass": "^1.29.0"
+    "find": "^0.3.0"
   },
   "engines": {
     "npm": ">=7.0.0"
