@@ -1,8 +1,8 @@
-import React from 'react';
-import { number, select, text } from '@storybook/addon-knobs';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
 import Table from './Table';
 import Paging from './Paging/Paging';
-import Readme from '../README.md';
+import readme from '../README.md';
 
 const univers = {
   sante: 'sante',
@@ -27,16 +27,24 @@ export default {
   component: Table,
   parameters: {
     readme: {
-      sidebar: Readme,
+      sidebar: readme,
     },
     options: {},
   },
-};
+  argTypes: {
+    classModifier: {
+      control: {
+        type: 'select',
+        options: modifiers,
+      },
+      defaultValue: univers.axa,
+    },
+  },
+} as Meta;
 
-export const Simple = () => (
-  <Table
-    classModifier={select('classModifier', modifiers, univers.axa)}
-    className={text('className', 'af-table')}>
+type TableProps = ComponentProps<typeof Table>;
+const Template: Story<TableProps> = (args) => (
+  <Table {...args}>
     <Table.Header>
       <Table.Tr>
         <Table.Th colSpan={3}>
@@ -79,27 +87,23 @@ export const Simple = () => (
   </Table>
 );
 
-export const Complex = () => (
+export const TableStory: Story<TableProps> = Template.bind({});
+TableStory.storyName = 'Simple';
+
+type TableWithPagingProps = ComponentProps<typeof Table>;
+const TemplateWithPaging: Story<TableProps> = (args) => (
   <>
-    <Table
-      classModifier={select('classModifier', modifiers, univers.axa)}
-      className={text('className', 'af-table')}>
+    <Table {...args}>
       <Table.Header>
         <Table.Tr>
-          <Table.Th>
-            <span className="af-table-th-content">Some text</span>
-          </Table.Th>
-          <Table.Th>
-            <span className="af-table-th-content">Some text</span>
-          </Table.Th>
-          <Table.Th>
+          <Table.Th colSpan={3}>
             <span className="af-table-th-content">Some text</span>
           </Table.Th>
         </Table.Tr>
       </Table.Header>
       <Table.Body>
         <Table.Tr>
-          <Table.Td>
+          <Table.Td rowSpan={2}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
           <Table.Td>
@@ -110,9 +114,6 @@ export const Complex = () => (
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
-          <Table.Td>
-            <span className="af-table-body-content">Some text</span>
-          </Table.Td>
           <Table.Td>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
@@ -133,10 +134,10 @@ export const Complex = () => (
         </Table.Tr>
       </Table.Body>
     </Table>
-    <Paging
-      numberItems={number('numberItems', 20)}
-      numberPages={number('numberPages', 23)}
-      currentPage={number('currentPage', 5)}
-    />
+    <Paging numberItems={20} numberPages={23} currentPage={5} />
   </>
 );
+
+export const TableWithPagingStory: Story<TableWithPagingProps> =
+  TemplateWithPaging.bind({});
+TableWithPagingStory.storyName = 'Table with Paging';

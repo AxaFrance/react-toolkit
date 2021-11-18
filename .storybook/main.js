@@ -49,8 +49,8 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-essentials',
+    '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    '@storybook/addon-knobs',
     'storybook-readme',
   ],
   webpackFinal: async (config) => {

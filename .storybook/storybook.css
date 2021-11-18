@@ -12,3 +12,9 @@
 .af-form {
   padding-bottom: 5rem;
 }
+
+code[class*='language-'],
+pre[class*='language-'] {
+  text-shadow: none !important;
+  color: lightgray !important;
+}
