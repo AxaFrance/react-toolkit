@@ -2,7 +2,7 @@ name: Compatibility npm on multi OS & Node version
 
 on:
   schedule:
-    - cron: '* * * 1-12 *'
+    - cron: '0 0 * * SUN'
   push:
     branches:
       - master

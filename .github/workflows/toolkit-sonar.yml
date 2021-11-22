@@ -2,7 +2,7 @@ name: Axa React Toolkit Sonar Analysis
 
 on:
   schedule:
-    - cron: '10 12 * * SAT'
+    - cron: '0 0 * * SAT'
 
 jobs:
   build:
