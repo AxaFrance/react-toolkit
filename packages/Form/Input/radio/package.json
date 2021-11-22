@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-radio",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -12,11 +12,11 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "2.0.0-alpha.2",
-    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.2"
+    "@axa-fr/react-toolkit-core": "2.0.0-alpha.3",
+    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.3"
   },
   "devDependencies": {
-    "@axa-fr/react-toolkit-help": "2.0.0-alpha.2"
+    "@axa-fr/react-toolkit-help": "2.0.0-alpha.3"
   },
   "license": "MIT",
   "publishConfig": {
