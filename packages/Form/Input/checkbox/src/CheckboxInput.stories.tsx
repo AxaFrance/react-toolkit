@@ -1,12 +1,6 @@
 import React, { ComponentProps, PropsWithChildren } from 'react';
-import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Meta, Story } from '@storybook/react';
-import {
-  MessageTypes,
-  HelpMessage,
-  FieldError,
-} from '@axa-fr/react-toolkit-form-core';
+import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import CheckboxInput from './CheckboxInput';
 import CheckboxItem from './CheckboxItem';
 import CheckboxModes from './CheckboxModes';

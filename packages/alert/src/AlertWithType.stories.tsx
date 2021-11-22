@@ -1,68 +1,71 @@
-import React from 'react';
-import { text, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import React, { ComponentProps } from 'react';
+import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import AlertWithType from './AlertWithType';
 import readme from '../README.md';
 
-const LABELS = {
-  listClass: ['success', 'info', 'danger', 'error'],
+const MODIFIERS = ['success', 'info', 'danger', 'error'];
+
+const story = {
+  title: 'Components low level/Alert/AlertWithType',
+  component: AlertWithType,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    options: {},
+  },
+  args: {},
+  argTypes: {
+    type: {
+      control: { type: 'select', options: MODIFIERS },
+    },
+  },
+};
+export default story;
+
+type AlertWithTypeProps = ComponentProps<typeof AlertWithType>;
+const Template: Story<AlertWithTypeProps> = (args) => (
+  <AlertWithType {...args} />
+);
+
+export const AlertWithTypeStory: Story<AlertWithTypeProps> = Template.bind({});
+AlertWithTypeStory.storyName = 'Default';
+AlertWithTypeStory.args = {
+  type: 'danger',
+  title: 'Attention: des informations sont manquantes',
 };
 
-const KNOBS_LABELS = {
-  classModifier: 'classModifier',
-  title: 'label',
-  type: 'type',
+export const AlertWithTypeInfoStory: Story<AlertWithTypeProps> = Template.bind(
+  {}
+);
+AlertWithTypeInfoStory.storyName = 'Alert Info';
+AlertWithTypeInfoStory.args = {
+  type: 'info',
+  title: 'Info: vous pouvez également contacter un conseiller par téléphone',
 };
 
-const AlertWithTypeStory = () => (
-  <AlertWithType
-    type={select(KNOBS_LABELS.type, LABELS.listClass, LABELS.listClass[2])}
-    title={text('title', 'Attention: des informations sont manquantes')}
-  />
-);
+export const AlertWithTypeWithCloseStory: Story<AlertWithTypeProps> =
+  Template.bind({});
+AlertWithTypeWithCloseStory.storyName = 'Alert with close';
+AlertWithTypeWithCloseStory.args = {
+  type: 'success',
+  title: 'Succès: votre demande a bien été enregistrée.',
+  onClose: action('onClose'),
+};
 
-const AlertWithTypeInfoStory = () => (
-  <AlertWithType
-    type={select(KNOBS_LABELS.type, LABELS.listClass, LABELS.listClass[1])}
-    title={text(
-      'title',
-      'Info: vous pouvez également contacter un conseiller par téléphone'
-    )}
-  />
-);
-
-const AlertWithTypeWithCloseStory = () => (
-  <AlertWithType
-    type={select(KNOBS_LABELS.type, LABELS.listClass, LABELS.listClass[0])}
-    title={text('title', 'Succès: votre demande a bien été enregistrée.')}
-    onClose={action('onClose')}
-  />
-);
-
-const AlertWithTypeWithDetailStory = () => (
-  <AlertWithType
-    type={select(KNOBS_LABELS.type, LABELS.listClass, LABELS.listClass[3])}
-    title={text('title', 'Erreur dans les champs suivants :')}>
+export const AlertWithTypeWithDetailStory: Story<AlertWithTypeProps> =
+  Template.bind({});
+AlertWithTypeWithDetailStory.storyName = 'Alert with details';
+AlertWithTypeWithDetailStory.args = {
+  type: 'error',
+  title: 'Erreur dans les champs suivants :',
+  children: (
     <ul>
       <li>Le nom est obligatoire</li>
       <li>Le prénom est obligatoire</li>
       <li>L'email est obligatoire</li>
       <li>Le format de date est invalide</li>
     </ul>
-  </AlertWithType>
-);
-
-const stories = storiesOf('Components low level/Alert/AlertWithType', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
-  },
-  options: {},
-});
-
-stories.add('Default', AlertWithTypeStory);
-stories.add('Info', AlertWithTypeInfoStory);
-stories.add('With close button', AlertWithTypeWithCloseStory);
-stories.add('With child and custom icon', AlertWithTypeWithDetailStory);
+  ),
+};

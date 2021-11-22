@@ -1,30 +1,42 @@
-import React from 'react';
-import { text, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
 import Loader from './Loader';
 import LoaderModes from './LoaderModes';
 import readme from '../README.md';
 
-const stories = storiesOf('Components/Loader', module);
-
-stories.addParameters({
-  readme: {
-    sidebar: readme,
+export default {
+  title: 'Components/Loader',
+  component: Loader,
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+    options: {},
   },
-  options: {},
-});
+  argTypes: {
+    mode: {
+      control: {
+        type: 'select',
+        options: LoaderModes,
+      },
+      defaultValue: LoaderModes.get,
+    },
+  },
+} as Meta;
 
-const LoaderStory = () => (
-  <Loader
-    mode={select('mode', LoaderModes, LoaderModes.get)}
-    text={text('text', '')}
-    classModifier={text('classModifier', '')}
-    className={text('className', '')}>
+type LoaderProps = ComponentProps<typeof Loader>;
+const Template: Story<LoaderProps> = (args) => <Loader {...args} />;
+
+export const LoaderStory: Story<LoaderProps> = Template.bind({});
+LoaderStory.storyName = 'Default';
+LoaderStory.args = {
+  text: '',
+  classModifier: '',
+  className: '',
+  children: (
     <div>
       <h1>Title Child</h1>
       <span>Here your child component</span>
     </div>
-  </Loader>
-);
-
-stories.add('Default', LoaderStory);
+  ),
+};
