@@ -11,6 +11,7 @@ env:
 
 jobs:
   publish:
+    if: github.repository_owner == 'AxaGuilDEv'
     environment:
       name: Release
     runs-on: ubuntu-latest

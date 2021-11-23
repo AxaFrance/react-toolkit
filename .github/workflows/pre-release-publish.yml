@@ -12,10 +12,12 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'AxaGuilDEv'
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history
+          token: ${{ secrets.PUSH_PAT }}
       - name: Use Node.js specific version
         uses: actions/setup-node@v2
         with:
