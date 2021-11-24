@@ -2,10 +2,11 @@
   "name": "@axa-fr/react-toolkit-all",
   "version": "2.0.0-alpha.4",
   "main": "component/index.js",
-  "jsnext:main": "src/index.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "private": false,
   "scripts": {
-    "build": "rimraf ./component && tsc --outDir ./component"
+    "build": "rimraf ./component rimraf ./esm && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",

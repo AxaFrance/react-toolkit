@@ -1,4 +1,7 @@
 {
   "extends": "../../../tsconfig.json",
-  "include": ["./src/index.ts", "../../../globals.d.ts"]
+  "compilerOptions": {
+    "outDir": "dist/esm"
+  },
+  "include": ["./src/index.ts", "./globals.d.ts"]
 }
