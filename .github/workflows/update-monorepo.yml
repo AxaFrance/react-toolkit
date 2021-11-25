@@ -1,0 +1,35 @@
+name: Update packages from monorepo into root package-lock
+
+on:
+  workflow_run:
+    workflows:
+      [
+        'Publish pre-release version to npm registry',
+        'Publish Toolkit packages to Npm registry',
+      ]
+    branches: [master]
+    types:
+      - completed
+
+env:
+  NODE_VERSION: 16.x
+
+jobs:
+  updateDep:
+    if: github.repository_owner == 'AxaGuilDEv'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PUSH_PAT }}
+      - name: Use Node.js specific version
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - run: npm update --force
+      - run: |
+          git add package-lock.json
+          git commit --amend --no-edit
+          git push -f --no-verify
