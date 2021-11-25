@@ -16,7 +16,7 @@ env:
 
 jobs:
   updateDep:
-    if: github.repository_owner == 'AxaGuilDEv'
+    if: github.repository_owner == 'AxaGuilDEv' && github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +30,8 @@ jobs:
           cache: 'npm'
       - run: npm update --force
       - run: |
+          git config --global user.email "build.ci@axa.fr"
+          git config --global user.name "Build CI"
           git add package-lock.json
           git commit --amend --no-edit
           git push -f --no-verify
