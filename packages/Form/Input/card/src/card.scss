@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
 .af-rccard-group {
@@ -229,7 +231,7 @@ $nb-card-max: 5;
 
 @for $i from 1 through $nb-card-max {
   .af-rccard__#{$i} .af-rccard {
-    flex: 0 0 percentage(1 / $i);
-    width: percentage(1 / $i);
+    flex: 0 0 percentage(math.div(1, $i));
+    width: percentage(math.div(1, $i));
   }
 }
