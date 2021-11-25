@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "postinstall": "lerna run build && npm run style",
+    "postversion": "npm update --force && git add package-lock.json && git commit --amend --no-edit",
     "style": "node ./scripts/style.js",
     "storybook": "start-storybook -p 9009 -s storybook-public",
     "storybook:build": "build-storybook -s storybook-public -c .storybook -o storybook-static && npm run toolkit:build",
