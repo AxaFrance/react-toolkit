@@ -16,7 +16,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history for Chromatic
-          token: ${{ secrets.PUSH_PAT }}
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
