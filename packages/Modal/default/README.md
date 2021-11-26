@@ -32,7 +32,7 @@ const CustomHeaderStory = () => (
     }}>
     <Modal.HeaderBase id="headerId">
       <p>
-        Ici je controle completement
+        Ici je contrôle complètement
         <b>le contenu</b>
       </p>
     </Modal.HeaderBase>
