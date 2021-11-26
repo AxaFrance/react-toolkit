@@ -31,6 +31,6 @@ jobs:
           git push
           git push --tags origin
       - name: Publish pre-release packages to npm
-        run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+        run: npx lerna publish from-package --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
