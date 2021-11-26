@@ -1,8 +1,8 @@
 import React, { ComponentProps } from 'react';
+import type { Option } from '@axa-fr/react-toolkit-core';
 import RadioItem from './RadioItem';
 import RadioModes from './RadioModes';
 
-type Option = import('@axa-fr/react-toolkit-core/dist/InputManager').Option;
 interface RadioProps
   extends Omit<ComponentProps<typeof RadioItem>, 'id' | 'label'> {
   className?: string;
