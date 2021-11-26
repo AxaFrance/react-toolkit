@@ -26,7 +26,10 @@ jobs:
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
       - name: Create new pre release
-        run: npx lerna version prerelease --exact --force-publish --yes
+        run: npx lerna version prerelease --exact --force-publish --yes --no-push
+      - run: |
+          git push
+          git push --tags origin
       - name: Publish pre-release packages to npm
         run: npx lerna publish from-git --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
