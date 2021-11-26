@@ -11,6 +11,6 @@
     "lib": ["es2016", "dom"],
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }
