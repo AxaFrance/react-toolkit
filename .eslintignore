@@ -9,6 +9,7 @@ babel.config.json
 jest.config.json
 lerna.json
 tsconfig.json
+tsconfig-base.json
 tsconfig-cjs.json
 package.json
 
