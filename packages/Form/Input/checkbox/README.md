@@ -333,7 +333,7 @@ let margin = {
 const CheckboxInputToggle = () => (
   <form className="af-form" name="myform">
     <label className="af-form__group-label" style={margin}>
-      Do you accept CGU ?
+      foobar
     </label>
     <CheckboxItem
       id="uniqueid"
