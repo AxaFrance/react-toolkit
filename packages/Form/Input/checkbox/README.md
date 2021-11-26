@@ -155,7 +155,7 @@ export default CheckboxInputClassic;
 
 ### CheckboxInputRequired
 
-To achieve CheckboxInputRequired, you need to add this :
+To achieve CheckboxInputRequired, you need to add this:
 
 ```javascript
 classModifier = 'required';
