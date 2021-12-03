@@ -54,7 +54,11 @@ TextInputStory.args = {
   label: 'Place name',
   name: 'placeName',
   value: '',
-  helpMessage: 'Enter the place name, ex : Webcenter',
+  helpMessage: (
+    <>
+      Minimum <strong>3 caractères</strong> pour un nom
+    </>
+  ),
   placeholder: '',
   message: '',
   messageType: MessageTypes.error,

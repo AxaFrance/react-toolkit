@@ -1,4 +1,4 @@
-import React, { ComponentProps, useState } from 'react';
+import React, { ComponentProps, useState, ReactNode } from 'react';
 import {
   Field,
   HelpMessage,
@@ -14,7 +14,7 @@ type Strength = 'bad' | 'okay' | 'good' | 'verygood' | 'excellent';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Pass> & {
-    helpMessage?: string;
+    helpMessage?: ReactNode | string;
     inputClassModifier: string;
     inputFieldClassModifier: string;
   };

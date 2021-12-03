@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelpMessage Render <HelpMessage/> when is not visible 1`] = `<DocumentFragment />`;
+
+exports[`HelpMessage Render <HelpMessage/> when is visible 1`] = `
+<DocumentFragment>
+  <small
+    class="af-form__help"
+  >
+    Message d'aide à la saisie
+  </small>
+</DocumentFragment>
+`;

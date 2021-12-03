@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   Field,
   HelpMessage,
@@ -16,7 +16,7 @@ type Props = Omit<
     inputFieldClassModifier: string;
     inputClassModifier: string;
     placeholder?: string;
-    helpMessage?: string;
+    helpMessage?: ReactNode | string;
   };
 const DateInput = ({
   classModifier,
