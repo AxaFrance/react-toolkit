@@ -1,86 +1,118 @@
-## Restitution
+# `@axa-fr/react-toolkit-restitution`
 
-### Get started
+## Default
 
-```sh
-npm i "@axa-fr/react-toolkit-restitution"
+### Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-restitution
 ```
 
-For more information about style component, you can see the [Restitution Style on Toolkit-core ](https://axaguildev.github.io/react-toolkit/latest/design/index.html#/restitution)
-
-### Import
+## Import
 
 ```javascript
 import {
   ArticleRestitution,
   HeaderRestitution,
   SectionRestitution,
-  SectionRestitutionColumn,
   SectionRestitutionRow,
+  SectionRestitutionColumn,
   Restitution,
 } from '@axa-fr/react-toolkit-restitution';
-
-import '@axa-fr/react-toolkit-restitution/dist/restitution.scss';
-/* or */
 import '@axa-fr/react-toolkit-restitution/dist/af-restitution.css';
 ```
 
-### Sample
+### Use
 
 ```javascript
-import React from 'react';
-import { ArticleRestitution, HeaderRestitution, SectionRestitution, SectionRestitutionColumn, SectionRestitutionRow, Restitution } from '@axa-fr/react-toolkit-restitution';
+const RightTitle = () => (
+  <a
+    className="af-link af-link--hasIconLeft"
+    href="/#"
+    onClick={(e) => {
+      console.log(e);
+    }}>
+    <i className="glyphicon glyphicon-pencil" />
+    <span className="af-link__text">Modifier</span>
+  </a>
+);
 
-const MyBadgeComponent => () => (
-<ArticleRestitution>
-    <HeaderRestitution  title="Tarifs" subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)" titleLeft="Edit"}>
-    </HeaderRestitution>
-      <SectionRestitution >
-        <SectionRestitutionRow title="Base de calcul des prestations">
-          <SectionRestitutionColumn>
-          <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
-          <Restitution label="TT" value={null} />
-          <Restitution label="Garanties complémentaires" classModifier="marge" values={['Vol au domicile',
-'Vol étendu aux appareils nomades',
-'Bris des glaces',
-'Plomberie et électricité',
-'Jardin']} />
-          </SectionRestitutionColumn>
-           <SectionRestitutionColumn>
+const RestititutionDefault = () => (
+  <ArticleRestitution>
+    <HeaderRestitution
+      title="Tarifs"
+      subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"
+      rightTitle={<RightTitle />}
+    />
+    <SectionRestitution>
+      <SectionRestitutionRow title="Base de calcul des prestations">
+        <SectionRestitutionColumn>
           <Restitution label="TA" value="99,99 %" />
           <Restitution label="EURO" value="EURO" />
           <Restitution label="TT" value="" />
-          <Restitution label="Garanties complémentaires" classModifier="marge" values={['Vol au domicile',
-'Vol étendu aux appareils nomades',
-'Bris des glaces',
-'Plomberie et électricité',
-'Jardin']} />
-          </SectionRestitutionColumn>
-        </SectionRestitutionRow>
-
-        <SectionRestitutionRow title="Base de calcul des prestations">
-          <SectionRestitutionColumn>
+          <Restitution
+            label="Garanties complémentaires"
+            classModifier="marge"
+            values={[
+              'Vol au domicile',
+              'Vol étendu aux appareils nomades',
+              'Bris des glaces',
+              'Plomberie et électricité',
+              'Jardin',
+            ]}
+          />
+        </SectionRestitutionColumn>
+        <SectionRestitutionColumn classModifier="test">
           <Restitution label="TA" value="99,99 %" />
           <Restitution label="EURO" value="EURO" />
-          <Restitution label="Garanties complémentaires" values={['Vol au domicile',
-'Vol étendu aux appareils nomades',
-'Bris des glaces',
-'Plomberie et électricité',
-'Jardin']} />
-          </SectionRestitutionColumn>
-           <SectionRestitutionColumn>
+          <Restitution label="TT" value="" />
+          <Restitution
+            label="Garanties complémentaires"
+            classModifier="marge"
+            values={[
+              'Vol au domicile',
+              'Vol étendu aux appareils nomades',
+              'Bris des glaces',
+              'Plomberie et électricité',
+              'Jardin',
+            ]}
+          />
+        </SectionRestitutionColumn>
+      </SectionRestitutionRow>
+
+      <SectionRestitutionRow title="Base de calcul des prestations">
+        <SectionRestitutionColumn>
           <Restitution label="TA" value="99,99 %" />
           <Restitution label="EURO" value="EURO" />
-          <Restitution label="Garanties complémentaires" classModifier="marge" values={['Vol au domicile',
-'Vol étendu aux appareils nomades',
-'Bris des glaces',
-'Plomberie et électricité',
-'Jardin']} />
-          </SectionRestitutionColumn>
-        </SectionRestitutionRow>
-
-      </SectionRestitution>
-    </ArticleRestitution>
-)
+          <Restitution
+            label="Garanties complémentaires"
+            values={[
+              'Vol au domicile',
+              'Vol étendu aux appareils nomades',
+              'Bris des glaces',
+              'Plomberie et électricité',
+              'Jardin',
+            ]}
+          />
+        </SectionRestitutionColumn>
+        <SectionRestitutionColumn>
+          <Restitution label="TA" value="99,99 %" />
+          <Restitution label="EURO" value="EURO" />
+          <Restitution
+            label="Garanties complémentaires"
+            classModifier="marge"
+            values={[
+              'Vol au domicile',
+              'Vol étendu aux appareils nomades',
+              'Bris des glaces',
+              'Plomberie et électricité',
+              'Jardin',
+            ]}
+          />
+        </SectionRestitutionColumn>
+      </SectionRestitutionRow>
+    </SectionRestitution>
+  </ArticleRestitution>
+);
+export default RestititutionDefault;
 ```

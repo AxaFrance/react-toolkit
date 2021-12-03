@@ -1,38 +1,120 @@
-## Form Input Date
+# `@axa-fr/react-toolkit-form-input-date-phone`
 
----
+**For the use of the date, we use the moment.js library you find the documentation below** :
+[Moment.js documentation](https://momentjs.com/docs/)
 
-### Get started
+1. [DatePhone](#datephone)
+2. [DatePhoneInput](#datephoneinput)
+   1. [DatePhoneInput Required](#datephoneinput-required)
 
-```sh
+## DatePhone
+
+### Installation
+
+```shell script
 npm i @axa-fr/react-toolkit-form-input-date-phone
+npm i @axa-fr/react-toolkit-form-core
+npm install moment
 ```
 
-First to use, you have to import the component.
+### Import
 
-```js
+```javascript
 import { DatePhone } from '@axa-fr/react-toolkit-form-input-date-phone';
-import '@axa-fr/react-toolkit-form-input-date-phone/dist/phonedate.scss';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/af-phonedate.css';
+import {
+  FieldError,
+  FieldForm,
+  HelpMessage,
+  MessageTypes,
+} from '@axa-fr/react-toolkit-form-core';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+import moment from 'moment';
 ```
 
-The component reuses the native date input :
+### Use
 
+```javascript
+const DatePhoneInput = () => (
+  <form className="af-form" name="myform">
+    <FieldForm
+      message="your message"
+      messageType={MessageTypes.error}
+      forceDisplayMessage={false}>
+      <div className="col-md-10">
+        <DatePhone
+          id="uniqueid"
+          name="date"
+          onChange={() => {
+            console.log('your function');
+          }}
+          value={moment()}
+        />
+        <HelpMessage message="jj/mm/aaaa" />
+        <FieldError />
+      </div>
+    </FieldForm>
+  </form>
+);
+export default DatePhoneInput;
 ```
-npm install moment --save
+
+## DatePhoneInput
+
+### Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-form-input-date-phone
+npm i @axa-fr/react-toolkit-form-core
+npm install moment
 ```
 
-Do not forget the right local when starting your application. By default, "create-react-app" excludes locals ​​for lightening the version of your final application. Adding it explicitly allows the local file to be present in the final application.
+### Import
 
-```js
-require('moment/locale/fr.js');
-// in your start application file "index.js"
+```javascript
+import { DatePhoneInput } from '@axa-fr/react-toolkit-form-input-date-phone';
+import '@axa-fr/react-toolkit-form-input-date-phone/dist/af-phonedate.css';
+import { InputConstants, MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+import moment from 'moment';
 ```
 
-The date is a special component. It actually has 2 important props:
+### Use
 
-- viewValue: The value of the text field which is a string
-- value: The value of the date in momentjs format
+```javascript
+const DatePhoneInputReturn = () => (
+  <form className="af-form" name="myform">
+    <DatePhoneInput
+      id="uniqueid"
+      label="Place name"
+      name="placeName"
+      locale="fr-fr"
+      onChange={(e) => {
+        console.log(e);
+      }}
+      helpMessage="jj/mm/aaaa"
+      message=""
+      value={moment()}
+      messageType={MessageTypes.success}
+      forceDisplayMessage={true}
+      classNameContainerLabel={
+        InputConstants.defaultProps.classNameContainerLabel
+      }
+      classNameContainerInput={
+        InputConstants.defaultProps.classNameContainerInput
+      }
+    />
+  </form>
+);
+export default DatePhoneInputReturn;
+```
 
-This allows you to have control of what happens and to respond to all use cases. If you are an individual, you can use the "viewValue" or "value" property. In any case if "viewValue" is not a valid date in the current language, the value of "value" returned will always be "null".
+### DatePhoneInput Required
 
-For more information about style component, you can see the [Form Date Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/form)
+To achieve DatePhoneInput Required, you need to add this :
+
+```javascript
+classModifier = 'required';
+```
+
+to the **DatePhoneInput** component

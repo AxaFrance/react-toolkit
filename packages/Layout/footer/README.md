@@ -1,48 +1,59 @@
-## Footer
+# `@axa-fr/react-toolkit-layout-footer`
 
-### Get started
+1. [Default](#default)
+2. [CoreHTMLChildren](#corehtmlchildren)
 
-```sh
-  npm i "@axa-fr/react-toolkit-layout-footer"
+## Default
+
+### Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-layout-footer
 ```
 
-### Components
-
-#### Footer
-
-The footer content will display what was passed in the _copyright_ prop.
+### Import
 
 ```javascript
-import React from 'react';
 import { Footer } from '@axa-fr/react-toolkit-layout-footer';
-const MyFooter => () => (
-  <Footer copyright="© 2017-2018 AXA Webcenter" />
-)
+import '@axa-fr/react-toolkit-layout-footer/dist/af-footer.css';
 ```
 
-You can hide icon by setting the boolean isIconHidden to true. By default the icon is shown.
+### Use
 
 ```javascript
-import React from 'react';
-import { Footer } from '@axa-fr/react-toolkit-layout-footer';
-const MyFooter => () => (
-  <Footer copyright="© 2017-2018 AXA Webcenter"  isIconHidden= {true} />
-)
+const FooterDefault = () => (
+  <Footer copyright="© 2021 AXA All right right reserved" isIconHidden={true} />
+);
+export default FooterDefault;
 ```
 
-#### FooterCore
+## CoreHTMLChildren
 
-This core component displays its children instead of a copyright prop, therefore allowing HTML tags, e.g. :
+### Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-layout-footer
+npm i @axa-fr/react-toolkit-core
+```
+
+### Import
+
+```shell script
+import {FooterCore} from '@axa-fr/react-toolkit-layout-footer';
+import '@axa-fr/react-toolkit-layout-footer/dist/af-footer.css';
+import logo from '@axa-fr/react-toolkit-core/dist/assets/logo-axa.svg';
+```
+
+### Use
 
 ```javascript
-import React from 'react';
-import { FooterCore } from '@axa-fr/react-toolkit-layout-footer';
-const MyFooterCore => () => (
-  <FooterCore>
+const CoreHtmlChildren = () => (
+  <FooterCore icon={logo}>
     <a href="https://www.axa.fr/">
-      @ AXA 2018
+      <strong>@ 2021 AXA</strong>
     </a>
-    <i>Tous droits réservés</i>
+    <i> All right right reserved</i>
   </FooterCore>
-)
+);
+export default CoreHtmlChildren;
 ```

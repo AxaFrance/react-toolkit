@@ -1,51 +1,94 @@
-## Action Button
+# `@axa-fr/react-toolkit-action`
 
-### Get started
+1. [Installation](#installation)
+2. [Link](#link)
+3. [Button](#button)
+4. [Link ActionCore](#link-actioncore)
+5. [Button ActionCore](#button-actioncore)
 
-```sh
+## Installation
+
+```shell script
 npm i @axa-fr/react-toolkit-action
 ```
 
-### Difference between Action and ActionCore
+## Link
 
-Action :
-
-```typescript
-onClick : (e: {id?: string}) => void
-```
-
-ActionCore :
-
-```typescript
-onCick : React.MouseEventHandler<HTMLAnchorElement>;
-```
-
-### Sample Action
+### Import
 
 ```javascript
-import React from 'react';
-import Action from '@axa-fr/react-toolkit-action';
-
-const MyAlertComponent => () => (
-<Action
-    classModifier="MyModifier"
-    icon="ok"
-    title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
-  />
-)
+import Button from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
 ```
 
-### Sample ActionCore
+### Use
 
 ```javascript
-import React from 'react';
-import {ActionCore} from '@axa-fr/react-toolkit-action';
-
-const MyAlertComponent => () => (
-<Action
-    classModifier="MyModifier"
-    icon="ok"
-    title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d′office"
+const LinkAction = () => (
+  <Button
+    id="id"
+    icon="link"
+    href="http://www.axa.fr"
+    title="Test Link"
+    target="_blank"
   />
-)
+);
+export default LinkAction;
+```
+
+## Button
+
+### Import
+
+```javascript
+import Button from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
+```
+
+### Use
+
+```javascript
+const ButtonAction = () => <Button id="id" icon="floppy-disk" title="Save" />;
+export default ButtonAction;
+```
+
+## Link ActionCore
+
+### Import
+
+```javascript
+import { ActionCore } from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
+```
+
+### Use
+
+```javascript
+const LinkActionCore = () => (
+  <ActionCore id="id" icon="link" href="http://www.axa.fr" title="Test Link" />
+);
+export default LinkActionCore;
+```
+
+## Button ActionCore
+
+### Import
+
+```javascript
+import { ActionCore } from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
+```
+
+### Use
+
+```javascript
+const ButtonActionCore = () => (
+  <ActionCore
+    id="id"
+    icon="floppy-disk"
+    href="http://www.axa.fr"
+    title="Test Link"
+  />
+);
+export default ButtonActionCore;
 ```

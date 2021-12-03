@@ -1,32 +1,47 @@
-## Badge
+# `@axa-fr/react-toolkit-badge`
 
-### Get started
+1. [Installation](#installation)
+2. [Simple badge](#simple-badge)
+3. [With Icon](#with-icon)
 
-```sh
-npm i "@axa-fr/react-toolkit-badge"
+## Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-badge
 ```
 
-For more information about style component, you can see the [Badge Style on Toolkit-core ](http://toolkit-intranet-axa.azurewebsites.net/#/badge)
+## Simple badge
 
 ### Import
 
 ```javascript
-import Badge from '@axa-fr/react-toolkit-badge';
-
-import '@axa-fr/react-toolkit-badge/dist/badge.scss';
-/* or */
-import '@axa-fr/react-toolkit-badge/dist/af-badge.css';
+import Button from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
 ```
 
-### Sample
+### Use
 
 ```javascript
-import React from 'react';
-import Action from '@axa-fr/react-toolkit-badge';
+const SimpleBadge = () => <Badge classModifier="success">Lorem ipsum</Badge>;
+export default SimpleBadge;
+```
 
-const MyBadgeComponent => () => (
-<Badge classModifier="success">
-  Lorem ipsum
-</Badge>
-)
+## With Icon
+
+### Import
+
+```javascript
+import Button from '@axa-fr/react-toolkit-action';
+import '@axa-fr/react-toolkit-action/dist/af-button.css';
+```
+
+### Use
+
+```javascript
+const WithIconBadge = () => (
+  <Badge classModifier="error">
+    <i className="glyphicon glyphicon-bell" />
+  </Badge>
+);
+export default WithIconBadge;
 ```
