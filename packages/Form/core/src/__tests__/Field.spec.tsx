@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Field from './Field';
+import Field from '../Field';
 
 describe('<Field>', () => {
   it('renders Field correctly', () => {

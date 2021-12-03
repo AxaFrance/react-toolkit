@@ -8,7 +8,7 @@ type FieldProps = {
   children?: ReactNode;
 };
 
-export default ({
+const FieldInput = ({
   children,
   className,
   classModifier,
@@ -24,3 +24,5 @@ export default ({
   );
   return <div className={newClassName}>{children}</div>;
 };
+
+export default FieldInput;

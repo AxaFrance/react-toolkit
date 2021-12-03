@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { ReactNode, FC, HTMLProps } from 'react';
 
-type HelpProps = {
-  message?: string;
+type HelpProps = HTMLProps<HTMLSpanElement> & {
+  message?: ReactNode | string;
   isVisible?: boolean;
 };
 
-const HelpMessage = ({ message, isVisible = true }: HelpProps) => {
-  if (isVisible) {
-    return <small className="af-form__help">{message}</small>;
-  }
-  return <></>;
-};
+const HelpMessage: FC<HelpProps> = ({ message, isVisible = true }) =>
+  isVisible ? <small className="af-form__help">{message}</small> : null;
 
 export default HelpMessage;
