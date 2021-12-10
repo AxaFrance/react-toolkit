@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-type HelpProps = {
-  message?: string;
+type HelpProps = React.ComponentPropsWithoutRef<'small'> & {
+  message?: ReactNode;
   isVisible?: boolean;
 };
 
-const HelpMessage = ({ message, isVisible = true }: HelpProps) => {
-  if (isVisible) {
-    return <small className="af-form__help">{message}</small>;
-  }
-  return <></>;
-};
+const HelpMessage = ({ message, isVisible = true }: HelpProps) =>
+  isVisible && <small className="af-form__help">{message}</small>;
 
 export default HelpMessage;

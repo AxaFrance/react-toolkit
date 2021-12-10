@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import {
   Field,
   HelpMessage,
@@ -9,7 +9,7 @@ import Slider from './Slider';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Slider> & {
-    helpMessage?: string;
+    helpMessage?: ReactNode;
   };
 
 const SliderInput = ({

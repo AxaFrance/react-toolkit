@@ -1,4 +1,8 @@
-import React, { ComponentProps, ComponentPropsWithoutRef } from 'react';
+import React, {
+  ComponentProps,
+  ComponentPropsWithoutRef,
+  ReactNode,
+} from 'react';
 import {
   FieldInput,
   HelpMessage,
@@ -15,7 +19,7 @@ type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof File> & {
     inputFieldClassModifier: string;
     inputClassModifier: string;
-    helpMessage?: string;
+    helpMessage?: ReactNode;
   };
 const FileInput = ({
   values,

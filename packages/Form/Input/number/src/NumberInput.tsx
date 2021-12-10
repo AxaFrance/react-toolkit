@@ -17,7 +17,7 @@ type Props = ComponentPropsWithoutRef<typeof Field> &
   ComponentPropsWithRef<typeof Number> & {
     inputFieldClassModifier: string;
     inputClassModifier: string;
-    helpMessage?: string;
+    helpMessage?: ReactNode;
     children?: ReactNode;
   };
 

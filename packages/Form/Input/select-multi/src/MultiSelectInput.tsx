@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 
 import {
   Field,
@@ -11,7 +11,7 @@ import MultiSelect from './MultiSelect';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof MultiSelect> & {
-    helpMessage?: string;
+    helpMessage?: ReactNode;
   };
 
 const MultiSelectInput = ({
