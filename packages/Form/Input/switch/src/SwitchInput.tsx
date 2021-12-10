@@ -11,7 +11,7 @@ import Switch from './Switch';
 interface Props
   extends ComponentProps<typeof Field>,
     ComponentProps<typeof Switch> {
-  helpMessage?: ReactNode | string;
+  helpMessage?: ReactNode;
   children?: ReactNode;
 }
 

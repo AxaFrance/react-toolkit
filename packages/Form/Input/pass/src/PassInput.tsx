@@ -14,7 +14,7 @@ type Strength = 'bad' | 'okay' | 'good' | 'verygood' | 'excellent';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Pass> & {
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
     inputClassModifier: string;
     inputFieldClassModifier: string;
   };

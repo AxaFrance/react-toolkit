@@ -10,7 +10,7 @@ import Select from './Select';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Select> & {
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
     children?: ReactNode;
   };
 

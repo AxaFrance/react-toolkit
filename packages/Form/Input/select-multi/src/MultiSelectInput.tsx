@@ -11,7 +11,7 @@ import MultiSelect from './MultiSelect';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof MultiSelect> & {
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
   };
 
 const MultiSelectInput = ({

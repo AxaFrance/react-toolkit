@@ -13,7 +13,7 @@ type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Text> & {
     inputFieldClassModifier: string;
     inputClassModifier: string;
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
     children?: ReactNode;
   };
 

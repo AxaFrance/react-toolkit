@@ -9,7 +9,7 @@ import Slider from './Slider';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Slider> & {
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
   };
 
 const SliderInput = ({

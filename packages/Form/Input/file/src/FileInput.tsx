@@ -19,7 +19,7 @@ type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof File> & {
     inputFieldClassModifier: string;
     inputClassModifier: string;
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
   };
 const FileInput = ({
   values,

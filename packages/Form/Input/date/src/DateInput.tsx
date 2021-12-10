@@ -16,7 +16,7 @@ type Props = Omit<
     inputFieldClassModifier: string;
     inputClassModifier: string;
     placeholder?: string;
-    helpMessage?: ReactNode | string;
+    helpMessage?: ReactNode;
   };
 const DateInput = ({
   classModifier,
