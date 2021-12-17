@@ -1,13 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FileInput> renders FileInput correctly 1`] = `
-<FileInput
-  accept="image/jpeg, image/png, application/*"
-  id="id"
-  inputClassModifier="undefined "
-  inputFieldClassModifier="undefined "
-  label="File *"
-  name="file"
-  onChange={[Function]}
-/>
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--undefined af-form__group--label-top"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="id"
+      >
+        File *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__file af-form__file--undefined"
+      >
+        <div
+          class="af-form__file-input af-form__file-input--undefined"
+        >
+          <div
+            class="drop-box hidden-mobile"
+            id="id"
+            tabindex="0"
+          >
+            <input
+              accept="image/jpeg, image/png, application/*"
+              autocomplete="off"
+              multiple=""
+              name="file"
+              style="display: none;"
+              tabindex="-1"
+              type="file"
+            />
+            <div>
+              Glissez/déposez vos fichiers
+            </div>
+          </div>
+          <button
+            class="af-btn af-btn--file af-btn--hasIconLeft"
+            type="button"
+          >
+            <i
+              class="glyphicon glyphicon-open"
+            />
+             Parcourir
+          </button>
+        </div>
+      </div>
+      <small
+        class="af-form__help"
+      />
+      <div
+        class="custom-table-file af-file-table"
+      />
+    </div>
+  </div>
+</DocumentFragment>
 `;

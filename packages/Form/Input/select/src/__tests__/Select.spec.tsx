@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Select from '../Select';
 import SelectBase from '../SelectBase';
 import SelectInput from '../SelectInput';
@@ -10,51 +10,43 @@ const options = [
   { value: 'drink', label: 'For drink' },
 ];
 
-describe('<SelectBase>', () => {
-  it('renders SelectBase correctly', () => {
-    const tree = renderer
-      .create(
-        <Select
-          name="placeName"
-          id="muid"
-          onChange={() => null}
-          options={options}
-          value="myvalue"
-        />
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+test('renders Select correctly', () => {
+  const { asFragment } = render(
+    <Select
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
 
-  it('renders SelectBase correctly', () => {
-    const tree = renderer
-      .create(
-        <SelectBase
-          name="placeName"
-          id="muid"
-          onChange={() => null}
-          options={options}
-          value="myvalue"
-        />
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+test('renders SelectBase correctly', () => {
+  const { asFragment } = render(
+    <SelectBase
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
 
-  it('renders SelectBase correctly', () => {
-    const tree = renderer
-      .create(
-        <SelectInput
-          label="label"
-          name="placeName"
-          id="muid"
-          onChange={() => null}
-          options={options}
-          value="myvalue"
-          helpMessage="Enter the place type"
-        />
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+test('renders SelectInput correctly', () => {
+  const { asFragment } = render(
+    <SelectInput
+      label="label"
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+      helpMessage="Enter the place type"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

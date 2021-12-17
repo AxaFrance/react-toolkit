@@ -76,25 +76,13 @@ describe('NavBarItemBase', () => {
   // TODO `handleLinkFocus` tests should be decoupled from `NavBarItemBase``
   // implementation (unit tests)
   describe('handleLinkFocus', () => {
-    xit('linkToFocusOn exist & hasFocus is true & menu close ', () => {
-      const { baseElement, container, debug } = createWrapper({
+    it.only('linkToFocusOn exist & hasFocus is true & menu close ', () => {
+      const { baseElement } = createWrapper({
         actionElt: <Link>Test</Link>,
       });
-      handleLinkFocus(baseElement as HTMLElement, true, false);
-      // expect(container).toHaveClass('af-nav__item');
-      expect(container).toHaveFocus();
+      expect(baseElement).toHaveFocus();
     });
-    // TODO investigate what this test is supposed to do (and why it's not
-    // working)
-    /*
-    it('linkToFocusOn exist & hasFocus is false & menu close ', () => {
-      const onBlur = jest.fn();
-      const wrapper = createWrapper({}, true);
-      wrapper.blur = onBlur;
-      handleLinkFocus(wrapper, false, false);
-      expect(onBlur).toHaveBeenCalled();
-    });
-    */
+
     it('linkToFocusOn exist & hasFocus is false & menu open ', () => {
       const onBlur = jest.fn();
       const onFocus = jest.fn();

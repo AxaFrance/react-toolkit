@@ -1,16 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Field from '../Field';
 
 describe('<Field>', () => {
   it('renders Field correctly', () => {
-    const tree = renderer
-      .create(
-        <Field id="id" label="label" message="message">
-          <input type="text" />
-        </Field>
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Field id="id" label="label" message="message">
+        <input type="text" />
+      </Field>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

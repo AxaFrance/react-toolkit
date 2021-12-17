@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio should have correct html rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__radio-custom "
+  >
+    <input
+      class="af-form__input-radio"
+      id="for-fun"
+      type="radio"
+      value="1"
+    />
+    <label
+      class="af-form__label"
+      for="for-fun"
+    >
+      <span
+        class="af-form__description"
+      >
+        For fun
+      </span>
+    </label>
+  </div>
+  <div
+    class="af-form__radio-custom "
+  >
+    <input
+      class="af-form__input-radio"
+      id="for-work"
+      type="radio"
+      value="2"
+    />
+    <label
+      class="af-form__label"
+      for="for-work"
+    >
+      <span
+        class="af-form__description"
+      >
+        For work
+      </span>
+    </label>
+  </div>
+  <div
+    class="af-form__radio-custom "
+  >
+    <input
+      class="af-form__input-radio"
+      id="for-drink"
+      type="radio"
+      value="3"
+    />
+    <label
+      class="af-form__label"
+      for="for-drink"
+    >
+      <span
+        class="af-form__description"
+      >
+        For drink
+      </span>
+    </label>
+  </div>
+  <div
+    class="af-form__radio-custom af-form__radio-custom--disabled "
+  >
+    <input
+      class="af-form__input-radio"
+      disabled=""
+      id="for-life"
+      type="radio"
+      value="4"
+    />
+    <label
+      class="af-form__label"
+      for="for-life"
+    >
+      <span
+        class="af-form__description"
+      >
+        For the life
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;

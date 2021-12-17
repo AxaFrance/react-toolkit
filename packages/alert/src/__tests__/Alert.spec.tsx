@@ -1,20 +1,19 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Alert from '../Alert';
 
 describe('<Alert />', () => {
   it('renders an error alert with exclamation icon and title', () => {
-    const component = create(
+    const { asFragment } = render(
       <Alert
         classModifier="error"
         title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office"
       />
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('renders an info alert with info-sign icon, a title and a body containing an unordered list', () => {
-    const component = create(
+    const { asFragment } = render(
       <Alert
         classModifier="error"
         title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office">
@@ -24,7 +23,6 @@ describe('<Alert />', () => {
         </ul>
       </Alert>
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

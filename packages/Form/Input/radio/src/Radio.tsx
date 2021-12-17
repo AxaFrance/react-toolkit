@@ -27,6 +27,7 @@ const Radio: React.FC<RadioProps> = ({
     const isChecked = option.value === value;
     return (
       <RadioItem
+        {...otherProps}
         key={option.value}
         id={option.id}
         value={option.value}
@@ -35,8 +36,7 @@ const Radio: React.FC<RadioProps> = ({
         disabled={option.disabled || disabled}
         className={classNameWithMode}
         classModifier={classModifier}
-        optionClassName={className}
-        {...otherProps}>
+        optionClassName={className}>
         {children}
       </RadioItem>
     );

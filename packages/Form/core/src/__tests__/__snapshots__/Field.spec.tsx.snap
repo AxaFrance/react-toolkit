@@ -1,25 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Field> renders Field correctly 1`] = `
-<div
-  className="row af-form__group"
->
+<DocumentFragment>
   <div
-    className="col-md-2"
+    class="row af-form__group"
   >
-    <label
-      className="af-form__group-label"
-      htmlFor="id"
+    <div
+      class="col-md-2"
     >
-      label
-    </label>
+      <label
+        class="af-form__group-label"
+        for="id"
+      >
+        label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <input
+        type="text"
+      />
+    </div>
   </div>
-  <div
-    className="col-md-10"
-  >
-    <input
-      type="text"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;

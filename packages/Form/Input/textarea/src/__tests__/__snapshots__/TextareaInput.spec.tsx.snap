@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TextareaInput correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--undefined af-form__group--label-top"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="iddateinput"
+      >
+        Image *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__textarea af-form__textarea--undefined"
+      >
+        <textarea
+          class="af-form__input-textarea af-form__input-textarea--undefined"
+          cols="50"
+          id="iddateinput"
+          name="sample"
+          rows="5"
+        >
+          ici le text
+        </textarea>
+      </div>
+      <small
+        class="af-form__help"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
