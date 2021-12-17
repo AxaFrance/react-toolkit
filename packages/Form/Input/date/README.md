@@ -1,108 +1,93 @@
 # `@axa-fr/react-toolkit-form-input-date`
 
-**For the use of the date, we use the moment.js library you find the documentation below** :
-[Moment.js documentation](https://momentjs.com/docs/)
+1. [Date](#date)
+2. [DateInput](#dateinput)
+   1. [DateInput Required](#dateinput-required)
 
-1. [DateInputStory](#dateinputstory)
-2. [DateInputStory Required](#dateinputstory-required)
-3. [CustomDateStory](#customdatestory)
-
-## DateInputStory
+## Date
 
 ### Installation
 
 ```shell script
 npm i @axa-fr/react-toolkit-form-input-date
-npm i @axa-fr/react-toolkit-form-core
-npm install moment
+```
+
+### Import
+
+```javascript
+import { Date } from '@axa-fr/react-toolkit-form-input-date';
+import '@axa-fr/react-toolkit-form-input-date/dist/af-date.css';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+```
+
+### Use
+
+```javascript
+const MyCustomDate = () => (
+  <Date
+    id="uniqueid"
+    name="date"
+    value={new Date('2021-12-17')}
+    onChange={() => {
+      console.log('your function');
+    }}
+  />
+);
+```
+
+## DateInput
+
+### Installation
+
+```shell script
+npm i @axa-fr/react-toolkit-form-input-date
 ```
 
 ### Import
 
 ```javascript
 import { DateInput } from '@axa-fr/react-toolkit-form-input-date';
-import moment from 'moment';
-import '@axa-fr/react-toolkit-form-input-date/dist/af-datepicker.css';
+import { InputConstants, MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import '@axa-fr/react-toolkit-form-input-date/dist/af-date.css';
 import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
 ```
 
 ### Use
 
 ```javascript
-const DateInputStory = () => {
-  const dateNow = moment().toDate();
-  return (
-    <form className="af-form" name="myform">
-      <DateInput
-        id="uniqueId"
-        label="Place name"
-        className="DateInput"
-        helpMessage="jj/mm/aaaa"
-        value={dateNow}
-        locale="fr"
-        onChange={(e: any) => {
-          console.log(e);
-        }}
-      />
-    </form>
-  );
-};
-export default DateInputStory;
+const MyDateInput = () => (
+  <form className="af-form" name="myform">
+    <DateInput
+      id="uniqueid"
+      label="Place name"
+      name="placeName"
+      locale="fr-fr"
+      onChange={(date) => {
+        console.log(date.getDay());
+      }}
+      helpMessage="jj/mm/aaaa"
+      message=""
+      value={Date('2021-12-17')}
+      messageType={MessageTypes.success}
+      forceDisplayMessage={true}
+      classNameContainerLabel={
+        InputConstants.defaultProps.classNameContainerLabel
+      }
+      classNameContainerInput={
+        InputConstants.defaultProps.classNameContainerInput
+      }
+    />
+  </form>
+);
+export default MyDateInput;
 ```
 
-### DateInputStory Required
+### DateInput Required
 
-To achieve DateInputStory Required, you need to add this :
+To achieve DateInput Required, you need to add a classModifier prop like this :
 
 ```javascript
 classModifier = 'required';
 ```
 
-to the **DateInputStory** component
-
-## CustomDateStory
-
-### Installation
-
-```shell script
-npm i "@axa-fr/react-toolkit-form-input-date"
-npm i "@axa-fr/react-toolkit-form-core"
-npm install moment
-```
-
-### Import
-
-```javascript
-import { CustomDate } from '@axa-fr/react-toolkit-form-input-date';
-import '@axa-fr/react-toolkit-form-input-date/dist/af-datepicker.css';
-import {
-  HelpMessage,
-  Field,
-  FieldError,
-} from '@axa-fr/react-toolkit-form-core';
-import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
-import moment from 'moment';
-```
-
-### Use
-
-```javascript
-const CustomDateStory = () => {
-  const dateNow = moment().toDate();
-  return (
-    <form className="af-form" name="myform">
-      <Field id="customDateId" label="Choix d'une date" message="">
-        <div className="col-md-10">
-          <div className="af-datepicker__container">
-            <CustomDate value={dateNow} />
-            <span className="glyphicon glyphicon-calendar" />
-          </div>
-          <HelpMessage message="jj/mm/aaaa" />
-          <FieldError />
-        </div>
-      </Field>
-    </form>
-  );
-};
-export default CustomDateStory;
-```
+to the **DateInput** component
