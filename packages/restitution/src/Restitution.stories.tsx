@@ -94,7 +94,10 @@ export const Default = () => (
         </SectionRestitutionColumn>
         <SectionRestitutionColumn>
           <Restitution label="TA" value="99,99 %" />
-          <Restitution label="EURO" value="EURO" />
+          <Restitution
+            label="EURO"
+            value={<span style={{ textDecoration: 'underline' }}>EURO</span>}
+          />
           <Restitution
             label="Garanties complémentaires"
             classModifier="marge"

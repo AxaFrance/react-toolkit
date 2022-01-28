@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   withClassDefault,
   withClassModifier,
@@ -21,7 +21,7 @@ const RestitutionValues = ({ values }: Pick<RestitutionProps, 'values'>) => {
 
 type RestitutionProps = ComponentPropsWithoutRef<'dl'> & {
   label: string;
-  value?: string;
+  value?: ReactNode;
   values?: string[];
 };
 const Restitution = ({
