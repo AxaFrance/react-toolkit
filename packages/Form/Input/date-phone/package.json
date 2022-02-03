@@ -15,9 +15,7 @@
   "dependencies": {
     "@axa-fr/react-toolkit-core": "2.0.0-alpha.5",
     "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.5",
-    "moment": "2.29.1",
-    "prop-types": "15.7.2",
-    "react-datepicker": "1.8.0"
+    "moment": "2.29.1"
   },
   "license": "MIT",
   "publishConfig": {
