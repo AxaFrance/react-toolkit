@@ -1,5 +1,5 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import AlertWithType, { TypeIcons, setWithProps } from '../AlertWithType';
 
 describe('<AlertWithType>', () => {
@@ -29,24 +29,22 @@ describe('<AlertWithType>', () => {
     });
   });
   it('should render an alert of type error with an error style and exclamation-sign icon', () => {
-    const component = create(
+    const { asFragment } = render(
       <AlertWithType
         type="error"
         title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office"
       />
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render an alert of type error with an error style and ban-circle icon', () => {
-    const component = create(
+    const { asFragment } = render(
       <AlertWithType
         type="error"
         iconClassName="glyphicon glyphicon-ban-circle"
         title="Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office"
       />
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

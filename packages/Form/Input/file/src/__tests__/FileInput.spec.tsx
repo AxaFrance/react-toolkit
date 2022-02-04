@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import FileInput from '../FileInput';
 
 describe('<FileInput>', () => {
   it('renders FileInput correctly', () => {
-    const wrapper = shallow(
+    const { asFragment } = render(
       <FileInput
         label="File *"
         id="id"
@@ -13,6 +13,6 @@ describe('<FileInput>', () => {
         accept="image/jpeg, image/png, application/*"
       />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

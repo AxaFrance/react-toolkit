@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioInput /> should have correct html rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="option1_id"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="option1_id"
+          type="radio"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="option1_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 1
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom "
+      >
+        <input
+          class="af-form__input-radio"
+          id="option2_id"
+          type="radio"
+          value="2"
+        />
+        <label
+          class="af-form__label"
+          for="option2_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 2
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

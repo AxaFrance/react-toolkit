@@ -1,49 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AlertWithType> should render an alert of type error with an error style and ban-circle icon 1`] = `
-<div
-  className="af-alert af-alert--error"
-  role="alert"
->
+<DocumentFragment>
   <div
-    className="af-alert__title"
+    class="af-alert af-alert--error"
+    role="alert"
   >
     <div
-      className="af-alert__title-icon"
+      class="af-alert__title"
     >
-      <i
-        className="glyphicon glyphicon-ban-circle"
-      />
-    </div>
-    <div
-      className="af-alert__title-text"
-    >
-      Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+      <div
+        class="af-alert__title-icon"
+      >
+        <i
+          class="glyphicon glyphicon-ban-circle"
+        />
+      </div>
+      <div
+        class="af-alert__title-text"
+      >
+        Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`<AlertWithType> should render an alert of type error with an error style and exclamation-sign icon 1`] = `
-<div
-  className="af-alert af-alert--error"
-  role="alert"
->
+<DocumentFragment>
   <div
-    className="af-alert__title"
+    class="af-alert af-alert--error"
+    role="alert"
   >
     <div
-      className="af-alert__title-icon"
+      class="af-alert__title"
     >
-      <i
-        className="glyphicon glyphicon-exclamation-sign"
-      />
-    </div>
-    <div
-      className="af-alert__title-text"
-    >
-      Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+      <div
+        class="af-alert__title-icon"
+      >
+        <i
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+      </div>
+      <div
+        class="af-alert__title-text"
+      >
+        Les caves et les garages situés dans le même corps de bâtiment que le logement assuré sont garantis d'office
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
