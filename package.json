@@ -14,7 +14,7 @@
     "packages/Modal/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces && npm run style",
+    "build": "lerna run build && npm run style",
     "postversion": "rimraf package-lock.json && npm i --force --ignore-scripts && git add package-lock.json && git commit --amend --no-edit",
     "style": "node ./scripts/style.js",
     "storybook": "start-storybook -p 9009 -s storybook-public",

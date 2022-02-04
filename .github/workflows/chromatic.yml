@@ -23,6 +23,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm ci
+      - run: npm run build
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
