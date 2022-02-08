@@ -28,7 +28,11 @@ cd react-toolkit
 npm install
 ```
 
-A post-install action is thrown. This action first install dependencies with `lerna bootstrap` & then build all packages with a custom command gulp.
+After installing dependencies, it's necessary to build all package via `lerna` with:
+
+```sh
+npm build
+```
 
 At this point you are ready to contribute.
 
@@ -132,7 +136,6 @@ You can add args to `npm test` command with `--`:
 
 ```sh
 $ npm test -- --watch
-$ npm test -- --config jest.config.json
 # etc
 ```
 
@@ -190,7 +193,7 @@ Keep in mind, though, that your pull request will be squashed into master, so re
 
 ### Some tests are not working after I switched branch
 
-Aftet switching for one branch to another, you may have issues with tests. This is due to the fact that some dependencies may have changed.
+After switching for one branch to another, you may have issues with tests. This is due to the fact that some dependencies may have changed.
 
 The quickest way to fix it is to make sure all your packages are correctly installed. For this, make sure you are in the root folder and then run this command:
 
