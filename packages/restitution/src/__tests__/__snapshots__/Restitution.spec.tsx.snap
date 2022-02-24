@@ -401,7 +401,11 @@ exports[`<ArticleRestitution /> should render component 1`] = `
               <dd
                 class="af-restitution__listdef-value"
               >
-                EURO
+                <span
+                  style="text-decoration: underline;"
+                >
+                  EURO
+                </span>
               </dd>
             </dl>
             <dl
