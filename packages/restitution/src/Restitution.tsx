@@ -9,34 +9,20 @@ import {
 
 const DEFAULT_CLASSNAME = 'af-restitution__listdef';
 
-const RestitutionValues = ({ values }: Pick<RestitutionProps, 'values'>) => {
-  const li = values.map((v) => (
-    <li key={v} className="af-restitution__listul-item">
-      {v}
-    </li>
-  ));
-
-  return <ul className="af-restitution__listul">{li}</ul>;
-};
-
 type RestitutionProps = ComponentPropsWithoutRef<'dl'> & {
   label: string;
-  value?: ReactNode;
-  values?: string[];
+  children?: ReactNode;
 };
 const Restitution = ({
   label,
-  value = '-',
-  values,
+  children = '-',
   className,
 }: RestitutionProps) => (
   <dl className={className}>
     <dt className="af-restitution__listdef-item">
       <span className="af-restitution__text">{label}</span>
     </dt>
-    <dd className="af-restitution__listdef-value">
-      {values ? <RestitutionValues values={values} /> : value}
-    </dd>
+    <dd className="af-restitution__listdef-value">{children}</dd>
   </dl>
 );
 
