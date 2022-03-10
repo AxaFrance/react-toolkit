@@ -37,6 +37,7 @@ FileInputStory.args = {
   label: 'Image',
   name: 'placeImage',
   id: 'inputuniqueid',
+  chooseActionLabel: 'Browse',
   accept: 'image/jpeg, image/png, application/*',
   helpMessage: 'Take a photo af a place',
   message: '',
