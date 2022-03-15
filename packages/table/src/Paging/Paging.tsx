@@ -63,6 +63,7 @@ class Paging extends React.PureComponent<PagingComponentProps> {
       mode,
       nextLabel,
       numberItems,
+      items,
       numberPages,
       ofLabel,
       previousLabel,
@@ -74,6 +75,7 @@ class Paging extends React.PureComponent<PagingComponentProps> {
           <Items
             onChange={this.onChangeItems}
             numberItems={numberItems}
+            items={items}
             id={id}
             displayLabel={displayLabel}
             elementsLabel={elementsLabel}

@@ -45,4 +45,5 @@ Default.args = {
   currentPage: 5,
   numberPages: 23,
   numberItems: 25,
+  items: [5, 10, 25, 50, 100],
 };
