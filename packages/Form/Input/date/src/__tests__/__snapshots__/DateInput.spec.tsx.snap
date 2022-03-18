@@ -19,7 +19,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
       class="col-md-10"
     >
       <div
-        class="af-datepicker__container af-datepicker__container--undefined"
+        class="af-datepicker__container"
       >
         <div
           class="react-datepicker-wrapper"

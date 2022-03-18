@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldInput Render <FieldInput/> when is not visible 1`] = `<DocumentFragment />`;
+
+exports[`FieldInput Render <FieldInput/> when is visible 1`] = `
+<DocumentFragment>
+  <div
+    class=""
+  />
+</DocumentFragment>
+`;
+
+exports[`FieldInput Render <FieldInput/> when is visible and with className and classModifier 1`] = `
+<DocumentFragment>
+  <div
+    class="af-field-input af-field-input--test"
+  >
+    <input
+      id="id"
+      name="id"
+      type="text"
+    />
+  </div>
+</DocumentFragment>
+`;

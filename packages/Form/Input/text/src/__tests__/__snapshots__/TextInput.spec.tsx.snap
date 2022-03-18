@@ -19,7 +19,7 @@ exports[`renders TextInput correctly 1`] = `
       class="col-md-10"
     >
       <div
-        class="af-form__text af-form__text--undefined"
+        class="af-form__text"
       >
         <input
           class="af-form__input-text af-form__input-text--undefined"

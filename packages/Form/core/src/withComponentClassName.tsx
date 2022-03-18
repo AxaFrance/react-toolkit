@@ -1,7 +1,8 @@
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import React, { ComponentType, ReactNode } from 'react';
 
-export default <
+const withComponentClassName =
+  <
     P extends {
       className?: string;
       classModifier?: string;
@@ -23,3 +24,5 @@ export default <
       return <Component componentClassName={componentClassName} {...props} />;
     };
   };
+
+export default withComponentClassName;

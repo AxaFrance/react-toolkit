@@ -2,13 +2,14 @@ import React, { ReactNode } from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import FieldError from './FieldError';
 import MessageTypes from './MessageTypes';
+import FieldForm from './FieldForm';
 
-const defaultClassName = 'row af-form__group';
+const DEFAULT_CLASS_NAME = 'row af-form__group';
 
 type FieldProps = {
-  id: string;
-  label: string;
+  label: ReactNode;
   children?: ReactNode;
+  id?: string;
   message?: string;
   messageType?: MessageTypes;
   forceDisplayMessage?: boolean;
@@ -20,9 +21,12 @@ type FieldProps = {
 };
 
 const defaultProps = {
+  id: '',
+  message: '',
   messageType: MessageTypes.error,
   forceDisplayMessage: false,
-  className: defaultClassName,
+  className: DEFAULT_CLASS_NAME,
+  classModifier: '',
   classNameContainerLabel: 'col-md-2',
   classNameContainerInput: 'col-md-10',
   isVisible: true,
@@ -42,13 +46,13 @@ const Field = ({
   isVisible,
 }: FieldProps) => {
   if (!isVisible) {
-    return <></>;
+    return null;
   }
 
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    DEFAULT_CLASS_NAME
   );
 
   return (
@@ -58,12 +62,14 @@ const Field = ({
           {label}
         </label>
       </div>
-      <div className={classNameContainerInput}>
+      <FieldForm
+        className={classNameContainerInput}
+        message={message}
+        messageType={messageType}
+        forceDisplayMessage={forceDisplayMessage}>
         {children}
-        {forceDisplayMessage && (
-          <FieldError message={message} messageType={messageType} />
-        )}
-      </div>
+        <FieldError message={message} messageType={messageType} />
+      </FieldForm>
     </div>
   );
 };

@@ -10,6 +10,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
     >
       <label
         class="af-form__group-label"
+        for=""
       >
         Image *
       </label>
