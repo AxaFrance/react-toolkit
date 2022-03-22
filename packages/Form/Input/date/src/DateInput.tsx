@@ -1,8 +1,4 @@
-import React, {
-  ComponentPropsWithoutRef,
-  ComponentPropsWithRef,
-  ReactNode,
-} from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import {
   Field,
@@ -11,12 +7,9 @@ import {
   useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
 import { useId } from '@axa-fr/react-toolkit-core';
-import Date from './CustomDate';
+import Date from './Date';
 
-type Props = Omit<
-  ComponentPropsWithoutRef<typeof Date>,
-  'placeholderText'
-> &
+type Props = Omit<ComponentPropsWithoutRef<typeof Date>, 'placeholderText'> &
   ComponentPropsWithoutRef<typeof Field> & {
     placeholder?: string;
     helpMessage?: ReactNode;
@@ -38,7 +31,6 @@ const DateInput = ({
   className,
   name,
   value,
-  locale,
   onChange,
   readOnly,
   disabled,

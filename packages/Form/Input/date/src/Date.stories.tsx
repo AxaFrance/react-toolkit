@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
-import CustomDate from './CustomDate';
+import CustomDate from './Date';
 import DateInput from './DateInput';
-// @ts-ignore
 import readme from '../README.md';
 
 export default {
@@ -21,8 +20,7 @@ export default {
 const commonProps = {
   name: 'placeName',
   id: 'uniqueid',
-  locale: 'fr-fr',
-  value: new Date('12/05/2010'),
+  value: new Date('05/12/2010'),
 };
 
 export const DateStory: ComponentStory<typeof CustomDate> = ({
