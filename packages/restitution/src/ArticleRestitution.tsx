@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import {
   withClassDefault,
   withClassModifier,
-  WithClassModifierOptions,
   compose,
   identity,
 } from '@axa-fr/react-toolkit-core';
 
 const DEFAULT_CLASSNAME = 'af-restitution';
 
-type ArticleRestitutionBaseProps = {
-  className?: string;
-  children: React.ReactNode;
-};
+type ArticleRestitutionBaseProps = ComponentPropsWithoutRef<'article'>;
 
-type ArticleRestitutionProps = WithClassModifierOptions &
-  ArticleRestitutionBaseProps;
+type ArticleRestitutionProps = ArticleRestitutionBaseProps & {
+  classModifier?: string;
+};
 
 const ArticleRestitution = ({
   children,
   className,
+  ...otherProps
 }: ArticleRestitutionBaseProps) => (
-  <article className={className}>{children}</article>
+  <article className={className} {...otherProps}>
+    {children}
+  </article>
 );
 
 const defaultProps: Partial<ArticleRestitutionProps> = {
@@ -30,7 +30,7 @@ const defaultProps: Partial<ArticleRestitutionProps> = {
 };
 
 const enhance = compose(
-  identity<ArticleRestitutionBaseProps>(),
+  identity<ArticleRestitutionProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );

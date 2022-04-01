@@ -19,7 +19,7 @@ const RightTitle = () => {
 };
 
 const Component = (
-  <ArticleRestitution>
+  <ArticleRestitution classModifier="lg">
     <HeaderRestitution
       title="Tarifs"
       subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"

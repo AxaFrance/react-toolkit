@@ -1,4 +1,5 @@
 import React from 'react';
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ArticleRestitution from './ArticleRestitution';
 import HeaderRestitution from './HeaderRestitution';
@@ -22,7 +23,10 @@ export default {
     },
     options: {},
   },
-};
+  args: {
+    classModifier: '',
+  },
+} as Meta;
 
 const RightTitle = () => (
   <a
@@ -34,8 +38,8 @@ const RightTitle = () => (
   </a>
 );
 
-export const Default = () => (
-  <ArticleRestitution>
+export const Default = (args) => (
+  <ArticleRestitution {...args}>
     <HeaderRestitution
       title="Tarifs"
       subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"

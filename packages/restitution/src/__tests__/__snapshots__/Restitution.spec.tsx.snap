@@ -3,7 +3,8 @@
 exports[`<ArticleRestitution /> should render component 1`] = `
 <DocumentFragment>
   <article
-    class="af-restitution"
+    class="af-restitution af-restitution--lg"
+    classmodifier="lg"
   >
     <header
       class="af-restitution__header"
