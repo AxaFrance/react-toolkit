@@ -32,4 +32,13 @@ describe('<Modal>', () => {
     );
     expect(screen.queryByText('Content')).not.toBeInTheDocument();
   });
+
+  it('should find element with af-modal--custom className when render Modal with classModifier "custom"', () => {
+    const { baseElement } = render(
+      <Modal classModifier="custom" isOpen onOutsideTap={onClose} title="aria-label of the modal">
+        Content
+      </Modal>
+    );
+    expect(baseElement.querySelector('.af-modal--custom')).toBeInTheDocument();
+  });
 });
