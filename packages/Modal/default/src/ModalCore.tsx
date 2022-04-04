@@ -51,7 +51,7 @@ export type ModalCoreProps = ModalCoreComponentProps & WithClassModifierOptions;
 const enhance = compose(
   identity<ModalCoreComponentProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier(),
+  withClassModifier()
 );
 
 const ModalCoreRawEnhanced = enhance(ModalCoreRaw);
