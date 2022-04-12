@@ -49,7 +49,7 @@ ModalCoreRaw.defaultProps = defaultProps;
 export type ModalCoreProps = ModalCoreComponentProps & WithClassModifierOptions;
 
 const enhance = compose(
-  identity<ModalCoreComponentProps>(),
+  identity<ModalCoreProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );
