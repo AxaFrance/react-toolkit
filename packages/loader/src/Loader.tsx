@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Constants,
   compose,
   withClassDefault,
   withClassModifier,
@@ -16,44 +15,29 @@ const texts: { [index: string]: string } = {
   error: 'Une erreur est survenue lors du chargement du composant',
 };
 
-const defaultProps = {
-  ...Constants.defaultProps,
-  mode: LoaderModes.none,
-};
+const DEFAULT_CLASSNAME = 'af-loader';
 
-type Props = Partial<typeof defaultProps> & {
+type LoaderBaseProps = {
+  className?: string;
+  mode: string;
   text: string;
   children: React.ReactNode;
 };
 
-const Loader = ({ className, text, mode, children }: Props) => {
+type LoaderProps = LoaderBaseProps & { classModifier?: string };
+
+const Loader = ({ className, text, mode, children }: LoaderBaseProps) => {
   const message = text || texts[mode];
 
   const isLoaderVisible = mode !== LoaderModes.none;
   const isLoaderErrored = mode === LoaderModes.error;
 
   return (
-    <div
-      className={className}
-      style={{ minHeight: '94px', position: 'relative' }}>
+    <div className={className}>
       {children}
       {isLoaderVisible && (
-        <div
-          className={`${className} ${
-            isLoaderVisible ? 'af-loader-on' : 'af-loader-off'
-          }`}
-          style={{
-            backgroundColor: 'rgba(180, 180, 180, 0.75)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-          }}>
-          <div
-            className={`af-spinner ${
-              isLoaderVisible ? 'af-spinner--active' : ''
-            }`}>
+        <div className={`${className} af-loader-on`}>
+          <div className="af-spinner">
             {!isLoaderErrored && <div className="af-spinner__animation" />}
             <div className="af-spinner__caption">{message}</div>
           </div>
@@ -63,10 +47,18 @@ const Loader = ({ className, text, mode, children }: Props) => {
   );
 };
 
-Loader.defaultProps = defaultProps;
+const defaultProps: Partial<LoaderProps> = {
+  className: DEFAULT_CLASSNAME,
+  mode: LoaderModes.none,
+};
 
-export default compose(
-  identity<Props>(),
-  withClassDefault('af-loader'),
+const enhance = compose(
+  identity<LoaderProps>(),
+  withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
-)(Loader);
+);
+
+const Enhanced = enhance(Loader);
+Enhanced.displayName = 'Loader';
+Enhanced.defaultProps = defaultProps;
+export default Enhanced;
