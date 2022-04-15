@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {
-  Constants,
-  InputManager,
-  ClassManager,
-} from '@axa-fr/react-toolkit-core';
+import { Constants, ClassManager, useId } from '@axa-fr/react-toolkit-core';
 import Body, { BodyProps } from './Body';
 import Header, { HeaderProps, HeaderToggleElement } from './Header';
 
@@ -32,12 +28,8 @@ const CollapseCard = ({
   index,
   onToggle,
 }: CollapseProps) => {
-  const [headerId, setHeaderId] = React.useState(InputManager.getInputId(id));
+  const headerId = useId(id);
   const [open, setOpen] = React.useState(isOpen);
-
-  React.useEffect(() => {
-    setHeaderId(InputManager.getInputId(id));
-  }, [id]);
 
   React.useEffect(() => {
     setOpen(isOpen);

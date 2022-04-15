@@ -1,28 +1,25 @@
-import React, { ComponentProps } from 'react';
-import type { Option } from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
-import RadioModes from './RadioModes';
 
-interface RadioProps
-  extends Omit<ComponentProps<typeof RadioItem>, 'id' | 'label'> {
-  className?: string;
-  classModifier?: string;
+type RadioProps = Omit<
+  ComponentPropsWithoutRef<typeof RadioItem>,
+  'id' | 'label' | 'className'
+> & {
   options: Option[];
-  mode?: string;
-}
+  mode?: 'classic' | 'default' | 'inline';
+};
 
-const Radio: React.FC<RadioProps> = ({
-  className,
+const Radio = ({
   classModifier,
   options,
   value = '',
-  name,
-  mode = RadioModes.default,
+  mode = 'default',
   children,
   disabled,
   ...otherProps
-}) => {
-  const classNameWithMode = getClassName(mode);
+}: RadioProps) => {
+  const classNameMode = getClassNameMode(mode);
   const optionItems = options.map((option: Option) => {
     const isChecked = option.value === value;
     return (
@@ -32,11 +29,10 @@ const Radio: React.FC<RadioProps> = ({
         id={option.id}
         value={option.value}
         label={option.label}
-        checked={isChecked}
+        isChecked={isChecked}
         disabled={option.disabled || disabled}
-        className={classNameWithMode}
-        classModifier={classModifier}
-        optionClassName={className}>
+        className={classNameMode}
+        classModifier={classModifier}>
         {children}
       </RadioItem>
     );
@@ -44,15 +40,15 @@ const Radio: React.FC<RadioProps> = ({
   return <>{optionItems}</>;
 };
 
-const getClassName = (mode: string): string => {
+const getClassNameMode = (mode: RadioProps['mode']) => {
   switch (mode) {
-    case RadioModes.classic:
+    case 'classic':
       return 'af-form__radio';
-    case RadioModes.inline:
+    case 'inline':
       return 'af-form__radio-inline';
     default:
       return 'af-form__radio-custom';
   }
 };
 
-export default Radio;
+export default withInput<RadioProps>()(Radio);

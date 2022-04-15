@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, isValidElement, useMemo } from 'react';
+import React, { ReactNode, useState, isValidElement } from 'react';
 import NavBarBase from './NavBarBase';
 import { getPosition } from './NavBar.helpers';
 

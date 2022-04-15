@@ -1,6 +1,8 @@
 import React, {
   Children,
+  cloneElement,
   ComponentProps,
+  createElement,
   isValidElement,
   ReactNode,
 } from 'react';
@@ -15,15 +17,15 @@ const classnames = (...classes: string[]) =>
  * Return a jsx title
  */
 const formatTitle = (titleParam: ReactNode) => {
-  if (React.isValidElement(titleParam)) {
-    return React.cloneElement(titleParam, {
+  if (isValidElement(titleParam)) {
+    return cloneElement(titleParam, {
       className: classnames(
         titleParam.props.className,
         'af-rccard-group__title'
       ),
     });
   }
-  return React.createElement(
+  return createElement(
     'h3',
     { className: 'af-rccard-group__title' },
     titleParam
@@ -55,13 +57,13 @@ const CardGroupStateless = ({
   if (indexMeta !== -1) childrenWithoutMeta.splice(indexMeta, 1);
   const nbCards = childrenWithoutMeta.length;
 
-  const childrenWithProps = React.Children.map(childrenWithoutMeta, (child) => {
+  const childrenWithProps = Children.map(childrenWithoutMeta, (child) => {
     if (isValidElement(child)) {
       const isChecked = values
         ? values.includes(child.props.value)
         : value === child.props.value;
 
-      return React.cloneElement(child, {
+      return cloneElement(child, {
         type,
         checked: isChecked,
         disabled: child.props.disabled || disabled,

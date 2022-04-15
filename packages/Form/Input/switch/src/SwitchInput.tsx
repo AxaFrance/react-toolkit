@@ -1,26 +1,23 @@
-import React, { ComponentProps, ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   Field,
   FieldInput,
   HelpMessage,
-  InputManager,
+  useOptionsWithId,
 } from '@axa-fr/react-toolkit-form-core';
 
 import Switch from './Switch';
 
-interface Props
-  extends ComponentProps<typeof Field>,
-    ComponentProps<typeof Switch> {
-  helpMessage?: ReactNode;
-  children?: ReactNode;
-}
+type Props = Omit<ComponentPropsWithoutRef<typeof Field>, 'id'> &
+  ComponentPropsWithoutRef<typeof Switch> & {
+    helpMessage?: ReactNode;
+  };
 
 const SwitchInput = ({
   classModifier,
   message,
   children,
   helpMessage,
-  id,
   classNameContainerLabel,
   classNameContainerInput,
   label,
@@ -31,8 +28,8 @@ const SwitchInput = ({
   options,
   ...switchProps
 }: Props) => {
-  const newOptions = InputManager.getOptionsWithId(options);
-  const firstId = InputManager.getFirstId(newOptions);
+  const newOptions = useOptionsWithId(options);
+  const firstId = (newOptions[0] || {}).id;
   return (
     <Field
       label={label}

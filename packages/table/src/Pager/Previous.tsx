@@ -1,48 +1,44 @@
-import React from 'react';
-import {
-  WithActiveOption,
-  WithVisibilityOption,
-  WithOnChangeEvent,
-  OnChangeCustomEvent,
-} from '@axa-fr/react-toolkit-core';
+import React, { ReactNode } from 'react';
 
-export type PreviousProps = WithActiveOption &
-  WithVisibilityOption &
-  WithOnChangeEvent<OnChangeCustomEvent> &
-  Pick<React.HTMLProps<HTMLAnchorElement>, 'value'>;
+type PreviousProps = {
+  isVisible?: boolean;
+  active?: boolean;
+  children?: ReactNode;
+  value: number;
+  onChange: (e: { value: number }) => void;
+};
 
-export default class Previous extends React.PureComponent<PreviousProps> {
-  constructor(props: PreviousProps) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
+const Previous = ({
+  isVisible,
+  active,
+  children,
+  onChange,
+  value,
+}: PreviousProps) => {
+  if (!isVisible) {
+    return null;
   }
-
-  onChange(event: React.FormEvent<HTMLAnchorElement>) {
-    event.preventDefault();
-    const { onChange, value } = this.props;
-    onChange({
-      value: Number(value),
-    });
-  }
-
-  render() {
-    const { isVisible, active, children } = this.props;
-    if (!isVisible) {
-      return null;
-    }
-    if (active) {
-      return (
-        <li className="af-pager__item">
-          <a href="#" onClick={this.onChange} className="af-pager__item-link">
-            {children}
-          </a>
-        </li>
-      );
-    }
+  if (active) {
     return (
-      <li className="af-pager__item af-pager__item--disabled">
-        <span className="af-pager__item-nolink">{children}</span>
+      <li className="af-pager__item">
+        <a
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            onChange({
+              value,
+            });
+          }}
+          className="af-pager__item-link">
+          {children}
+        </a>
       </li>
     );
   }
-}
+  return (
+    <li className="af-pager__item af-pager__item--disabled">
+      <span className="af-pager__item-nolink">{children}</span>
+    </li>
+  );
+};
+export default Previous;

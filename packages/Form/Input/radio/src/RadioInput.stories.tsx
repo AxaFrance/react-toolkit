@@ -2,8 +2,6 @@ import React, { ComponentProps } from 'react';
 import { Meta, Story } from '@storybook/react';
 import HelpButton from '@axa-fr/react-toolkit-help';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
-import RadioModes from './RadioModes';
-import { Option } from '../../../../core/src/InputManager';
 import RadioInput from './RadioInput';
 import readme from '../README.md';
 
@@ -22,7 +20,7 @@ const options = [
   { label: 'For work', value: '2', id: 'customId' },
   { label: 'For drink', value: '3' },
   { label: 'For the life', value: '4', disabled: true },
-] as Option[];
+];
 
 type RadioInputProps = ComponentProps<typeof RadioInput>;
 const Template: Story<RadioInputProps> = (args) => (
@@ -38,7 +36,7 @@ RadioInputStory.args = {
   name: 'placeType',
   id: '',
   options,
-  mode: RadioModes.default,
+  mode: 'default',
   value: '',
   message: '',
   messageType: MessageTypes.error,

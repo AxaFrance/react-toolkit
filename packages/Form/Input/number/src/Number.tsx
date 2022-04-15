@@ -1,38 +1,24 @@
-import React, {
-  forwardRef,
-  InputHTMLAttributes,
-  MutableRefObject,
-} from 'react';
-import {
-  ClassManager,
-  CustomFormEvent,
-  defaultOnChange,
-  InputManager,
-} from '@axa-fr/react-toolkit-form-core';
+import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
+import { useId, useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withInput } from '@axa-fr/react-toolkit-form-core';
 
-const defaultClassName = 'af-form__input-number';
-
-type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'onChange'> & {
   classModifier?: string;
-  onChange: (e: CustomFormEvent) => void;
+  onChange?: (e: any) => void;
 };
-const CustomNumber = forwardRef(
-  (
-    { id, className, classModifier, onChange, ...otherProps }: Props,
-    inputRef: MutableRefObject<HTMLInputElement>
-  ) => {
-    const inputId = InputManager.getInputId(id);
-    const componentClassName = ClassManager.getComponentClassName(
+const CustomNumber = forwardRef<HTMLInputElement, Props>(
+  ({ id, className, classModifier, ...otherProps }, inputRef) => {
+    const inputId = useId(id);
+    const componentClassName = useComponentClassName(
       className,
       classModifier,
-      defaultClassName
+      'af-form__input-number'
     );
     return (
       <input
         className={componentClassName}
         id={inputId}
         type="number"
-        onChange={defaultOnChange(onChange)}
         ref={inputRef}
         {...otherProps}
       />
@@ -40,4 +26,16 @@ const CustomNumber = forwardRef(
   }
 );
 
-export default CustomNumber;
+const handlers = {
+  onChange:
+    ({ onChange, name, id }: Props) =>
+    (e: ChangeEvent<HTMLInputElement>) => {
+      onChange({
+        value: e.target.valueAsNumber,
+        name,
+        id,
+      });
+    },
+};
+
+export default withInput<Props>(handlers)(CustomNumber);

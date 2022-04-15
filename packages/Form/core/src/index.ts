@@ -10,13 +10,26 @@ export { default as InputConstants } from './InputConstants';
 export { default as InputList } from './InputList';
 
 export { withInput, omit } from './withInput';
-export {
-  defaultOnChange,
-  CustomFormEvent,
-  CustomFormEventValues,
-} from './defaultOnChange';
 
-export { default as withComponentClassName } from './withComponentClassName';
-export { withInputClassModifier } from './withInputClassModifier.hoc';
-export { default as withOptionClassName } from './withOptionClassName.hoc';
-export { InputManager, ClassManager } from '@axa-fr/react-toolkit-core';
+export { useInputClassModifier } from './useInputClassModifier';
+export { useOptionClassName } from './useOptionClassName';
+export { useOptionsWithId } from './useOptionsWithId';
+
+export type Option = {
+  id?: string;
+  label: string;
+  value: string;
+  disabled?: boolean;
+};
+
+type BaseFormEvent = {
+  id: string;
+  name: string;
+};
+export type FormEvent =
+  | (BaseFormEvent & {
+      value: string;
+    })
+  | (BaseFormEvent & {
+      values: string[];
+    });

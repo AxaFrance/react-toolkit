@@ -3,9 +3,9 @@ import {
   Field,
   HelpMessage,
   FieldInput,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 import CustomDate from './CustomDate';
 
 type Props = Omit<
@@ -13,8 +13,6 @@ type Props = Omit<
   'placeholderText'
 > &
   ComponentPropsWithoutRef<typeof Field> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     placeholder?: string;
     helpMessage?: ReactNode;
   };
@@ -40,11 +38,14 @@ const DateInput = ({
   viewValue,
   onChange,
   readOnly,
-  inputFieldClassModifier,
-  inputClassModifier,
   ...otherProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
   return (
     <Field
       label={label}
@@ -82,5 +83,4 @@ const DateInput = ({
   );
 };
 
-const enhanced = withInputClassModifier(DateInput);
-export default enhanced;
+export default DateInput;

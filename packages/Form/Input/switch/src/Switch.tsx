@@ -1,15 +1,60 @@
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import React, {
   ComponentProps,
+  createRef,
   CSSProperties,
+  RefObject,
   useEffect,
   useState,
 } from 'react';
-import { CustomFormEvent } from '@axa-fr/react-toolkit-form-core';
 import SwitchItem from './SwitchItem';
 
-export const getSliderPosition = (ref: HTMLDivElement) => {
+type SwitchItemProps = ComponentProps<typeof SwitchItem>;
+type SwitchOptions = Pick<SwitchItemProps, keyof Option>;
+
+type Props = Omit<SwitchItemProps, keyof Option> & {
+  value: SwitchItemProps['value'];
+  options: SwitchOptions[];
+};
+
+const Switch = ({ value, options, onChange, ...otherProps }: Props) => {
+  const [selectedValue, setSelectedValue] = useState(value);
+  const [sliderStyle, setSliderStyle] = useState<CSSProperties>({
+    display: 'none',
+  });
+  const ref = createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    setSliderStyle(getSliderStyle(ref));
+  }, [ref]);
+
+  return (
+    <div className="af-form-switch" ref={ref}>
+      {options.map((option) => {
+        return (
+          <SwitchItem
+            key={option.value}
+            id={option.id}
+            value={option.value}
+            label={option.label}
+            isChecked={option.value === selectedValue}
+            onChange={(e) => {
+              setSelectedValue(e.currentTarget.value);
+              setSliderStyle(getSliderStyle(ref));
+              onChange(e);
+            }}
+            {...otherProps}
+          />
+        );
+      })}
+      <span className="af-btn-switch-slider" style={sliderStyle} />
+    </div>
+  );
+};
+
+export const getSliderPosition = (ref: RefObject<HTMLDivElement>) => {
   const currentElementResult =
-    ref && ref.querySelector(`input[type="radio"]:checked`);
+    ref && ref.current.querySelector(`input[type="radio"]:checked`);
   if (!currentElementResult) {
     return { left: 0, width: 0 };
   }
@@ -22,7 +67,7 @@ export const getSliderPosition = (ref: HTMLDivElement) => {
   };
 };
 
-const getSliderStyle = (ref: HTMLDivElement): CSSProperties => {
+const getSliderStyle = (ref: RefObject<HTMLDivElement>): CSSProperties => {
   const sliderPosition = getSliderPosition(ref);
   return {
     width: `${sliderPosition.width}px`,
@@ -30,57 +75,4 @@ const getSliderStyle = (ref: HTMLDivElement): CSSProperties => {
   };
 };
 
-interface Props {
-  value: string;
-  options: Omit<ComponentProps<typeof SwitchItem>, 'onChange'>[];
-  name: string;
-  disabled: boolean;
-  onChange: (event: CustomFormEvent) => void;
-}
-
-const Switch = ({ value, options, onChange }: Props) => {
-  const [selectedValue, setSelectedValue] = useState(value);
-  const [sliderStyle, setSliderStyle] = useState<CSSProperties>({
-    display: 'none',
-  });
-  let container: HTMLDivElement;
-
-  useEffect(() => {
-    if (container) {
-      setSliderStyle(getSliderStyle(container));
-    }
-  }, [container]);
-
-  useEffect(() => {
-    setSliderStyle(getSliderStyle(container));
-  }, [selectedValue, container]);
-
-  return (
-    <div
-      className="af-form-switch"
-      ref={(el) => {
-        container = el;
-      }}>
-      {options.map((switchItemProps) => {
-        return (
-          <SwitchItem
-            key={switchItemProps.value.toString()}
-            {...switchItemProps}
-            onChange={(e) => {
-              setSelectedValue(e.currentTarget.value);
-              onChange({
-                value: e.currentTarget.value,
-                name: e.currentTarget.name,
-                id: e.currentTarget.id,
-              });
-            }}
-            checked={switchItemProps.value === selectedValue}
-          />
-        );
-      })}
-      <span className="af-btn-switch-slider" style={sliderStyle} />
-    </div>
-  );
-};
-
-export default Switch;
+export default withInput<Props>()(Switch);

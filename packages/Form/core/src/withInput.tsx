@@ -1,8 +1,8 @@
-import React, { ChangeEvent, ComponentType } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
-import Constants from './InputConstants';
-import { CustomFormEvent } from './customEvent';
+import React, { BaseSyntheticEvent, ComponentType } from 'react';
 
+/**
+ * @remarks - Will be remove into v2.1.x
+ */
 export const omit =
   (keys?: string[]) =>
   <P extends {}>(props: P) => {
@@ -22,89 +22,45 @@ export const omit =
     );
   };
 
-type DefaultOnChangeProps = {
-  name: string;
-  onChange: (event: CustomFormEvent) => void;
-};
-
-export const defaultOnChange =
-  ({ name, onChange }: DefaultOnChangeProps) =>
-  (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) =>
+const defaultOnChange =
+  ({ name, onChange }: any) =>
+  (e: BaseSyntheticEvent) =>
     onChange({ name, value: e.target.value, id: e.target.id });
 
-const defaultWithProps =
-  (defaultClassName: string) =>
-  ({
-    className,
-    classModifier,
-  }: {
-    className?: string;
-    classModifier?: string;
-  }) => ({
-    componentClassName: ClassManager.getComponentClassName(
-      className,
-      classModifier,
-      defaultClassName
-    ),
-  });
-
-const setOnHandlers = (handlers: any = {}, props: any) =>
-  Object.entries(handlers).reduce(
-    (acc, [propertyName]) => ({
-      ...acc,
-      [propertyName]: handlers[propertyName](props),
-    }),
-    {}
-  );
-
+/**
+ * @remarks - Will be rewrite into v2.1.x
+ */
 export const withInput =
-  <
-    P extends {
-      className?: string;
-      classModifier?: string;
-      isVisible?: boolean;
-    }
-  >(
-    defaultClassName: string,
-    addPropTypes = {},
-    addDefaultProps = {},
-    withHandlersOverride = {},
-    withPropsOverride = defaultWithProps(defaultClassName),
-    defaultOnChangeFn = defaultOnChange
+  <P extends {}>(
+    handlersOverride = {},
+    propsOverride = null as (p: any) => any
   ) =>
   (Component: ComponentType<P>) => {
-    const EnhancedInput = (props: P) => {
-      const { isVisible } = props;
+    const handlers: Record<string, any> = {
+      onChange: defaultOnChange,
+      ...handlersOverride,
+    };
+
+    const NewComponent = ({
+      isVisible,
+      ...props
+    }: P & { isVisible?: boolean }) => {
       if (!isVisible) {
         return null;
       }
 
-      return (
-        <Component
-          {...props}
-          {...withPropsOverride(props)}
-          {...setOnHandlers(
-            {
-              onChange: defaultOnChangeFn,
-              ...withHandlersOverride,
-            },
-            props
-          )}
-        />
+      const onHandlers = Object.entries(handlers).reduce(
+        (acc, [propertyName]) => ({
+          ...acc,
+          [propertyName]: handlers[propertyName](props),
+        }),
+        {}
       );
+
+      return <Component {...props} {...propsOverride(props)} {...onHandlers} />;
     };
 
-    EnhancedInput.propTypes = {
-      ...Constants.propTypes,
-      ...addPropTypes,
-    };
+    NewComponent.displayName = 'EnhancedInput';
 
-    EnhancedInput.defaultProps = {
-      ...Constants.defaultProps,
-      ...addDefaultProps,
-    };
-
-    return EnhancedInput;
+    return NewComponent;
   };

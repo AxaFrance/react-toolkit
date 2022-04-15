@@ -3,43 +3,43 @@ import {
   Field,
   HelpMessage,
   FieldInput,
-  withInputClassModifier,
-  InputManager,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import Textarea from './Textarea';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Textarea> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     helpMessage?: ReactNode;
-    children?: ReactNode;
   };
 
-const TextareaInput = (props: Props) => {
-  const {
-    classModifier,
-    message,
-    children,
-    helpMessage,
-    id,
-    classNameContainerLabel,
-    classNameContainerInput,
-    label,
-    messageType,
-    isVisible,
-    forceDisplayMessage,
-    className,
-    rows = 5,
-    cols = 50,
-    inputFieldClassModifier,
-    inputClassModifier,
-    ...textareaProps
-  } = props;
-
+const TextareaInput = ({
+  classModifier,
+  message,
+  children,
+  helpMessage,
+  id,
+  classNameContainerLabel,
+  classNameContainerInput,
+  label,
+  messageType,
+  isVisible,
+  forceDisplayMessage,
+  className,
+  rows = 5,
+  cols = 50,
+  disabled,
+  ...textareaProps
+}: Props) => {
   const rowModifier = `${classModifier} label-top`;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
+
   return (
     <Field
       label={label}
@@ -56,11 +56,12 @@ const TextareaInput = (props: Props) => {
         className="af-form__textarea"
         classModifier={inputFieldClassModifier}>
         <Textarea
+          {...textareaProps}
           id={inputId}
           rows={rows}
           cols={cols}
           classModifier={inputClassModifier}
-          {...textareaProps}
+          disabled={disabled}
         />
         {children}
       </FieldInput>
@@ -69,5 +70,4 @@ const TextareaInput = (props: Props) => {
   );
 };
 
-const enhance = withInputClassModifier(TextareaInput);
-export default enhance;
+export default TextareaInput;

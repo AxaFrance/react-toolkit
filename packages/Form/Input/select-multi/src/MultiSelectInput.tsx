@@ -2,10 +2,10 @@ import React, { ComponentProps, ReactNode } from 'react';
 
 import {
   Field,
-  InputManager,
   FieldInput,
   HelpMessage,
 } from '@axa-fr/react-toolkit-form-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import MultiSelect from './MultiSelect';
 
@@ -34,7 +34,7 @@ const MultiSelectInput = ({
   const inputFieldClassModifier = `${classModifier} ${
     disabled ? 'disabled' : ''
   }`;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
   return (
     <Field
       label={label}

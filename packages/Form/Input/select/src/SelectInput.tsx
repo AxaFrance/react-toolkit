@@ -3,8 +3,9 @@ import {
   Field,
   FieldInput,
   HelpMessage,
-  InputManager,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import Select from './Select';
 
@@ -30,13 +31,12 @@ const SelectInput = ({
   className,
   ...otherSelectProps
 }: Props) => {
-  const inputClassModifier = `${classModifier} ${
-    children ? 'hasinfobulle' : ''
-  }`;
-  const inputFieldClassModifier = `${classModifier} ${
-    disabled ? 'disabled' : ''
-  }`;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
   return (
     <Field
       label={label}

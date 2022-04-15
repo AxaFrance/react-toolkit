@@ -1,31 +1,29 @@
-import React from 'react';
+import { Option } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithoutRef } from 'react';
 import ReactSelectAsync from 'react-select/async';
-import { CustomFormEventValues } from '@axa-fr/react-toolkit-form-core';
-import {
-  OptionsType,
-  OptionTypeBase,
-  NamedProps as LibProps,
-  ValueType,
-} from 'react-select';
 
+type ReactSelectAsyncProps = ComponentPropsWithoutRef<typeof ReactSelectAsync>;
 type Props = Omit<
-  LibProps<OptionTypeBase>,
-  'onChange' | 'loadOptions' | 'value'
+  ReactSelectAsyncProps,
+  | 'loadingMessage'
+  | 'ariaLiveMessages'
+  | 'noOptionsMessage'
+  | 'isDisabled'
+  | 'options'
 > & {
   readOnly?: boolean;
   disabled?: boolean;
-  onChange?: (event: CustomFormEventValues) => void;
+  options: Option[];
   values?: string[];
-  loadOptions?: (
-    inputValue: string,
-    callback: (options: OptionsType<OptionTypeBase>) => void
-  ) => Promise<any> | void;
+  loadingPlaceholder?: ReactSelectAsyncProps['loadingMessage'];
+  searchPromptText?: ReactSelectAsyncProps['ariaLiveMessages'];
+  noResultsText?: ReactSelectAsyncProps['noOptionsMessage'];
 };
 
 const MultiSelect = ({
-  id,
   name,
   loadOptions,
+  value,
   values,
   options,
   onChange,
@@ -33,36 +31,56 @@ const MultiSelect = ({
   disabled,
   placeholder = 'Select',
   className = 'react-select',
-  noOptionsMessage = () => 'Aucun résultat',
+  loadingPlaceholder = () => 'Chargement...',
+  searchPromptText = { onChange: () => 'Saisir pour chercher' },
+  noResultsText = () => 'Aucun résultat',
   ...otherProps
 }: Props) => {
-  const selectedValues = options.filter((opt) => values?.includes(opt.value));
+  const isDisabled = disabled || readOnly;
+  const newLoadOptions = loadOptions ?? (() => Promise.resolve(options));
 
-  const loadOptionsDefault = () => Promise.resolve(options);
+  if (values != null) {
+    const newValues = options.reduce((acc, opt) => {
+      const valueTemp = values.find((v) => v === opt.value);
+      if (valueTemp) {
+        acc.push(opt);
+      }
+      return acc;
+    }, []);
 
-  const handleChange = (changedValue: ValueType<OptionTypeBase>) => {
-    onChange &&
-      onChange({
-        id,
-        name,
-        values: (changedValue || []).map((v: OptionTypeBase) => v.value),
-      });
-  };
+    return (
+      <ReactSelectAsync
+        isMulti
+        name={name}
+        value={newValues}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={className}
+        isDisabled={isDisabled}
+        options={options}
+        loadOptions={newLoadOptions}
+        loadingMessage={loadingPlaceholder}
+        ariaLiveMessages={searchPromptText}
+        noOptionsMessage={noResultsText}
+        {...otherProps}
+      />
+    );
+  }
+  const newValue = options.find((v) => v.value === value) || '';
   return (
     <ReactSelectAsync
-      {...otherProps}
-      className={className}
-      isMulti={values !== null}
       name={name}
-      value={selectedValues}
+      value={newValue}
       placeholder={placeholder}
-      noOptionsMessage={noOptionsMessage}
-      onChange={handleChange}
-      isDisabled={disabled || readOnly}
-      defaultOptions
-      loadOptions={loadOptions || loadOptionsDefault}
-      valueKey="value"
-      labelKey="label"
+      onChange={onChange}
+      className={className}
+      isDisabled={isDisabled}
+      options={options}
+      loadOptions={loadOptions}
+      loadingMessage={loadingPlaceholder}
+      ariaLiveMessages={searchPromptText}
+      noOptionsMessage={noResultsText}
+      {...otherProps}
     />
   );
 };

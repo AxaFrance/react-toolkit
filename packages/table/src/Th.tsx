@@ -1,33 +1,27 @@
-import React, { FC, HTMLProps } from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-table__th';
+type Props = ComponentPropsWithoutRef<'th'> & {
+  classModifier?: string;
+};
 
-type ThComponentProps = HTMLProps<HTMLTableHeaderCellElement>;
-
-const Th: FC<ThComponentProps> = ({
+const Th = ({
   children,
   id,
   className,
+  classModifier,
   ...otherProps
-}) => (
-  <th className={className} key={id} {...otherProps}>
-    {children}
-  </th>
-);
-type ThProps = ThComponentProps & WithClassModifierOptions;
-const enhance = compose(
-  identity<ThProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
+}: Props) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-table__th'
+  );
+  return (
+    <th className={componentClassName} key={id} {...otherProps}>
+      {children}
+    </th>
+  );
+};
 
-Th.displayName = 'Table.Th';
-
-export default enhance(Th);
+export default Th;

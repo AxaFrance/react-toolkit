@@ -9,22 +9,11 @@ import React, {
   isValidElement,
   ReactNode,
 } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import MessageTypes from './MessageTypes';
 import { getMessageClassModifier } from './FormClassManager';
-import type { CustomFormEvent } from './CustomEvent';
 
 const defaultClassName = 'md-10';
-
-interface IFieldFormState {
-  hasLostFocusOnce: boolean;
-  hasFocus: boolean;
-  hasChange: boolean;
-  memory: {
-    message: string;
-    messageType: MessageTypes;
-  };
-}
 
 const INITIAL_STATE = {
   hasLostFocusOnce: false,
@@ -39,23 +28,25 @@ type EventFunction = {
   onFocus?: Function;
 };
 
-export type FieldFormProps = {
+type FieldFormProps = {
   className?: string;
   classModifier?: string;
   forceDisplayMessage?: boolean;
   children: ReactNode;
   message?: string | null;
   messageType?: MessageTypes;
-  setStateMemoryFn?: Function;
-  onChangeByStateFn?: Function;
-  setStateOnBlurFn?: Function;
-  setStateOnFocusFn?: Function;
-  initialState?: IFieldFormState;
+  setStateMemoryFn?: typeof setStateMemory;
+  onChangeByStateFn?: typeof onChangeByState;
+  setStateOnBlurFn?: typeof setStateOnBlur;
+  setStateOnFocusFn?: typeof setStateOnFocus;
+  initialState?: typeof INITIAL_STATE;
 };
 
+type SetState = (prevState: typeof INITIAL_STATE) => typeof INITIAL_STATE;
+
 export const setStateMemory =
-  ({ message = null, messageType = MessageTypes.error }) =>
-  (prevState: IFieldFormState) => ({
+  ({ message = null, messageType = MessageTypes.error }): SetState =>
+  (prevState) => ({
     ...prevState,
     memory: {
       message,
@@ -63,11 +54,10 @@ export const setStateMemory =
     },
   });
 
-export const setStateHasChange: Function =
-  () => (prevState: IFieldFormState) => ({
-    ...prevState,
-    hasChange: true,
-  });
+export const setStateHasChange = (): SetState => (prevState) => ({
+  ...prevState,
+  hasChange: true,
+});
 
 export const onChangeByState = (
   setState: Function,
@@ -75,15 +65,15 @@ export const onChangeByState = (
   setStateHasChangeFn = setStateHasChange
 ) => !stateHasChange && setState(setStateHasChangeFn());
 
-export const setStateOnBlur = () => (prevState: IFieldFormState) => ({
+export const setStateOnBlur = (): SetState => (prevState) => ({
   ...prevState,
   hasLostFocusOnce: true,
   hasFocus: false,
 });
 
 export const setStateOnFocus =
-  ({ message = null, messageType = MessageTypes.error }) =>
-  (prevState: IFieldFormState) => ({
+  ({ message = null, messageType = MessageTypes.error }): SetState =>
+  (prevState) => ({
     ...prevState,
     hasFocus: true,
     memory: { message, messageType },
@@ -132,7 +122,7 @@ const FieldForm = ({
     ...getMessageInfo({ ...state, forceDisplayMessage, message, messageType }),
   });
 
-  const subComponentClassName = ClassManager.getComponentClassName(
+  const subComponentClassName = useComponentClassName(
     className,
     classModifier,
     defaultClassName
@@ -264,7 +254,7 @@ type EventWrapperProps = {
 } & Pick<AddPropsClone, 'wrapper'>;
 
 export const eventWrapper = ({ wrapper, props }: EventWrapperProps) => ({
-  onChange: (ev: CustomFormEvent) => {
+  onChange: (ev: BaseSyntheticEvent) => {
     wrapper.onChange(ev);
     if (props.onChange) {
       props.onChange(ev);
