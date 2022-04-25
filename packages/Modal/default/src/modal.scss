@@ -6,7 +6,7 @@
   z-index: 3;
   overflow: auto;
   &--after-open {
-    background: rgba(48, 50, 191, 0.62) !important;
+    background: rgba($color-azur, 0.62) !important;
   }
 }
 
