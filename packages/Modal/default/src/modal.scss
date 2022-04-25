@@ -5,6 +5,9 @@
   animation: fademodal 0.1s linear;
   z-index: 3;
   overflow: auto;
+  &--after-open {
+    background: rgba($color-azur, 0.62) !important;
+  }
 }
 
 .ReactModal__Body {
