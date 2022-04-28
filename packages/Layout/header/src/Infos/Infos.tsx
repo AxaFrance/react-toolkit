@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import { ClassManager, InputManager } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
-type Props = {
-  infos: { id?: string; word: string; definition: string }[];
+type InfosProps = {
+  infos: { id?: string; word: ReactNode; definition: ReactNode }[];
   className?: string;
   classModifier?: string;
 };
 
-const Infos = ({ infos, className, classModifier }: Props) => {
+const Infos = ({ infos, className, classModifier }: InfosProps) => {
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
