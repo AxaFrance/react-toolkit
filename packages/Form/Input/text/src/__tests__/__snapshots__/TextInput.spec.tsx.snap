@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders TextInput correctly 1`] = `
+exports[`TextInput renders TextInput correctly with child 1`] = `
 <DocumentFragment>
   <div
-    class="row af-form__group"
+    class="row af-form__group af-form__group--customtext"
   >
     <div
       class="col-md-2"
@@ -22,7 +22,46 @@ exports[`renders TextInput correctly 1`] = `
         class="af-form__text"
       >
         <input
-          class="af-form__input-text af-form__input-text--undefined"
+          class="af-form__input-text af-form__input-text--customtext af-form__input-text--hasinfobulle"
+          id="iddateinput"
+          type="text"
+          value="ici le text"
+        />
+        <p>
+          child
+        </p>
+      </div>
+      <small
+        class="af-form__help"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput renders TextInput correctly with classModifier 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--customtext"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="iddateinput"
+      >
+        Image *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__text"
+      >
+        <input
+          class="af-form__input-text af-form__input-text--customtext"
           id="iddateinput"
           type="text"
           value="ici le text"
@@ -31,6 +70,51 @@ exports[`renders TextInput correctly 1`] = `
       <small
         class="af-form__help"
       />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TextInput renders TextInput correctly with error message 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="iddateinput"
+      >
+        Image *
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__text af-form__text--error"
+      >
+        <input
+          class="af-form__input-text"
+          id="iddateinput"
+          type="text"
+          value="ici le text"
+        />
+      </div>
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          error message
+        </span>
+      </small>
     </div>
   </div>
 </DocumentFragment>

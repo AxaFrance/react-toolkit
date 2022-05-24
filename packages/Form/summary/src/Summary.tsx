@@ -1,7 +1,8 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
 
-type SummaryProps = ComponentPropsWithoutRef<typeof Alert> & {
+type SummaryProps = Omit<ComponentPropsWithoutRef<typeof Alert>, 'title'> & {
+  title?: string;
   messages?: string[];
   isVisible?: boolean;
 };

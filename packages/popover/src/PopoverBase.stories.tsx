@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
 import PopoverBase from './PopoverBase';
 import PopoverPlacements from './PopoverPlacements';
 import Readme from '../README.md';
@@ -29,7 +29,7 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
 type PopoverBaseProps = React.ComponentProps<typeof PopoverBase>;
 const Template: Story<PopoverBaseProps> = (args) => (

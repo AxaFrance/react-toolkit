@@ -22,7 +22,7 @@ const Previous = ({
     return (
       <li className="af-pager__item">
         <a
-          href="#"
+          href="/#"
           onClick={(event) => {
             event.preventDefault();
             onChange({

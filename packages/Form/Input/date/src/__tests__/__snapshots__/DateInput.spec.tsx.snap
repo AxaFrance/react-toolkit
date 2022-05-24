@@ -28,7 +28,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
             class="react-datepicker__input-container"
           >
             <input
-              class="af-datepicker af-datepicker--undefined"
+              class="af-datepicker"
               id="iddateinput"
               name="placeImage"
               type="text"

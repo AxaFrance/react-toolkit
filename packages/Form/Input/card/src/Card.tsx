@@ -68,11 +68,12 @@ type Props = Omit<CardHeaderProps, 'children'> & {
   children: ReactNode[];
   cardClassModifier?: string;
 };
+
 const Card = ({
   id,
-  type,
-  isChecked,
   children,
+  type,
+  isChecked = false,
   disabled = false,
   cardClassModifier,
   ...otherProps
@@ -107,6 +108,7 @@ const Card = ({
         type,
       })
   );
+
   const className = ClassManager.getComponentClassName(
     null,
     `${cardClassModifier || ''}${isChecked ? ' active' : ''}${

@@ -1,6 +1,10 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { Field, useOptionsWithId } from '@axa-fr/react-toolkit-form-core';
-import Radio from './Radio';
+import {
+  Field,
+  useOptionsWithId,
+  getFirstId,
+} from '@axa-fr/react-toolkit-form-core';
+import Radio, { RadioModes } from './Radio';
 
 type RadioInputProps = ComponentPropsWithoutRef<typeof Field> &
   ComponentPropsWithoutRef<typeof Radio>;
@@ -20,12 +24,12 @@ const RadioInput = ({
   children,
   ...radioProps
 }: RadioInputProps) => {
-  let rowModifier = classModifier;
-  if (mode === 'classic') {
-    rowModifier += ' label-top';
-  }
+  const rowModifier = `${classModifier ?? ''}${
+    mode === RadioModes.classic ? ' label-top' : ''
+  }`;
   const newOptions = useOptionsWithId(options);
-  const firstId = newOptions[0].id;
+  const firstId = getFirstId(newOptions);
+
   return (
     <Field
       label={label}

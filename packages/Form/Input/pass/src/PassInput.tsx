@@ -55,8 +55,7 @@ const PassInput = ({
   ...passProps
 }: Props) => {
   const strength = calculateStrenght(score);
-  const classModifierStrength =
-    strength !== null ? `${classModifier} ${strength}` : classModifier;
+  const classModifierStrength = [classModifier ?? '', strength ?? ''].join(' ');
 
   const [type, setType] = useState<PassProps['type']>('password');
   const inputId = useId(id);
@@ -75,7 +74,7 @@ const PassInput = ({
       forceDisplayMessage={forceDisplayMessage}
       className={className}
       id={inputId}
-      classModifier={classModifier}
+      classModifier={classModifierStrength}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
       <FieldInput

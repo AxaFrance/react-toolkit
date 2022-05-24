@@ -22,7 +22,7 @@ exports[`renders TextareaInput correctly 1`] = `
         class="af-form__textarea"
       >
         <textarea
-          class="af-form__input-textarea af-form__input-textarea--undefined"
+          class="af-form__input-textarea"
           cols="50"
           id="iddateinput"
           name="sample"

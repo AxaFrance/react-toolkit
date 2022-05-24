@@ -2,10 +2,10 @@
 
 exports[`withInput Should not return Enhanced Input when isVisible is false 1`] = `<DocumentFragment />`;
 
-exports[`withInput Should return Enhanced Input when withInput have been called with default className and input component 1`] = `
+exports[`withInput Should return Enhanced Input when withInput have been called with defaultclassName and input component 1`] = `
 <DocumentFragment>
   <p>
-    default
+    defaultclassName
   </p>
   <p />
   <input
@@ -16,10 +16,10 @@ exports[`withInput Should return Enhanced Input when withInput have been called 
 </DocumentFragment>
 `;
 
-exports[`withInput Should return Enhanced Input when withInput have been called with default className and input component and modifier 1`] = `
+exports[`withInput Should return Enhanced Input when withInput have been called with defaultclassName and input component and modifier 1`] = `
 <DocumentFragment>
   <p>
-    default default--custom
+    defaultclassName defaultclassName--custom
   </p>
   <p>
     custom

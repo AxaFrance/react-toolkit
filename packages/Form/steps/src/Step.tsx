@@ -3,7 +3,8 @@ import StepNoLink from './StepNoLink';
 import StepLink from './StepLink';
 import StepCurrent from './StepCurrent';
 
-type Props = ComponentPropsWithoutRef<typeof StepLink> & {
+type Props = Omit<ComponentPropsWithoutRef<typeof StepLink>, 'href'> & {
+  href?: string;
   mode?: 'link' | 'active' | 'disabled';
 };
 const Step = ({

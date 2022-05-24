@@ -5,7 +5,7 @@ import LiPoint from './LiPoint';
 import Next from './Next';
 import Li from './Li';
 
-type PagerComponentProps = Pick<
+export type PagerComponentProps = Pick<
   ComponentPropsWithoutRef<typeof Previous>,
   'onChange'
 > & {

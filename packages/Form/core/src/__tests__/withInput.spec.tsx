@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentPropsWithRef } from 'react';
 import { render } from '@testing-library/react';
 import { omit, defaultOnChange, withInput } from '../withInput';
 
@@ -42,42 +42,55 @@ describe('defaultOnChange', () => {
 });
 
 describe('withInput', () => {
-  const onChangeMock = (e: any) => console.log(e);
-  const Input = (props: any) => (
+  const onChangeMock = (e: any) => e;
+
+  type Props = ComponentPropsWithRef<'input'> & {
+    classModifier?: string;
+  };
+
+  const Input = ({ className, classModifier, name }: Props) => (
     <>
-      <p>{props.componentClassName}</p>
-      <p>{props.classModifier}</p>
-      <input type="text" name={props.name} id="name" />
+      <p>{className}</p>
+      <p>{classModifier}</p>
+      <input type="text" name={name} id="name" />
     </>
   );
   const defaultProps = {
     name: 'name',
     onChange: onChangeMock,
+    isVisible: true,
+    disabled: false,
+    className: 'defaultclassName',
   };
-  it('Should return Enhanced Input when withInput have been called with default className and input component', () => {
-    const NewInput = withInput('default')(Input);
+
+  it('Should return Enhanced Input when withInput have been called with defaultclassName and input component', () => {
+    const NewInput = withInput<Props>()(Input);
     const { asFragment, getByText } = render(<NewInput {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
-    expect(getByText('default')).toBeInTheDocument();
+    expect(getByText('defaultclassName')).toBeInTheDocument();
   });
 
-  it('Should return Enhanced Input when withInput have been called with default className and input component and modifier', () => {
-    const NewInput = withInput('default')(Input);
+  it('Should return Enhanced Input when withInput have been called with defaultclassName and input component and modifier', () => {
+    const NewInput = withInput<Props>()(Input);
     const { asFragment, getByText } = render(
       <NewInput {...defaultProps} classModifier="custom" />
     );
     expect(asFragment()).toMatchSnapshot();
-    expect(getByText('default default--custom')).toBeInTheDocument();
+    expect(
+      getByText('defaultclassName defaultclassName--custom')
+    ).toBeInTheDocument();
     expect(getByText('custom')).toBeInTheDocument();
   });
 
   it('Should not return Enhanced Input when isVisible is false', () => {
-    const NewInput = withInput('default')(Input);
+    const NewInput = withInput<Props>()(Input);
     const { asFragment, queryByText } = render(
       <NewInput {...defaultProps} isVisible={false} />
     );
     expect(asFragment()).toMatchSnapshot();
-    expect(queryByText('default default--custom')).not.toBeInTheDocument();
+    expect(
+      queryByText('defaultclassName defaultclassName--custom')
+    ).not.toBeInTheDocument();
     expect(queryByText('custom')).not.toBeInTheDocument();
   });
 });

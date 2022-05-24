@@ -40,5 +40,6 @@ const handlers = {
     },
 };
 
-const EnhancedComponent = withInput<Props>(handlers)(Choice);
-export default EnhancedComponent;
+Choice.displayName = 'EnhancedInputRadio';
+
+export default withInput<Props>(handlers)(Choice);

@@ -11,7 +11,9 @@ const Badge = ({
   children,
   classModifier,
 }: PropsWithChildren<{ classModifier?: string }>) => (
-  <div className={classModifier ?? ''}>{children}</div>
+  <strong style={{ color: 'green' }} className={classModifier ?? ''}>
+    {children}
+  </strong>
 );
 
 const options = [
@@ -88,7 +90,7 @@ CheckboxItemToggleStory.args = {
 export const CheckboxItemStory = TemplateChecboxItem.bind(
   {}
 ) as typeof TemplateChecboxItem;
-CheckboxItemStory.storyName = 'ChecboxItem';
+CheckboxItemStory.storyName = 'CheckboxItem';
 CheckboxItemStory.args = {
   ...CheckboxItemToggleStory.args,
   label: 'web center forever',

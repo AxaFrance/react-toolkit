@@ -9,7 +9,7 @@ describe('<DateInput>', () => {
         label="Image *"
         id="iddateinput"
         name="placeImage"
-        options={[]}
+        options={[{ label: 'name', value: '1', id: 'id' }]}
         values={[]}
         onChange={() => {}}
       />

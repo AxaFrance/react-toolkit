@@ -28,7 +28,7 @@ type EventFunction = {
   onFocus?: Function;
 };
 
-type FieldFormProps = {
+export type FieldFormProps = {
   className?: string;
   classModifier?: string;
   forceDisplayMessage?: boolean;
@@ -198,7 +198,8 @@ export const renderedChildren = ({
     return cloneElement(child, {
       ...props,
       ...addPropsClone({
-        displayName: child.type.name,
+        ...child.type,
+        name: child.type.name,
         message,
         messageType,
         classModifier: props.classModifier,
@@ -211,7 +212,7 @@ export const renderedChildren = ({
 type AddPropsClone = Omit<RenderChildrenProps, 'children'> & {
   child: ReactElement<EventFunction>;
   classModifier: string;
-  displayName: string;
+  name: string;
   getMessageClassModifierFn?: Function;
   eventWrapperFn?: Function;
 };
@@ -222,15 +223,19 @@ export const addPropsClone = ({
   classModifier,
   wrapper,
   child,
-  displayName,
+  name,
   getMessageClassModifierFn = getMessageClassModifier,
   eventWrapperFn = eventWrapper,
+  ...rest
 }: AddPropsClone) => {
   const messageClassModifier = getMessageClassModifierFn({
     messageType,
     message,
     modifier: classModifier,
   });
+
+  const type: any = { ...rest };
+  const displayName = type?.displayName ?? name;
 
   switch (displayName) {
     case 'HelpMessage':
@@ -239,10 +244,14 @@ export const addPropsClone = ({
       return { message };
     case 'FieldInput':
       return { classModifier: messageClassModifier };
-    case 'EnhancedInput':
+    case 'EnhancedInputList':
       return {
         ...eventWrapperFn({ wrapper, props: child.props }),
         classModifier: messageClassModifier,
+      };
+    case 'EnhancedInput':
+      return {
+        ...eventWrapperFn({ wrapper, props: child.props }),
       };
     default:
       return {};

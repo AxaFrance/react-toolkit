@@ -43,6 +43,7 @@ const NavBarBase = ({
         onClick={onClick}
         className={`mask fade ${isVisible ? 'show' : ''}`}
         id={toggleMenuId}
+        aria-label="Open Menu"
       />
       <nav
         className={`af-nav af-drawer left ${isVisible ?? 'show'}`}
@@ -57,7 +58,8 @@ const NavBarBase = ({
               onClick={onClick}
               type="button"
               className="af-nav__aside-close"
-              id={toggleMenuId}>
+              id={toggleMenuId}
+              aria-label="Close Menu">
               ×
             </button>
           </div>

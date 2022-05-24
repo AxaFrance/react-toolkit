@@ -89,7 +89,7 @@ CardThreeStory.storyName = 'CardGroupCheckbox with three cards';
 CardThreeStory.args = {
   children: (
     <>
-      <Card id="money" value="2">
+      <Card id="money" value="2" isChecked>
         <CardHeader>
           <p className="af-rccard-header__title"> Référence </p>
           <p className="af-rccard-header__subtitle">250 € / mois</p>

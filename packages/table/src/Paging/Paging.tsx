@@ -6,7 +6,7 @@ import Items from '../Items/Items';
 type PagingComponentProps = ComponentPropsWithoutRef<typeof Pager> &
   ComponentPropsWithoutRef<typeof Items>;
 
-type Props = Omit<PagingComponentProps, 'onChange'> & {
+export type Props = Omit<PagingComponentProps, 'onChange'> & {
   onChange: (e: { numberItems: number; page: number }) => void;
 };
 

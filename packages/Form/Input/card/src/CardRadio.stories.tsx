@@ -25,7 +25,7 @@ type TemplateProps = Omit<ComponentProps<typeof CardGroupRadio>, 'children'> & {
 const Template: Story<TemplateProps> = ({ children, ...args }) => (
   <CardGroupRadio value="1" {...args}>
     <CardMeta>Recommandé</CardMeta>
-    <Card id="name" value="1">
+    <Card id="name" value="1" isChecked>
       <CardHeader>
         <p className="af-rccard-header__title"> Référence </p>
         <p className="af-rccard-header__subtitle">50 € / mois</p>

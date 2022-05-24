@@ -71,7 +71,7 @@ exports[`renders SelectBase correctly 1`] = `
 exports[`renders SelectInput correctly 1`] = `
 <DocumentFragment>
   <div
-    class="row af-form__group af-form__group--undefined"
+    class="row af-form__group"
   >
     <div
       class="col-md-2"
@@ -94,7 +94,6 @@ exports[`renders SelectInput correctly 1`] = `
         >
           <select
             class="af-form__input-select"
-            classmodifier="undefined "
             id="muid"
             name="placeName"
           >

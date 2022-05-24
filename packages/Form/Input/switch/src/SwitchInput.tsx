@@ -8,9 +8,10 @@ import {
 
 import Switch from './Switch';
 
-type Props = Omit<ComponentPropsWithoutRef<typeof Field>, 'id'> &
+type Props = ComponentPropsWithoutRef<typeof Field> &
   ComponentPropsWithoutRef<typeof Switch> & {
     helpMessage?: ReactNode;
+    disabled?: Boolean;
   };
 
 const SwitchInput = ({
@@ -30,6 +31,7 @@ const SwitchInput = ({
 }: Props) => {
   const newOptions = useOptionsWithId(options);
   const firstId = (newOptions[0] || {}).id;
+
   return (
     <Field
       label={label}

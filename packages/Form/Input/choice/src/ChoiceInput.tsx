@@ -4,6 +4,7 @@ import Choice from './Choice';
 
 type Props = ComponentPropsWithoutRef<typeof Choice> &
   Omit<ComponentPropsWithoutRef<typeof Field>, 'children'>;
+
 const ChoiceInput = ({
   messageType,
   message,
@@ -19,6 +20,7 @@ const ChoiceInput = ({
 }: Props) => {
   const newOptions = useOptionsWithId(options);
   const firstId = newOptions[0] ? newOptions[0].id : '';
+
   return (
     <Field
       label={label}

@@ -79,18 +79,16 @@ describe('<Field>', () => {
     const { asFragment, getByText, queryByText, container } = render(
       <Field {...defaultProps} message="error message" forceDisplayMessage>
         <FieldInput className="af-form__field">
-          <EnhancedInput />
+          <EnhancedInput classModifier="error" />
         </FieldInput>
         <HelpMessage message="Want help ?" />
       </Field>
     );
+
     expect(
       container.querySelector('.af-form__field--error')
     ).toBeInTheDocument();
     expect(container.querySelector('.ìnput--error')).toBeInTheDocument();
-    expect(
-      container.querySelector('.af-form__message--error')
-    ).toBeInTheDocument();
     expect(
       container.querySelector('.af-form__message--error')
     ).toBeInTheDocument();

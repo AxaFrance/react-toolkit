@@ -12,6 +12,7 @@ type Props = Omit<
   children?: ReactNode;
   mode?: CheckBoxModes;
 };
+
 const Checkbox = ({
   options,
   disabled,
@@ -80,6 +81,6 @@ const handlersOverride = {
     },
 };
 
-const EnhancedComponent = withInput<Props>(handlersOverride)(Checkbox);
+Checkbox.displayName = 'EnhancedInputCheckbox';
 
-export default EnhancedComponent;
+export default withInput<Props>(handlersOverride)(Checkbox);

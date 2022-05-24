@@ -4,6 +4,7 @@ import HelpButton from '@axa-fr/react-toolkit-help';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import RadioInput from './RadioInput';
 import readme from '../README.md';
+import { RadioModes } from './Radio';
 
 export default {
   title: 'Form elements/Radio',

@@ -30,6 +30,6 @@ describe('<ActionCore>', () => {
     );
     const actionButton = getByRole('button');
     expect(actionButton).toBeInTheDocument();
-    expect(actionButton).toHaveAttribute('href', '#');
+    expect(actionButton).toHaveAttribute('href', '/#');
   });
 });

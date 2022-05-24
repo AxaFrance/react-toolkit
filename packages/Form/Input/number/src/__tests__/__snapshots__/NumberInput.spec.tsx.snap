@@ -22,7 +22,7 @@ exports[`<NumberInput> renders NumberInput correctly 1`] = `
         class="af-form__text"
       >
         <input
-          class="af-form__input-number af-form__input-number--undefined"
+          class="af-form__input-number"
           id="iddateinput"
           name="placeImage"
           type="number"

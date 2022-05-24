@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
 import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
 import Help from './Help';
 import readme from '../README.md';

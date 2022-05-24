@@ -1,10 +1,10 @@
 import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import React, {
   ComponentProps,
-  createRef,
   CSSProperties,
   RefObject,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import SwitchItem from './SwitchItem';
@@ -22,10 +22,13 @@ const Switch = ({ value, options, onChange, ...otherProps }: Props) => {
   const [sliderStyle, setSliderStyle] = useState<CSSProperties>({
     display: 'none',
   });
-  const ref = createRef<HTMLDivElement>();
+
+  const ref = useRef();
 
   useEffect(() => {
-    setSliderStyle(getSliderStyle(ref));
+    if (ref.current) {
+      setSliderStyle(getSliderStyle(ref));
+    }
   }, [ref]);
 
   return (

@@ -4,7 +4,13 @@ export function useInputClassModifier(
   hasChildren: boolean
 ) {
   return {
-    inputClassModifier: `${classModifier} ${hasChildren ? 'hasinfobulle' : ''}`,
-    inputFieldClassModifier: `${classModifier} ${disabled ? 'disabled' : ''}`,
+    inputClassModifier: [
+      classModifier ?? '',
+      hasChildren ? 'hasinfobulle' : '',
+    ].join(' '),
+    inputFieldClassModifier: [
+      classModifier ?? '',
+      disabled ? 'disabled' : '',
+    ].join(' '),
   };
 }

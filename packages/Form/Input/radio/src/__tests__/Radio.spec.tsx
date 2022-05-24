@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import type { Option } from '@axa-fr/react-toolkit-core';
+import type { Option } from '@axa-fr/react-toolkit-form-core';
 import Radio from '../Radio';
 
 const options = [

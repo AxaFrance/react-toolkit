@@ -25,7 +25,7 @@ const Li = ({ isVisible, active, value, ...props }: LiProps) => {
       <li className="af-pager__item af-pager__item--active">
         <a
           className="af-pager__item-link"
-          href="#"
+          href="/#"
           onClick={onClick({ ...props, value })}>
           <span>{value}</span>
         </a>
@@ -36,7 +36,7 @@ const Li = ({ isVisible, active, value, ...props }: LiProps) => {
     <li className="af-pager__item">
       <a
         className="af-pager__item-link"
-        href="#"
+        href="/#"
         onClick={onClick({ ...props, value })}>
         <span>{value}</span>
       </a>

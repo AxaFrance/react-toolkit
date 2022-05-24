@@ -31,8 +31,11 @@ PassStory.args = {
 PassStory.argTypes = {
   onChange: { action: 'onChange' },
   onToggleType: { action: 'onToggleType' },
-  classModifer: {
-    type: 'select',
-    options: ['bad', 'okay', 'good', 'verygood', 'excellent'],
+  classModifier: {
+    control: {
+      type: 'select',
+      options: ['bad', 'okay', 'good', 'verygood', 'excellent'],
+    },
+    defaultValue: 'bad',
   },
 };

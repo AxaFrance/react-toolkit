@@ -1,4 +1,5 @@
 import React, { BaseSyntheticEvent, ComponentType } from 'react';
+import { ClassManager } from '@axa-fr/react-toolkit-core';
 
 /**
  * @remarks - Will be remove into v2.1.x
@@ -22,10 +23,20 @@ export const omit =
     );
   };
 
-const defaultOnChange =
+export const defaultOnChange =
   ({ name, onChange }: any) =>
   (e: BaseSyntheticEvent) =>
     onChange({ name, value: e.target.value, id: e.target.id });
+
+const defaultWithProps = ({
+  className,
+  classModifier,
+}: {
+  className?: string;
+  classModifier?: string;
+}) => ({
+  className: ClassManager.getComponentClassName(className, classModifier, ''),
+});
 
 /**
  * @remarks - Will be rewrite into v2.1.x
@@ -33,7 +44,7 @@ const defaultOnChange =
 export const withInput =
   <P extends {}>(
     handlersOverride = {},
-    propsOverride = null as (p: any) => any
+    propsOverride = defaultWithProps as (p: any) => any
   ) =>
   (Component: ComponentType<P>) => {
     const handlers: Record<string, any> = {
@@ -42,9 +53,10 @@ export const withInput =
     };
 
     const NewComponent = ({
-      isVisible,
+      isVisible = true,
+      disabled = false,
       ...props
-    }: P & { isVisible?: boolean }) => {
+    }: P & { isVisible?: boolean; disabled?: boolean }) => {
       if (!isVisible) {
         return null;
       }
@@ -57,10 +69,24 @@ export const withInput =
         {}
       );
 
-      return <Component {...props} {...propsOverride(props)} {...onHandlers} />;
+      return (
+        <Component
+          {...props}
+          disabled={disabled}
+          {...propsOverride?.(props)}
+          {...onHandlers}
+        />
+      );
     };
 
-    NewComponent.displayName = 'EnhancedInput';
+    if (
+      Component.displayName === 'EnhancedInputRadio' ||
+      Component.displayName === 'EnhancedInputCheckbox'
+    ) {
+      NewComponent.displayName = 'EnhancedInputList';
+    } else {
+      NewComponent.displayName = 'EnhancedInput';
+    }
 
     return NewComponent;
   };

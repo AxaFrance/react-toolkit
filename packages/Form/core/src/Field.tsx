@@ -4,7 +4,10 @@ import FieldError from './FieldError';
 import MessageTypes from './MessageTypes';
 import FieldForm from './FieldForm';
 
-type FieldProps = ComponentPropsWithoutRef<typeof FieldForm> & {
+type FieldProps = Omit<
+  ComponentPropsWithoutRef<typeof FieldForm>,
+  'children'
+> & {
   label: ReactNode;
   children?: ReactNode;
   id?: string;
@@ -21,7 +24,7 @@ const Field = ({
   label,
   children,
   forceDisplayMessage,
-  classModifier,
+  classModifier = '',
   className,
   classNameContainerLabel = 'col-md-2',
   classNameContainerInput = 'col-md-10',

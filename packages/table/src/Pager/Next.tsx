@@ -17,7 +17,7 @@ const Next = ({ isVisible, active, children, value, onChange }: NextProps) => {
       <li className="af-pager__item">
         <a
           className="af-pager__item-link"
-          href="#"
+          href="/#"
           role="button"
           onClick={(e) => {
             e.preventDefault();

@@ -25,7 +25,7 @@ const ActionCore = ({
     <a
       {...otherProps}
       className={componentClassName}
-      href={onClick ? '#' : href}
+      href={onClick ? '/#' : href}
       role={onClick ? 'button' : role}
       onClick={onClick}
       tabIndex={tabIndex}>

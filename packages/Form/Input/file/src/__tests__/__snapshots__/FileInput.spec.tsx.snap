@@ -22,7 +22,7 @@ exports[`<FileInput> renders FileInput correctly 1`] = `
         class="af-form__file"
       >
         <div
-          class="af-form__file-input af-form__file-input--undefined"
+          class="af-form__file-input"
         >
           <div
             class="drop-box hidden-mobile"

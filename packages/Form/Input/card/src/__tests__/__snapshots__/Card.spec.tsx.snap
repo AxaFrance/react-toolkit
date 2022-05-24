@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DateInput> renders DateInput correctly 1`] = `
+exports[`<Card> renders Card correctly 1`] = `
 <DocumentFragment>
   <div
     class="af-rccard__1 af-rccard-group af-rccard-group--active"
@@ -9,7 +9,7 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
       class="af-rccard-group__content"
     >
       <div
-        class="af-rccard af-rccard--active"
+        class="af-rccard"
       >
         <header
           class="af-rccard-header"
@@ -18,7 +18,6 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
             class="af-form__checkbox"
           >
             <input
-              checked=""
               class="af-form__input-checkbox"
               id="name"
               name="defaultName"

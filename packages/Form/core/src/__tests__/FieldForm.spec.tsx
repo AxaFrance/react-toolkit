@@ -489,68 +489,94 @@ describe('addPropsClone', () => {
       props: {},
       key: '1',
     },
-    displayName: '',
+    name: '',
     wrapper: wrapperMock,
     message: '',
     messageType: MessageTypes.error,
     classModifier: '',
   };
 
-  it('Should return empty object when displayName is empty string', () => {
+  it('Should return empty object when name is empty string', () => {
     const result = addPropsClone(defaultParamsAddPropsClone);
     expect(result).toEqual({});
   });
 
-  it('Should return isVisible true when displayName is HelpMessage and message empty', () => {
+  it('Should return isVisible true when name is HelpMessage and message empty', () => {
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,
-      displayName: 'HelpMessage',
+      name: 'HelpMessage',
     });
     expect(result).toEqual({ isVisible: true });
   });
 
-  it('Should return isVisible false when displayName is HelpMessage and message not empty', () => {
+  it('Should return isVisible false when name is HelpMessage and message not empty', () => {
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,
-      displayName: 'HelpMessage',
+      name: 'HelpMessage',
       message: 'error message',
     });
     expect(result).toEqual({ isVisible: false });
   });
 
-  it('Should return message when displayName is FieldError and message not empty', () => {
+  it('Should return message when name is FieldError and message not empty', () => {
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,
-      displayName: 'FieldError',
+      name: 'FieldError',
       message: 'error message',
     });
     expect(result).toEqual({ message: 'error message' });
   });
 
-  it('Should return message when displayName is FieldInput and classModifier defined', () => {
+  it('Should return message when name is FieldInput and classModifier defined', () => {
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,
-      displayName: 'FieldInput',
+      name: 'FieldInput',
       message: 'error message',
       classModifier: 'modifier',
     });
     expect(result).toEqual({ classModifier: 'modifier error' });
   });
 
-  it('Should return message when displayName is EnhancedInput and classModifier defined', () => {
+  it('Should return messageClassModifier and event wrapper handlers when displayName is EnhancedInputList and classModifier defined', () => {
     const eventWrapperFnMock = jest
       .fn()
       .mockReturnValue({ onChange: 'onchange' });
+    const type = {
+      displayName: 'EnhancedInputList',
+    };
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,
-      displayName: 'EnhancedInput',
       message: 'error message',
       classModifier: 'modifier',
       eventWrapperFn: eventWrapperFnMock,
+      ...type,
     });
     expect(result).toEqual({
       onChange: 'onchange',
       classModifier: 'modifier error',
+    });
+    expect(eventWrapperFnMock).toBeCalledWith({
+      wrapper: wrapperMock,
+      props: {},
+    });
+  });
+
+  it('Should return event wrapper handlers when displayName is EnhancedInput and classModifier defined', () => {
+    const eventWrapperFnMock = jest
+      .fn()
+      .mockReturnValue({ onChange: 'onchange' });
+    const type = {
+      displayName: 'EnhancedInput',
+    };
+    const result = addPropsClone({
+      ...defaultParamsAddPropsClone,
+      message: 'error message',
+      classModifier: 'modifier',
+      eventWrapperFn: eventWrapperFnMock,
+      ...type,
+    });
+    expect(result).toEqual({
+      onChange: 'onchange',
     });
     expect(eventWrapperFnMock).toBeCalledWith({
       wrapper: wrapperMock,
@@ -574,21 +600,9 @@ const defaultParamsEventWrapper = {
   },
   props: {},
 };
-/* export function syntheticEvent<A>(a: A): SyntheticEvent<A> {
-  return {
-    target: a,
-    preventDefault: jest.fn(),
-    stopPropagation: jest.fn(),
-  };
-} */
 
 describe('eventWrapper', () => {
-  const changeEvent = {
-    name: 'name',
-    id: 'id',
-    value: 'value',
-    preventDefault: () => console.log('preventDefault'),
-  };
+  const changeEvent = {} as React.ChangeEvent<HTMLInputElement>;
   const focusEvent = {} as React.FocusEvent<HTMLInputElement>;
 
   it('Should return object with wrapper methods events and call wrapper methods when eventWrapper have been called', () => {

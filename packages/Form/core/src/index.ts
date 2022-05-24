@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export { default as Field } from './Field';
 export { default as FieldInput } from './FieldInput';
 export { default as MessageTypes } from './MessageTypes';
@@ -14,10 +16,11 @@ export { withInput, omit } from './withInput';
 export { useInputClassModifier } from './useInputClassModifier';
 export { useOptionClassName } from './useOptionClassName';
 export { useOptionsWithId } from './useOptionsWithId';
+export { default as getFirstId } from './getFirstId';
 
 export type Option = {
   id?: string;
-  label: string;
+  label: ReactNode;
   value: string;
   disabled?: boolean;
 };

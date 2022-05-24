@@ -2,19 +2,25 @@ import React, { ComponentPropsWithoutRef } from 'react';
 import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
 
+export enum RadioModes {
+  classic = 'classic',
+  default = 'default',
+  inline = 'inline',
+}
+
 type RadioProps = Omit<
   ComponentPropsWithoutRef<typeof RadioItem>,
   'id' | 'label' | 'className'
 > & {
   options: Option[];
-  mode?: 'classic' | 'default' | 'inline';
+  mode?: keyof typeof RadioModes;
 };
 
 const Radio = ({
   classModifier,
   options,
   value = '',
-  mode = 'default',
+  mode = RadioModes.default,
   children,
   disabled,
   ...otherProps
@@ -22,6 +28,7 @@ const Radio = ({
   const classNameMode = getClassNameMode(mode);
   const optionItems = options.map((option: Option) => {
     const isChecked = option.value === value;
+
     return (
       <RadioItem
         {...otherProps}
@@ -42,13 +49,15 @@ const Radio = ({
 
 const getClassNameMode = (mode: RadioProps['mode']) => {
   switch (mode) {
-    case 'classic':
+    case RadioModes.classic:
       return 'af-form__radio';
-    case 'inline':
+    case RadioModes.inline:
       return 'af-form__radio-inline';
     default:
       return 'af-form__radio-custom';
   }
 };
+
+Radio.displayName = 'EnhancedInputRadio';
 
 export default withInput<RadioProps>()(Radio);

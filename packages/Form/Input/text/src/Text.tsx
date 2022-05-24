@@ -5,6 +5,7 @@ import { withInput } from '@axa-fr/react-toolkit-form-core';
 type Props = ComponentPropsWithRef<'input'> & {
   classModifier?: string;
 };
+
 const Text = forwardRef<HTMLInputElement, Props>(
   ({ className, classModifier, ...otherProps }, inputRef) => {
     const componentClassName = useComponentClassName(
@@ -12,6 +13,7 @@ const Text = forwardRef<HTMLInputElement, Props>(
       classModifier,
       'af-form__input-text'
     );
+
     return (
       <input
         {...otherProps}

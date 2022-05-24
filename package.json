@@ -23,7 +23,10 @@
     "cover": "jest --no-cache --config ./jest.config.ts --coverage",
     "check": "npm run check:formatting && npm run check:quality",
     "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
-    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives"
+    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives",
+    "fix": "npm run fix:formatting && npm run fix:quality",
+    "fix:formatting": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+    "fix:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix"
   },
   "husky": {
     "hooks": {

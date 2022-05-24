@@ -2,12 +2,14 @@ import React, { AllHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
 import { useOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
-type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type'> & {
+type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type' | 'label'> & {
   inputRef?: MutableRefObject<HTMLInputElement>;
   children?: ReactNode;
+  label?: ReactNode;
   isChecked?: boolean;
   classModifier?: string;
 };
+
 const CheckboxItem = ({
   disabled = true,
   value = '',

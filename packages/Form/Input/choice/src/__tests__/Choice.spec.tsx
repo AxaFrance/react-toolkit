@@ -11,8 +11,8 @@ describe('<ChoiceInput>', () => {
         id="xxx"
         name="xxx"
         options={[
-          { label: 'Yes', value: true, id: '1' },
-          { label: 'No', value: false, id: '2' },
+          { label: 'Yes', value: 'true', id: '1' },
+          { label: 'No', value: 'false', id: '2' },
         ]}
         onChange={() => {}}
       />
@@ -28,8 +28,8 @@ describe('<ChoiceInput>', () => {
         id="xxx"
         name="xxx"
         options={[
-          { label: 'Yes', value: true, id: 'xxx_Yes' },
-          { label: 'No', value: false, id: 'xxx_No' },
+          { label: 'Yes', value: 'true', id: 'xxx_Yes' },
+          { label: 'No', value: 'false', id: 'xxx_No' },
         ]}
         onChange={() => {}}
       />
@@ -45,6 +45,10 @@ describe('<ChoiceInput>', () => {
         id="xxx"
         name="xxx"
         onChange={() => {}}
+        options={[
+          { label: 'Oui', value: 'true', id: 'oui' },
+          { label: 'Non', value: 'false', id: 'non' },
+        ]}
       />
     );
     expect(asFragment()).toMatchSnapshot();

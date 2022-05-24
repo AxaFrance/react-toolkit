@@ -33,7 +33,6 @@ const modes = [RadioModes.classic, RadioModes.default, RadioModes.inline];
 RadioStory.storyName = 'Radio';
 RadioStory.args = {
   name: 'placeName',
-  id: '',
   options,
   mode: RadioModes.default,
   value: '',
@@ -41,7 +40,6 @@ RadioStory.args = {
   readOnly: false,
   disabled: false,
   classModifier: '',
-  className: '',
 };
 RadioStory.argTypes = {
   mode: { control: { type: 'select', options: modes } },

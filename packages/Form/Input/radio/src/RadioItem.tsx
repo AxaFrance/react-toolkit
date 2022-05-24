@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
 import { useOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
@@ -7,7 +7,7 @@ type RadioItemProps = Omit<
   'checked' | 'type'
 > & {
   classModifier?: string;
-  label?: string;
+  label?: ReactNode;
   isChecked?: boolean;
 };
 
@@ -45,6 +45,7 @@ const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
           value={value}
           checked={isChecked}
           ref={inputRef}
+          disabled={disabled}
         />
         <label className="af-form__label" htmlFor={newId}>
           <span className="af-form__description">{newLabel}</span>
