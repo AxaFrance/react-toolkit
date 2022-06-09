@@ -20,30 +20,26 @@ const Checkbox = ({
   values,
   mode = CheckBoxModes.default,
   name,
-  className = defaultClassName(mode),
+  className,
   ...otherProps
 }: Props) => {
-  return (
-    <>
-      {options.map((option) => {
-        const isChecked = values ? values.indexOf(option.value) >= 0 : false;
-        return (
-          <CheckboxItem
-            key={option.value}
-            id={option.id}
-            value={option.value}
-            label={option.label}
-            checked={isChecked}
-            name={name}
-            disabled={option.disabled || disabled}
-            className={className}
-            {...otherProps}>
-            {children}
-          </CheckboxItem>
-        );
-      })}
-    </>
-  );
+  return options.map((option) => {
+    const isChecked = values ? values.indexOf(option.value) >= 0 : false;
+    return (
+      <CheckboxItem
+        key={option.value}
+        id={option.id}
+        value={option.value}
+        label={option.label}
+        isChecked={isChecked}
+        name={name}
+        disabled={option.disabled || disabled}
+        className={className || defaultClassName(mode)}
+        {...otherProps}>
+        {children}
+      </CheckboxItem>
+    );
+  });
 };
 
 const defaultClassName = (mode: string) => {

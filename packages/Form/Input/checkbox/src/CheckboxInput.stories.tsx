@@ -52,7 +52,7 @@ const Template: Story<ComponentProps<typeof CheckboxInput>> = (args) => (
   </form>
 );
 export const CheckboxInputStory = Template.bind({}) as typeof Template;
-CheckboxInputStory.storyName = 'CheckboxInput Classic';
+CheckboxInputStory.storyName = 'CheckboxInput';
 CheckboxInputStory.args = {
   label: 'Place type',
   name: 'placeType',
@@ -85,6 +85,7 @@ CheckboxItemToggleStory.args = {
   readOnly: false,
   disabled: false,
   checked: false,
+  className: 'af-form__checkbox-toggle',
 };
 
 export const CheckboxItemStory = TemplateChecboxItem.bind(
@@ -93,6 +94,7 @@ export const CheckboxItemStory = TemplateChecboxItem.bind(
 CheckboxItemStory.storyName = 'CheckboxItem';
 CheckboxItemStory.args = {
   ...CheckboxItemToggleStory.args,
+  className: '',
   label: 'web center forever',
 };
 

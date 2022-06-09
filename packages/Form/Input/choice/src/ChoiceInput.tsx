@@ -6,6 +6,7 @@ type Props = ComponentPropsWithoutRef<typeof Choice> &
   Omit<ComponentPropsWithoutRef<typeof Field>, 'children'>;
 
 const ChoiceInput = ({
+  id,
   messageType,
   message,
   className,
@@ -18,8 +19,8 @@ const ChoiceInput = ({
   options,
   ...otherProps
 }: Props) => {
-  const newOptions = useOptionsWithId(options);
-  const firstId = newOptions[0] ? newOptions[0].id : '';
+  const newOptions = useOptionsWithId(options, id);
+  const firstId = options && newOptions[0] ? newOptions[0].id : '';
 
   return (
     <Field
@@ -36,7 +37,7 @@ const ChoiceInput = ({
       <Choice
         {...otherProps}
         classModifier={classModifier}
-        options={newOptions}
+        options={options ? newOptions : undefined}
       />
     </Field>
   );

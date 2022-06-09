@@ -73,7 +73,7 @@ export const withInput =
         <Component
           {...props}
           disabled={disabled}
-          {...propsOverride?.(props)}
+          {...propsOverride(props)}
           {...onHandlers}
         />
       );

@@ -7,14 +7,8 @@ const defaultOptions = [
   { label: 'Non', value: 'false', id: 'radioItemFalse' },
 ];
 
-type RadioProps = ComponentPropsWithoutRef<typeof Radio>;
-type Props = Omit<
-  RadioProps,
-  'id' | 'label' | 'checked' | 'value' | 'options'
-> &
-  Partial<Pick<RadioProps, 'options'>> & {
-    value?: boolean;
-  };
+type Props = ComponentPropsWithoutRef<typeof Radio>;
+
 const Choice = ({
   children,
   value,
