@@ -84,48 +84,65 @@ CardCheckboxTwoStory.args = {
   ),
 };
 
-export const CardCheckboxThreeStory = Template.bind({}) as typeof Template;
+export const CardCheckboxThreeStory = ({ disabled, ...args }) => (
+  <CardGroupCheckbox values={['1']} {...args} onChange={action('onChange')}>
+    <Card name="name" id="name" value="1" disabled={disabled}>
+      <CardHeader>
+        <p className="af-rccard-header__title"> Référence</p>
+        <p className="af-rccard-header__subtitle">50 € / mois</p>
+      </CardHeader>
+      <CardContent>
+        <p>John Doe</p>
+        <dl>
+          <dt className="af-rccard__term"> Statut: </dt>
+          <dd className="af-rccard__def"> En cours </dd>
+          <dt className="af-rccard__term"> Epargne atteinte: </dt>
+          <dd className="af-rccard__def"> 125 000 € </dd>
+        </dl>
+      </CardContent>
+      <CardFooter>
+        <p> Sortie en rente obligatoire </p>
+      </CardFooter>
+    </Card>
+    <Card id="money" value="2">
+      <CardHeader>
+        <p className="af-rccard-header__title"> Référence </p>
+        <p className="af-rccard-header__subtitle">250 € / mois</p>
+      </CardHeader>
+      <CardContent>
+        <p>John Doe</p>
+        <dl>
+          <dt className="af-rccard__term"> Statut: </dt>
+          <dd className="af-rccard__def"> En cours </dd>
+          <dt className="af-rccard__term"> Epargne atteinte: </dt>
+          <dd className="af-rccard__def"> 75 000 € </dd>
+        </dl>
+      </CardContent>
+      <CardFooter>
+        <p> Sortie en rente obligatoire </p>
+      </CardFooter>
+    </Card>
+    <Card value="3" id="rente">
+      <CardHeader>
+        <p className="af-rccard-header__title"> Référence </p>
+        <p className="af-rccard-header__subtitle">250 € / mois</p>
+      </CardHeader>
+      <CardContent>
+        <p>John Doe</p>
+        <dl>
+          <dt className="af-rccard__term"> Statut: </dt>
+          <dd className="af-rccard__def"> En cours </dd>
+          <dt className="af-rccard__term"> Epargne atteinte: </dt>
+          <dd className="af-rccard__def"> 85 000 € </dd>
+        </dl>
+      </CardContent>
+      <CardFooter>
+        <p> Sortie en rente obligatoire </p>
+      </CardFooter>
+    </Card>
+  </CardGroupCheckbox>
+);
 CardCheckboxThreeStory.storyName = 'CardGroupCheckbox with three cards';
 CardCheckboxThreeStory.args = {
   title: 'Franchisés standard',
-  children: (
-    <>
-      <Card id="money" value="2" isChecked>
-        <CardHeader>
-          <p className="af-rccard-header__title"> Référence </p>
-          <p className="af-rccard-header__subtitle">250 € / mois</p>
-        </CardHeader>
-        <CardContent>
-          <p>John Doe</p>
-          <dl>
-            <dt className="af-rccard__term"> Statut: </dt>
-            <dd className="af-rccard__def"> En cours </dd>
-            <dt className="af-rccard__term"> Epargne atteinte: </dt>
-            <dd className="af-rccard__def"> 75 000 € </dd>
-          </dl>
-        </CardContent>
-        <CardFooter>
-          <p> Sortie en rente obligatoire </p>
-        </CardFooter>
-      </Card>
-      <Card value="3" id="rente">
-        <CardHeader>
-          <p className="af-rccard-header__title"> Référence </p>
-          <p className="af-rccard-header__subtitle">250 € / mois</p>
-        </CardHeader>
-        <CardContent>
-          <p>John Doe</p>
-          <dl>
-            <dt className="af-rccard__term"> Statut: </dt>
-            <dd className="af-rccard__def"> En cours </dd>
-            <dt className="af-rccard__term"> Epargne atteinte: </dt>
-            <dd className="af-rccard__def"> 85 000 € </dd>
-          </dl>
-        </CardContent>
-        <CardFooter>
-          <p> Sortie en rente obligatoire </p>
-        </CardFooter>
-      </Card>
-    </>
-  ),
 };

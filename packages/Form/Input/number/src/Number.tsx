@@ -12,7 +12,7 @@ const CustomNumber = forwardRef<HTMLInputElement, Props>(
     const componentClassName = useComponentClassName(
       className,
       classModifier,
-      'af-form__input-number'
+      'af-form__input-text'
     );
     return (
       <input

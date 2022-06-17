@@ -65,7 +65,7 @@ const CardGroupStateless = ({
 
       return cloneElement(child, {
         type,
-        checked: isChecked,
+        isChecked,
         disabled: child.props.disabled || disabled,
         ...otherProps,
       });
