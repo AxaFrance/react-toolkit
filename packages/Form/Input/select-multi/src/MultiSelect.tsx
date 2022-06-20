@@ -1,88 +1,108 @@
-import { Option } from '@axa-fr/react-toolkit-form-core';
-import React, { ComponentPropsWithoutRef } from 'react';
-import ReactSelectAsync from 'react-select/async';
+import React from 'react';
+import ReactSelect, { OptionsType } from 'react-select';
+import ReactSelectAsync, { Props as SelectProps } from 'react-select/async';
 
-type ReactSelectAsyncProps = ComponentPropsWithoutRef<typeof ReactSelectAsync>;
-type Props = Omit<
-  ReactSelectAsyncProps,
-  | 'loadingMessage'
-  | 'ariaLiveMessages'
-  | 'noOptionsMessage'
-  | 'isDisabled'
-  | 'options'
-> & {
-  readOnly?: boolean;
-  disabled?: boolean;
-  options: Option[];
-  values?: string[];
-  loadingPlaceholder?: ReactSelectAsyncProps['loadingMessage'];
-  searchPromptText?: ReactSelectAsyncProps['ariaLiveMessages'];
-  noResultsText?: ReactSelectAsyncProps['noOptionsMessage'];
+import { withInput } from '@axa-fr/react-toolkit-form-core';
+
+type Option = { value: string; label: string; [x: string]: any };
+type Props = Omit<SelectProps<Option, true>, 'value'> & {
+  values?: string[] | null;
+  value?: string;
 };
-
 const MultiSelect = ({
   name,
   loadOptions,
-  value,
   values,
   options,
+  value,
   onChange,
-  readOnly,
-  disabled,
+  onBlur,
   placeholder = 'Select',
   className = 'react-select',
-  loadingPlaceholder = () => 'Chargement...',
-  searchPromptText = { onChange: () => 'Saisir pour chercher' },
-  noResultsText = () => 'Aucun résultat',
+  readOnly,
+  disabled,
+  loadingPlaceholder = 'Chargement...',
+  searchPromptText = 'Saisir pour chercher',
+  noResultsText = 'Aucun résultat',
   ...otherProps
 }: Props) => {
   const isDisabled = disabled || readOnly;
-  const newLoadOptions = loadOptions ?? (() => Promise.resolve(options));
+  const commonProps = {
+    name,
+    onChange,
+    onBlur,
+    placeholder,
+    className,
+    isDisabled,
+    options,
+    searchPromptText,
+    noResultsText,
+    valueKey: 'value',
+    labelKey: 'label',
+    ...otherProps,
+  };
 
   if (values != null) {
-    const newValues = options.reduce((acc, opt) => {
-      const valueTemp = values.find((v) => v === opt.value);
-      if (valueTemp) {
-        acc.push(opt);
-      }
-      return acc;
-    }, []);
+    const newValues = (options as OptionsType<Option>).filter((opt) =>
+      values.includes(opt.value)
+    );
 
-    return (
+    const commonValuesProps = {
+      ...commonProps,
+      isMulti: true,
+      value: newValues,
+    };
+
+    return loadOptions ? (
       <ReactSelectAsync
-        isMulti
-        name={name}
-        value={newValues}
-        onChange={onChange}
-        placeholder={placeholder}
-        className={className}
-        isDisabled={isDisabled}
-        options={options}
-        loadOptions={newLoadOptions}
-        loadingMessage={loadingPlaceholder}
-        ariaLiveMessages={searchPromptText}
-        noOptionsMessage={noResultsText}
-        {...otherProps}
+        {...commonValuesProps}
+        loadOptions={loadOptions}
+        loadingPlaceholder={loadingPlaceholder}
       />
+    ) : (
+      <ReactSelect {...commonValuesProps} />
     );
   }
-  const newValue = options.find((v) => v.value === value) || '';
-  return (
+  const newValue = (options as OptionsType<Option>).find(
+    (o) => o.value === value
+  );
+
+  const commonValueProps = {
+    ...commonProps,
+    value: newValue,
+  };
+
+  return loadOptions ? (
     <ReactSelectAsync
-      name={name}
-      value={newValue}
-      placeholder={placeholder}
-      onChange={onChange}
-      className={className}
-      isDisabled={isDisabled}
-      options={options}
+      {...commonValueProps}
       loadOptions={loadOptions}
-      loadingMessage={loadingPlaceholder}
-      ariaLiveMessages={searchPromptText}
-      noOptionsMessage={noResultsText}
-      {...otherProps}
+      loadingPlaceholder={loadingPlaceholder}
     />
+  ) : (
+    <ReactSelect {...commonValueProps} />
   );
 };
 
-export default MultiSelect;
+const handlers = {
+  onChange:
+    ({ values, name, id, onChange }: any) =>
+    (newValue: Option | Option[]) => {
+      if (values !== null) {
+        const newValues = ((newValue as Option[]) || []).map((v) => v.value);
+        onChange({
+          values: newValues,
+          name,
+          id,
+        });
+      } else {
+        onChange({
+          value: (newValue as Option).value,
+          name,
+          id,
+        });
+      }
+    },
+};
+
+const EnhancedComponent = withInput<Props>(handlers)(MultiSelect);
+export default EnhancedComponent;

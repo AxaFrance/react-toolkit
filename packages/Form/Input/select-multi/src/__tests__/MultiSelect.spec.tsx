@@ -16,7 +16,7 @@ test('renders MultiSelect correctly', () => {
   const { asFragment } = render(
     <MultiSelect
       name="placeName"
-      onChange={() => null}
+      onChange={jest.fn()}
       options={options}
       values={values}
     />

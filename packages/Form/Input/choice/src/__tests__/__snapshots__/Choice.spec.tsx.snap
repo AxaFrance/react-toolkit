@@ -22,7 +22,6 @@ exports[`<ChoiceInput> renders ChoiceInput correctly when passing options with I
         class="af-form__radio-custom"
       >
         <input
-          checked=""
           class="af-form__input-radio"
           id="xxx_Yes"
           name="xxx"
@@ -88,7 +87,6 @@ exports[`<ChoiceInput> renders ChoiceInput correctly when passing options withou
         class="af-form__radio-custom"
       >
         <input
-          checked=""
           class="af-form__input-radio"
           id="1"
           name="xxx"
@@ -154,7 +152,6 @@ exports[`<ChoiceInput> renders ChoiceInput correctly with default options 1`] = 
         class="af-form__radio-custom"
       >
         <input
-          checked=""
           class="af-form__input-radio"
           id="oui"
           name="xxx"

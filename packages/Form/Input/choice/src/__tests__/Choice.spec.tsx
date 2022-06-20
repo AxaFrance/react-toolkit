@@ -6,7 +6,6 @@ describe('<ChoiceInput>', () => {
   it('renders ChoiceInput correctly when passing options without ID', () => {
     const { asFragment } = render(
       <ChoiceInput
-        value
         label="Some label"
         id="xxx"
         name="xxx"
@@ -23,7 +22,6 @@ describe('<ChoiceInput>', () => {
   it('renders ChoiceInput correctly when passing options with ID', () => {
     const { asFragment } = render(
       <ChoiceInput
-        value
         label="Some label"
         id="xxx"
         name="xxx"
@@ -40,7 +38,6 @@ describe('<ChoiceInput>', () => {
   it('renders ChoiceInput correctly with default options', () => {
     const { asFragment } = render(
       <ChoiceInput
-        value
         label="Some label"
         id="xxx"
         name="xxx"

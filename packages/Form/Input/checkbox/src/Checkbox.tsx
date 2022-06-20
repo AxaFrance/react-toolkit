@@ -22,27 +22,27 @@ const Checkbox = ({
   name,
   className,
   ...otherProps
-}: Props) =>  (
-    <>
-      {options.map((option) => {
-        const isChecked = values ? values.indexOf(option.value) >= 0 : false;
-        return (
-          <CheckboxItem
-            key={option.value}
-            id={option.id}
-            value={option.value}
-            label={option.label}
-            isChecked={isChecked}
-            name={name}
-            disabled={option.disabled || disabled}
-            className={className || defaultClassName(mode)}
-            {...otherProps}>
-            {children}
-          </CheckboxItem>
-        );
-      })}
-    </>
-  );
+}: Props) => (
+  <>
+    {options.map((option) => {
+      const isChecked = values ? values.indexOf(option.value) >= 0 : false;
+      return (
+        <CheckboxItem
+          key={option.value}
+          id={option.id}
+          value={option.value}
+          label={option.label}
+          isChecked={isChecked}
+          name={name}
+          disabled={option.disabled || disabled}
+          className={className || defaultClassName(mode)}
+          {...otherProps}>
+          {children}
+        </CheckboxItem>
+      );
+    })}
+  </>
+);
 
 const defaultClassName = (mode: string) => {
   switch (mode) {
