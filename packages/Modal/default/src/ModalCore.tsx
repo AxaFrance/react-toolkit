@@ -11,8 +11,8 @@ import {
 ReactModal.setAppElement('body');
 
 export type ModalCoreComponentProps = {
-  className: string;
-  title: string;
+  className?: string;
+  title?: string;
   isOpen: boolean;
   onOutsideTap: (event: React.MouseEvent | React.KeyboardEvent) => void;
   children: ReactNode;
