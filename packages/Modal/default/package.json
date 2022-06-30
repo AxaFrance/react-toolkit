@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-modal-default",
-  "version": "2.0.0-alpha.7",
+  "version": "2.0.0-alpha.8",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "jsnext:main": "src/index.js",
@@ -14,7 +14,7 @@
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "2.0.0-alpha.7",
+    "@axa-fr/react-toolkit-core": "2.0.0-alpha.8",
     "@types/react-modal": "^3.10.6",
     "react-modal": "^3.14.4"
   },
