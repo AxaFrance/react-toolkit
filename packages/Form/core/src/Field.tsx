@@ -1,54 +1,43 @@
-import React, { ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import FieldError from './FieldError';
 import MessageTypes from './MessageTypes';
+import FieldForm from './FieldForm';
 
-const defaultClassName = 'row af-form__group';
-
-type FieldProps = {
-  id: string;
-  label: string;
+type FieldProps = Omit<
+  ComponentPropsWithoutRef<typeof FieldForm>,
+  'children'
+> & {
+  label: ReactNode;
   children?: ReactNode;
-  message?: string;
-  messageType?: MessageTypes;
-  forceDisplayMessage?: boolean;
-  className?: string;
+  id?: string;
   classModifier?: string;
   classNameContainerLabel?: string;
   classNameContainerInput?: string;
   isVisible?: boolean;
 };
 
-const defaultProps = {
-  messageType: MessageTypes.error,
-  forceDisplayMessage: false,
-  className: defaultClassName,
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
-  isVisible: true,
-};
-
 const Field = ({
+  id = '',
+  message = '',
+  messageType = MessageTypes.error,
   label,
   children,
-  message,
-  messageType,
   forceDisplayMessage,
-  classModifier,
+  classModifier = '',
   className,
-  id,
-  classNameContainerLabel,
-  classNameContainerInput,
-  isVisible,
+  classNameContainerLabel = 'col-md-2',
+  classNameContainerInput = 'col-md-10',
+  isVisible = true,
 }: FieldProps) => {
   if (!isVisible) {
-    return <></>;
+    return null;
   }
 
   const componentClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    'row af-form__group'
   );
 
   return (
@@ -58,16 +47,16 @@ const Field = ({
           {label}
         </label>
       </div>
-      <div className={classNameContainerInput}>
+      <FieldForm
+        className={classNameContainerInput}
+        message={message}
+        messageType={messageType}
+        forceDisplayMessage={forceDisplayMessage}>
         {children}
-        {forceDisplayMessage && (
-          <FieldError message={message} messageType={messageType} />
-        )}
-      </div>
+        <FieldError message={message} messageType={messageType} />
+      </FieldForm>
     </div>
   );
 };
-
-Field.defaultProps = defaultProps;
 
 export default Field;

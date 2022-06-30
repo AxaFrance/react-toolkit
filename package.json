@@ -23,7 +23,10 @@
     "cover": "jest --no-cache --config ./jest.config.ts --coverage",
     "check": "npm run check:formatting && npm run check:quality",
     "check:formatting": "prettier --check \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
-    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives"
+    "check:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --cache --cache-location=.cache/eslint --report-unused-disable-directives",
+    "fix": "npm run fix:formatting && npm run fix:quality",
+    "fix:formatting": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
+    "fix:quality": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix"
   },
   "husky": {
     "hooks": {
@@ -85,7 +88,7 @@
     "sass-loader": "^10.0.5",
     "storybook-readme": "^5.0.9",
     "ts-jest": "^27.1.2",
-    "ts-node": "^9.1.1",
+    "ts-node": "^10.8.1",
     "typescript": "^4.0.5"
   },
   "dependencies": {

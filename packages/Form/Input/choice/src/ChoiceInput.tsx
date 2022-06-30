@@ -1,31 +1,27 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { Field } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { Field, useOptionsWithId } from '@axa-fr/react-toolkit-form-core';
 import Choice from './Choice';
 
 type Props = ComponentPropsWithoutRef<typeof Choice> &
   Omit<ComponentPropsWithoutRef<typeof Field>, 'children'>;
+
 const ChoiceInput = ({
-  mode,
+  id,
   messageType,
   message,
   className,
   classModifier,
-  id,
-  name,
   isVisible,
   classNameContainerLabel,
   classNameContainerInput,
   label,
   forceDisplayMessage,
-  onChange,
-  readOnly,
-  disabled,
   options,
   ...otherProps
 }: Props) => {
-  const newOptions = options && InputManager.getOptionsWithId(options);
-  const firstId = InputManager.getFirstId(newOptions);
+  const newOptions = useOptionsWithId(options, id);
+  const firstId = options && newOptions[0] ? newOptions[0].id : '';
+
   return (
     <Field
       label={label}
@@ -38,7 +34,11 @@ const ChoiceInput = ({
       classModifier={classModifier}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
-      <Choice options={newOptions} {...otherProps} />
+      <Choice
+        {...otherProps}
+        classModifier={classModifier}
+        options={options ? newOptions : undefined}
+      />
     </Field>
   );
 };

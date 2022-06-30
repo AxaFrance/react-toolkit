@@ -1,15 +1,16 @@
-import React, { ComponentProps } from 'react';
-import { Field } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
-import Radio from './Radio';
+import React, { ComponentPropsWithoutRef } from 'react';
+import {
+  Field,
+  useOptionsWithId,
+  getFirstId,
+} from '@axa-fr/react-toolkit-form-core';
+import Radio, { RadioModes } from './Radio';
 
-import RadioModes from './RadioModes';
+type RadioInputProps = ComponentPropsWithoutRef<typeof Field> &
+  ComponentPropsWithoutRef<typeof Radio>;
 
-type RadioInputProps = ComponentProps<typeof Field> &
-  ComponentProps<typeof Radio>;
-
-const RadioInput: React.FC<RadioInputProps> = ({
-  mode = RadioModes.default,
+const RadioInput = ({
+  mode,
   messageType,
   message,
   className,
@@ -22,15 +23,13 @@ const RadioInput: React.FC<RadioInputProps> = ({
   forceDisplayMessage,
   children,
   ...radioProps
-}) => {
-  const fieldClassModifier = `${classModifier ?? ''}${
-    classModifier && mode === RadioModes.classic ? ' ' : ''
-  }${mode === RadioModes.classic ? 'label-top' : ''}`;
-  const newOptions = InputManager.getOptionsWithId(options);
-  const firstId = InputManager.getFirstId(newOptions);
-  const radioClassModifier = `${classModifier ?? ''}${
-    classModifier && forceDisplayMessage && messageType ? ' ' : ''
-  }${forceDisplayMessage && messageType ? `${messageType}` : ''}`;
+}: RadioInputProps) => {
+  const rowModifier = `${classModifier ?? ''}${
+    mode === RadioModes.classic ? ' label-top' : ''
+  }`;
+  const newOptions = useOptionsWithId(options);
+  const firstId = getFirstId(newOptions);
+
   return (
     <Field
       label={label}
@@ -40,14 +39,13 @@ const RadioInput: React.FC<RadioInputProps> = ({
       isVisible={isVisible}
       forceDisplayMessage={forceDisplayMessage}
       className={className}
-      classModifier={fieldClassModifier}
+      classModifier={rowModifier}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
       <Radio
         options={newOptions}
         mode={mode}
-        classModifier={radioClassModifier}
-        className={className}
+        classModifier={classModifier}
         {...radioProps}
       />
       {children}

@@ -1,54 +1,55 @@
-import React, { AllHTMLAttributes, forwardRef, MutableRefObject } from 'react';
-import {
-  defaultOnChange,
-  CustomFormEvent,
-  InputManager,
-  withOptionClassName,
-} from '@axa-fr/react-toolkit-form-core';
+import React, { AllHTMLAttributes, MutableRefObject, ReactNode } from 'react';
+import { useId } from '@axa-fr/react-toolkit-core';
+import { useOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
-const defaultClassName = 'af-form__checkbox';
-
-type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange'> & {
-  onChange?: (e: CustomFormEvent) => void;
-  optionClassName: string;
+type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type' | 'label'> & {
+  inputRef?: MutableRefObject<HTMLInputElement>;
+  children?: ReactNode;
+  label?: ReactNode;
+  isChecked?: boolean;
+  classModifier?: string;
 };
-const CheckboxItem = forwardRef(
-  (
-    {
-      optionClassName,
-      disabled = true,
-      value,
-      id,
-      children,
-      label,
-      onChange,
-      ...otherProps
-    }: Props,
-    inputRef: MutableRefObject<HTMLInputElement>
-  ) => {
-    const newLabel = children || label;
-    const newId = InputManager.getInputId(id); // id is require on this component
-    return (
-      <div className={optionClassName}>
-        <input
-          {...otherProps}
-          className="af-form__input-checkbox"
-          value={value}
-          onChange={defaultOnChange(onChange)}
-          id={newId}
-          disabled={disabled}
-          type="checkbox"
-          ref={inputRef}
-        />
-        <label className="af-form__label" htmlFor={newId}>
-          <span className="af-form__indicator">
-            <i className="glyphicon glyphicon-ok" />
-          </span>
-          <span className="af-form__description">{newLabel}</span>
-        </label>
-      </div>
-    );
-  }
-);
 
-export default withOptionClassName<Props>(defaultClassName)(CheckboxItem);
+const CheckboxItem = ({
+  disabled = true,
+  value = '',
+  id,
+  children,
+  label,
+  isChecked,
+  className,
+  classModifier,
+  inputRef,
+  ...otherProps
+}: Props) => {
+  const newLabel = children || label;
+  const newId = useId(id); // id is require on this component
+  const optionClassName = useOptionClassName(
+    className,
+    classModifier,
+    disabled,
+    'af-form__checkbox'
+  );
+  return (
+    <div className={optionClassName}>
+      <input
+        {...otherProps}
+        className="af-form__input-checkbox"
+        value={value}
+        id={newId}
+        disabled={disabled}
+        checked={isChecked}
+        type="checkbox"
+        ref={inputRef}
+      />
+      <label className="af-form__label" htmlFor={newId}>
+        <span className="af-form__indicator">
+          <i className="glyphicon glyphicon-ok" />
+        </span>
+        <span className="af-form__description">{newLabel}</span>
+      </label>
+    </div>
+  );
+};
+
+export default withInput<Props>()(CheckboxItem);

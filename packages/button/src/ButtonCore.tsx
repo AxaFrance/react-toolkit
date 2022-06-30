@@ -1,37 +1,27 @@
-import React from 'react';
-import {
-  PropsManager,
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'btn af-btn';
-
-const omitProperties = PropsManager.omit(['classModifier']);
-
-interface ButtonCoreComponentProps
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {}
-
-const ButtonRaw: React.SFC<ButtonCoreComponentProps> = (props) => {
-  const buttonProps: ButtonCoreComponentProps = omitProperties(props);
-  return <button {...buttonProps} />;
+type Props = ComponentPropsWithoutRef<'button'> & {
+  classModifier?: string;
 };
 
-export type ButtonCoreProps = ButtonCoreComponentProps &
-  WithClassModifierOptions;
+const ButtonCore = ({
+  className,
+  classModifier,
+  type = 'button',
+  children,
+  ...props
+}: Props) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'btn af-btn'
+  );
+  return (
+    <button type={type} className={componentClassName} {...props}>
+      {children}
+    </button>
+  );
+};
 
-const enhance = compose(
-  identity<ButtonCoreComponentProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(ButtonRaw);
-Enhanced.displayName = 'ButtonCore';
-export default Enhanced;
+export default ButtonCore;

@@ -1,19 +1,35 @@
-import React, { InputHTMLAttributes, ReactNode } from 'react';
-import { InputManager } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useId } from '@axa-fr/react-toolkit-core';
+import { Option, useOptionClassName } from '@axa-fr/react-toolkit-form-core';
 
 const defaultClassName = 'af-form__radio-custom';
 
-interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'> {
-  value?: string;
-  label: ReactNode;
-}
+type Props = Omit<
+  ComponentPropsWithoutRef<'input'>,
+  'value' | 'checked' | 'disabled'
+> &
+  Option & {
+    classModifier?: string;
+    isChecked?: boolean;
+  };
 
-const SwitchItem = ({ label, ...radioProps }: Props) => {
-  const newId = InputManager.getInputId(radioProps.id);
-  const classNameDisabled = radioProps.disabled
-    ? `${defaultClassName}--disabled`
-    : undefined;
-  const classNameChecked = radioProps.checked
+const SwitchItem = ({
+  id,
+  label,
+  className,
+  classModifier,
+  disabled,
+  isChecked,
+  ...radioProps
+}: Props) => {
+  const newId = useId(id);
+  const classNameDisabled = useOptionClassName(
+    className,
+    classModifier,
+    disabled,
+    defaultClassName
+  );
+  const classNameChecked = isChecked
     ? `${defaultClassName}--checked`
     : undefined;
   return (
@@ -23,6 +39,8 @@ const SwitchItem = ({ label, ...radioProps }: Props) => {
         .join(' ')}>
       <input
         {...radioProps}
+        checked={isChecked}
+        disabled={disabled}
         className="af-form__input-radio"
         id={newId}
         type="radio"

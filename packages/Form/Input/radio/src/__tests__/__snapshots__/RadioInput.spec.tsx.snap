@@ -19,7 +19,7 @@ exports[`<RadioInput /> should have correct html rendered 1`] = `
       class="col-md-10"
     >
       <div
-        class="af-form__radio-custom "
+        class="af-form__radio-custom"
       >
         <input
           class="af-form__input-radio"
@@ -39,7 +39,7 @@ exports[`<RadioInput /> should have correct html rendered 1`] = `
         </label>
       </div>
       <div
-        class="af-form__radio-custom "
+        class="af-form__radio-custom"
       >
         <input
           class="af-form__input-radio"

@@ -1,9 +1,6 @@
 import React, { ComponentProps, ReactNode } from 'react';
-import {
-  Field,
-  HelpMessage,
-  InputManager,
-} from '@axa-fr/react-toolkit-form-core';
+import { Field, HelpMessage } from '@axa-fr/react-toolkit-form-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import Slider from './Slider';
 
@@ -27,7 +24,7 @@ const SliderInput = ({
   classModifier,
   ...sliderProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
   return (
     <Field
       id={inputId}

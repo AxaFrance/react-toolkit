@@ -20,7 +20,7 @@ class LinkItem extends Component<AllHTMLAttributes<HTMLAnchorElement>> {
   render() {
     const { children } = this.props;
     return (
-      <a href="#" {...this.props} onClick={action('onClick Action')}>
+      <a href="/#" {...this.props} onClick={action('onClick Action')}>
         {children}
       </a>
     );

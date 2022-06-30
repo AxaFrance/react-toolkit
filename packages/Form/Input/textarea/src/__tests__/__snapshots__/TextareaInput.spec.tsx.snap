@@ -19,10 +19,10 @@ exports[`renders TextareaInput correctly 1`] = `
       class="col-md-10"
     >
       <div
-        class="af-form__textarea af-form__textarea--undefined"
+        class="af-form__textarea"
       >
         <textarea
-          class="af-form__input-textarea af-form__input-textarea--undefined"
+          class="af-form__input-textarea"
           cols="50"
           id="iddateinput"
           name="sample"

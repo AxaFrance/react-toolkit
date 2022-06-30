@@ -25,7 +25,6 @@ ChoiceStory.args = {
   readOnly: false,
   disabled: false,
   classModifier: '',
-  className: '',
 };
 ChoiceStory.argTypes = {
   onChange: { action: 'onChange' },
@@ -47,8 +46,6 @@ ChoiceInputStory.args = {
   messageType: MessageTypes.error,
   forceDisplayMessage: false,
   isVisible: true,
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
 };
 ChoiceInputStory.argTypes = {
   onChange: { action: 'onChange' },

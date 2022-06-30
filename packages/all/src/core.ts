@@ -1,5 +1,6 @@
 export {
   ClassManager,
-  InputManager,
+  useComponentClassName,
+  useId,
   Constants,
 } from '@axa-fr/react-toolkit-core';

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldError Should not render <FieldError/> when message undefined 1`] = `<DocumentFragment />`;
+
+exports[`FieldError Should render <FieldError/> 1`] = `
+<DocumentFragment>
+  <small
+    class="af-form__message af-form__message--error"
+  >
+    <span
+      class="glyphicon glyphicon-exclamation-sign"
+    />
+    <span
+      class="af-form__error-text"
+    >
+      Champ obligatoire
+    </span>
+  </small>
+</DocumentFragment>
+`;

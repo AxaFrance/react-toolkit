@@ -1,8 +1,6 @@
 import React, { ComponentProps, ComponentPropsWithoutRef } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import LineFile from './FileLine';
-
-const defaultClassName = 'custom-table-file af-file-table';
 
 const Errors = ({ errors }: Pick<Props, 'errors'>) => {
   return (
@@ -31,15 +29,15 @@ type Props = FileLineAction & {
 const FileTable = ({
   errors,
   values,
-  className = defaultClassName,
+  className,
   classModifier,
   disabled,
   onClick,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = useComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    'custom-table-file af-file-table'
   );
   return (
     <div className={componentClassName}>

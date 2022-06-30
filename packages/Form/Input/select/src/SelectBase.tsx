@@ -1,41 +1,30 @@
 import React, {
-  InputHTMLAttributes,
+  ComponentPropsWithoutRef,
+  forwardRef,
   OptionHTMLAttributes,
-  RefObject,
 } from 'react';
-import {
-  CustomFormEvent,
-  defaultOnChange,
-} from '@axa-fr/react-toolkit-form-core';
 
-type Props = Omit<InputHTMLAttributes<HTMLSelectElement>, 'onChange'> & {
-  onChange?: (event: CustomFormEvent) => void;
-  inputRef?: RefObject<HTMLSelectElement>;
+type Props = ComponentPropsWithoutRef<'select'> & {
   options: OptionHTMLAttributes<HTMLOptionElement>[];
 };
 
-const SelectBase = ({
-  options,
-  inputRef,
-  onChange,
-  id,
-  ...otherProps
-}: Props) => (
-  <div className="af-form__select-container">
-    <select
-      {...otherProps}
-      id={id}
-      className="af-form__input-select"
-      ref={inputRef}
-      onChange={defaultOnChange(onChange)}>
-      {options.map(({ label, ...opt }) => (
-        <option key={opt.value.toString()} {...opt}>
-          {label}
-        </option>
-      ))}
-    </select>
-    <span aria-controls={id} className="glyphicon glyphicon-menu-down" />
-  </div>
+const SelectBase = forwardRef<HTMLSelectElement, Props>(
+  ({ options, onChange, id, ...otherProps }, inputRef) => (
+    <div className="af-form__select-container">
+      <select
+        {...otherProps}
+        id={id}
+        className="af-form__input-select"
+        ref={inputRef}>
+        {options.map(({ label, ...opt }) => (
+          <option key={opt.value.toString()} {...opt}>
+            {label}
+          </option>
+        ))}
+      </select>
+      <span aria-controls={id} className="glyphicon glyphicon-menu-down" />
+    </div>
+  )
 );
 
 export default SelectBase;

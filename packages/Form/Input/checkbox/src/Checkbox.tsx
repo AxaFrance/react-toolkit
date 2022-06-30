@@ -1,85 +1,84 @@
-import React, { ComponentProps, ReactNode } from 'react';
-import { CustomFormEvent } from '@axa-fr/react-toolkit-form-core';
-import { Option } from '@axa-fr/react-toolkit-core';
+import React, { ChangeEvent, ComponentProps, ReactNode } from 'react';
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import CheckBoxModes from './CheckboxModes';
 import CheckboxItem from './CheckboxItem';
 
-const classMode = {
-  default: 'af-form__checkbox-custom',
-  classic: 'af-form__checkbox',
-};
-
-type OnChangeCheckboxEvent = Omit<CustomFormEvent, 'value'> & {
-  values: string[];
-  target: { value: string; checked?: boolean };
-};
-
 type Props = Omit<
   ComponentProps<typeof CheckboxItem>,
-  'onChange' | 'value' | 'label' | 'checked'
+  'value' | 'label' | 'checked'
 > & {
   options: Option[];
   values?: string[];
   children?: ReactNode;
   mode?: CheckBoxModes;
-  onChange?: (e: OnChangeCheckboxEvent) => void;
 };
+
 const Checkbox = ({
   options,
   disabled,
   children,
   values,
   mode = CheckBoxModes.default,
-  onChange,
   name,
-  id,
+  className,
   ...otherProps
-}: Props) => {
-  const onChangeCustom = (e: CustomFormEvent) => {
-    const newValues = values || [];
+}: Props) => (
+  <>
+    {options.map((option) => {
+      const isChecked = values ? values.indexOf(option.value) >= 0 : false;
+      return (
+        <CheckboxItem
+          key={option.value}
+          id={option.id}
+          value={option.value}
+          label={option.label}
+          isChecked={isChecked}
+          name={name}
+          disabled={option.disabled || disabled}
+          className={className || defaultClassName(mode)}
+          {...otherProps}>
+          {children}
+        </CheckboxItem>
+      );
+    })}
+  </>
+);
 
-    const index = newValues.indexOf(e.value);
-    const checked = index <= -1;
-    if (checked) {
-      newValues.push(e.value);
-    } else {
-      newValues.splice(index, 1);
-    }
-    onChange({
-      values: newValues,
-      target: { value: e.value, checked },
-      name,
-      id,
-    });
-  };
-
-  const classNameMode =
-    mode === CheckBoxModes.default || mode === CheckBoxModes.classic
-      ? classMode[mode]
-      : `af-form__checkbox-${mode}`;
-
-  return (
-    <>
-      {options.map((option) => {
-        const isChecked = values ? values.indexOf(option.value) >= 0 : false;
-        return (
-          <CheckboxItem
-            key={option.value}
-            id={option.id}
-            value={option.value}
-            label={option.label}
-            checked={isChecked}
-            name={name}
-            onChange={onChangeCustom}
-            disabled={option.disabled || disabled}
-            className={classNameMode}
-            {...otherProps}>
-            {children}
-          </CheckboxItem>
-        );
-      })}
-    </>
-  );
+const defaultClassName = (mode: string) => {
+  switch (mode) {
+    case CheckBoxModes.default:
+      return 'af-form__checkbox-custom';
+    case CheckBoxModes.classic:
+      return 'af-form__checkbox';
+    default:
+      return `af-form__checkbox-${mode}`;
+  }
 };
 
-export default Checkbox;
+const handlersOverride = {
+  onChange:
+    ({ onChange, name, values, id }: any) =>
+    (e: ChangeEvent<HTMLInputElement>) => {
+      let newValues: typeof values = [];
+      if (values) {
+        newValues = [...values];
+      }
+      const index = newValues.indexOf(e.target.value);
+      const checked = index <= -1;
+      if (checked) {
+        newValues.push(e.target.value);
+      } else {
+        newValues.splice(index, 1);
+      }
+      onChange({
+        values: newValues,
+        target: { value: e.target.value, checked },
+        name,
+        id,
+      });
+    },
+};
+
+Checkbox.displayName = 'EnhancedInputCheckbox';
+
+export default withInput<Props>(handlersOverride)(Checkbox);

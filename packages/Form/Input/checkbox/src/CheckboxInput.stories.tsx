@@ -11,7 +11,9 @@ const Badge = ({
   children,
   classModifier,
 }: PropsWithChildren<{ classModifier?: string }>) => (
-  <div className={classModifier ?? ''}>{children}</div>
+  <strong style={{ color: 'green' }} className={classModifier ?? ''}>
+    {children}
+  </strong>
 );
 
 const options = [
@@ -50,7 +52,7 @@ const Template: Story<ComponentProps<typeof CheckboxInput>> = (args) => (
   </form>
 );
 export const CheckboxInputStory = Template.bind({}) as typeof Template;
-CheckboxInputStory.storyName = 'CheckboxInput Classic';
+CheckboxInputStory.storyName = 'CheckboxInput';
 CheckboxInputStory.args = {
   label: 'Place type',
   name: 'placeType',
@@ -83,14 +85,16 @@ CheckboxItemToggleStory.args = {
   readOnly: false,
   disabled: false,
   checked: false,
+  className: 'af-form__checkbox-toggle',
 };
 
 export const CheckboxItemStory = TemplateChecboxItem.bind(
   {}
 ) as typeof TemplateChecboxItem;
-CheckboxItemStory.storyName = 'ChecboxItem';
+CheckboxItemStory.storyName = 'CheckboxItem';
 CheckboxItemStory.args = {
   ...CheckboxItemToggleStory.args,
+  className: '',
   label: 'web center forever',
 };
 

@@ -1,29 +1,26 @@
-import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-title';
+type TitleProps = ComponentPropsWithoutRef<'h1'> & {
+  classModifier?: string;
+};
 
-export type TitleProps = React.HTMLProps<HTMLHeadingElement> &
-  WithClassModifierOptions;
-
-const TitleRaw: React.FC<TitleProps> = ({
+const Title = ({
+  className,
   classModifier,
   children,
   ...otherProps
-}) => <h1 {...otherProps}>{children}</h1>;
+}: TitleProps) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-title'
+  );
+  return (
+    <h1 className={componentClassName} {...otherProps}>
+      {children}
+    </h1>
+  );
+};
 
-const enhance = compose(
-  identity<TitleProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(TitleRaw);
-Enhanced.displayName = 'Title';
-export default Enhanced;
+export default Title;

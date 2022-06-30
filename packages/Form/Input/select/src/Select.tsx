@@ -1,54 +1,69 @@
-import React, { ComponentProps, useState } from 'react';
-import {
-  CustomFormEvent,
-  withComponentClassName,
-  InputManager,
-} from '@axa-fr/react-toolkit-form-core';
-
+import React, { ChangeEvent, ComponentPropsWithRef, useState } from 'react';
+import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
+import { withInput } from '@axa-fr/react-toolkit-form-core';
 import SelectBase from './SelectBase';
 
-type Props = ComponentProps<typeof SelectBase> & {
+type Props = ComponentPropsWithRef<typeof SelectBase> & {
   classModifier?: string;
-  componentClassName?: string;
   forceDisplayPlaceholder?: boolean;
   placeholder?: string;
 };
 
-const Select = ({
-  componentClassName,
+const SelectDefault = ({
   onChange,
   forceDisplayPlaceholder = false,
   value,
   placeholder = '- Select -',
   options,
   id,
+  className,
+  classModifier,
   ...otherProps
 }: Props) => {
   const [hasHandleChangeOnce, setHasHandleChangeOnce] = useState(false);
 
-  const onChangeSelect = (e: CustomFormEvent) => {
-    onChange(e);
-    setHasHandleChangeOnce(!forceDisplayPlaceholder);
-  };
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-form__select-container'
+  );
 
   const newOptions =
     !hasHandleChangeOnce && !value
       ? [{ value: '', label: placeholder }, ...options]
       : options;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
   return (
     <SelectBase
       id={inputId}
       value={value}
       options={newOptions}
-      onChange={onChangeSelect}
+      onChange={(e) => {
+        onChange(e);
+        setHasHandleChangeOnce(!forceDisplayPlaceholder);
+      }}
       className={componentClassName}
       {...otherProps}
     />
   );
 };
 
-const enhance = withComponentClassName<Props>('af-form__select-container')(
-  Select
-);
-export default enhance;
+type SelectProps = Props & { mode?: 'default' | 'base' };
+const Select = ({ mode = 'default', children, ...props }: SelectProps) => {
+  const DynamicComponent = mode === 'default' ? SelectDefault : SelectBase;
+  return <DynamicComponent {...props}>{children}</DynamicComponent>;
+};
+
+const handlers = {
+  onChange:
+    ({ name, id, onChange }: any) =>
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      onChange({
+        value: e.target.value,
+        name,
+        id,
+      });
+    },
+};
+
+export default withInput<SelectProps>(handlers)(Select);

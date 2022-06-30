@@ -10,13 +10,43 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
     >
       <label
         class="af-form__group-label"
+        for="id"
       >
         Image *
       </label>
     </div>
     <div
       class="col-md-10"
-    />
+    >
+      <div
+        class="af-form__checkbox-custom"
+      >
+        <input
+          class="af-form__input-checkbox"
+          id="iddateinput"
+          name="placeImage"
+          type="checkbox"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="iddateinput"
+        >
+          <span
+            class="af-form__indicator"
+          >
+            <i
+              class="glyphicon glyphicon-ok"
+            />
+          </span>
+          <span
+            class="af-form__description"
+          >
+            name
+          </span>
+        </label>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

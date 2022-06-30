@@ -8,8 +8,8 @@ import {
   CardContent,
 } from '../index';
 
-describe('<DateInput>', () => {
-  it('renders DateInput correctly', () => {
+describe('<Card>', () => {
+  it('renders Card correctly', () => {
     const { asFragment } = render(
       <CardGroupCheckbox onChange={jest.fn()} values={['1']}>
         <Card name="name" id="name" value="1">
