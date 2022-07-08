@@ -63,7 +63,7 @@ exports[`Radio should have correct html rendered 1`] = `
     </label>
   </div>
   <div
-    class="af-form__radio-custom"
+    class="af-form__radio-custom af-form__radio-custom--disabled"
   >
     <input
       class="af-form__input-radio"
