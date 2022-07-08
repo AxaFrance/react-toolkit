@@ -1,6 +1,6 @@
 import React, { AllHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
-import { useOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
+import { getOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type' | 'label'> & {
   inputRef?: MutableRefObject<HTMLInputElement>;
@@ -24,7 +24,7 @@ const CheckboxItem = ({
 }: Props) => {
   const newLabel = children || label;
   const newId = useId(id); // id is require on this component
-  const optionClassName = useOptionClassName(
+  const optionClassName = getOptionClassName(
     className,
     classModifier,
     disabled,

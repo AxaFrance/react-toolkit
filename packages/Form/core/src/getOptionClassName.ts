@@ -1,6 +1,6 @@
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 
-export function useOptionClassName(
+export function getOptionClassName(
   className: string,
   classModifier: string,
   disabled: boolean,

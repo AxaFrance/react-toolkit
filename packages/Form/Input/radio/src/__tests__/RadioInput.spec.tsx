@@ -59,7 +59,7 @@ describe('<RadioInput />', () => {
     `(
       'should pass "test" to classModifier when messageType is $messageType',
       ({ messageType, expectedClassName }) => {
-        const { getByRole } = render(
+        const { asFragment, getByRole } = render(
           <RadioInput
             id="123"
             label="test"
@@ -69,11 +69,13 @@ describe('<RadioInput />', () => {
             forceDisplayMessage
             classModifier="test"
             value="1"
+            disabled
           />
         );
         expect(getByRole('radio', { checked: true }).parentElement).toHaveClass(
           expectedClassName
         );
+        expect(asFragment()).toMatchSnapshot();
       }
     );
 

@@ -1,5 +1,317 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<RadioInput /> Radio Child should pass "test" to classModifier when messageType is  1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--test"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="option1_id"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          checked=""
+          class="af-form__input-radio"
+          disabled=""
+          id="option1_id"
+          type="radio"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="option1_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 1
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          class="af-form__input-radio"
+          disabled=""
+          id="option2_id"
+          type="radio"
+          value="2"
+        />
+        <label
+          class="af-form__label"
+          for="option2_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 2
+          </span>
+        </label>
+      </div>
+      <small
+        class="af-form__message"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__-text"
+        >
+          test message error
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<RadioInput /> Radio Child should pass "test" to classModifier when messageType is error 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--test"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="option1_id"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          checked=""
+          class="af-form__input-radio"
+          disabled=""
+          id="option1_id"
+          type="radio"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="option1_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 1
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          class="af-form__input-radio"
+          disabled=""
+          id="option2_id"
+          type="radio"
+          value="2"
+        />
+        <label
+          class="af-form__label"
+          for="option2_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 2
+          </span>
+        </label>
+      </div>
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          test message error
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<RadioInput /> Radio Child should pass "test" to classModifier when messageType is null 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--test"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="option1_id"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          checked=""
+          class="af-form__input-radio"
+          disabled=""
+          id="option1_id"
+          type="radio"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="option1_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 1
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          class="af-form__input-radio"
+          disabled=""
+          id="option2_id"
+          type="radio"
+          value="2"
+        />
+        <label
+          class="af-form__label"
+          for="option2_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 2
+          </span>
+        </label>
+      </div>
+      <small
+        class="af-form__message"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__null-text"
+        >
+          test message error
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<RadioInput /> Radio Child should pass "test" to classModifier when messageType is undefined 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--test"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="option1_id"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          checked=""
+          class="af-form__input-radio"
+          disabled=""
+          id="option1_id"
+          type="radio"
+          value="1"
+        />
+        <label
+          class="af-form__label"
+          for="option1_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 1
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error af-form__radio-custom--disabled"
+      >
+        <input
+          class="af-form__input-radio"
+          disabled=""
+          id="option2_id"
+          type="radio"
+          value="2"
+        />
+        <label
+          class="af-form__label"
+          for="option2_id"
+        >
+          <span
+            class="af-form__description"
+          >
+            Option 2
+          </span>
+        </label>
+      </div>
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          test message error
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<RadioInput /> should have correct html rendered 1`] = `
 <DocumentFragment>
   <div
