@@ -1,24 +1,34 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { Radio } from '@axa-fr/react-toolkit-form-input-radio';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 
 const defaultOptions = [
-  { label: 'Oui', value: 'true', id: 'radioItemTrue' },
-  { label: 'Non', value: 'false', id: 'radioItemFalse' },
+  { label: 'Oui', value: true, id: 'radioItemTrue' },
+  { label: 'Non', value: false, id: 'radioItemFalse' },
 ];
 
-type Props = ComponentPropsWithoutRef<typeof Radio>;
+type Props = Omit<ComponentPropsWithoutRef<typeof Radio>, 'options'> & {
+  id: string;
+  options?: Array<Omit<Option, 'value'> & { value: boolean }>;
+};
 
 const Choice = ({
   children,
   value,
   options = defaultOptions,
+  id: _id,
   ...otherProps
-}: Props) => (
-  <Radio {...otherProps} value={value?.toString()} options={options}>
-    {children}
-  </Radio>
-);
+}: Props) => {
+  const choiceOptions = options.map((option) => ({
+    ...option,
+    value: `${option.value}`,
+  }));
+  return (
+    <Radio {...otherProps} value={value?.toString()} options={choiceOptions}>
+      {children}
+    </Radio>
+  );
+};
 
 const handlers = {
   onChange:

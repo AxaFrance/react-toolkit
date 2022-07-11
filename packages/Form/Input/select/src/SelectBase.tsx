@@ -1,3 +1,4 @@
+import { withInput } from '@axa-fr/react-toolkit-form-core';
 import React, {
   ComponentPropsWithoutRef,
   forwardRef,
@@ -9,7 +10,7 @@ type Props = ComponentPropsWithoutRef<'select'> & {
 };
 
 const SelectBase = forwardRef<HTMLSelectElement, Props>(
-  ({ options, onChange, id, ...otherProps }, inputRef) => (
+  ({ options, id, ...otherProps }, inputRef) => (
     <div className="af-form__select-container">
       <select
         {...otherProps}
@@ -27,4 +28,4 @@ const SelectBase = forwardRef<HTMLSelectElement, Props>(
   )
 );
 
-export default SelectBase;
+export default withInput<Props>()(SelectBase);

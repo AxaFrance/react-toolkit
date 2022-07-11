@@ -24,7 +24,6 @@ const MultiSelectInput = ({
   classNameContainerLabel,
   classNameContainerInput,
   label,
-  name,
   messageType,
   isVisible,
   forceDisplayMessage,
@@ -50,7 +49,7 @@ const MultiSelectInput = ({
       <FieldInput
         className="af-form__select"
         classModifier={inputFieldClassModifier}>
-        <MultiSelect disabled={disabled} {...multiSelectProps} />
+        <MultiSelect id={inputId} disabled={disabled} {...multiSelectProps} />
         {children}
       </FieldInput>
       <HelpMessage message={helpMessage} isVisible={!message} />

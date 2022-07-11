@@ -3,7 +3,7 @@
 exports[`<DateInput> renders DateInput correctly 1`] = `
 <DocumentFragment>
   <div
-    class="row af-form__group af-form__group--undefined"
+    class="row af-form__group"
   >
     <div
       class="col-md-2"
@@ -23,14 +23,14 @@ exports[`<DateInput> renders DateInput correctly 1`] = `
       >
         <input
           class="af-form__input-checkbox"
-          id="iddateinput"
+          id="id"
           name="placeImage"
           type="checkbox"
           value="1"
         />
         <label
           class="af-form__label"
-          for="iddateinput"
+          for="id"
         >
           <span
             class="af-form__indicator"

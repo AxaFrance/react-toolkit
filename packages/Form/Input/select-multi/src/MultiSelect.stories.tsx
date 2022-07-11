@@ -63,12 +63,12 @@ export const MultiSelectStoryOneValue: Story<
   const [newValue, setNewValue] = useState(value);
   return (
     <MultiSelect
+      {...args}
       value={newValue}
       onChange={(v) => {
         setNewValue(v.value);
         onChange(v);
       }}
-      {...args}
     />
   );
 };
@@ -77,6 +77,9 @@ MultiSelectStoryOneValue.args = {
   ...MultiSelectStory.args,
   values: null,
   value: selectedValues[0],
+};
+MultiSelectStoryOneValue.argTypes = {
+  onChange: { action: 'onChange' },
 };
 
 export const MultiSelectInputStory: Story<
@@ -89,6 +92,7 @@ export const MultiSelectInputStory: Story<
 MultiSelectInputStory.storyName = 'MultiSelectInput';
 MultiSelectInputStory.args = {
   ...MultiSelectStory.args,
+  id: 'uniqueid',
   label: 'Place type',
   helpMessage: 'Enter the place type',
   message: '',

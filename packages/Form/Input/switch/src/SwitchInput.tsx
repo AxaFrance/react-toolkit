@@ -3,6 +3,7 @@ import {
   Field,
   FieldInput,
   HelpMessage,
+  useInputClassModifier,
   useOptionsWithId,
 } from '@axa-fr/react-toolkit-form-core';
 
@@ -27,10 +28,16 @@ const SwitchInput = ({
   className,
   forceDisplayMessage,
   options,
+  disabled,
   ...switchProps
 }: Props) => {
   const newOptions = useOptionsWithId(options);
   const firstId = (newOptions[0] || {}).id;
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
 
   return (
     <Field
@@ -44,8 +51,15 @@ const SwitchInput = ({
       classModifier={classModifier}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
-      <FieldInput className="af-form__text">
-        <Switch {...switchProps} options={newOptions} />
+      <FieldInput
+        className="af-form__text"
+        classModifier={inputFieldClassModifier}>
+        <Switch
+          {...switchProps}
+          options={newOptions}
+          disabled={disabled}
+          classModifier={inputClassModifier}
+        />
         {children}
       </FieldInput>
       <HelpMessage message={helpMessage} isVisible={!message} />

@@ -30,7 +30,7 @@ describe('Radio', () => {
           <Radio options={options} value={value} />
         );
         const radioItem = getAllByRole('radio').find(
-          (element) => element.getAttribute('value') === '1'
+          (element: any) => element.getAttribute('value') === '1'
         );
 
         expect(radioItem).toBeInTheDocument();

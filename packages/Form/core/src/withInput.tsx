@@ -73,20 +73,19 @@ export const withInput =
         <Component
           {...props}
           disabled={disabled}
-          {...propsOverride(props)}
+          {...propsOverride({ ...props, disabled })}
           {...onHandlers}
         />
       );
     };
 
     if (
-      Component.displayName === 'EnhancedInputRadio' ||
-      Component.displayName === 'EnhancedInputCheckbox'
+      Component.displayName !== 'EnhancedInputCheckbox' &&
+      Component.displayName !== 'EnhancedInputRadio'
     ) {
-      NewComponent.displayName = 'EnhancedInputList';
-    } else {
       NewComponent.displayName = 'EnhancedInput';
+    } else {
+      NewComponent.displayName = Component.displayName || Component.name;
     }
-
     return NewComponent;
   };

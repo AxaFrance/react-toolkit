@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import MessageTypes from './MessageTypes';
-import { getMessageClassModifier } from './FormClassManager';
+import FormClassManager from './FormClassManager';
 
 const defaultClassName = 'md-10';
 
@@ -28,7 +28,7 @@ type EventFunction = {
   onFocus?: Function;
 };
 
-export type FieldFormProps = {
+type FieldFormProps = {
   className?: string;
   classModifier?: string;
   forceDisplayMessage?: boolean;
@@ -144,14 +144,14 @@ export const getMessageInfo = ({
   hasChange,
   message,
   messageType,
-}: GetMessageInfoProps) => {
+}: GetMessageInfoProps): Pick<FieldFormProps, 'message' | 'messageType'> => {
   const isDisplayMessage =
     hasLostFocusOnce || forceDisplayMessage || (hasChange && !hasFocus);
 
   if (!isDisplayMessage) {
     return {
       message: '',
-      messageType: '',
+      messageType: '' as typeof messageType,
     };
   }
   return hasFocus
@@ -213,7 +213,7 @@ type AddPropsClone = Omit<RenderChildrenProps, 'children'> & {
   child: ReactElement<EventFunction>;
   classModifier: string;
   name: string;
-  getMessageClassModifierFn?: Function;
+  getMessageClassModifierFn?: typeof FormClassManager.getMessageClassModifier;
   eventWrapperFn?: Function;
 };
 
@@ -224,15 +224,15 @@ export const addPropsClone = ({
   wrapper,
   child,
   name,
-  getMessageClassModifierFn = getMessageClassModifier,
+  getMessageClassModifierFn = FormClassManager.getMessageClassModifier,
   eventWrapperFn = eventWrapper,
   ...rest
 }: AddPropsClone) => {
-  const messageClassModifier = getMessageClassModifierFn({
+  const messageClassModifier = getMessageClassModifierFn(
     messageType,
     message,
-    modifier: classModifier,
-  });
+    classModifier
+  );
 
   const type: any = { ...rest };
   const displayName = type?.displayName ?? name;
@@ -244,7 +244,8 @@ export const addPropsClone = ({
       return { message };
     case 'FieldInput':
       return { classModifier: messageClassModifier };
-    case 'EnhancedInputList':
+    case 'EnhancedInputRadio':
+    case 'EnhancedInputCheckbox':
       return {
         ...eventWrapperFn({ wrapper, props: child.props }),
         classModifier: messageClassModifier,

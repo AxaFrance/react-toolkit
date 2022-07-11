@@ -1,12 +1,13 @@
-import { getOptionClassName, isDisabled } from '../InputList';
+import { getOptionClassName } from '../getOptionClassName';
+import { isDisabled } from '../InputList';
 
 describe('getOptionClassName', () => {
   it.each`
     className        | classModifier   | defaultClassName | disabled | expected
     ${'myClassName'} | ${'myModifier'} | ${'default'}     | ${false} | ${'myClassName myClassName--myModifier'}
     ${'myClassName'} | ${'myModifier'} | ${'default'}     | ${true}  | ${'myClassName myClassName--myModifier myClassName--disabled'}
-    ${'myClassName'} | ${undefined}    | ${'default'}     | ${true}  | ${'myClassName myClassName--undefined myClassName--disabled'}
-    ${'myClassName'} | ${null}         | ${'default'}     | ${true}  | ${'myClassName myClassName--null myClassName--disabled'}
+    ${'myClassName'} | ${undefined}    | ${'default'}     | ${true}  | ${'myClassName myClassName--disabled'}
+    ${'myClassName'} | ${null}         | ${'default'}     | ${true}  | ${'myClassName myClassName--disabled'}
     ${'myClassName'} | ${''}           | ${'default'}     | ${true}  | ${'myClassName myClassName--disabled'}
     ${'myClassName'} | ${''}           | ${'default'}     | ${false} | ${'myClassName'}
     ${''}            | ${''}           | ${'default'}     | ${true}  | ${'default default--disabled'}

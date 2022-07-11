@@ -23,9 +23,10 @@ const CheckboxInput = ({
   forceDisplayMessage,
   ...checkboxProps
 }: Props) => {
-  const rowModifier = `${classModifier} ${
-    mode === CheckBoxModes.classic ? 'label-top' : ''
-  }`;
+  let rowModifier = classModifier;
+  if (mode === CheckBoxModes.classic) {
+    rowModifier += ' label-top';
+  }
   const newOptions = useOptionsWithId(options);
 
   return (
