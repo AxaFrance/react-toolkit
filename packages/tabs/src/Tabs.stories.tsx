@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from '@axa-fr/react-toolkit-badge';
-import { Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import Tabs from './Tabs';
 import Readme from '../README.md';
 import { TabsCoreProps } from './TabsCore';
@@ -17,7 +17,7 @@ export default {
   argTypes: {
     onChange: { action: 'tab changed' },
   },
-};
+} as Meta;
 
 const TabTitleIconLeft = (
   <span>

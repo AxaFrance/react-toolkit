@@ -36,7 +36,7 @@ describe('NavBarBase', () => {
     const toggleClick = jest.fn();
     const { getByRole } = createWrapper({ onClick: toggleClick });
 
-    const btn = getByRole('button', { name: '' });
+    const btn = getByRole('button', { name: 'Open Menu' });
     userEvent.click(btn);
     expect(toggleClick).toHaveBeenCalled();
   });
@@ -44,7 +44,7 @@ describe('NavBarBase', () => {
   it('Button cross toggle menu', () => {
     const toggleClick = jest.fn();
     const { getByRole } = createWrapper({ onClick: toggleClick });
-    const btn = getByRole('button', { name: '×' });
+    const btn = getByRole('button', { name: 'Close Menu' });
     userEvent.click(btn);
     expect(toggleClick).toHaveBeenCalled();
   });
@@ -90,13 +90,13 @@ describe('NavBarBase', () => {
 
   it('When menu is visible, mask button has `show` class ', () => {
     const { getByRole } = createWrapper();
-    const mask = getByRole('button', { name: '' });
+    const mask = getByRole('button', { name: 'Open Menu' });
     expect(mask).toHaveClass('show');
   });
 
   it('When menu is not visible, mask button not has `show` class ', () => {
     const { getByRole } = createWrapper({ isVisible: false });
-    const mask = getByRole('button', { name: '' });
+    const mask = getByRole('button', { name: 'Open Menu' });
     expect(mask).not.toHaveClass('show');
   });
 });

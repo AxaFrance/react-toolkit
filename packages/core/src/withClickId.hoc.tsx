@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, MouseEvent } from 'react';
 
 export interface ClickEvent {
   id?: string;
@@ -16,7 +16,7 @@ const withClickId =
   <T extends {}>(option: WithClickIdOption) =>
   (BaseComponent: ComponentType<T>): ComponentType<T> => {
     const handler = option.event.reduce((previous: any, current: any) => {
-      previous[current] = (props: any) => (event: React.MouseEvent<any>) => {
+      previous[current] = (props: any) => (event: MouseEvent<any>) => {
         if (props[current]) {
           event.preventDefault();
           props[current]({ id: event.currentTarget.id });

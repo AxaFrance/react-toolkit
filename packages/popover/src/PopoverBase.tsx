@@ -17,12 +17,12 @@ type Props = Partial<typeof defaultProps> & {
   onMouseLeave?: (event: React.MouseEvent) => void;
 };
 
-const Pop: React.ComponentType<React.PropsWithChildren<{}>> = (props) => (
-  <>{props.children}</>
-);
-const Over: React.ComponentType<React.PropsWithChildren<{}>> = (props) => (
-  <>{props.children}</>
-);
+const Pop: React.ComponentType<React.PropsWithChildren<{}>> = ({
+  children,
+}) => <>{children}</>;
+const Over: React.ComponentType<React.PropsWithChildren<{}>> = ({
+  children,
+}) => <>{children}</>;
 
 const PopoverBase = ({
   children,

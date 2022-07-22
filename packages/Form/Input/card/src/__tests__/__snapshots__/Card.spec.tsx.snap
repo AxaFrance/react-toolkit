@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DateInput> renders DateInput correctly 1`] = `
+exports[`<Card> renders Card correctly 1`] = `
 <DocumentFragment>
   <div
     class="af-rccard__1 af-rccard-group af-rccard-group--active"

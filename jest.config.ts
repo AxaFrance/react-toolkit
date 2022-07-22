@@ -18,6 +18,8 @@ const config: Config.InitialOptions = {
     '!packages/**/src/**/*.spec.*',
     '!packages/**/src/**/index.{js,ts}',
     '!packages/**/src/**/Constants.{js,ts}',
+    '!packages/**/src/**/*.d.ts',
+    '!packages/**/src/**/*Constants.{js,ts}',
     '!packages/core/src/common/scss/colorsList.js',
     '!packages/all/**',
   ],

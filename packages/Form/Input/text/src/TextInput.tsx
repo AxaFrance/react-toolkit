@@ -3,18 +3,15 @@ import {
   Field,
   HelpMessage,
   FieldInput,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import Text from './Text';
 
 type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof Text> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     helpMessage?: ReactNode;
-    children?: ReactNode;
   };
 
 const TextInput = ({
@@ -25,17 +22,21 @@ const TextInput = ({
   id,
   classNameContainerLabel,
   classNameContainerInput,
-  onChange,
   label,
   messageType,
   isVisible,
   className,
   forceDisplayMessage,
-  inputFieldClassModifier,
-  inputClassModifier,
+  disabled,
   ...inputTextProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
+
   return (
     <Field
       label={label}
@@ -53,8 +54,8 @@ const TextInput = ({
         classModifier={inputFieldClassModifier}>
         <Text
           id={inputId}
-          onChange={onChange}
           classModifier={inputClassModifier}
+          disabled={disabled}
           {...inputTextProps}
         />
         {children}
@@ -64,5 +65,4 @@ const TextInput = ({
   );
 };
 
-const enhanced = withInputClassModifier(TextInput);
-export default enhanced;
+export default TextInput;

@@ -10,7 +10,7 @@ test('renders MultiSelectInput correctly', () => {
       name="placeType"
       id="multiselectid"
       options={options}
-      onChange={() => null}
+      onChange={jest.fn()}
       values={values}
       helpMessage="Enter the place type"
     />

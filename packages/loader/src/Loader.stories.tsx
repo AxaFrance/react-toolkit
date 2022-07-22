@@ -32,7 +32,7 @@ LoaderStory.storyName = 'Default';
 LoaderStory.args = {
   text: '',
   classModifier: '',
-  className: '',
+  className: 'af-loader',
   children: (
     <div>
       <h1>Title Child</h1>

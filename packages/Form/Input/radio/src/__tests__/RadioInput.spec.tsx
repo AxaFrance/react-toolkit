@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
-import RadioInput from '../RadioInput';
-import { RadioModes } from '..';
+import { RadioInput, RadioModes } from '..';
 
 const options = [
   { label: 'Option 1', value: '1', id: 'option1_id' },
@@ -26,10 +25,10 @@ describe('<RadioInput />', () => {
   describe('Radio Child', () => {
     it.each`
       classModifier | expected
-      ${''}         | ${'error'}
-      ${'test'}     | ${'test error'}
-      ${undefined}  | ${'error'}
-      ${null}       | ${'error'}
+      ${''}         | ${'af-form__radio-custom'}
+      ${'test'}     | ${'af-form__radio-custom af-form__radio-custom--test'}
+      ${undefined}  | ${'af-form__radio-custom'}
+      ${null}       | ${'af-form__radio-custom'}
     `(
       'should pass "$expected" to classModifier when classModifier is $classModifier',
       ({ classModifier, expected }) => {
@@ -52,18 +51,19 @@ describe('<RadioInput />', () => {
     );
 
     it.each`
-      messageType
-      ${null}
-      ${undefined}
-      ${''}
+      messageType           | expectedClassName
+      ${null}               | ${'af-form__radio-custom af-form__radio-custom--test'}
+      ${undefined}          | ${'af-form__radio-custom af-form__radio-custom--test'}
+      ${''}                 | ${'af-form__radio-custom af-form__radio-custom--test'}
+      ${MessageTypes.error} | ${'af-form__radio-custom af-form__radio-custom--test af-form__radio-custom--error'}
     `(
       'should pass "test" to classModifier when messageType is $messageType',
-      ({ messageType }) => {
+      ({ messageType, expectedClassName }) => {
         const { getByRole } = render(
           <RadioInput
             id="123"
             label="test"
-            message="test"
+            message="test message error"
             messageType={messageType}
             options={options}
             forceDisplayMessage
@@ -72,14 +72,14 @@ describe('<RadioInput />', () => {
           />
         );
         expect(getByRole('radio', { checked: true }).parentElement).toHaveClass(
-          'test'
+          expectedClassName
         );
       }
     );
 
     it.each`
       forceDisplayMessage | expected
-      ${true}             | ${'error'}
+      ${true}             | ${'af-form__radio-custom af-form__radio-custom--error'}
       ${false}            | ${''}
       ${undefined}        | ${''}
       ${null}             | ${''}
@@ -120,7 +120,7 @@ describe('<RadioInput />', () => {
           <RadioInput
             id="123"
             label="test"
-            mode={RadioModes.classic}
+            mode="classic"
             message="test"
             messageType={MessageTypes.error}
             options={options}

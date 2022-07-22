@@ -1,15 +1,13 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import StepBase from './StepBase';
 
-const defaultClassName = 'af-steps-list-step';
 type Props = ComponentPropsWithoutRef<typeof StepBase> & {
   number?: ReactNode;
 };
 const StepNoLink = ({
   number,
-  id,
   title,
-  className = defaultClassName,
+  className = 'af-steps-list-step',
   ...otherProps
 }: Props) => (
   <StepBase

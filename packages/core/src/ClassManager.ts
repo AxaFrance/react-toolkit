@@ -43,6 +43,8 @@ const getComponentClassName = (
   return classNames(classNameToUse, modifiersObject);
 };
 
-export default {
+const ClassManager = {
   getComponentClassName,
 };
+
+export default ClassManager;

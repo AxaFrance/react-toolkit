@@ -1,26 +1,16 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import Popover, {
   PopoverBase,
-  PopoverModes,
   PopoverPlacements,
 } from '@axa-fr/react-toolkit-popover';
 
-const defaultProps = {
-  mode: PopoverModes.click,
-  placement: PopoverPlacements.right,
-};
-
-export type Props = Partial<typeof defaultProps> & {
-  children: React.ReactNode;
-  classModifier?: string;
-  className?: string;
-};
+export type Props = ComponentPropsWithoutRef<typeof Popover>;
 const Help = ({
   className,
   classModifier,
   children,
-  mode,
-  placement,
+  mode = 'click',
+  placement = PopoverPlacements.right,
 }: Props) => (
   <Popover
     className={className}
@@ -35,7 +25,5 @@ const Help = ({
     </PopoverBase.Over>
   </Popover>
 );
-
-Help.defaultProps = defaultProps;
 
 export default Help;

@@ -1,98 +1,68 @@
 import React from 'react';
-import {
-  WithClassModifierOptions,
-  InputManager,
-  withClassDefault,
-  withClassModifier,
-  WithOnChangeEvent,
-  OnChangeCustomEvent,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { useId, useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-export type ItemsComponentProps = Pick<
-  React.HTMLProps<HTMLAnchorElement>,
-  'className'
-> &
-  WithOnChangeEvent<OnChangeCustomEvent> & {
-    id: string;
-    numberItems?: number;
-    items?: number[];
-    displayLabel?: React.ReactNode;
-    elementsLabel?: React.ReactNode;
-  };
-const DEFAULT_CLASSNAME = 'af-paging__form';
-
-const defaultProps: Partial<ItemsComponentProps> = {
-  numberItems: 10,
-  items: [5, 10, 25, 50, 100],
-  id: null,
-  displayLabel: 'Afficher',
-  elementsLabel: 'éléments',
+export type Props = {
+  id?: string;
+  className?: string;
+  classModifier?: string;
+  displayLabel?: string;
+  elementsLabel?: string;
+  items?: number[];
+  numberItems?: number;
+  onChange: (e: { value: number }) => void;
 };
 
-class Items extends React.PureComponent<ItemsComponentProps> {
-  constructor(props: ItemsComponentProps) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    event.preventDefault();
-    const { onChange } = this.props;
-    onChange({
-      value: Number(event.target.value),
-    });
-  }
-
-  render() {
-    const { className, displayLabel, elementsLabel, id, items, numberItems } =
-      this.props;
-
-    const content = items.map((item) => (
-      <option key={item} value={item}>
-        {item}
-      </option>
-    ));
-
-    const defaultIdName = InputManager.getInputId(id);
-    return (
-      <div className="af-paging__limit">
-        <form className={className}>
-          <div className="af-form__group">
-            <div className="col col-sm-2 col-md-2 col-lg-2 col-xl-2">
-              <label className="af-form__group-label" htmlFor={defaultIdName}>
-                {displayLabel}
-              </label>
-            </div>
-            <div className="col col-sm-10 col-md-10 col-lg-10 col-xl-10">
-              <div className="af-form__select">
-                <div className="af-form__select-container">
-                  <select
-                    id={defaultIdName}
-                    className="af-form__input-select"
-                    value={numberItems}
-                    onChange={this.onChange}>
-                    {content}
-                  </select>
-                  <span className="glyphicon glyphicon-menu-down" />
-                </div>
-                <span className="af-form__input-cmplt">{elementsLabel}</span>
+const Items = ({
+  className,
+  classModifier,
+  onChange,
+  displayLabel = 'Afficher',
+  elementsLabel = 'éléments',
+  id,
+  items = [5, 10, 25, 50, 100],
+  numberItems = 10,
+}: Props) => {
+  const defaultIdName = useId(id);
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-paging__form'
+  );
+  return (
+    <div className="af-paging__limit">
+      <form className={componentClassName}>
+        <div className="af-form__group">
+          <div className="col col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <label className="af-form__group-label" htmlFor={defaultIdName}>
+              {displayLabel}
+            </label>
+          </div>
+          <div className="col col-sm-10 col-md-10 col-lg-10 col-xl-10">
+            <div className="af-form__select">
+              <div className="af-form__select-container">
+                <select
+                  id={defaultIdName}
+                  className="af-form__input-select"
+                  value={numberItems}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    onChange({ value: Number(e.target.value) });
+                  }}>
+                  {items.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                <span className="glyphicon glyphicon-menu-down" />
               </div>
+              <span className="af-form__input-cmplt">{elementsLabel}</span>
             </div>
           </div>
-        </form>
-      </div>
-    );
-  }
-}
-export type ItemsProps = ItemsComponentProps & WithClassModifierOptions;
+        </div>
+      </form>
+    </div>
+  );
+};
 
-const enhance = compose(
-  identity<ItemsComponentProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-const Enhance = enhance(Items);
-Enhance.defaultProps = defaultProps;
-export default Enhance;
+export default Items;

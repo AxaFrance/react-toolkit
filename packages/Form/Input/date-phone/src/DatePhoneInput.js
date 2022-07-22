@@ -8,7 +8,7 @@ import {
   FieldConstants,
   FormClassManager,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 import DatePhone from './DatePhone';
 
 const propTypes = {
@@ -50,6 +50,7 @@ const DateInput = (props) => {
     ...otherProps
   } = props;
 
+  const inputId = useId(id);
   if (!isVisible) {
     return null;
   }
@@ -61,7 +62,6 @@ const DateInput = (props) => {
     classModifier,
     disabled
   );
-  const inputId = InputManager.getInputId(id);
   return (
     <Field
       label={label}

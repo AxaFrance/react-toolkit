@@ -46,9 +46,19 @@ exports[`<Summary> Renders correctly when visible 1`] = `
           <li
             class="af-summary__message-item"
           >
+            <span />
+          </li>
+          <li
+            class="af-summary__message-item"
+          >
             <span>
               Sample message 2
             </span>
+          </li>
+          <li
+            class="af-summary__message-item"
+          >
+            <span />
           </li>
         </ul>
       </div>

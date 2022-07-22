@@ -1,42 +1,49 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { Radio } from '@axa-fr/react-toolkit-form-input-radio';
-import { CustomFormEvent } from '@axa-fr/react-toolkit-form-core';
-
-const defaultClassName = 'af-form__radio-custom';
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 
 const defaultOptions = [
-  { label: 'Oui', value: 'true', id: 'radioItemTrue' },
-  { label: 'Non', value: 'false', id: 'radioItemFalse' },
+  { label: 'Oui', value: true, id: 'radioItemTrue' },
+  { label: 'Non', value: false, id: 'radioItemFalse' },
 ];
 
-type ChoiceEvent = Omit<CustomFormEvent, 'value'> & { value: boolean };
-type RadioProps = ComponentPropsWithoutRef<typeof Radio>;
-type Props = Omit<
-  RadioProps,
-  'id' | 'label' | 'checked' | 'onChange' | 'value' | 'options'
-> &
-  Partial<Pick<RadioProps, 'options'>> & {
-    onChange?: (e: ChoiceEvent) => void;
-    value?: boolean;
-  };
+type Props = Omit<ComponentPropsWithoutRef<typeof Radio>, 'options'> & {
+  id: string;
+  options?: Array<Omit<Option, 'value'> & { value: boolean }>;
+};
+
 const Choice = ({
-  className = defaultClassName,
   children,
   value,
   options = defaultOptions,
-  onChange,
+  id: _id,
   ...otherProps
-}: Props) => (
-  <Radio
-    {...otherProps}
-    className={className}
-    value={value?.toString()}
-    options={options}
-    onChange={(e: CustomFormEvent) =>
-      onChange && onChange({ ...e, value: e.value === 'true' })
-    }>
-    {children}
-  </Radio>
-);
+}: Props) => {
+  const choiceOptions = options.map((option) => ({
+    ...option,
+    value: `${option.value}`,
+  }));
+  return (
+    <Radio {...otherProps} value={value?.toString()} options={choiceOptions}>
+      {children}
+    </Radio>
+  );
+};
 
-export default Choice;
+const handlers = {
+  onChange:
+    ({ onChange, name, id }: any) =>
+    (e: any) => {
+      const receivedValue = e.value;
+      const newValue = receivedValue === '' ? null : receivedValue === 'true';
+      onChange({
+        value: newValue,
+        name,
+        id,
+      });
+    },
+};
+
+Choice.displayName = 'EnhancedInputRadio';
+
+export default withInput<Props>(handlers)(Choice);

@@ -8,16 +8,11 @@ import {
   compose,
 } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-modal';
-
 ReactModal.setAppElement('body');
 
-const defaultProps = {
-  className: DEFAULT_CLASSNAME,
-  title: '',
-};
-
-export type ModalCoreComponentProps = Partial<typeof defaultProps> & {
+export type ModalCoreComponentProps = {
+  className?: string;
+  title?: string;
   isOpen: boolean;
   onOutsideTap: (event: React.MouseEvent | React.KeyboardEvent) => void;
   children: ReactNode;
@@ -26,7 +21,7 @@ export type ModalCoreComponentProps = Partial<typeof defaultProps> & {
 const ModalCoreRaw = ({
   className,
   isOpen,
-  title,
+  title = '',
   onOutsideTap,
   children,
 }: ModalCoreComponentProps) => (
@@ -44,13 +39,11 @@ const ModalCoreRaw = ({
   </ReactModal>
 );
 
-ModalCoreRaw.defaultProps = defaultProps;
-
 export type ModalCoreProps = ModalCoreComponentProps & WithClassModifierOptions;
 
 const enhance = compose(
   identity<ModalCoreProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
+  withClassDefault('af-modal'),
   withClassModifier()
 );
 

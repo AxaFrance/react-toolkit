@@ -1,5 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
-import { ClassManager, InputManager } from '@axa-fr/react-toolkit-core';
+import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
 type InfosProps = {
@@ -9,7 +9,7 @@ type InfosProps = {
 };
 
 const Infos = ({ infos, className, classModifier }: InfosProps) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = useComponentClassName(
     className,
     classModifier,
     defaultClassName
@@ -20,21 +20,24 @@ const Infos = ({ infos, className, classModifier }: InfosProps) => {
       <i className="glyphicon glyphicon-info-sign" />
       <dl className={`${defaultClassName}__list`}>
         {infos.map((info) => (
-          <Fragment key={info.id}>
-            <dt
-              key={`word_${InputManager.getInputId(info.id)}`}
-              className={`${defaultClassName}__word`}>
-              {info.word}
-            </dt>
-            <dd
-              key={`def_${InputManager.getInputId(info.id)}`}
-              className={`${defaultClassName}__def`}>
-              {info.definition}
-            </dd>
-          </Fragment>
+          <Info id={info.id} word={info.word} definition={info.definition} />
         ))}
       </dl>
     </div>
+  );
+};
+
+const Info = ({ id, word, definition }: TInfo) => {
+  const infoKey = useId(id);
+  return (
+    <Fragment key={infoKey}>
+      <dt key={`word_${infoKey}`} className={`${defaultClassName}__word`}>
+        {word}
+      </dt>
+      <dd key={`def_${infoKey}`} className={`${defaultClassName}__def`}>
+        {definition}
+      </dd>
+    </Fragment>
   );
 };
 

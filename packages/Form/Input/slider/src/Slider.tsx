@@ -1,37 +1,25 @@
 import React, { ComponentProps, ReactNode } from 'react';
 import RcSlider from 'rc-slider';
+import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import 'rc-slider/assets/index.css';
 
-import {
-  withComponentClassName,
-  CustomFormEvent,
-} from '@axa-fr/react-toolkit-form-core';
+type RcSliderProps = ComponentProps<typeof RcSlider>;
+type Marks = RcSliderProps['marks'];
 
-type Marks = Record<
-  number,
-  | React.ReactNode
-  | {
-      style?: React.CSSProperties;
-      label?: string;
-    }
->;
-
-type Props = Omit<ComponentProps<typeof RcSlider>, 'marks' | 'onChange'> & {
+type Props = Omit<RcSliderProps, 'marks'> & {
+  classModifier?: string;
   options: { value: number; label?: string | ReactNode }[];
-  componentClassName?: string;
-  onChange: (event: CustomFormEvent) => void;
   id: string;
   name: string;
 };
 
 const Slider = ({
-  id,
-  name,
-  componentClassName,
   options,
-  onChange,
   value,
   defaultValue,
+  className,
+  classModifier,
   ...otherProps
 }: Props) => {
   const optionSorted = [...options].sort(
@@ -46,6 +34,12 @@ const Slider = ({
     {} as Marks
   );
 
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-form__slider'
+  );
+
   return (
     <RcSlider
       {...otherProps}
@@ -55,15 +49,25 @@ const Slider = ({
       step={null}
       className={componentClassName}
       defaultValue={defaultValue || value}
-      onChange={(e) => {
-        onChange({
-          value: optionSorted[e].value.toString(),
-          name,
-          id,
-        });
-      }}
     />
   );
 };
 
-export default withComponentClassName<Props>('af-form__slider')(Slider);
+const handlers = {
+  onChange:
+    ({
+      name,
+      id,
+      onChange,
+      options,
+    }: Omit<Props, 'onChange'> & { onChange: Function }) =>
+    (e: any) => {
+      onChange({
+        value: options[e].value,
+        name,
+        id,
+      });
+    },
+};
+
+export default withInput<Props>(handlers)(Slider);

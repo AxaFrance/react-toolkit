@@ -22,7 +22,7 @@ exports[`Table.Pager renders correctly 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             1
@@ -34,7 +34,7 @@ exports[`Table.Pager renders correctly 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             2
@@ -55,7 +55,7 @@ exports[`Table.Pager renders correctly 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             10
@@ -67,7 +67,7 @@ exports[`Table.Pager renders correctly 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
           role="button"
         >
           Suivant »
@@ -100,7 +100,7 @@ exports[`Table.Pager renders correctly with custom label 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             1
@@ -112,7 +112,7 @@ exports[`Table.Pager renders correctly with custom label 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             2
@@ -133,7 +133,7 @@ exports[`Table.Pager renders correctly with custom label 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
         >
           <span>
             10
@@ -145,7 +145,7 @@ exports[`Table.Pager renders correctly with custom label 1`] = `
       >
         <a
           class="af-pager__item-link"
-          href="#"
+          href="/#"
           role="button"
         >
           Next &gt;

@@ -1,5 +1,5 @@
-import React, { ComponentProps } from 'react';
-import { Meta, Story } from '@storybook/react';
+import React from 'react';
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { MessageTypes, HelpMessage } from '@axa-fr/react-toolkit-form-core';
 import FileInput from './FileInput';
@@ -23,67 +23,48 @@ export default {
   },
 } as Meta;
 
-const TemplateFileInput: Story<ComponentProps<typeof FileInput>> = (args) => (
+export const FileInputStory = (args) => (
   <form className="af-form" name="myform">
-    <FileInput {...args} />
+    <FileInput
+      {...args}
+      label="Image"
+      name="placeImage"
+      id="inputuniqueid"
+      accept="image/jpeg, image/png, application/*"
+      helpMessage="Take a photo af a place"
+      messageType={MessageTypes.error}
+      multiple
+      isVisible
+      classNameContainerLabel="col-md-2"
+      classNameContainerInput="col-md-10"
+    />
   </form>
 );
-
-export const FileInputStory = TemplateFileInput.bind(
-  {}
-) as typeof TemplateFileInput;
 FileInputStory.storyName = 'FileInput';
-FileInputStory.args = {
-  label: 'Image',
-  name: 'placeImage',
-  id: 'inputuniqueid',
-  accept: 'image/jpeg, image/png, application/*',
-  helpMessage: 'Take a photo af a place',
-  message: '',
-  messageType: MessageTypes.error,
-  forceDisplayMessage: false,
-  multiple: true,
-  isVisible: true,
-  readOnly: false,
-  disabled: false,
-  classModifier: '',
-  className: '',
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
-};
 
-export const FileInputStoryRequired = TemplateFileInput.bind(
-  {}
-) as typeof TemplateFileInput;
+export const FileInputStoryRequired = (args) => <FileInputStory {...args} />;
 FileInputStoryRequired.storyName = 'FileInput required';
 FileInputStoryRequired.args = {
-  ...FileInputStory.args,
   classModifier: 'required',
 };
 
-const TemplateFile: Story<ComponentProps<typeof File>> = (args) => (
+export const FileStory = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File {...args} />
+      <File
+        {...args}
+        label="Image"
+        name="placeImage"
+        id="inputuniqueid"
+        accept="image/jpeg, image/png, application/*"
+        multiple
+        isVisible
+        icon="open"
+      />
     </div>
   </form>
 );
-
-export const FileStory = TemplateFile.bind({}) as typeof TemplateFile;
 FileStory.storyName = 'File';
-FileStory.args = {
-  label: 'Image',
-  name: 'placeImage',
-  id: 'inputuniqueid',
-  accept: 'image/jpeg, image/png, application/*',
-  multiple: true,
-  isVisible: true,
-  readOnly: false,
-  disabled: false,
-  classModifier: '',
-  className: '',
-  icon: 'open',
-};
 
 const errors = [
   {
@@ -138,10 +119,18 @@ const values = [
   },
 ];
 
-const TemplateFileTable: Story<ComponentProps<typeof File>> = (args) => (
+export const FileWithValuesStory = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File {...args} />
+      <File
+        {...args}
+        label="Parcourir"
+        name="placeImage"
+        id="inputuniqueid"
+        accept="image/jpeg, image/png, application/*"
+        isVisible
+        icon="open"
+      />
       <HelpMessage message="Enter the place name, ex : Webcenter" />
       <FileTable
         errors={[]}
@@ -152,29 +141,20 @@ const TemplateFileTable: Story<ComponentProps<typeof File>> = (args) => (
     </div>
   </form>
 );
-
-export const FileWithValuesStory = TemplateFileTable.bind(
-  {}
-) as typeof TemplateFileTable;
 FileWithValuesStory.storyName = 'File with values';
-FileWithValuesStory.args = {
-  label: 'Parcourir',
-  name: 'placeImage',
-  id: 'inputuniqueid',
-  accept: 'image/jpeg, image/png, application/*',
-  multiple: false,
-  isVisible: true,
-  readOnly: false,
-  disabled: false,
-  classModifier: '',
-  className: '',
-  icon: 'open',
-};
 
-const TemplateFileTableErrors: Story<ComponentProps<typeof File>> = (args) => (
+export const FileWithErrorsStory = (args) => (
   <form className="af-form" name="myform">
     <div className="col-md-4">
-      <File {...args} />
+      <File
+        {...args}
+        label="Parcourir"
+        name="placeImage"
+        id="inputuniqueid"
+        accept="image/jpeg, image/png, application/*"
+        isVisible
+        icon="open"
+      />
       <HelpMessage message="Enter the place name, ex : Webcenter" />
       <FileTable
         errors={errors}
@@ -185,21 +165,4 @@ const TemplateFileTableErrors: Story<ComponentProps<typeof File>> = (args) => (
     </div>
   </form>
 );
-
-export const FileWithErrorsStory = TemplateFileTableErrors.bind(
-  {}
-) as typeof TemplateFileTableErrors;
 FileWithErrorsStory.storyName = 'File with errors';
-FileWithErrorsStory.args = {
-  label: 'Parcourir',
-  name: 'placeImage',
-  id: 'inputuniqueid',
-  accept: 'image/jpeg, image/png, application/*',
-  multiple: false,
-  isVisible: true,
-  readOnly: false,
-  disabled: false,
-  classModifier: '',
-  className: '',
-  icon: 'open',
-};

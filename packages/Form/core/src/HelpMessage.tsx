@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-type HelpProps = React.ComponentPropsWithoutRef<'small'> & {
+type HelpProps = {
   message?: ReactNode;
   isVisible?: boolean;
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ArticleRestitution from './ArticleRestitution';
 import HeaderRestitution from './HeaderRestitution';
@@ -23,7 +24,7 @@ export default {
     },
     options: {},
   },
-};
+} as Meta;
 
 const RightTitle = () => (
   <a

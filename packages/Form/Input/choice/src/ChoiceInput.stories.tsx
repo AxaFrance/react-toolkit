@@ -13,6 +13,9 @@ export default {
       sidebar: readme,
     },
   },
+  argTypes: {
+    onChange: { action: 'onChange' },
+  },
 } as Meta;
 
 export const ChoiceStory: Story<ComponentPropsWithoutRef<typeof Choice>> = (
@@ -20,15 +23,12 @@ export const ChoiceStory: Story<ComponentPropsWithoutRef<typeof Choice>> = (
 ) => <Choice {...args} />;
 ChoiceStory.storyName = 'Choice';
 ChoiceStory.args = {
+  id: 'uniqueid',
   name: 'placeName',
   placeholder: 'Paris',
   readOnly: false,
   disabled: false,
   classModifier: '',
-  className: '',
-};
-ChoiceStory.argTypes = {
-  onChange: { action: 'onChange' },
 };
 
 export const ChoiceInputStory: Story<
@@ -47,9 +47,4 @@ ChoiceInputStory.args = {
   messageType: MessageTypes.error,
   forceDisplayMessage: false,
   isVisible: true,
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
-};
-ChoiceInputStory.argTypes = {
-  onChange: { action: 'onChange' },
 };
