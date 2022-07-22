@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
-type TInfo = { id?: string; word: string; definition: string };
-type Props = {
+type TInfo = { id?: string; word: ReactNode; definition: ReactNode };
+type InfosProps = {
   infos: TInfo[];
   className?: string;
   classModifier?: string;
 };
 
-const Infos = ({ infos, className, classModifier }: Props) => {
+const Infos = ({ infos, className, classModifier }: InfosProps) => {
   const componentClassName = useComponentClassName(
     className,
     classModifier,
