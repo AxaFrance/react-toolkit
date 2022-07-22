@@ -36,7 +36,7 @@ class LinkItem extends Component<AllHTMLAttributes<HTMLAnchorElement>> {
     const { children } = this.props;
     return (
       <a
-        href="#"
+        href="/#"
         {...this.props}
         onClick={withPreventDefaultClick(action('onClick Action'))}>
         {children}
@@ -67,7 +67,7 @@ const Template: Story<NavBarProps> = ({ children, ...args }) => (
       <NavBarItem
         key="table-1"
         actionElt={
-          <LinkItem className="af-nav__link" to="/table/sous-lien">
+          <LinkItem className="af-nav__link" href="/table/sous-lien">
             Sous lien
           </LinkItem>
         }
@@ -75,7 +75,7 @@ const Template: Story<NavBarProps> = ({ children, ...args }) => (
       <NavBarItem
         key="table-2"
         actionElt={
-          <LinkItem className="af-nav__link" to="/table/sous-lien2">
+          <LinkItem className="af-nav__link" href="/table/sous-lien2">
             Sous lien2
           </LinkItem>
         }
@@ -94,14 +94,14 @@ const Template: Story<NavBarProps> = ({ children, ...args }) => (
       aria-expanded="false"
       ariaLabel="Table"
       actionElt={
-        <LinkItem className="af-nav__link" to="/doc">
+        <LinkItem className="af-nav__link" href="/doc">
           Doc
         </LinkItem>
       }>
       <NavBarItem
         key="doc-1"
         actionElt={
-          <LinkItem className="af-nav__link" to="/doc/sous-lien">
+          <LinkItem className="af-nav__link" href="/doc/sous-lien">
             Sous lien
           </LinkItem>
         }
@@ -109,7 +109,7 @@ const Template: Story<NavBarProps> = ({ children, ...args }) => (
       <NavBarItem
         key="doc-2"
         actionElt={
-          <LinkItem className="af-nav__link" to="/doc/sous-lien2">
+          <LinkItem className="af-nav__link" href="/doc/sous-lien2">
             Sous lien2
           </LinkItem>
         }

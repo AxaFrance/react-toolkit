@@ -7,9 +7,9 @@ import {
   FieldInput,
   HelpMessage,
   Field,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import FileTable from './FileTable';
 import File from './File';
@@ -17,8 +17,6 @@ import File from './File';
 type Props = ComponentProps<typeof Field> &
   Pick<ComponentPropsWithoutRef<typeof FileTable>, 'values' | 'errors'> &
   ComponentProps<typeof File> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     fileLabel?: string;
     helpMessage?: ReactNode;
   };
@@ -39,9 +37,8 @@ const FileInput = ({
   isVisible,
   className,
   errors,
-  inputFieldClassModifier,
-  inputClassModifier,
   fileLabel,
+  disabled,
   ...otherFileProps
 }: Props) => {
   const onDeleteClick = (selectedId: string, selectInputId: string) => {
@@ -53,7 +50,12 @@ const FileInput = ({
     });
   };
   const rowModifier = `${classModifier} label-top`;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
   return (
     <Field
       label={label}
@@ -73,6 +75,7 @@ const FileInput = ({
           id={inputId}
           name={name}
           onChange={onChange}
+          disabled={disabled}
           classModifier={inputClassModifier}
           label={fileLabel}
           {...otherFileProps}
@@ -90,4 +93,4 @@ const FileInput = ({
   );
 };
 
-export default withInputClassModifier(FileInput);
+export default FileInput;

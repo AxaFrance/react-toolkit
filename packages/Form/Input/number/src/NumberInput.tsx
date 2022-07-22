@@ -8,15 +8,13 @@ import {
   Field,
   HelpMessage,
   FieldInput,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 import Number from './Number';
 
 type Props = ComponentPropsWithoutRef<typeof Field> &
   ComponentPropsWithRef<typeof Number> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     helpMessage?: ReactNode;
     children?: ReactNode;
   };
@@ -34,11 +32,15 @@ const NumberInput = ({
   messageType,
   isVisible,
   className,
-  inputFieldClassModifier,
-  inputClassModifier,
+  disabled,
   ...otherProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
   return (
     <Field
       label={label}
@@ -57,6 +59,7 @@ const NumberInput = ({
         <Number
           id={inputId}
           classModifier={inputClassModifier}
+          disabled={disabled}
           {...otherProps}
         />
         {children}
@@ -66,4 +69,4 @@ const NumberInput = ({
   );
 };
 
-export default withInputClassModifier(NumberInput);
+export default NumberInput;

@@ -34,7 +34,7 @@ exports[`<Steps> renders Steps correctly 1`] = `
       >
         <a
           class="af-steps-list-stepLabel"
-          href="#"
+          href="/#"
         >
           <span
             class="af-steps-list-stepNumber"

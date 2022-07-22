@@ -15,7 +15,7 @@ describe('<Steps>', () => {
           title="Previous step"
         />
         <StepBase id="idf4" title="Un titre">
-          <a className="af-steps-list-stepLabel" href="#" onClick={jest.fn()}>
+          <a className="af-steps-list-stepLabel" href="/#" onClick={jest.fn()}>
             <span className="af-steps-list-stepNumber">
               <i className="glyphicon glyphicon-ok" />
             </span>

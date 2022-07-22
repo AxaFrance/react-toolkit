@@ -43,7 +43,7 @@ Considering you want to make changes on button
   - Edit file `<local_toolkit_src_folder>\packages\button\src\Button.tsx`
 
   ```
-  const ButtonRaw: React.SFC<ButtonCoreComponentProps> = (props) => {
+  const ButtonRaw = (props: ButtonCoreComponentProps) => {
     const buttonProps: ButtonCoreComponentProps = omitProperties(props);
     return <button {...buttonProps}>Overrided in Toolkit</button>;
   };

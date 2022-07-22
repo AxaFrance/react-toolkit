@@ -1,16 +1,18 @@
-import React, { ComponentPropsWithoutRef } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import React, { ReactNode } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const defaultClassName = 'af-steps-list-step';
-
-type Props = Omit<ComponentPropsWithoutRef<'li'>, 'onClick'> & {
+type Props = {
+  id: string;
+  title: string;
+  children?: ReactNode;
+  className?: string;
   classModifier?: string;
 };
 const StepBase = ({ children, id, title, className, classModifier }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = useComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    'af-steps-list-step'
   );
   return (
     <li key={id} className={componentClassName} title={title}>

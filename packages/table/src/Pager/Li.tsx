@@ -1,50 +1,47 @@
-import React from 'react';
-import {
-  WithActiveOption,
-  WithVisibilityOption,
-  WithOnChangeEvent,
-  OnChangeCustomEvent,
-} from '@axa-fr/react-toolkit-core';
+import React, { MouseEvent } from 'react';
 
-export type LiProps = WithActiveOption &
-  WithVisibilityOption &
-  WithOnChangeEvent<OnChangeCustomEvent> &
-  Pick<React.HTMLProps<HTMLAnchorElement>, 'value' | 'label'>;
+type LiProps = {
+  isVisible?: boolean;
+  active?: boolean;
+  value: number;
+  onChange: (e: { value: number }) => void;
+};
 
-export default class Li extends React.PureComponent<LiProps> {
-  constructor(props: LiProps) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(event: React.FormEvent<HTMLAnchorElement>) {
+const onClick =
+  ({ onChange, value }: LiProps) =>
+  (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    const { onChange, value } = this.props;
     onChange({
       value: Number(value),
     });
-  }
+  };
 
-  render() {
-    const { isVisible, active, value } = this.props;
-    if (!isVisible) {
-      return null;
-    }
-    if (active) {
-      return (
-        <li className="af-pager__item af-pager__item--active">
-          <a className="af-pager__item-link" href="#" onClick={this.onChange}>
-            <span>{value}</span>
-          </a>
-        </li>
-      );
-    }
+const Li = ({ isVisible, active, value, ...props }: LiProps) => {
+  if (!isVisible) {
+    return null;
+  }
+  if (active) {
     return (
-      <li className="af-pager__item">
-        <a className="af-pager__item-link" href="#" onClick={this.onChange}>
+      <li className="af-pager__item af-pager__item--active">
+        <a
+          className="af-pager__item-link"
+          href="/#"
+          onClick={onClick({ ...props, value })}>
           <span>{value}</span>
         </a>
       </li>
     );
   }
-}
+  return (
+    <li className="af-pager__item">
+      <a
+        className="af-pager__item-link"
+        href="/#"
+        onClick={onClick({ ...props, value })}>
+        <span>{value}</span>
+      </a>
+    </li>
+  );
+};
+
+export default Li;

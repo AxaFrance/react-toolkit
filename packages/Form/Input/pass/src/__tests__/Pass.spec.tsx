@@ -60,8 +60,8 @@ describe('<PassInput />', () => {
           id="password-id"
           label="Password"
           name="passwordtest"
-          onToggleType={jest.fn()}
-          score={0}
+          score="0"
+          onChange={() => {}}
         />
       );
 
@@ -69,22 +69,14 @@ describe('<PassInput />', () => {
       const divContainer = container.querySelector('div.af-form__pass');
       expect(divContainer).toHaveClass('af-form__pass--bad');
     });
+
     it('Switch from text to password type', () => {
-      const onToggleType = jest.fn();
-
-      const { getByRole } = render(
-        <PassInput
-          id="password-id"
-          label="Password"
-          name="passwordtest"
-          onToggleType={onToggleType}
-          type="text"
-        />
+      const { getByRole, getByLabelText } = render(
+        <PassInput id="password-id" label="Password" name="passwordtest" />
       );
-
-      userEvent.click(screen.getByRole('button'));
-      userEvent.click(screen.getByRole('button'));
-      expect(onToggleType).toHaveBeenCalled();
+      const btn = getByLabelText('show password');
+      userEvent.click(btn);
+      userEvent.click(btn);
       expect(getByRole('password')).toHaveAttribute('type', 'password');
     });
   });

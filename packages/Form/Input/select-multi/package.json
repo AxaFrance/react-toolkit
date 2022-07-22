@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-select-multi",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-alpha.8",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -9,16 +9,13 @@
     "build": "rimraf ./dist && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "2.0.0-alpha.5",
-    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.5",
-    "react-select": "3.2.0"
-  },
-  "devDependencies": {
-    "@types/react-select": "3.0.26"
+    "@axa-fr/react-toolkit-core": "2.0.0-alpha.8",
+    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.8",
+    "react-select": "^3.2.0"
   },
   "license": "MIT",
   "publishConfig": {
@@ -28,5 +25,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
+  },
+  "devDependencies": {
+    "@types/react-select": "^3.1.2"
   }
 }

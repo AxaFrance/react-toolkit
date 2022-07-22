@@ -2,7 +2,7 @@ import React from 'react';
 import { ClassManager } from '@axa-fr/react-toolkit-core';
 import MessageTypes from './MessageTypes';
 
-const defaultClassName = 'af-form__message';
+const DEFAULT_CLASS_NAME = 'af-form__message';
 
 type FieldProps = {
   message?: string;
@@ -10,23 +10,23 @@ type FieldProps = {
 };
 
 const FieldError = ({
-  message,
+  message = null,
   messageType = MessageTypes.error,
 }: FieldProps) => {
   const className = ClassManager.getComponentClassName(
-    defaultClassName,
+    DEFAULT_CLASS_NAME,
     messageType,
-    defaultClassName
+    DEFAULT_CLASS_NAME
   );
 
-  const classNameError = `af-form__${messageType}-text`;
-
-  return message ? (
-    <small className={className}>
-      <span className="glyphicon glyphicon-exclamation-sign" />
-      <span className={classNameError}>{message}</span>
-    </small>
-  ) : null;
+  return (
+    message && (
+      <small className={className}>
+        <span className="glyphicon glyphicon-exclamation-sign" />
+        <span className={`af-form__${messageType}-text`}>{message}</span>
+      </small>
+    )
+  );
 };
 
 export default FieldError;

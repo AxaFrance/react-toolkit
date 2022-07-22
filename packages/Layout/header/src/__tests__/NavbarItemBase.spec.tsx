@@ -6,7 +6,12 @@ const Custom = () => <div>Custom</div>;
 // eslint-disable-next-line react/prefer-stateless-function
 class Link extends Component {
   render() {
-    return <a href="#" {...this.props} />;
+    const { children, ...otherProps } = this.props;
+    return (
+      <a href="/#" {...otherProps}>
+        {children}
+      </a>
+    );
   }
 }
 
@@ -22,7 +27,7 @@ const createWrapper = (
     handleKeys: () => {},
     isMenuOpen: false,
     position: 0,
-    actionElt: <a href="#">Test</a>,
+    actionElt: <a href="/#">Test</a>,
   };
   const actualProps = Object.assign(defaultProps, customProps);
   return render(<NavBarItemBase {...actualProps} />);

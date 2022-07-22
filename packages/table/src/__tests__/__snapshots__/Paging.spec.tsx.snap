@@ -116,7 +116,7 @@ exports[`Table.Paging renders correctly with custom values 1`] = `
           >
             <a
               class="af-pager__item-link"
-              href="#"
+              href="/#"
               role="button"
             >
               <i
@@ -236,7 +236,7 @@ exports[`Table.Paging renders correctly with default values 1`] = `
           >
             <a
               class="af-pager__item-link"
-              href="#"
+              href="/#"
             >
               <span>
                 1
@@ -248,7 +248,7 @@ exports[`Table.Paging renders correctly with default values 1`] = `
           >
             <a
               class="af-pager__item-link"
-              href="#"
+              href="/#"
             >
               <span>
                 2
@@ -269,7 +269,7 @@ exports[`Table.Paging renders correctly with default values 1`] = `
           >
             <a
               class="af-pager__item-link"
-              href="#"
+              href="/#"
             >
               <span>
                 10
@@ -281,7 +281,7 @@ exports[`Table.Paging renders correctly with default values 1`] = `
           >
             <a
               class="af-pager__item-link"
-              href="#"
+              href="/#"
               role="button"
             >
               Suivant »

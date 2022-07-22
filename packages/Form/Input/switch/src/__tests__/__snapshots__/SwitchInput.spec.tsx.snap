@@ -10,7 +10,7 @@ exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
     >
       <label
         class="af-form__group-label"
-        for=""
+        for="id"
       >
         Image *
       </label>
@@ -24,6 +24,27 @@ exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
         <div
           class="af-form-switch"
         >
+          <div
+            class="af-form__radio-custom"
+          >
+            <input
+              class="af-form__input-radio"
+              id="iddateinput"
+              name="placeImage"
+              type="radio"
+              value="value"
+            />
+            <label
+              class="af-form__label"
+              for="iddateinput"
+            >
+              <span
+                class="af-form__description"
+              >
+                label
+              </span>
+            </label>
+          </div>
           <span
             class="af-btn-switch-slider"
             style="width: 0px; left: 0px;"

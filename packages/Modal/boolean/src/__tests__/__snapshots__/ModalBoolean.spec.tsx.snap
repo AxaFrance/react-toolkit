@@ -61,11 +61,13 @@ exports[`<BooleanModal> should render boolean modal 1`] = `
             >
               <button
                 class="btn af-btn af-btn--reverse"
+                type="button"
               >
                 Cancel
               </button>
               <button
                 class="btn af-btn"
+                type="button"
               >
                 Submit
               </button>

@@ -1,26 +1,25 @@
-import React, { ComponentProps, ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   Field,
   FieldInput,
   HelpMessage,
-  InputManager,
+  useInputClassModifier,
+  useOptionsWithId,
 } from '@axa-fr/react-toolkit-form-core';
 
 import Switch from './Switch';
 
-interface Props
-  extends ComponentProps<typeof Field>,
-    ComponentProps<typeof Switch> {
-  helpMessage?: ReactNode;
-  children?: ReactNode;
-}
+type Props = ComponentPropsWithoutRef<typeof Field> &
+  ComponentPropsWithoutRef<typeof Switch> & {
+    helpMessage?: ReactNode;
+    disabled?: Boolean;
+  };
 
 const SwitchInput = ({
   classModifier,
   message,
   children,
   helpMessage,
-  id,
   classNameContainerLabel,
   classNameContainerInput,
   label,
@@ -29,10 +28,17 @@ const SwitchInput = ({
   className,
   forceDisplayMessage,
   options,
+  disabled,
   ...switchProps
 }: Props) => {
-  const newOptions = InputManager.getOptionsWithId(options);
-  const firstId = InputManager.getFirstId(newOptions);
+  const newOptions = useOptionsWithId(options);
+  const firstId = (newOptions[0] || {}).id;
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
+
   return (
     <Field
       label={label}
@@ -45,8 +51,15 @@ const SwitchInput = ({
       classModifier={classModifier}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
-      <FieldInput className="af-form__text">
-        <Switch {...switchProps} options={newOptions} />
+      <FieldInput
+        className="af-form__text"
+        classModifier={inputFieldClassModifier}>
+        <Switch
+          {...switchProps}
+          options={newOptions}
+          disabled={disabled}
+          classModifier={inputClassModifier}
+        />
         {children}
       </FieldInput>
       <HelpMessage message={helpMessage} isVisible={!message} />
