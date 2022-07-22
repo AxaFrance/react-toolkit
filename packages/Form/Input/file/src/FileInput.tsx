@@ -19,7 +19,7 @@ type Props = ComponentProps<typeof Field> &
   ComponentProps<typeof File> & {
     inputFieldClassModifier: string;
     inputClassModifier: string;
-    chooseActionLabel?: string;
+    fileLabel?: string;
     helpMessage?: ReactNode;
   };
 const FileInput = ({
@@ -41,7 +41,7 @@ const FileInput = ({
   errors,
   inputFieldClassModifier,
   inputClassModifier,
-  chooseActionLabel,
+  fileLabel,
   ...otherFileProps
 }: Props) => {
   const onDeleteClick = (selectedId: string, selectInputId: string) => {
@@ -74,7 +74,7 @@ const FileInput = ({
           name={name}
           onChange={onChange}
           classModifier={inputClassModifier}
-          label={chooseActionLabel}
+          label={fileLabel}
           {...otherFileProps}
         />
         {children}
