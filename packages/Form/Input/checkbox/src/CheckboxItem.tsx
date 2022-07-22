@@ -1,13 +1,14 @@
 import React, { AllHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
-import { useOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
+import { getOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type' | 'label'> & {
+  classModifier?: string;
+  optionClassName?: string;
   inputRef?: MutableRefObject<HTMLInputElement>;
   children?: ReactNode;
   label?: ReactNode;
   isChecked?: boolean;
-  classModifier?: string;
 };
 
 const CheckboxItem = ({
@@ -17,19 +18,14 @@ const CheckboxItem = ({
   children,
   label,
   isChecked,
-  className,
-  classModifier,
+  optionClassName,
   inputRef,
+  className: _className,
+  classModifier: _classModifier,
   ...otherProps
 }: Props) => {
   const newLabel = children || label;
   const newId = useId(id); // id is require on this component
-  const optionClassName = useOptionClassName(
-    className,
-    classModifier,
-    disabled,
-    'af-form__checkbox'
-  );
   return (
     <div className={optionClassName}>
       <input
@@ -52,4 +48,30 @@ const CheckboxItem = ({
   );
 };
 
-export default withInput<Props>()(CheckboxItem);
+const handlers = {
+  onChange:
+    ({ onChange, value, name, id }: any) =>
+    (e: any) => {
+      onChange({
+        value,
+        name,
+        id,
+      });
+    },
+};
+
+const propsOverrides = ({ className, classModifier, disabled }: any) => ({
+  optionClassName: getOptionClassName(
+    className,
+    classModifier,
+    'af-form__checkbox',
+    disabled
+  ),
+});
+
+export default withInput<
+  Props & { className?: string; classModifier?: string }
+>(
+  handlers,
+  propsOverrides
+)(CheckboxItem);

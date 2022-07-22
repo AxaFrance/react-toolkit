@@ -14,7 +14,7 @@ export { default as InputList } from './InputList';
 export { withInput, omit } from './withInput';
 
 export { useInputClassModifier } from './useInputClassModifier';
-export { useOptionClassName } from './useOptionClassName';
+export { getOptionClassName } from './getOptionClassName';
 export { useOptionsWithId } from './useOptionsWithId';
 export { default as getFirstId } from './getFirstId';
 

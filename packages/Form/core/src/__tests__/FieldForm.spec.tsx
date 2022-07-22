@@ -1,11 +1,10 @@
-import React, { ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import MessageTypes from '../MessageTypes';
 import FieldForm, {
   renderedChildren,
   getMessageInfo,
-  FieldFormProps,
   addPropsClone,
   eventWrapper,
   setStateMemory,
@@ -56,6 +55,7 @@ const defaultProps = {
   setStateMemoryFn,
 };
 
+type FieldFormProps = ComponentPropsWithoutRef<typeof FieldForm>;
 type RenderFieldForm = {
   children?: ReactNode;
   props?: FieldFormProps;
@@ -542,7 +542,7 @@ describe('addPropsClone', () => {
       .fn()
       .mockReturnValue({ onChange: 'onchange' });
     const type = {
-      displayName: 'EnhancedInputList',
+      displayName: 'EnhancedInputRadio',
     };
     const result = addPropsClone({
       ...defaultParamsAddPropsClone,

@@ -59,5 +59,16 @@ const getClassNameMode = (mode: RadioProps['mode']) => {
 };
 
 Radio.displayName = 'EnhancedInputRadio';
+const handlers = {
+  onChange:
+    ({ onChange, name }: any) =>
+    ({ value, id }: any) => {
+      onChange({
+        value,
+        id,
+        name,
+      });
+    },
+};
 
-export default withInput<RadioProps>()(Radio);
+export default withInput<RadioProps>(handlers, () => ({}))(Radio);

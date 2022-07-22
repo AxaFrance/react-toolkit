@@ -5,6 +5,11 @@ import Choice from './Choice';
 type Props = ComponentPropsWithoutRef<typeof Choice> &
   Omit<ComponentPropsWithoutRef<typeof Field>, 'children'>;
 
+const defaultOptions = [
+  { label: 'Oui', value: true },
+  { label: 'Non', value: false },
+];
+
 const ChoiceInput = ({
   id,
   messageType,
@@ -16,12 +21,18 @@ const ChoiceInput = ({
   classNameContainerInput,
   label,
   forceDisplayMessage,
-  options,
+  options = defaultOptions,
   ...otherProps
 }: Props) => {
-  const newOptions = useOptionsWithId(options, id);
-  const firstId = options && newOptions[0] ? newOptions[0].id : '';
-
+  const newOptions = useOptionsWithId(
+    options.map((o) => ({ ...o, value: `${o.value}` })),
+    id
+  );
+  const firstId = newOptions?.[0]?.id ?? '';
+  const choiceOptions = newOptions.map((o) => ({
+    ...o,
+    value: o.value === 'true',
+  }));
   return (
     <Field
       label={label}
@@ -36,8 +47,9 @@ const ChoiceInput = ({
       classNameContainerInput={classNameContainerInput}>
       <Choice
         {...otherProps}
+        id={id}
         classModifier={classModifier}
-        options={options ? newOptions : undefined}
+        options={options ? choiceOptions : undefined}
       />
     </Field>
   );

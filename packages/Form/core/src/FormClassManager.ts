@@ -1,33 +1,40 @@
 import { ReactNode } from 'react';
 import MessageTypes from './MessageTypes';
 
-export const getFieldInputClassModifier = (
-  modifier: string,
-  disabled: boolean
-) => (disabled ? `${modifier} disabled` : modifier);
+const getFieldInputClassModifier = (modifier: string, disabled: boolean) =>
+  disabled ? `${modifier} disabled` : modifier;
 
-export const getInputClassModifier = (modifier: string, children: ReactNode) =>
+const getInputClassModifier = (modifier: string, children: ReactNode) =>
   children ? `${modifier} hasinfobulle` : modifier;
 
-export const getModifier = ({ messageType = MessageTypes.error }) =>
-  messageType === MessageTypes.success || messageType === MessageTypes.warning
-    ? messageType
-    : MessageTypes.error;
-
-type GetMessageClassModifierType = {
-  message: string;
-  modifier?: string;
-  messageType: MessageTypes;
+const getModifier = (messageType: string) => {
+  let modifier = 'error';
+  switch (messageType) {
+    case MessageTypes.success:
+      modifier = 'success';
+      break;
+    case MessageTypes.warning:
+      modifier = 'warning';
+      break;
+    default:
+      break;
+  }
+  return modifier;
 };
 
-export const getMessageClassModifier = ({
-  message,
-  modifier = '',
-  messageType = MessageTypes.error,
-}: GetMessageClassModifierType) =>
-  message
-    ? [modifier, getModifier({ messageType })].filter(Boolean).join(' ')
-    : '';
+const getMessageClassModifier = (
+  messageType: 'error' | 'success' | 'warning',
+  message: string,
+  modifier: string
+) => {
+  if (message) {
+    const messageModifier = getModifier(messageType);
+    if (messageModifier) {
+      return modifier ? `${modifier} ${messageModifier}` : messageModifier;
+    }
+  }
+  return '';
+};
 
 const FormClassManager = {
   getFieldInputClassModifier,

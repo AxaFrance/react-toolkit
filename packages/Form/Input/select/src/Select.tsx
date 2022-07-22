@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ComponentPropsWithRef, useState } from 'react';
+import React, { ComponentPropsWithRef, useState } from 'react';
 import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 import SelectBase from './SelectBase';
@@ -35,6 +35,7 @@ const SelectDefault = ({
   const inputId = useId(id);
   return (
     <SelectBase
+      {...otherProps}
       id={inputId}
       value={value}
       options={newOptions}
@@ -43,7 +44,6 @@ const SelectDefault = ({
         setHasHandleChangeOnce(!forceDisplayPlaceholder);
       }}
       className={componentClassName}
-      {...otherProps}
     />
   );
 };
@@ -57,9 +57,9 @@ const Select = ({ mode = 'default', children, ...props }: SelectProps) => {
 const handlers = {
   onChange:
     ({ name, id, onChange }: any) =>
-    (e: ChangeEvent<HTMLSelectElement>) => {
+    (e: any) => {
       onChange({
-        value: e.target.value,
+        value: e.value,
         name,
         id,
       });

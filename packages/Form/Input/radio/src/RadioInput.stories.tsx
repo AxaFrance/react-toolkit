@@ -14,6 +14,9 @@ export default {
       sidebar: readme,
     },
   },
+  argTypes: {
+    onChange: { action: 'onChange' },
+  },
 } as Meta;
 
 const options = [
@@ -51,7 +54,6 @@ RadioInputStory.args = {
   classNameContainerInput: 'col-md-10',
 };
 RadioInputStory.argTypes = {
-  onChange: { action: 'onChange' },
   mode: { control: { type: 'select', options: Object.values(RadioModes) } },
 };
 

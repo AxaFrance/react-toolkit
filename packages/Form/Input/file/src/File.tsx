@@ -32,6 +32,7 @@ const File = ({
   placeholder = 'Glissez/déposez vos fichiers',
   label = 'Parcourir',
   icon = 'open',
+  onChange: _onChange,
   ...otherProps
 }: Props) => {
   const { getRootProps, getInputProps, open } = useDropzone({
@@ -59,7 +60,7 @@ const File = ({
         type="button"
         className="af-btn"
         classModifier="file hasIconLeft"
-        onClick={() => open}
+        onClick={open}
         disabled={disabled}>
         <i className={`glyphicon glyphicon-${icon}`} /> {label}
       </Button>

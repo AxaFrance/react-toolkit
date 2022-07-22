@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
-import { Option, useOptionClassName } from '@axa-fr/react-toolkit-form-core';
+import { Option, getOptionClassName } from '@axa-fr/react-toolkit-form-core';
 
 const defaultClassName = 'af-form__radio-custom';
 
@@ -23,18 +23,18 @@ const SwitchItem = ({
   ...radioProps
 }: Props) => {
   const newId = useId(id);
-  const classNameDisabled = useOptionClassName(
+  const classNameDisabled = getOptionClassName(
     className,
     classModifier,
-    disabled,
-    defaultClassName
+    defaultClassName,
+    disabled
   );
   const classNameChecked = isChecked
     ? `${defaultClassName}--checked`
     : undefined;
   return (
     <div
-      className={[defaultClassName, classNameDisabled, classNameChecked]
+      className={[classNameDisabled, classNameChecked]
         .filter((e) => !!e)
         .join(' ')}>
       <input

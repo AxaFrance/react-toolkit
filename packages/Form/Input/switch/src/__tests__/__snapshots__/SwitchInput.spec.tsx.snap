@@ -25,7 +25,7 @@ exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
           class="af-form-switch"
         >
           <div
-            class="af-form__radio-custom af-form__radio-custom"
+            class="af-form__radio-custom"
           >
             <input
               class="af-form__input-radio"

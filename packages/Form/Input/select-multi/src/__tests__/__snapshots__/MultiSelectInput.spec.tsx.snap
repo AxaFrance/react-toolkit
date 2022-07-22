@@ -167,6 +167,7 @@ exports[`renders MultiSelectInput correctly 1`] = `
       >
         <div
           class=" css-2b097c-container"
+          id="multiselectid"
         >
           <div
             class=" css-yk16xz-control"
@@ -290,6 +291,18 @@ exports[`renders MultiSelectInput correctly 1`] = `
                 </svg>
               </div>
             </div>
+          </div>
+          <div>
+            <input
+              name="placeType"
+              type="hidden"
+              value="fun"
+            />
+            <input
+              name="placeType"
+              type="hidden"
+              value="drink"
+            />
           </div>
         </div>
       </div>

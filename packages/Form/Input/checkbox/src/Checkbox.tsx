@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ComponentProps, ReactNode } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import CheckBoxModes from './CheckboxModes';
 import CheckboxItem from './CheckboxItem';
@@ -10,7 +10,6 @@ type Props = Omit<
   options: Option[];
   values?: string[];
   children?: ReactNode;
-  mode?: CheckBoxModes;
 };
 
 const Checkbox = ({
@@ -18,9 +17,6 @@ const Checkbox = ({
   disabled,
   children,
   values,
-  mode = CheckBoxModes.default,
-  name,
-  className,
   ...otherProps
 }: Props) => (
   <>
@@ -28,15 +24,13 @@ const Checkbox = ({
       const isChecked = values ? values.indexOf(option.value) >= 0 : false;
       return (
         <CheckboxItem
+          {...otherProps}
           key={option.value}
           id={option.id}
           value={option.value}
           label={option.label}
           isChecked={isChecked}
-          name={name}
-          disabled={option.disabled || disabled}
-          className={className || defaultClassName(mode)}
-          {...otherProps}>
+          disabled={option.disabled || disabled}>
           {children}
         </CheckboxItem>
       );
@@ -58,27 +52,34 @@ const defaultClassName = (mode: string) => {
 const handlersOverride = {
   onChange:
     ({ onChange, name, values, id }: any) =>
-    (e: ChangeEvent<HTMLInputElement>) => {
+    (e: any) => {
       let newValues: typeof values = [];
       if (values) {
         newValues = [...values];
       }
-      const index = newValues.indexOf(e.target.value);
+      const index = newValues.indexOf(e.value);
       const checked = index <= -1;
       if (checked) {
-        newValues.push(e.target.value);
+        newValues.push(e.value);
       } else {
         newValues.splice(index, 1);
       }
       onChange({
         values: newValues,
-        target: { value: e.target.value, checked },
+        target: { value: e.value, checked },
         name,
         id,
       });
     },
 };
 
+const props = ({ mode = CheckBoxModes.default }: any) => ({
+  className: defaultClassName(mode),
+});
+
 Checkbox.displayName = 'EnhancedInputCheckbox';
 
-export default withInput<Props>(handlersOverride)(Checkbox);
+export default withInput<Props & { mode?: string }>(
+  handlersOverride,
+  props
+)(Checkbox);

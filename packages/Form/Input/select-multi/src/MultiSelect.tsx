@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSelect, { OptionsType } from 'react-select';
 import ReactSelectAsync, { Props as SelectProps } from 'react-select/async';
-
+import { createId } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Option = { value: string; label: string; [x: string]: any };
@@ -69,6 +69,7 @@ const MultiSelect = ({
 
   const commonValueProps = {
     ...commonProps,
+    multi: false,
     value: newValue,
   };
 
@@ -85,8 +86,9 @@ const MultiSelect = ({
 
 const handlers = {
   onChange:
-    ({ values, name, id, onChange }: any) =>
+    ({ values, name, id: selectId, onChange }: any) =>
     (newValue: Option | Option[]) => {
+      const id = selectId ?? createId();
       if (values !== null) {
         const newValues = ((newValue as Option[]) || []).map((v) => v.value);
         onChange({
