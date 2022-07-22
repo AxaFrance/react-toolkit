@@ -28,6 +28,7 @@ export const FileInputStory = (args) => (
     <FileInput
       {...args}
       label="Image"
+      fileLabel="Browse"
       name="placeImage"
       id="inputuniqueid"
       accept="image/jpeg, image/png, application/*"
@@ -41,6 +42,11 @@ export const FileInputStory = (args) => (
   </form>
 );
 FileInputStory.storyName = 'FileInput';
+FileInputStory.args = {
+  disabled: false,
+  classModifier: '',
+  className: '',
+};
 
 export const FileInputStoryRequired = (args) => <FileInputStory {...args} />;
 FileInputStoryRequired.storyName = 'FileInput required';

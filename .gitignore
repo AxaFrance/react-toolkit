@@ -21,6 +21,7 @@ storybook/toolkit/public
 tmp/
 .npmrc
 .scannerwork/
+*.iml
 
 ### OSX ###
 *.DS_Store

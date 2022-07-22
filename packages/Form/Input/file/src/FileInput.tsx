@@ -17,6 +17,7 @@ import File from './File';
 type Props = ComponentProps<typeof Field> &
   Pick<ComponentPropsWithoutRef<typeof FileTable>, 'values' | 'errors'> &
   ComponentProps<typeof File> & {
+    fileLabel?: string;
     helpMessage?: ReactNode;
   };
 const FileInput = ({
@@ -36,6 +37,7 @@ const FileInput = ({
   isVisible,
   className,
   errors,
+  fileLabel,
   disabled,
   ...otherFileProps
 }: Props) => {
@@ -75,6 +77,7 @@ const FileInput = ({
           onChange={onChange}
           disabled={disabled}
           classModifier={inputClassModifier}
+          label={fileLabel}
           {...otherFileProps}
         />
         {children}
