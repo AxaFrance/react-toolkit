@@ -2,8 +2,9 @@ import React, { Fragment, ReactNode } from 'react';
 import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
+type TInfo = { id?: string; word: ReactNode; definition: ReactNode };
 type InfosProps = {
-  infos: { id?: string; word: ReactNode; definition: ReactNode }[];
+  infos: TInfo[];
   className?: string;
   classModifier?: string;
 };
