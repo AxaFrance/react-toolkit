@@ -1,2 +1,2 @@
 export { default as DateInput } from './DateInput';
-export { default as CustomDate } from './CustomDate';
+export { default as Date } from './Date';

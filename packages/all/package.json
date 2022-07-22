@@ -26,7 +26,6 @@
     "@axa-fr/react-toolkit-form-input-checkbox": "2.0.0-alpha.8",
     "@axa-fr/react-toolkit-form-input-choice": "2.0.0-alpha.8",
     "@axa-fr/react-toolkit-form-input-date": "2.0.0-alpha.8",
-    "@axa-fr/react-toolkit-form-input-date-phone": "2.0.0-alpha.8",
     "@axa-fr/react-toolkit-form-input-file": "2.0.0-alpha.8",
     "@axa-fr/react-toolkit-form-input-number": "2.0.0-alpha.8",
     "@axa-fr/react-toolkit-form-input-pass": "2.0.0-alpha.8",

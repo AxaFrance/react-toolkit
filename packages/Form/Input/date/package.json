@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "@axa-fr/react-toolkit-core": "2.0.0-alpha.8",
-    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.8",
-    "react-datepicker": "3.8.0"
+    "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.8"
   },
   "license": "MIT",
   "publishConfig": {
@@ -25,8 +24,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
-  },
-  "devDependencies": {
-    "@types/react-datepicker": "^3.1.7"
   }
 }
