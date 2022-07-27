@@ -18,4 +18,15 @@ describe('<Summary>', () => {
     const { asFragment } = render(<Summary messages={messages} isVisible />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('Renders correctly with ReactNode in messages', () => {
+    const messages = [
+      <span>Sample message 1</span>,
+      '',
+      'Sample message 2',
+      null,
+    ];
+    const { asFragment } = render(<Summary messages={messages} isVisible />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

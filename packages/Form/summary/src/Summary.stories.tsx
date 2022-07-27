@@ -23,7 +23,10 @@ export default {
   },
 } as Meta;
 
-const messages = ['Field Author is required', 'Field PlaceName is required'];
+const messages = [
+  <span>Field Author is required</span>,
+  'Field PlaceName is required',
+];
 
 type SummaryProps = ComponentProps<typeof Summary>;
 const Template: Story<SummaryProps> = (args) => <Summary {...args} />;
