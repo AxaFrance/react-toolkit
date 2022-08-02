@@ -87,7 +87,7 @@ export const NavBarItemBase = ({
         handleKeys(e);
       }}>
       <actionElt.type
-        {...actionElt.key}
+        key={actionElt.key}
         {...actionElt.props}
         {...otherProps}
         role={role}

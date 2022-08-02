@@ -1,50 +1,47 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
+
 import {
   Field,
   HelpMessage,
   FieldInput,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
-import CustomDate from './CustomDate';
+import { useId } from '@axa-fr/react-toolkit-core';
+import Date from './Date';
 
-type Props = Omit<
-  ComponentPropsWithoutRef<typeof CustomDate>,
-  'placeholderText'
-> &
+type Props = Omit<ComponentPropsWithoutRef<typeof Date>, 'placeholderText'> &
   ComponentPropsWithoutRef<typeof Field> & {
-    inputFieldClassModifier: string;
-    inputClassModifier: string;
     placeholder?: string;
     helpMessage?: ReactNode;
+    children?: ReactNode;
   };
+
 const DateInput = ({
   classModifier,
   message,
   children,
+  helpMessage,
   id,
-  disabled,
   classNameContainerLabel,
   classNameContainerInput,
   label,
-  helpMessage,
   messageType,
-  placeholder,
   isVisible,
   forceDisplayMessage,
   className,
   name,
   value,
-  locale,
-  format,
-  viewValue,
   onChange,
   readOnly,
-  inputFieldClassModifier,
-  inputClassModifier,
+  disabled,
   ...otherProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifier,
+    disabled,
+    !!children
+  );
   return (
     <Field
       label={label}
@@ -58,23 +55,16 @@ const DateInput = ({
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
       <FieldInput
-        className="af-datepicker__container"
+        className="af-form__date"
         classModifier={inputFieldClassModifier}>
-        <CustomDate
+        <Date
           name={name}
           id={inputId}
           value={value}
-          locale={locale}
-          format={format}
-          viewValue={viewValue}
-          onChange={onChange}
-          readOnly={readOnly}
-          disabled={disabled}
-          placeholderText={placeholder}
           classModifier={inputClassModifier}
+          disabled={disabled}
           {...otherProps}
         />
-        <span className="glyphicon glyphicon-calendar" />
         {children}
       </FieldInput>
       <HelpMessage message={helpMessage} isVisible={!message} />
@@ -82,5 +72,4 @@ const DateInput = ({
   );
 };
 
-const enhanced = withInputClassModifier(DateInput);
-export default enhanced;
+export default DateInput;

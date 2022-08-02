@@ -1,5 +1,5 @@
-import React from 'react';
-import { Meta } from '@storybook/react';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { Meta, Story } from '@storybook/react';
 import Infos from './Infos';
 import readme from '../../README.md';
 
@@ -25,8 +25,21 @@ const infos = [
   },
   {
     word: 'Status :',
-    definition: 'Affaire nouvelle',
+    definition: (
+      <span style={{ textDecoration: 'underline' }}>Affaire nouvelle</span>
+    ),
   },
 ];
 
-export const Default = () => <Infos infos={infos} />;
+const Template: Story<ComponentPropsWithoutRef<typeof Infos>> = (args) => (
+  <Infos {...args} />
+);
+
+export const InfosStory: Story<ComponentPropsWithoutRef<typeof Infos>> =
+  Template.bind({});
+InfosStory.storyName = 'Default';
+InfosStory.args = {
+  classModifier: '',
+  className: '',
+  infos,
+};

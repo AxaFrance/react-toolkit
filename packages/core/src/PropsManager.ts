@@ -12,6 +12,8 @@ const omit = (keys: string[]) => (props: { [key: string]: any }) => {
   return clonedProps;
 };
 
-export default {
+const PropsManager = {
   omit,
 };
+
+export default PropsManager;

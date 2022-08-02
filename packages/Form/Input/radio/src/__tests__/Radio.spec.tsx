@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import type { Option } from '@axa-fr/react-toolkit-core';
+import type { Option } from '@axa-fr/react-toolkit-form-core';
 import Radio from '../Radio';
 
 const options = [
@@ -30,7 +30,7 @@ describe('Radio', () => {
           <Radio options={options} value={value} />
         );
         const radioItem = getAllByRole('radio').find(
-          (element) => element.getAttribute('value') === '1'
+          (element: any) => element.getAttribute('value') === '1'
         );
 
         expect(radioItem).toBeInTheDocument();

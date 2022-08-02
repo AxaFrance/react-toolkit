@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render <FieldForm/> Should render empty children 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  />
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render simple JSX children w 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <p>
+      Simple JSX
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render string children 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    testtest
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <FieldInput /> Should render with display error message when forceDisplayMessage true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="af-form__field af-form__field--error"
+    >
+      <p>
+        {}
+      </p>
+    </div>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <FieldInput /> Should render with message displayed when forceDisplayMessage true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="af-form__field af-form__field--success"
+    >
+      <p>
+        {}
+      </p>
+    </div>
+    <small
+      class="af-form__message af-form__message--success"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__success-text"
+      >
+        bravo
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <MyField /> Should render with FieldInput and FieldError displayed and HelpMessage hidden when forceDisplayMessage true  1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam sam--error"
+    >
+      <input
+        aria-label="input-name"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </div>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <MyField /> Should render with FieldInput and HelpMessage displayed and FieldError hidden when message is null 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam"
+    >
+      <input
+        aria-label="input-name"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </div>
+    <small
+      class="af-form__help"
+    >
+      un peu d'aide ?
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renderedChildren Should render HelpMessage with message when renderedChildren has been called with HelpMessage children and parent message is empty 1`] = `
+<DocumentFragment>
+  <small
+    class="af-form__help"
+  >
+    my help message
+  </small>
+</DocumentFragment>
+`;
+
+exports[`renderedChildren Should return array children with type string child when children type is a string 1`] = `
+<DocumentFragment>
+  <p>
+    test
+  </p>
+</DocumentFragment>
+`;
+
+exports[`renderedChildren Should return not render HelpMessage with message when renderedChildren has been called with HelpMessage children and parent message is not empty 1`] = `<DocumentFragment />`;
+
+exports[`renderedChildren Should return only valid children unchanged childs when renderedChildren has been called with differents children 1`] = `
+<DocumentFragment>
+  <p>
+    test
+  </p>
+  <p
+    class="hello"
+    id="world"
+  >
+    child
+  </p>
+  str
+  <hr />
+  <p />
+  <p />
+</DocumentFragment>
+`;
+
+exports[`renderedChildren Should return render FieldError with parent message when renderedChildren has been called with FieldError children and parent message is not empty 1`] = `
+<DocumentFragment>
+  <small
+    class="af-form__message af-form__message--error"
+  >
+    <span
+      class="glyphicon glyphicon-exclamation-sign"
+    />
+    <span
+      class="af-form__error-text"
+    >
+      message parent
+    </span>
+  </small>
+</DocumentFragment>
+`;
+
+exports[`renderedChildren Should return render FieldInput with classModifier error when renderedChildren has been called with FieldInput children and messageType eqaul "error" 1`] = `
+<DocumentFragment>
+  <div
+    class="fieldinput fieldinput--error"
+  />
+</DocumentFragment>
+`;

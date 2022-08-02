@@ -4,9 +4,11 @@ import {
   compose,
   identity,
 } from '@axa-fr/react-toolkit-core';
+import { ComponentPropsWithoutRef } from 'react';
 
-import ButtonCore, { ButtonCoreProps } from './ButtonCore';
+import ButtonCore from './ButtonCore';
 
+type ButtonCoreProps = ComponentPropsWithoutRef<typeof ButtonCore>;
 export type ButtonProps = WithClickIdProps<ButtonCoreProps, 'onClick'>;
 
 const Button = compose(

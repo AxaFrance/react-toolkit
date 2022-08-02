@@ -1,30 +1,27 @@
-import React, { FC, HTMLProps } from 'react';
-import {
-  PropsManager,
-  withClassDefault,
-  withClassModifier,
-  compose,
-  identity,
-  WithClassModifierOptions,
-} from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-badge';
+type Props = ComponentPropsWithoutRef<'span'> & {
+  classModifier?: string;
+  disabled?: boolean;
+};
 
-type BadgeBaseProps = HTMLProps<HTMLSpanElement> & { disabled?: boolean };
+const BadgeRaw = ({
+  children,
+  className,
+  classModifier,
+  ...otherProps
+}: Props) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-badge'
+  );
+  return (
+    <span className={componentClassName} {...otherProps}>
+      {children}
+    </span>
+  );
+};
 
-const omitProperties = PropsManager.omit(['classModifier']);
-
-const BadgeRaw: FC<BadgeBaseProps> = ({ children, ...otherProps }) => (
-  <span {...omitProperties(otherProps)}>{children}</span>
-);
-
-type BadgeEnhancedProps = BadgeBaseProps & WithClassModifierOptions;
-const enhance = compose(
-  identity<BadgeEnhancedProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(BadgeRaw);
-Enhanced.displayName = 'Badge';
-export default Enhanced;
+export default BadgeRaw;

@@ -2,10 +2,10 @@ import React, { ComponentProps, ReactNode } from 'react';
 
 import {
   Field,
-  InputManager,
   FieldInput,
   HelpMessage,
 } from '@axa-fr/react-toolkit-form-core';
+import { useId } from '@axa-fr/react-toolkit-core';
 
 import MultiSelect from './MultiSelect';
 
@@ -24,7 +24,6 @@ const MultiSelectInput = ({
   classNameContainerLabel,
   classNameContainerInput,
   label,
-  name,
   messageType,
   isVisible,
   forceDisplayMessage,
@@ -34,7 +33,7 @@ const MultiSelectInput = ({
   const inputFieldClassModifier = `${classModifier} ${
     disabled ? 'disabled' : ''
   }`;
-  const inputId = InputManager.getInputId(id);
+  const inputId = useId(id);
   return (
     <Field
       label={label}
@@ -50,7 +49,7 @@ const MultiSelectInput = ({
       <FieldInput
         className="af-form__select"
         classModifier={inputFieldClassModifier}>
-        <MultiSelect disabled={disabled} {...multiSelectProps} />
+        <MultiSelect id={inputId} disabled={disabled} {...multiSelectProps} />
         {children}
       </FieldInput>
       <HelpMessage message={helpMessage} isVisible={!message} />

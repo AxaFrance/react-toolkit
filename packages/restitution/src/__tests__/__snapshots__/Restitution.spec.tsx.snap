@@ -116,7 +116,9 @@ exports[`<ArticleRestitution /> should render component 1`] = `
               </dt>
               <dd
                 class="af-restitution__listdef-value"
-              />
+              >
+                -
+              </dd>
             </dl>
             <dl
               class="af-restitution__listdef af-restitution__listdef--marge"
@@ -166,7 +168,7 @@ exports[`<ArticleRestitution /> should render component 1`] = `
             </dl>
           </div>
           <div
-            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xl-6--test"
           >
             <dl
               class="af-restitution__listdef"
@@ -218,7 +220,9 @@ exports[`<ArticleRestitution /> should render component 1`] = `
               </dt>
               <dd
                 class="af-restitution__listdef-value"
-              />
+              >
+                -
+              </dd>
             </dl>
             <dl
               class="af-restitution__listdef af-restitution__listdef--marge"
@@ -321,6 +325,24 @@ exports[`<ArticleRestitution /> should render component 1`] = `
             </dl>
             <dl
               class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TT
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                -
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef af-restitution__listdef--marge"
             >
               <dt
                 class="af-restitution__listdef-item"
@@ -453,6 +475,108 @@ exports[`<ArticleRestitution /> should render component 1`] = `
                     Jardin
                   </li>
                 </ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"
+      >
+        <div
+          class="row af-restitution__content-left"
+        >
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <div
+              class="af-restitution__content-title"
+            >
+              Base de calcul des prestations
+            </div>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                EURO
+              </dd>
+            </dl>
+          </div>
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 col-xl-6"
+          >
+            <div
+              class="af-restitution__content-title"
+            >
+              Base de calcul des prestations
+            </div>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  TA
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                99,99 %
+              </dd>
+            </dl>
+            <dl
+              class="af-restitution__listdef"
+            >
+              <dt
+                class="af-restitution__listdef-item"
+              >
+                <span
+                  class="af-restitution__text"
+                >
+                  EURO
+                </span>
+              </dt>
+              <dd
+                class="af-restitution__listdef-value"
+              >
+                <span
+                  style="text-decoration: underline;"
+                >
+                  EURO
+                </span>
               </dd>
             </dl>
           </div>

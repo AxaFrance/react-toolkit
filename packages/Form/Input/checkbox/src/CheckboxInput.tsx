@@ -1,11 +1,13 @@
 import React, { ComponentProps } from 'react';
-import { Field } from '@axa-fr/react-toolkit-form-core';
-import { InputManager } from '@axa-fr/react-toolkit-core';
+import { Field, useOptionsWithId } from '@axa-fr/react-toolkit-form-core';
 
 import CheckBoxModes from './CheckboxModes';
 import Checkbox from './Checkbox';
 
-type Props = ComponentProps<typeof Checkbox> & ComponentProps<typeof Field>;
+type Props = Omit<
+  ComponentProps<typeof Checkbox> & ComponentProps<typeof Field>,
+  'children' | 'placeholder'
+>;
 
 const CheckboxInput = ({
   mode,
@@ -16,22 +18,21 @@ const CheckboxInput = ({
   classNameContainerLabel,
   classNameContainerInput,
   label,
-  children,
-  placeholder,
   isVisible,
   className,
   forceDisplayMessage,
   ...checkboxProps
 }: Props) => {
-  const rowModifier = `${classModifier} ${
-    mode === CheckBoxModes.classic ? 'label-top' : ''
-  }`;
-  const newOptions = InputManager.getOptionsWithId(options);
+  let rowModifier = classModifier;
+  if (mode === CheckBoxModes.classic) {
+    rowModifier += ' label-top';
+  }
+  const newOptions = useOptionsWithId(options);
 
   return (
     <Field
       label={label}
-      id={newOptions[0]?.id}
+      id={newOptions[0].id}
       message={message}
       messageType={messageType}
       isVisible={isVisible}
@@ -40,7 +41,13 @@ const CheckboxInput = ({
       classModifier={rowModifier}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
-      <Checkbox mode={mode} options={newOptions} {...checkboxProps} />
+      <Checkbox
+        mode={mode}
+        isVisible={isVisible}
+        options={newOptions}
+        classModifier={classModifier}
+        {...checkboxProps}
+      />
     </Field>
   );
 };

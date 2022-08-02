@@ -3,7 +3,6 @@ import React, {
   ComponentProps,
   isValidElement,
   ReactNode,
-  ReactNodeArray,
 } from 'react';
 import { RadioItem } from '@axa-fr/react-toolkit-form-input-radio';
 import { CheckboxItem } from '@axa-fr/react-toolkit-form-input-checkbox';
@@ -15,10 +14,9 @@ type Props = Omit<
   nbCards?: number;
   type?: 'radio' | 'checkbox';
   classModifier?: string;
-  children?: ReactNodeArray | ReactNode;
+  children?: ReactNode;
 };
 const CardHeader = ({
-  classModifier,
   type = 'checkbox',
   children,
   nbCards,
@@ -39,20 +37,13 @@ const CardHeader = ({
   return (
     <header className="af-rccard-header">
       {type === 'radio' && (
-        <RadioItem
-          label=""
-          className="af-form__radio"
-          classModifier={classModifier}
-          {...otherProps}>
+        <RadioItem className="af-form__radio" {...otherProps}>
           {children}
         </RadioItem>
       )}
 
       {type === 'checkbox' && (
-        <CheckboxItem
-          className="af-form__checkbox"
-          classModifier={classModifier}
-          {...otherProps}>
+        <CheckboxItem className="af-form__checkbox" {...otherProps}>
           {children}
         </CheckboxItem>
       )}
