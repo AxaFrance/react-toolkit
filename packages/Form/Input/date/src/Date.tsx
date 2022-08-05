@@ -1,16 +1,16 @@
-import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
 import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withInput } from '@axa-fr/react-toolkit-form-core';
 
-type Props = Omit<ComponentPropsWithRef<'input'>, 'value' | 'onChange'> & {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
   /** A modifier for specified className */
   classModifier?: string;
-  onChange?: (date: Date) => void;
   /** A native JavaScript Date object set as initiale value */
   value?: Date;
 };
 
 const Date = forwardRef<HTMLInputElement, Props>(
-  ({ className, classModifier, value, onChange, ...otherProps }, ref) => {
+  ({ className, classModifier, value, ...otherProps }, ref) => {
     const componentClassName = useComponentClassName(
       className,
       classModifier,
@@ -29,10 +29,6 @@ const Date = forwardRef<HTMLInputElement, Props>(
         className={componentClassName}
         type="date"
         defaultValue={currentValue}
-        onChange={(e) => {
-          const newValue = e.currentTarget.valueAsDate;
-          onChange && newValue && onChange(newValue);
-        }}
         ref={ref}
         {...otherProps}
       />
@@ -40,4 +36,23 @@ const Date = forwardRef<HTMLInputElement, Props>(
   }
 );
 
-export default Date;
+type OnChange = {
+  onChange: (data: { value: Date; name: string; id: string }) => void;
+};
+
+const handlers = {
+  onChange:
+    ({ onChange, name, id }: Omit<Props, 'onChange'> & OnChange) =>
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const newValue = e.currentTarget.valueAsDate;
+      onChange &&
+        newValue &&
+        onChange({
+          value: newValue,
+          name,
+          id,
+        });
+    },
+};
+
+export default withInput(handlers)(Date);

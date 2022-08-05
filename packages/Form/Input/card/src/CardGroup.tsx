@@ -45,12 +45,28 @@ const CardGroup = ({
   );
 };
 
+type OnChange = {
+  onChange: (data: {
+    id: string;
+    name: string;
+    value?: string;
+    values?: string[];
+    target?: { value: string; checked: boolean };
+  }) => void;
+};
+
 const handlers = {
   onChange:
-    ({ type, values, name, id, onChange }: any) =>
+    ({
+      type,
+      values,
+      name,
+      id,
+      onChange,
+    }: Omit<Props, 'onChange'> & OnChange) =>
     (e: any) => {
       if (type === 'checkbox') {
-        let newValues = [] as any;
+        let newValues = [] as string[];
         if (values) {
           newValues = [...values];
         }
@@ -62,21 +78,22 @@ const handlers = {
         } else {
           newValues.splice(index, 1);
         }
-        onChange({
-          values: newValues,
-          target: {
-            value: e.value,
-            checked,
-          },
-          name,
-          id,
-        });
+        onChange &&
+          onChange({
+            values: newValues,
+            target: {
+              value: e.value,
+              checked,
+            },
+            name,
+            id,
+          });
       } else {
-        onChange({ value: e.value, name, id });
+        onChange && onChange({ value: e.value, name, id });
       }
     },
 };
 
-const EnhancedComponent = withInput<Props>(handlers)(CardGroup);
+const EnhancedComponent = withInput(handlers)(CardGroup);
 
 export default EnhancedComponent;

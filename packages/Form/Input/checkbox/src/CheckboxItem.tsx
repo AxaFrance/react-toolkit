@@ -1,8 +1,12 @@
-import React, { AllHTMLAttributes, MutableRefObject, ReactNode } from 'react';
+import React, {
+  ComponentPropsWithoutRef,
+  MutableRefObject,
+  ReactNode,
+} from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
 import { getOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
-type Props = Omit<AllHTMLAttributes<HTMLInputElement>, 'type' | 'label'> & {
+type Props = Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'label'> & {
   classModifier?: string;
   optionClassName?: string;
   inputRef?: MutableRefObject<HTMLInputElement>;
@@ -48,19 +52,16 @@ const CheckboxItem = ({
   );
 };
 
-const handlers = {
-  onChange:
-    ({ onChange, value, name, id }: any) =>
-    (e: any) => {
-      onChange({
-        value,
-        name,
-        id,
-      });
-    },
+type PropsOverride = {
+  className?: string;
+  classModifier?: string;
+  disabled?: boolean;
 };
-
-const propsOverrides = ({ className, classModifier, disabled }: any) => ({
+const propsOverrides = ({
+  className,
+  classModifier,
+  disabled,
+}: PropsOverride) => ({
   optionClassName: getOptionClassName(
     className,
     classModifier,
@@ -69,9 +70,4 @@ const propsOverrides = ({ className, classModifier, disabled }: any) => ({
   ),
 });
 
-export default withInput<
-  Props & { className?: string; classModifier?: string }
->(
-  handlers,
-  propsOverrides
-)(CheckboxItem);
+export default withInput({}, propsOverrides)(CheckboxItem);

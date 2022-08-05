@@ -9,13 +9,13 @@ import { createId, useComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
-type Props = DropzoneOptions &
-  Omit<DropzoneInputProps, 'onChange'> & {
-    classModifier?: string;
-    label?: string;
-    icon?: string;
-    onChange: (e: any) => void;
-  };
+type Dropzone = DropzoneInputProps & DropzoneOptions;
+type Props = Omit<Dropzone, 'onDrop' | 'onChange'> & {
+  classModifier?: string;
+  label?: string;
+  icon?: string;
+  onChange: DropzoneOptions['onDrop'];
+};
 
 const File = ({
   className,
@@ -23,7 +23,7 @@ const File = ({
   id,
   name,
   disabled,
-  onDrop,
+  onChange,
   multiple = true,
   maxSize = 20000000,
   minSize = 0,
@@ -32,11 +32,10 @@ const File = ({
   placeholder = 'Glissez/déposez vos fichiers',
   label = 'Parcourir',
   icon = 'open',
-  onChange: _onChange,
   ...otherProps
 }: Props) => {
   const { getRootProps, getInputProps, open } = useDropzone({
-    onDrop,
+    onDrop: onChange,
     minSize,
     maxSize,
     multiple,
@@ -68,10 +67,23 @@ const File = ({
   );
 };
 
+export type CustomFile<T = File & { preview: string }> = {
+  id: string;
+  file: T;
+};
+type OnChange = {
+  onChange: (data: {
+    id: string;
+    name: string;
+    values: CustomFile[];
+    errors?: CustomFile<FileRejection>[];
+  }) => void;
+};
+
 const handlers = {
-  onDrop:
-    ({ onChange, name, id }: Props) =>
-    <T extends File & { preview: string }>(
+  onChange:
+    ({ onChange, name, id }: Omit<Props, 'onChange'> & OnChange) =>
+    <T extends File & {}>(
       acceptedFiles: T[],
       rejectedFiles: FileRejection[]
     ) => {
@@ -83,15 +95,14 @@ const handlers = {
         id: createId(),
         file: error,
       }));
-      onChange({
-        values,
-        errors,
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          values,
+          errors,
+          name,
+          id,
+        });
     },
 };
 
-const EnhancedComponent = withInput<Props>(handlers)(File);
-
-export default EnhancedComponent;
+export default withInput(handlers)(File);

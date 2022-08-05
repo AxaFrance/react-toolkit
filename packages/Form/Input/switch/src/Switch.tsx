@@ -12,8 +12,7 @@ import SwitchItem from './SwitchItem';
 type SwitchItemProps = ComponentProps<typeof SwitchItem>;
 type SwitchOptions = Pick<SwitchItemProps, keyof Option>;
 
-type Props = Omit<SwitchItemProps, keyof Option> & {
-  value: SwitchItemProps['value'];
+type Props = Omit<SwitchItemProps, keyof Pick<Option, 'id' | 'label'>> & {
   options: SwitchOptions[];
 };
 
@@ -78,4 +77,4 @@ const getSliderStyle = (ref: RefObject<HTMLDivElement>): CSSProperties => {
   };
 };
 
-export default withInput<Props>()(Switch);
+export default withInput()(Switch);

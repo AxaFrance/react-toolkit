@@ -2,20 +2,16 @@ import React, { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
 import { getOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
 
-type RadioItemProps = Omit<
-  ComponentPropsWithRef<'input'>,
-  'checked' | 'type' | 'className'
-> & {
+type Props = Omit<ComponentPropsWithRef<'input'>, 'checked' | 'type'> & {
   classModifier?: string;
   optionClassName?: string;
   label?: ReactNode;
   isChecked?: boolean;
 };
 
-const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
+const RadioItem = forwardRef<HTMLInputElement, Props>(
   (
     {
-      disabled,
       value = '',
       id,
       isChecked,
@@ -40,7 +36,6 @@ const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
           value={value}
           checked={isChecked}
           ref={inputRef}
-          disabled={disabled}
         />
         <label className="af-form__label" htmlFor={newId}>
           <span className="af-form__description">{newLabel}</span>
@@ -50,7 +45,11 @@ const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   }
 );
 
-const propsOverride = ({ className, classModifier, disabled }: any) => ({
+const propsOverride = ({
+  className,
+  classModifier,
+  disabled,
+}: Pick<Props, 'className' | 'classModifier' | 'disabled'>) => ({
   optionClassName: getOptionClassName(
     className,
     classModifier,
@@ -59,9 +58,4 @@ const propsOverride = ({ className, classModifier, disabled }: any) => ({
   ),
 });
 
-export default withInput<
-  RadioItemProps & { className?: string; classModifier?: string }
->(
-  undefined,
-  propsOverride
-)(RadioItem);
+export default withInput({}, propsOverride)(RadioItem);

@@ -6,9 +6,26 @@ describe('<File.FileTable>', () => {
   it('renders File.FileTable correctly', () => {
     const { asFragment } = render(
       <FileTable
-        errors={[{ file: { name: 'youhou.txt', preview: '', size: 2 } }]}
+        errors={[
+          {
+            file: {
+              ...new File([], 'youhou.txt'),
+              name: 'youhou.txt',
+              size: 2,
+            },
+            errors: [],
+          },
+        ]}
         values={[
-          { file: { name: 'superfile.pdf', preview: '', size: 2 }, id: 'id' },
+          {
+            file: {
+              ...new File([], 'superfile.pdf'),
+              name: 'superfile.pdf',
+              preview: '',
+              size: 2,
+            },
+            id: 'id',
+          },
         ]}
       />
     );
@@ -18,7 +35,16 @@ describe('<File.FileTable>', () => {
   it('renders File.FileTable correctly when no have values', () => {
     const { asFragment, queryByRole } = render(
       <FileTable
-        errors={[{ file: { name: 'youhou.txt', size: 2, preview: '' } }]}
+        errors={[
+          {
+            file: {
+              ...new File([], 'youhou.txt'),
+              name: 'youhou.txt',
+              size: 2,
+            },
+            errors: [],
+          },
+        ]}
         values={[]}
       />
     );
@@ -31,7 +57,15 @@ describe('<File.FileTable>', () => {
     const { asFragment, queryByRole } = render(
       <FileTable
         values={[
-          { file: { name: 'youhou.txt', size: 2, preview: '' }, id: 'id' },
+          {
+            file: {
+              ...new File([], 'youhou.txt'),
+              name: 'youhou.txt',
+              size: 2,
+              preview: '',
+            },
+            id: 'id',
+          },
         ]}
       />
     );

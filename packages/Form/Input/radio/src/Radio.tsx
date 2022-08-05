@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithRef } from 'react';
 import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
 
@@ -8,8 +8,8 @@ export enum RadioModes {
   inline = 'inline',
 }
 
-type RadioProps = Omit<
-  ComponentPropsWithoutRef<typeof RadioItem>,
+type Props = Omit<
+  ComponentPropsWithRef<typeof RadioItem>,
   'id' | 'label' | 'className'
 > & {
   options: Option[];
@@ -24,7 +24,7 @@ const Radio = ({
   children,
   disabled,
   ...otherProps
-}: RadioProps) => {
+}: Props) => {
   const classNameMode = getClassNameMode(mode);
   const optionItems = options.map((option: Option) => {
     const isChecked = option.value === value;
@@ -47,7 +47,7 @@ const Radio = ({
   return <>{optionItems}</>;
 };
 
-const getClassNameMode = (mode: RadioProps['mode']) => {
+const getClassNameMode = (mode: Props['mode']) => {
   switch (mode) {
     case RadioModes.classic:
       return 'af-form__radio';
@@ -61,14 +61,18 @@ const getClassNameMode = (mode: RadioProps['mode']) => {
 Radio.displayName = 'EnhancedInputRadio';
 const handlers = {
   onChange:
-    ({ onChange, name }: any) =>
-    ({ value, id }: any) => {
-      onChange({
-        value,
-        id,
-        name,
-      });
+    ({ onChange, name }: Props) =>
+    ({ value, id }: Parameters<Props['onChange']>[0]) => {
+      onChange &&
+        onChange({
+          value,
+          id,
+          name,
+        });
     },
 };
 
-export default withInput<RadioProps>(handlers, () => ({}))(Radio);
+/** Empty function is here to override default propsOverride parameter into HOC withInput
+ * Because here we doesn't want an override of className
+ */
+export default withInput(handlers, ({}) => ({}))(Radio);

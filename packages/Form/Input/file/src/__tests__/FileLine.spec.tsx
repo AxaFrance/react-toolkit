@@ -6,7 +6,10 @@ import FileLine, { Preview } from '../FileLine';
 describe('<File.FileInput>', () => {
   it('renders File.FileInput correctly', () => {
     const { asFragment } = render(
-      <FileLine file={{ name: 'name', size: 1, preview: '#' }} id="id" />
+      <FileLine
+        file={{ ...new File([], 'name'), name: 'name', size: 1, preview: '#' }}
+        id="id"
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -15,7 +18,7 @@ describe('<File.FileInput>', () => {
 
     const { getByRole } = render(
       <FileLine
-        file={{ name: 'name', size: 1, preview: '#' }}
+        file={{ ...new File([], 'name'), name: 'name', size: 1, preview: '#' }}
         id="id"
         onClick={onClickMock}
       />
@@ -25,12 +28,24 @@ describe('<File.FileInput>', () => {
   });
 
   it('renders Preview correctly for type image', () => {
-    const file = { type: 'image', preview: '', name: 'test', size: 2 };
+    const file = {
+      ...new File([], 'test'),
+      name: 'test',
+      type: 'image',
+      preview: '',
+      size: 2,
+    };
     const { asFragment } = render(<Preview file={file} />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('renders Preview correctly for other type', () => {
-    const file = { type: 'pdf', preview: '', name: 'test', size: 2 };
+    const file = {
+      ...new File([], 'test'),
+      name: 'test',
+      type: 'pdf',
+      preview: '',
+      size: 2,
+    };
     const { asFragment } = render(<Preview file={file} />);
     expect(asFragment()).toMatchSnapshot();
   });

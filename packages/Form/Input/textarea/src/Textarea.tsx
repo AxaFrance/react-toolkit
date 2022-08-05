@@ -1,8 +1,8 @@
-import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-type Props = ComponentPropsWithRef<'textarea'> & {
+type Props = ComponentPropsWithoutRef<'textarea'> & {
   classModifier?: string;
 };
 
@@ -19,4 +19,4 @@ const Textarea = forwardRef<HTMLTextAreaElement, Props>(
   }
 );
 
-export default withInput<Props>()(Textarea);
+export default withInput()(Textarea);

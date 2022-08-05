@@ -1,6 +1,8 @@
-import React, { ComponentProps, ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { FileRejection } from 'react-dropzone';
 import LineFile from './FileLine';
+import { CustomFile } from './File';
 
 const Errors = ({ errors }: Pick<Props, 'errors'>) => {
   return (
@@ -17,11 +19,10 @@ const Errors = ({ errors }: Pick<Props, 'errors'>) => {
   );
 };
 
-type FileLineAction = Pick<ComponentProps<typeof LineFile>, 'onClick'>;
-type File = Pick<ComponentPropsWithoutRef<typeof LineFile>, 'file'>;
-type Props = FileLineAction & {
-  errors?: File[];
-  values?: (File & { id: string })[];
+type FileLineProps = ComponentPropsWithoutRef<typeof LineFile>;
+type Props = Pick<FileLineProps, 'onClick'> & {
+  errors?: FileRejection[];
+  values?: CustomFile[];
   className?: string;
   classModifier?: string;
   disabled?: boolean;

@@ -60,14 +60,17 @@ const handlers = {
       id,
       onChange,
       options,
-    }: Omit<Props, 'onChange'> & { onChange: Function }) =>
+    }: Omit<Props, 'onChange'> & {
+      onChange: (data: { id: string; name: string; value: number }) => void;
+    }) =>
     (e: any) => {
-      onChange({
-        value: options[e].value,
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          value: options[e].value,
+          name,
+          id,
+        });
     },
 };
 
-export default withInput<Props>(handlers)(Slider);
+export default withInput(handlers)(Slider);

@@ -29,6 +29,5 @@ TextStory.args = {
   disabled: false,
   classModifier: '',
   className: '',
-  tabIndex: null,
   autoFocus: true,
 };

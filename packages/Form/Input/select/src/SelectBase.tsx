@@ -28,4 +28,4 @@ const SelectBase = forwardRef<HTMLSelectElement, Props>(
   )
 );
 
-export default withInput<Props>()(SelectBase);
+export default withInput()(SelectBase);

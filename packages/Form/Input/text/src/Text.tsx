@@ -25,4 +25,4 @@ const Text = forwardRef<HTMLInputElement, Props>(
   }
 );
 
-export default withInput<Props>()(Text);
+export default withInput()(Text);

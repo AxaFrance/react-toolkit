@@ -22,7 +22,7 @@ export default {
 const Template: Story<
   Omit<ComponentPropsWithoutRef<typeof NumberInput>, 'value' | 'onChange'>
 > = (args) => {
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState<number>(null);
   return (
     <form className="af-form" name="myform">
       <NumberInput

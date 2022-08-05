@@ -32,18 +32,25 @@ const Choice = ({
 
 const handlers = {
   onChange:
-    ({ onChange, name, id }: any) =>
+    ({
+      onChange,
+      name,
+      id,
+    }: Omit<Props, 'onChange'> & {
+      onChange: (data: { name: string; id: string; value: boolean }) => void;
+    }) =>
     (e: any) => {
       const receivedValue = e.value;
       const newValue = receivedValue === '' ? null : receivedValue === 'true';
-      onChange({
-        value: newValue,
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          value: newValue,
+          name,
+          id,
+        });
     },
 };
 
 Choice.displayName = 'EnhancedInputRadio';
 
-export default withInput<Props>(handlers)(Choice);
+export default withInput(handlers)(Choice);

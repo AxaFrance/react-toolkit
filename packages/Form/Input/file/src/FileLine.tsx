@@ -2,6 +2,7 @@ import React from 'react';
 import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import Popover from '@axa-fr/react-toolkit-popover';
+import { CustomFile } from './File';
 
 const style = {
   maxWidth: '200px',
@@ -31,10 +32,7 @@ export const Preview = ({ file }: PreviewProps) => {
   return <i className="glyphicon glyphicon-file" />;
 };
 
-type File = { type?: string; preview: string; name: string; size: number };
-type Props = {
-  file: File;
-  id: string;
+type Props = CustomFile & {
   onClick?: (id: string) => void;
   className?: string;
   classModifier?: string;

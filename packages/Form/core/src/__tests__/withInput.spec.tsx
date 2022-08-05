@@ -64,14 +64,14 @@ describe('withInput', () => {
   };
 
   it('Should return Enhanced Input when withInput have been called with defaultclassName and input component', () => {
-    const NewInput = withInput<Props>()(Input);
+    const NewInput = withInput()(Input);
     const { asFragment, getByText } = render(<NewInput {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
     expect(getByText('defaultclassName')).toBeInTheDocument();
   });
 
   it('Should return Enhanced Input when withInput have been called with defaultclassName and input component and modifier', () => {
-    const NewInput = withInput<Props>()(Input);
+    const NewInput = withInput()(Input);
     const { asFragment, getByText } = render(
       <NewInput {...defaultProps} classModifier="custom" />
     );
@@ -83,7 +83,7 @@ describe('withInput', () => {
   });
 
   it('Should not return Enhanced Input when isVisible is false', () => {
-    const NewInput = withInput<Props>()(Input);
+    const NewInput = withInput()(Input);
     const { asFragment, queryByText } = render(
       <NewInput {...defaultProps} isVisible={false} />
     );

@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
-import { Meta } from '@storybook/react';
+import React, { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import { Meta, Story } from '@storybook/react';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import CheckboxInput from './CheckboxInput';
 import CheckboxItem from './CheckboxItem';
@@ -79,7 +79,8 @@ export const CheckboxItemToggleStory = (args) => (
 );
 CheckboxItemToggleStory.storyName = 'CheckboxItem Toggle';
 
-export const CheckboxItemStory = (args) => (
+type CheckboxItemProps = ComponentPropsWithoutRef<typeof CheckboxItem>;
+export const CheckboxItemStory: Story<CheckboxItemProps> = (args) => (
   <CheckboxItem
     {...args}
     name="placeType"
@@ -90,7 +91,8 @@ export const CheckboxItemStory = (args) => (
 );
 CheckboxItemStory.storyName = 'CheckboxItem';
 
-export const CheckboxStory = (args) => (
+type CheckboxProps = ComponentPropsWithoutRef<typeof Checkbox>;
+export const CheckboxStory: Story<CheckboxProps> = (args) => (
   <Checkbox
     {...args}
     options={options}

@@ -1,12 +1,11 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentPropsWithRef } from 'react';
 import { Meta, Story } from '@storybook/react';
 import RadioItem from './RadioItem';
-import RadioInput from './RadioInput';
 import readme from '../README.md';
 
 export default {
   title: 'Components low level/Radio/RadioItem',
-  component: RadioInput,
+  component: RadioItem,
   parameters: {
     readme: {
       sidebar: readme,
@@ -14,9 +13,10 @@ export default {
   },
 } as Meta;
 
-export const RadioItemStory: Story<ComponentProps<typeof RadioItem>> = (
-  args
-) => <RadioItem {...args} />;
+type RadioItemProps = ComponentPropsWithRef<typeof RadioItem>;
+export const RadioItemStory: Story<RadioItemProps> = (args) => (
+  <RadioItem {...args} />
+);
 RadioItemStory.storyName = 'RadioItem';
 RadioItemStory.args = {
   name: 'placeName',
