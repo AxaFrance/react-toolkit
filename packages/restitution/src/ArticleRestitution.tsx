@@ -8,17 +8,16 @@ import {
 
 const DEFAULT_CLASSNAME = 'af-restitution';
 
-type ArticleRestitutionBaseProps = ComponentPropsWithoutRef<'article'>;
-
-type ArticleRestitutionProps = ArticleRestitutionBaseProps & {
+type ArticleRestitutionProps = ComponentPropsWithoutRef<'article'> & {
   classModifier?: string;
 };
 
 const ArticleRestitution = ({
   children,
   className,
+  classModifier: _classModifier,
   ...otherProps
-}: ArticleRestitutionBaseProps) => (
+}: ArticleRestitutionProps) => (
   <article className={className} {...otherProps}>
     {children}
   </article>
