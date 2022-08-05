@@ -24,6 +24,9 @@ export default {
     },
     options: {},
   },
+  args: {
+    classModifier: '',
+  },
 } as Meta;
 
 const RightTitle = () => (
@@ -36,8 +39,8 @@ const RightTitle = () => (
   </a>
 );
 
-export const Default = () => (
-  <ArticleRestitution>
+export const Default = (args) => (
+  <ArticleRestitution {...args}>
     <HeaderRestitution
       title="Tarifs"
       subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"
