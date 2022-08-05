@@ -5,3 +5,4 @@ export { default as SectionRestitutionTitle } from './SectionRestitutionTitle';
 export { default as SectionRestitutionRow } from './SectionRestitutionRow';
 export { default as SectionRestitutionColumn } from './SectionRestitutionColumn';
 export { default as Restitution } from './Restitution';
+export { default as RestitutionList } from './RestitutionList';

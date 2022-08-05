@@ -19,18 +19,6 @@ export default {
   argTypes: {
     onChange: { action: 'onChange' },
   },
-  args: {
-    name: 'placeName',
-    id: 'muid',
-    value: '',
-    readOnly: false,
-    disabled: false,
-    isVisible: true,
-    classModifier: '',
-    className: '',
-    placeholder: '- Select -',
-    forceDisplayPlaceholder: false,
-  },
 } as Meta;
 
 type SelectStory = Story<ComponentProps<typeof Select>>;
@@ -39,7 +27,16 @@ const Template: SelectStory = (args) => (
     <FieldInput>
       <div className="col-md-4">
         <div className="af-form__select">
-          <Select options={options} {...args} />
+          <Select
+            {...args}
+            name="placeName"
+            id="muid"
+            value=""
+            isVisible
+            classModifier=""
+            className=""
+            options={options}
+          />
           <HelpMessage message="Enter the place name, ex : Webcenter" />
           <FieldError />
         </div>

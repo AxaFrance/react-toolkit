@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import Title, { TitleProps } from './Title';
 import Readme from '../README.md';
 
@@ -12,7 +12,7 @@ export default {
     },
     options: {},
   },
-};
+} as Meta;
 
 type TitleStoryProps = TitleProps & {
   title: string;

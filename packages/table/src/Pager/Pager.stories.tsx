@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import Pager, { PagerProps } from './Pager';
+import { Meta, Story } from '@storybook/react';
+import Pager, { PagerComponentProps } from './Pager';
 import Modes from './Modes';
 import Readme from './README.md';
 
@@ -22,9 +22,9 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
-const Template: Story<PagerProps> = (args) => <Pager {...args} />;
+const Template: Story<PagerComponentProps> = (args) => <Pager {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -5,17 +5,19 @@ export interface ComponentPropTypes {
   classModifier: string | null;
 }
 
-const propTypes: ValidationMap<ComponentPropTypes> = {
+export const propTypes: ValidationMap<ComponentPropTypes> = {
   className: string,
   classModifier: string,
 };
 
-const defaultProps: ComponentPropTypes = {
+export const defaultProps: ComponentPropTypes = {
   className: null,
   classModifier: null,
 };
 
-export default {
+const Constants = {
   propTypes,
   defaultProps,
 };
+
+export default Constants;

@@ -1,34 +1,22 @@
-import React, { FC, HTMLProps } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-table__body';
+type Props = ComponentPropsWithoutRef<'tbody'> & {
+  classModifier?: string;
+};
 
-type BodyComponentProps = HTMLProps<HTMLTableSectionElement>;
+const Body = ({ children, className, classModifier, ...otherProps }: Props) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-table__body'
+  );
+  return (
+    <tbody className={componentClassName} {...otherProps}>
+      {children}
+    </tbody>
+  );
+};
 
-const Body: FC<BodyComponentProps> = ({
-  children,
-  className,
-  ...otherProps
-}) => (
-  <tbody className={className} {...otherProps}>
-    {children}
-  </tbody>
-);
-
-type BodyProps = BodyComponentProps & WithClassModifierOptions;
-const enhance = compose(
-  identity<BodyProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-Body.displayName = 'Table.Body';
-
-export default enhance(Body);
+export default Body;

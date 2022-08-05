@@ -1,7 +1,9 @@
-import React from 'react';
-import { Story } from '@storybook/react';
-import Action, { ActionProps } from './Action';
+import React, { ComponentProps } from 'react';
+import { Meta, Story } from '@storybook/react';
+import Action from './Action';
 import Readme from '../README.md';
+
+type ActionProps = ComponentProps<typeof Action>;
 
 export default {
   title: 'Components/Action',
@@ -15,7 +17,7 @@ export default {
   argTypes: {
     onClick: { action: 'clicked' },
   },
-};
+} as Meta;
 
 const Template: Story<ActionProps> = (args) => <Action {...args} />;
 

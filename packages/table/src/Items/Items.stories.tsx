@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story } from '@storybook/react';
-import Items, { ItemsProps } from './Items';
+import { Meta, Story } from '@storybook/react';
+import Items, { Props } from './Items';
 import readme from './README.md';
 
 export default {
@@ -27,9 +27,9 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
-const Template: Story<ItemsProps> = (args) => <Items {...args} />;
+const Template: Story<Props> = (args) => <Items {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

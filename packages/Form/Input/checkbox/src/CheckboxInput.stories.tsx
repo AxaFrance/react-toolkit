@@ -1,5 +1,5 @@
-import React, { ComponentProps, PropsWithChildren } from 'react';
-import { Meta, Story } from '@storybook/react';
+import React, { PropsWithChildren } from 'react';
+import { Meta } from '@storybook/react';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import CheckboxInput from './CheckboxInput';
 import CheckboxItem from './CheckboxItem';
@@ -11,7 +11,9 @@ const Badge = ({
   children,
   classModifier,
 }: PropsWithChildren<{ classModifier?: string }>) => (
-  <div className={classModifier ?? ''}>{children}</div>
+  <strong style={{ color: 'green' }} className={classModifier ?? ''}>
+    {children}
+  </strong>
 );
 
 const options = [
@@ -32,9 +34,9 @@ export default {
     readme: {
       sidebar: readme,
     },
-    actions: { argTypesRegex: '^on.*' },
   },
   argTypes: {
+    onChange: { action: 'onChange' },
     messageType: {
       control: { type: 'select', options: Object.values(MessageTypes) },
     },
@@ -44,67 +46,59 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ComponentProps<typeof CheckboxInput>> = (args) => (
+export const CheckboxInputStory = (args) => (
   <form className="af-form" name="myform">
-    <CheckboxInput {...args} values={values} options={options} />
+    <CheckboxInput
+      {...args}
+      values={values}
+      options={options}
+      isVisible
+      classNameContainerLabel="col-md-2"
+      classNameContainerInput="col-md-10"
+    />
   </form>
 );
-export const CheckboxInputStory = Template.bind({}) as typeof Template;
-CheckboxInputStory.storyName = 'CheckboxInput Classic';
+CheckboxInputStory.storyName = 'CheckboxInput';
 CheckboxInputStory.args = {
   label: 'Place type',
   name: 'placeType',
   id: 'inputuniqueid',
   mode: CheckboxModes.classic,
-  message: '',
   messageType: MessageTypes.error,
-  forceDisplayMessage: false,
-  readOnly: false,
-  disabled: false,
-  isVisible: true,
   classModifier: 'required',
-  className: '',
-  classNameContainerLabel: 'col-md-2',
-  classNameContainerInput: 'col-md-10',
 };
 
-const TemplateChecboxItem: Story<ComponentProps<typeof CheckboxItem>> = (
-  args
-) => <CheckboxItem {...args} />;
-
-export const CheckboxItemToggleStory = TemplateChecboxItem.bind(
-  {}
-) as typeof TemplateChecboxItem;
+export const CheckboxItemToggleStory = (args) => (
+  <CheckboxItem
+    {...args}
+    name="placeType"
+    id="uniqueid"
+    value="toto"
+    className="af-form__checkbox-toggle"
+  />
+);
 CheckboxItemToggleStory.storyName = 'CheckboxItem Toggle';
-CheckboxItemToggleStory.args = {
-  name: 'placeType',
-  id: 'uniqueid',
-  value: 'toto',
-  readOnly: false,
-  disabled: false,
-  checked: false,
-};
 
-export const CheckboxItemStory = TemplateChecboxItem.bind(
-  {}
-) as typeof TemplateChecboxItem;
-CheckboxItemStory.storyName = 'ChecboxItem';
-CheckboxItemStory.args = {
-  ...CheckboxItemToggleStory.args,
-  label: 'web center forever',
-};
+export const CheckboxItemStory = (args) => (
+  <CheckboxItem
+    {...args}
+    name="placeType"
+    id="uniqueid"
+    value="toto"
+    label="web center forever"
+  />
+);
+CheckboxItemStory.storyName = 'CheckboxItem';
 
-export const CheckboxStory: Story<ComponentProps<typeof Checkbox>> = (args) => (
-  <Checkbox {...args} />
+export const CheckboxStory = (args) => (
+  <Checkbox
+    {...args}
+    options={options}
+    values={values}
+    name="placeName"
+    id="uniqueid"
+    mode={CheckboxModes.classic}
+    placeholder="Paris"
+  />
 );
 CheckboxStory.storyName = 'Checkbox';
-CheckboxStory.args = {
-  options,
-  values,
-  name: 'placeName',
-  id: 'uniqueid',
-  mode: CheckboxModes.classic,
-  placeholder: 'Paris',
-  readOnly: false,
-  disabled: false,
-};

@@ -1,37 +1,28 @@
-import React, { InputHTMLAttributes, RefObject } from 'react';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withInput } from '@axa-fr/react-toolkit-form-core';
 
-import {
-  ClassManager,
-  CustomFormEvent,
-  defaultOnChange,
-} from '@axa-fr/react-toolkit-form-core';
-
-// const omitProperties = omit(['classModifier', 'className', 'isVisible']);
-
-const defaultClassName = 'af-form__input-text';
-type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
+type Props = ComponentPropsWithRef<'input'> & {
   classModifier?: string;
-  onChange?: (event: CustomFormEvent) => void;
-  inputRef?: RefObject<HTMLInputElement>;
 };
-const Text = ({
-  className,
-  classModifier,
-  inputRef,
-  onChange,
-  ...otherProps
-}: Props) => (
-  <input
-    className={ClassManager.getComponentClassName(
+
+const Text = forwardRef<HTMLInputElement, Props>(
+  ({ className, classModifier, ...otherProps }, inputRef) => {
+    const componentClassName = useComponentClassName(
       className,
       classModifier,
-      defaultClassName
-    )}
-    type="text"
-    onChange={defaultOnChange(onChange)}
-    ref={inputRef}
-    {...otherProps}
-  />
+      'af-form__input-text'
+    );
+
+    return (
+      <input
+        {...otherProps}
+        className={componentClassName}
+        type="text"
+        ref={inputRef}
+      />
+    );
+  }
 );
 
-export default Text;
+export default withInput<Props>()(Text);

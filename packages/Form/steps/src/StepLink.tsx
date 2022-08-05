@@ -8,8 +8,6 @@ type CustomClickEvent = {
   title: string;
 };
 
-const defaultClassName = 'past af-steps-list-step';
-
 type Props = ComponentPropsWithoutRef<typeof StepBase> & {
   href: string;
   number?: ReactNode;
@@ -20,7 +18,7 @@ const StepLink = ({
   href,
   number,
   title,
-  className = defaultClassName,
+  className = 'past af-steps-list-step',
   onClick,
   ...otherProps
 }: Props) => (
@@ -32,7 +30,10 @@ const StepLink = ({
     <a
       className="af-steps-list-stepLabel"
       href={href}
-      onClick={() => onClick && onClick({ href, id, title, number })}>
+      onClick={(e) => {
+        e.preventDefault();
+        onClick && onClick({ href, id, title, number });
+      }}>
       {!!number && <div className="af-steps-list-stepNumber">{number}</div>}
       <div className="af-steps-list-stepTitle">{title}</div>
     </a>

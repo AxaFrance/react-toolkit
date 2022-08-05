@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-steps';
 
@@ -13,7 +13,7 @@ const Steps = ({
   className = defaultClassName,
   classModifier,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = useComponentClassName(
     className,
     classModifier,
     defaultClassName

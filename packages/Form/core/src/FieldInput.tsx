@@ -10,13 +10,14 @@ type FieldProps = {
 
 const FieldInput = ({
   children,
-  className,
-  classModifier,
+  className = '',
+  classModifier = '',
   isVisible = true,
 }: FieldProps) => {
   if (!isVisible) {
-    return <></>;
+    return null;
   }
+
   const newClassName = ClassManager.getComponentClassName(
     className,
     classModifier,

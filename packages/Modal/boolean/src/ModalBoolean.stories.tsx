@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import BooleanModal from './ModalBoolean';
 import readme from '../README.md';
 
@@ -16,7 +16,8 @@ export default {
     onCancel: { action: 'onCancel' },
     onSubmit: { action: 'onSubmit' },
   },
-};
+} as Meta;
+
 type BooleanModalProps = ComponentProps<typeof BooleanModal>;
 
 const Template: Story<BooleanModalProps> = (args) => (

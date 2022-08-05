@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import Modal from './Modal';
-import ModalCore from './ModalCore';
+import ModalCore, { ModalCoreProps } from './ModalCore';
 import Body from './Body';
 import Footer from './Footer';
 import HeaderBase from './HeaderBase';
@@ -14,17 +14,20 @@ const CustomHeaderStoryTemplate: Story<
     <Modal {...args}>
       <Modal.HeaderBase id="headerId">
         <p>
-          Ici je controle completement <b>le contenu</b>
+          Ici, je contrôle complètement <strong>le contenu du header</strong>
         </p>
+        <button className="af-btn--circle" type="submit" id="btn-circle">
+          <i className="glyphicon glyphicon-close" />
+        </button>
       </Modal.HeaderBase>
       <Modal.Body>
         <p>
-          Reprehenderit sit quis aute nisi consequat consequat mollit. Commodo
-          in aliquip consectetur nulla sit anim. Pariatur minim commodo enim ea
-          eu laborum culpa laboris. Labore labore irure ipsum consequat enim
-          officia anim ipsum aliqua excepteur qui sint. Duis sint do culpa
-          adipisicing dolor adipisicing ea dolore aute nisi quis ullamco aliquip
-          occaecat. Aute ut mollit amet.
+          Voici une version avec un header customisé à l'aide du composant
+          Modal.HeaderBase. Un classModifier "lg" a été mis pour montrer une
+          version plus large d'une modale. Il est existe également un modifier
+          "sm", pour les modales plus petites. Mais il est possible d'ajouter
+          son propre modifier pour personnaliser selon ses besoins avec un peu
+          de CSS.
         </p>
       </Modal.Body>
       <Modal.Footer>
@@ -74,6 +77,7 @@ const ModalCoreStoryTemplate: Story<ModalCoreProps> = (args) => (
     </ModalCore>
   </div>
 );
+
 export const ModalCoreStrory = ModalCoreStoryTemplate.bind({});
 ModalCoreStrory.args = {
   isOpen: true,
@@ -87,9 +91,9 @@ export default {
     readme: {
       sidebar: readme,
     },
-    options: {},
+    actions: { argTypesRegex: '^on.*' },
   },
   argTypes: {
     onOutsideTap: { action: 'onOutsideTap' },
   },
-};
+} as Meta;

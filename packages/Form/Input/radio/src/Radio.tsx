@@ -1,30 +1,34 @@
-import React, { ComponentProps } from 'react';
-import type { Option } from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
-import RadioModes from './RadioModes';
 
-interface RadioProps
-  extends Omit<ComponentProps<typeof RadioItem>, 'id' | 'label'> {
-  className?: string;
-  classModifier?: string;
-  options: Option[];
-  mode?: string;
+export enum RadioModes {
+  classic = 'classic',
+  default = 'default',
+  inline = 'inline',
 }
 
-const Radio: React.FC<RadioProps> = ({
-  className,
+type RadioProps = Omit<
+  ComponentPropsWithoutRef<typeof RadioItem>,
+  'id' | 'label' | 'className'
+> & {
+  options: Option[];
+  mode?: keyof typeof RadioModes;
+};
+
+const Radio = ({
   classModifier,
   options,
   value = '',
-  name,
   mode = RadioModes.default,
   children,
   disabled,
   ...otherProps
-}) => {
-  const classNameWithMode = getClassName(mode);
+}: RadioProps) => {
+  const classNameMode = getClassNameMode(mode);
   const optionItems = options.map((option: Option) => {
     const isChecked = option.value === value;
+
     return (
       <RadioItem
         {...otherProps}
@@ -32,11 +36,10 @@ const Radio: React.FC<RadioProps> = ({
         id={option.id}
         value={option.value}
         label={option.label}
-        checked={isChecked}
+        isChecked={isChecked}
         disabled={option.disabled || disabled}
-        className={classNameWithMode}
-        classModifier={classModifier}
-        optionClassName={className}>
+        className={classNameMode}
+        classModifier={classModifier}>
         {children}
       </RadioItem>
     );
@@ -44,7 +47,7 @@ const Radio: React.FC<RadioProps> = ({
   return <>{optionItems}</>;
 };
 
-const getClassName = (mode: string): string => {
+const getClassNameMode = (mode: RadioProps['mode']) => {
   switch (mode) {
     case RadioModes.classic:
       return 'af-form__radio';
@@ -55,4 +58,17 @@ const getClassName = (mode: string): string => {
   }
 };
 
-export default Radio;
+Radio.displayName = 'EnhancedInputRadio';
+const handlers = {
+  onChange:
+    ({ onChange, name }: any) =>
+    ({ value, id }: any) => {
+      onChange({
+        value,
+        id,
+        name,
+      });
+    },
+};
+
+export default withInput<RadioProps>(handlers, () => ({}))(Radio);

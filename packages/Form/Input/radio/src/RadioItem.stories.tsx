@@ -23,11 +23,10 @@ RadioItemStory.args = {
   id: '',
   value: '',
   label: 'Paris',
-  checked: false,
+  isChecked: false,
   readOnly: false,
   disabled: false,
   classModifier: '',
-  className: '',
 };
 RadioItemStory.argTypes = {
   onChange: { action: 'onChange' },

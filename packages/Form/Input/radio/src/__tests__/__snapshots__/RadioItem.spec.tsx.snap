@@ -3,7 +3,7 @@
 exports[`RadioItem should have correct html rendered 1`] = `
 <DocumentFragment>
   <div
-    class="af-form__radio "
+    class="af-form__radio"
   >
     <input
       class="af-form__input-radio"

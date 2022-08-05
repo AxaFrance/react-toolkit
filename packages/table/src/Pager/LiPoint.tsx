@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { WithVisibilityOption } from '@axa-fr/react-toolkit-core';
 
-export type LiPointProps = WithVisibilityOption &
-  React.HTMLProps<HTMLAnchorElement>;
+type LiPointProps = WithVisibilityOption & {
+  children?: ReactNode;
+};
 
-const LiPoint: React.SFC<LiPointProps> = (props) => {
-  const { isVisible, children } = props;
+const LiPoint = ({ isVisible, children }: LiPointProps) => {
   if (!isVisible) {
     return null;
   }

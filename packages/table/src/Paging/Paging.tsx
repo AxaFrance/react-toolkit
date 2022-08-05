@@ -1,108 +1,69 @@
-import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  WithOnChangeEvent,
-  OnChangeCustomEvent,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
-import Pager, { PagerComponentProps } from '../Pager/Pager';
-import Items, { ItemsComponentProps } from '../Items/Items';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import Pager from '../Pager/Pager';
+import Items from '../Items/Items';
 
-const DEFAULT_CLASSNAME = 'af-paging';
+type PagingComponentProps = ComponentPropsWithoutRef<typeof Pager> &
+  ComponentPropsWithoutRef<typeof Items>;
 
-export interface PagingEvent {
-  numberItems: number;
-  page: number;
-}
-
-export type PagingComponentProps = React.HTMLProps<HTMLTableElement> &
-  WithOnChangeEvent<PagingEvent> &
-  PagerComponentProps &
-  ItemsComponentProps;
-
-const defaultProps: Partial<PagingComponentProps> = {
-  numberItems: 10,
-  numberPages: 1,
-  currentPage: 1,
-  id: null,
+export type Props = Omit<PagingComponentProps, 'onChange'> & {
+  onChange: (e: { numberItems: number; page: number }) => void;
 };
 
-class Paging extends React.PureComponent<PagingComponentProps> {
-  constructor(props: PagingComponentProps) {
-    super(props);
-    this.onChangePage = this.onChangePage.bind(this);
-    this.onChangeItems = this.onChangeItems.bind(this);
-  }
-
-  onChangePage(data: OnChangeCustomEvent) {
-    const { onChange, numberItems } = this.props;
-    onChange({
-      numberItems,
-      page: data.value,
-    });
-  }
-
-  onChangeItems(data: OnChangeCustomEvent) {
-    const { onChange, currentPage } = this.props;
-    onChange({
-      numberItems: data.value,
-      page: currentPage,
-    });
-  }
-
-  render() {
-    const {
-      className,
-      currentPage,
-      displayLabel,
-      elementsLabel,
-      id,
-      mode,
-      nextLabel,
-      numberItems,
-      numberPages,
-      ofLabel,
-      previousLabel,
-    } = this.props;
-
-    return (
-      <div className={className}>
-        <div className="af-paging__limit">
-          <Items
-            onChange={this.onChangeItems}
-            numberItems={numberItems}
-            id={id}
-            displayLabel={displayLabel}
-            elementsLabel={elementsLabel}
-          />
-        </div>
-        <div className="af-paging__pager">
-          <Pager
-            onChange={this.onChangePage}
-            currentPage={currentPage}
-            numberPages={numberPages}
-            previousLabel={previousLabel}
-            nextLabel={nextLabel}
-            ofLabel={ofLabel}
-            mode={mode}
-          />
-        </div>
+const Paging = ({
+  className,
+  classModifier,
+  currentPage,
+  displayLabel,
+  elementsLabel,
+  id,
+  mode,
+  nextLabel,
+  numberItems,
+  numberPages,
+  ofLabel,
+  previousLabel,
+  onChange,
+}: Props) => {
+  const componentClassName = useComponentClassName(
+    className,
+    classModifier,
+    'af-paging'
+  );
+  return (
+    <div className={componentClassName}>
+      <div className="af-paging__limit">
+        <Items
+          onChange={(e) =>
+            onChange({
+              numberItems: e.value,
+              page: currentPage,
+            })
+          }
+          numberItems={numberItems}
+          id={id}
+          displayLabel={displayLabel}
+          elementsLabel={elementsLabel}
+        />
       </div>
-    );
-  }
-}
+      <div className="af-paging__pager">
+        <Pager
+          onChange={(e) =>
+            onChange({
+              numberItems,
+              page: e.value,
+            })
+          }
+          currentPage={currentPage}
+          numberPages={numberPages}
+          previousLabel={previousLabel}
+          nextLabel={nextLabel}
+          ofLabel={ofLabel}
+          mode={mode}
+        />
+      </div>
+    </div>
+  );
+};
 
-export type PagingProps = PagingComponentProps & WithClassModifierOptions;
-
-const enhance = compose(
-  identity<PagingComponentProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-const Enhance = enhance(Paging);
-Enhance.defaultProps = defaultProps;
-
-export default Enhance;
+export default Paging;

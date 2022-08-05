@@ -15,7 +15,6 @@ module.exports = {
     '../packages/Form/Input/checkbox/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/Input/choice/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/Input/date/src/*.stories.@(ts|tsx|js)',
-    '../packages/Form/Input/date-phone/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/Input/file/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/Input/number/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/Input/pass/src/*.stories.@(ts|tsx|js)',

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Field> renders Field correctly 1`] = `
+exports[`<Field> Render <Field/> when have children HelpMessage 1`] = `
 <DocumentFragment>
   <div
     class="row af-form__group"
@@ -10,18 +10,196 @@ exports[`<Field> renders Field correctly 1`] = `
     >
       <label
         class="af-form__group-label"
-        for="id"
+        for=""
       >
-        label
+        my label
       </label>
     </div>
     <div
       class="col-md-10"
     >
-      <input
-        type="text"
-      />
+      <small
+        class="af-form__help"
+      >
+        Want help ?
+      </small>
     </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Field> Render <Field/> when have children HelpMessage and have message and forceDisplayMessage equal true 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          error message
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Field> Render <Field/> when have children complete example with error message 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__field af-form__field--error"
+      >
+        <input
+          class="ìnput--error"
+          id="id"
+          name="name"
+          type="text"
+        />
+      </div>
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          error message
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Field> Render <Field/> when have children complete example without error message 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__field"
+      >
+        <input
+          id="id"
+          name="name"
+          type="text"
+        />
+      </div>
+      <small
+        class="af-form__help"
+      >
+        Want help ?
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Field> Render <Field/> when have message and forceDisplayMessage equal true 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <small
+        class="af-form__message af-form__message--error"
+      >
+        <span
+          class="glyphicon glyphicon-exclamation-sign"
+        />
+        <span
+          class="af-form__error-text"
+        >
+          error message
+        </span>
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Field> Render <Field/> when is not visible 1`] = `<DocumentFragment />`;
+
+exports[`<Field> Render <Field/> when is visible 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    />
   </div>
 </DocumentFragment>
 `;

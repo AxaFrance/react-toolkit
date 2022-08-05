@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withInput Should not return Enhanced Input when isVisible is false 1`] = `<DocumentFragment />`;
+
+exports[`withInput Should return Enhanced Input when withInput have been called with defaultclassName and input component 1`] = `
+<DocumentFragment>
+  <p>
+    defaultclassName
+  </p>
+  <p />
+  <input
+    id="name"
+    name="name"
+    type="text"
+  />
+</DocumentFragment>
+`;
+
+exports[`withInput Should return Enhanced Input when withInput have been called with defaultclassName and input component and modifier 1`] = `
+<DocumentFragment>
+  <p>
+    defaultclassName defaultclassName--custom
+  </p>
+  <p>
+    custom
+  </p>
+  <input
+    id="name"
+    name="name"
+    type="text"
+  />
+</DocumentFragment>
+`;

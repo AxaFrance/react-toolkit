@@ -1,14 +1,10 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import StepNoLink from './StepNoLink';
 
-const defaultClassName = 'on af-steps-list-step';
-
 type Props = ComponentPropsWithoutRef<typeof StepNoLink>;
 const StepCurrent = ({
-  className = defaultClassName,
+  className = 'on af-steps-list-step',
   ...otherProps
-}: Props) => {
-  return <StepNoLink className={className} {...otherProps} />;
-};
+}: Props) => <StepNoLink className={className} {...otherProps} />;
 
 export default StepCurrent;

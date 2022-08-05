@@ -3,20 +3,38 @@ import {
   Field,
   HelpMessage,
   FieldInput,
-  InputManager,
-  withInputClassModifier,
+  useInputClassModifier,
 } from '@axa-fr/react-toolkit-form-core';
-
+import { useId } from '@axa-fr/react-toolkit-core';
 import Pass from './Pass';
-import { StrengthEnum } from './Constant';
 
-type Strength = 'bad' | 'okay' | 'good' | 'verygood' | 'excellent';
+const strengthList: Record<number, string> = {
+  0: 'bad',
+  1: 'okay',
+  2: 'good',
+  3: 'verygood',
+  4: 'excellent',
+};
 
+const calculateStrenght = (score: string) => {
+  if (score === null) {
+    return null;
+  }
+  let strength = Number(score) ?? 0;
+  if (strength > 4) {
+    strength = 4;
+  }
+  if (strength < 0) {
+    strength = 0;
+  }
+  return strengthList[strength];
+};
+
+type PassProps = ComponentProps<typeof Pass>;
 type Props = ComponentProps<typeof Field> &
-  ComponentProps<typeof Pass> & {
+  Omit<PassProps, 'onToggleType' | 'type'> & {
     helpMessage?: ReactNode;
-    inputClassModifier: string;
-    inputFieldClassModifier: string;
+    score?: string;
   };
 
 const PassInput = ({
@@ -33,11 +51,20 @@ const PassInput = ({
   classModifier,
   classNameContainerLabel,
   classNameContainerInput,
-  inputFieldClassModifier,
-  inputClassModifier,
+  score,
   ...passProps
 }: Props) => {
-  const inputId = InputManager.getInputId(id);
+  const strength = calculateStrenght(score);
+  const classModifierStrength = [classModifier ?? '', strength ?? ''].join(' ');
+
+  const [type, setType] = useState<PassProps['type']>('password');
+  const inputId = useId(id);
+  const { inputClassModifier, inputFieldClassModifier } = useInputClassModifier(
+    classModifierStrength,
+    disabled,
+    !!children
+  );
+
   return (
     <Field
       label={label}
@@ -47,7 +74,7 @@ const PassInput = ({
       forceDisplayMessage={forceDisplayMessage}
       className={className}
       id={inputId}
-      classModifier={classModifier}
+      classModifier={classModifierStrength}
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}>
       <FieldInput
@@ -55,9 +82,13 @@ const PassInput = ({
         classModifier={inputFieldClassModifier}>
         <Pass
           {...passProps}
+          type={type}
           id={inputId}
           disabled={disabled}
           classModifier={inputClassModifier}
+          onToggleType={() =>
+            setType(type === 'password' ? 'text' : 'password')
+          }
         />
         {children}
         <HelpMessage message={helpMessage} isVisible={!message} />
@@ -66,33 +97,4 @@ const PassInput = ({
   );
 };
 
-const EnhancedComponent = ({
-  onChange,
-  onToggleType,
-  score,
-  ...props
-}: Props & { score?: number }) => {
-  const [type, setType] = useState<'text' | 'password'>('password');
-  const [strength, setStrength] = useState<Strength>();
-
-  const toggleType = () => {
-    const newType = type === 'password' ? 'text' : 'password';
-    setType(newType);
-    onToggleType();
-  };
-
-  return (
-    <PassInput
-      {...props}
-      type={type}
-      inputClassModifier={strength}
-      onChange={(e) => {
-        onChange && onChange(e);
-        setStrength(StrengthEnum[score] as Strength);
-      }}
-      onToggleType={toggleType}
-    />
-  );
-};
-
-export default withInputClassModifier(EnhancedComponent);
+export default PassInput;

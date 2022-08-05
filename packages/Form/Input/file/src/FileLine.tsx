@@ -1,9 +1,8 @@
 import React from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { useComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import Popover from '@axa-fr/react-toolkit-popover';
 
-const defaultClassName = 'af-form__file-line';
 const style = {
   maxWidth: '200px',
   maxHeight: '200px',
@@ -49,10 +48,10 @@ const FileLine = ({
   id,
   onClick,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = useComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    'af-form__file-line'
   );
   return (
     <li className={componentClassName}>
