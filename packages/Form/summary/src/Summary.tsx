@@ -1,9 +1,10 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import Alert from '@axa-fr/react-toolkit-alert';
+import { createId } from '@axa-fr/react-toolkit-core';
 
 type SummaryProps = Omit<ComponentPropsWithoutRef<typeof Alert>, 'title'> & {
   title?: string;
-  messages?: string[];
+  messages?: ReactNode[];
   isVisible?: boolean;
 };
 const Summary = ({
@@ -23,6 +24,7 @@ const Summary = ({
   if (!messagesNotBlank.length) {
     return null;
   }
+
   return (
     <Alert
       classModifier={classModifier}
@@ -30,11 +32,14 @@ const Summary = ({
       icon="warning-sign"
       title={title}>
       <ul className="af-summary__message-list">
-        {messages.map((message) => (
-          <li className="af-summary__message-item" key={message}>
-            <span>{message}</span>
-          </li>
-        ))}
+        {messages.map((message) => {
+          const id = createId();
+          return (
+            <li className="af-summary__message-item" key={`message_${id}`}>
+              {message}
+            </li>
+          );
+        })}
       </ul>
     </Alert>
   );

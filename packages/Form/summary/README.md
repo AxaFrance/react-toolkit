@@ -19,7 +19,10 @@ import '@axa-fr/react-toolkit-alert/dist/af-alert.css';
 ```javascript
 const SummaryForm = () => (
   <Summary
-    messages={['Field Author is required', 'Field PlaceName is required']}
+    messages={[
+      <span>Field Author is required</span>,
+      'Field PlaceName is required',
+    ]}
     title="Formulaire invalide"
     classModifier="error"
     className="af-alert"

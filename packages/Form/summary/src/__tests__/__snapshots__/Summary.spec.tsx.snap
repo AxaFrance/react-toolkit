@@ -39,27 +39,78 @@ exports[`<Summary> Renders correctly when visible 1`] = `
           <li
             class="af-summary__message-item"
           >
+            Sample message 1
+          </li>
+          <li
+            class="af-summary__message-item"
+          />
+          <li
+            class="af-summary__message-item"
+          >
+            Sample message 2
+          </li>
+          <li
+            class="af-summary__message-item"
+          />
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Summary> Renders correctly with ReactNode in messages 1`] = `
+<DocumentFragment>
+  <div
+    class="af-alert af-alert--danger"
+    role="alert"
+  >
+    <div
+      class="af-alert__title"
+    >
+      <div
+        class="af-alert__title-icon"
+      >
+        <i
+          class="glyphicon glyphicon-warning-sign"
+        />
+      </div>
+      <div
+        class="af-alert__title-text"
+      >
+        Invalid form
+      </div>
+    </div>
+    <div
+      class="af-alert__content"
+    >
+      <div
+        class="af-alert__content__left"
+      />
+      <div
+        class="af-alert__content__right"
+      >
+        <ul
+          class="af-summary__message-list"
+        >
+          <li
+            class="af-summary__message-item"
+          >
             <span>
               Sample message 1
             </span>
           </li>
           <li
             class="af-summary__message-item"
-          >
-            <span />
-          </li>
+          />
           <li
             class="af-summary__message-item"
           >
-            <span>
-              Sample message 2
-            </span>
+            Sample message 2
           </li>
           <li
             class="af-summary__message-item"
-          >
-            <span />
-          </li>
+          />
         </ul>
       </div>
     </div>
