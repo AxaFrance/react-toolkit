@@ -39,7 +39,7 @@ const SelectDefault = ({
       id={inputId}
       value={value}
       options={newOptions}
-      onChange={(e) => {
+      onChange={(e: Event) => {
         onChange(e);
         setHasHandleChangeOnce(!forceDisplayPlaceholder);
       }}

@@ -34,6 +34,63 @@ exports[`renders Select correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`renders Select with categories correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__select-container"
+  >
+    <select
+      class="af-form__input-select"
+      id="muid"
+      name="placeName"
+    >
+      <optgroup
+        label="Color"
+      >
+        <option
+          value="red"
+        >
+          Red
+        </option>
+        <option
+          value="blue"
+        >
+          Blue
+        </option>
+        <option
+          value="green"
+        >
+          Green
+        </option>
+      </optgroup>
+      <optgroup
+        label="Size"
+      >
+        <option
+          value="small"
+        >
+          Small size
+        </option>
+        <option
+          value="medium"
+        >
+          Medium size
+        </option>
+        <option
+          value="large"
+        >
+          Large size
+        </option>
+      </optgroup>
+    </select>
+    <span
+      aria-controls="muid"
+      class="glyphicon glyphicon-menu-down"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`renders SelectBase correctly 1`] = `
 <DocumentFragment>
   <div

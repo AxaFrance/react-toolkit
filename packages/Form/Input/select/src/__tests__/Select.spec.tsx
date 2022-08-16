@@ -23,15 +23,41 @@ test('renders Select correctly', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders SelectBase correctly', () => {
+test('renders Select with categories correctly', () => {
+  const groupedOptions = [
+    {
+      label: 'Color',
+      subOptions: [
+        { value: 'red', label: 'Red' },
+        { value: 'blue', label: 'Blue' },
+        { value: 'green', label: 'Green' },
+      ],
+    },
+    {
+      label: 'Size',
+      subOptions: [
+        { value: 'small', label: 'Small size' },
+        { value: 'medium', label: 'Medium size' },
+        { value: 'large', label: 'Large size' },
+      ],
+    },
+  ];
+
   const { asFragment } = render(
-    <SelectBase
+    <Select
       name="placeName"
       id="muid"
       onChange={() => null}
-      options={options}
+      options={groupedOptions}
       value="myvalue"
     />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('renders SelectBase correctly', () => {
+  const { asFragment } = render(
+    <SelectBase name="placeName" id="muid" options={options} value="myvalue" />
   );
   expect(asFragment()).toMatchSnapshot();
 });

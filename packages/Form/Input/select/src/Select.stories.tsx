@@ -13,6 +13,25 @@ const options = [
   { value: 'drink', label: 'For drink' },
 ];
 
+const groupedOptions = [
+  {
+    label: 'Color',
+    subOptions: [
+      { value: 'red', label: 'Red' },
+      { value: 'blue', label: 'Blue' },
+      { value: 'green', label: 'Green' },
+    ],
+  },
+  {
+    label: 'Size',
+    subOptions: [
+      { value: 'small', label: 'Small size' },
+      { value: 'medium', label: 'Medium size' },
+      { value: 'large', label: 'Large size' },
+    ],
+  },
+];
+
 export default {
   title: 'Form elements/Select',
   component: Select,
@@ -35,7 +54,6 @@ const Template: SelectStory = (args) => (
             isVisible
             classModifier=""
             className=""
-            options={options}
           />
           <HelpMessage message="Enter the place name, ex : Webcenter" />
           <FieldError />
@@ -47,9 +65,19 @@ const Template: SelectStory = (args) => (
 
 export const SelectDefault: SelectStory = Template.bind({});
 SelectDefault.storyName = 'Select';
+SelectDefault.args = {
+  options,
+};
 
 export const SelectKeepPlaceholderStory: SelectStory = Template.bind({});
 SelectKeepPlaceholderStory.storyName = 'Select keep placeholder';
 SelectKeepPlaceholderStory.args = {
   forceDisplayPlaceholder: true,
+  options,
+};
+
+export const SelectWithCategoriesStory: SelectStory = Template.bind({});
+SelectWithCategoriesStory.storyName = 'Select with categories';
+SelectWithCategoriesStory.args = {
+  options: groupedOptions,
 };
