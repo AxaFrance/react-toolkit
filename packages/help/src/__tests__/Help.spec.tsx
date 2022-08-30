@@ -4,6 +4,25 @@ import UserEvent from '@testing-library/user-event';
 import Help from '../Help';
 
 describe('Help', () => {
+  it('should show default help', () => {
+    render(<Help>Help content</Help>);
+
+    expect(screen.getByText('i')).toBeInTheDocument();
+  });
+
+  it('should show help passed in props', () => {
+    render(
+      <Help helpButtonContent={<i className="glyphicon glyphicon-warning" />}>
+        Help content
+      </Help>
+    );
+
+    expect(screen.queryByText('i')).not.toBeInTheDocument();
+    expect(
+      document.getElementsByClassName('glyphicon glyphicon-warning')
+    ).not.toEqual([]);
+  });
+
   describe('Mode click (default)', () => {
     it('should show help on when clicking on i', async () => {
       // Arrange
