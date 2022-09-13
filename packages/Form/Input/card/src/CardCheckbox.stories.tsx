@@ -24,7 +24,7 @@ const Template: Story<ComponentProps<typeof CardGroupCheckbox>> = ({
   disabled,
   ...args
 }) => (
-  <CardGroupCheckbox values={['1']} {...args} onChange={action('onChange')}>
+  <CardGroupCheckbox values={['1']} {...args}>
     <Card name="name" id="name" value="1" disabled={disabled}>
       <CardHeader>
         <p className="af-rccard-header__title"> Référence</p>

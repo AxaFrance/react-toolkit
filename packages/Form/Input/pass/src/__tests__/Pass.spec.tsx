@@ -7,7 +7,7 @@ import PassInput from '../PassInput';
 describe('Form/PassInput/Pass', () => {
   test('Pass display correctly', () => {
     const { asFragment } = render(
-      <Pass onChange={() => {}} name="passwordtest" onToggleType={jest.fn()} />
+      <Pass name="passwordtest" onToggleType={jest.fn()} />
     );
     expect(asFragment()).toMatchSnapshot();
     expect(screen.getByRole('password')).toBeInTheDocument();
@@ -61,7 +61,6 @@ describe('<PassInput />', () => {
           label="Password"
           name="passwordtest"
           score="0"
-          onChange={() => {}}
         />
       );
 

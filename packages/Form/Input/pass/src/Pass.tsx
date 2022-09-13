@@ -57,8 +57,8 @@ const handlers = {
     (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       e.stopPropagation();
-      onToggleType();
+      onToggleType && onToggleType();
     },
 };
 
-export default withInput<Props>(handlers)(Pass);
+export default withInput(handlers)(Pass);

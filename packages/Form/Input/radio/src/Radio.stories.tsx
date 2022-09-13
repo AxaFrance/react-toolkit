@@ -1,11 +1,10 @@
 import { Meta, Story } from '@storybook/react';
-import React, { ComponentProps } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { Radio, RadioModes } from '.';
 import readme from '../README.md';
 
 export default {
   title: 'Form elements/Radio',
-  component: Radio,
   parameters: {
     readme: {
       sidebar: readme,
@@ -13,7 +12,8 @@ export default {
   },
 } as Meta;
 
-export const RadioStory: Story<ComponentProps<typeof Radio>> = (args) => (
+type RadioProps = ComponentPropsWithoutRef<typeof Radio>;
+export const RadioStory: Story<RadioProps> = (args) => (
   <form className="af-form" name="myform">
     <div className="row">
       <div className="col-md-10">

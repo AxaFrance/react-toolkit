@@ -56,14 +56,21 @@ const Select = ({ mode = 'default', children, ...props }: SelectProps) => {
 
 const handlers = {
   onChange:
-    ({ name, id, onChange }: any) =>
+    ({
+      name,
+      id,
+      onChange,
+    }: Omit<Props, 'onChange'> & {
+      onChange: (data: { id: string; name: string; value: string }) => void;
+    }) =>
     (e: any) => {
-      onChange({
-        value: e.value,
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          value: e.value,
+          name,
+          id,
+        });
     },
 };
 
-export default withInput<SelectProps>(handlers)(Select);
+export default withInput(handlers)(Select);

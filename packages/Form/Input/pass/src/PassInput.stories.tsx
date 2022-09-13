@@ -22,18 +22,18 @@ export const PassInputStory: Story<PassInputProps> = ({
   ...args
 }) => {
   const [value, setValue] = useState(initValue);
-  const [score, setScore] = useState<number>();
+  const [score, setScore] = useState<number>(0);
   return (
     <form className="af-form" name="myform">
       <PassInput
+        {...args}
         value={value}
         onChange={(e) => {
           setValue(e.value);
-          onChange(e);
+          onChange && onChange(e);
           setScore(Math.floor(Math.random() * 5));
         }}
-        score={score}
-        {...args}>
+        score={score.toString()}>
         <HelpButton>Choose a password</HelpButton>
       </PassInput>
     </form>
@@ -60,5 +60,4 @@ PassInputStory.args = {
 };
 PassInputStory.argTypes = {
   onChange: { action: 'onChange' },
-  onToggleType: { action: 'onToggleType' },
 };

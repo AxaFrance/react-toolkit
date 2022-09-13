@@ -1,8 +1,4 @@
-import React, {
-  ComponentProps,
-  ComponentPropsWithoutRef,
-  ReactNode,
-} from 'react';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   FieldInput,
   HelpMessage,
@@ -14,9 +10,13 @@ import { useId } from '@axa-fr/react-toolkit-core';
 import FileTable from './FileTable';
 import File from './File';
 
-type Props = ComponentProps<typeof Field> &
-  Pick<ComponentPropsWithoutRef<typeof FileTable>, 'values' | 'errors'> &
-  ComponentProps<typeof File> & {
+type FieldProps = ComponentPropsWithoutRef<typeof Field>;
+type FileProps = ComponentPropsWithoutRef<typeof File>;
+type FileTableProps = ComponentPropsWithoutRef<typeof FileTable>;
+
+type Props = FieldProps &
+  FileProps &
+  Pick<FileTableProps, 'values' | 'errors'> & {
     fileLabel?: string;
     helpMessage?: ReactNode;
   };

@@ -49,9 +49,18 @@ const defaultClassName = (mode: string) => {
   }
 };
 
+type OnChange = {
+  onChange: (data: {
+    values: string[];
+    target: { value: string; checked: boolean };
+    name: string;
+    id: string;
+  }) => void;
+};
+
 const handlersOverride = {
   onChange:
-    ({ onChange, name, values, id }: any) =>
+    ({ onChange, name, values, id }: Omit<Props, 'onChange'> & OnChange) =>
     (e: any) => {
       let newValues: typeof values = [];
       if (values) {
@@ -64,22 +73,24 @@ const handlersOverride = {
       } else {
         newValues.splice(index, 1);
       }
-      onChange({
-        values: newValues,
-        target: { value: e.value, checked },
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          values: newValues,
+          target: { value: e.value, checked },
+          name,
+          id,
+        });
     },
 };
 
-const props = ({ mode = CheckBoxModes.default }: any) => ({
+const propsOverride = ({
+  mode = CheckBoxModes.default,
+}: {
+  mode?: keyof typeof CheckBoxModes;
+}) => ({
   className: defaultClassName(mode),
 });
 
 Checkbox.displayName = 'EnhancedInputCheckbox';
 
-export default withInput<Props & { mode?: string }>(
-  handlersOverride,
-  props
-)(Checkbox);
+export default withInput(handlersOverride, propsOverride)(Checkbox);

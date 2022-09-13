@@ -46,7 +46,6 @@ MultiSelectStory.storyName = 'MultiSelect';
 MultiSelectStory.args = {
   name: 'placeName',
   options,
-  readOnly: false,
   disabled: false,
   className: '',
   placeholder: 'Select',

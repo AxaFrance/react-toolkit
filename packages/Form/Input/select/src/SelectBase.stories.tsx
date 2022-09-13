@@ -29,7 +29,7 @@ type SelectBaseStory = Story<ComponentProps<typeof SelectBase>>;
 const Template: SelectBaseStory = (args) => (
   <form className="af-form" name="myform">
     <div className="af-form__select">
-      <SelectBase options={options} {...args} />
+      <SelectBase {...args} options={options} />
     </div>
   </form>
 );

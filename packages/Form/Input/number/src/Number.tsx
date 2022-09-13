@@ -2,9 +2,8 @@ import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
 import { useId, useComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
-type Props = Omit<ComponentPropsWithRef<'input'>, 'onChange'> & {
+type Props = ComponentPropsWithRef<'input'> & {
   classModifier?: string;
-  onChange?: (e: any) => void;
 };
 const CustomNumber = forwardRef<HTMLInputElement, Props>(
   ({ id, className, classModifier, ...otherProps }, inputRef) => {
@@ -26,16 +25,21 @@ const CustomNumber = forwardRef<HTMLInputElement, Props>(
   }
 );
 
+type CustomOnChange = {
+  onChange: (data: { value: number; name: string; id: string }) => void;
+};
+
 const handlers = {
   onChange:
-    ({ onChange, name, id }: Props) =>
+    ({ onChange, name, id }: Omit<Props, 'onChange'> & CustomOnChange) =>
     (e: ChangeEvent<HTMLInputElement>) => {
-      onChange({
-        value: e.target.valueAsNumber,
-        name,
-        id,
-      });
+      onChange &&
+        onChange({
+          value: e.target.valueAsNumber,
+          name,
+          id,
+        });
     },
 };
 
-export default withInput<Props>(handlers)(CustomNumber);
+export default withInput(handlers)(CustomNumber);

@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactSelect, { OptionsType } from 'react-select';
-import ReactSelectAsync, { Props as SelectProps } from 'react-select/async';
+import ReactSelect, { GroupBase, Options } from 'react-select';
+import ReactSelectAsync, { AsyncProps } from 'react-select/async';
 import { createId } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Option = { value: string; label: string; [x: string]: any };
-type Props = Omit<SelectProps<Option, true>, 'value'> & {
+type Props = Omit<
+  AsyncProps<Option, true, GroupBase<Option>>,
+  'value' | 'isDisabled'
+> & {
   values?: string[] | null;
   value?: string;
+  disabled?: boolean;
 };
 const MultiSelect = ({
   name,
@@ -19,31 +23,25 @@ const MultiSelect = ({
   onBlur,
   placeholder = 'Select',
   className = 'react-select',
-  readOnly,
   disabled,
-  loadingPlaceholder = 'Chargement...',
-  searchPromptText = 'Saisir pour chercher',
-  noResultsText = 'Aucun résultat',
+  loadingMessage = () => 'Chargement...',
   ...otherProps
 }: Props) => {
-  const isDisabled = disabled || readOnly;
   const commonProps = {
     name,
     onChange,
     onBlur,
     placeholder,
     className,
-    isDisabled,
+    isDisabled: disabled,
     options,
-    searchPromptText,
-    noResultsText,
     valueKey: 'value',
     labelKey: 'label',
     ...otherProps,
   };
 
   if (values != null) {
-    const newValues = (options as OptionsType<Option>).filter((opt) =>
+    const newValues = (options as Options<Option>).filter((opt) =>
       values.includes(opt.value)
     );
 
@@ -57,15 +55,13 @@ const MultiSelect = ({
       <ReactSelectAsync
         {...commonValuesProps}
         loadOptions={loadOptions}
-        loadingPlaceholder={loadingPlaceholder}
+        loadingMessage={loadingMessage}
       />
     ) : (
       <ReactSelect {...commonValuesProps} />
     );
   }
-  const newValue = (options as OptionsType<Option>).find(
-    (o) => o.value === value
-  );
+  const newValue = (options as Options<Option>).find((o) => o.value === value);
 
   const commonValueProps = {
     ...commonProps,
@@ -77,34 +73,49 @@ const MultiSelect = ({
     <ReactSelectAsync
       {...commonValueProps}
       loadOptions={loadOptions}
-      loadingPlaceholder={loadingPlaceholder}
+      loadingMessage={loadingMessage}
     />
   ) : (
     <ReactSelect {...commonValueProps} />
   );
 };
 
+type OnChange = {
+  onChange: (data: {
+    id: string;
+    name: string;
+    values?: string[];
+    value?: string;
+  }) => void;
+};
+
 const handlers = {
   onChange:
-    ({ values, name, id: selectId, onChange }: any) =>
+    ({
+      values,
+      name,
+      id: selectId,
+      onChange,
+    }: Omit<Props, 'onChange'> & OnChange) =>
     (newValue: Option | Option[]) => {
       const id = selectId ?? createId();
       if (values !== null) {
         const newValues = ((newValue as Option[]) || []).map((v) => v.value);
-        onChange({
-          values: newValues,
-          name,
-          id,
-        });
+        onChange &&
+          onChange({
+            values: newValues,
+            name,
+            id,
+          });
       } else {
-        onChange({
-          value: (newValue as Option).value,
-          name,
-          id,
-        });
+        onChange &&
+          onChange({
+            value: (newValue as Option).value,
+            name,
+            id,
+          });
       }
     },
 };
 
-const EnhancedComponent = withInput<Props>(handlers)(MultiSelect);
-export default EnhancedComponent;
+export default withInput(handlers)(MultiSelect);

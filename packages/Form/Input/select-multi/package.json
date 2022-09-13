@@ -15,7 +15,7 @@
   "dependencies": {
     "@axa-fr/react-toolkit-core": "2.0.0-alpha.10",
     "@axa-fr/react-toolkit-form-core": "2.0.0-alpha.10",
-    "react-select": "^3.2.0"
+    "react-select": "^5.4.0"
   },
   "license": "MIT",
   "publishConfig": {
@@ -25,8 +25,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AxaGuilDEv/react-toolkit.git"
-  },
-  "devDependencies": {
-    "@types/react-select": "^3.1.2"
   }
 }

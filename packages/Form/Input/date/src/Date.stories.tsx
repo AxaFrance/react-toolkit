@@ -14,7 +14,6 @@ export default {
     },
     options: {},
   },
-  argTypes: { onChange: { action: 'onChange' } },
 } as ComponentMeta<typeof CustomDate>;
 
 const commonProps = {
@@ -32,9 +31,9 @@ export const DateStory: ComponentStory<typeof CustomDate> = ({
   return (
     <CustomDate
       value={value}
-      onChange={(date) => {
-        setValue(date);
-        onChange(date);
+      onChange={(data) => {
+        setValue(data.value);
+        onChange && onChange(data);
       }}
       {...props}
       name="date"
@@ -45,6 +44,7 @@ export const DateStory: ComponentStory<typeof CustomDate> = ({
 DateStory.args = {
   ...commonProps,
 };
+DateStory.argTypes = { onChange: { action: 'onChange' } };
 
 const Template: ComponentStory<typeof DateInput> = (props) => (
   <form className="af-form" name="myform">
