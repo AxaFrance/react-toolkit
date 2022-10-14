@@ -41,7 +41,7 @@ type HeaderRestitutionProps = WithClassModifierOptions &
   HeaderRestitutionBaseProps;
 
 const enhance = compose(
-  identity<HeaderRestitutionBaseProps>(),
+  identity<HeaderRestitutionProps>(),
   withClassDefault(DEFAULT_CLASSNAME),
   withClassModifier()
 );
