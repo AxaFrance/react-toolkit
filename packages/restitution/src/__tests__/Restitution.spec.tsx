@@ -25,6 +25,7 @@ const Component = (
       title="Tarifs"
       subtitle="Tout adhérent, assuré, base (sans EAC ou sans PAC)"
       rightTitle={<RightTitle />}
+      classModifier="myModifier"
     />
     <SectionRestitution>
       <SectionRestitutionRow title="Base de calcul des prestations">

@@ -6,7 +6,7 @@ exports[`<ArticleRestitution /> should render component 1`] = `
     class="af-restitution af-restitution--lg"
   >
     <header
-      class="af-restitution__header"
+      class="af-restitution__header af-restitution__header--myModifier"
     >
       <div
         class="af-restitution__header-left"
