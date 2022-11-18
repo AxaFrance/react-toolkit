@@ -1,14 +1,7 @@
-import { ValidationMap, string } from 'prop-types';
-
 export interface ComponentPropTypes {
   className: string | null;
   classModifier: string | null;
 }
-
-export const propTypes: ValidationMap<ComponentPropTypes> = {
-  className: string,
-  classModifier: string,
-};
 
 export const defaultProps: ComponentPropTypes = {
   className: null,
@@ -16,7 +9,6 @@ export const defaultProps: ComponentPropTypes = {
 };
 
 const Constants = {
-  propTypes,
   defaultProps,
 };
 
