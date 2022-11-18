@@ -29,10 +29,6 @@ const DateInput = ({
   isVisible,
   forceDisplayMessage,
   className,
-  name,
-  value,
-  onChange,
-  readOnly,
   disabled,
   ...otherProps
 }: Props) => {
@@ -58,9 +54,7 @@ const DateInput = ({
         className="af-form__date"
         classModifier={inputFieldClassModifier}>
         <Date
-          name={name}
           id={inputId}
-          value={value}
           classModifier={inputClassModifier}
           disabled={disabled}
           {...otherProps}

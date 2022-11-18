@@ -66,10 +66,16 @@ DateInputStory.args = {
   classNameContainerLabel: 'col-md-2',
   classNameContainerInput: 'col-md-10',
 };
+DateInputStory.argTypes = {
+  onChange: { action: 'changed' },
+};
 
 export const DateInputStoryRequired: ComponentStory<typeof DateInput> =
   Template.bind({});
 DateInputStoryRequired.args = {
   ...DateInputStory.args,
   classModifier: 'required',
+};
+DateInputStoryRequired.argTypes = {
+  onChange: { action: 'changed' },
 };
