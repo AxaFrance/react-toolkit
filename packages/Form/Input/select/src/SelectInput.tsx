@@ -53,7 +53,7 @@ const SelectInput = ({
         className="af-form__select"
         classModifier={inputFieldClassModifier}>
         <Select
-          id={id}
+          id={inputId}
           disabled={disabled}
           classModifier={inputClassModifier}
           {...otherSelectProps}
