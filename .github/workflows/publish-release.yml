@@ -1,11 +1,10 @@
 name: Publish new version
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
-    tags-ignore:
-      - 'v*-alpha*'
+      - '!v*-alpha*'
 
 env:
   NODE_VERSION: 16.x
