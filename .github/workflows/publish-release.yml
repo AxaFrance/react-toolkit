@@ -1,10 +1,12 @@
 name: Publish new version
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*'
       - '!v*-alpha*'
+  
 
 env:
   NODE_VERSION: 16.x
