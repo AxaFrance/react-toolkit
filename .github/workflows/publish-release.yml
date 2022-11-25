@@ -3,7 +3,9 @@ name: Publish new version
 on:
   create:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v*'
+    tags-ignore:
+      - 'v*-alpha*'
 
 env:
   NODE_VERSION: 16.x
