@@ -31,7 +31,7 @@ npm install
 After installing dependencies, it's necessary to build all package via `lerna` with:
 
 ```sh
-npm build
+npm run build
 ```
 
 At this point you are ready to contribute.

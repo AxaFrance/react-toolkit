@@ -6,7 +6,8 @@
   "types": "esm/index.d.ts",
   "private": false,
   "scripts": {
-    "build": "rimraf ./component rimraf ./esm && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
+    "prebuild": "rimraf ./component & rimraf ./esm",
+    "build": "tsc -p tsconfig.json & tsc -p tsconfig-cjs.json"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
