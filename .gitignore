@@ -9,6 +9,7 @@ yarn-error.log*
 /**/storybook-static/
 /**/axa-static/
 /**/dist/
+/**/esm/
 /**/.toolkit/
 jest-test-results.json
 /packages/**/LICENSE
