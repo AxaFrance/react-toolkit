@@ -1,6 +1,6 @@
-import ClassManager from '../ClassManager';
+import getComponentClassName from '../getComponentClassName';
 
-describe('ClassManager', () => {
+describe('getComponentClassName', () => {
   it('Should return empty when no className and no defaultClassName', () => {
     // Arrange
     const className: string = null;
@@ -8,7 +8,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = null;
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -25,7 +25,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = 'default';
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -42,7 +42,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = 'default';
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -59,7 +59,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = null;
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -76,7 +76,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = 'default';
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -93,7 +93,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = 'default';
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName
@@ -110,7 +110,7 @@ describe('ClassManager', () => {
     const defaultClassName: string = 'default';
 
     // Act
-    const componentClassName = ClassManager.getComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       defaultClassName

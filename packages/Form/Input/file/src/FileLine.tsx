@@ -1,5 +1,5 @@
 import React from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import Popover from '@axa-fr/react-toolkit-popover';
 import { CustomFile } from './File';
@@ -46,7 +46,7 @@ const FileLine = ({
   id,
   onClick,
 }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-form__file-line'

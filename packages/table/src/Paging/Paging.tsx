@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Pager from '../Pager/Pager';
 import Items from '../Items/Items';
 
@@ -25,7 +25,7 @@ const Paging = ({
   previousLabel,
   onChange,
 }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-paging'

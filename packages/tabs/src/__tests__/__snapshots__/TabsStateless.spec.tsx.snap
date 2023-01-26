@@ -14,6 +14,7 @@ exports[`<TabStateless> should render component 1`] = `
         <button
           class="af-tabs__link"
           id="0"
+          type="button"
         >
           title tab1
         </button>
@@ -24,6 +25,7 @@ exports[`<TabStateless> should render component 1`] = `
         <button
           class="af-tabs__link"
           id="1"
+          type="button"
         >
           title tab2
         </button>
@@ -34,6 +36,7 @@ exports[`<TabStateless> should render component 1`] = `
         <button
           class="af-tabs__link"
           id="2"
+          type="button"
         >
           title tab3
         </button>

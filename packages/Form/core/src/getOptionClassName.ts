@@ -1,4 +1,4 @@
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 export function getOptionClassName(
   className: string,
@@ -13,7 +13,7 @@ export function getOptionClassName(
     .filter((c) => !!c)
     .join(' ');
 
-  return ClassManager.getComponentClassName(
+  return getComponentClassName(
     className,
     classModifierWithDisabled,
     defaultClassName

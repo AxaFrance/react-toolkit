@@ -6,7 +6,7 @@ import React, {
   ReactElement,
   ReactNode,
 } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import CardHeader from './CardHeader';
 /**
  * Get a duplicate component from a children. If not, return null
@@ -109,7 +109,7 @@ const Card = ({
       })
   );
 
-  const className = ClassManager.getComponentClassName(
+  const className = getComponentClassName(
     null,
     `${cardClassModifier || ''}${isChecked ? ' active' : ''}${
       disabled ? ' disabled' : ''

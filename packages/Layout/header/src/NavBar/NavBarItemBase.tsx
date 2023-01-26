@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react';
 import ReactDOM from 'react-dom';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 /**
  * Cette fonction sert à attribuer le focus ou le blur sur l'élément DOM de l'item de menu
@@ -61,7 +61,7 @@ export const NavBarItemBase = ({
   actionElt,
   ...otherProps
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

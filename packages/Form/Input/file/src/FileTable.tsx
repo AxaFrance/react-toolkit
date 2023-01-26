@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { FileRejection } from 'react-dropzone';
 import LineFile from './FileLine';
 import { CustomFile } from './File';
@@ -35,7 +35,7 @@ const FileTable = ({
   disabled,
   onClick,
 }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'custom-table-file af-file-table'

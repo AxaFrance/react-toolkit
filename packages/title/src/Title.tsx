@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type TitleProps = ComponentPropsWithoutRef<'h1'> & {
   classModifier?: string;
@@ -11,7 +11,7 @@ const Title = ({
   children,
   ...otherProps
 }: TitleProps) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-title'

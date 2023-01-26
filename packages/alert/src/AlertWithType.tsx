@@ -1,5 +1,5 @@
-import { withProps, compose, identity } from '@axa-fr/react-toolkit-core';
 import classnames from 'classnames';
+import React from 'react';
 import AlertCore, { AlertCoreProps } from './AlertCore';
 
 export interface AlertWithTypeProps extends AlertCoreProps {
@@ -24,14 +24,9 @@ export const setWithProps = ({
   iconClassName: iconClassName || TypeIcons[type as keyof typeof TypeIcons],
 });
 
-const enhance = compose(
-  identity<AlertWithTypeProps>(),
-  withProps(setWithProps)
-);
-
-const Enhanced = enhance(AlertCore);
-Enhanced.defaultProps = {
-  type: 'error',
+const AlertWithType = ({ type = 'error', ...props }: AlertWithTypeProps) => {
+  const customProps = setWithProps({ ...props, type });
+  return <AlertCore {...customProps} />;
 };
-Enhanced.displayName = 'AlertWithType';
-export default Enhanced;
+
+export default AlertWithType;

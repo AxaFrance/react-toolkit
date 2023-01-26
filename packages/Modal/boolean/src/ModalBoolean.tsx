@@ -3,7 +3,7 @@ import Modal, { HeaderProps } from '@axa-fr/react-toolkit-modal-default';
 import Button from '@axa-fr/react-toolkit-button';
 
 import {
-  ClassManager,
+  getComponentClassName,
   ClickEvent,
   Constants,
 } from '@axa-fr/react-toolkit-core';
@@ -43,7 +43,7 @@ const ModalBoolean = ({
 
   const onSubmitcb = () => onSubmit && onSubmit({ id });
 
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

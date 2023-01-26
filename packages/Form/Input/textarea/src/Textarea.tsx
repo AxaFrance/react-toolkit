@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type Props = ComponentPropsWithoutRef<'textarea'> & {
   classModifier?: string;
@@ -8,7 +8,7 @@ type Props = ComponentPropsWithoutRef<'textarea'> & {
 
 const Textarea = forwardRef<HTMLTextAreaElement, Props>(
   ({ className, classModifier, ...otherProps }, inputRef) => {
-    const componentClassName = useComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       'af-form__input-textarea'

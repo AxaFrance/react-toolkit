@@ -1,5 +1,5 @@
 import React, { Children, isValidElement, ReactNode } from 'react';
-import { Constants, ClassManager } from '@axa-fr/react-toolkit-core';
+import { Constants, getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Title from './Title';
 import Pane from './Pane';
 
@@ -29,7 +29,7 @@ const TabsStateless = ({
   children,
   onChange,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

@@ -1,5 +1,5 @@
 import React, { MouseEvent, ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-info-user';
 
@@ -41,7 +41,7 @@ const User = ({
   classModifier,
   onClick,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

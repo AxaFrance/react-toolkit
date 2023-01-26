@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePopper } from 'react-popper';
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, Constants } from '@axa-fr/react-toolkit-core';
 import Placement from './PopoverPlacements';
 
 const defaultClassName = 'af-popover__container';
@@ -72,7 +72,7 @@ export const AnimatedPopover = ({
   onMouseEnter,
   onMouseLeave,
 }: PropsAnimatedPopover) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

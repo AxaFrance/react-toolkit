@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type Props = {
   id: string;
@@ -9,7 +9,7 @@ type Props = {
   classModifier?: string;
 };
 const StepBase = ({ children, id, title, className, classModifier }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-steps-list-step'

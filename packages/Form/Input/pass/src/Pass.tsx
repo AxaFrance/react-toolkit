@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef, forwardRef, MouseEvent } from 'react';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'type' | 'role'> & {
   type?: 'text' | 'password';
@@ -19,7 +19,7 @@ const Pass = forwardRef<HTMLInputElement, Props>(
     },
     inputRef
   ) => {
-    const componentClassName = useComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       'af-form__pass'

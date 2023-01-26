@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Action from '@axa-fr/react-toolkit-action';
 import ToggleButton from '../ToggleButton';
 
@@ -21,7 +21,7 @@ const Title = ({
   className,
   classModifier,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

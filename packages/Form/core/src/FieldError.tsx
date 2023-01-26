@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import MessageTypes from './MessageTypes';
 
 const DEFAULT_CLASS_NAME = 'af-form__message';
@@ -13,7 +13,7 @@ const FieldError = ({
   message = null,
   messageType = MessageTypes.error,
 }: FieldProps) => {
-  const className = ClassManager.getComponentClassName(
+  const className = getComponentClassName(
     DEFAULT_CLASS_NAME,
     messageType,
     DEFAULT_CLASS_NAME

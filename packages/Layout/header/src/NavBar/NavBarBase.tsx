@@ -1,5 +1,5 @@
 import React, { FocusEvent, MouseEvent, ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-nav-container';
 type Props = {
@@ -28,7 +28,7 @@ const NavBarBase = ({
   onBlur,
   children,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

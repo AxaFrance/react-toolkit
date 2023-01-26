@@ -1,31 +1,20 @@
-import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import React, { ReactNode } from 'react';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
-interface TabComponentProps {
+export type TabProps = {
   className?: string;
-  title: React.ReactNode;
-  children?: React.ReactNode;
+  title: string;
+  children?: ReactNode;
   classModifier?: string;
-}
+};
 
-const Tab = (_props: TabComponentProps) => <span />;
+const Tab = ({ classModifier, children, className, ...props }: TabProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-tabs__pane'
+  );
+  return <span className={componentClassName} {...props} />;
+};
 
-const DEFAULT_CLASSNAME = 'af-tabs__pane';
-
-export type TabProps = TabComponentProps & WithClassModifierOptions;
-
-const enhance = compose(
-  identity<TabComponentProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(Tab);
-Enhanced.displayName = 'TabCore';
-export default Enhanced;
+export default Tab;

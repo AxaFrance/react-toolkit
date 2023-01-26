@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 import CardGroupStateless from './CardGroupStateless';
 
@@ -15,7 +15,7 @@ const CardGroup = ({
   value,
   ...otherProps
 }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-rccard-group'

@@ -1,19 +1,12 @@
 import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-restitution__header';
-
-type HeaderRestitutionBaseProps = {
+export type HeaderRestitutionProps = {
   className?: string;
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   rightTitle?: React.ReactNode;
+  classModifier?: string;
 };
 
 const HeaderRestitution = ({
@@ -21,37 +14,28 @@ const HeaderRestitution = ({
   subtitle,
   rightTitle,
   className,
-}: HeaderRestitutionBaseProps) => (
-  <header className={className}>
-    <div className="af-restitution__header-left">
-      <div className="af-restitution__title">
-        {title && <span className="af-restitution__title-main">{title}</span>}
-        <span className="af-restitution__title-subtitle">{subtitle}</span>
+  classModifier,
+}: HeaderRestitutionProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-restitution__header'
+  );
+  return (
+    <header className={componentClassName}>
+      <div className="af-restitution__header-left">
+        <div className="af-restitution__title">
+          {title && <span className="af-restitution__title-main">{title}</span>}
+          <span className="af-restitution__title-subtitle">{subtitle}</span>
+        </div>
       </div>
-    </div>
-    {rightTitle && (
-      <div className="af-restitution__header-right">
-        <span className="af-restitution__title">{rightTitle}</span>
-      </div>
-    )}
-  </header>
-);
-
-type HeaderRestitutionProps = WithClassModifierOptions &
-  HeaderRestitutionBaseProps;
-
-const enhance = compose(
-  identity<HeaderRestitutionProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const defaultProps: Partial<HeaderRestitutionProps> = {
-  className: DEFAULT_CLASSNAME,
+      {rightTitle && (
+        <div className="af-restitution__header-right">
+          <span className="af-restitution__title">{rightTitle}</span>
+        </div>
+      )}
+    </header>
+  );
 };
 
-const Enhanced = enhance(HeaderRestitution);
-Enhanced.displayName = 'HeaderRestitution';
-Enhanced.defaultProps = defaultProps;
-
-export default Enhanced;
+export default HeaderRestitution;
