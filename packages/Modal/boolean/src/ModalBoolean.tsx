@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal, { HeaderProps } from '@axa-fr/react-toolkit-modal-default';
 import Button from '@axa-fr/react-toolkit-button';
-
 import {
   getComponentClassName,
   ClickEvent,

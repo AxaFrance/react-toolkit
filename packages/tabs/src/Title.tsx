@@ -1,5 +1,5 @@
 import React from 'react';
-import { withClickId, getComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, getClickId } from '@axa-fr/react-toolkit-core';
 
 export type TitleComponentProps = {
   enable?: boolean | null;
@@ -13,6 +13,17 @@ export type TitleComponentProps = {
 export type TitleHandlerProps = {
   onChange: React.MouseEventHandler<HTMLButtonElement>;
 };
+
+export type TitleProps = TitleComponentProps & TitleHandlerProps;
+
+const setWithProps = (props: TitleProps) => ({
+  ...props,
+  classModifier: (props.classModifier || '').concat(
+    (props.enable === false ? ' disabled' : '').concat(
+      props.active ? ' active' : ''
+    )
+  ),
+});
 
 const Title = ({
   className,
@@ -39,24 +50,16 @@ const Title = ({
   );
 };
 
-export type TitleProps = TitleComponentProps & TitleHandlerProps;
-
-const setWithProps = (props: TitleProps) => ({
-  ...props,
-  classModifier: (props.classModifier || '').concat(
-    (props.enable === false ? ' disabled' : '').concat(
-      props.active ? ' active' : ''
-    )
-  ),
-});
-
-const TitleWithClickId = withClickId<TitleProps>({ event: ['onChange'] })(
-  Title
-);
-
 const TitleWithProps = (props: TitleProps) => {
-  const customProps = setWithProps(props);
-  return <TitleWithClickId {...customProps} />;
+  const propsWithClickId = getClickId<TitleProps>({
+    option: {
+      event: ['onChange'],
+    },
+    props,
+  });
+  const customProps = setWithProps(propsWithClickId);
+
+  return <Title {...customProps} />;
 };
 
 TitleWithProps.displayName = 'Title';

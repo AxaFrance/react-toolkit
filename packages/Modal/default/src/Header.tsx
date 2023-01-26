@@ -1,5 +1,5 @@
-import { withClickId } from '@axa-fr/react-toolkit-core';
 import React from 'react';
+import { getClickId } from '@axa-fr/react-toolkit-core';
 import HeaderCore, { HeaderCoreProps } from './HeaderCore';
 
 export type HeaderProps = HeaderCoreProps;
@@ -9,14 +9,16 @@ const setWithProps = (props: HeaderProps) => ({
   children: props.title,
 });
 
-const HeaderWithProps = (props: HeaderProps) => {
-  const customProps = setWithProps(props);
+const Header = (props: HeaderProps) => {
+  const propsWithClickId = getClickId<HeaderCoreProps>({
+    option: {
+      event: ['onCancel'],
+    },
+    props,
+  });
+  const customProps = setWithProps(propsWithClickId);
+
   return <HeaderCore {...customProps} />;
 };
-
-const Header = withClickId<HeaderCoreProps>({ event: ['onCancel'] })(
-  HeaderWithProps
-);
-Header.displayName = 'Header';
 
 export default Header;

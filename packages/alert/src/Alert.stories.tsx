@@ -32,6 +32,7 @@ AlertStory.storyName = 'Default';
 AlertStory.args = {
   classModifier: 'danger',
   title: 'Attention: des informations sont manquantes',
+  onClose: null,
 };
 
 export const AlertInfoStory: Story<AlertProps> = Template.bind({});
@@ -39,6 +40,7 @@ AlertInfoStory.storyName = 'Alert Info';
 AlertInfoStory.args = {
   classModifier: 'info',
   title: 'Info: vous pouvez également contacter un conseiller par téléphone',
+  onClose: null,
 };
 
 export const AlertWithCloseStory: Story<AlertProps> = Template.bind({});
@@ -63,4 +65,5 @@ AlertWithDetailStory.args = {
       <li>Le format de date est invalide</li>
     </ul>
   ),
+  onClose: null,
 };
