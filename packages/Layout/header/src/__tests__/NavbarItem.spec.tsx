@@ -5,7 +5,9 @@ import NavBarItem from '../NavBar/NavBarItem';
 // eslint-disable-next-line react/prefer-stateless-function
 class Custom extends Component<AllHTMLAttributes<HTMLDivElement>> {
   render() {
-    return <div {...this.props}>Custom</div>;
+    // @ts-ignore
+    const { hasFocus, classModifier, ...rest } = this.props;
+    return <div {...rest}>Custom</div>;
   }
 }
 

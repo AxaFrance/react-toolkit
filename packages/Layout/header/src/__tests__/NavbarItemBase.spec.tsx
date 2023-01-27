@@ -81,7 +81,7 @@ describe('NavBarItemBase', () => {
   // TODO `handleLinkFocus` tests should be decoupled from `NavBarItemBase``
   // implementation (unit tests)
   describe('handleLinkFocus', () => {
-    it.only('linkToFocusOn exist & hasFocus is true & menu close ', () => {
+    it('linkToFocusOn exist & hasFocus is true & menu close ', () => {
       const { baseElement } = createWrapper({
         actionElt: <Link>Test</Link>,
       });

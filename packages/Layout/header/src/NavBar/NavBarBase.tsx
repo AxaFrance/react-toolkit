@@ -42,11 +42,11 @@ const NavBarBase = ({
         type="button"
         onClick={onClick}
         className={`mask fade ${isVisible ? 'show' : ''}`}
-        id={toggleMenuId}
+        id={`open-${toggleMenuId}`}
         aria-label="Open Menu"
       />
       <nav
-        className={`af-nav af-drawer left ${isVisible ?? 'show'}`}
+        className={`af-nav af-drawer left ${isVisible ? 'show' : ''}`}
         role="navigation"
         aria-label="Menu principal">
         <div className="container af-nav__wrapper">
@@ -58,7 +58,7 @@ const NavBarBase = ({
               onClick={onClick}
               type="button"
               className="af-nav__aside-close"
-              id={toggleMenuId}
+              id={`close-${toggleMenuId}`}
               aria-label="Close Menu">
               ×
             </button>
@@ -78,7 +78,6 @@ const NavBarBase = ({
               isMenuFocused ? 'af-nav__list--focused' : ''
             }`}
             role="menubar"
-            aria-labelledby={toggleMenuId}
             id={id}>
             {children}
           </ul>
