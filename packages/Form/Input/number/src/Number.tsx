@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
-import { useId, useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { useId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = ComponentPropsWithRef<'input'> & {
@@ -8,7 +8,7 @@ type Props = ComponentPropsWithRef<'input'> & {
 const CustomNumber = forwardRef<HTMLInputElement, Props>(
   ({ id, className, classModifier, ...otherProps }, inputRef) => {
     const inputId = useId(id);
-    const componentClassName = useComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       'af-form__input-text'

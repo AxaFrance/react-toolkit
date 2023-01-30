@@ -1,5 +1,5 @@
 import React, { BaseSyntheticEvent, ComponentType } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 /**
  * @remarks - Will be remove into v2.1.x
@@ -39,7 +39,7 @@ const defaultWithProps = ({
   className?: string;
   classModifier?: string;
 }) => ({
-  className: ClassManager.getComponentClassName(className, classModifier, ''),
+  className: getComponentClassName(className, classModifier, ''),
 });
 
 type Handler<H extends { [key: string]: (...args: any[]) => any }> = {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, Constants } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-accordion__collapse';
 
@@ -37,7 +37,7 @@ const Body = ({
     newClassModifier = `${newClassModifier} ${classModifier}`;
   }
 
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     newClassModifier,
     defaultClassName

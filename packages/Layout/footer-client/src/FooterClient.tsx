@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-footer-client';
 
@@ -17,7 +17,7 @@ const FooterClient = ({
   classModifier,
   copyright = 'Policy Privacy © 2018 AXA All Rights Reserved',
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

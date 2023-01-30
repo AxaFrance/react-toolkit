@@ -1,5 +1,5 @@
 import React from 'react';
-import { useId, useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { useId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 export type Props = {
   id?: string;
@@ -23,7 +23,7 @@ const Items = ({
   numberItems = 10,
 }: Props) => {
   const defaultIdName = useId(id);
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-paging__form'

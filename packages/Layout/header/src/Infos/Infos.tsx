@@ -1,5 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
-import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
 type TInfo = { id?: string; word: ReactNode; definition: ReactNode };
@@ -10,7 +10,7 @@ type InfosProps = {
 };
 
 const Infos = ({ infos, className, classModifier }: InfosProps) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

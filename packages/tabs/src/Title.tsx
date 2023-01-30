@@ -1,43 +1,20 @@
 import React from 'react';
-import {
-  withClassDefault,
-  withClickId,
-  WithClassModifierOptions,
-  withClassModifier,
-  compose,
-  withProps,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, getClickId } from '@axa-fr/react-toolkit-core';
 
-const onChangeEvent = 'onChange';
-
-export interface TitleComponentProps {
+export type TitleComponentProps = {
   enable?: boolean | null;
   active: boolean;
   className?: string;
   classModifier?: string;
   id?: string;
   children?: React.ReactNode;
-}
+};
 
-export interface TitleHandlerProps {
+export type TitleHandlerProps = {
   onChange: React.MouseEventHandler<HTMLButtonElement>;
-}
+};
 
-const Title = ({ className, onChange, children, id }: TitleProps) => (
-  <li className={className}>
-    {/* eslint-disable-next-line react/button-has-type */}
-    <button id={id} className="af-tabs__link" onClick={onChange}>
-      {children}
-    </button>
-  </li>
-);
-
-const DEFAULT_CLASSNAME = 'af-tabs__item';
-
-export type TitleProps = TitleComponentProps &
-  TitleHandlerProps &
-  WithClassModifierOptions;
+export type TitleProps = TitleComponentProps & TitleHandlerProps;
 
 const setWithProps = (props: TitleProps) => ({
   ...props,
@@ -48,14 +25,43 @@ const setWithProps = (props: TitleProps) => ({
   ),
 });
 
-const enchance = compose(
-  identity<TitleProps>(),
-  withProps(setWithProps),
-  withClickId({ event: [onChangeEvent] }),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-)(Title);
+const Title = ({
+  className,
+  onChange,
+  children,
+  id,
+  classModifier,
+}: TitleProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-tabs__item'
+  );
+  return (
+    <li className={componentClassName}>
+      <button
+        type="button"
+        id={id}
+        className="af-tabs__link"
+        onClick={onChange}>
+        {children}
+      </button>
+    </li>
+  );
+};
 
-enchance.displayName = 'Title';
+const TitleWithProps = (props: TitleProps) => {
+  const propsWithClickId = getClickId<TitleProps>({
+    option: {
+      event: ['onChange'],
+    },
+    props,
+  });
+  const customProps = setWithProps(propsWithClickId);
 
-export default enchance;
+  return <Title {...customProps} />;
+};
+
+TitleWithProps.displayName = 'Title';
+
+export default TitleWithProps;

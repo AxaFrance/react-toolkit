@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithRef, useState } from 'react';
-import { useComponentClassName, useId } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, useId } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 import SelectBase from './SelectBase';
 
@@ -22,7 +22,7 @@ const SelectDefault = ({
 }: Props) => {
   const [hasHandleChangeOnce, setHasHandleChangeOnce] = useState(false);
 
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-form__select-container'

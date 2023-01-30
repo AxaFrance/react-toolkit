@@ -1,7 +1,7 @@
 import React, { ComponentProps, ReactNode } from 'react';
 import RcSlider from 'rc-slider';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import 'rc-slider/assets/index.css';
 
 type RcSliderProps = ComponentProps<typeof RcSlider>;
@@ -34,7 +34,7 @@ const Slider = ({
     {} as Marks
   );
 
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-form__slider'

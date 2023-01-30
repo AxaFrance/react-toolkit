@@ -1,42 +1,23 @@
 import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-restitution__content';
-
-type SectionRestitutionBaseProps = {
+export type SectionRestitutionProps = {
   className?: string;
   children?: React.ReactNode;
+  classModifier?: string;
 };
 
 const SectionRestitution = ({
-  children,
+  children = null,
   className,
-}: SectionRestitutionBaseProps) => (
-  <section className={className}>{children}</section>
-);
-
-type SectionRestitutionProps = WithClassModifierOptions &
-  SectionRestitutionBaseProps;
-
-const enhance = compose(
-  identity<SectionRestitutionBaseProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const defaultProps: Partial<SectionRestitutionProps> = {
-  children: null,
-  className: DEFAULT_CLASSNAME,
+  classModifier,
+}: SectionRestitutionProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-restitution__content'
+  );
+  return <section className={componentClassName}>{children}</section>;
 };
 
-const Enhanced = enhance(SectionRestitution);
-Enhanced.displayName = 'SectionRestitution';
-Enhanced.defaultProps = defaultProps;
-
-export default Enhanced;
+export default SectionRestitution;

@@ -1,31 +1,23 @@
 import React from 'react';
-import {
-  withClassDefault,
-  withClassModifier,
-  WithClassModifierOptions,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
-const DEFAULT_CLASSNAME = 'af-restitution__content-title';
-
-type RestitutionBaseProps = {
+export type SectionRestitutionTitleProps = {
   title: React.ReactNode;
   className?: string;
+  classModifier?: string;
 };
 
-const Restitution = ({ title, className }: RestitutionBaseProps) => (
-  <div className={className}>{title}</div>
-);
+const SectionRestitutionTitle = ({
+  title,
+  className,
+  classModifier,
+}: SectionRestitutionTitleProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-restitution__content-title'
+  );
+  return <div className={componentClassName}>{title}</div>;
+};
 
-type RestitutionProps = WithClassModifierOptions & RestitutionBaseProps;
-const enhance = compose(
-  identity<RestitutionProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(Restitution);
-Enhanced.displayName = 'SectionTitle';
-
-export default Enhanced;
+export default SectionRestitutionTitle;

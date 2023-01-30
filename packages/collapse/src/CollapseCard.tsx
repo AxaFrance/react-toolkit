@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { Constants, ClassManager, useId } from '@axa-fr/react-toolkit-core';
+import {
+  Constants,
+  getComponentClassName,
+  useId,
+} from '@axa-fr/react-toolkit-core';
 import Body, { BodyProps } from './Body';
 import Header, { HeaderProps, HeaderToggleElement } from './Header';
 
@@ -72,7 +76,7 @@ const CollapseCard = ({
     ? `${newClassModifier} ${classModifier}`
     : `${newClassModifier}`;
 
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     newClassModifier,
     defaultClassName

@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  compose,
-  withClassDefault,
-  withClassModifier,
-  identity,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import LoaderModes from './LoaderModes';
 
 const texts: { [index: string]: string } = {
@@ -15,28 +10,35 @@ const texts: { [index: string]: string } = {
   error: 'Une erreur est survenue lors du chargement du composant',
 };
 
-const DEFAULT_CLASSNAME = 'af-loader';
-
-type LoaderBaseProps = {
+type LoaderProps = {
   className?: string;
   mode: string;
   text: string;
   children: React.ReactNode;
+  classModifier?: string;
 };
 
-type LoaderProps = LoaderBaseProps & { classModifier?: string };
-
-const Loader = ({ className, text, mode, children }: LoaderBaseProps) => {
+const Loader = ({
+  className,
+  text,
+  children,
+  classModifier,
+  mode = LoaderModes.none,
+}: LoaderProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-loader'
+  );
   const message = text || texts[mode];
-
   const isLoaderVisible = mode !== LoaderModes.none;
   const isLoaderErrored = mode === LoaderModes.error;
 
   return (
-    <div className={className}>
+    <div className={componentClassName}>
       {children}
       {isLoaderVisible && (
-        <div className={`${className} af-loader-on`}>
+        <div className={`${componentClassName} af-loader-on`}>
           <div className="af-spinner">
             {!isLoaderErrored && <div className="af-spinner__animation" />}
             <div className="af-spinner__caption">{message}</div>
@@ -47,18 +49,4 @@ const Loader = ({ className, text, mode, children }: LoaderBaseProps) => {
   );
 };
 
-const defaultProps: Partial<LoaderProps> = {
-  className: DEFAULT_CLASSNAME,
-  mode: LoaderModes.none,
-};
-
-const enhance = compose(
-  identity<LoaderProps>(),
-  withClassDefault(DEFAULT_CLASSNAME),
-  withClassModifier()
-);
-
-const Enhanced = enhance(Loader);
-Enhanced.displayName = 'Loader';
-Enhanced.defaultProps = defaultProps;
-export default Enhanced;
+export default Loader;

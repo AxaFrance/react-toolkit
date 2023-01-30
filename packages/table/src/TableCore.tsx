@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type TableCoreComponentProps = ComponentPropsWithoutRef<'table'> & {
   classModifier?: string;
@@ -11,7 +11,7 @@ const TableCore = ({
   children,
   ...othersProps
 }: TableCoreComponentProps) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-table'

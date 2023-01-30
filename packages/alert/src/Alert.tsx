@@ -1,8 +1,6 @@
-import { withProps, compose, identity } from '@axa-fr/react-toolkit-core';
+import React from 'react';
 import AlertCore, { AlertCoreProps } from './AlertCore';
 import icons from './icons';
-
-const defaultClassModifier = 'error';
 
 type AlertProps = Pick<
   AlertCoreProps,
@@ -19,12 +17,9 @@ const setWithProps = ({ icon, ...otherProps }: AlertProps): AlertCoreProps => {
   };
 };
 
-const enhance = compose(identity<AlertProps>(), withProps(setWithProps));
-
-const Enhanced = enhance(AlertCore);
-Enhanced.displayName = 'Alert';
-Enhanced.defaultProps = {
-  classModifier: defaultClassModifier,
+const Alert = ({ classModifier = 'error', ...props }: AlertProps) => {
+  const customProps = setWithProps({ ...props, classModifier });
+  return <AlertCore {...customProps} classModifier={classModifier} />;
 };
 
-export default Enhanced;
+export default Alert;

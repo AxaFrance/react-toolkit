@@ -1,21 +1,16 @@
-import {
-  withClickId,
-  WithClickIdProps,
-  compose,
-  identity,
-} from '@axa-fr/react-toolkit-core';
-import { ComponentPropsWithoutRef } from 'react';
-
+import React, { ComponentProps } from 'react';
+import { getClickId } from '@axa-fr/react-toolkit-core';
 import ButtonCore from './ButtonCore';
 
-type ButtonCoreProps = ComponentPropsWithoutRef<typeof ButtonCore>;
-export type ButtonProps = WithClickIdProps<ButtonCoreProps, 'onClick'>;
+const Button = (props: ComponentProps<typeof ButtonCore>) => {
+  const propsWithClickId = getClickId<ComponentProps<typeof ButtonCore>>({
+    option: {
+      event: ['onClick'],
+    },
+    props,
+  });
 
-const Button = compose(
-  identity<ButtonCoreProps>(),
-  withClickId({ event: ['onClick'] })
-)(ButtonCore);
-
-Button.displayName = 'Button';
+  return <ButtonCore {...propsWithClickId} />;
+};
 
 export default Button;

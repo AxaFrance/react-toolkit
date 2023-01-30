@@ -9,7 +9,7 @@ import React, {
   isValidElement,
   ReactNode,
 } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import MessageTypes from './MessageTypes';
 import FormClassManager from './FormClassManager';
 
@@ -122,7 +122,7 @@ const FieldForm = ({
     ...getMessageInfo({ ...state, forceDisplayMessage, message, messageType }),
   });
 
-  const subComponentClassName = useComponentClassName(
+  const subComponentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

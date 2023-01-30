@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type FieldProps = {
   isVisible?: boolean;
@@ -18,11 +18,7 @@ const FieldInput = ({
     return null;
   }
 
-  const newClassName = ClassManager.getComponentClassName(
-    className,
-    classModifier,
-    ''
-  );
+  const newClassName = getComponentClassName(className, classModifier, '');
   return <div className={newClassName}>{children}</div>;
 };
 

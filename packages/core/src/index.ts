@@ -1,21 +1,6 @@
-export { default as ClassManager } from './ClassManager';
+export { default as getComponentClassName } from './getComponentClassName';
 export { default as PropsManager } from './PropsManager';
 export { default as Constants } from './Constants';
-export { default as compose } from './compose';
-export { default as withProps } from './withProps.hoc';
-export { default as identity } from './identity.hoc';
-export {
-  default as withClickId,
-  WithClickIdOption,
-  ClickEvent,
-  WithClickIdProps,
-} from './withClickId.hoc';
-export { default as withClassDefault } from './withClassDefault.hoc';
-export {
-  default as withClassModifier,
-  WithClassModifierOptions,
-} from './withClassModifier.hoc';
+export { default as getClickId, ClickEvent } from './getClickId';
 export * from './Models';
-
 export { useId, createId } from './useId';
-export { useComponentClassName } from './useComponentClassName';

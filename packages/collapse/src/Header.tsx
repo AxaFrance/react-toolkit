@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, Constants } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-accordion__item-header';
 
@@ -68,7 +68,7 @@ const Header = ({
     'glyphicon-menu-up': isOpen,
   });
 
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

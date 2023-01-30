@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import FieldError from './FieldError';
 import MessageTypes from './MessageTypes';
 import FieldForm from './FieldForm';
@@ -34,7 +34,7 @@ const Field = ({
     return null;
   }
 
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'row af-form__group'

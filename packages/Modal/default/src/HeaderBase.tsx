@@ -1,20 +1,14 @@
 import React from 'react';
-
-import {
-  ClassManager,
-  WithClassModifierOptions,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Div, { DivProps } from './Div';
 
-const DEFAULT_CLASSNAME = 'af-modal__header';
-
-export type HeaderBaseProps = DivProps & WithClassModifierOptions;
+export type HeaderBaseProps = DivProps & { classModifier?: string };
 
 const HeaderBase = ({ classModifier, className, ...rest }: HeaderBaseProps) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
-    DEFAULT_CLASSNAME
+    'af-modal__header'
   );
 
   return <Div {...rest} className={componentClassName} />;

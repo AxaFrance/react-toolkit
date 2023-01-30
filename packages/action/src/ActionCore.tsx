@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type ActionCoreProps = ComponentPropsWithoutRef<'a'> & {
   icon: string;
@@ -16,7 +16,7 @@ const ActionCore = ({
   onClick,
   ...otherProps
 }: ActionCoreProps) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'btn af-btn--circle'

@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { ClassManager } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-header__name';
 
@@ -21,7 +21,7 @@ const Name = ({
   classModifier,
   onClick,
 }: Props) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

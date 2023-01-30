@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 type Props = ComponentPropsWithoutRef<'button'> & {
   classModifier?: string;
@@ -12,7 +12,7 @@ const ButtonCore = ({
   children,
   ...props
 }: Props) => {
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'btn af-btn'

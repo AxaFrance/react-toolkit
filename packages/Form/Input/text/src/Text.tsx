@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithRef, forwardRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = ComponentPropsWithRef<'input'> & {
@@ -8,7 +8,7 @@ type Props = ComponentPropsWithRef<'input'> & {
 
 const Text = forwardRef<HTMLInputElement, Props>(
   ({ className, classModifier, ...otherProps }, inputRef) => {
-    const componentClassName = useComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       'af-form__input-text'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassManager, Constants } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, Constants } from '@axa-fr/react-toolkit-core';
 import { CollapseProps } from './CollapseCard';
 import { HeaderToggleElement } from './Header';
 
@@ -44,7 +44,7 @@ const Accordion = ({
       classModifier: child.props.classModifier,
     });
   });
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     defaultClassName

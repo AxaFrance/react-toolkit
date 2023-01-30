@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Previous from './Previous';
 import LiPoint from './LiPoint';
 import Next from './Next';
@@ -33,7 +33,7 @@ const Pager = ({
   const hasNext = currentPage < numberPages;
   const hasPrevious = currentPage > 1;
 
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-pager'

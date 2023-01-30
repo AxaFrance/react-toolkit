@@ -5,7 +5,7 @@ import {
   FileRejection,
   useDropzone,
 } from 'react-dropzone';
-import { createId, useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
@@ -43,7 +43,7 @@ const File = ({
     disabled,
   });
 
-  const componentClassName = useComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
     'af-form__file-input'

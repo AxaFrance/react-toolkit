@@ -7,6 +7,7 @@ exports[`<TabStateless> should render component 1`] = `
   >
     <button
       class="af-tabs__link"
+      type="button"
     >
       Title displayed
     </button>

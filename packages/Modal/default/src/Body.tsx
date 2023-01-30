@@ -1,22 +1,27 @@
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import React from 'react';
-import {
-  WithClassModifierOptions,
-  ClassManager,
-} from '@axa-fr/react-toolkit-core';
 import Div, { DivProps } from './Div';
 
-const DEFAULT_CLASSNAME = 'af-modal__body';
+export type BodyProps = DivProps & {
+  classModifier?: string;
+};
 
-export type BodyProps = DivProps & WithClassModifierOptions;
-
-const Body = ({ classModifier, className, ...rest }: BodyProps) => {
-  const componentClassName = ClassManager.getComponentClassName(
+const Body = ({
+  children,
+  className,
+  classModifier,
+  ...otherProps
+}: BodyProps) => {
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
-    DEFAULT_CLASSNAME
+    'af-modal__body'
   );
-
-  return <Div {...rest} className={componentClassName} />;
+  return (
+    <Div className={componentClassName} {...otherProps}>
+      {children}
+    </Div>
+  );
 };
 
 export default Body;

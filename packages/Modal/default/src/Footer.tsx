@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  ClassManager,
-  WithClassModifierOptions,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Div, { DivProps } from './Div';
 
-const DEFAULT_CLASSNAME = 'af-modal__footer';
-
-export type FooterProps = DivProps & WithClassModifierOptions;
+export type FooterProps = DivProps & { classModifier?: string };
 
 const Footer = ({ classModifier, className, ...rest }: FooterProps) => {
-  const componentClassName = ClassManager.getComponentClassName(
+  const componentClassName = getComponentClassName(
     className,
     classModifier,
-    DEFAULT_CLASSNAME
+    'af-modal__footer'
   );
 
   return <Div {...rest} className={componentClassName} />;

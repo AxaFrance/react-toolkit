@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
-import { useComponentClassName } from '@axa-fr/react-toolkit-core';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
@@ -11,7 +11,7 @@ type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
 
 const Date = forwardRef<HTMLInputElement, Props>(
   ({ className, classModifier, value, ...otherProps }, ref) => {
-    const componentClassName = useComponentClassName(
+    const componentClassName = getComponentClassName(
       className,
       classModifier,
       'af-form__input-date'
