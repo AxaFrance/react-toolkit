@@ -5,6 +5,7 @@
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "private": false,
+  "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf ./component & rimraf ./esm",
     "build": "tsc -p tsconfig.json & tsc -p tsconfig-cjs.json"
