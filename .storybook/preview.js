@@ -21,6 +21,7 @@ export const parameters = {
   options: {
     storySort: {
       order: [
+        'Components high level',
         'Components',
         'Form elements',
         'Structure',

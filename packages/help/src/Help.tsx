@@ -5,6 +5,7 @@ import Popover, {
 } from '@axa-fr/react-toolkit-popover';
 
 export type Props = ComponentPropsWithoutRef<typeof Popover>;
+
 const Help = ({
   className,
   classModifier,

@@ -24,6 +24,7 @@ export * from './form-input-textarea';
 export * from './form-steps';
 export * from './form-summary';
 export * from './help';
+export * from './help-info';
 export * from './highlight';
 export * from './icon';
 export * from './layout-footer';

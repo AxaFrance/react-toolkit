@@ -1,13 +1,15 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
-import Help from './Help';
+import Button from '@axa-fr/react-toolkit-button';
+import Badge from '@axa-fr/react-toolkit-badge';
+import HelpInfo from './HelpInfo';
 import readme from '../README.md';
-import './help-custom.scss';
+import './help-info.scss';
 
 export default {
-  title: 'Components high level/Help',
-  component: Help,
+  title: 'Components high level/HelpInfo',
+  component: HelpInfo,
   parameters: {
     readme: {
       sidebar: readme,
@@ -35,16 +37,18 @@ export default {
   },
 } as Meta;
 
-type HelpProps = React.ComponentProps<typeof Help>;
+type HelpProps = React.ComponentProps<typeof HelpInfo>;
 const Template: Story<HelpProps> = ({ children, ...args }) => (
-  <Help {...args}>{children}</Help>
+  <HelpInfo {...args}>{children}</HelpInfo>
 );
 
 export const TextStory: Story<HelpProps> = Template.bind({});
 TextStory.args = {
-  children: 'Lorem ipsum dolor sit amet',
+  content: 'Lorem ipsum dolor sit amet',
   mode: PopoverModes.click,
   placement: PopoverPlacements.right,
+  children: 'test',
+  isDisabled: false,
 };
 
 const htmlChild = (
@@ -69,8 +73,28 @@ const htmlChild = (
 
 export const HtmlStory: Story<HelpProps> = Template.bind({});
 HtmlStory.args = {
-  children: htmlChild,
+  content: htmlChild,
   classModifier: 'custom',
   mode: PopoverModes.over,
   placement: PopoverPlacements.right,
+  children: 'test with custom hover',
+  isDisabled: false,
+};
+
+export const ButtonStory: Story<HelpProps> = Template.bind({});
+ButtonStory.args = {
+  content: 'Bouton de validation',
+  mode: PopoverModes.over,
+  placement: PopoverPlacements.top,
+  children: <Button>Valider</Button>,
+  isDisabled: false,
+};
+
+export const BadgeStory: Story<HelpProps> = Template.bind({});
+BadgeStory.args = {
+  content: 'Nombre de notifications',
+  mode: PopoverModes.over,
+  placement: PopoverPlacements.top,
+  children: <Badge classModifier="error">5</Badge>,
+  isDisabled: false,
 };
