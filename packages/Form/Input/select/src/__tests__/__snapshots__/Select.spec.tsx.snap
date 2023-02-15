@@ -11,6 +11,50 @@ exports[`renders Select correctly 1`] = `
       name="placeName"
     >
       <option
+        value=""
+      >
+        - Select -
+      </option>
+      <option
+        value="fun"
+      >
+        For fun
+      </option>
+      <option
+        value="work"
+      >
+        For work
+      </option>
+      <option
+        value="drink"
+      >
+        For drink
+      </option>
+    </select>
+    <span
+      aria-controls="muid"
+      class="glyphicon glyphicon-menu-down"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Select correctly with classModier 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__select-container"
+  >
+    <select
+      class="af-form__input-select af-form__input-select--custom"
+      id="muid"
+      name="placeName"
+    >
+      <option
+        value=""
+      >
+        - Select -
+      </option>
+      <option
         value="fun"
       >
         For fun
@@ -68,6 +112,40 @@ exports[`renders SelectBase correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`renders SelectBase correctly with classModier 1`] = `
+<DocumentFragment>
+  <div
+    class="af-form__select-container"
+  >
+    <select
+      class="af-form__input-select af-form__input-select--custom"
+      id="muid"
+      name="placeName"
+    >
+      <option
+        value="fun"
+      >
+        For fun
+      </option>
+      <option
+        value="work"
+      >
+        For work
+      </option>
+      <option
+        value="drink"
+      >
+        For drink
+      </option>
+    </select>
+    <span
+      aria-controls="muid"
+      class="glyphicon glyphicon-menu-down"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`renders SelectInput correctly 1`] = `
 <DocumentFragment>
   <div
@@ -97,6 +175,77 @@ exports[`renders SelectInput correctly 1`] = `
             id="muid"
             name="placeName"
           >
+            <option
+              value=""
+            >
+              - Select -
+            </option>
+            <option
+              value="fun"
+            >
+              For fun
+            </option>
+            <option
+              value="work"
+            >
+              For work
+            </option>
+            <option
+              value="drink"
+            >
+              For drink
+            </option>
+          </select>
+          <span
+            aria-controls="muid"
+            class="glyphicon glyphicon-menu-down"
+          />
+        </div>
+      </div>
+      <small
+        class="af-form__help"
+      >
+        Enter the place type
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders SelectInput correctly with classModier 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--custom"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="muid"
+      >
+        label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__select"
+      >
+        <div
+          class="af-form__select-container"
+        >
+          <select
+            class="af-form__input-select af-form__input-select--custom"
+            id="muid"
+            name="placeName"
+          >
+            <option
+              value=""
+            >
+              - Select -
+            </option>
             <option
               value="fun"
             >
