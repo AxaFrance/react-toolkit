@@ -21,9 +21,9 @@ const SelectDefault = ({
 }: Props) => {
   const [hasHandleChangeOnce, setHasHandleChangeOnce] = useState(false);
 
-  const newOptions = !hasHandleChangeOnce
-    ? [{ value: '', label: placeholder }, ...options]
-    : options;
+  const newOptions = hasHandleChangeOnce
+    ? options
+    : [{ value: '', label: placeholder }, ...options];
 
   const inputId = useId(id);
 
