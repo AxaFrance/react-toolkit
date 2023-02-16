@@ -50,3 +50,47 @@ test('renders SelectInput correctly', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('renders Select correctly with classModier', () => {
+  const { asFragment } = render(
+    <Select
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+      classModifier="custom"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('renders SelectBase correctly with classModier', () => {
+  const { asFragment } = render(
+    <SelectBase
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+      classModifier="custom"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('renders SelectInput correctly with classModier', () => {
+  const { asFragment } = render(
+    <SelectInput
+      label="label"
+      name="placeName"
+      id="muid"
+      onChange={() => null}
+      options={options}
+      value="myvalue"
+      helpMessage="Enter the place type"
+      classModifier="custom"
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
