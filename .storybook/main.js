@@ -28,6 +28,7 @@ module.exports = {
     '../packages/Form/steps/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/summary/src/*.stories.@(ts|tsx|js)',
     '../packages/help/src/*.stories.@(ts|tsx|js)',
+    '../packages/helpinfo/src/*.stories.@(ts|tsx|js)',
     '../packages/highlight/src/*.stories.@(ts|tsx|js)',
     '../packages/icon/src/*.stories.@(ts|tsx|js)',
     '../packages/Layout/footer/src/*.stories.@(ts|tsx|js)',
