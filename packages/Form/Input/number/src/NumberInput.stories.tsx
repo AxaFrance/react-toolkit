@@ -1,11 +1,11 @@
-import React, { ComponentPropsWithoutRef, useState } from 'react';
-import { action } from '@storybook/addon-actions';
-import { Meta, Story } from '@storybook/react';
-import Help from '@axa-fr/react-toolkit-help';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import Help from '@axa-fr/react-toolkit-help';
+import { action } from '@storybook/addon-actions';
+import { Meta, StoryFn as Story } from '@storybook/react';
+import React, { ComponentPropsWithoutRef, useState } from 'react';
+import readme from '../README.md';
 import Number from './Number';
 import NumberInput from './NumberInput';
-import readme from '../README.md';
 
 export default {
   title: 'Form elements/Number',
@@ -22,7 +22,7 @@ export default {
 const Template: Story<
   Omit<ComponentPropsWithoutRef<typeof NumberInput>, 'value' | 'onChange'>
 > = (args) => {
-  const [value, setValue] = useState<number>(null);
+  const [value, setValue] = useState<number>();
   return (
     <form className="af-form" name="myform">
       <NumberInput
@@ -30,7 +30,7 @@ const Template: Story<
         value={value}
         onChange={(e) => {
           action('onChange')(e);
-          setValue(!isNaN(e.value) ? e.value : null);
+          setValue(e.target.valueAsNumber);
         }}>
         <Help>tooltip avec du text</Help>
       </NumberInput>

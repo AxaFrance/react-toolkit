@@ -38,4 +38,7 @@ PassStory.argTypes = {
     },
     defaultValue: 'bad',
   },
+  isVisible: {
+    control: 'boolean',
+  },
 };

@@ -1,4 +1,3 @@
-import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import {
   Field,
   FieldInput,
@@ -6,6 +5,7 @@ import {
   useInputClassModifier,
   useOptionsWithId,
 } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import Switch from './Switch';
 

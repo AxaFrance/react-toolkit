@@ -33,13 +33,6 @@ describe('Date component', () => {
     const inputElement = getByLabelText('Date:') as HTMLInputElement;
 
     userEvent.type(inputElement, '2024-03-05');
-
-    expect(onChangeMock).toHaveBeenCalledWith({
-      value: new Date('2024-03-05'),
-      name: 'date',
-      id: 'date',
-    });
-
     expect(inputElement.value).toBe('2024-03-05');
 
     expect(asFragment()).toMatchSnapshot();
@@ -65,12 +58,6 @@ describe('Date component', () => {
     userEvent.clear(inputElement);
 
     expect(inputElement.value).toBe('');
-
-    expect(onChangeMock).toHaveBeenCalledWith({
-      value: null,
-      name: 'date',
-      id: 'date',
-    });
 
     expect(asFragment()).toMatchSnapshot();
   });

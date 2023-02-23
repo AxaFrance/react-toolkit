@@ -1,9 +1,10 @@
 import React, { ComponentProps } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import CardGroupStateless from './CardGroupStateless';
 
-type Props = ComponentProps<typeof CardGroupStateless>;
+type Props = ComponentProps<typeof CardGroupStateless> &
+  OnChange & { id: string };
 const CardGroup = ({
   type,
   title,
@@ -13,6 +14,8 @@ const CardGroup = ({
   name = 'defaultName',
   values,
   value,
+  id,
+  onChange,
   ...otherProps
 }: Props) => {
   const componentClassName = getComponentClassName(
@@ -31,6 +34,35 @@ const CardGroup = ({
     isActive ? 'af-rccard-group--active' : ''
   }`;
 
+  const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    if (type === 'checkbox') {
+      let newValues = [] as string[];
+      if (values) {
+        newValues = [...values];
+      }
+
+      const index = newValues.indexOf(e.target.value);
+      const checked = index <= -1;
+      if (checked) {
+        newValues.push(e.target.value);
+      } else {
+        newValues.splice(index, 1);
+      }
+      onChange &&
+        onChange({
+          values: newValues,
+          target: {
+            value: e.target.value,
+            checked,
+          },
+          name,
+          id,
+        });
+    } else {
+      onChange && onChange({ value: e.target.value, name, id });
+    }
+  };
+
   return (
     <CardGroupStateless
       type={type}
@@ -39,7 +71,8 @@ const CardGroup = ({
       values={values}
       value={value}
       className={cardGroupClassName}
-      {...otherProps}>
+      {...otherProps}
+      onChange={handleOnChange}>
       {children}
     </CardGroupStateless>
   );
@@ -55,45 +88,6 @@ type OnChange = {
   }) => void;
 };
 
-const handlers = {
-  onChange:
-    ({
-      type,
-      values,
-      name,
-      id,
-      onChange,
-    }: Omit<Props, 'onChange'> & OnChange) =>
-    (e: any) => {
-      if (type === 'checkbox') {
-        let newValues = [] as string[];
-        if (values) {
-          newValues = [...values];
-        }
-
-        const index = newValues.indexOf(e.value);
-        const checked = index <= -1;
-        if (checked) {
-          newValues.push(e.value);
-        } else {
-          newValues.splice(index, 1);
-        }
-        onChange &&
-          onChange({
-            values: newValues,
-            target: {
-              value: e.value,
-              checked,
-            },
-            name,
-            id,
-          });
-      } else {
-        onChange && onChange({ value: e.value, name, id });
-      }
-    },
-};
-
-const EnhancedComponent = withInput(handlers)(CardGroup);
+const EnhancedComponent = withIsVisible(CardGroup);
 
 export default EnhancedComponent;

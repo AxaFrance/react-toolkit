@@ -1,9 +1,9 @@
-import React, { ComponentPropsWithoutRef } from 'react';
 import {
   Field,
-  useOptionsWithId,
   getFirstId,
+  useOptionsWithId,
 } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithoutRef } from 'react';
 import Radio, { RadioModes } from './Radio';
 
 type RadioInputProps = ComponentPropsWithoutRef<typeof Field> &

@@ -1,17 +1,17 @@
-import React, {
-  cloneElement,
-  Children,
-  useState,
-  useRef,
-  useEffect,
-  BaseSyntheticEvent,
-  ReactElement,
-  isValidElement,
-  ReactNode,
-} from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import MessageTypes from './MessageTypes';
+import React, {
+  BaseSyntheticEvent,
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import FormClassManager from './FormClassManager';
+import MessageTypes from './MessageTypes';
 
 const defaultClassName = 'md-10';
 

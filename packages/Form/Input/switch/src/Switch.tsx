@@ -1,4 +1,4 @@
-import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
+import { Option, withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import React, {
   ComponentProps,
   CSSProperties,
@@ -80,4 +80,4 @@ const getSliderStyle = (ref: RefObject<HTMLDivElement>): CSSProperties => {
   };
 };
 
-export default withInput()(Switch);
+export default withIsVisible(Switch);

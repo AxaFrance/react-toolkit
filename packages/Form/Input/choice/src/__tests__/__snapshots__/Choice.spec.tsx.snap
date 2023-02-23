@@ -214,7 +214,7 @@ exports[`<ChoiceInput> renders ChoiceInput correctly with required 1`] = `
       class="col-md-10"
     >
       <div
-        class="af-form__radio-custom"
+        class="af-form__radio-custom af-form__radio-custom--required"
       >
         <input
           class="af-form__input-radio"
@@ -236,7 +236,7 @@ exports[`<ChoiceInput> renders ChoiceInput correctly with required 1`] = `
         </label>
       </div>
       <div
-        class="af-form__radio-custom"
+        class="af-form__radio-custom af-form__radio-custom--required"
       >
         <input
           class="af-form__input-radio"

@@ -1,17 +1,17 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import {
-  CardGroupCheckbox,
   Card,
-  CardHeader,
-  CardFooter,
   CardContent,
+  CardFooter,
+  CardGroupCheckbox,
+  CardHeader,
 } from '../index';
 
 describe('<Card>', () => {
   it('renders Card correctly', () => {
     const { asFragment } = render(
-      <CardGroupCheckbox onChange={jest.fn()} values={['1']}>
+      <CardGroupCheckbox onChange={jest.fn()} values={['1']} id="id">
         <Card name="name" id="name" value="1">
           <CardHeader>
             <p className="af-rccard-header__title"> Référence</p>

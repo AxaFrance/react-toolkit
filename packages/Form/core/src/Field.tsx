@@ -1,8 +1,8 @@
-import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import FieldError from './FieldError';
-import MessageTypes from './MessageTypes';
 import FieldForm from './FieldForm';
+import MessageTypes from './MessageTypes';
 
 type FieldProps = Omit<
   ComponentPropsWithoutRef<typeof FieldForm>,

@@ -1,3 +1,6 @@
+import Button from '@axa-fr/react-toolkit-button';
+import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import React from 'react';
 import {
   DropzoneInputProps,
@@ -5,16 +8,13 @@ import {
   FileRejection,
   useDropzone,
 } from 'react-dropzone';
-import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
-import Button from '@axa-fr/react-toolkit-button';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Dropzone = DropzoneInputProps & DropzoneOptions;
 type Props = Omit<Dropzone, 'onDrop' | 'onChange'> & {
   classModifier?: string;
   label?: string;
   icon?: string;
-  onChange: DropzoneOptions['onDrop'];
+  onChange: OnChangeFunction;
 };
 
 const File = ({
@@ -34,8 +34,29 @@ const File = ({
   icon = 'open',
   ...otherProps
 }: Props) => {
+  const handleOnChange: DropzoneOptions['onDrop'] = (
+    acceptedFiles: File[],
+    rejectedFiles: FileRejection[]
+  ) => {
+    const values = acceptedFiles.map((file) => ({
+      id: createId(),
+      file: { ...file, preview: URL.createObjectURL(file) },
+    }));
+    const errors = rejectedFiles.map((error) => ({
+      id: createId(),
+      file: error,
+    }));
+    onChange &&
+      onChange({
+        values,
+        errors,
+        name,
+        id,
+      });
+  };
+
   const { getRootProps, getInputProps, open } = useDropzone({
-    onDrop: onChange,
+    onDrop: handleOnChange,
     minSize,
     maxSize,
     multiple,
@@ -73,58 +94,11 @@ export type CustomFile<T = FilePreview> = {
   id: string;
   file: T;
 };
-type OnChange = {
-  onChange: (data: {
-    id: string;
-    name: string;
-    values: CustomFile[];
-    errors?: CustomFile<FileRejection>[];
-  }) => void;
-};
+type OnChangeFunction = (data: {
+  id: string;
+  name: string;
+  values: CustomFile[];
+  errors?: CustomFile<FileRejection>[];
+}) => void;
 
-const handlers = {
-  onChange:
-    ({ onChange, name, id }: Omit<Props, 'onChange'> & OnChange) =>
-    <T extends File & {}>(
-      acceptedFiles: T[],
-      rejectedFiles: FileRejection[]
-    ) => {
-      const values = acceptedFiles.map((file) => ({
-        id: createId(),
-        file: {
-          ...file,
-          lastModified: file.lastModified,
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          stream: file.stream,
-          arrayBuffer: file.arrayBuffer,
-          slice: file.slice,
-          text: file.text,
-          preview: URL.createObjectURL(file),
-        },
-      }));
-      const errors = rejectedFiles.map((error) => ({
-        id: createId(),
-        file: {
-          errors: error.errors,
-          file: {
-            ...error.file,
-            lastModified: error.file.lastModified,
-            name: error.file.name,
-            type: error.file.type,
-            size: error.file.size,
-          } as File,
-        },
-      }));
-      onChange &&
-        onChange({
-          values,
-          errors,
-          name,
-          id,
-        });
-    },
-};
-
-export default withInput(handlers)(File);
+export default withIsVisible(File);
