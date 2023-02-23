@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactSelect, { GroupBase, Options } from 'react-select';
 import ReactSelectAsync, { AsyncProps } from 'react-select/async';
-import { createId } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 
 type Option = { value: string; label: string; [x: string]: any };
 type Props = Omit<
@@ -80,42 +79,4 @@ const MultiSelect = ({
   );
 };
 
-type OnChange = {
-  onChange: (data: {
-    id: string;
-    name: string;
-    values?: string[];
-    value?: string;
-  }) => void;
-};
-
-const handlers = {
-  onChange:
-    ({
-      values,
-      name,
-      id: selectId,
-      onChange,
-    }: Omit<Props, 'onChange'> & OnChange) =>
-    (newValue: Option | Option[]) => {
-      const id = selectId ?? createId();
-      if (values !== null) {
-        const newValues = ((newValue as Option[]) || []).map((v) => v.value);
-        onChange &&
-          onChange({
-            values: newValues,
-            name,
-            id,
-          });
-      } else {
-        onChange &&
-          onChange({
-            value: (newValue as Option).value,
-            name,
-            id,
-          });
-      }
-    },
-};
-
-export default withInput(handlers)(MultiSelect);
+export default withIsVisible(MultiSelect);

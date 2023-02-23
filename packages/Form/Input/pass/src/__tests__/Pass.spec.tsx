@@ -30,11 +30,13 @@ describe('<Pass />', () => {
 
       userEvent.type(screen.getByRole('password'), 'changed value');
 
-      expect(onChange).toHaveBeenCalledWith({
-        name: 'passwordtest',
-        value: 'changed value',
-        id: 'testid',
-      });
+      expect(onChange).toHaveBeenCalledWith(
+        expect.objectContaining({
+          target: expect.objectContaining({
+            value: 'changed value',
+          }),
+        })
+      );
     });
   });
 

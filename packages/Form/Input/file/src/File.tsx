@@ -7,14 +7,14 @@ import {
 } from 'react-dropzone';
 import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 
 type Dropzone = DropzoneInputProps & DropzoneOptions;
 type Props = Omit<Dropzone, 'onDrop' | 'onChange'> & {
   classModifier?: string;
   label?: string;
   icon?: string;
-  onChange: DropzoneOptions['onDrop'];
+  onChange: OnChangeFunction;
 };
 
 const File = ({
@@ -34,8 +34,29 @@ const File = ({
   icon = 'open',
   ...otherProps
 }: Props) => {
+  const handleOnChange: DropzoneOptions['onDrop'] = (
+    acceptedFiles: File[],
+    rejectedFiles: FileRejection[]
+  ) => {
+    const values = acceptedFiles.map((file) => ({
+      id: createId(),
+      file: { ...file, preview: URL.createObjectURL(file) },
+    }));
+    const errors = rejectedFiles.map((error) => ({
+      id: createId(),
+      file: error,
+    }));
+    onChange &&
+      onChange({
+        values,
+        errors,
+        name,
+        id,
+      });
+  };
+
   const { getRootProps, getInputProps, open } = useDropzone({
-    onDrop: onChange,
+    onDrop: handleOnChange,
     minSize,
     maxSize,
     multiple,
@@ -71,38 +92,11 @@ export type CustomFile<T = File & { preview: string }> = {
   id: string;
   file: T;
 };
-type OnChange = {
-  onChange: (data: {
-    id: string;
-    name: string;
-    values: CustomFile[];
-    errors?: CustomFile<FileRejection>[];
-  }) => void;
-};
+type OnChangeFunction = (data: {
+  id: string;
+  name: string;
+  values: CustomFile[];
+  errors?: CustomFile<FileRejection>[];
+}) => void;
 
-const handlers = {
-  onChange:
-    ({ onChange, name, id }: Omit<Props, 'onChange'> & OnChange) =>
-    <T extends File & {}>(
-      acceptedFiles: T[],
-      rejectedFiles: FileRejection[]
-    ) => {
-      const values = acceptedFiles.map((file) => ({
-        id: createId(),
-        file: { ...file, preview: URL.createObjectURL(file) },
-      }));
-      const errors = rejectedFiles.map((error) => ({
-        id: createId(),
-        file: error,
-      }));
-      onChange &&
-        onChange({
-          values,
-          errors,
-          name,
-          id,
-        });
-    },
-};
-
-export default withInput(handlers)(File);
+export default withIsVisible(File);

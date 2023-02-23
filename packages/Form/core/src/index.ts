@@ -8,8 +8,7 @@ export { default as FormClassManager } from './FormClassManager';
 export { default as FieldForm } from './FieldForm';
 export { default as HelpMessage } from './HelpMessage';
 export { default as InputList } from './InputList';
-
-export { withInput, omit } from './withInput';
+export { withIsVisible } from './WithIsVisible';
 
 export { useInputClassModifier } from './useInputClassModifier';
 export { getOptionClassName } from './getOptionClassName';

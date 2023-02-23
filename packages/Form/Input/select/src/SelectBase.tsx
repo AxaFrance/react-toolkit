@@ -1,5 +1,5 @@
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import React, {
   ComponentPropsWithoutRef,
   forwardRef,
@@ -37,4 +37,4 @@ const SelectBase = forwardRef<HTMLSelectElement, Props>(
   }
 );
 
-export default withInput()(SelectBase);
+export default withIsVisible(SelectBase);

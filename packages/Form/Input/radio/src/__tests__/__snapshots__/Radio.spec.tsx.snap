@@ -67,7 +67,6 @@ exports[`Radio should have correct html rendered 1`] = `
   >
     <input
       class="af-form__input-radio"
-      disabled=""
       id="for-life"
       type="radio"
       value="4"

@@ -32,7 +32,10 @@ const formatTitle = (titleParam: ReactNode) => {
   );
 };
 type Card = typeof import('./Card').default;
-type Props = Omit<ComponentProps<Card>, 'nbCards' | 'children' | 'title'> & {
+type Props = Omit<
+  ComponentProps<Card>,
+  'nbCards' | 'children' | 'title' | 'id'
+> & {
   title?: ReactNode | string;
   propClassName?: string;
   values?: string[];
