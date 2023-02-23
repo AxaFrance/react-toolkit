@@ -43,7 +43,6 @@ const CheckboxInput = ({
       classNameContainerInput={classNameContainerInput}>
       <Checkbox
         mode={mode}
-        isVisible={isVisible}
         options={newOptions}
         classModifier={classModifier}
         required={classModifier?.includes('required')}

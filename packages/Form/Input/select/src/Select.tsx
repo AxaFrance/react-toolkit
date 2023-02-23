@@ -1,5 +1,4 @@
 import { useId } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
 import React, { ComponentPropsWithRef, useMemo, useState } from 'react';
 import SelectBase from './SelectBase';
 
@@ -50,23 +49,4 @@ const Select = ({ mode = 'default', children, ...props }: SelectProps) => {
   return <DynamicComponent {...props}>{children}</DynamicComponent>;
 };
 
-const handlers = {
-  onChange:
-    ({
-      name,
-      id,
-      onChange,
-    }: Omit<Props, 'onChange'> & {
-      onChange: (data: { id: string; name: string; value: string }) => void;
-    }) =>
-    (e: any) => {
-      onChange &&
-        onChange({
-          value: e.value,
-          name,
-          id,
-        });
-    },
-};
-
-export default withInput(handlers)(Select);
+export default Select;

@@ -1,5 +1,5 @@
+import { Option, withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import React, { ComponentPropsWithRef } from 'react';
-import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
 import RadioItem from './RadioItem';
 
 export enum RadioModes {
@@ -58,21 +58,6 @@ const getClassNameMode = (mode: Props['mode']) => {
   }
 };
 
-Radio.displayName = 'EnhancedInputRadio';
-const handlers = {
-  onChange:
-    ({ onChange, name }: Props) =>
-    ({ value, id }: Parameters<Props['onChange']>[0]) => {
-      onChange &&
-        onChange({
-          value,
-          id,
-          name,
-        });
-    },
-};
-
-/** Empty function is here to override default propsOverride parameter into HOC withInput
- * Because here we doesn't want an override of className
- */
-export default withInput(handlers, ({}) => ({}))(Radio);
+const RadioWithIsVisible = withIsVisible(Radio);
+RadioWithIsVisible.displayName = 'EnhancedInputRadio';
+export default RadioWithIsVisible;

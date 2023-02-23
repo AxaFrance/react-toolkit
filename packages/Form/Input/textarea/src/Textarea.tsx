@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 
 type Props = ComponentPropsWithoutRef<'textarea'> & {
   classModifier?: string;
@@ -24,4 +24,4 @@ const Textarea = forwardRef<HTMLTextAreaElement, Props>(
   }
 );
 
-export default withInput()(Textarea);
+export default withIsVisible(Textarea);

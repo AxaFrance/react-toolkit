@@ -1,20 +1,19 @@
 import { ReactNode } from 'react';
 
 export { default as Field } from './Field';
-export { default as FieldInput } from './FieldInput';
-export { default as MessageTypes } from './MessageTypes';
 export { default as FieldError } from './FieldError';
-export { default as FormClassManager } from './FormClassManager';
 export { default as FieldForm } from './FieldForm';
+export { default as FieldInput } from './FieldInput';
+export { default as FormClassManager } from './FormClassManager';
 export { default as HelpMessage } from './HelpMessage';
 export { default as InputList } from './InputList';
+export { default as MessageTypes } from './MessageTypes';
+export { withIsVisible } from './withIsVisible';
 
-export { withInput, omit } from './withInput';
-
-export { useInputClassModifier } from './useInputClassModifier';
-export { getOptionClassName } from './getOptionClassName';
-export { useOptionsWithId } from './useOptionsWithId';
 export { default as getFirstId } from './getFirstId';
+export { getOptionClassName } from './getOptionClassName';
+export { useInputClassModifier } from './useInputClassModifier';
+export { useOptionsWithId } from './useOptionsWithId';
 
 export type Option = {
   id?: string;

@@ -4,7 +4,7 @@
     "serverId": "sonarcloud"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "[typescriptreact,jsonc,typescript,javascript,html,json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

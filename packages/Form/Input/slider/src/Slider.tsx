@@ -1,17 +1,18 @@
-import React, { ComponentProps, ReactNode } from 'react';
-import RcSlider from 'rc-slider';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
+import RcSlider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import React, { ComponentProps, ReactNode } from 'react';
 
 type RcSliderProps = ComponentProps<typeof RcSlider>;
 type Marks = RcSliderProps['marks'];
 
-type Props = Omit<RcSliderProps, 'marks'> & {
+type Props = Omit<RcSliderProps, 'marks' | 'onChange'> & {
   classModifier?: string;
   options: { value: number; label?: string | ReactNode }[];
   id: string;
   name: string;
+  onChange: (data: { id: string; name: string; value: number }) => void;
 };
 
 const Slider = ({
@@ -20,6 +21,9 @@ const Slider = ({
   defaultValue,
   className,
   classModifier,
+  onChange,
+  name,
+  id,
   ...otherProps
 }: Props) => {
   const optionSorted = [...options].sort(
@@ -40,6 +44,14 @@ const Slider = ({
     'af-form__slider'
   );
 
+  const handleOnChange = (newValue: number) => {
+    onChange &&
+      onChange({
+        value: newValue,
+        name,
+        id,
+      });
+  };
   return (
     <RcSlider
       {...otherProps}
@@ -49,29 +61,10 @@ const Slider = ({
       step={null}
       className={componentClassName}
       defaultValue={defaultValue || value}
-      aria-required={classModifier?.includes('required')}
+      aria-required={classModifier?.includes('required') ?? false}
+      onChange={handleOnChange}
     />
   );
 };
 
-const handlers = {
-  onChange:
-    ({
-      name,
-      id,
-      onChange,
-      options,
-    }: Omit<Props, 'onChange'> & {
-      onChange: (data: { id: string; name: string; value: number }) => void;
-    }) =>
-    (e: any) => {
-      onChange &&
-        onChange({
-          value: options[e].value,
-          name,
-          id,
-        });
-    },
-};
-
-export default withInput(handlers)(Slider);
+export default withIsVisible(Slider);

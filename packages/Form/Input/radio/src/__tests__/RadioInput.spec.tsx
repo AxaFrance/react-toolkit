@@ -1,6 +1,6 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import { render } from '@testing-library/react';
+import React from 'react';
 import { RadioInput, RadioModes } from '..';
 
 const options = [

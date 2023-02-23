@@ -1,42 +1,71 @@
 import React, { ComponentProps, ReactNode } from 'react';
-import { Option, withInput } from '@axa-fr/react-toolkit-form-core';
+import { Option, withIsVisible } from '@axa-fr/react-toolkit-form-core';
 import CheckBoxModes from './CheckboxModes';
 import CheckboxItem from './CheckboxItem';
 
+type OnChange = {
+  onChange: (data: {
+    values: string[];
+    target: { value: string; checked: boolean };
+    name: string;
+    id: string;
+  }) => void;
+};
+
 type Props = Omit<
   ComponentProps<typeof CheckboxItem>,
-  'value' | 'label' | 'checked'
+  'value' | 'label' | 'checked' | 'onChange'
 > & {
   options: Option[];
   values?: string[];
   children?: ReactNode;
-};
+  mode?: keyof typeof CheckBoxModes;
+} & OnChange;
 
 const Checkbox = ({
+  id,
+  name,
   options,
   disabled,
   children,
   values,
+  mode = CheckBoxModes.default,
+  onChange,
   ...otherProps
-}: Props) => (
-  <>
-    {options.map((option) => {
-      const isChecked = values ? values.indexOf(option.value) >= 0 : false;
-      return (
-        <CheckboxItem
-          {...otherProps}
-          key={option.value}
-          id={option.id}
-          value={option.value}
-          label={option.label}
-          isChecked={isChecked}
-          disabled={option.disabled || disabled}>
-          {children}
-        </CheckboxItem>
-      );
-    })}
-  </>
-);
+}: Props) => {
+  const className = defaultClassName(mode);
+
+  const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = ({
+    target: { value, checked },
+  }) => {
+    const newValues = checked
+      ? [...values, value]
+      : values.filter((v) => v !== value);
+    onChange({ values: newValues, target: { value, checked }, id, name });
+  };
+  return (
+    <>
+      {options.map((option) => {
+        const isChecked = values ? values.indexOf(option.value) >= 0 : false;
+        return (
+          <CheckboxItem
+            {...otherProps}
+            onChange={handleOnChange}
+            key={option.value}
+            className={className}
+            id={option.id}
+            value={option.value}
+            label={option.label}
+            isChecked={isChecked}
+            name={name}
+            disabled={option.disabled || disabled}>
+            {children}
+          </CheckboxItem>
+        );
+      })}
+    </>
+  );
+};
 
 const defaultClassName = (mode: string) => {
   switch (mode) {
@@ -49,48 +78,6 @@ const defaultClassName = (mode: string) => {
   }
 };
 
-type OnChange = {
-  onChange: (data: {
-    values: string[];
-    target: { value: string; checked: boolean };
-    name: string;
-    id: string;
-  }) => void;
-};
-
-const handlersOverride = {
-  onChange:
-    ({ onChange, name, values, id }: Omit<Props, 'onChange'> & OnChange) =>
-    (e: any) => {
-      let newValues: typeof values = [];
-      if (values) {
-        newValues = [...values];
-      }
-      const index = newValues.indexOf(e.value);
-      const checked = index <= -1;
-      if (checked) {
-        newValues.push(e.value);
-      } else {
-        newValues.splice(index, 1);
-      }
-      onChange &&
-        onChange({
-          values: newValues,
-          target: { value: e.value, checked },
-          name,
-          id,
-        });
-    },
-};
-
-const propsOverride = ({
-  mode = CheckBoxModes.default,
-}: {
-  mode?: keyof typeof CheckBoxModes;
-}) => ({
-  className: defaultClassName(mode),
-});
-
 Checkbox.displayName = 'EnhancedInputCheckbox';
 
-export default withInput(handlersOverride, propsOverride)(Checkbox);
+export default withIsVisible(Checkbox);
