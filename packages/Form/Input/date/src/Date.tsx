@@ -1,6 +1,5 @@
-import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
   /** A modifier for specified className */
@@ -36,23 +35,4 @@ const Date = forwardRef<HTMLInputElement, Props>(
   }
 );
 
-type OnChange = {
-  onChange: (data: { value: Date; name: string; id: string }) => void;
-};
-
-const handlers = {
-  onChange:
-    ({ onChange, name, id }: Omit<Props, 'onChange'> & OnChange) =>
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const newValue = e.currentTarget.valueAsDate;
-      onChange &&
-        newValue &&
-        onChange({
-          value: newValue,
-          name,
-          id,
-        });
-    },
-};
-
-export default withInput(handlers)(Date);
+export default Date;

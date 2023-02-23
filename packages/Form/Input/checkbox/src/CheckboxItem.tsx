@@ -4,7 +4,7 @@ import React, {
   ReactNode,
 } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
-import { getOptionClassName, withInput } from '@axa-fr/react-toolkit-form-core';
+import { getOptionClassName } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'label'> & {
   classModifier?: string;
@@ -16,20 +16,27 @@ type Props = Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'label'> & {
 };
 
 const CheckboxItem = ({
-  disabled = true,
+  disabled,
   value = '',
   id,
   children,
   label,
   isChecked,
-  optionClassName,
   inputRef,
-  className: _className,
-  classModifier: _classModifier,
+  className,
+  classModifier,
   ...otherProps
 }: Props) => {
   const newLabel = children || label;
   const newId = useId(id); // id is require on this component
+
+  const optionClassName = getOptionClassName(
+    className,
+    classModifier,
+    'af-form__checkbox',
+    disabled
+  );
+
   return (
     <div className={optionClassName}>
       <input
@@ -52,22 +59,4 @@ const CheckboxItem = ({
   );
 };
 
-type PropsOverride = {
-  className?: string;
-  classModifier?: string;
-  disabled?: boolean;
-};
-const propsOverrides = ({
-  className,
-  classModifier,
-  disabled,
-}: PropsOverride) => ({
-  optionClassName: getOptionClassName(
-    className,
-    classModifier,
-    'af-form__checkbox',
-    disabled
-  ),
-});
-
-export default withInput({}, propsOverrides)(CheckboxItem);
+export default CheckboxItem;

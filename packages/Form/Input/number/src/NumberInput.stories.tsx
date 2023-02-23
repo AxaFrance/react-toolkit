@@ -22,7 +22,7 @@ export default {
 const Template: Story<
   Omit<ComponentPropsWithoutRef<typeof NumberInput>, 'value' | 'onChange'>
 > = (args) => {
-  const [value, setValue] = useState<number>(null);
+  const [value, setValue] = useState<number>();
   return (
     <form className="af-form" name="myform">
       <NumberInput
@@ -30,7 +30,7 @@ const Template: Story<
         value={value}
         onChange={(e) => {
           action('onChange')(e);
-          setValue(e.value);
+          setValue(e.target.valueAsNumber);
         }}>
         <Help>tooltip avec du text</Help>
       </NumberInput>

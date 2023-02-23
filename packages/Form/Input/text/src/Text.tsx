@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef, forwardRef } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 
 type Props = ComponentPropsWithRef<'input'> & {
   classModifier?: string;
@@ -25,4 +25,4 @@ const Text = forwardRef<HTMLInputElement, Props>(
   }
 );
 
-export default withInput()(Text);
+export default withIsVisible(Text);
