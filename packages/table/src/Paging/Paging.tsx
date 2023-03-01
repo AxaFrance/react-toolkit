@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, useCallback } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Pager from '../Pager/Pager';
 import Items from '../Items/Items';
@@ -23,6 +23,7 @@ const Paging = ({
   numberPages,
   ofLabel,
   previousLabel,
+  items,
   onChange,
 }: Props) => {
   const componentClassName = getComponentClassName(
@@ -30,30 +31,40 @@ const Paging = ({
     classModifier,
     'af-paging'
   );
+
+  const handleChangeItems = useCallback(
+    (e) =>
+      onChange({
+        numberItems: e.value,
+        page: currentPage,
+      }),
+    []
+  );
+
+  const handleChangePager = useCallback(
+    (e) =>
+      onChange({
+        numberItems,
+        page: e.value,
+      }),
+    []
+  );
+
   return (
     <div className={componentClassName}>
       <div className="af-paging__limit">
         <Items
-          onChange={(e) =>
-            onChange({
-              numberItems: e.value,
-              page: currentPage,
-            })
-          }
+          onChange={handleChangeItems}
           numberItems={numberItems}
           id={id}
           displayLabel={displayLabel}
           elementsLabel={elementsLabel}
+          items={items}
         />
       </div>
       <div className="af-paging__pager">
         <Pager
-          onChange={(e) =>
-            onChange({
-              numberItems,
-              page: e.value,
-            })
-          }
+          onChange={handleChangePager}
           currentPage={currentPage}
           numberPages={numberPages}
           previousLabel={previousLabel}

@@ -5,7 +5,7 @@ import Modes from '../Pager/Modes';
 import Readme from './README.md';
 
 export default {
-  title: 'Components/Paging',
+  title: 'Components/Table/Paging',
   component: Paging,
   parameters: {
     readme: {
@@ -45,4 +45,5 @@ Default.args = {
   currentPage: 5,
   numberPages: 23,
   numberItems: 25,
+  items: [5, 10, 25, 50, 100],
 };

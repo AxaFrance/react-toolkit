@@ -43,7 +43,7 @@ module.exports = {
     '../packages/popover/src/*.stories.@(ts|tsx|js)',
     '../packages/restitution/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
-    '../packages/table/src/*.stories.@(ts|tsx|js)',
+    '../packages/table/src/**/*.stories.@(ts|tsx|js)',
     '../packages/tabs/src/*.stories.@(ts|tsx|js)',
     '../packages/title/src/*.stories.@(ts|tsx|js)',
   ],

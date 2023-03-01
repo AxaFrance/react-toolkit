@@ -14,7 +14,7 @@ const Header = ({
   const componentClassName = getComponentClassName(
     className,
     classModifier,
-    'af-table-thead'
+    'af-table__thead'
   );
   return (
     <thead className={componentClassName} {...otherProps}>

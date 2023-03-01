@@ -4,7 +4,7 @@ import Items, { Props } from './Items';
 import readme from './README.md';
 
 export default {
-  title: 'Table/Items',
+  title: 'Components/Table/Items',
   component: Items,
   parameters: {
     readme: {
