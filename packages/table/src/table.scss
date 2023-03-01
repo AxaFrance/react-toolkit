@@ -1,6 +1,5 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
-/* Legacy old version */
 .af-table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -11,12 +10,6 @@
 
   &-th {
     font-weight: $table-head-font-weight;
-  }
-  @include generate-universes() {
-    .af-table-thead {
-      background-color: $color;
-      color: $table-inverse-color;
-    }
   }
 
   &__th {
@@ -29,6 +22,9 @@
     position: relative;
     padding: 1rem;
     font-weight: $table-head-font-weight;
+    &--sortable {
+      padding: 0;
+    }
 
     .af-link {
       color: $white;
@@ -44,10 +40,6 @@
       top: 50%;
       right: 1rem;
       transform: translate(0, -50%);
-    }
-
-    &--sortable {
-      padding: 0;
     }
   }
 
@@ -74,8 +66,12 @@
       border-right: 0;
     }
   }
+
+  /* Legacy old version */
   @include generate-universes() {
-    .af-table-thead {
+    .af-table__thead {
+      background-color: $color;
+      color: $table-inverse-color;
       .af-table__tr {
         .af-table__th {
           background-color: $color;
@@ -83,5 +79,46 @@
         }
       }
     }
+  }
+}
+
+/* CUSTOM mixin : shadow scroll horizontal & vertical *************************************************/
+
+@mixin scroll-horizontal-shadow($maxWidth: 100%) {
+  max-width: $maxWidth;
+  overflow: auto;
+  background: linear-gradient(
+        90deg,
+        rgba(255, 255, 245, 0.6) 30%,
+        rgba(255, 255, 255, 0)
+      )
+      left center,
+    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 245, 0.6) 80%)
+      right center,
+    radial-gradient(
+        farthest-side at 0 50%,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+      )
+      0 50%,
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+      )
+      right center;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+@include media-breakpoint-down(xs) {
+  .af-table__tr:nth-child(2n + 1) .af-table__cell {
+    background-color: rgba($color-gray-1, 0.5);
+  }
+  .af-table {
+    display: block;
+    margin: 0 auto;
+    @include scroll-horizontal-shadow(100%);
   }
 }

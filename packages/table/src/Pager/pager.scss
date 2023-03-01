@@ -12,7 +12,7 @@
   }
 
   &__item {
-    border-radius: 100%;
+    border-radius: rem(25px);
     font-size: 0.9375rem;
 
     &--active {
@@ -48,6 +48,26 @@
       &:hover {
         text-decoration: none;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .af-paging__pager {
+    margin-top: 2rem;
+  }
+  .af-paging__limit {
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+    [class^='col'] {
+      padding: inherit;
+      flex-basis: inherit;
+      flex-grow: inherit;
+      width: inherit;
+    }
+    .af-form__group {
+      justify-content: space-evenly;
     }
   }
 }
