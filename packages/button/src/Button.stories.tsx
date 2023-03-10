@@ -17,7 +17,7 @@ const MODIFIERS = [
 ];
 
 const story = {
-  title: 'Components/Button',
+  title: 'Agent/Components/Button',
   component: Button,
   parameters: {
     readme: {

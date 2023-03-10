@@ -23,6 +23,7 @@ export * from './form-input-text';
 export * from './form-input-textarea';
 export * from './form-steps';
 export * from './form-summary';
+export * from './header-client-app';
 export * from './help';
 export * from './help-info';
 export * from './highlight';

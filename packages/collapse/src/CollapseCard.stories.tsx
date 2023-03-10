@@ -5,7 +5,7 @@ import CollapseCard from './CollapseCard';
 import readme from '../README.md';
 
 export default {
-  title: 'Components low level/Collapse',
+  title: 'Agent/Components low level/Collapse',
   component: CollapseCard,
   parameters: {
     readme: {

@@ -5,7 +5,7 @@ import LoaderModes from './LoaderModes';
 import readme from '../README.md';
 
 export default {
-  title: 'Components/Loader',
+  title: 'Agent/Components/Loader',
   component: Loader,
   parameters: {
     readme: {

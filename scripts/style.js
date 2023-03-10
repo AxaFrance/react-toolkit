@@ -82,9 +82,14 @@ const prepareStylePackages = (packagesScssfiles) => {
     const outputPath = `${path
       .dirname(scssFile)
       .replace(`/${src}`, `/${dist}`)}`;
-    const outputName = `/af-${path
-      .basename(scssFile)
-      .replace(`.scss`, '.css')}`;
+
+    let outputName = '';
+
+    if (scssFile.includes('afc-')) {
+      outputName = `/${path.basename(scssFile).replace(`.scss`, '.css')}`;
+    } else {
+      outputName = `/af-${path.basename(scssFile).replace(`.scss`, '.css')}`;
+    }
 
     if (!fs.existsSync(outputPath)) {
       fs.mkdirSync(outputPath, { recursive: true });
@@ -151,15 +156,18 @@ const setFileImport = (filePath) => {
 /**
  * generation package /all Scss
  */
-const generateAfToolkitCore = (packagesScssfiles) => {
-  logStart('af-toolkit-core', true);
+const generateAll = (packagesScssfiles, name = 'af-components') => {
+  logStart('generate All', true);
   const imports = packagesScssfiles
     .map((scssFile) => setFileImport(scssFile))
     .join('\n');
 
-  generateContentScss(imports, 'af-toolkit-core');
-  generateContentScss(imports, 'af-components');
-  logFinished('af-toolkit-core', true);
+  if (name === 'af-components') {
+    generateContentScss(imports, 'af-toolkit-core');
+  }
+  generateContentScss(imports, name);
+
+  logFinished('generate All', true);
 };
 
 const generateContentScss = (imports, name) => {
@@ -292,7 +300,17 @@ try {
   const cleanedScssFiles = cleanPathScssPackagesFiles(scssFiles);
   const packagesScssfiles = getScssPackagesFiles(cleanedScssFiles);
   prepareStylePackages(packagesScssfiles);
-  generateAfToolkitCore(packagesScssfiles);
+
+  const clientFiles = packagesScssfiles.filter((file) =>
+    file.includes('-client')
+  );
+  const agentFiles = packagesScssfiles.filter(
+    (file) => !file.includes('-client')
+  );
+
+  generateAll(agentFiles);
+  generateAll(clientFiles, 'af-components-client');
+
   copyCoreFiles();
   copyBootstrapFiles();
 } catch (err) {

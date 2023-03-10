@@ -7,7 +7,7 @@ import readme from '../README.md';
 import SwitchItem from './SwitchItem';
 
 export default {
-  title: 'Form elements/Radio switch',
+  title: 'Agent/Form elements/Radio switch',
   component: Switch,
   parameters: {
     readme: {

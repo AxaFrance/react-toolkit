@@ -4,7 +4,7 @@ import ActionCore from './ActionCore';
 import Readme from '../README.md';
 
 export default {
-  title: 'Components low level/Action',
+  title: 'Agent/Components low level/Action',
   component: ActionCore,
   parameters: {
     readme: {

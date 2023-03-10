@@ -8,7 +8,7 @@ import readme from '../README.md';
 import './help-info.scss';
 
 export default {
-  title: 'Components high level/HelpInfo',
+  title: 'Agent/Components high level/HelpInfo',
   component: HelpInfo,
   parameters: {
     readme: {

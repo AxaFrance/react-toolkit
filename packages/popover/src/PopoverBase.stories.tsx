@@ -6,7 +6,7 @@ import Readme from '../README.md';
 import './help-custom.scss';
 
 export default {
-  title: 'Components low level/Popover',
+  title: 'Agent/Components low level/Popover',
   component: PopoverBase,
   parameters: {
     readme: {

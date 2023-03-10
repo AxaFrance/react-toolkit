@@ -5,7 +5,7 @@ import NavBarItem from './NavBarItem';
 import readme from './NavBarItem.md';
 
 export default {
-  title: 'Components low level/Navigation/NavBarItem',
+  title: 'Agent/Components low level/Navigation/NavBarItem',
   component: NavBarItem,
   parameters: {
     readme: {

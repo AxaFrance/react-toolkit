@@ -4,7 +4,7 @@ import { Radio, RadioModes } from '.';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Radio',
+  title: 'Agent/Form elements/Radio',
   parameters: {
     readme: {
       sidebar: readme,

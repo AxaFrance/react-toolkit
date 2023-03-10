@@ -6,7 +6,7 @@ import Readme from '../README.md';
 type ActionProps = ComponentProps<typeof Action>;
 
 export default {
-  title: 'Components/Action',
+  title: 'Agent/Components/Action',
   component: Action,
   parameters: {
     readme: {

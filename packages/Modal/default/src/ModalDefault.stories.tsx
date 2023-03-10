@@ -85,7 +85,7 @@ ModalCoreStrory.args = {
 };
 
 export default {
-  title: 'Components/Modal/Default',
+  title: 'Agent/Components/Modal/Default',
   component: Modal,
   parameters: {
     readme: {

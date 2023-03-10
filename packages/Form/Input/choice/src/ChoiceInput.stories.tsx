@@ -6,7 +6,7 @@ import Choice from './Choice';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Choice',
+  title: 'Agent/Form elements/Choice',
   component: Choice,
   parameters: {
     readme: {

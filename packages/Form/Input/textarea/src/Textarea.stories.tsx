@@ -5,7 +5,7 @@ import Readme from '../README.md';
 import './textarea.scss';
 
 export default {
-  title: 'Form elements/Textarea',
+  title: 'Agent/Form elements/Textarea',
   component: Textarea,
   parameters: {
     readme: {

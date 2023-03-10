@@ -7,7 +7,7 @@ import StepBase from './StepBase';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Steps',
+  title: 'Agent/Form elements/Steps',
   component: Steps,
   parameters: {
     readme: {

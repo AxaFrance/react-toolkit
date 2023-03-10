@@ -4,7 +4,7 @@ import Infos from './Infos';
 import readme from '../../README.md';
 
 export default {
-  title: 'Structure/Header/Infos',
+  title: 'Agent/Structure/Header/Infos',
   component: Infos,
   parameters: {
     readme: {

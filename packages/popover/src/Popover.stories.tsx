@@ -6,7 +6,7 @@ import PopoverModes from './PopoverModes';
 import Readme from '../README.md';
 
 export default {
-  title: 'Components/Popover',
+  title: 'Agent/Components/Popover',
   component: Popover,
   parameters: {
     readme: {

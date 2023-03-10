@@ -1,0 +1,20 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
+.afc-title {
+  position: relative;
+  font-weight: 700;
+  color: $color-texte;
+  font-size: rem(28px);
+  line-height: rem(34px);
+  padding-bottom: rem(24px);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 40px;
+    background-color: $color-dusty-gray;
+  }
+}

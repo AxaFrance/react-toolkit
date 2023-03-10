@@ -7,7 +7,7 @@ import readme from '../README.md';
 import { RadioModes } from './Radio';
 
 export default {
-  title: 'Form elements/Radio',
+  title: 'Agent/Form elements/Radio',
   component: RadioInput,
   parameters: {
     readme: {

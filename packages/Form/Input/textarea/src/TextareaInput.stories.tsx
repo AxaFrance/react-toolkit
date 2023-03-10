@@ -5,7 +5,7 @@ import TextareaInput from './TextareaInput';
 import Readme from '../README.md';
 
 export default {
-  title: 'Form elements/Textarea',
+  title: 'Agent/Form elements/Textarea',
   component: TextareaInput,
   parameters: {
     readme: {

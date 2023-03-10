@@ -1,0 +1,19 @@
+@import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
+
+.afc-header-app {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  background: $color-axa;
+  color: $color-texte;
+  font-size: rem(14px);
+  line-height: rem(20px);
+  padding: rem(16px);
+  color: $color-white;
+  text-align: center;
+  .material-icons {
+    font-size: rem(22px);
+  }
+  > * {
+    color: $color-white;
+  }
+}

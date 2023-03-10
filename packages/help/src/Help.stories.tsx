@@ -6,7 +6,7 @@ import readme from '../README.md';
 import './help-custom.scss';
 
 export default {
-  title: 'Components high level/Help',
+  title: 'Agent/Components high level/Help',
   component: Help,
   parameters: {
     readme: {

@@ -7,7 +7,7 @@ import readme from '../README.md';
 const MODIFIERS = ['success', 'info', 'danger', 'error'];
 
 const story = {
-  title: 'Components/Alert',
+  title: 'Agent/Components/Alert',
   component: Alert,
   parameters: {
     readme: {

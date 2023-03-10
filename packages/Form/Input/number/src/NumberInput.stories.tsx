@@ -8,7 +8,7 @@ import NumberInput from './NumberInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Number',
+  title: 'Agent/Form elements/Number',
   component: Number,
   argTypes: {},
   parameters: {

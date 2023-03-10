@@ -5,7 +5,7 @@ import SelectInput from './SelectInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Select',
+  title: 'Agent/Form elements/Select',
   component: SelectInput,
   parameters: {
     readme: {

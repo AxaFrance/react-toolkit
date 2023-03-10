@@ -8,7 +8,7 @@ import FileTable from './FileTable';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/File',
+  title: 'Agent/Form elements/File',
   component: FileInput,
   parameters: {
     readme: {

@@ -6,7 +6,7 @@ import CollapseCard from './CollapseCard';
 import readme from '../README.md';
 
 export default {
-  title: 'Components/Accordion',
+  title: 'Agent/Components/Accordion',
   component: Accordion,
   parameters: {
     readme: {

@@ -92,7 +92,8 @@
     "typescript": "4.3.5"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
+    "@fontsource/material-icons": "4.5.4",
+    "@popperjs/core": "2.11.6",
     "autoprefixer": "10.0.1",
     "clean-css": "4.2.3",
     "find": "0.3.0"

@@ -7,7 +7,7 @@ import readme from '../README.md';
 const MODIFIERS = ['success', 'info', 'danger', 'error'];
 
 const story = {
-  title: 'Components low level/Alert/AlertCore',
+  title: 'Agent/Components low level/Alert/AlertCore',
   component: AlertCore,
   parameters: {
     readme: {

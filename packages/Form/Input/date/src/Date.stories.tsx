@@ -6,7 +6,7 @@ import DateInput from './DateInput';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Date',
+  title: 'Agent/Form elements/Date',
   component: CustomDate,
   parameters: {
     readme: {

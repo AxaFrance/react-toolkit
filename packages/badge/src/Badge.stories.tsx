@@ -4,7 +4,7 @@ import Badge from './Badge';
 import readme from '../README.md';
 
 export default {
-  title: 'Components/Badge',
+  title: 'Agent/Components/Badge',
   component: Badge,
   parameters: {
     readme: {

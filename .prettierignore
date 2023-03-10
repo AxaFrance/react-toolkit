@@ -8,6 +8,7 @@ CHANGELOG.md
 lerna.json
 
 # react-toolkit-all
+packages/all/src/bootstrap/af-components-client.template.scss
 packages/all/src/bootstrap/af-components.template.scss
 packages/all/src/bootstrap/af-toolkit-core.template.scss
 packages/all/component

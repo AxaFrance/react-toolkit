@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import SelectBase from './SelectBase';
 
 export default {
-  title: 'Components low level/Select',
+  title: 'Agent/Components low level/Select',
   component: SelectBase,
   argTypes: {
     onChange: { action: 'onChange' },

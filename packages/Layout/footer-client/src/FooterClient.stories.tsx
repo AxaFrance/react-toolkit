@@ -9,7 +9,7 @@ import LanguageSelection from './LanguageSelection';
 import readme from '../README.md';
 
 export default {
-  title: 'Structure/Footer client',
+  title: 'Client/Structure/Footer client',
   component: FooterClient,
   parameters: {
     readme: {

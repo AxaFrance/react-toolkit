@@ -9,7 +9,7 @@ import CardFooter from './CardFooter';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Card',
+  title: 'Agent/Form elements/Card',
   component: CardGroupRadio,
   parameters: {
     readme: {

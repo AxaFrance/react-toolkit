@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { Meta, Story } from '@storybook/react';
-import Title, { TitleProps } from './Title';
+import Title from './Title';
 import Readme from '../README.md';
 
 export default {
-  title: 'Components/Title',
+  title: 'Agent/Components/Title',
   component: Title,
   parameters: {
     readme: {
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-type TitleStoryProps = TitleProps & {
+type TitleStoryProps = ComponentPropsWithoutRef<typeof Title> & {
   title: string;
 };
 const Template: Story<TitleStoryProps> = ({ title, ...args }) => (

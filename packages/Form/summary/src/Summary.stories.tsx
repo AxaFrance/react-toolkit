@@ -4,7 +4,7 @@ import Summary from './Summary';
 import readme from '../README.md';
 
 export default {
-  title: 'Form elements/Summary',
+  title: 'Agent/Form elements/Summary',
   component: Summary,
   parameters: {
     readme: {

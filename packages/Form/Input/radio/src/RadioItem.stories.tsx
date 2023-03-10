@@ -4,7 +4,7 @@ import RadioItem from './RadioItem';
 import readme from '../README.md';
 
 export default {
-  title: 'Components low level/Radio/RadioItem',
+  title: 'Agent/Components low level/Radio/RadioItem',
   component: RadioItem,
   parameters: {
     readme: {
