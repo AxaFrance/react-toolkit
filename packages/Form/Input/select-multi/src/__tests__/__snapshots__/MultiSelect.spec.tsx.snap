@@ -16,22 +16,22 @@ exports[`renders MultiSelect correctly 1`] = `
       class="css-1f43avz-a11yText-A11yText"
     />
     <div
-      class=" css-13cymwt-control"
+      class=" css-1s2u09g-control"
     >
       <div
-        class=" css-3w2yfm-ValueContainer"
+        class=" css-g1d714-ValueContainer"
       >
         <div
-          class=" css-1p3m7a8-multiValue"
+          class="css-1rhbuit-multiValue"
         >
           <div
-            class=" css-wsp0cs-MultiValueGeneric"
+            class="css-12jo7m5"
           >
             For fun
           </div>
           <div
             aria-label="Remove For fun"
-            class=" css-12a83d4-MultiValueRemove"
+            class="css-xb97g8"
             role="button"
           >
             <svg
@@ -49,16 +49,16 @@ exports[`renders MultiSelect correctly 1`] = `
           </div>
         </div>
         <div
-          class=" css-1p3m7a8-multiValue"
+          class="css-1rhbuit-multiValue"
         >
           <div
-            class=" css-wsp0cs-MultiValueGeneric"
+            class="css-12jo7m5"
           >
             For drink
           </div>
           <div
             aria-label="Remove For drink"
-            class=" css-12a83d4-MultiValueRemove"
+            class="css-xb97g8"
             role="button"
           >
             <svg
@@ -76,7 +76,7 @@ exports[`renders MultiSelect correctly 1`] = `
           </div>
         </div>
         <div
-          class=" css-qbdosj-Input"
+          class=" css-6j8wv5-Input"
           data-value=""
         >
           <input
@@ -102,7 +102,7 @@ exports[`renders MultiSelect correctly 1`] = `
       >
         <div
           aria-hidden="true"
-          class=" css-1xc3v61-indicatorContainer"
+          class=" css-tlfecz-indicatorContainer"
         >
           <svg
             aria-hidden="true"
@@ -118,11 +118,11 @@ exports[`renders MultiSelect correctly 1`] = `
           </svg>
         </div>
         <span
-          class=" css-1u9des2-indicatorSeparator"
+          class=" css-1okebmr-indicatorSeparator"
         />
         <div
           aria-hidden="true"
-          class=" css-1xc3v61-indicatorContainer"
+          class=" css-tlfecz-indicatorContainer"
         >
           <svg
             aria-hidden="true"
