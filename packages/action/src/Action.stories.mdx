@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+import Action from './Action';
+
+<Meta
+  title="Components/Action"
+  component={Action}
+  argTypes={{
+    icon: {
+      description: 'glyphicon name to use in the Action',
+    },
+    onClick: { action: 'onClick' },
+    target: {
+      options: ['_self', '_blank', '_parent', '_top'],
+      control: 'select',
+    },
+  }}
+/>
+
+# Action
+
+export const Template = (args) => <Action {...args} />;
+
+The actions are small round badges that can act as links or buttons.
+
+## Link
+
+To act as a link, an `Action` requires the `href` prop.
+
+<Canvas>
+  <Story
+    name="Link"
+    args={{
+      icon: 'link',
+      href: '#',
+      title: 'Lien de test',
+      target: '_blank',
+      href: 'https://www.axa.fr',
+      classModifier: 'hello',
+      tabIndex: 0,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Link" />
+
+## Button
+
+If you want a button-like behaviour, just add an `onClick` event-handler. The event parameter is of type:
+
+```js
+{
+  id: 'idPassedAsProp';
+}
+```
+
+<Canvas>
+  <Story
+    name="Button"
+    args={{
+      id: 'id',
+      icon: 'floppy-disk',
+      title: 'Enregistrer',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
