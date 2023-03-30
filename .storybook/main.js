@@ -45,13 +45,12 @@ module.exports = {
     '../packages/restitution/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
     '../packages/table/src/**/*.stories.@(ts|tsx|js)',
-    '../packages/tabs/src/*.stories.@(ts|tsx|js)',
   ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    'storybook-addon-doc',
+    '@storybook/addon-docs',
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
