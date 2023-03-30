@@ -14,7 +14,7 @@
 }
 
 code[class*='language-'],
-pre[class*='language-'] {
+pre {
   text-shadow: none !important;
   color: lightgray !important;
 }
