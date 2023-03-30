@@ -105,7 +105,7 @@ Or, if you want to run your component in watch mode, execting one of command bel
 
 ```sh
 # If your component is in js
-npm run dev:js -- --scope=@axa-fr/react-toolkit-status
+npm run dev:js -- --scope=@axa-fr/react-toolkit-action
 
 # If your component is in TypeScript
 npm run dev:ts -- --scope=@axa-fr/react-toolkit-action

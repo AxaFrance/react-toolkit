@@ -107,7 +107,6 @@ const MyAlertComponent = () => <Alert icon="ok" title="This is an alert" />;
 - [@axa-fr/react-toolkit-panel](./packages/panel/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-panel?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-panel)
 - [@axa-fr/react-toolkit-popover](./packages/popover/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-popover?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-popover)
 - [@axa-fr/react-toolkit-restitution](./packages/restitution/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-restitution?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-restitution)
-- [@axa-fr/react-toolkit-status](./packages/status/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-status?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-status)
 - [@axa-fr/react-toolkit-table](./packages/table/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-table?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-table)
 - [@axa-fr/react-toolkit-tabs](./packages/tabs/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-tabs?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-tabs)
 - [@axa-fr/react-toolkit-title](./packages/title/README.md) [![npm version](https://img.shields.io/npm/v/@axa-fr/react-toolkit-title?style=flat)](https://www.npmjs.com/package/@axa-fr/react-toolkit-title)

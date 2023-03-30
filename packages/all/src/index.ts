@@ -38,7 +38,6 @@ export * from './modal-default';
 export * from './panel';
 export * from './popover';
 export * from './restitution';
-export * from './status';
 export * from './table';
 export * from './tabs';
 export * from './title';
