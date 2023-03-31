@@ -1,0 +1,101 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+import AlertWithType from './AlertWithType';
+
+<Meta
+  title="Components low level/Alert/AlertWithType"
+  component={AlertWithType}
+  argTypes={{
+    classModifier: {
+      control: false,
+      table: {
+        disable: true,
+      },
+    },
+    title: { control: 'text' },
+    onClose: {
+      action: 'onClose',
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <AlertWithType {...args} />;
+
+# AlertWithType
+
+It works just as an `AlertCore` would, except you can pass a type which will set a specific classModifier and icon combination.
+
+| type    | classModifier | icon                       |
+| ------- | ------------- | -------------------------- |
+| error   | error         | glyphicon-exclamation-sign |
+| danger  | danger        | glyphicon-alert            |
+| info    | info          | glyphicon-info-sign        |
+| success | success       | glyphicon-ok               |
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      type: 'danger',
+      title: 'Attention: des informations sont manquantes',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+<Canvas>
+  <Story
+    name="Info"
+    args={{
+      onClose: null,
+      type: 'info',
+      title:
+        'Info: vous pouvez également contacter un conseiller par téléphone',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With close
+
+When you set a function to `onClose` in the props, a close button is displayed in the top right corner.
+
+<Canvas>
+  <Story
+    name="With close button"
+    args={{
+      type: 'success',
+      title: 'Succès: votre demande a bien été enregistrée.',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With details
+
+You can put any JSX element as children of the alert, if you need to.
+
+<Canvas withSource="open">
+  <Story
+    name="Alert with details"
+    args={{
+      type: 'error',
+      title: 'Erreur dans les champs suivants :',
+      children: (
+        <ul>
+          <li>Le nom est obligatoire</li>
+          <li>Le prénom est obligatoire</li>
+          <li>L'email est obligatoire</li>
+          <li>Le format de date est invalide</li>
+        </ul>
+      ),
+      onClose: null,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

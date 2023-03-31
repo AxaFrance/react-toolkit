@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+import Alert from './Alert';
+
+<Meta
+  title="Components/Alert"
+  component={Alert}
+  argTypes={{
+    classModifier: {
+      control: {
+        type: 'select',
+        options: ['success', 'info', 'danger', 'error'],
+      },
+    },
+    icon: {
+      control: {
+        type: 'select',
+        options: ['', 'alert', 'floppy-disk'],
+      },
+    },
+    onClose: { action: 'onClose' },
+  }}
+/>
+
+export const Template = (args) => <Alert {...args} />;
+
+# Alert
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      classModifier: 'danger',
+      title: 'Attention: des informations sont manquantes',
+      iconClassName: 'glyphicon glyphicon-alert',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## With close
+
+When you set a function to `onClose` in the props, a close button is displayed in the top right corner.
+
+<Canvas>
+  <Story
+    name="Alert with close"
+    args={{
+      classModifier: 'success',
+      title: 'Succès: votre demande a bien été enregistrée.',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With details
+
+You can put any JSX element as children of the alert, if you need to.
+
+<Canvas withSource="open">
+  <Story
+    name="Alert with details"
+    args={{
+      classModifier: 'error',
+      iconClassName: 'glyphicon glyphicon-minus-sign',
+      title: 'Erreur dans les champs suivants :',
+      children: (
+        <ul>
+          <li>Le nom est obligatoire</li>
+          <li>Le prénom est obligatoire</li>
+          <li>L'email est obligatoire</li>
+          <li>Le format de date est invalide</li>
+        </ul>
+      ),
+      onClose: null,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
