@@ -42,7 +42,6 @@ module.exports = {
     '../packages/Modal/default/src/*.stories.@(ts|tsx|js)',
     '../packages/panel/src/*.stories.@(ts|tsx|js)',
     '../packages/popover/src/*.stories.@(ts|tsx|js)',
-    '../packages/restitution/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
   ],
   addons: [
