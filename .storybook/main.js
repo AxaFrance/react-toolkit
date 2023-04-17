@@ -38,8 +38,6 @@ module.exports = {
     '../packages/link/src/*.stories.@(ts|tsx|js)',
     '../packages/list/src/*.stories.@(ts|tsx|js)',
     '../packages/loader/src/*.stories.@(ts|tsx|js)',
-    '../packages/Modal/boolean/src/*.stories.@(ts|tsx|js)',
-    '../packages/Modal/default/src/*.stories.@(ts|tsx|js)',
     '../packages/panel/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
   ],

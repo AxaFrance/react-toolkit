@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import ModalBoolean from './ModalBoolean';
+
+<Meta
+  title="Components high level/Modal/ModalBoolean"
+  component={ModalBoolean}
+  argTypes={{
+    onCancel: { action: 'onCancel' },
+    onSubmit: { action: 'onSubmit' },
+    title: '',
+    submitTitle: '',
+    cancelTitle: '',
+  }}
+/>
+
+# Modal
+
+export const Template = (args) => (
+  <ModalBoolean {...args}>
+    <p>
+      Reprehenderit sit quis aute nisi consequat consequat mollit. Commodo in
+      aliquip consectetur nulla sit anim. Pariatur minim commodo enim ea eu
+      laborum culpa laboris. Labore labore irure ipsum consequat enim officia
+      anim ipsum aliqua excepteur qui sint. Duis sint do culpa adipisicing dolor
+      adipisicing ea dolore aute nisi quis ullamco aliquip occaecat. Aute ut
+      mollit amet.
+    </p>
+  </ModalBoolean>
+);
+
+The modal boolean package gives the possibility to show a modal with minimal configuration. You can use the `ModalBoolean` component with a `title` in property and pass him a content as a react child that will be displayed in the content of the modal. That's the minimal configuration you can use to show a modal.
+On top of that, you can ovveride the cancel and submit button with `cancelTitle` and `submitTitle` properties.
+
+If you want to configure your modal a bit more (remove one or all the buttons in the footer, etc.), use the `@axa-fr/react-toolkit-modal-default` instead.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-modal-default/dist/af-modal.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      isOpen: false,
+      title: 'Titre de la modale',
+      submitTitle: 'Valider',
+      cancelTitle: 'Annuler',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

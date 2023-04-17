@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Modal from './Modal';
+import ModalCore, { ModalCoreProps } from './ModalCore';
+import Body from './Body';
+import Footer from './Footer';
+import HeaderBase from './HeaderBase';
+
+<Meta title="Components/Modal/Default" component={Modal} argTypes={{}} />
+
+# Modal
+
+export const Template = (args) => (
+  <div>
+    <Modal {...args}>
+      <Modal.HeaderBase id="headerId">
+        <p>
+          Ici, je contrôle complètement <strong>le contenu du header</strong>
+        </p>
+        <button className="af-btn--circle" type="submit" id="btn-circle">
+          <i className="glyphicon glyphicon-close" />
+        </button>
+      </Modal.HeaderBase>
+      <Modal.Body>
+        <p>
+          Voici une version avec un header customisé à l'aide du composant
+          Modal.HeaderBase. Un classModifier "lg" a été mis pour montrer une
+          version plus large d'une modale. Il est existe également un modifier
+          "sm", pour les modales plus petites. Mais il est possible d'ajouter
+          son propre modifier pour personnaliser selon ses besoins avec un peu
+          de CSS.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <button className="btn af-btn af-btn--reverse" type="button">
+          Annuler
+        </button>
+        <button className="btn af-btn" type="button">
+          Valider
+        </button>
+      </Modal.Footer>
+    </Modal>
+  </div>
+);
+
+The modal default is the component to use if you want to fully configure your modal.
+
+With the `Modal.HeaderBase` you can configure the header of the modal. With the `Modal.Body` you can configure the body of the modal. And with the `Modal.Footer` you can configure the footer of the modal.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-modal-default/dist/af-modal.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      isOpen: false,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
