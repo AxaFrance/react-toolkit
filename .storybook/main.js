@@ -37,7 +37,6 @@ module.exports = {
     '../packages/Layout/header/src/**/*.stories.@(ts|tsx|js)',
     '../packages/link/src/*.stories.@(ts|tsx|js)',
     '../packages/list/src/*.stories.@(ts|tsx|js)',
-    '../packages/loader/src/*.stories.@(ts|tsx|js)',
     '../packages/panel/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
   ],

@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Loader from './Loader';
+import LoaderModes from './LoaderModes';
+
+<Meta
+  title="Components/Loader"
+  component={Loader}
+  argTypes={{
+    mode: {
+      control: {
+        type: 'select',
+        options: LoaderModes,
+      },
+      defaultValue: LoaderModes.get,
+    },
+  }}
+/>
+
+# Loader
+
+export const Template = (args) => <Loader {...args} />;
+
+The loader package allows you to display a loader on the web page.
+The loader is designed to wrap the entire application, the content of the application goes in the `children` property of the component.
+Then, for the text shown with the loader, you have two options. Either you can set your own wording with the `text` property. Either you can use the `mode` property with the `LoaderModes` enumeration in order to show predefined sets of wording.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-loader/dist/af-spinner.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: '',
+      classModifier: '',
+      className: 'af-loader',
+      children: (
+        <div>
+          <h1>Title Child</h1>
+          <span>Here your child component</span>
+        </div>
+      ),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
