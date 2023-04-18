@@ -30,7 +30,6 @@ export * from './layout-footer';
 export * from './layout-footer-client';
 export * from './layout-header';
 export * from './link';
-export * from './list';
 export * from './loader';
 export * from './modal-boolean';
 export * from './modal-default';
