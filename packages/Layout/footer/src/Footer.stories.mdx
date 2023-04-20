@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import logo from '@axa-fr/react-toolkit-core/dist/assets/logo-axa.svg';
+import Footer from './Footer';
+import FooterCore from './FooterCore';
+
+<Meta title="Structure/Footer" component={Footer} argTypes={{}} />
+
+# Footer
+
+export const Template = (args) => <Footer {...args} />;
+
+export const TemplateCore = (args) => (
+  <FooterCore icon={logo}>
+    <a href="https://www.axa.fr/">
+      <strong>@ 2018 AXA</strong>
+    </a>
+    <i>Tous droits réservés</i>
+  </FooterCore>
+);
+
+The footer package allows you to display a footer on the web page.
+Two components can be used in order to do that. The basic `Footer` component with which you can the `copyright` property to change the content of the footer.  
+If you want to customize your Footer, you can use the `FooterCore` component which gives you more flexibility to set thoses properties :
+
+| Property's name | Use                                                                             | Dependent of other property ?    |
+|-----------------|---------------------------------------------------------------------------------|----------------------------------|
+| href            | The link to redirect to when clicking on the footer's icon                      | Use only if icon property is set |
+| title           | Text visible by hovering the footer's icon                                      | Use only if icon property is set |
+| alt             | Icon's alternative text                                                         | Use only if icon property is set |
+| icon            | Footer's icon                                                                   |                                  |
+| className       | Footer's className                                                              |                                  |
+| children        | Footer's content. If not set, the component will show a basic copyright content |                                  |
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-footer/dist/af-footer.css';
+```
+
+## Footer
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## FooterCore
+
+<Canvas>
+  <Story name="Core with HTML children" args={{}}>
+    {TemplateCore.bind({})}
+  </Story>
+</Canvas>
