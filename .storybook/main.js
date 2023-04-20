@@ -7,7 +7,6 @@ module.exports = {
     '../packages/alert/src/*.stories.@(ts|tsx|js)',
     '../packages/badge/src/*.stories.@(ts|tsx|js)',
     '../packages/button/src/*.stories.@(ts|tsx|js)',
-    '../packages/collapse/src/*.stories.@(ts|tsx|js)',
     '../packages/core/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/core/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/filter/src/*.stories.@(ts|tsx|js)',

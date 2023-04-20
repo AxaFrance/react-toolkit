@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import CollapseCard from './CollapseCard';
+
+<Meta
+  title="Components low level/Collapse"
+  component={CollapseCard}
+  argTypes={{}}
+/>
+
+# Collapse
+
+export const Template = (args) => (
+  <CollapseCard onToggle={action('onToggle')} {...args}>
+    <CollapseCard.Header>CollpaseCard Title</CollapseCard.Header>
+    <CollapseCard.Body>
+      Collapsible content Anim pariatur cliche reprehenderit, enim eiusmod high
+      life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+      cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+      single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+      helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+      proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+      beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+      haven’t heard of them accusamus labore sustainable VHS.
+    </CollapseCard.Body>
+  </CollapseCard>
+);
+
+The collapse package exports a `CollapseCard` component that allows you to show some content that will be display and hide when you click on an header.  
+The header is defined inside the `CollapseCard.Header` and the content that will be shown after clicking on that header is defined inside the `CollapseCard.Body` component.  
+The `onToggle` allows you to define an action to execute when the collapse is open or close. An event is sent containing an generated `id`, the `index` of the collapse that is being used (0 if there's just one collapse element), and an `isOpen` boolean property to tell if the action closed or opened the collapse element.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-collapse/dist/af-accordion.css';
+```
+
+<Canvas>
+  <Story name="Collapse" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
