@@ -30,7 +30,6 @@ module.exports = {
     '../packages/Form/summary/src/*.stories.@(ts|tsx|js)',
     '../packages/help/src/*.stories.@(ts|tsx|js)',
     '../packages/helpinfo/src/*.stories.@(ts|tsx|js)',
-    '../packages/Layout/footer-client/src/*.stories.@(ts|tsx|js)',
     '../packages/Layout/header/src/**/*.stories.@(ts|tsx|js)',
   ],
   addons: [

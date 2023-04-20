@@ -1,0 +1,230 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import FooterClient from './FooterClient';
+import FooterClientItem from './FooterClientItem';
+import FooterClientList from './FooterClientList';
+import SocialNetwork from './SocialNetwork';
+import LanguageSelection from './LanguageSelection';
+
+<Meta title="Structure/Footer Client" component={FooterClient} argTypes={{}} />
+
+export const columns = [
+  {
+    title: 'Languages',
+    links: [
+      {
+        text: 'Lorem',
+        path: '/9',
+      },
+      {
+        text: 'Young driver insurance',
+        path: '/8',
+      },
+      {
+        text: 'Home insurance',
+        path: '/7',
+      },
+    ],
+  },
+  {
+    title: 'Axa & You',
+    links: [
+      {
+        text: 'Call us',
+        path: '/6',
+      },
+      {
+        text: 'Policy documents',
+        path: '/5',
+      },
+      {
+        text: 'Xtra by AXA',
+        path: '/4',
+      },
+    ],
+  },
+  {
+    title: 'Useful links',
+    links: [
+      {
+        text: 'About us',
+        path: '/3',
+      },
+      {
+        text: 'Careers',
+        path: '/2',
+      },
+      {
+        text: 'Blog',
+        path: '/1',
+      },
+    ],
+  },
+];
+
+export const languages = [
+  {
+    name: 'English',
+    value: 'en',
+  },
+  {
+    name: 'Chinese',
+    value: 'cn',
+  },
+];
+
+export const currentLanguage = 'en';
+
+export const socialNetworkList = {
+  facebook: '#',
+  linkedin: '#',
+  youtube: '#',
+  instagram: '#',
+  twitter: '#',
+};
+
+export const List = () => (
+  <>
+    {columns.map((column) => (
+      <FooterClientList title={column.title} key={column.title}>
+        {column.links.map((link) => (
+          <FooterClientItem path={link.path} key={link.path}>
+            {link.text}
+          </FooterClientItem>
+        ))}
+      </FooterClientList>
+    ))}
+  </>
+);
+
+# FooterClient
+
+export const Template = ({ children, ...args }) => (
+  <FooterClient {...args}>{children}</FooterClient>
+);
+
+The footer-client package allows you to display an axa-fr type footer on the web page.
+For this you need to use the `FooterClient` component which takes multiple properties.  
+First of all, you can override the `copyright` property to customize it based on your need. Then, you have two options based on what type of footer you want to display.  
+If you want a basic footer, you will only need the `children` property. If you want a more complex (two layers footer), you can use the `children` property and the `bottomComponent` property that will be separated from the normal children.
+In either of the `children` or `bottomComponent` you can put whatever html structure you want.
+
+But, the package exports some components that replicates the look of the axa.fr footer.  
+If you want to display a language selection category, the package exports a `LanguageSelection` component.
+It takes three properties :
+
+- a `languages` that defines all the languages you want to show. The property is an array of object which have a `name` that will be display on the screen and a `value`.  
+  Example :
+
+```javascript
+export const languages = [
+  {
+    name: 'English',
+    value: 'en',
+  },
+  {
+    name: 'Chinese',
+    value: 'cn',
+  },
+];
+```
+
+- a `currentLanguage` property to tell which language is used at the moment
+- an `onClick` function called whenever the user clicks on one of the languages. It's in that function that you can implement the switching of language.
+
+Next on the list of exported components is the `SocialNetwork` that allows you to display a set of links redirecting to the social medias.  
+You can pass a list of social medias links with the `list` properties.  
+Example :
+
+```javascript
+export const socialNetworkList = {
+  facebook: 'http://facebook',
+  linkedin: 'http://linkedin',
+  youtube: 'http://youtube',
+  instagram: 'http://instagram',
+  twitter: 'http://twitter',
+};
+```
+
+Every links that you are putting in the list will display an relative icon in the screen. If you omit one or several of those social medias, there simply won't be displayed on the screen.  
+As of now, the component only permit those social medias. It is not possible to add a link towards Tiktok or any other social media.
+
+And finally you have a `FooterClientList` component that allows you to display of list of useful links on a related subject inside the footer.  
+To do that, you can pass a `title` property to the component that will be display on top of the links. You can then iterate through the list of links and use the `FooterClientItem` to display them.  
+For example :
+
+```javascript
+export const usefulLinks = {
+  title: 'Languages',
+  links: [
+    {
+      text: 'Lorem',
+      path: '/9',
+    },
+    {
+      text: 'Young driver insurance',
+      path: '/8',
+    },
+    {
+      text: 'Home insurance',
+      path: '/7',
+    },
+  ],
+};
+
+<FooterClientList title={usefulLinks.title} key={usefulLinks.title}>
+  {usefulLinks.links.map((link) => (
+    <FooterClientItem path={link.path} key={link.path}>
+      {link.text}
+    </FooterClientItem>
+  ))}
+</FooterClientList>;
+```
+
+The `FooterClientList` can also be used multiple times inside a map of object.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-footer-client/dist/af-footer-client.css';
+```
+
+## Simple
+
+<Canvas>
+  <Story
+    name="Simple"
+    args={{
+      children: <List />,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Complex
+
+<Canvas>
+  <Story
+    name="Complex"
+    args={{
+      copyright: 'Policy Privacy © 2016 AXA All Rights Reserved',
+      bottomComponent: (
+        <LanguageSelection
+          onClick={action('onLanguageSelection')}
+          languages={languages}
+          currentLanguage={currentLanguage}
+        />
+      ),
+      children: (
+        <>
+          <List />
+          <FooterClientList title="Follow AXA">
+            <SocialNetwork list={socialNetworkList} />
+          </FooterClientList>
+        </>
+      ),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
