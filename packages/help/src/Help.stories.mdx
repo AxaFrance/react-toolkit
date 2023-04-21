@@ -1,0 +1,113 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
+import Help from './Help';
+
+<Meta
+  title="Components high level/Help"
+  component={Help}
+  argTypes={{
+    placement: {
+      control: {
+        type: 'select',
+        options: [
+          PopoverPlacements.bottom,
+          PopoverPlacements.left,
+          PopoverPlacements.right,
+          PopoverPlacements.top,
+        ],
+      },
+    },
+    mode: {
+      control: {
+        type: 'select',
+        options: [PopoverModes.click, PopoverModes.over],
+      },
+    },
+  }}
+/>
+
+# Help
+
+export const Template = ({ children, ...args }) => (
+  <Help {...args}>{children}</Help>
+);
+
+The help package exports a `Help` component that allows you to display an help message on top of an information button.  
+That additionnal information will be shown either by hovering the main message or by clicking on it, depending on the `mode` property you are setting. For that, use the `PopoverModes` enumeration that is being install with the help package.  
+By default, the `mode` property is set on `click`.
+
+```javascript
+PopoverModes.click, PopoverModes.over;
+```
+
+Also, you can set wherever you want that additionnal information to be shown on the screen with the `placement` property. Again, use the `PopoverPlacements` provided with the installation of the package.
+By default, the `placement` property is set on `right`.
+
+```javascript
+PopoverPlacements.bottom,
+PopoverPlacements.left,
+PopoverPlacements.right,
+PopoverPlacements.top,
+```
+
+Finally, the additionnal information will set with the `children` property. It is of `ReactNode` type so that you can display a string or a more elaborate content with HTML.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-popover/dist/af-popover.css';
+import '@axa-fr/react-toolkit-popover/dist/af-help-custom.css';
+import '@axa-fr/react-toolkit-button/dist/af-button.css';
+```
+
+## Text
+
+<Canvas>
+  <Story
+    name="Text"
+    args={{
+      children: 'Lorem ipsum dolor sit amet',
+      mode: PopoverModes.click,
+      placement: PopoverPlacements.right,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Text" />
+
+## Html
+
+export const htmlChild = (
+  <div className="af-help-demo__container">
+    <h3 className="af-help-demo__title">Profile</h3>
+    <div className="af-help-demo__infos">
+      <p className="af-help-demo__info">
+        <span className="af-help-demo__info-title">Tweets</span>
+        <span className="af-help-demo__info-number">1,337</span>
+      </p>
+      <p className="af-help-demo__info">
+        <span className="af-help-demo__info-title">Following</span>
+        <span className="af-help-demo__info-number">561</span>
+      </p>
+      <p className="af-help-demo__info">
+        <span className="af-help-demo__info-title">Followers</span>
+        <span className="af-help-demo__info-number">718</span>
+      </p>
+    </div>
+  </div>
+);
+
+<Canvas>
+  <Story
+    name="Html"
+    args={{
+      children: htmlChild,
+      classModifier: 'custom',
+      mode: PopoverModes.over,
+      placement: PopoverPlacements.right,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
