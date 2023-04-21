@@ -27,7 +27,6 @@ module.exports = {
     '../packages/Form/Input/textarea/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/steps/src/*.stories.@(ts|tsx|js)',
     '../packages/Form/summary/src/*.stories.@(ts|tsx|js)',
-    '../packages/helpinfo/src/*.stories.@(ts|tsx|js)',
     '../packages/Layout/header/src/**/*.stories.@(ts|tsx|js)',
   ],
   addons: [
