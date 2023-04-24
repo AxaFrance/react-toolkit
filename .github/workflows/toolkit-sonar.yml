@@ -1,6 +1,7 @@
 name: Sonar Analysis
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * SAT'
 
@@ -18,7 +19,7 @@ jobs:
       - run: npm run build
       - run: npm test -- --coverage
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1.5
+        uses: SonarSource/sonarcloud-github-action@v1.9.1
         with:
           args: >
             -Dsonar.organization=axaguildev
