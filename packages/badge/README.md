@@ -15,8 +15,8 @@ npm i @axa-fr/react-toolkit-badge
 ### Import
 
 ```javascript
-import Button from '@axa-fr/react-toolkit-action';
-import '@axa-fr/react-toolkit-action/dist/af-button.css';
+import Badge from '@axa-fr/react-toolkit-badge';
+import '@axa-fr/react-toolkit-badge/dist/af-badge.css';
 ```
 
 ### Use
@@ -31,8 +31,8 @@ export default SimpleBadge;
 ### Import
 
 ```javascript
-import Button from '@axa-fr/react-toolkit-action';
-import '@axa-fr/react-toolkit-action/dist/af-button.css';
+import Badge from '@axa-fr/react-toolkit-badge';
+import '@axa-fr/react-toolkit-badge/dist/af-badge.css';
 ```
 
 ### Use

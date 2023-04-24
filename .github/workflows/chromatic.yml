@@ -10,7 +10,7 @@ env:
 
 jobs:
   chromatic:
-    if: github.repository_owner == 'AxaGuilDEv'
+    if: github.repository_owner == 'AxaFrance'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
