@@ -1,0 +1,118 @@
+import { Component } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import { ArgsTable } from '@storybook/addon-docs';
+import NavBar from './NavBar';
+import NavBarItem from './NavBarItem';
+
+<Meta title="Structure/Navigation" component={NavBar} argTypes={{}} />
+
+# NavBar
+
+export class LinkItem extends Component {
+  render() {
+    const { children } = this.props;
+    return (
+      <a href="/#" {...this.props} onClick={action('onClick Action')}>
+        {children}
+      </a>
+    );
+  }
+}
+
+export const styleNavBarItem = {
+  width: '100px',
+};
+
+export const TemplateDefault = () => (
+  <NavBar>
+    <NavBarItem
+      actionElt={
+        <LinkItem className="af-nav__link" href="/home">
+          Home
+        </LinkItem>
+      }
+    />
+    <NavBarItem
+      className="af-nav__item--haschild af-nav__item"
+      aria-haspopup="true"
+      aria-expanded="false"
+      ariaLabel="Table"
+      actionElt={<span className="af-nav__link">Table</span>}>
+      <NavBarItem
+        key="table-1"
+        actionElt={
+          <LinkItem className="af-nav__link" href="/table/sous-lien">
+            Sous lien
+          </LinkItem>
+        }
+      />
+      <NavBarItem
+        key="table-2"
+        actionElt={
+          <LinkItem className="af-nav__link" href="/table/sous-lien2">
+            Sous lien2
+          </LinkItem>
+        }
+      />
+    </NavBarItem>
+    <NavBarItem
+      actionElt={
+        <LinkItem className="af-nav__link" href="/collapse">
+          Accordions
+        </LinkItem>
+      }
+    />
+    <NavBarItem
+      className="af-nav__item--haschild af-nav__item"
+      aria-haspopup="true"
+      aria-expanded="false"
+      ariaLabel="Table"
+      actionElt={
+        <LinkItem className="af-nav__link" href="/doc">
+          Doc
+        </LinkItem>
+      }>
+      <NavBarItem
+        key="doc-1"
+        actionElt={
+          <LinkItem className="af-nav__link" href="/doc/sous-lien">
+            Sous lien
+          </LinkItem>
+        }
+      />
+      <NavBarItem
+        key="doc-2"
+        actionElt={
+          <LinkItem className="af-nav__link" href="/doc/sous-lien2">
+            Sous lien2
+          </LinkItem>
+        }
+      />
+    </NavBarItem>
+  </NavBar>
+);
+
+The header package exports some components to display a navigation on the web page.  
+The `NavBar` is the base component to display a navigation. Inside you can add multiple `NavBarItem`.
+
+The `NavBar` is made to be use with the keyboard for accessibility purposes. Here are the availables keytaps and their functions :
+
+| Touch       | Function                                                                                               |
+| ----------- | ------------------------------------------------------------------------------------------------------ |
+| Tab         | Put the focus on the menu, which manage itself to put the focus on the first element of the menu.      |
+| Right arrow | Put the focus on the right item of the menu. If we are at the last item, we go back to the first item. |
+| Left arrow  | Put the focus on the left item of the menu. If we are at the first item, we go to the last item.       |
+| Esc         | Remove focus from the menu.                                                                            |
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-header/dist/NavBar/af-nav.css';
+```
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {TemplateDefault.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,153 @@
+import { Component } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import { ArgsTable } from '@storybook/addon-docs';
+import NavBarItem from './NavBarItem';
+
+<Meta
+  title="Components low level/Navigation/NavBarItem"
+  component={NavBarItem}
+  argTypes={{}}
+/>
+
+# NavBarItem
+
+export class LinkItem extends Component {
+  render() {
+    const { children } = this.props;
+    return (
+      <a href="/#" {...this.props} onClick={action('onClick Action')}>
+        {children}
+      </a>
+    );
+  }
+}
+
+export const styleNavBarItem = {
+  width: '100px',
+};
+
+export const TemplateDefault = () => (
+  <ul style={{ listStyle: 'none' }}>
+    <NavBarItem
+      style={styleNavBarItem}
+      actionElt={
+        <LinkItem className="af-nav__link" href="/home">
+          HomeLINK
+        </LinkItem>
+      }
+    />
+  </ul>
+);
+
+export const TemplateActive = () => (
+  <ul style={{ listStyle: 'none' }}>
+    <NavBarItem
+      style={styleNavBarItem}
+      classModifier="active"
+      actionElt={
+        <a className="af-nav__link" href="/home">
+          Home
+        </a>
+      }
+    />
+  </ul>
+);
+
+export const styleWithChildren = {
+  height: '300px',
+  listStyle: 'none'
+};
+
+export const TemplateChildren = () => (
+  <div style={styleWithChildren}>
+    <NavBarItem
+      style={styleNavBarItem}
+      aria-haspopup="true"
+      aria-expanded="false"
+      ariaLabel="Table"
+      className="af-nav__item--haschild af-nav__item af-nav__item"
+      actionElt={
+        <a className="af-nav__link" href="/doc">
+          Doc
+        </a>
+      }>
+      <NavBarItem
+        key="doc-1"
+        actionElt={
+          <a className="af-nav__link" href="/doc/sous-lien">
+            Sous lien
+          </a>
+        }
+      />
+      <NavBarItem
+        key="doc-2"
+        actionElt={
+          <a className="af-nav__link" href="/doc/sous-lien2">
+            Sous lien2
+          </a>
+        }
+      />
+      <NavBarItem
+        key="doc-3"
+        actionElt={
+          <a className="af-nav__link" href="/doc/sous-lien3">
+            Sous lien3
+          </a>
+        }
+      />
+      <NavBarItem
+        key="doc-4"
+        actionElt={
+          <a className="af-nav__link" href="/doc/sous-lien4">
+            Sous lien4
+          </a>
+        }
+      />
+    </NavBarItem>
+  </div>
+);
+
+The header package exports some components to display a navigation on the web page.  
+The `NavBarItem` is the component to use to show one item inside the navbar. The `actionElt` property has to be set to show the value of that item and to what it redirects.  
+But the item doesn't have to redirect directly to a part of your application (or to an external web page), it can also show a sub-menu of navigation items. To do that, just pass new `NavBarItem` as `children` of the first one and they will be shown inside a sub-menu.  
+Also, to define the active `NavBarItem` (depending on which page you are for example), you can st the `classModifier` property to `active`.
+
+Finally, the `NavBarItem` is made to be use with the keyboard for accessibility purposes. Here are the availables keytaps and their functions :
+
+| Touch       | Function                                                                                                                                                                                                                                                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Right arrow | Close submenu if previously opened                                                                                                                                                                                                                                                                                                                           |
+| Left arrow  | Close submenu if previously opened                                                                                                                                                                                                                                                                                                                           |
+| Down arrow  | If submenu is closed, it opens it and select the first element of that submenu. We then change the `aria-expanded` property of the parent link to true.<br />If the submenu is already open, we go to the next subitem link (focus, tabindex et active class).<br />If we are at the last item of the submenu, you go back to the first item of the submenu. |
+| Up arrow    | If the submenu is opened and we are on the first element, the submenu closes. We then change the `aria-expanded` property of the parent link to false.<br />If the submenu is already opened but not on the first element, we go to the previous subitem link (focus, tabindex et active class).                                                             |
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-header/dist/NavBar/af-nav.css';
+```
+
+## Default
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {TemplateDefault.bind({})}
+  </Story>
+</Canvas>
+
+## Active
+
+<Canvas>
+  <Story name="Active" args={{}}>
+    {TemplateActive.bind({})}
+  </Story>
+</Canvas>
+
+## With children
+
+<Canvas>
+  <Story name="With children" args={{}}>
+    {TemplateChildren.bind({})}
+  </Story>
+</Canvas>
