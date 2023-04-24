@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import CheckboxInput from '../CheckboxInput';
 
-describe('<DateInput>', () => {
-  it('renders DateInput correctly', () => {
+describe('<CheckboxInput>', () => {
+  it('renders CheckboxInput correctly', () => {
     const { asFragment } = render(
       <CheckboxInput
         label="Image *"

@@ -28,5 +28,6 @@ const config: Config.InitialOptions = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(scss|css|less|md)$': '<rootDir>/__mocks__/styleMock.js',
   },
+  snapshotSerializers: ['@emotion/jest/serializer'],
 };
 export default config;

@@ -1,14 +1,14 @@
-import React, { ComponentPropsWithRef, forwardRef, MouseEvent } from 'react';
-import { withInput } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+import { withIsVisible } from '@axa-fr/react-toolkit-form-core';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'type' | 'role'> & {
   type?: 'text' | 'password';
   classModifier?: string;
-  onToggleType: () => void;
+  onToggleType: React.MouseEventHandler;
 };
 
-const Pass = forwardRef<HTMLInputElement, Props>(
+const PassInternal = forwardRef<HTMLInputElement, Props>(
   (
     {
       onToggleType,
@@ -51,14 +51,4 @@ const Pass = forwardRef<HTMLInputElement, Props>(
   }
 );
 
-const handlers = {
-  onToggleType:
-    ({ onToggleType }: Props) =>
-    (e: MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      e.stopPropagation();
-      onToggleType && onToggleType();
-    },
-};
-
-export default withInput(handlers)(Pass);
+export default withIsVisible(PassInternal);

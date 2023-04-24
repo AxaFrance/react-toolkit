@@ -33,9 +33,9 @@ export const MultiSelectStory: Story<ComponentProps<typeof MultiSelect>> = ({
   return (
     <MultiSelect
       values={newValues}
-      onChange={(v) => {
-        setNewValues(v.values);
-        onChange(v);
+      onChange={(v, a) => {
+        setNewValues(v.map((_v) => _v.value));
+        onChange && onChange(v, a);
       }}
       {...args}
     />
@@ -64,9 +64,9 @@ export const MultiSelectStoryOneValue: Story<
     <MultiSelect
       {...args}
       value={newValue}
-      onChange={(v) => {
-        setNewValue(v.value);
-        onChange(v);
+      onChange={(v, a) => {
+        setNewValue(v.map((_v) => _v.value)[0]);
+        onChange && onChange(v, a);
       }}
     />
   );
