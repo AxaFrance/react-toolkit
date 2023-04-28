@@ -57,7 +57,7 @@ Before you start developping, it is important to always keep your forked reposit
 For this, you will add a remote which points to the original repository (this has to be done only once):
 
 ```sh
-git remote add upstream https://github.com/AxaGuilDEv/react-toolkit.git
+git remote add upstream https://github.com/AxaFrance/react-toolkit.git
 ```
 
 ### Update your master branch
@@ -157,7 +157,7 @@ If you are developping on a Mac, you will find some Virtual Machines to help you
 
 After working on a component, you are expected to update the documentation.
 
-Documentation can be found in the [Design System](https://github.com/AxaGuilDEv/design-system) repository.
+Documentation can be found in the [Design System](https://github.com/AxaFrance/design-system) repository.
 
 There, do not forget to update the component status page, please!
 

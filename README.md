@@ -1,6 +1,6 @@
 # @axa-fr/react-toolkit
 
-[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaGuilDEv.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit)
+[![Build status](https://dev.azure.com/axaguildev/react-toolkit/_apis/build/status/AxaFrance.react-toolkit?branch=master)](https://dev.azure.com/axaguildev/react-toolkit)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=alert_status)](https://sonarcloud.io/dashboard?id=AxaGuilDEv_react-toolkit) [![Reliability](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=reliability_rating) [![Security](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=security_rating)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=security_rating) [![Code Corevage](https://sonarcloud.io/api/project_badges/measure?project=AxaGuilDEv_react-toolkit&metric=coverage)](https://sonarcloud.io/component_measures?id=AxaGuilDEv_react-toolkit&metric=Coverage)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![Twitter](https://img.shields.io/twitter/follow/GuildDEvOpen?style=social)](https://twitter.com/intent/follow?screen_name=GuildDEvOpen)
 
@@ -25,8 +25,8 @@ Components are simple to use (just drag and drop it), simple to customize (by us
 
 You can easily build a new app from scratch or integrate some components into an existing application.
 
-[html+css documentation website](https://axaguildev.github.io?target=react_toolkit_storybook)
-[react storybook website](https://axaguildev.github.io?target=react_toolkit_design)
+[html+css documentation website](https://axafrance.github.io?target=react_toolkit_storybook)
+[react storybook website](https://axafrance.github.io?target=react_toolkit_design)
 
 ## Getting Started
 
@@ -122,12 +122,12 @@ Each component should be autonomous (HTML + CSS + JS) and extensible.
 
   - BEM convention is used in order to break CSS cascading problem
   - SCSS and CSS files are avalaible for every component and can be overrided or extended
-  - [HTML/CSS Documentation](https://axaguildev.github.io?target=react_toolkit_storybook)
+  - [HTML/CSS Documentation](https://axafrance.github.io?target=react_toolkit_storybook)
 
 - React :
   - Components are stateless by default
   - Some Higher-Order Components (HOC) are stateful but feel free to use the stateless one if it fits your use case
-  - [React documentation](https://axaguildev.github.io?target=react_toolkit_design)
+  - [React documentation](https://axafrance.github.io?target=react_toolkit_design)
 
 ## List of supported browsers
 
