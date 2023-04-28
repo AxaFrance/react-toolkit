@@ -9,7 +9,7 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'AxaGuilDEv'
+    if: github.repository_owner == 'AxaFrance'
     steps:
       - uses: actions/checkout@v2
         with:

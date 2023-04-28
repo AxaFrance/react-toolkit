@@ -6,7 +6,6 @@ on:
     tags:
       - 'v*'
       - '!v*-alpha*'
-  
 
 env:
   NODE_VERSION: 16.x
@@ -14,7 +13,7 @@ env:
 
 jobs:
   publish:
-    if: github.repository_owner == 'AxaGuilDEv'
+    if: github.repository_owner == 'AxaFrance'
     environment:
       name: Release
     runs-on: ubuntu-latest
@@ -54,7 +53,7 @@ jobs:
       - name: Checkout Axa Github Pages
         uses: actions/checkout@v2
         with:
-          repository: AxaGuilDEv/AxaGuilDEv.github.io
+          repository: AxaFrance/AxaFrance.github.io
           ref: master
           path: gh-pages
       - name: Rename latest Storybook folder
