@@ -30,7 +30,7 @@ const Template: Story<
         value={value}
         onChange={(e) => {
           action('onChange')(e);
-          setValue(e.value);
+          setValue(!isNaN(e.value) ? e.value : null);
         }}>
         <Help>tooltip avec du text</Help>
       </NumberInput>
