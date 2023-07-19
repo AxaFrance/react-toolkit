@@ -67,7 +67,9 @@ const File = ({
   );
 };
 
-export type CustomFile<T = File & { preview: string }> = {
+export type FilePreview = File & { preview: string };
+
+export type CustomFile<T = FilePreview> = {
   id: string;
   file: T;
 };
@@ -89,11 +91,31 @@ const handlers = {
     ) => {
       const values = acceptedFiles.map((file) => ({
         id: createId(),
-        file: { ...file, preview: URL.createObjectURL(file) },
+        file: {
+          ...file,
+          lastModified: file.lastModified,
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          stream: file.stream,
+          arrayBuffer: file.arrayBuffer,
+          slice: file.slice,
+          text: file.text,
+          preview: URL.createObjectURL(file),
+        },
       }));
       const errors = rejectedFiles.map((error) => ({
         id: createId(),
-        file: error,
+        file: {
+          errors: error.errors,
+          file: {
+            ...error.file,
+            lastModified: error.file.lastModified,
+            name: error.file.name,
+            type: error.file.type,
+            size: error.file.size,
+          } as File,
+        },
       }));
       onChange &&
         onChange({
