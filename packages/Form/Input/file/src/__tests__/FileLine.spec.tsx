@@ -2,12 +2,20 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import FileLine, { Preview } from '../FileLine';
+import { FilePreview } from '../File';
 
 describe('<File.FileInput>', () => {
   it('renders File.FileInput correctly', () => {
     const { asFragment } = render(
       <FileLine
-        file={{ ...new File([], 'name'), name: 'name', size: 1, preview: '#' }}
+        file={
+          {
+            ...new File([], 'name'),
+            name: 'name',
+            size: 1,
+            preview: '#',
+          } as FilePreview
+        }
         id="id"
       />
     );
@@ -18,7 +26,14 @@ describe('<File.FileInput>', () => {
 
     const { getByRole } = render(
       <FileLine
-        file={{ ...new File([], 'name'), name: 'name', size: 1, preview: '#' }}
+        file={
+          {
+            ...new File([], 'name'),
+            name: 'name',
+            size: 1,
+            preview: '#',
+          } as FilePreview
+        }
         id="id"
         onClick={onClickMock}
       />
@@ -35,7 +50,7 @@ describe('<File.FileInput>', () => {
       preview: '',
       size: 2,
     };
-    const { asFragment } = render(<Preview file={file} />);
+    const { asFragment } = render(<Preview file={file as FilePreview} />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('renders Preview correctly for other type', () => {
@@ -46,7 +61,7 @@ describe('<File.FileInput>', () => {
       preview: '',
       size: 2,
     };
-    const { asFragment } = render(<Preview file={file} />);
+    const { asFragment } = render(<Preview file={file as FilePreview} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import FileTable from '../FileTable';
+import { FilePreview } from '../File';
 
 describe('<File.FileTable>', () => {
   it('renders File.FileTable correctly', () => {
@@ -12,7 +13,7 @@ describe('<File.FileTable>', () => {
               ...new File([], 'youhou.txt'),
               name: 'youhou.txt',
               size: 2,
-            },
+            } as File,
             errors: [],
           },
         ]}
@@ -23,7 +24,7 @@ describe('<File.FileTable>', () => {
               name: 'superfile.pdf',
               preview: '',
               size: 2,
-            },
+            } as FilePreview,
             id: 'id',
           },
         ]}
@@ -41,7 +42,7 @@ describe('<File.FileTable>', () => {
               ...new File([], 'youhou.txt'),
               name: 'youhou.txt',
               size: 2,
-            },
+            } as File,
             errors: [],
           },
         ]}
@@ -63,7 +64,7 @@ describe('<File.FileTable>', () => {
               name: 'youhou.txt',
               size: 2,
               preview: '',
-            },
+            } as FilePreview,
             id: 'id',
           },
         ]}
