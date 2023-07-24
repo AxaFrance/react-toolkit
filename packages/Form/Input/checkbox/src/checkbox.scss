@@ -32,8 +32,7 @@
 
   &__input-checkbox {
     position: absolute;
-    z-index: -1;
-    visibility: hidden;
+    opacity: 0;
 
     &:checked + .af-form__label {
       .af-form__indicator {
@@ -107,8 +106,7 @@
 
     .af-form__input-checkbox {
       position: absolute;
-      z-index: -1;
-      visibility: hidden;
+      opacity: 0;
 
       &:checked + .af-form__label {
         background-color: $color-azur;
