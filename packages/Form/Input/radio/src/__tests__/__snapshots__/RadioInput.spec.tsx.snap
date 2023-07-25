@@ -3,14 +3,16 @@
 exports[`<RadioInput /> should have correct html rendered 1`] = `
 <DocumentFragment>
   <div
+    aria-label="test"
     class="row af-form__group"
+    role="radiogroup"
   >
     <div
       class="col-md-2"
     >
       <label
+        aria-label="test"
         class="af-form__group-label"
-        for="option1_id"
       >
         test
       </label>

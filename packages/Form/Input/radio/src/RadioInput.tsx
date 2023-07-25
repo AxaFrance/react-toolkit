@@ -19,6 +19,7 @@ const RadioInput = ({
   options,
   classNameContainerLabel,
   classNameContainerInput,
+  ariaLabelContainer,
   label,
   forceDisplayMessage,
   children,
@@ -41,7 +42,10 @@ const RadioInput = ({
       className={className}
       classModifier={rowModifier}
       classNameContainerLabel={classNameContainerLabel}
-      classNameContainerInput={classNameContainerInput}>
+      classNameContainerInput={classNameContainerInput}
+      roleContainer="radiogroup"
+      ariaLabelContainer={ariaLabelContainer ?? label.toString()}
+      isLabelContainerLinkedToInput={false}>
       <Radio
         options={newOptions}
         mode={mode}

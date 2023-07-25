@@ -15,6 +15,9 @@ type FieldProps = Omit<
   classNameContainerLabel?: string;
   classNameContainerInput?: string;
   isVisible?: boolean;
+  roleContainer?: string;
+  ariaLabelContainer?: string;
+  isLabelContainerLinkedToInput?: boolean;
 };
 
 const Field = ({
@@ -29,6 +32,9 @@ const Field = ({
   classNameContainerLabel = 'col-md-2',
   classNameContainerInput = 'col-md-10',
   isVisible = true,
+  roleContainer,
+  ariaLabelContainer,
+  isLabelContainerLinkedToInput = true,
 }: FieldProps) => {
   if (!isVisible) {
     return null;
@@ -41,9 +47,15 @@ const Field = ({
   );
 
   return (
-    <div className={componentClassName}>
+    <div
+      className={componentClassName}
+      role={roleContainer}
+      aria-label={ariaLabelContainer}>
       <div className={classNameContainerLabel}>
-        <label className="af-form__group-label" htmlFor={id}>
+        <label
+          className="af-form__group-label"
+          aria-label={label.toString()}
+          htmlFor={isLabelContainerLinkedToInput ? id : null}>
           {label}
         </label>
       </div>
