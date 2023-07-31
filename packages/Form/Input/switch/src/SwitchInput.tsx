@@ -50,7 +50,9 @@ const SwitchInput = ({
       id={firstId}
       classModifier={classModifier}
       classNameContainerLabel={classNameContainerLabel}
-      classNameContainerInput={classNameContainerInput}>
+      classNameContainerInput={classNameContainerInput}
+      roleContainer="radiogroup"
+      ariaLabelContainer={label.toString()}>
       <FieldInput
         className="af-form__text"
         classModifier={inputFieldClassModifier}>
