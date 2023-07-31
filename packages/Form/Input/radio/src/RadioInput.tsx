@@ -44,7 +44,8 @@ const RadioInput = ({
       classNameContainerLabel={classNameContainerLabel}
       classNameContainerInput={classNameContainerInput}
       roleContainer="radiogroup"
-      ariaLabelContainer={ariaLabelContainer ?? label.toString()}>
+      ariaLabelContainer={ariaLabelContainer ?? label.toString()}
+      isLabelContainerLinkedToInput={false}>
       <Radio
         options={newOptions}
         mode={mode}

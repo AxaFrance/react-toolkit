@@ -9,6 +9,7 @@ exports[`<SliderInput> renders SliderInput correctly 1`] = `
       class="col-md-2"
     >
       <label
+        aria-label="File *"
         class="af-form__group-label"
         for="id"
       >

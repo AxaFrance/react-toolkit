@@ -57,6 +57,15 @@ RadioInputStory.argTypes = {
   mode: { control: { type: 'select', options: Object.values(RadioModes) } },
 };
 
+export const RadioInputRequiredStory: Story<RadioInputProps> = Template.bind(
+  {}
+);
+RadioInputRequiredStory.storyName = 'RadioInput required';
+RadioInputRequiredStory.args = {
+  ...RadioInputStory.args,
+  classModifier: 'required',
+};
+
 export const RadioInputWithChildrenStory: Story<RadioInputProps> =
   Template.bind({});
 RadioInputWithChildrenStory.storyName = 'Radio with children';
