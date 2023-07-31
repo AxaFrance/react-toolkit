@@ -3,10 +3,11 @@
 1. [CheckboxItem](#checkboxitem)
 2. [Checkbox](#checkbox)
 3. [CheckboxInputClassic](#checkboxinputclassic)
-4. [CheckboxInputDefault](#checkboxinputdefault)
-5. [CheckboxInput Inline](#checkboxinput-inline)
-6. [CheckboxItem Toggle](#checkboxitem-toggle)
-7. [CheckboxInput Toggle](#checkboxinput-toggle)
+4. [CheckboxInputRequired](#checkboxinputrequired)
+5. [CheckboxInputDefault](#checkboxinputdefault)
+6. [CheckboxInput Inline](#checkboxinput-inline)
+7. [CheckboxItem Toggle](#checkboxitem-toggle)
+8. [CheckboxInput Toggle](#checkboxinput-toggle)
 
 ## CheckboxItem
 

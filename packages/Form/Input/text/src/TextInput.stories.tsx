@@ -72,3 +72,48 @@ TextInputStory.args = {
   classNameContainerLabel: 'col-md-2',
   classNameContainerInput: 'col-md-10',
 };
+
+export const TextInputRequiredStory: Story<TextInputProps> = ({
+  value: valueInit,
+  onChange,
+  ...args
+}) => {
+  const [value, setValue] = useState(valueInit);
+  return (
+    <form className="af-form" name="myform">
+      <TextInput
+        value={value}
+        onChange={(e) => {
+          setValue(e.value);
+          onChange(e);
+        }}
+        {...args}>
+        <HelpButton>tooltip avec du text</HelpButton>
+      </TextInput>
+    </form>
+  );
+};
+TextInputRequiredStory.storyName = 'Text Input required';
+TextInputRequiredStory.args = {
+  id: 'uniqueid',
+  label: 'Place name',
+  name: 'placeName',
+  value: '',
+  helpMessage: (
+    <>
+      Minimum <strong>3 caractères</strong> pour un nom
+    </>
+  ),
+  placeholder: '',
+  message: '',
+  messageType: MessageTypes.error,
+  forceDisplayMessage: false,
+  readOnly: false,
+  disabled: false,
+  isVisible: true,
+  classModifier: 'required',
+  className: '',
+  autoFocus: true,
+  classNameContainerLabel: 'col-md-2',
+  classNameContainerInput: 'col-md-10',
+};

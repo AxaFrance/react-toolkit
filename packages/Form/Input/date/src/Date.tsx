@@ -30,6 +30,7 @@ const Date = forwardRef<HTMLInputElement, Props>(
         type="date"
         defaultValue={currentValue}
         ref={ref}
+        required={classModifier?.includes('required')}
         {...otherProps}
       />
     );

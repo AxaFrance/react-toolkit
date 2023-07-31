@@ -36,6 +36,7 @@ const RadioItem = forwardRef<HTMLInputElement, Props>(
           value={value}
           checked={isChecked}
           ref={inputRef}
+          required={_classModifier?.includes('required')}
         />
         <label className="af-form__label" htmlFor={newId}>
           <span className="af-form__description">{newLabel}</span>
