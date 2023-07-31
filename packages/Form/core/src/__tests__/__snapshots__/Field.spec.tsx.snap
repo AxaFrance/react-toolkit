@@ -9,6 +9,7 @@ exports[`<Field> Render <Field/> when have children HelpMessage 1`] = `
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -37,6 +38,7 @@ exports[`<Field> Render <Field/> when have children HelpMessage and have message
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -72,6 +74,7 @@ exports[`<Field> Render <Field/> when have children complete example with error 
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -117,6 +120,7 @@ exports[`<Field> Render <Field/> when have children complete example without err
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -154,6 +158,7 @@ exports[`<Field> Render <Field/> when have message and forceDisplayMessage equal
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -191,6 +196,7 @@ exports[`<Field> Render <Field/> when is visible 1`] = `
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
@@ -215,6 +221,7 @@ exports[`<Field> Render <Field/> with roleContainer and ariaLabelContainer 1`] =
       class="col-md-2"
     >
       <label
+        aria-label="my label"
         class="af-form__group-label"
         for=""
       >
