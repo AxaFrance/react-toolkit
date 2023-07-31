@@ -24,7 +24,8 @@ const SelectBase = forwardRef<HTMLSelectElement, Props>(
           {...otherProps}
           id={id}
           className={componentClassName}
-          ref={inputRef}>
+          ref={inputRef}
+          required={classModifier?.includes('required')}>
           {options.map(({ label, ...opt }) => (
             <option key={opt.value.toString()} {...opt}>
               {label}

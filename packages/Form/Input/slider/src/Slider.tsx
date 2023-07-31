@@ -49,6 +49,7 @@ const Slider = ({
       step={null}
       className={componentClassName}
       defaultValue={defaultValue || value}
+      aria-required={classModifier?.includes('required')}
     />
   );
 };

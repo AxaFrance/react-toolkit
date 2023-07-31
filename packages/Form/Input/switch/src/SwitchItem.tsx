@@ -44,6 +44,7 @@ const SwitchItem = ({
         className="af-form__input-radio"
         id={newId}
         type="radio"
+        required={classModifier?.includes('required')}
       />
       <label className="af-form__label" htmlFor={newId}>
         <span className="af-form__description">{label}</span>

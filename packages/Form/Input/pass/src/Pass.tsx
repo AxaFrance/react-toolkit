@@ -34,6 +34,7 @@ const Pass = forwardRef<HTMLInputElement, Props>(
           className="af-form__input-text"
           type={type}
           ref={inputRef}
+          required={classModifier?.includes('required')}
         />
         <button
           className="af-form__pass-btn"

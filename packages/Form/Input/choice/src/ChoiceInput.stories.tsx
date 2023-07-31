@@ -48,3 +48,16 @@ ChoiceInputStory.args = {
   forceDisplayMessage: false,
   isVisible: true,
 };
+
+export const ChoiceInputRequiredStory: Story<
+  ComponentPropsWithoutRef<typeof ChoiceInput>
+> = (args) => (
+  <form className="af-form" name="myform">
+    <ChoiceInput {...args} />
+  </form>
+);
+ChoiceInputRequiredStory.storyName = 'ChoiceInputRequired';
+ChoiceInputRequiredStory.args = {
+  ...ChoiceInputStory.args,
+  classModifier: 'required',
+};

@@ -19,6 +19,7 @@ const CustomNumber = forwardRef<HTMLInputElement, Props>(
         id={inputId}
         type="number"
         ref={inputRef}
+        required={classModifier?.includes('required')}
         {...otherProps}
       />
     );

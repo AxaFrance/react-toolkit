@@ -14,7 +14,12 @@ const Textarea = forwardRef<HTMLTextAreaElement, Props>(
       'af-form__input-textarea'
     );
     return (
-      <textarea {...otherProps} className={componentClassName} ref={inputRef} />
+      <textarea
+        {...otherProps}
+        className={componentClassName}
+        ref={inputRef}
+        required={classModifier?.includes('required')}
+      />
     );
   }
 );

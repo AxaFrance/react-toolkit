@@ -20,6 +20,7 @@ const Text = forwardRef<HTMLInputElement, Props>(
         className={componentClassName}
         type="text"
         ref={inputRef}
+        required={classModifier?.includes('required')}
       />
     );
   }
