@@ -3,7 +3,9 @@
 exports[`<SwitchInput> renders SwitchInput correctly 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Image *"
     class="row af-form__group"
+    role="radiogroup"
   >
     <div
       class="col-md-2"

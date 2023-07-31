@@ -97,4 +97,16 @@ describe('<Field>', () => {
     expect(queryByText('Want help ?')).not.toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('Render <Field/> with roleContainer and ariaLabelContainer', () => {
+    const { asFragment, getByText } = render(
+      <Field
+        {...defaultProps}
+        roleContainer="radiogroup"
+        ariaLabelContainer="Label du groupe"
+      />
+    );
+    expect(getByText('my label')).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

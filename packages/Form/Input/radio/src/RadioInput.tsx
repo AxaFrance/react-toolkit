@@ -22,6 +22,7 @@ const RadioInput = ({
   label,
   forceDisplayMessage,
   children,
+  ariaLabelContainer,
   ...radioProps
 }: RadioInputProps) => {
   const rowModifier = `${classModifier ?? ''}${
@@ -41,7 +42,9 @@ const RadioInput = ({
       className={className}
       classModifier={rowModifier}
       classNameContainerLabel={classNameContainerLabel}
-      classNameContainerInput={classNameContainerInput}>
+      classNameContainerInput={classNameContainerInput}
+      roleContainer="radiogroup"
+      ariaLabelContainer={ariaLabelContainer ?? label.toString()}>
       <Radio
         options={newOptions}
         mode={mode}

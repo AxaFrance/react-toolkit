@@ -203,3 +203,27 @@ exports[`<Field> Render <Field/> when is visible 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`<Field> Render <Field/> with roleContainer and ariaLabelContainer 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Label du groupe"
+    class="row af-form__group"
+    role="radiogroup"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for=""
+      >
+        my label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    />
+  </div>
+</DocumentFragment>
+`;
