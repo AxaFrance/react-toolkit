@@ -51,8 +51,8 @@ const File = ({
 
   return (
     <div className={componentClassName}>
-      <div {...getRootProps({ id, className: 'drop-box hidden-mobile' })}>
-        <input {...getInputProps({ name, readOnly, ...otherProps })} />
+      <div {...getRootProps({ className: 'drop-box' })}>
+        <input {...getInputProps({ id, name, readOnly, ...otherProps })} />
         <div>{placeholder}</div>
       </div>
       <Button

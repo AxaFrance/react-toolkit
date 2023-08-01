@@ -16,6 +16,13 @@
         display: flex;
         align-items: center;
         text-align: center;
+
+        input {
+          opacity: 0;
+          width: 0;
+          /* display:none set by react-dropzone needs to be ovveride */
+          display: block !important;
+        }
       }
       .af-btn--file {
         min-width: 8rem;
