@@ -41,7 +41,6 @@ const CheckboxItem = ({
         checked={isChecked}
         type="checkbox"
         ref={inputRef}
-        required={_classModifier?.includes('required')}
       />
       <label className="af-form__label" htmlFor={newId}>
         <span className="af-form__indicator">
