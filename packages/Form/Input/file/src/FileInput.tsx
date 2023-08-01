@@ -78,6 +78,7 @@ const FileInput = ({
           disabled={disabled}
           classModifier={inputClassModifier}
           label={fileLabel}
+          required={classModifier?.includes('required')}
           {...otherFileProps}
         />
         {children}

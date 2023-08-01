@@ -26,13 +26,13 @@ exports[`<FileInput> renders FileInput correctly 1`] = `
           class="af-form__file-input"
         >
           <div
-            class="drop-box hidden-mobile"
-            id="id"
+            class="drop-box"
             tabindex="0"
           >
             <input
               accept="image/jpeg, image/png, application/*"
               autocomplete="off"
+              id="id"
               multiple=""
               name="file"
               style="display: none;"
