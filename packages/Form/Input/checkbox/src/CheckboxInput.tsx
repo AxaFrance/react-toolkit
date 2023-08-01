@@ -46,6 +46,7 @@ const CheckboxInput = ({
         isVisible={isVisible}
         options={newOptions}
         classModifier={classModifier}
+        required={classModifier?.includes('required')}
         {...checkboxProps}
       />
     </Field>

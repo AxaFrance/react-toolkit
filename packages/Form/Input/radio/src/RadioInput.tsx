@@ -50,6 +50,7 @@ const RadioInput = ({
         options={newOptions}
         mode={mode}
         classModifier={classModifier}
+        required={classModifier?.includes('required')}
         {...radioProps}
       />
       {children}

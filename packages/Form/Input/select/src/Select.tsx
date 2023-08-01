@@ -4,7 +4,6 @@ import { withInput } from '@axa-fr/react-toolkit-form-core';
 import SelectBase from './SelectBase';
 
 type Props = ComponentPropsWithRef<typeof SelectBase> & {
-  classModifier?: string;
   forceDisplayPlaceholder?: boolean;
   placeholder?: string;
 };
