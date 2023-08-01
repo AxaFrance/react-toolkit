@@ -197,3 +197,71 @@ exports[`<ChoiceInput> renders ChoiceInput correctly with default options 1`] = 
   </div>
 </DocumentFragment>
 `;
+
+exports[`<ChoiceInput> renders ChoiceInput correctly with required 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group af-form__group--required"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        aria-label="Some label"
+        class="af-form__group-label"
+        for="oui"
+      >
+        Some label
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__radio-custom"
+      >
+        <input
+          class="af-form__input-radio"
+          id="oui"
+          name="xxx"
+          required=""
+          type="radio"
+          value="true"
+        />
+        <label
+          class="af-form__label"
+          for="oui"
+        >
+          <span
+            class="af-form__description"
+          >
+            Oui
+          </span>
+        </label>
+      </div>
+      <div
+        class="af-form__radio-custom"
+      >
+        <input
+          class="af-form__input-radio"
+          id="non"
+          name="xxx"
+          required=""
+          type="radio"
+          value="false"
+        />
+        <label
+          class="af-form__label"
+          for="non"
+        >
+          <span
+            class="af-form__description"
+          >
+            Non
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
