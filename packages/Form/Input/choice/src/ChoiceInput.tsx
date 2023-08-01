@@ -50,6 +50,7 @@ const ChoiceInput = ({
         id={id}
         classModifier={classModifier}
         options={options ? choiceOptions : undefined}
+        required={classModifier?.includes('required')}
       />
     </Field>
   );

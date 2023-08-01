@@ -50,4 +50,21 @@ describe('<ChoiceInput>', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('renders ChoiceInput correctly with required', () => {
+    const { asFragment } = render(
+      <ChoiceInput
+        label="Some label"
+        id="xxx"
+        name="xxx"
+        onChange={() => {}}
+        options={[
+          { label: 'Oui', value: true, id: 'oui' },
+          { label: 'Non', value: false, id: 'non' },
+        ]}
+        classModifier="required"
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
