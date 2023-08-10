@@ -4,8 +4,8 @@ import Body from '../Body';
 
 describe('<Body>', () => {
   it('should render component', () => {
-    const { asFragment } = render(<Body>content</Body>);
-    expect(asFragment()).toMatchSnapshot();
+    render(<Body>content</Body>);
+    expect(screen.getByText('content')).toBeInTheDocument();
   });
 
   it('should apply class and modifier', () => {

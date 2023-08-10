@@ -1,24 +1,46 @@
-import React from 'react';
-import { getClickId } from '@axa-fr/react-toolkit-core';
-import HeaderCore, { HeaderCoreProps } from './HeaderCore';
+import React, { MouseEventHandler } from 'react';
+import { getComponentClassName, getClickId } from '@axa-fr/react-toolkit-core';
 
-export type HeaderProps = HeaderCoreProps;
+export type HeaderProps = React.HTMLAttributes<HTMLDivElement> & {
+  className?: string;
+  onCancel: MouseEventHandler<HTMLButtonElement>;
+  title?: string;
+  classModifier?: string;
+  closeButtonAriaLabel?: string;
+};
 
-const setWithProps = (props: HeaderProps) => ({
-  ...props,
-  children: props.title,
-});
+const Header = ({
+  className,
+  classModifier,
+  title,
+  closeButtonAriaLabel = 'Fermer la boite de dialogue',
+  ...props
+}: HeaderProps) => {
+  const componentClassName = getComponentClassName(
+    className,
+    classModifier,
+    'af-modal__header'
+  );
 
-const Header = (props: HeaderProps) => {
-  const propsWithClickId = getClickId<HeaderCoreProps>({
+  const propsWithClickId = getClickId<HeaderProps>({
     option: {
       event: ['onCancel'],
     },
     props,
   });
-  const customProps = setWithProps(propsWithClickId);
 
-  return <HeaderCore {...customProps} />;
+  return (
+    <header className={componentClassName} {...props}>
+      <h4 className="af-modal__header-title">{title}</h4>
+      <button
+        className="af-modal__header-close-btn"
+        type="button"
+        aria-label={closeButtonAriaLabel}
+        onClick={propsWithClickId.onCancel}>
+        <span className="glyphicon glyphicon-close" aria-hidden="true" />
+      </button>
+    </header>
+  );
 };
 
 export default Header;

@@ -1,30 +1,14 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
-// stylelint-disable selector-class-pattern
-.ReactModal__Overlay {
-  animation: fademodal 0.1s linear;
-  z-index: 3;
-  overflow: auto;
-  &--after-open {
-    background: rgba($color-azur, 0.62) !important;
-  }
-}
-
-.ReactModal__Body {
-  &--open {
-    overflow: hidden;
-  }
-}
-
-// stylelint-enable selector-class-pattern
-
 .af-modal {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 1050;
-  outline: 0;
-  overflow: auto;
+  border: 1px solid #333;
+  padding: 0;
+  animation: appeardialog 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+  &::backdrop {
+    animation: fademodal 0.1s linear;
+    background: rgba($color-azur, 0.62);
+  }
 
   &--lg {
     max-width: 800px;
@@ -34,36 +18,9 @@
     max-width: 300px;
   }
 
-  &__backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    background-color: $color-axa;
-
-    &.show {
-      opacity: 0.5;
-    }
-  }
-
-  &__dialog {
-    position: relative;
-    width: auto;
-    margin: 10px;
-    animation: appeardialog 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-  }
-
   &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
     background-color: $white;
     background-clip: padding-box;
-    border: 1px solid $color-mine-shaft;
-    border-radius: 0;
-    outline: 0;
   }
 
   &__header {

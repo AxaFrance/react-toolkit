@@ -15,7 +15,7 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   docs: {
-    inlineStories: false,
+    inlineStories: true,
   },
   options: {
     storySort: {
