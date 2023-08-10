@@ -1,8 +1,7 @@
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import React from 'react';
-import Div, { DivProps } from './Div';
 
-export type BodyProps = DivProps & {
+export type BodyProps = React.HTMLAttributes<HTMLDivElement> & {
   classModifier?: string;
 };
 
@@ -18,9 +17,9 @@ const Body = ({
     'af-modal__body'
   );
   return (
-    <Div className={componentClassName} {...otherProps}>
+    <section className={componentClassName} {...otherProps}>
       {children}
-    </Div>
+    </section>
   );
 };
 

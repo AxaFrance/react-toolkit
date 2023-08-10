@@ -5,9 +5,11 @@ import Header from '../Header';
 
 describe('<Header>', () => {
   it('should render header', () => {
-    const { asFragment } = render(<Header title="title" onCancel={() => {}} />);
-    expect(asFragment()).toMatchSnapshot();
-    expect(screen.getByText('title')).toBeInTheDocument();
+    render(<Header title="title" onCancel={() => {}} />);
+    expect(screen.getByRole('heading', { name: 'title' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Fermer la boite de dialogue' })
+    ).toBeInTheDocument();
   });
 
   it('should render id click onCancel', () => {
@@ -17,7 +19,9 @@ describe('<Header>', () => {
         header
       </Header>
     );
-    UserEvent.click(screen.getByRole('button', { name: 'Close' }));
+    UserEvent.click(
+      screen.getByRole('button', { name: 'Fermer la boite de dialogue' })
+    );
     expect(onCancel).toHaveBeenCalledWith({ id: '' });
   });
 });

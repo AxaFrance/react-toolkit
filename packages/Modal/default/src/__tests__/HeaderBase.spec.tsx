@@ -4,8 +4,8 @@ import HeaderBase from '../HeaderBase';
 
 describe('<HeaderBase>', () => {
   it('should render header', () => {
-    const { asFragment } = render(<HeaderBase>content</HeaderBase>);
-    expect(asFragment()).toMatchSnapshot();
+    render(<HeaderBase>content</HeaderBase>);
+    expect(screen.getByText('content')).toBeInTheDocument();
   });
 
   it('should apply class and modifier', () => {
