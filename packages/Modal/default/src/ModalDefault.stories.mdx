@@ -1,0 +1,108 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Modal from './Modal';
+import Body from './Body';
+import Footer from './Footer';
+import HeaderBase from './HeaderBase';
+import { useRef } from 'react';
+
+<Meta title="Components/Modal/Default" component={Modal} argTypes={{}} />
+
+# Modal
+
+export const Template = (args) => {
+    return (
+      <div>
+        <Modal open {...args} onOutsideTap={() => {}}>
+          <Header title={args.title} onCancel={() => {}} />
+          <Body>
+            <p>
+              Voici une version avec un header customisé à l'aide du composant
+              Modal.HeaderBase. Un classModifier "lg" a été mis pour montrer une
+              version plus large d'une modale. Il est existe également un
+              modifier "sm", pour les modales plus petites. Mais il est possible
+              d'ajouter son propre modifier pour personnaliser selon ses besoins
+              avec un peu de CSS.
+            </p>
+          </Body>
+          <Footer>
+            <button className="btn af-btn af-btn--reverse" type="button">
+              Annuler
+            </button>
+            <button className="btn af-btn" type="button">
+              Valider
+            </button>
+          </Footer>
+        </Modal>
+      </div>
+    );
+  };
+
+The modal default is the component to use if you want to fully configure your modal.
+
+With the `HeaderBase` you can configure the header of the modal. With the `Body` you can configure the body of the modal. And with the `Footer` you can configure the footer of the modal.
+
+You need to pass a `ref` to the `ModalBoolean` component in order to call the `showModal` function when you want to open the modal and the `close` function for closing it.
+For example : 
+
+```javascript
+import { useRef } from 'react';
+
+export const YourComponent = () => {
+  const ref = useRef<HTMLDialogElement>(null);
+
+  return (
+    <>
+      <button type="button" onClick={() => ref.current?.showModal()}>
+        Ouvrir la modal
+      </button>
+
+      <Modal onOutsideTap={() => ref.current?.close()} ref={ref}>
+        <HeaderBase id="headerId">
+          <p>
+            Ici je contrôle complètement
+            <b>le contenu</b>
+          </p>
+        </HeaderBase>
+        <Body>
+          <p>
+            Reprehenderit sit quis aute nisi consequat consequat mollit. Commodo
+            in aliquip consectetur nulla sit anim. Pariatur minim commodo enim
+            ea eu laborum culpa laboris. Labore labore irure ipsum consequat
+            enim officia anim ipsum aliqua excepteur qui sint. Duis sint do
+            culpa adipisicing dolor adipisicing ea dolore aute nisi quis ullamco
+            aliquip occaecat. Aute ut mollit amet.
+          </p>
+        </Body>
+        <Footer>
+          <button
+            className="btn af-btn af-btn--reverse"
+            type="button"
+            onClick={() => ref.current?.close()}>
+            Annuler
+          </button>
+          <button className="btn af-btn" type="button">
+            Valider
+          </button>
+        </Footer>
+      </Modal>
+    </>
+  );
+};
+```
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-modal-default/dist/af-modal.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

@@ -5,7 +5,7 @@ import '../packages/all/dist/style/af-toolkit-core.css';
 import '../packages/core/dist/assets/fonts/icons/af-icons.css';
 import './storybook.css';
 
-export const decorators = [addReadme];
+// export const decorators = [addReadme];
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -16,7 +16,7 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   docs: {
-    inlineStories: false,
+    inlineStories: true,
   },
   options: {
     storySort: {

@@ -1,0 +1,97 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import BooleanModal from './ModalBoolean';
+import { useRef } from 'react';
+
+<Meta
+  title="Components high level/Modal/ModalBoolean"
+  component={BooleanModal}
+  argTypes={{
+    onCancel: { action: 'onCancel' },
+    onSubmit: { action: 'onSubmit' },
+    title: '',
+    submitTitle: '',
+    cancelTitle: '',
+  }}
+/>
+
+# Modal
+
+export const Template = (args) => {
+  return (
+    <>
+      <BooleanModal open {...args} onCancel={() => {}}>
+        <p>
+          Reprehenderit sit quis aute nisi consequat consequat mollit. Commodo
+          in aliquip consectetur nulla sit anim. Pariatur minim commodo enim ea
+          eu laborum culpa laboris. Labore labore irure ipsum consequat enim
+          officia anim ipsum aliqua excepteur qui sint. Duis sint do culpa
+          adipisicing dolor adipisicing ea dolore aute nisi quis ullamco aliquip
+          occaecat. Aute ut mollit amet.
+        </p>
+      </BooleanModal>
+    </>
+  )
+};
+
+The modal boolean package gives the possibility to show a modal with minimal configuration. You can use the `ModalBoolean` component with a `title` in property and pass him a content as a react child that will be displayed in the content of the modal. That's the minimal configuration you can use to show a modal.
+On top of that, you can ovveride the cancel and submit button with `cancelTitle` and `submitTitle` properties.
+
+If you want to configure your modal a bit more (remove one or all the buttons in the footer, etc.), use the `@axa-fr/react-toolkit-modal-default` instead.
+
+You need to pass a `ref` to the `ModalBoolean` component in order to call the `showModal` function when you want to open the modal and the `close` function for closing it.
+For example : 
+
+```javascript
+import { useRef } from 'react';
+
+export const YourComponent = () => {
+  const ref = useRef<HTMLDialogElement>(null);
+  
+  return (
+    <>
+      <button type="button" onClick={() => ref.current?.showModal()}>
+        Ouvrir la modal
+      </button>
+
+      <BooleanModal
+        title="Titre de la modal"
+        onCancel={() => ref.current?.close()}
+        onSubmit={(e) => console.log(e)}
+        id="idModal"
+        submitTitle="Soumettre"
+        cancelTitle="Annuler"
+        ref={ref}>
+        <p>
+          Reprehenderit sit quis aute nisi consequat consequat mollit. Commodo
+          in aliquip consectetur nulla sit anim. Pariatur minim commodo enim ea
+          eu laborum culpa laboris. Labore labore irure ipsum consequat enim
+          officia anim ipsum aliqua excepteur qui sint. Duis sint do culpa
+          adipisicing dolor adipisicing ea dolore aute nisi quis ullamco aliquip
+          occaecat. Aute ut mollit amet.
+        </p>
+      </BooleanModal>
+    </>
+  );
+};
+```
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-modal-default/dist/af-modal.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      title: 'Titre de la modale',
+      submitTitle: 'Valider',
+      cancelTitle: 'Annuler',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

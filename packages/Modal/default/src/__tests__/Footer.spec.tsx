@@ -4,8 +4,8 @@ import Footer from '../Footer';
 
 describe('<Footer>', () => {
   it('should render footer', () => {
-    const { asFragment } = render(<Footer>content</Footer>);
-    expect(asFragment()).toMatchSnapshot();
+    render(<Footer>content</Footer>);
+    expect(screen.getByText('content')).toBeInTheDocument();
   });
 
   it('should apply class and modifier', () => {
