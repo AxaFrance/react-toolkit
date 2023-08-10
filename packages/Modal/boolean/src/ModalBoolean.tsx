@@ -1,71 +1,75 @@
-import React from 'react';
-import Modal, { HeaderProps } from '@axa-fr/react-toolkit-modal-default';
+import React, { forwardRef } from 'react';
+import Modal, {
+  Body,
+  Footer,
+  Header,
+  HeaderProps,
+} from '@axa-fr/react-toolkit-modal-default';
 import Button from '@axa-fr/react-toolkit-button';
-import {
-  getComponentClassName,
-  ClickEvent,
-  Constants,
-} from '@axa-fr/react-toolkit-core';
+import { getComponentClassName, ClickEvent } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-modal';
 
-const defaultProps = {
-  ...Constants.defaultProps,
-  submitTitle: 'Valider',
-  cancelTitle: 'Annuler',
-  className: defaultClassName,
-};
-
-type ModalBooleanCoreProps = Partial<typeof defaultProps> & {
-  isOpen: boolean;
+export type ModalBooleanProps = HeaderProps & {
   onSubmit: (e: ClickEvent) => void;
   onCancel: (e: ClickEvent) => void;
   id: string;
   children: React.ReactNode;
+  submitTitle?: string;
+  cancelTitle?: string;
+  className?: string;
+  classModifier?: string;
 };
 
-type ModalBooleanProps = HeaderProps & ModalBooleanCoreProps;
+const ModalBoolean = forwardRef<HTMLDialogElement, ModalBooleanProps>(
+  (
+    {
+      children,
+      title,
+      submitTitle = 'Valider',
+      cancelTitle = 'Annuler',
+      className = defaultClassName,
+      classModifier,
+      onCancel,
+      id,
+      onSubmit,
+      closeButtonAriaLabel,
+      ...props
+    }: ModalBooleanProps,
+    ref
+  ) => {
+    const onCancelcb = () => onCancel && onCancel({ id });
 
-const ModalBoolean = ({
-  isOpen,
-  children,
-  title,
-  submitTitle,
-  cancelTitle,
-  className,
-  classModifier,
-  onCancel,
-  id,
-  onSubmit,
-}: ModalBooleanProps) => {
-  const onCancelcb = () => onCancel && onCancel({ id });
+    const onSubmitcb = () => onSubmit && onSubmit({ id });
 
-  const onSubmitcb = () => onSubmit && onSubmit({ id });
+    const componentClassName = getComponentClassName(
+      className,
+      classModifier,
+      defaultClassName
+    );
 
-  const componentClassName = getComponentClassName(
-    className,
-    classModifier,
-    defaultClassName
-  );
-
-  return (
-    <Modal
-      isOpen={isOpen}
-      className={componentClassName}
-      onOutsideTap={onCancelcb}
-      title={title}>
-      <Modal.Header title={title} onCancel={onCancelcb} />
-      <Modal.Body>{children}</Modal.Body>
-      <Modal.Footer>
-        <Button classModifier="reverse" onClick={onCancelcb}>
-          {cancelTitle}
-        </Button>
-        <Button onClick={onSubmitcb}>{submitTitle}</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-};
-
-ModalBoolean.defaultProps = defaultProps;
+    return (
+      <Modal
+        className={componentClassName}
+        onOutsideTap={onCancelcb}
+        title={title}
+        ref={ref}
+        {...props}>
+        <Header
+          title={title}
+          onCancel={onCancelcb}
+          closeButtonAriaLabel={closeButtonAriaLabel}
+        />
+        <Body>{children}</Body>
+        <Footer>
+          <Button classModifier="reverse" onClick={onCancelcb}>
+            {cancelTitle}
+          </Button>
+          <Button onClick={onSubmitcb}>{submitTitle}</Button>
+        </Footer>
+      </Modal>
+    );
+  }
+);
 
 export default ModalBoolean;
