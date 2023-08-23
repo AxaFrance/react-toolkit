@@ -1,5 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
-import { getComponentClassName, useId } from '@axa-fr/react-toolkit-core';
+import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 const defaultClassName = 'af-contrat';
 type TInfo = { id?: string; word: ReactNode; definition: ReactNode };
@@ -21,24 +21,13 @@ const Infos = ({ infos, className, classModifier }: InfosProps) => {
       <i className="glyphicon glyphicon-info-sign" />
       <dl className={`${defaultClassName}__list`}>
         {infos.map((info) => (
-          <Info id={info.id} word={info.word} definition={info.definition} />
+          <Fragment key={info.id ?? createId()}>
+            <dt className={`${defaultClassName}__word`}>{info.word}</dt>
+            <dd className={`${defaultClassName}__def`}>{info.definition}</dd>
+          </Fragment>
         ))}
       </dl>
     </div>
-  );
-};
-
-const Info = ({ id, word, definition }: TInfo) => {
-  const infoKey = useId(id);
-  return (
-    <Fragment key={infoKey}>
-      <dt key={`word_${infoKey}`} className={`${defaultClassName}__word`}>
-        {word}
-      </dt>
-      <dd key={`def_${infoKey}`} className={`${defaultClassName}__def`}>
-        {definition}
-      </dd>
-    </Fragment>
   );
 };
 
