@@ -31,7 +31,11 @@ export const FileInputStory = (args) => (
       fileLabel="Browse"
       name="placeImage"
       id="inputuniqueid"
-      accept="image/jpeg, image/png, application/*"
+      accept={{
+        'image/jpeg': ['.jpg', 'jpeg'],
+        'image/png': ['.png'],
+        'application/json': ['.json'],
+      }}
       helpMessage="Take a photo af a place"
       messageType={MessageTypes.error}
       multiple
@@ -62,7 +66,11 @@ export const FileStory = (args) => (
         label="Image"
         name="placeImage"
         id="inputuniqueid"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         multiple
         isVisible
         icon="open"
@@ -133,7 +141,11 @@ export const FileWithValuesStory = (args) => (
         label="Parcourir"
         name="placeImage"
         id="inputuniqueid"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         isVisible
         icon="open"
       />
@@ -157,7 +169,11 @@ export const FileWithErrorsStory = (args) => (
         label="Parcourir"
         name="placeImage"
         id="inputuniqueid"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         isVisible
         icon="open"
       />

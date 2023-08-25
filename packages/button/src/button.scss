@@ -68,7 +68,8 @@ $active-sort-table-th: $color-table-sorting !default;
     @include hasIcon('right');
   }
 
-  &--disabled {
+  &--disabled,
+  &[disabled] {
     cursor: not-allowed;
     background-color: $color-mercury;
     box-shadow: inset 0 -3px $color-silver;
