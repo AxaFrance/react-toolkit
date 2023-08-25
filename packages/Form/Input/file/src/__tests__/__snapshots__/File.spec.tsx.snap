@@ -5,24 +5,20 @@ exports[`<File.File> renders File.File correctly 1`] = `
   <div
     class="af-form__file-input"
   >
-    <div
-      class="drop-box hidden-mobile"
-      id="id"
-      tabindex="0"
+    <label
+      class="drop-box"
+      for="id"
     >
       <input
-        accept="image/jpeg, image/png, application/*"
-        autocomplete="off"
+        accept="image/jpeg,.jpg,image/png,.png,application/json,.json"
+        id="id"
         multiple=""
         name="file"
         style="display: none;"
-        tabindex="-1"
         type="file"
       />
-      <div>
-        Glissez/déposez vos fichiers
-      </div>
-    </div>
+      Glissez/déposez vos fichiers
+    </label>
     <button
       class="af-btn af-btn--file af-btn--hasIconLeft"
       type="button"

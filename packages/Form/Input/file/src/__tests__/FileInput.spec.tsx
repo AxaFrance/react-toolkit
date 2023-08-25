@@ -10,7 +10,11 @@ describe('<FileInput>', () => {
         id="id"
         name="file"
         onChange={() => {}}
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
       />
     );
     expect(asFragment()).toMatchSnapshot();

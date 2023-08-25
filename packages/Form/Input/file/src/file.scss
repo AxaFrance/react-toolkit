@@ -8,7 +8,8 @@
       background: $white;
       justify-content: space-between;
       cursor: pointer;
-      .drop-box {
+      .drop-box,
+      .drop-box--disabled {
         padding-left: 1rem;
         border: 2px dashed $color-mercury;
         border-right: 0;
@@ -16,14 +17,41 @@
         display: flex;
         align-items: center;
         text-align: center;
+        margin: 0;
+
+        input {
+          display: block !important;
+          position: absolute;
+          opacity: 0;
+          width: 0;
+        }
       }
+
+      .drop-box--disabled {
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2) 10px,
+          rgba(0, 0, 0, 0.3) 10px,
+          rgba(0, 0, 0, 0.3) 20px
+        );
+        border: 0;
+        color: black;
+      }
+
       .af-btn--file {
         min-width: 8rem;
       }
+
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         .drop-box {
           border-color: $color-axa;
+          cursor: pointer;
+        }
+        .drop-box--disabled {
+          cursor: no-drop;
         }
       }
     }

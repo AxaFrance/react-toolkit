@@ -8,6 +8,8 @@
 
 ## File
 
+The `accept` property has been changed with the new version of the package (following the modification on react-dropzone). The property doesn't take a string anymore but an object with a common MIME type as keys and an array of file extensions as values (as described [here](https://react-dropzone.js.org/#section-accepting-specific-file-types)). Common MIME types are described [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
+
 ### Installation
 
 ```shell script
@@ -34,7 +36,11 @@ const FileInput = () => (
       <File
         id="uniqueid"
         name="placeImage"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         onChange={(e) => {
           console.log(e);
         }}
@@ -105,7 +111,11 @@ const FileWithValues = () => (
       <File
         id="uniqueid"
         name="placeImage"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         onChange={() => {
           console.log('your function');
         }}
@@ -211,7 +221,11 @@ const FileWithErrors = () => (
       <File
         id="uniqueid"
         name="placeImage"
-        accept="image/jpeg, image/png, application/*"
+        accept={{
+          'image/jpeg': ['.jpg', 'jpeg'],
+          'image/png': ['.png'],
+          'application/json': ['.json'],
+        }}
         multiple={false}
         label="Browse"
         icon="open"
@@ -251,7 +265,11 @@ const FileInputReturn = () => (
     id="uniqueid"
     label="Picture"
     name="placeImage"
-    accept="image/jpeg, image/png, application/*"
+    accept={{
+      'image/jpeg': ['.jpg', 'jpeg'],
+      'image/png': ['.png'],
+      'application/json': ['.json'],
+    }}
     onChange={(e) => {
       console.log(e);
     }}

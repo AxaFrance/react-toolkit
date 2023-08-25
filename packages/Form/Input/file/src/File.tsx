@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Accept,
   DropzoneInputProps,
   DropzoneOptions,
   FileRejection,
@@ -8,13 +9,15 @@ import {
 import { createId, getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Button from '@axa-fr/react-toolkit-button';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
+import classNames from 'classnames';
 
 type Dropzone = DropzoneInputProps & DropzoneOptions;
-type Props = Omit<Dropzone, 'onDrop' | 'onChange'> & {
+type Props = Omit<Dropzone, 'onDrop' | 'onChange' | 'accept'> & {
   classModifier?: string;
   label?: string;
   icon?: string;
   onChange: DropzoneOptions['onDrop'];
+  accept: Accept;
 };
 
 const File = ({
@@ -34,7 +37,7 @@ const File = ({
   icon = 'open',
   ...otherProps
 }: Props) => {
-  const { getRootProps, getInputProps, open } = useDropzone({
+  const { getInputProps, open } = useDropzone({
     onDrop: onChange,
     minSize,
     maxSize,
@@ -51,10 +54,18 @@ const File = ({
 
   return (
     <div className={componentClassName}>
-      <div {...getRootProps({ id, className: 'drop-box hidden-mobile' })}>
-        <input {...getInputProps({ name, readOnly, ...otherProps })} />
-        <div>{placeholder}</div>
-      </div>
+      <label
+        htmlFor={id}
+        className={classNames({
+          'drop-box': !disabled,
+          'drop-box--disabled': disabled,
+        })}>
+        <input
+          {...getInputProps({ id, name, readOnly, disabled, ...otherProps })}
+          tabIndex={null}
+        />
+        {placeholder}
+      </label>
       <Button
         type="button"
         className="af-btn"
