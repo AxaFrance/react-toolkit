@@ -17,14 +17,29 @@ import '@axa-fr/react-toolkit-loader/dist/af-spinner.css';
 
 ### Use
 
+The `text` attribute is optionnal. If you pass it to the component it will be displayed under the loader.
+If not, the message will be calculated based on the mode you're using.
+
+| mode   | Associated message                                      |
+| ------ | ------------------------------------------------------- |
+| get    | Chargement en cours                                     |
+| post   | Sauvegarde en cours                                     |
+| delete | Suppression en cours                                    |
+| update | Mise à jour en cours                                    |
+| error  | Une erreur est survenue lors du chargement du composant |
+
 ```javascript
-const LoaderDefault = () => (
-  <Loader mode="get" text="Chargement en cours">
-    <div>
-      <h1>Title Child</h1>
-      <span>Here your child component</span>
-    </div>
-  </Loader>
-);
-export default LoaderDefault;
+<Loader mode="get" text="Chargement en cours">
+  <div>
+    <h1>Title Child</h1>
+    <span>Here your child component</span>
+  </div>
+</Loader>
+...
+<Loader mode="update">
+  <div>
+    <h1>Title Child</h1>
+    <span>Here your child component</span>
+  </div>
+</Loader>
 ```
