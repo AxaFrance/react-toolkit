@@ -13,7 +13,7 @@ const texts: { [index: string]: string } = {
 type LoaderProps = {
   className?: string;
   mode: string;
-  text: string;
+  text?: string;
   children: React.ReactNode;
   classModifier?: string;
 };
@@ -32,15 +32,20 @@ const Loader = ({
   );
   const message = text || texts[mode];
   const isLoaderVisible = mode !== LoaderModes.none;
-  const isLoaderErrored = mode === LoaderModes.error;
+  const isLoaderInError = mode === LoaderModes.error;
 
   return (
     <div className={componentClassName}>
       {children}
       {isLoaderVisible && (
         <div className={`${componentClassName} af-loader-on`}>
-          <div className="af-spinner">
-            {!isLoaderErrored && <div className="af-spinner__animation" />}
+          <div
+            className="af-spinner"
+            role="alert"
+            aria-live="assertive"
+            aria-busy={!isLoaderInError}
+            aria-label={message}>
+            {!isLoaderInError && <div className="af-spinner__animation" />}
             <div className="af-spinner__caption">{message}</div>
           </div>
         </div>
