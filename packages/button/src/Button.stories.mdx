@@ -1,0 +1,197 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Button from './Button';
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  argTypes={{
+    classModifier: {
+      control: {
+        type: 'multi-select',
+        options: [
+          'success',
+          'info',
+          'danger',
+          'reverse',
+          'disabled',
+          'small',
+          'hasiconLeft',
+          'hasiconRight',
+        ],
+      },
+    },
+    icon: {
+      description: 'glyphicon name to use in the Action',
+      options: ['', 'alert', 'arrow-left'],
+      control: { type: 'select' },
+    },
+    title: {
+      control: { type: 'string' },
+    },
+    onClick: { action: 'onClick' },
+  }}
+  parameters={{
+    layout: 'centered',
+  }}
+/>
+
+export const Template = ({ text, icon, classModifier, ...args }) => (
+  <Button {...args} classModifier={classModifier.join(' ')}>
+    <span className="af-btn__text">{text}</span>
+    {icon ? <span className={'glyphicon glyphicon-' + icon} /> : ''}
+  </Button>
+);
+
+# Button
+
+<Canvas>
+  <Story
+    args={{
+      text: 'Button playground',
+      classModifier: [],
+      id: 'btn-playground',
+    }}
+    parameters={{
+      layout: 'centered',
+    }}
+    name="Button playground">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Button playground" />
+
+## A few examples
+
+<Canvas columns={2}>
+  <Story
+    name="Button reverse"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: 'Button reverse',
+      classModifier: ['reverse'],
+      id: 'btn-reverse',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button success"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: 'Button success',
+      classModifier: ['success'],
+      id: 'btn-success',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button danger"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: 'Button danger',
+      classModifier: ['danger'],
+      id: 'btn-danger',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button small"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: 'Button small',
+      classModifier: ['small'],
+      id: 'btn-small',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button disabled"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: 'Button disabled',
+      classModifier: ['disabled'],
+      id: 'btn-disabled',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With icons
+
+To add an icon you need to add a `classModifier`, either `hasiconLeft` or `hasiconRight` whether you want the icon on the left of or on the right.
+
+<Canvas columns={2}>
+  <Story
+    name="Button with left icon"
+    args={{
+      text: 'Button with left icon',
+      classModifier: ['hasiconLeft'],
+      icon: 'arrowthin-left',
+      id: 'btn-hasiconLeft',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button with right icon"
+    args={{
+      text: 'Button with right icon',
+      classModifier: ['hasiconRight'],
+      icon: 'arrowthin-right',
+      id: 'btn-hasiconRight',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button danger with right icon"
+    args={{
+      text: 'Button danger with right icon',
+      classModifier: ['hasiconLeft', 'danger'],
+      icon: 'alert',
+      id: 'btn-hasiconRight',
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Button success with right icon"
+    args={{
+      text: 'Save',
+      classModifier: ['hasiconRight', 'success'],
+      icon: 'floppy-disk',
+      id: 'btn-hasiconRight',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Circle button with no text
+
+You can make small round buttons, but do not forget to add a `title`, or an `aria-label` to make your button accessible!
+
+<Canvas>
+  <Story
+    name="Button circle"
+    parameters={{
+      layout: 'centered',
+    }}
+    args={{
+      text: '',
+      className: 'af-btn--circle',
+      title: 'Save',
+      classModifier: [''],
+      icon: 'floppy-disk',
+      id: 'btn-circle',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,95 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgsTable } from '@storybook/addon-docs';
+import AlertCore from './AlertCore';
+
+<Meta
+  title="Components low level/Alert/AlertCore"
+  component={AlertCore}
+  argTypes={{
+    classModifier: {
+      control: {
+        type: 'select',
+        options: ['success', 'info', 'danger', 'error'],
+      },
+    },
+    iconClassName: {
+      control: 'text',
+    },
+    onClose: { action: 'onClose' },
+  }}
+/>
+
+export const Template = (args) => <AlertCore {...args} />;
+
+# AlertCore
+
+It works just as an `Alert` would, except you can customize the css class of the icon with `iconClassName`.
+Most of the time you will want to use an `Alert` instead.
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      classModifier: 'danger',
+      title: 'Attention: des informations sont manquantes',
+      onClose: null,
+      iconClassName: 'glyphicon glyphicon-alert',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+<Canvas>
+  <Story
+    name="Info"
+    args={{
+      classModifier: 'info',
+      title: 'Attention: des informations sont manquantes',
+      iconClassName: 'glyphicon glyphicon-info-sign',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With close
+
+When you set a function to `onClose` in the props, a close button is displayed in the top right corner.
+
+<Canvas>
+  <Story
+    name="With close button"
+    args={{
+      classModifier: 'success',
+      title: 'Succès: votre demande a bien été enregistrée.',
+      iconClassName: 'glyphicon glyphicon-ok',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With details
+
+You can put any JSX element as children of the alert, if you need to.
+
+<Canvas withSource="open">
+  <Story
+    name="Alert with details"
+    args={{
+      classModifier: 'error',
+      iconClassName: 'glyphicon glyphicon-minus-sign',
+      title: 'Erreur dans les champs suivants :',
+      children: (
+        <ul>
+          <li>Le nom est obligatoire</li>
+          <li>Le prénom est obligatoire</li>
+          <li>L'email est obligatoire</li>
+          <li>Le format de date est invalide</li>
+        </ul>
+      ),
+      onClose: null,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
