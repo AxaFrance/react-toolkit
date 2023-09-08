@@ -1,0 +1,98 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Tabs from './Tabs';
+import Badge from '@axa-fr/react-toolkit-badge';
+
+<Meta title="Components/Tabs" component={Tabs} />
+
+# Tabs
+
+export const TabTitleIconLeft = (
+  <span>
+    <i className="glyphicon glyphicon-ok" /> Title with left icon
+  </span>
+);
+export const TabTitleIconRight = (
+  <span>
+    Title with right icon <i className="glyphicon glyphicon-facetime-video" />
+  </span>
+);
+export const TabTitleBadge = (
+  <span>
+    Title with badge <Badge classModifier="danger"> 42 </Badge>
+  </span>
+);
+export const TabTitleIconBadge = (
+  <span>
+    Title with badge and left icon
+    <Badge classModifier="error"> Lorem ipsum </Badge>
+    <i className="glyphicon glyphicon-facetime-video" />
+  </span>
+);
+export const TemplateTabs = (args) => (
+  <Tabs {...args}>
+    <Tabs.Tab title={TabTitleIconLeft} classModifier="has-icon-left">
+      Content of my first tab
+    </Tabs.Tab>
+    <Tabs.Tab title={TabTitleIconRight} classModifier="has-icon-right">
+      Content of my second tab
+    </Tabs.Tab>
+    <Tabs.Tab title={TabTitleBadge}>Content of my third tab </Tabs.Tab>
+    <Tabs.Tab title={TabTitleIconBadge} classModifier="has-icon-left">
+      Content of my fifth tab
+    </Tabs.Tab>
+  </Tabs>
+);
+
+export const TemplateTab = (args) => (
+  <Tabs>
+    <Tabs.Tab
+      title={args.title}
+      classModifier={args.classModifier}
+      className={args.className}>
+      {args.children}
+    </Tabs.Tab>
+  </Tabs>
+);
+
+The tabs component allows you to create tabs with different content for each and to switch between those tabs.
+
+By changing the `activeIndex` property, you can specify which tab is active.  
+Don't forget to import the component css file, so that your tabs have the correct style.
+
+```javascript
+import '@axa-fr/react-toolkit-tabs/dist/af-tabs.css';
+```
+
+<Canvas>
+  <Story
+    name="Multiple tabs"
+    args={{
+      activeIndex: '1',
+      onChange: (e) => console.log(e),
+    }}>
+    {TemplateTabs.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Multiple tabs" />
+
+# Tab
+
+The tab component allows you to define the `title` property to change the name of your tab.  
+The `children` property is a ReactNode variable and can contains enriched HTML.  
+The `classModifier` property allows you to enrich the css class of the `li` element that is being drawn in the DOM.
+
+<Canvas>
+  <Story
+    name="One tab"
+    args={{
+      title: 'Only tab',
+      classModifier: 'has-icon-right',
+      children: 'My only tab',
+    }}>
+    {TemplateTab.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="One tab" />

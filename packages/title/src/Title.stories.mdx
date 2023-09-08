@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Title from './Title';
+
+<Meta
+  title="Components/Title"
+  component={Title}
+  argTypes={{
+    children: '',
+    classModifier: '',
+    className: '',
+  }}
+/>
+
+# Title
+
+export const Template = (args) => <Title {...args} />;
+
+The title component represents a title inside your application.
+
+By default, without changing the `className` and `classModifier` props, the title will have an `af-title` css class.  
+If you set the `className` property, the `af-title` css class will be removed and only the class set in `className` will be set on the html element.  
+If you set the `classModifier` property, the `af-title` css class will be kept but enriched with the value of the `classModifier` property.
+
+Don't forget to import the component css file, so that your title is styled thanks to the `af-title` css class.
+```javascript
+import '@axa-fr/react-toolkit-title/dist/af-title.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      children: 'Exemple de titre',
+      classModifier: '',
+      className: '',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

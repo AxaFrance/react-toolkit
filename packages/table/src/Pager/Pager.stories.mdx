@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Pager from './Pager';
+import Modes from './Modes';
+
+<Meta
+  title="Components/Table/Paging/Pager"
+  component={Pager}
+  argTypes={{
+    onChange: { action: 'changed' },
+    mode: {
+      control: {
+        type: 'select',
+        options: [Modes.default, Modes.light],
+      },
+    },
+  }}
+/>
+
+# Table pager
+
+export const Template = (args) => <Pager {...args} />;
+
+The Pager component allows you to change the page of the table currently seen.  
+The `mode` property allows you to change between the `default` and `light` mode.
+
+The `previousLabel` and `nextLabel` are only visible with the `default` mode of the page. On the contrary, the `ofLabel` is only visible with the `light` mode of the pager.
+
+Don't forget to import the component css file, so that your pager have the correct style.
+
+```javascript
+import '@axa-fr/react-toolkit-table/dist/Pager/af-pager.css';
+```
+
+<Canvas>
+  <Story
+    name="Pager"
+    args={{
+      mode: Modes.default,
+      currentPage: 5,
+      numberPages: 23,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Pager" />

@@ -1,49 +1,13 @@
-import React, { ComponentProps } from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
 import Table from './Table';
 import Paging from './Paging/Paging';
-import readme from '../README.md';
 
-const univers = {
-  sante: 'sante',
-  epargne: 'epargne',
-  banque: 'banque',
-  iard: 'iard ',
-  retraite: 'retraite',
-  axa: 'axa',
-};
-const modifiers = [
-  '',
-  univers.sante,
-  univers.epargne,
-  univers.banque,
-  univers.iard,
-  univers.retraite,
-  univers.axa,
-];
+<Meta title="Components/Table" component={Table} />
 
-export default {
-  title: 'Components/Table',
-  component: Table,
-  parameters: {
-    readme: {
-      sidebar: readme,
-    },
-    options: {},
-  },
-  argTypes: {
-    classModifier: {
-      control: {
-        type: 'select',
-        options: modifiers,
-      },
-      defaultValue: univers.axa,
-    },
-  },
-} as Meta;
+# Table
 
-type TableProps = ComponentProps<typeof Table>;
-const Template: Story<TableProps> = (args) => (
+export const TemplateTable = (args) => (
   <Table {...args}>
     <Table.Header>
       <Table.Tr>
@@ -87,11 +51,45 @@ const Template: Story<TableProps> = (args) => (
   </Table>
 );
 
-export const TableStory: Story<TableProps> = Template.bind({});
-TableStory.storyName = 'Simple';
+The table component allows you to create some stylised tables in your application.
 
-type TableWithPagingProps = ComponentProps<typeof Table>;
-const TemplateWithPaging: Story<TableProps> = (args) => (
+Don't forget to import the component css file, so that your table have the correct style.
+
+```javascript
+import '@axa-fr/react-toolkit-table/dist/af-table.css';
+```
+
+<Canvas>
+  <Story
+    name="Basic table"
+    args={{
+      classModifier: '',
+    }}>
+    {TemplateTable.bind({})}
+  </Story>
+</Canvas>
+
+# Table with paging
+
+You have the option to have a paging below your table with the `Paging` component.  
+If you choose so, you will have to install the `select` component as well.
+
+```shell script
+npm i @axa-fr/react-toolkit-form-input-select
+npm i @axa-fr/react-toolkit-form-core
+```
+
+Don't forget to import the components css files, so that your table and the paging have the correct style.
+
+```javascript
+import '@axa-fr/react-toolkit-table/dist/af-table.css';
+import '@axa-fr/react-toolkit-table/dist/Paging/af-paging.css';
+import '@axa-fr/react-toolkit-table/dist/Pager/af-pager.css';
+import '@axa-fr/react-toolkit-form-input-select/dist/af-select.css';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+```
+
+export const TemplateWithPaging = (args) => (
   <>
     <Table {...args}>
       <Table.Header>
@@ -134,10 +132,21 @@ const TemplateWithPaging: Story<TableProps> = (args) => (
         </Table.Tr>
       </Table.Body>
     </Table>
-    <Paging numberItems={20} numberPages={23} currentPage={5} />
+    <Paging
+      numberItems={20}
+      numberPages={23}
+      currentPage={5}
+      onChange={(e) => console.log(e)}
+    />
   </>
 );
 
-export const TableWithPagingStory: Story<TableWithPagingProps> =
-  TemplateWithPaging.bind({});
-TableWithPagingStory.storyName = 'Table with Paging';
+<Canvas>
+  <Story
+    name="Table with paging"
+    args={{
+      classModifier: '',
+    }}>
+    {TemplateWithPaging.bind({})}
+  </Story>
+</Canvas>

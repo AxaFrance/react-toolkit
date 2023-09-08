@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: [
+    '../packages/**/*.mdx',
     '../packages/action/src/*.stories.@(ts|tsx|js)',
     '../packages/alert/src/*.stories.@(ts|tsx|js)',
     '../packages/badge/src/*.stories.@(ts|tsx|js)',
@@ -41,17 +42,13 @@ module.exports = {
     '../packages/Modal/default/src/*.stories.@(ts|tsx|js)',
     '../packages/panel/src/*.stories.@(ts|tsx|js)',
     '../packages/popover/src/*.stories.@(ts|tsx|js)',
-    '../packages/restitution/src/*.stories.@(ts|tsx|js)',
     '../packages/status/src/*.stories.@(ts|tsx|js)',
-    '../packages/table/src/**/*.stories.@(ts|tsx|js)',
-    '../packages/tabs/src/*.stories.@(ts|tsx|js)',
-    '../packages/title/src/*.stories.@(ts|tsx|js)',
   ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    'storybook-readme',
+    '@storybook/addon-docs',
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
