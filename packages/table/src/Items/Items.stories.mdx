@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Items from './Items';
+
+<Meta
+  title="Components/Table/Paging/Items"
+  component={Items}
+  argTypes={{
+    onChange: { action: 'changed' },
+    items: {
+      control: {
+        type: 'array',
+        options: [5, 10, 25, 50, 100],
+      },
+    },
+    numberItems: {
+      control: {
+        type: 'select',
+        options: [5, 10, 25, 50, 100],
+      },
+    },
+  }}
+/>
+
+# Table paging items
+
+export const Template = (args) => <Items {...args} />;
+
+The Items component allows you to change how many items a table component will show.  
+The `numberItems` property carry that number, as the `items` property allows you to change the list of elements to display in the table.
+
+You will have to install the `select` component in order to have the correct style for this component.
+
+```shell
+npm i @axa-fr/react-toolkit-form-input-select
+npm i @axa-fr/react-toolkit-form-core
+```
+
+The associed stylesheet are the ones from the `select` component of the toolkit.
+
+```javascript
+import '@axa-fr/react-toolkit-form-input-select/dist/af-select.css';
+import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
+```
+
+<Canvas>
+  <Story
+    name="Items"
+    args={{
+      items: [5, 10, 25, 50, 100],
+      numberItems: 5,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Items" />

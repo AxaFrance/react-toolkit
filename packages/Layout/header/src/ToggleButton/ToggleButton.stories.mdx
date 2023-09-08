@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import ToggleButton from '.';
+import Action from '@axa-fr/react-toolkit-action';
+
+<Meta
+  title="Structure/Header/ToggleButton"
+  component={ToggleButton}
+  argTypes={{
+    onClick: { action: 'Toggle Element' },
+  }}
+/>
+
+# ToggleButton
+
+export const actionToggle = {
+  icon: 'menu-hamburger',
+  title: 'Toggle',
+};
+
+export const Template = (args) => (
+  <ToggleButton idControl="mainmenu">
+    <Action
+      id="togglemenu"
+      icon={actionToggle.icon}
+      title={actionToggle.title}
+      {...args}
+    />
+  </ToggleButton>
+);
+
+The header package exports an `ToogleButton` that allows you to wrap any component in order to give the accessibility properties of a toggle button.
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

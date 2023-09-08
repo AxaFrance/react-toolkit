@@ -1,0 +1,153 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import ArticleRestitution from './ArticleRestitution';
+import HeaderRestitution from './HeaderRestitution';
+import Restitution from './Restitution';
+import SectionRestitution from './SectionRestitution';
+import SectionRestitutionColumn from './SectionRestitutionColumn';
+import SectionRestitutionRow from './SectionRestitutionRow';
+import RestitutionList from './RestitutionList';
+
+<Meta
+  title="Components/Restitution"
+  component={ArticleRestitution}
+  argTypes={{
+    classModifier: '',
+    className: '',
+    headerTitle: '',
+    headerSubtitle: '',
+    sectionRowTitle: '',
+    sectionColumnTitle: '',
+    restitutionList: {
+      control: {
+        type: 'array',
+        options: [],
+      },
+    },
+    restitutionLabel: '',
+    restitutionValue: '',
+  }}
+/>
+
+# Restitution
+
+export const RightTitle = () => (
+  <a
+    className="af-link af-link--hasIconLeft"
+    href="/#"
+    onClick={(e) => console.log(e)}>
+    <i className="glyphicon glyphicon-pencil" />
+    <span className="af-link__text">Modifier</span>
+  </a>
+);
+
+export const Template = (args) => (
+  <ArticleRestitution {...args}>
+    <HeaderRestitution
+      title={args.headerTitle}
+      subtitle={args.headerSubtitle}
+      rightTitle={<RightTitle />}
+    />
+    <SectionRestitution>
+      <SectionRestitutionRow title={args.sectionRowTitle}>
+        <SectionRestitutionColumn>
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">EURO</Restitution>
+          <Restitution label="TT" />
+          <Restitution label="Garanties complémentaires" classModifier="marge">
+            <RestitutionList values={args.restitutionList} />
+          </Restitution>
+        </SectionRestitutionColumn>
+        <SectionRestitutionColumn classModifier="test">
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">EURO</Restitution>
+          <Restitution label="TT" />
+          <Restitution label="Garanties complémentaires" classModifier="marge">
+            <RestitutionList values={args.restitutionList} />
+          </Restitution>
+        </SectionRestitutionColumn>
+      </SectionRestitutionRow>
+      <SectionRestitutionRow title={args.sectionRowTitle}>
+        <SectionRestitutionColumn>
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">EURO</Restitution>
+          <Restitution label="TT" />
+          <Restitution label="Garanties complémentaires" classModifier="marge">
+            <RestitutionList values={args.restitutionList} />
+          </Restitution>
+        </SectionRestitutionColumn>
+        <SectionRestitutionColumn>
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">
+            <span style={{ textDecoration: 'underline' }}>EURO</span>
+          </Restitution>
+          <Restitution label="Garanties complémentaires" classModifier="marge">
+            <RestitutionList values={args.restitutionList} />
+          </Restitution>
+        </SectionRestitutionColumn>
+      </SectionRestitutionRow>
+      <SectionRestitutionRow>
+        <SectionRestitutionColumn title={args.sectionColumnTitle}>
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">EURO</Restitution>
+        </SectionRestitutionColumn>
+        <SectionRestitutionColumn title={args.sectionColumnTitle}>
+          <Restitution label={args.restitutionLabel}>{args.restitutionValue}</Restitution>
+          <Restitution label="EURO">
+            <span style={{ textDecoration: 'underline' }}>EURO</span>
+          </Restitution>
+        </SectionRestitutionColumn>
+      </SectionRestitutionRow>
+    </SectionRestitution>
+  </ArticleRestitution>
+);
+
+The restitution package provides multiple components in order to restitute some informations (in read-only) to the user.
+
+The `ArticleRestitution` is the base that add an article html element into the DOM.
+
+Next, you can add an `HeaderRestitution` in order to give some heading informations about your restitution.
+The `title` property is the main title in the header and `subtitle` allows you to add more details.
+The header can also put in place an action link or button on the right with the `rightTitle` property.
+
+Next, you can add a `SectionRestitution` that will add a section html element into the DOM.  
+Semantically, after the section, you need to add a `SectionRestitutionRow` to create an new row in your restitution.
+This component have an optionnal `title` property that allows you to describe all in the restitution informations inside that row.  
+After an section row will come one or more section columns with `SectionRestitutionColumn`. This component will give you the opportunity to split the informations into different columns grid.
+This component also have an optionnal `title` property that allows you to describe all in the restitution informations inside that column.
+
+Finally, you want to restitute your information and that's the job of the `Restitution` component.
+A restitution have two major properties, first the `label` which is the name of the information you want to show and second the `children` which is the value of that specific information.
+As value you can basically show some text, but also give a more enriched information. For example, with the `RestitutionList` component you can add an array in the `values` property to show a list of informations.
+
+Don't forget to import the component css file, so that your restitution is styled thanks to the `af-restitution` css class.
+
+```javascript
+import '@axa-fr/react-toolkit-restitution/dist/af-restitution.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      classModifier: '',
+      className: '',
+      headerTitle: 'Tarifs',
+      headerSubtitle: 'Tout adhérent, assuré, base (sans EAC ou sans PAC)',
+      sectionRowTitle: 'Base de calcul des prestations',
+      sectionColumnTitle: 'Base de calcul des remboursements',
+      restitutionList: [
+        'Vol au domicile',
+        'Vol étendu aux appareils nomades',
+        'Bris des glaces',
+        'Plomberie et électricité',
+        'Jardin',
+      ],
+      restitutionLabel: 'TA',
+      restitutionValue: '99,99 %',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

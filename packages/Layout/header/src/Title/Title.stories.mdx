@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import Action from '@axa-fr/react-toolkit-action';
+import Title from './Title';
+
+<Meta title="Structure/Title Bar" component={Title} argTypes={{}} />
+
+# Title
+
+export const Template = ({ children, ...args }) => (
+  <Title {...args}>{children}</Title>
+);
+
+The header package exports an `Title` in order to display a title bar.  
+To do so, you need to specify the `title` property. If you want more information, there is a `subtitle` property that allows you do that.  
+You can then pass some `children` to display even more information on your title bar, for example for actions buttons on the right side of the bar (by using the `af-title-bar__actions` css class like in this complex story example).  
+You can as well display an toggle menu on the left of the title bar. To do so, you need to specify the `toggleMenu` property which is a function that will be called when you will press the toggle button shown on the page.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-header/dist/Title/af-title-bar.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      title: 'Toolkit Axa',
+      subtitle: 'Info complémentaire',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## With actions buttons as children
+
+export const actions = [
+  {
+    id: '001',
+    href: '#enregistrer',
+    icon: 'floppy-disk',
+    title: 'Enregistrer',
+  },
+  {
+    id: '002',
+    href: '#imprimer',
+    icon: 'print',
+    title: 'Imprimer',
+  },
+];
+
+<Canvas>
+  <Story
+    name="With actions"
+    args={{
+      title: 'Toolkit Axa',
+      subtitle: 'Info complémentaire',
+      children: (
+        <div className="af-title-bar__actions">
+          <a className="af-title-bar__link" href="#lien" title="lien titlebar">
+            lien titlebar
+          </a>
+          {actions.map(({ icon, href, title, id }) => (
+            <Action
+              key={id}
+              icon={icon}
+              href={href}
+              title={title}
+              onClick={() => {
+                action('Action click');
+              }}
+            />
+          ))}
+        </div>
+      ),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

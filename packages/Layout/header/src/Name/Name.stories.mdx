@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import Name from './Name';
+
+<Meta title="Structure/Header/Name" component={Name} argTypes={{}} />
+
+# Name
+
+export const Template = (args) => <Name {...args} />;
+
+The header package exports an `Name` in order to display the name of your application inside the header.  
+You can specify the name of your application with the `title` property which is mandatory. The rest of the properties are optionnal.  
+If you want to add more information to the name of your application, use the `subtitle` property.  
+Then, you can add an image for the logo of your application with the `img` property, with the `alt` property that specifies the alternative text of your image.  
+Finally, there is an `onClick` property that allows you to define an action when you click on the logo.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-header/dist/Name/af-name.css';
+import '@axa-fr/react-toolkit-layout-header/dist/Logo/af-logo.css';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      title: "Nom de l'application",
+      subtitle: 'Baseline',
+      img: 'images/react.svg',
+      alt: 'Logo React',
+      onClick: { action: 'onClick' }
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />

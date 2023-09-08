@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import Header from './Header';
+import { Name } from '../Name';
+import { Infos } from '../Infos';
+
+<Meta title="Structure/Header" component={Header} argTypes={{}} />
+
+# Header
+
+export const Template = ({ children, ...args }) => (
+  <Header {...args}>{children}</Header>
+);
+
+The header package exports an `Header` that is the root component of the header, in which you will specify various informations.  
+The header alone will only add an `header` element inside the DOM. It is the `children` of the component that will contain the actual html elements.  
+For more informations about what the toolkit provides as children of the `Header` component, please refer to the following documentations :
+
+- [Name component](?path=/docs/structure-header-name--default-story)
+- [Infos component](?path=/docs/structure-header-infos--default-story)
+- [Title bar component](?path=/docs/structure-title-bar--default-story)
+- [User component](?path=/docs/structure-header-user--no-link)
+- [Toggle button component](?path=/docs/structure-header-togglebutton--default-story)
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-layout-header/dist/Header/af-header.css';
+```
+
+<Canvas>
+  <Story
+    name="With Name"
+    args={{
+      children: (
+        <Name
+          title="Nom de l'application"
+          subtitle="Baseline"
+          img="images/react.svg"
+          alt="Logo React"
+          onClick={() => {}}
+        />
+      ),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="With Name" />
+
+<Canvas>
+  <Story
+    name="With Name & Infos"
+    args={{
+      children: (
+        <>
+          <Name
+            title="Nom de l'application"
+            subtitle="Baseline"
+            img="images/react.svg"
+            alt="Logo React"
+            onClick={() => {}}
+          />
+          <Infos
+            infos={[
+              {
+                word: 'Client :',
+                definition: '0123456789 - NOM',
+              },
+              {
+                word: 'Portefeuille :',
+                definition: '000123456789',
+              },
+              {
+                word: 'Status :',
+                definition: 'Affaire nouvelle',
+              },
+            ]}
+          />
+        </>
+      ),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="With Name & Infos" />

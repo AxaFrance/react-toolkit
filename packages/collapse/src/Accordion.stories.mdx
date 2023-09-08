@@ -1,23 +1,20 @@
-import React, { ComponentProps } from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
 import { action } from '@storybook/addon-actions';
 import Accordion from './Accordion';
 import CollapseCard from './CollapseCard';
-import readme from '../README.md';
 
-export default {
-  title: 'Components/Accordion',
-  component: Accordion,
-  parameters: {
-    readme: {
-      sidebar: readme,
-    },
-    actions: { argTypesRegex: '^on.*' },
-  },
-} as Meta;
+<Meta
+  title="Components/Accordion"
+  component={CollapseCard}
+  argTypes={{
+    onlyOne: { control: 'boolean' },
+  }}
+/>
 
-type TemplateProps = Omit<ComponentProps<typeof Accordion>, 'children'>;
-const Template: Story<TemplateProps> = ({ ...args }) => (
+# Collapse
+
+export const Template = (args) => (
   <Accordion {...args}>
     <CollapseCard onToggle={action('onToggle')}>
       <CollapseCard.Header>CollpaseCard #1 Title</CollapseCard.Header>
@@ -64,10 +61,23 @@ const Template: Story<TemplateProps> = ({ ...args }) => (
   </Accordion>
 );
 
-export const AccordionStory = Template.bind({}) as typeof Template;
-AccordionStory.storyName = 'Accordion';
-AccordionStory.args = {
-  onlyOne: true,
-  className: '',
-  classModifier: '',
-};
+The collapse package exports a `Accordion` component that allows you to show multiple collapse elements (for documentation about the `CollapseCard` component refer to [this](?path=/docs/components-low-level-collapse--collapse)).  
+You can specify if you want multiple collapse to open at the same time inside your accordion or just one at a time with `onlyOne` boolean property. By default, it is set to false which allows you to open more than more.
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-collapse/dist/af-accordion.css';
+```
+
+<Canvas>
+  <Story
+    name="Accordion"
+    args={{
+      onlyOne: false,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Accordion" />

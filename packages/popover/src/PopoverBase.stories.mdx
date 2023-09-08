@@ -1,22 +1,12 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
 import PopoverBase from './PopoverBase';
 import PopoverPlacements from './PopoverPlacements';
-import Readme from '../README.md';
-import './help-custom.scss';
 
-export default {
-  title: 'Components low level/Popover',
-  component: PopoverBase,
-  parameters: {
-    readme: {
-      sidebar: Readme,
-    },
-    options: {},
-  },
-  argsType: {
-    onToggle: { action: 'toggled' },
-    onOutsideTap: { action: 'tapped outside' },
+<Meta
+  title="Components low level/Popover"
+  component={PopoverBase}
+  argTypes={{
     placement: {
       control: {
         type: 'select',
@@ -28,11 +18,12 @@ export default {
         ],
       },
     },
-  },
-} as Meta;
+  }}
+/>
 
-type PopoverBaseProps = React.ComponentProps<typeof PopoverBase>;
-const Template: Story<PopoverBaseProps> = (args) => (
+# Popover
+
+export const Template = (args) => (
   <div>
     <PopoverBase {...args}>
       <PopoverBase.Pop>
@@ -63,11 +54,25 @@ const Template: Story<PopoverBaseProps> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({}) as typeof Template;
-Default.storyName = 'PopoverBase';
-Default.args = {
-  classModifier: 'custom',
-  className: '',
-  isOpen: true,
-  placement: PopoverPlacements.right,
-};
+The PopoverBase is the base component of the popover package. It allows to interact directly and with more depth with the component (defining custom functions when the user enters or leaves the popover html block for example).
+
+Don't forget to load the css file of the component.
+
+```javascript
+import '@axa-fr/react-toolkit-popover/dist/af-popover.css';
+```
+
+<Canvas>
+  <Story
+    name="PopoverBase"
+    args={{
+      classModifier: 'custom',
+      className: '',
+      isOpen: true,
+      placement: PopoverPlacements.right,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="PopoverBase" />
