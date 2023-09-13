@@ -108,6 +108,7 @@ ButtonWithRightIconStory.args = {
 export const ButtonCircleStory: Story<ButtonProps> = Template.bind({});
 ButtonCircleStory.storyName = 'Button circle';
 ButtonCircleStory.args = {
+  disabled: false,
   className: 'af-btn--circle',
   children: <i className="glyphicon glyphicon-floppy-disk" />,
 };
