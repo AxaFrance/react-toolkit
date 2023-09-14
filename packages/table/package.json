@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-table",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.1-alpha.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "jsnext:main": "src/index.js",
@@ -14,7 +14,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "2.0.1-alpha.0"
+    "@axa-fr/react-toolkit-core": "2.0.1-alpha.1"
   },
   "license": "MIT",
   "publishConfig": {
