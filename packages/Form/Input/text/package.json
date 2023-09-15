@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-text",
-  "version": "2.0.1-alpha.1",
+  "version": "2.1.0-alpha.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -13,11 +13,11 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "2.0.1-alpha.1",
-    "@axa-fr/react-toolkit-form-core": "2.0.1-alpha.1"
+    "@axa-fr/react-toolkit-core": "^2.1.0-alpha.0",
+    "@axa-fr/react-toolkit-form-core": "^2.1.0-alpha.0"
   },
   "devDependencies": {
-    "@axa-fr/react-toolkit-help": "2.0.1-alpha.1"
+    "@axa-fr/react-toolkit-help": "^2.1.0-alpha.0"
   },
   "license": "MIT",
   "publishConfig": {
