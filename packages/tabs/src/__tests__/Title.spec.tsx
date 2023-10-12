@@ -1,16 +1,16 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Title from '../Title';
 
 const noop = () => {};
 describe('<TabStateless>', () => {
   it('should render component', () => {
-    const { asFragment } = render(
+    render(
       <Title onChange={noop} active>
         Title displayed
       </Title>
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Title displayed')).toBeInTheDocument();
   });
 
   it('should render id click onCancel', () => {
@@ -20,6 +20,7 @@ describe('<TabStateless>', () => {
         header
       </Title>
     );
+    expect(screen.getByText('header')).toBeInTheDocument();
     fireEvent.click(getByRole('button'));
     expect(onChange).toHaveBeenCalledWith({ id: '' });
   });

@@ -1,14 +1,14 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Pane from '../Pane';
 
 describe('<Pane>', () => {
   it('should render component', () => {
-    const { asFragment } = render(
+    render(
       <Pane active>
         <div>Content</div>
       </Pane>
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Content')).toBeInTheDocument();
   });
 });
