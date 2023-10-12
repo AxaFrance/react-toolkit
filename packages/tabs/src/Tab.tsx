@@ -1,20 +1,12 @@
 import React, { ReactNode } from 'react';
-import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
 export type TabProps = {
   className?: string;
-  title: string;
+  title: ReactNode;
   children?: ReactNode;
   classModifier?: string;
 };
 
-const Tab = ({ classModifier, children, className, ...props }: TabProps) => {
-  const componentClassName = getComponentClassName(
-    className,
-    classModifier,
-    'af-tabs__pane'
-  );
-  return <span className={componentClassName} {...props} />;
-};
+const Tab = (props: TabProps) => <span />;
 
 export default Tab;
