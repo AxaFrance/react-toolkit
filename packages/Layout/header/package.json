@@ -4,6 +4,12 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
   "private": false,
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

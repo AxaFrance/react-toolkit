@@ -4,6 +4,12 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
   "private": false,
   "scripts": {
     "build": "rimraf ./dist && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
