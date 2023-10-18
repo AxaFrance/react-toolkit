@@ -5,7 +5,6 @@ import Button from '@axa-fr/react-toolkit-button';
 import Badge from '@axa-fr/react-toolkit-badge';
 import HelpInfo from './HelpInfo';
 import readme from '../README.md';
-import './help-info.scss';
 
 export default {
   title: 'Components high level/HelpInfo',
