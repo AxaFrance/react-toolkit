@@ -1,6 +1,5 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 import Popover, { PopoverPlacements } from '@axa-fr/react-toolkit-popover';
-import './help-info.scss';
 
 export type Props = ComponentPropsWithoutRef<typeof Popover>;
 
