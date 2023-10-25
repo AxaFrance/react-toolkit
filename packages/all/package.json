@@ -8,7 +8,8 @@
     ".": {
       "require": "./component/index.js",
       "import": "./esm/index.js"
-    }
+    },
+    "./dist/": "./dist/"
   },
   "private": false,
   "scripts": {
