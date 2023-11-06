@@ -5,6 +5,7 @@ exports[`Accordion.Header renders Accordion.Header correctly 1`] = `
   <div
     class="af-accordion__item-header"
     role="tab"
+    tabindex="0"
   >
     <a
       aria-expanded="false"

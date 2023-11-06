@@ -52,7 +52,7 @@ const Header = ({
   };
 
   const onKeyToggle = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
       e.preventDefault();
       onToggle &&
         onToggle({
@@ -75,15 +75,19 @@ const Header = ({
   );
 
   return (
-    <div className={componentClassName} role="tab" id={id}>
+    <div
+      className={componentClassName}
+      tabIndex={0}
+      role="tab"
+      id={id}
+      onKeyDown={onKeyToggle}>
       <a
         className="af-accordion__item-toggle"
         data-toggle="isOpen"
         href={href}
         aria-expanded={isOpen}
         aria-controls={ariaControls}
-        onClick={onToggleEvent}
-        onKeyDown={onKeyToggle}>
+        onClick={onToggleEvent}>
         <h3 className="af-accordion__item-title">
           <span className={chevronClassName} />
           {children}

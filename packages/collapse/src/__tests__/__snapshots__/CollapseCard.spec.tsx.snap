@@ -9,6 +9,7 @@ exports[`CollapseCard renders CollapseCard correctly 1`] = `
       class="af-accordion__item-header"
       id="collapse1"
       role="tab"
+      tabindex="0"
     >
       <a
         aria-controls="collapse1body"

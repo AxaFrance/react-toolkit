@@ -14,6 +14,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__item-header"
         id="one"
         role="tab"
+        tabindex="0"
       >
         <a
           aria-controls="onebody"
@@ -53,6 +54,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__item-header"
         id="two"
         role="tab"
+        tabindex="0"
       >
         <a
           aria-controls="twobody"
@@ -92,6 +94,7 @@ exports[`Accordion renders Accordion correctly 1`] = `
         class="af-accordion__item-header"
         id="three"
         role="tab"
+        tabindex="0"
       >
         <a
           aria-controls="threebody"
