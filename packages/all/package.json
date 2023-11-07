@@ -61,7 +61,8 @@
     "@axa-fr/react-toolkit-restitution": "2.1.0-alpha.3",
     "@axa-fr/react-toolkit-table": "2.1.0-alpha.3",
     "@axa-fr/react-toolkit-tabs": "2.1.0-alpha.3",
-    "@axa-fr/react-toolkit-title": "2.1.0-alpha.3"
+    "@axa-fr/react-toolkit-title": "2.1.0-alpha.3",
+    "@popperjs/core": "2.11.8"
   },
   "license": "MIT",
   "publishConfig": {
