@@ -9,7 +9,8 @@
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
     },
-    "./dist/": "./dist/"
+    "./dist/": "./dist/",
+    "./src/common/": "./src/common/"
   },
   "private": false,
   "scripts": {
