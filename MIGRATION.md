@@ -1,8 +1,29 @@
 <h1>Migration Guide</h1>
 
+- [From version 2.0.x to 2.1.0](#from-version-20x-to-210)
 - [From version 1.x to 2.0.x](#from-version-1x-to-20x)
   - [Date Input](#date-input)
   - [All](#package-react-toolkit-all)
+
+# From version 2.0.x to 2.1.0
+
+## Toolkit-core
+
+Some functions have been deleted or moved from the toolkit-core. It is for example the case of the ClassManager utils that could be used like that in 2.0.x
+
+```javascript
+import { ClassManager } from '@axa-fr/react-toolkit-core';
+
+className={ClassManager.getComponentClassName(...)}
+```
+
+In 2.1.x the ClassManager doesn't exist anymore and you can target the functions directly.
+
+```javascript
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+
+className={getComponentClassName(...)}
+```
 
 # From version 1.x to 2.0.x
 
