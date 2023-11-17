@@ -84,7 +84,7 @@ const prepareStylePackages = (packagesScssfiles) => {
       .replace(`/${src}`, `/${dist}`)}`;
     const outputName = `/af-${path
       .basename(scssFile)
-      .replace(`.scss`, '.css')}`;
+      .replace('.scss', '.css')}`;
 
     if (!fs.existsSync(outputPath)) {
       fs.mkdirSync(outputPath, { recursive: true });
@@ -145,7 +145,7 @@ const setFileImport = (filePath) => {
     .replace('packages/', '')
     .replace(/\//g, '-')
     .toLowerCase();
-  return `@import '@axa-fr/react-toolkit-${basePath}/src/${fileSplit[1]}';`;
+  return `@import '@axa-fr/react-toolkit-${basePath}/dist/${fileSplit[1]}';`;
 };
 
 /**
