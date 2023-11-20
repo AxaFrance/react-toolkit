@@ -1,7 +1,6 @@
 name: Publish new version
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - v*
