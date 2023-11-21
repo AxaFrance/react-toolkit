@@ -75,32 +75,3 @@ jobs:
           git add .
           git commit –message "doc(toolkit): publish storybook $TOOLKIT_VERSION"
           git push
-
-  release-gh:
-    runs-on: ubuntu-latest
-    needs: deploy-storybook
-    env:
-      PREVIOUS_VERSION: ${{ needs.deploy-storybook.outputs.previousVersion }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Create changelog
-        id: create-changelog
-        run: |
-          git fetch --all --tags
-          changelog=$(git log v$PREVIOUS_VERSION...$TOOLKIT_VERSION --pretty=format:'- %s _by %a')
-          changelog="${changelog//'%'/'%25'}"
-          changelog="${changelog//$'\n'/'%0A'}"
-          changelog="${changelog//$'\r'/'%0D'}"
-          echo "::set-output name=CHANGELOG::$changelog"
-      - name: Create Github release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.TOOLKIT_VERSION }}
-          release_name: Release ${{ env.RELEASE_VERSION }}
-          body: |
-            ${{ steps.create-changelog.outputs.CHANGELOG }}
-          draft: false
-          prerelease: false
