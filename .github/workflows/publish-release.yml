@@ -73,5 +73,5 @@ jobs:
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
           git add .
-          git commit –message "doc(toolkit): publish storybook $TOOLKIT_VERSION"
+          git commit –m "doc(toolkit): publish storybook $TOOLKIT_VERSION"
           git push
