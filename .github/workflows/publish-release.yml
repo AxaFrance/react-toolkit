@@ -17,9 +17,9 @@ jobs:
       name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
@@ -31,7 +31,7 @@ jobs:
       - name: Build storybook
         run: npm run storybook:build
       - name: Upload Storybook into workflow artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: storybook
           path: storybook-static
@@ -50,7 +50,7 @@ jobs:
       previousVersion: ${{ steps.rename-latest-storybook.outputs.prevVersion }}
     steps:
       - name: Checkout Axa Github Pages
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: AxaFrance/AxaFrance.github.io
           ref: master
@@ -61,7 +61,7 @@ jobs:
           prevVersion=`node -p "require('./latest/version.json').version"`
           mv latest v$prevVersion
           echo "::set-output name=prevVersion::$prevVersion"
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: storybook
           path: gh-pages/react-toolkit/latest
