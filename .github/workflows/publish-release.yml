@@ -55,6 +55,7 @@ jobs:
           repository: AxaFrance/AxaFrance.github.io
           ref: master
           path: gh-pages
+          token: ${{ secrets.PUSH_PAT }}
       - name: Rename latest Storybook folder
         id: rename-latest-storybook
         run: |
