@@ -37,6 +37,10 @@ jobs:
         with:
           name: storybook
           path: storybook-static
+      - name: Git config
+        run: |
+          git config user.name "Build-CI"
+          git config user.email "build-ci@axa.fr"
       - name: Create new release
         run: npx lerna version ${TOOLKIT_VERSION} --exact --force-publish --yes --no-push
         env:
