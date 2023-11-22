@@ -1,7 +1,16 @@
 name: Publish pre-release
 
-on: workflow_dispatch
-# No push trigger events because PAT, use here, will do a recursive workflow run
+on: 
+  workflow_dispatch:
+    inputs:
+      versionType:
+        required: true
+        type: choice
+        options: 
+        - premajor
+        - preminor
+        - prepatch
+        - prerelease
 
 env:
   NODE_VERSION: 16.x
@@ -26,12 +35,12 @@ jobs:
       - run: |
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
-      - name: Create new pre release
-        run: npx lerna version prerelease --exact --force-publish --yes --no-push
+      - name: Create new ${{ inputs.versionType }} release
+        run: npx lerna version ${{ inputs.versionType }} --exact --force-publish --yes --no-push
       - run: |
           git push
           git push --tags origin
-      - name: Publish pre-release packages to npm
+      - name: Publish ${{ inputs.versionType }} release packages to npm
         run: npx lerna publish from-package --dist-tag next --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
