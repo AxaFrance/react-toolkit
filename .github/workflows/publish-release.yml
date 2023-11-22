@@ -38,7 +38,9 @@ jobs:
           name: storybook
           path: storybook-static
       - name: Create new release
-        run: npx lerna version ${ TOOLKIT_VERSION } --exact --force-publish --yes --no-push
+        run: npx lerna version ${TOOLKIT_VERSION} --exact --force-publish --yes --no-push
+        env:
+          TOOLKIT_VERSION: ${{ inputs.version }}
       - run: |
           git push
           git push --tags origin
@@ -72,7 +74,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: storybook
-          path: gh-pages/react-toolkit/latest
+          path: gh-pages/react-toolkit/latest/storybook
       - name: Add version json file into latest
         run: |
           echo {\"version\":\"${TOOLKIT_VERSION}\"} >> ./latest/version.json
