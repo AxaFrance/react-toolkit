@@ -38,7 +38,7 @@ jobs:
           name: storybook
           path: storybook-static
       - name: Create new release
-        run: npx lerna version ${{ TOOLKIT_VERSION }} --exact --force-publish --yes --no-push
+        run: npx lerna version ${ TOOLKIT_VERSION } --exact --force-publish --yes --no-push
       - run: |
           git push
           git push --tags origin
