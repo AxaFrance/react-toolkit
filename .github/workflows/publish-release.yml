@@ -75,6 +75,6 @@ jobs:
       - name: Add files
         run: git add .
       - name: Commit changes
-        run: git commit –m 'publish storybook ${TOOLKIT_VERSION}'
+        run: git commit -a -m "publish storybook ${TOOLKIT_VERSION}"
       - name: Push
         run: git push
