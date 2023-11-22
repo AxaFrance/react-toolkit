@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PUSH_PAT }}
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -35,8 +37,13 @@ jobs:
         with:
           name: storybook
           path: storybook-static
+      - name: Create new release
+        run: npx lerna version ${{ TOOLKIT_VERSION }} --exact --force-publish --yes --no-push
+      - run: |
+          git push
+          git push --tags origin
       - name: Publish release packages to npm
-        run: npx lerna publish from-git --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+        run: npx lerna publish from-package --yes --registry https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -68,7 +75,7 @@ jobs:
           path: gh-pages/react-toolkit/latest
       - name: Add version json file into latest
         run: |
-          echo {\"version\":\"${TOOLKIT_VERSION#v}\"} >> ./latest/version.json
+          echo {\"version\":\"${TOOLKIT_VERSION}\"} >> ./latest/version.json
       - name: Git config
         run: |
           git config user.name "Build-CI"
