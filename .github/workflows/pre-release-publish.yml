@@ -36,7 +36,9 @@ jobs:
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
       - name: Create new ${{ inputs.versionType }} release
-        run: npx lerna version ${{ inputs.versionType }} --exact --force-publish --yes --no-push
+        run: npx lerna version ${VERSION_TYPE} --exact --force-publish --yes --no-push
+        env:
+          VERSION_TYPE: ${{ inputs.versionType }}
       - run: |
           git push
           git push --tags origin
