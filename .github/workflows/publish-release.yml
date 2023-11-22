@@ -68,10 +68,13 @@ jobs:
       - name: Add version json file into latest
         run: |
           echo {\"version\":\"${TOOLKIT_VERSION#v}\"} >> ./latest/version.json
-      - name: Commit changes
+      - name: Git config
         run: |
           git config user.name "Build-CI"
           git config user.email build-ci@axa.fr
-          git add .
-          git commit –m "docs(toolkit): publish storybook ${TOOLKIT_VERSION}"
-          git push
+      - name: Add files
+        run: git add .
+      - name: Commit changes
+        run: git commit –m "publish storybook ${TOOLKIT_VERSION}"
+      - name: Push
+        run: git push
