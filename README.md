@@ -39,11 +39,6 @@ npm install @axa-fr/react-toolkit-all --save
 
 ```javascript
 import React from 'react';
-
-// Load only the component alert (smaller bundle size)
-import { Alert } from '@axa-fr/react-toolkit-all/component/alert';
-
-// Load all the toolkit (bigger bundle size)
 import { Alert } from '@axa-fr/react-toolkit-all';
 
 import '@axa-fr/react-toolkit-all/dist/style/af-toolkit-core.scss';
