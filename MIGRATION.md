@@ -25,6 +25,22 @@ import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 className={getComponentClassName(...)}
 ```
 
+## Imports
+
+With the tree shaking and the separation between CommonJS and ECMAScript files, you should'n import the components from the component folder of the react-toolkit-all package.
+
+Before :
+
+```javascript
+import { Alert } from '@axa-fr/react-toolkit-all/component/alert';
+```
+
+After :
+
+```javascript
+import { Alert } from '@axa-fr/react-toolkit-all';
+```
+
 # From version 1.x to 2.0.x
 
 ## Date Input
