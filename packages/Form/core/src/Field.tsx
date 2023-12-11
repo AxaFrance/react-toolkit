@@ -54,7 +54,6 @@ const Field = ({
       <div className={classNameContainerLabel}>
         <label
           className="af-form__group-label"
-          aria-label={label.toString()}
           htmlFor={isLabelContainerLinkedToInput ? id : null}>
           {label}
         </label>
