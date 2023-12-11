@@ -9,7 +9,6 @@ exports[`TextInput renders TextInput correctly with child 1`] = `
       class="col-md-2"
     >
       <label
-        aria-label="Image *"
         class="af-form__group-label"
         for="iddateinput"
       >
@@ -49,7 +48,6 @@ exports[`TextInput renders TextInput correctly with classModifier 1`] = `
       class="col-md-2"
     >
       <label
-        aria-label="Image *"
         class="af-form__group-label"
         for="iddateinput"
       >
@@ -86,7 +84,6 @@ exports[`TextInput renders TextInput correctly with error message 1`] = `
       class="col-md-2"
     >
       <label
-        aria-label="Image *"
         class="af-form__group-label"
         for="iddateinput"
       >
