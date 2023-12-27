@@ -21,6 +21,11 @@ const modifiers = [
   univers.retraite,
   univers.axa,
 ];
+type TTableArgs = {
+  columnHeaderId: string;
+  firstRowHeaderId: string;
+  secondRowHeaderId: string;
+};
 
 export default {
   title: 'Components/Table',
@@ -30,6 +35,11 @@ export default {
       sidebar: readme,
     },
     options: {},
+  },
+  args: {
+    columnHeaderId: 'col-header',
+    firstRowHeaderId: 'row-header-1',
+    secondRowHeaderId: 'row-header-2',
   },
   argTypes: {
     classModifier: {
@@ -43,43 +53,48 @@ export default {
 } as Meta;
 
 type TableProps = ComponentProps<typeof Table>;
-const Template: Story<TableProps> = (args) => (
+const Template: Story<TableProps & TTableArgs> = ({
+  columnHeaderId,
+  firstRowHeaderId,
+  secondRowHeaderId,
+  ...args
+}) => (
   <Table {...args}>
     <Table.Header>
       <Table.Tr>
-        <Table.Th colSpan={3}>
+        <Table.Th id={columnHeaderId} colSpan={3}>
           <span className="af-table-th-content">Some text</span>
         </Table.Th>
       </Table.Tr>
     </Table.Header>
     <Table.Body>
       <Table.Tr>
-        <Table.Td rowSpan={2}>
-          <span className="af-table-body-content">Some text</span>
-        </Table.Td>
-        <Table.Td>
+        <Table.Th id={firstRowHeaderId} rowSpan={2}>
+          <span className="af-table-th-content">Some text</span>
+        </Table.Th>
+        <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
           <b>Some balised text</b>
         </Table.Td>
-        <Table.Td>
+        <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
       </Table.Tr>
       <Table.Tr>
-        <Table.Td>
+        <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
-        <Table.Td>
+        <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
       </Table.Tr>
       <Table.Tr>
-        <Table.Td>
+        <Table.Th id={secondRowHeaderId}>
+          <span className="af-table-th-content">Some text</span>
+        </Table.Th>
+        <Table.Td headers={`${columnHeaderId} ${secondRowHeaderId}`}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
-        <Table.Td>
-          <span className="af-table-body-content">Some text</span>
-        </Table.Td>
-        <Table.Td>
+        <Table.Td headers={`${columnHeaderId} ${secondRowHeaderId}`}>
           <span className="af-table-body-content">Some text</span>
         </Table.Td>
       </Table.Tr>
@@ -91,44 +106,49 @@ export const TableStory: Story<TableProps> = Template.bind({});
 TableStory.storyName = 'Simple';
 
 type TableWithPagingProps = ComponentProps<typeof Table>;
-const TemplateWithPaging: Story<TableProps> = (args) => (
+const TemplateWithPaging: Story<TableProps & TTableArgs> = ({
+  columnHeaderId,
+  firstRowHeaderId,
+  secondRowHeaderId,
+  ...args
+}) => (
   <>
     <Table {...args}>
       <Table.Header>
         <Table.Tr>
-          <Table.Th colSpan={3}>
+          <Table.Th id={columnHeaderId} colSpan={3}>
             <span className="af-table-th-content">Some text</span>
           </Table.Th>
         </Table.Tr>
       </Table.Header>
       <Table.Body>
         <Table.Tr>
-          <Table.Td rowSpan={2}>
-            <span className="af-table-body-content">Some text</span>
-          </Table.Td>
-          <Table.Td>
+          <Table.Th id={firstRowHeaderId} rowSpan={2}>
+            <span className="af-table-th-content">Some text</span>
+          </Table.Th>
+          <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
             <b>Some balised text</b>
           </Table.Td>
-          <Table.Td>
+          <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
-          <Table.Td>
+          <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
-          <Table.Td>
+          <Table.Td headers={`${columnHeaderId} ${firstRowHeaderId}`}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
         </Table.Tr>
         <Table.Tr>
-          <Table.Td>
+          <Table.Th id={secondRowHeaderId}>
+            <span className="af-table-th-content">Some text</span>
+          </Table.Th>
+          <Table.Td headers={`${columnHeaderId} ${secondRowHeaderId}`}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
-          <Table.Td>
-            <span className="af-table-body-content">Some text</span>
-          </Table.Td>
-          <Table.Td>
+          <Table.Td headers={`${columnHeaderId} ${secondRowHeaderId}`}>
             <span className="af-table-body-content">Some text</span>
           </Table.Td>
         </Table.Tr>

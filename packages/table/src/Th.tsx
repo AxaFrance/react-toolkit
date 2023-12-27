@@ -18,7 +18,7 @@ const Th = ({
     'af-table__th'
   );
   return (
-    <th className={componentClassName} key={id} {...otherProps}>
+    <th className={componentClassName} key={id} id={id} {...otherProps}>
       {children}
     </th>
   );
