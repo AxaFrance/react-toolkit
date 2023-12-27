@@ -76,7 +76,7 @@ ButtonSmallStory.args = {
 export const ButtonDisabledStory: Story<ButtonProps> = Template.bind({});
 ButtonDisabledStory.storyName = 'Button disabled';
 ButtonDisabledStory.args = {
-  disabled: true,
+  'aria-disabled': true,
   classModifier: 'disabled',
   children: <span className="af-btn__text">Button disabled</span>,
 };

@@ -83,6 +83,11 @@ $active-sort-table-th: $color-table-sorting !default;
     }
   }
 
+  &[aria-disabled='true'] {
+    /* cursor:pointer set by bootstrap reset needs to be ovveride */
+    cursor: not-allowed;
+  }
+
   &--success {
     background-color: $color-btn-success;
     box-shadow: inset 0 -3px $color-btn-success-dark;

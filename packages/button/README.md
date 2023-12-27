@@ -6,6 +6,7 @@
 1. [Button circle](#button-circle)
 1. [Button with left icon](#button-with-left-icon)
 1. [Button with right icon](#button-with-right-icon)
+1. [Disabled Button](#disabled-button)
 
 ## Installation
 
@@ -75,4 +76,39 @@ const RightIconButton = () => (
   </Button>
 );
 export default RightIconButton;
+```
+
+## Disabled Button
+
+For a better accessibility (users to have focus on disabled buttons), you should use the aria-disabled attribute instead of the disabled attribute.
+
+```javascript
+const DisabledButton = () => (
+  <Button classModifier="disabled" aria-disabled>
+    Lorem Ipsum
+    <i className="glyphicon glyphicon-arrowthin-right" />
+  </Button>
+);
+export default DisabledButton;
+```
+
+Be careful that using the aria-disabled attribute will not disable the button, so you have to handle the disabled state inside your onClick or onSubmit function.
+
+```javascript
+const disabledButton = true;
+
+<form
+  onSubmit={event => {
+    event?.preventDefault();
+    if (!disabledButton) {
+      // call function
+    }
+  }}>
+  <Button classModifier="disabled" aria-disabled={disabledButton}>
+    Lorem Ipsum
+    <i className="glyphicon glyphicon-arrowthin-right" />
+  </Button>
+</form>
+);
+export default DisabledButton;
 ```
