@@ -1,10 +1,9 @@
-import React from 'react';
-
 import {
   Constants,
   getComponentClassName,
-  useId,
+  useId as getId,
 } from '@axa-fr/react-toolkit-core';
+import React, { useMemo } from 'react';
 import Body, { BodyProps } from './Body';
 import Header, { HeaderProps, HeaderToggleElement } from './Header';
 
@@ -32,7 +31,7 @@ const CollapseCard = ({
   index,
   onToggle,
 }: CollapseProps) => {
-  const headerId = useId(id);
+  const headerId = useMemo(() => getId(id), [id]);
   const [open, setOpen] = React.useState(isOpen);
 
   React.useEffect(() => {
