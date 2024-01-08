@@ -44,6 +44,10 @@ $padding-popover: 0.5rem 1rem;
       }
     }
 
+    .btn {
+      cursor: pointer;
+    }
+
     .af-popover__arrow {
       width: $arrow-size;
       height: $arrow-size;
