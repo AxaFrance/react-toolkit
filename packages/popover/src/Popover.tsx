@@ -95,9 +95,13 @@ const PopoverOver = ({
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       className="af-popover__wrapper"
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
+      onMouseLeave={handleMouseLeave}
+      onFocus={handleMouseEnter}
+      onBlur={handleMouseLeave}>
       <PopoverBase
         isOpen={isOpen}
         placement={placement}
