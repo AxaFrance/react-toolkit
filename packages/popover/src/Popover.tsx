@@ -60,7 +60,7 @@ const PopoverClick = ({
       role="button"
       tabIndex={0}
       ref={wrapperRef}
-      className="af-popover__wrapper"
+      className="af-popover__wrapper af-popover__wrapper--click"
       onKeyDown={handleKeyDown}
       onClick={handleClick}
       onBlur={(event) => handleClick(event, false)}>
@@ -97,7 +97,7 @@ const PopoverOver = ({
     <div
       role="button"
       tabIndex={0}
-      className="af-popover__wrapper"
+      className="af-popover__wrapper af-popover__wrapper--over"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onFocus={handleMouseEnter}
