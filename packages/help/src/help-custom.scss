@@ -67,6 +67,8 @@
 }
 
 .af-popover__wrapper {
-  border-radius: 100vmax;
   outline-offset: 2px;
+  &:has(.af-popover__container--circle) {
+    border-radius: 100vmax;
+  }
 }

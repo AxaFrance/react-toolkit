@@ -1,10 +1,10 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
-import Button from '@axa-fr/react-toolkit-button';
 import Badge from '@axa-fr/react-toolkit-badge';
-import HelpInfo from './HelpInfo';
+import Button from '@axa-fr/react-toolkit-button';
+import { PopoverModes, PopoverPlacements } from '@axa-fr/react-toolkit-popover';
+import { Meta, Story } from '@storybook/react';
+import React from 'react';
 import readme from '../README.md';
+import HelpInfo from './HelpInfo';
 
 export default {
   title: 'Components high level/HelpInfo',
@@ -92,6 +92,7 @@ ButtonStory.args = {
 export const BadgeStory: Story<HelpProps> = Template.bind({});
 BadgeStory.args = {
   content: 'Nombre de notifications',
+  classModifier: 'circle',
   mode: PopoverModes.over,
   placement: PopoverPlacements.top,
   children: <Badge classModifier="error">5</Badge>,

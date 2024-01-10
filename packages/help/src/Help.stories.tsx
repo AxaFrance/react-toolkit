@@ -1,8 +1,8 @@
-import React from 'react';
+import { PopoverModes, PopoverPlacements } from '@axa-fr/react-toolkit-popover';
 import { Meta, Story } from '@storybook/react';
-import { PopoverPlacements, PopoverModes } from '@axa-fr/react-toolkit-popover';
-import Help from './Help';
+import React from 'react';
 import readme from '../README.md';
+import Help from './Help';
 import './help-custom.scss';
 
 export default {
@@ -43,6 +43,7 @@ const Template: Story<HelpProps> = ({ children, ...args }) => (
 export const TextStory: Story<HelpProps> = Template.bind({});
 TextStory.args = {
   children: 'Lorem ipsum dolor sit amet',
+  classModifier: 'circle',
   mode: PopoverModes.click,
   placement: PopoverPlacements.right,
 };
