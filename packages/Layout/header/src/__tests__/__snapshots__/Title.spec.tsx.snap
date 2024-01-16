@@ -30,11 +30,11 @@ exports[`<Title> renders Title correctly 1`] = `
         class="af-title-bar__title"
       >
         Toolkit Axa
-        <small
+        <span
           class="af-title-bar__subtitle"
         >
           Info complémentaire
-        </small>
+        </span>
       </h1>
     </div>
   </div>
@@ -53,11 +53,11 @@ exports[`<Title> renders Title correctly without menu 1`] = `
         class="af-title-bar__title"
       >
         Toolkit Axa
-        <small
+        <span
           class="af-title-bar__subtitle"
         >
           Info complémentaire
-        </small>
+        </span>
       </h1>
     </div>
   </div>

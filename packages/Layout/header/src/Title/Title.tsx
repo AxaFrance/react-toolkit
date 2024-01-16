@@ -45,9 +45,7 @@ const Title = ({
         <h1 className={`${defaultClassName}__title`}>
           {title}
           {subtitle && (
-            <small className={`${defaultClassName}__subtitle`}>
-              {subtitle}
-            </small>
+            <span className={`${defaultClassName}__subtitle`}>{subtitle}</span>
           )}
         </h1>
         {children}
