@@ -10,10 +10,13 @@ $padding-popover: 0.5rem 1rem;
     background: inherit;
     border: 0;
     padding: 0;
+
+    &--click {
+      cursor: pointer;
+    }
   }
 
   &__container {
-    cursor: initial;
     display: inline-block;
 
     &-pop {

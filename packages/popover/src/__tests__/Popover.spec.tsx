@@ -1,6 +1,6 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
 import Popover from '../Popover';
 
 describe('<Popover />', () => {
@@ -40,6 +40,81 @@ describe('<Popover />', () => {
         'af-popover__container-pop'
       );
     });
+
+    it('Should hide content when element reclicked', () => {
+      // Arrange
+      const { getByRole } = render(
+        <Popover mode="click">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      userEvent.click(getByRole('presentation'));
+
+      expect(getByRole('presentation').nextElementSibling).toHaveClass(
+        'af-popover__container-pop'
+      );
+
+      userEvent.click(getByRole('presentation'));
+
+      expect(getByRole('presentation').nextElementSibling).toBeNull();
+    });
+
+    it('Should contain PopoverClick element when the "Enter" key is pressed and the button is focused', () => {
+      const { getByRole } = render(
+        <Popover mode="click">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      const buttonElement = getByRole('button');
+      buttonElement.focus();
+
+      expect(buttonElement).toHaveFocus();
+
+      userEvent.keyboard('{Enter}');
+
+      expect(getByRole('presentation').nextElementSibling).toHaveClass(
+        'af-popover__container-pop'
+      );
+    });
+  });
+
+  it('Should hide PopoverClick element when the button loses focus', () => {
+    const { getByRole } = render(
+      <Popover mode="click">
+        <Popover.Pop>
+          <p>Modal content</p>
+        </Popover.Pop>
+        <Popover.Over>
+          <span>Source</span>
+        </Popover.Over>
+      </Popover>
+    );
+
+    const buttonElement = getByRole('button');
+    buttonElement.focus();
+
+    expect(buttonElement).toHaveFocus();
+
+    userEvent.keyboard('{Enter}');
+    expect(getByRole('presentation').nextElementSibling).toHaveClass(
+      'af-popover__container-pop'
+    );
+
+    userEvent.tab();
+    expect(buttonElement).not.toHaveFocus();
+    expect(getByRole('presentation').nextElementSibling).toBeNull();
   });
 
   describe('mode "hover"', () => {
@@ -83,6 +158,30 @@ describe('<Popover />', () => {
       );
     });
 
+    it('Should display content when element is focused', () => {
+      // Arrange
+      const { getByRole } = render(
+        <Popover mode="hover">
+          <Popover.Pop>
+            <p>Modal content</p>
+          </Popover.Pop>
+          <Popover.Over>
+            <span>Source</span>
+          </Popover.Over>
+        </Popover>
+      );
+
+      const buttonElement = getByRole('button');
+      buttonElement.focus();
+
+      expect(buttonElement).toHaveFocus();
+
+      // Assert
+      expect(getByRole('presentation').nextElementSibling).toHaveClass(
+        'af-popover__container-pop'
+      );
+    });
+
     it('Should hide content when element not hovered', () => {
       // Arrange
       const { getByRole } = render(
@@ -103,5 +202,33 @@ describe('<Popover />', () => {
       // Assert
       expect(getByRole('presentation').nextSibling).toBeNull();
     });
+  });
+
+  it('Should hide content when element loses focus', () => {
+    // Arrange
+    const { getByRole } = render(
+      <Popover mode="hover">
+        <Popover.Pop>
+          <p>Modal content</p>
+        </Popover.Pop>
+        <Popover.Over>
+          <span>Source</span>
+        </Popover.Over>
+      </Popover>
+    );
+
+    const buttonElement = getByRole('button');
+    buttonElement.focus();
+
+    expect(buttonElement).toHaveFocus();
+
+    expect(getByRole('presentation').nextElementSibling).toHaveClass(
+      'af-popover__container-pop'
+    );
+
+    userEvent.tab();
+
+    expect(buttonElement).not.toHaveFocus();
+    expect(getByRole('presentation').nextElementSibling).toBeNull();
   });
 });

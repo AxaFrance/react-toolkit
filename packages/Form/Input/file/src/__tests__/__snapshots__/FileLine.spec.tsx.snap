@@ -39,7 +39,9 @@ exports[`<File.FileInput> renders Preview correctly for other type 1`] = `
 exports[`<File.FileInput> renders Preview correctly for type image 1`] = `
 <DocumentFragment>
   <div
-    class="af-popover__wrapper"
+    class="af-popover__wrapper af-popover__wrapper--over"
+    role="button"
+    tabindex="0"
   >
     <div
       class="af-popover__container"

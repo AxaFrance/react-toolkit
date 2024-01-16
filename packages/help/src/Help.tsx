@@ -1,9 +1,9 @@
-import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import Popover, {
   PopoverBase,
   PopoverPlacements,
 } from '@axa-fr/react-toolkit-popover';
-import { getComponentClassName } from '@axa-fr/react-toolkit-core';
+import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 export type HelpProps = ComponentPropsWithoutRef<typeof Popover> & {
   helpButtonContent?: ReactNode;
@@ -31,9 +31,7 @@ const Help = ({
       mode={mode}>
       <PopoverBase.Pop>{children}</PopoverBase.Pop>
       <PopoverBase.Over>
-        <button className={buttonClassName} type="button">
-          {helpButtonContent}
-        </button>
+        <div className={buttonClassName}>{helpButtonContent}</div>
       </PopoverBase.Over>
     </Popover>
   );

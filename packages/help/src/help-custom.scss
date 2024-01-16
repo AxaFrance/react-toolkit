@@ -1,7 +1,8 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
 .af-popover__container--custom {
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 
   .af-popover {
     &__container-pop {
@@ -63,4 +64,11 @@
   font-style: italic;
   font-size: 1.2rem;
   vertical-align: middle;
+}
+
+.af-popover__wrapper {
+  outline-offset: 2px;
+  &:has(.af-popover__container--circle) {
+    border-radius: 100vmax;
+  }
 }
