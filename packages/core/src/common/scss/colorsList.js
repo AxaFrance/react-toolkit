@@ -460,6 +460,17 @@ const others = [
   ],
 ];
 
+const accessible = [
+  [
+    {
+      title: 'SECONDARY',
+      name: 'color-tarif-table-header-selected7',
+      hex: '#c1c4ff',
+      default: true,
+    },
+  ],
+];
+
 const colors = [];
 colors.bootstrap = bootstrap;
 colors.primary = primary;
@@ -467,5 +478,6 @@ colors.secondary = secondary;
 colors.theme = theme;
 colors.components = components;
 colors.others = others;
+colors.accessible = accessible;
 
 module.exports = colors;
