@@ -8,7 +8,9 @@ describe('Title', () => {
     render(<Title>A title</Title>);
 
     // Assert
-    expect(screen.getByText(/A title/)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 2 })
+    ).toBeInTheDocument();
   });
 
   it('should have default class', () => {
@@ -16,7 +18,9 @@ describe('Title', () => {
     render(<Title>A title</Title>);
 
     // Assert
-    expect(screen.getByText(/A title/)).toHaveClass('af-title', {
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 2 })
+    ).toHaveClass('af-title', {
       exact: true,
     });
   });
@@ -26,7 +30,9 @@ describe('Title', () => {
     render(<Title className="custom-class">A title</Title>);
 
     // Assert
-    expect(screen.getByText(/A title/)).toHaveClass('custom-class', {
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 2 })
+    ).toHaveClass('custom-class', {
       exact: true,
     });
   });
@@ -40,12 +46,11 @@ describe('Title', () => {
     );
 
     // Assert
-    expect(screen.getByText(/A title/)).toHaveClass(
-      'custom-class custom-class--modifier',
-      {
-        exact: true,
-      }
-    );
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 2 })
+    ).toHaveClass('custom-class custom-class--modifier', {
+      exact: true,
+    });
   });
 
   it('should not have classModifier attribute', () => {
@@ -57,6 +62,18 @@ describe('Title', () => {
     );
 
     // Assert
-    expect(screen.getByText(/A title/)).not.toHaveAttribute('classModifier');
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 2 })
+    ).not.toHaveAttribute('classModifier');
+  });
+
+  it('should have correct heading level', () => {
+    // Act
+    render(<Title heading="h3">A title</Title>);
+
+    // Assert
+    expect(
+      screen.getByRole('heading', { name: /A title/, level: 3 })
+    ).toBeInTheDocument();
   });
 });

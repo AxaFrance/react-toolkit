@@ -1,20 +1,34 @@
 @import '@axa-fr/react-toolkit-core/src/common/scss/core.scss';
 
+h2.af-title {
+  font-size: 1.5rem;
+}
+
+h3.af-title {
+  font-size: 1.25rem;
+}
+
+h4.af-title {
+  font-size: 1.125rem;
+}
+
+h3.af-title::after,
+h4.af-title::after {
+  bottom: 0.1rem;
+}
+
 .af-title {
   position: relative;
   overflow: hidden;
   font-weight: 600;
+  color: $color-texte;
 
   &::after {
-    background-color: $brand-primary;
-    border: none;
-    bottom: 0.3125rem;
-    clear: left;
+    background-color: $color-gray-1;
+    bottom: 0.3rem;
     content: ' ';
-    float: left;
     height: 1px;
-    margin-left: 0.875rem;
-    padding: 0;
+    margin: 0.5rem 1rem;
     position: absolute;
     width: 100%;
     z-index: 1;

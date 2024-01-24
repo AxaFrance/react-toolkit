@@ -1,14 +1,18 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 
-type TitleProps = ComponentPropsWithoutRef<'h1'> & {
+type Headings = 'h2' | 'h3' | 'h4';
+
+type TitleProps = ComponentPropsWithoutRef<'h2'> & {
   classModifier?: string;
+  heading?: Headings;
 };
 
 const Title = ({
   className,
   classModifier,
   children,
+  heading: Heading = 'h2',
   ...otherProps
 }: TitleProps) => {
   const componentClassName = getComponentClassName(
@@ -16,10 +20,11 @@ const Title = ({
     classModifier,
     'af-title'
   );
+
   return (
-    <h1 className={componentClassName} {...otherProps}>
+    <Heading className={componentClassName} {...otherProps}>
       {children}
-    </h1>
+    </Heading>
   );
 };
 
