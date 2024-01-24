@@ -35,6 +35,7 @@ export const Default = (args) => <Title {...args} />;
 Default.args = {
   title: 'Toolkit Axa',
   subtitle: 'Info complémentaire',
+  isSticky: true,
 };
 Default.argTypes = {
   toggleMenu: { action: 'onToggle' },

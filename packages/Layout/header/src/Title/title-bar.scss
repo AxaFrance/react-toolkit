@@ -7,6 +7,12 @@
   padding: 0.66rem 0;
   margin-bottom: 2rem;
 
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 110;
+  }
+
   &--fixed {
     position: fixed;
     width: 100%;

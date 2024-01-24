@@ -895,6 +895,8 @@ export default NavBarItemActifWithChildren;
 
 ## Default
 
+By default, the title bar is sticky on the top when you scroll down the page. If you want to disable that behavior you can set to false the `isSticky` property of the component.
+
 ### Installation
 
 ```shell script
