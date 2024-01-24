@@ -26,4 +26,5 @@ Default.args = {
   title: 'Sample Title',
   classModifier: '',
   className: '',
+  heading: 'h2',
 };
