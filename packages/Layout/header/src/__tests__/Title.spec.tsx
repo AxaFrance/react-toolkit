@@ -20,4 +20,15 @@ describe('<Title>', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('renders Title with classModifier', () => {
+    const { asFragment } = render(
+      <Title
+        title="Toolkit Axa"
+        subtitle="Info complémentaire"
+        classModifier="test"
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

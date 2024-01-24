@@ -12,6 +12,7 @@ type Props = {
   toggleMenu?: () => void;
   className?: string;
   classModifier?: string;
+  isSticky?: boolean;
 };
 const Title = ({
   title,
@@ -20,7 +21,16 @@ const Title = ({
   toggleMenu,
   className,
   classModifier,
+  isSticky = true,
 }: Props) => {
+  if (isSticky) {
+    // eslint-disable-next-line no-param-reassign
+    classModifier =
+      !classModifier || classModifier.length === 0
+        ? 'sticky'
+        : `${classModifier} sticky`;
+  }
+
   const componentClassName = getComponentClassName(
     className,
     classModifier,
