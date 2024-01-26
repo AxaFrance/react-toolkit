@@ -1,9 +1,17 @@
 <h1>Migration Guide</h1>
 
+- [From version 2.2.0 to 2.3.0](#from-version-220-to-230)
 - [From version 2.0.x to 2.1.0](#from-version-20x-to-210)
 - [From version 1.x to 2.0.x](#from-version-1x-to-20x)
   - [Date Input](#date-input)
   - [All](#package-react-toolkit-all)
+
+# From version 2.2.0 to 2.3.0
+
+## Title
+
+The Title component used to have some different css based on a specific `classModifier` or `className`. For `classModifier` it was called `bigTitle` and for `className` it was `af-subtitle`. This two custom css have now been deleted for the component. If you are using them on your project, you should remove them and make this implementation yourself.
+The Title component only implement what our UXs have designed.
 
 # From version 2.0.x to 2.1.0
 
