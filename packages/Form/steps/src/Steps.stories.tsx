@@ -72,15 +72,15 @@ const Template: Story<StepsProps> = ({ classModifier, className, mode }) => (
 );
 
 export const OldStepsStory = Template.bind({}) as typeof Template;
-OldStepsStory.storyName = 'Old Design Steps';
-OldStepsStory.args = {
+NewStepsStory.storyName = 'New Design Steps';
+NewStepsStory.args = {
   classModifier: '',
   className: 'af-steps-new',
 };
 
 export const NewStepsStory = Template.bind({}) as typeof Template;
-NewStepsStory.storyName = 'Old Design Steps';
-NewStepsStory.args = {
+OldStepsStory.storyName = 'Old Design Steps';
+OldStepsStory.args = {
   classModifier: '',
   className: '',
 };
