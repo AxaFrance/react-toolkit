@@ -22,7 +22,7 @@
 
   &__group--required &__group-label {
     &:after {
-      content: '*';
+      content: ' *';
       color: $color-red-error;
     }
   }
