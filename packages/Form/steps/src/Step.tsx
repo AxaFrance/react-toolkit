@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import StepNoLink from './StepNoLink';
+import StepDisabled from './StepDisabled';
 import StepLink from './StepLink';
 import StepCurrent from './StepCurrent';
 
@@ -42,7 +42,7 @@ const Step = ({
       );
     default:
       return (
-        <StepNoLink
+        <StepDisabled
           id={id}
           title={title}
           classModifier={classModifier}

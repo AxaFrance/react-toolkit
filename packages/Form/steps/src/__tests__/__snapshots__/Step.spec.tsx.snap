@@ -51,7 +51,7 @@ exports[`<Steps> renders Steps correctly 1`] = `
         </a>
       </li>
       <li
-        class="af-steps-list-step number"
+        class="disabled af-steps-list-step number"
         title="Final step"
       >
         <div
