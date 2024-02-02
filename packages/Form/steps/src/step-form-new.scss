@@ -70,10 +70,15 @@ $steps-color-active: mix($black, $brand-primary, 20%);
       }
 
       &.disabled {
-        color: $color-btn-disabled;
+        color: $color-gray-1;
 
         &::before {
-          color: $color-btn-disabled;
+          color: $color-gray-1;
+        }
+
+        & .af-steps-list-stepNumber,
+        & .af-steps-list-stepTitle {
+          color: $color-gray-1;
         }
       }
 
