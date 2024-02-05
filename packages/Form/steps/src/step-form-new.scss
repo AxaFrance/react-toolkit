@@ -6,8 +6,8 @@ $steps-bg: $gray-lighter;
 $steps-bg-active: $white;
 $font-size-step: $font-size-base;
 $font-size-step-number: $font-size-base + 0.2rem;
-$steps-color: $gray-dark;
-$steps-color-active: mix($black, $brand-primary, 20%);
+$steps-color: $color-texte;
+$steps-color-active: $color-axa;
 
 .af-steps-new {
   margin-bottom: 2rem;
