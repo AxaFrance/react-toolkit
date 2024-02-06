@@ -15,6 +15,9 @@ type Props = ComponentPropsWithoutRef<typeof Field> &
     disabled?: Boolean;
   };
 
+/**
+ * @deprecated This component is no longer maintained and shouldn't be used. It will be removed in the next version.
+ */
 const SwitchInput = ({
   classModifier,
   message,

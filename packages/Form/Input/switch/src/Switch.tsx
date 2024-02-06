@@ -16,6 +16,9 @@ type Props = Omit<SwitchItemProps, keyof Pick<Option, 'id' | 'label'>> & {
   options: SwitchOptions[];
 };
 
+/**
+ * @deprecated This component is no longer maintained and shouldn't be used. It will be removed in the next version.
+ */
 const Switch = ({ value, options, onChange, ...otherProps }: Props) => {
   const [selectedValue, setSelectedValue] = useState(value);
   const [sliderStyle, setSliderStyle] = useState<CSSProperties>({
