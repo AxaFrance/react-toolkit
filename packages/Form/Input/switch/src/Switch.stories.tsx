@@ -7,7 +7,7 @@ import readme from '../README.md';
 import SwitchItem from './SwitchItem';
 
 export default {
-  title: 'Form elements/Radio switch',
+  title: 'Form elements/Radio switch (Deprecated)',
   component: Switch,
   parameters: {
     readme: {
@@ -40,7 +40,15 @@ const options: Omit<ComponentProps<typeof SwitchItem>, 'onChange'>[] = [
 
 type SwitchProps = ComponentProps<typeof Switch>;
 
-export const SwitchStory: Story<SwitchProps> = (args) => <Switch {...args} />;
+export const SwitchStory: Story<SwitchProps> = (args) => (
+  <>
+    <p>
+      Deprecated: This component is no longer maintained and shouldn't be used.
+      It will be removed in the next version.
+    </p>
+    <Switch {...args} />
+  </>
+);
 SwitchStory.storyName = 'Switch';
 SwitchStory.args = {
   name: 'Form.SwitchInput',
