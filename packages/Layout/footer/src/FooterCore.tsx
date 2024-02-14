@@ -20,7 +20,12 @@ const FooterCore = ({
   <footer className={className}>
     <div className="container-fluid container">
       {!!icon && (
-        <a className="af-logo" href={href} title={title} target="blank">
+        <a
+          className="af-logo"
+          href={href}
+          title={title}
+          target="_blank"
+          rel="noopener noreferrer">
           <img className="af-logo__brand" src={icon} alt={alt} />
         </a>
       )}
