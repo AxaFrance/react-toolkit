@@ -11,7 +11,8 @@ exports[`<Footer> should render a footer with copyright prop as content 1`] = `
       <a
         class="af-logo"
         href="https://www.axa.fr/"
-        target="blank"
+        rel="noopener noreferrer"
+        target="_blank"
         title="Site Axa"
       >
         <img
