@@ -9,7 +9,7 @@ type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
   value?: Date;
 };
 
-const Date = forwardRef<HTMLInputElement, Props>(
+const CustomDate = forwardRef<HTMLInputElement, Props>(
   ({ className, classModifier, value, ...otherProps }, ref) => {
     const componentClassName = getComponentClassName(
       className,
@@ -47,7 +47,6 @@ const handlers = {
     (e: ChangeEvent<HTMLInputElement>) => {
       const newValue = e.currentTarget.valueAsDate;
       onChange &&
-        newValue &&
         onChange({
           value: newValue,
           name,
@@ -56,4 +55,4 @@ const handlers = {
     },
 };
 
-export default withInput(handlers)(Date);
+export default withInput(handlers)(CustomDate);
