@@ -35,7 +35,7 @@ className={getComponentClassName(...)}
 
 ## Imports
 
-With the tree shaking and the separation between CommonJS and ECMAScript files, you should'n import the components from the component folder of the react-toolkit-all package.
+With the tree shaking and the separation between CommonJS and ECMAScript files, you shouldn't import the components from the component folder of the react-toolkit-all package.
 
 Before :
 
@@ -116,3 +116,81 @@ The component `Title` (from `@axa-fr/react-toolkit-layout-header`) has been rena
 - import { Title } from '@axa-fr/react-toolkit-all';
 + import { HeaderTitle } from '@axa-fr/react-toolkit-all';
 ```
+
+## File Upload Data Handling
+
+In 1.X
+
+- Direct iteration over files and appending them to FormData.
+
+```diff
+- const data = new FormData();
+- files.forEach(({ file, fieldname, referentialName, type }) => {
+-  data.append('Files', file, cleanFileName(file.name));
+-  data.append('FieldName', fieldname);
+-  data.append('Referential', referentialName);
+-  type && data.append('Type', type);
+-});
+```
+
+In 2.0.x
+
+- Asynchronous handling of files.
+- Files fetched as blobs.
+- Metadata such as field name and type appended to FormData.
+
+```diff
++ const data = new FormData();
++ await Promise.all(
++   files.map(async ({ file, fieldname, referentialName, type }) => {
++    const blob = await fetch(file.preview).then((response) => response.blob());
++    data.append('Files', blob, cleanFileName(file.name));
++    data.append('FieldName', fieldname);
++    data.append('Referential', referentialName);
++    type && data.append('Type', type);
++  })
++);
+```
+
+## CheckboxItem
+
+There has been a change in the representation of boolean values in the events associated with checkbox state changes. In 1.x, boolean values were directly used in events, but after in 2.0.x, these values are now represented as strings indicating the boolean state.
+
+Here is an exemple to adapt to this change :
+
+```diff
+-export const handleChange = (e) => {
+-  const newValue = !e.value;
+-  // Rest of the logic
+-}
+
++export const handleChange = (e) => {
++  const newValue = e.value === 'true';
++  // Rest of the logic
++}
+```
+
+## Input Components
+
+There has been a requirement change regarding the label attribute for all types of inputs. In the 1.x version, providing a label for the TextInput component was optional. However, in the 2.0.x version, a label is mandatory for all input components.
+
+Here's an example demonstrating how to adapt to this change:
+
+```diff
+- <TextInput
+-   name="textInputName"
+-   id="textInputId"
+-   value="textInputValue"
+-   onChange={e => handleChange(e)}
+- />
+
++ <TextInput
++   name="textInputName"
++   id="textInputId"
++   value="textInputValue"
++   onChange={e => handleChange(e)}
++   label=""
++ />
+```
+
+In this example, the TextInput component previously didn't have a label specified, which now causes an issue. To resolve this, an empty label attribute has been added to comply with the new requirement.

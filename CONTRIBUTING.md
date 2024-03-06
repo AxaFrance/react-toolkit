@@ -13,7 +13,7 @@ You must use a version of Node.js respecting the following rule `>=10.14.2` or `
 
 ## Installation
 
-To get started, start by [forking the repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) on your personnal github account.
+To get started, start by [forking the repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) on your personal github account.
 
 Then, clone the forked repository:
 
@@ -50,7 +50,7 @@ npm run storybook
 
 ## Keeping your forked repository up-to-date
 
-Before you start developping, it is important to always keep your forked repository **up-to-date**.
+Before you start developing, it is important to always keep your forked repository **up-to-date**.
 
 ### Link your forked repository to the original project
 
@@ -81,10 +81,12 @@ Here's an example in JS:
 ```text
 ├── dist/ : contains the generated JS/CSS files (in the postinstall process).
 ├── src/
-|   ├── __snapshots__ : generated storybook snapshots used to test the component.
+|   ├── __tests__
+|   |   ├── GreatComponent.spec.js : all unit tests for the component.
+|   |   ├── __snapshots__ : generated storybook snapshots used to test the component.
+|   |   |   ├── GreatComponent.spec.js.snap
 |   ├── GreatComponent.js : the react component code.
 |   ├── GreatComponent.md : more documentation about the component (props, ...).
-|   ├── GreatComponent.spec.js : all unit tests for the component.
 |   ├── GreatComponent.stories.js : examples to be shown in the Storybook tool.
 |   ├── great-component.scss : Sass file, complying to BEM convention
 |   └── index.js : should export your component(s).
@@ -101,7 +103,7 @@ Into a terminal, to start to develop a component you can run
 npm run dev
 ```
 
-Or, if you want to run your component in watch mode, execting one of command below
+Or, if you want to run your component in watch mode, executing one of command below
 
 ```sh
 # If your component is in js
@@ -111,7 +113,7 @@ npm run dev:js -- --scope=@axa-fr/react-toolkit-action
 npm run dev:ts -- --scope=@axa-fr/react-toolkit-action
 ```
 
-_scope_ refer to package name of your component you are working on.
+_scope_ refers to package name of your component you are working on.
 
 And then if you want to work on it, in isolation mode, you can run storybook
 
@@ -151,7 +153,7 @@ npm test -- --coverage
 
 You can find the list of supported browser in the [List of supported browsers](./README.md#list-of-supported-browsers) section of the README.
 
-If you are developping on a Mac, you will find some Virtual Machines to help you test, on [Microsoft Edge Tools](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) webiste.
+If you are developing on a Mac, you will find some Virtual Machines to help you test, on [Microsoft Edge Tools](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) webiste.
 
 ### Documentation
 
@@ -165,29 +167,29 @@ There, do not forget to update the component status page, please!
 
 We are using the [Angular commit message format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format), you are expected to follow it. This is very important because our changlog is generated using commit messages.
 
-Keep in mind, though, that your pull request will be squashed into master, so repository mainteners may use your commit message but are not entitled to use them as is.
+Keep in mind, though, that your pull request will be squashed into master, so repository maintainers may use your commit message but are not entitled to use them as is.
 
 ## Scripts
 
-| Script name          | Description                                                                                                 |
-| -------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `publish`            | Used by the CI to generate a new version.                                                                   |
-| `postinstall`        | Clean and build all compoents within the `packages` folder. It is ran just after the `npm install` command. |
-| `clean`              | Removes all the generated `dist` folders and `node_modules` folders within the `packages`.                  |
-| `clean:dist`         | Removes all the generated `dist` folders within the `packages` folder.                                      |
-| `clean:node_modules` | Removes all the `node_modules` folders within the `packages` folder (uses `lerna clean`).                   |
-| `style`              | Generates all `.css` file from the Sass `.scss` files.                                                      |
-| `storybook`          | Lauches the [Storybook](#storybook) tool.                                                                   |
-| `storybook:build`    | Builds the [Storybook](#storybook) tool.                                                                    |
-| `test`               | Builds the [Design System](#design-system) tool.                                                            |
-| `cover`              | Used by the CI to generate coverage files.                                                                  |
-| `lint`               | Launches both JS and TS linters                                                                             |
-| `lint:js`            | Launches JS linters, will fix whatever is possible to fix, for you.                                         |
-| `lint:ts`            | Launches TS linters, will fix whatever is possible to fix, for you.                                         |
-| `dev`                | Launches both JS and TS components in watch mode.                                                           |
-| `dev:js`             | Launches JS components in watch mode.                                                                       |
-| `dev:ts`             | Launches TS components in watch mode.                                                                       |
-| `changelog`          | Used by the CI to generate the changelog using commit messages                                              |
+| Script name          | Description                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `publish`            | Used by the CI to generate a new version.                                                                    |
+| `postinstall`        | Clean and build all components within the `packages` folder. It is ran just after the `npm install` command. |
+| `clean`              | Removes all the generated `dist` folders and `node_modules` folders within the `packages`.                   |
+| `clean:dist`         | Removes all the generated `dist` folders within the `packages` folder.                                       |
+| `clean:node_modules` | Removes all the `node_modules` folders within the `packages` folder (uses `lerna clean`).                    |
+| `style`              | Generates all `.css` file from the Sass `.scss` files.                                                       |
+| `storybook`          | Launches the [Storybook](#storybook) tool.                                                                   |
+| `storybook:build`    | Builds the [Storybook](#storybook) tool.                                                                     |
+| `test`               | Builds the [Design System](#design-system) tool.                                                             |
+| `cover`              | Used by the CI to generate coverage files.                                                                   |
+| `lint`               | Launches both JS and TS linters                                                                              |
+| `lint:js`            | Launches JS linters, will fix whatever is possible to fix, for you.                                          |
+| `lint:ts`            | Launches TS linters, will fix whatever is possible to fix, for you.                                          |
+| `dev`                | Launches both JS and TS components in watch mode.                                                            |
+| `dev:js`             | Launches JS components in watch mode.                                                                        |
+| `dev:ts`             | Launches TS components in watch mode.                                                                        |
+| `changelog`          | Used by the CI to generate the changelog using commit messages                                               |
 
 ## Troubleshooting
 
