@@ -28,3 +28,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: 2af88e64d1ab
           exitOnceUploaded: true
+          buildScriptName: "storybook:build"
