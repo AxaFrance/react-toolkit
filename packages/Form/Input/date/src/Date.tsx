@@ -1,6 +1,6 @@
-import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
+import React, { ChangeEvent, ComponentPropsWithRef, forwardRef } from 'react';
 
 type Props = Omit<ComponentPropsWithRef<'input'>, 'value'> & {
   /** A modifier for specified className */
@@ -47,7 +47,6 @@ const handlers = {
     (e: ChangeEvent<HTMLInputElement>) => {
       const newValue = e.currentTarget.valueAsDate;
       onChange &&
-        newValue &&
         onChange({
           value: newValue,
           name,

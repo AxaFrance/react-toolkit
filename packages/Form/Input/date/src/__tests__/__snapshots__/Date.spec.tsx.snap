@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Date component applies class modifier 1`] = `
+<DocumentFragment>
+  <input
+    class="af-form__input-date af-form__input-date--required"
+    required=""
+    type="date"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`Date component calls onChange handler when input value changes 1`] = `
+<DocumentFragment>
+  <label
+    for="date"
+  >
+    Date:
+  </label>
+  <input
+    class="af-form__input-date"
+    id="date"
+    name="date"
+    type="date"
+    value="2024-03-04"
+  />
+</DocumentFragment>
+`;
+
+exports[`Date component calls onChange handler when input value changes although target value is null 1`] = `
+<DocumentFragment>
+  <label
+    for="date"
+  >
+    Date:
+  </label>
+  <input
+    class="af-form__input-date"
+    id="date"
+    name="date"
+    type="date"
+    value="2024-03-04"
+  />
+</DocumentFragment>
+`;
+
+exports[`Date component renders with initial value 1`] = `
+<DocumentFragment>
+  <input
+    class="af-form__input-date"
+    type="date"
+    value="2024-03-04"
+  />
+</DocumentFragment>
+`;

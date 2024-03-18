@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput> renders DateInput correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="row af-form__group"
+  >
+    <div
+      class="col-md-2"
+    >
+      <label
+        class="af-form__group-label"
+        for="iddateinput"
+      >
+        Date début
+      </label>
+    </div>
+    <div
+      class="col-md-10"
+    >
+      <div
+        class="af-form__date"
+      >
+        <input
+          class="af-form__input-date"
+          id="iddateinput"
+          name="namedateinput"
+          type="date"
+          value="2024-03-04"
+        />
+      </div>
+      <small
+        class="af-form__help"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
