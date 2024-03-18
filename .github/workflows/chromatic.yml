@@ -5,21 +5,18 @@ on:
     branches:
       - master
 
-env:
-  NODE_VERSION: 16.x
-
 jobs:
   chromatic:
     if: github.repository_owner == 'AxaFrance'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history for Chromatic
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: '*'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm ci
@@ -30,3 +27,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: 2af88e64d1ab
           exitOnceUploaded: true
+          buildScriptName: 'storybook:build'
