@@ -6,27 +6,31 @@ import './storybook.css';
 
 export const decorators = [];
 
-export const parameters = {
-  actions: { argTypesRegex: '^on.*' },
-  info: {
-    header: false,
-  },
-  viewport: {
-    viewports: INITIAL_VIEWPORTS,
-  },
-  docs: {
-    inlineStories: false,
-  },
-  options: {
-    storySort: {
-      order: [
-        'Components high level',
-        'Components',
-        'Form elements',
-        'Structure',
-        'Pages',
-        'Components low level',
-      ],
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on.*' },
+    info: {
+      header: false,
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+    },
+    docs: {
+      inlineStories: false,
+    },
+    options: {
+      storySort: {
+        order: [
+          'Components high level',
+          'Components',
+          'Form elements',
+          'Structure',
+          'Pages',
+          'Components low level',
+        ],
+      },
     },
   },
 };
+
+export default preview;

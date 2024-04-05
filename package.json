@@ -17,8 +17,8 @@
     "build": "lerna run build && npm run style",
     "postversion": "rimraf package-lock.json && npm i --force --ignore-scripts && git add package-lock.json && git commit --amend --no-edit",
     "style": "node ./scripts/style.js",
-    "storybook": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 9009 -s storybook-public",
-    "storybook:build": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -s storybook-public -c .storybook -o storybook-static && node ./scripts/inject-version.js",
+    "storybook": "set NODE_OPTIONS=--openssl-legacy-provider && storybook dev -p 9009",
+    "storybook:build": "set NODE_OPTIONS=--openssl-legacy-provider && storybook build -c .storybook -o storybook-static && node ./scripts/inject-version.js",
     "test": "jest",
     "cover": "jest --no-cache --config ./jest.config.ts --coverage",
     "check": "npm run check:formatting && npm run check:quality",
@@ -49,6 +49,7 @@
     "@storybook/addon-viewport": "7.6.17",
     "@storybook/addons": "7.6.17",
     "@storybook/react": "7.6.17",
+    "@storybook/react-vite": "7.6.17",
     "@storybook/source-loader": "7.6.17",
     "@storybook/theming": "7.6.17",
     "@testing-library/jest-dom": "5.16.1",
@@ -74,6 +75,7 @@
     "fs-extra": "10.0.0",
     "husky": "4.3.0",
     "jest": "29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lerna": "3.22.1",
     "lint-staged": "12.3.3",
     "markdown-loader": "6.0.0",
@@ -86,17 +88,17 @@
     "rimraf": "3.0.2",
     "sass": "1.49.7",
     "sass-loader": "10.0.5",
+    "storybook": "7.6.17",
     "storybook-readme": "5.0.9",
     "ts-jest": "29.1.2",
     "ts-node": "10.8.1",
-    "typescript": "5.4.4"
-  },
-  "dependencies": {
+    "typescript": "5.4.4",
     "@popperjs/core": "^2.11.6",
     "autoprefixer": "10.0.1",
     "clean-css": "4.2.3",
     "find": "0.3.0"
   },
+  "dependencies": {},
   "engines": {
     "npm": ">=7.0.0"
   },

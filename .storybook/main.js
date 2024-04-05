@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = {
+const config = {
   stories: [
     '../packages/action/src/*.stories.@(ts|tsx|js)',
     '../packages/alert/src/*.stories.@(ts|tsx|js)',
@@ -58,4 +58,7 @@ module.exports = {
 
     return config;
   },
+  framework: { name: '@storybook/react-vite' },
+  staticDirs: ['../storybook-public'],
 };
+export default config;
