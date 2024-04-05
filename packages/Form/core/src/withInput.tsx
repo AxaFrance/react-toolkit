@@ -50,12 +50,12 @@ type Merge<T, U> = {
   [K in keyof T | keyof U]: K extends keyof U
     ? U[K]
     : K extends keyof T
-    ? T[K]
-    : never;
+      ? T[K]
+      : never;
 };
 
 type Handlers<H extends { [key: string]: (...args: any[]) => any }> = [
-  keyof H
+  keyof H,
 ] extends [never]
   ? DefaultOnChange
   : Partial<Merge<DefaultOnChange, Handler<H>>>;
@@ -73,7 +73,7 @@ type ComponentProps = {
 export const withInput =
   <
     H extends ParamHandlers = {},
-    PO extends CustomOverride = typeof defaultWithProps
+    PO extends CustomOverride = typeof defaultWithProps,
   >(
     handlers = {} as H,
     propsOverride = defaultWithProps as PO

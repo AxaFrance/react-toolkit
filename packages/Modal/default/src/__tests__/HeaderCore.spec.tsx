@@ -12,9 +12,9 @@ describe('<HeaderCore', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render id click onCancel', () => {
+  it('should render id click onCancel', async () => {
     render(<HeaderCore onCancel={cancel}>Title</HeaderCore>);
-    UserEvent.click(screen.getByRole('button', { name: 'Close' }));
-    expect(cancel).toBeCalled();
+    await UserEvent.click(screen.getByRole('button', { name: 'Close' }));
+    expect(cancel).toHaveBeenCalled();
   });
 });

@@ -16,7 +16,7 @@ describe('Form/PassInput/Pass', () => {
 
 describe('<Pass />', () => {
   describe('Call onChange callback when type value', () => {
-    it('Swith from password to text type', () => {
+    it('Swith from password to text type', async () => {
       const onChange = jest.fn();
 
       render(
@@ -28,7 +28,7 @@ describe('<Pass />', () => {
         />
       );
 
-      userEvent.type(screen.getByRole('password'), 'changed value');
+      await userEvent.type(screen.getByRole('password'), 'changed value');
 
       expect(onChange).toHaveBeenCalledWith({
         name: 'passwordtest',
@@ -39,14 +39,14 @@ describe('<Pass />', () => {
   });
 
   describe('ToggleType when eye icon is clicked', () => {
-    it('Switch from password to text type', () => {
+    it('Switch from password to text type', async () => {
       const onToggleType = jest.fn();
 
       render(
         <Pass onToggleType={onToggleType} id="testid" name="passwordtest" />
       );
 
-      userEvent.click(screen.getByRole('button'));
+      await userEvent.click(screen.getByRole('button'));
       expect(onToggleType).toHaveBeenCalled();
     });
   });

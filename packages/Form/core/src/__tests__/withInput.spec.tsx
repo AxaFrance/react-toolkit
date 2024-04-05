@@ -32,7 +32,9 @@ describe('defaultOnChange', () => {
         id: 'id',
         value: 'value',
       },
-    } as React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>);
+    } as React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >);
     expect(onChangeMock).toHaveBeenCalledWith({
       name: 'myFieldName',
       id: 'id',

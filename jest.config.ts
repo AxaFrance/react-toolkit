@@ -3,7 +3,6 @@ import type { Config } from '@jest/types';
 
 // Sync object
 const config: Config.InitialOptions = {
-  name: 'react-toolkit',
   cacheDirectory: '.cache/jest',
   roots: ['<rootDir>/packages'],
   testEnvironment: 'jsdom',

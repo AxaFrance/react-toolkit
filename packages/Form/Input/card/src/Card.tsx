@@ -106,7 +106,7 @@ const Card = ({
       cloneElement(child, {
         id,
         type,
-      })
+      } as any)
   );
 
   const className = getComponentClassName(

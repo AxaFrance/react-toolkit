@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import Button from '../Button';
 
 describe('<ButtonBase>', () => {
-  it('should render', () => {
+  it('should render', async () => {
     const onClickMock = jest.fn();
     const { getByRole } = render(
       <Button type="submit" id="id" className="class" onClick={onClickMock}>
@@ -12,7 +12,7 @@ describe('<ButtonBase>', () => {
         <i className="glyphicon glyphicon-arrowthin-right" />
       </Button>
     );
-    userEvent.click(getByRole('button'));
+    await userEvent.click(getByRole('button'));
     expect(onClickMock).toHaveBeenCalledWith({ id: 'id' });
   });
 });

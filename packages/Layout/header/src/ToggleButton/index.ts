@@ -10,7 +10,7 @@ const ToggleButton = ({ children, idControl }: Props) => {
     cloneElement(children, {
       'aria-controls': idControl,
       'aria-haspopup': true,
-    })
+    } as any)
   );
 };
 

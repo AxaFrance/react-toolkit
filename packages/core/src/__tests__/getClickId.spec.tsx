@@ -15,7 +15,7 @@ const MyComponent: ComponentType<MyComponentProps> = ({ title, ...props }) => (
 );
 
 describe('getClickId', () => {
-  it('onClick should return id', () => {
+  it('onClick should return id', async () => {
     const MyComponentWithClick = (
       props: ComponentProps<typeof MyComponent>
     ) => {
@@ -34,9 +34,9 @@ describe('getClickId', () => {
     render(<MyComponentWithClick title="link" id={id} onClick={onClick} />);
 
     // Act
-    UserEvent.click(screen.getByText(/link/));
+    await UserEvent.click(screen.getByText(/link/));
 
     // Assert
-    expect(onClick).toBeCalledWith({ id });
+    expect(onClick).toHaveBeenCalledWith({ id });
   });
 });

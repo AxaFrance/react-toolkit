@@ -22,7 +22,10 @@ import '@axa-fr/react-toolkit-layout-footer/dist/af-footer.css';
 
 ```javascript
 const FooterDefault = () => (
-  <Footer copyright="© 2021 AXA All right right reserved" isIconHidden={true} />
+  <Footer
+    copyright="© 2021 AXA All right right reserved"
+    isIconHidden={true}
+  />
 );
 export default FooterDefault;
 ```

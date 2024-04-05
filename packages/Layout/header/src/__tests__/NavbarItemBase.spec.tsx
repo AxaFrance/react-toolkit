@@ -1,10 +1,14 @@
-import React, { Component, ComponentProps } from 'react';
+import React, { Component, ComponentProps, ReactNode } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { NavBarItemBase, handleLinkFocus } from '../NavBar/NavBarItemBase';
 
 const Custom = () => <div>Custom</div>;
+
+type Props = {
+  children: ReactNode;
+};
 // eslint-disable-next-line react/prefer-stateless-function
-class Link extends Component {
+class Link extends Component<Props> {
   render() {
     const { children, ...otherProps } = this.props;
     return (

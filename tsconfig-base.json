@@ -12,5 +12,6 @@
     "moduleResolution": "node",
     "noImplicitAny": true,
     "skipLibCheck": true
-  }
+  },
+  "types": ["jest", "node", "react", "react-dom"]
 }
