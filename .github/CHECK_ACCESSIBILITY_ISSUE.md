@@ -19,6 +19,7 @@ En plus mettre une capture de l'onglet en commentaire de cet issue.
 - [ ] Est ce que le composant est navigable au clavier (tab) ?
 - [ ] Est ce que le composant est navigable avec NVDA ?
 - [ ] Est ce que le composant est navigable avec un autre lecteur d'écran ?
+
 ## Vérification sémantique
 
 - [ ] Vérifier l'implémentation sémantique des éléments html ?
