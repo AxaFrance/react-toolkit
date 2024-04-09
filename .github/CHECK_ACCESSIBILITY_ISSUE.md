@@ -12,7 +12,7 @@ Remplir les champs ci-dessous, en se basant sur l'onglet accessibilité de chaqu
 
 PASSED :
 
-En plus mettre une capture de l'onglet en commentaire de cet issue.
+En plus mettre une capture de l'onglet en commentaire de cette issue.
 
 ## Analyse manuelle
 
