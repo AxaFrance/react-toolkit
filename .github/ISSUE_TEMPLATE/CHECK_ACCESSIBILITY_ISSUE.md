@@ -1,3 +1,11 @@
+---
+name: Accessibility issue
+about: Suggest an accessibility issue for this project
+title: '[a11y] '
+labels: 'Accessibility'
+assignees: ''
+
+---
 # Vérification de l'accessibilité du composant : composant
 
 Afin d'évaluer le niveau d'accessibilité d'un composant, il faut effectuer les actions ci-dessous.
