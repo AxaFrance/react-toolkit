@@ -1,6 +1,6 @@
 # Vérification de l'accessibilité du composant : composant
 
-Afin d'évaluer le niveau d'accessibilité d'un compsant, il faut effectuer les actions ci dessous.
+Afin d'évaluer le niveau d'accessibilité d'un composant, il faut effectuer les actions ci-dessous.
 
 ## Analyse statique d'accessibilité
 
