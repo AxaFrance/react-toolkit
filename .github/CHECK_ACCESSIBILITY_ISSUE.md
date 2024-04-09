@@ -28,4 +28,4 @@ En plus mettre une capture de l'onglet en commentaire de cette issue.
 
 ## Problèmes détectés
 
-Si vous avez détectés un défaut d'accessibilité, veuillez créer une issue décrivant le défaut et la rattachée à cette issue.
+Si vous avez détectés un défaut d'accessibilité, veuillez créer une issue décrivant le défaut et la rattacher à cette issue.
