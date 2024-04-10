@@ -21,10 +21,11 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - run: npm run storybook:build
       - name: Publish to Chromatic
         uses: chromaui/action@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: 2af88e64d1ab
           exitOnceUploaded: true
-          buildScriptName: 'storybook:build'
+          storybookBuildDir: storybook-static
