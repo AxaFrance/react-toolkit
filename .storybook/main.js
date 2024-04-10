@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = {
+const config = {
   stories: [
     '../packages/action/src/*.stories.@(ts|tsx|js)',
     '../packages/alert/src/*.stories.@(ts|tsx|js)',
@@ -48,7 +48,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    'storybook-readme',
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
@@ -59,4 +58,7 @@ module.exports = {
 
     return config;
   },
+  framework: { name: '@storybook/react-vite' },
+  staticDirs: ['../storybook-public'],
 };
+export default config;

@@ -40,13 +40,13 @@ describe('Help', () => {
     it('should not hide help when clicking on help content', async () => {
       // Arrange
       render(<Help>Help content</Help>);
-      UserEvent.click(screen.getByText('i'));
+      await UserEvent.click(screen.getByText('i'));
       await waitFor(() => {
         screen.queryByText(/Help content/);
       });
 
       // Act
-      UserEvent.click(screen.getByText(/Help content/));
+      await UserEvent.click(screen.getByText(/Help content/));
 
       // Assert
       await waitFor(() => {

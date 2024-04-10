@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Popover from '../Popover';
@@ -21,7 +21,7 @@ describe('<Popover />', () => {
       expect(getByRole('presentation')).toBeInTheDocument();
     });
 
-    it('Should display content when element clicked', () => {
+    it('Should display content when element clicked', async () => {
       // Arrange
       const { getByRole } = render(
         <Popover mode="click">
@@ -34,14 +34,14 @@ describe('<Popover />', () => {
         </Popover>
       );
 
-      userEvent.click(getByRole('presentation'));
+      await userEvent.click(getByRole('presentation'));
 
       expect(getByRole('presentation').nextElementSibling).toHaveClass(
         'af-popover__container-pop'
       );
     });
 
-    it('Should hide content when element reclicked', () => {
+    it('Should hide content when element reclicked', async () => {
       // Arrange
       const { getByRole } = render(
         <Popover mode="click">
@@ -54,18 +54,18 @@ describe('<Popover />', () => {
         </Popover>
       );
 
-      userEvent.click(getByRole('presentation'));
+      await userEvent.click(getByRole('presentation'));
 
       expect(getByRole('presentation').nextElementSibling).toHaveClass(
         'af-popover__container-pop'
       );
 
-      userEvent.click(getByRole('presentation'));
+      await userEvent.click(getByRole('presentation'));
 
       expect(getByRole('presentation').nextElementSibling).toBeNull();
     });
 
-    it('Should contain PopoverClick element when the "Enter" key is pressed and the button is focused', () => {
+    it('Should contain PopoverClick element when the "Enter" key is pressed and the button is focused', async () => {
       const { getByRole } = render(
         <Popover mode="click">
           <Popover.Pop>
@@ -78,11 +78,13 @@ describe('<Popover />', () => {
       );
 
       const buttonElement = getByRole('button');
-      buttonElement.focus();
+      act(() => {
+        buttonElement.focus();
+      });
 
       expect(buttonElement).toHaveFocus();
 
-      userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{Enter}');
 
       expect(getByRole('presentation').nextElementSibling).toHaveClass(
         'af-popover__container-pop'
@@ -90,7 +92,7 @@ describe('<Popover />', () => {
     });
   });
 
-  it('Should hide PopoverClick element when the button loses focus', () => {
+  it('Should hide PopoverClick element when the button loses focus', async () => {
     const { getByRole } = render(
       <Popover mode="click">
         <Popover.Pop>
@@ -103,16 +105,18 @@ describe('<Popover />', () => {
     );
 
     const buttonElement = getByRole('button');
-    buttonElement.focus();
+    act(() => {
+      buttonElement.focus();
+    });
 
     expect(buttonElement).toHaveFocus();
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
     expect(getByRole('presentation').nextElementSibling).toHaveClass(
       'af-popover__container-pop'
     );
 
-    userEvent.tab();
+    await userEvent.tab();
     expect(buttonElement).not.toHaveFocus();
     expect(getByRole('presentation').nextElementSibling).toBeNull();
   });
@@ -132,12 +136,12 @@ describe('<Popover />', () => {
       );
 
       // Assert
-      expect(getByRole('presentation').parentElement.parentElement).toHaveClass(
-        'af-popover__wrapper'
-      );
+      expect(
+        getByRole('presentation').parentElement?.parentElement
+      ).toHaveClass('af-popover__wrapper');
     });
 
-    it('Should display content when element hovered', () => {
+    it('Should display content when element hovered', async () => {
       // Arrange
       const { getByRole } = render(
         <Popover mode="hover">
@@ -150,7 +154,7 @@ describe('<Popover />', () => {
         </Popover>
       );
 
-      userEvent.hover(getByRole('presentation'));
+      await userEvent.hover(getByRole('presentation'));
 
       // Assert
       expect(getByRole('presentation').nextElementSibling).toHaveClass(
@@ -158,7 +162,7 @@ describe('<Popover />', () => {
       );
     });
 
-    it('Should display content when element is focused', () => {
+    it('Should display content when element is focused', async () => {
       // Arrange
       const { getByRole } = render(
         <Popover mode="hover">
@@ -172,9 +176,12 @@ describe('<Popover />', () => {
       );
 
       const buttonElement = getByRole('button');
-      buttonElement.focus();
+      act(() => {
+        buttonElement.focus();
+      });
 
       expect(buttonElement).toHaveFocus();
+      await screen.findByText('Modal content');
 
       // Assert
       expect(getByRole('presentation').nextElementSibling).toHaveClass(
@@ -182,7 +189,7 @@ describe('<Popover />', () => {
       );
     });
 
-    it('Should hide content when element not hovered', () => {
+    it('Should hide content when element not hovered', async () => {
       // Arrange
       const { getByRole } = render(
         <Popover mode="hover">
@@ -196,15 +203,15 @@ describe('<Popover />', () => {
       );
 
       // Act
-      userEvent.hover(getByRole('presentation'));
-      userEvent.unhover(getByRole('presentation'));
+      await userEvent.hover(getByRole('presentation'));
+      await userEvent.unhover(getByRole('presentation'));
 
       // Assert
       expect(getByRole('presentation').nextSibling).toBeNull();
     });
   });
 
-  it('Should hide content when element loses focus', () => {
+  it('Should hide content when element loses focus', async () => {
     // Arrange
     const { getByRole } = render(
       <Popover mode="hover">
@@ -218,15 +225,18 @@ describe('<Popover />', () => {
     );
 
     const buttonElement = getByRole('button');
-    buttonElement.focus();
+    act(() => {
+      buttonElement.focus();
+    });
 
     expect(buttonElement).toHaveFocus();
+    await screen.findByText('Modal content');
 
     expect(getByRole('presentation').nextElementSibling).toHaveClass(
       'af-popover__container-pop'
     );
 
-    userEvent.tab();
+    await userEvent.tab();
 
     expect(buttonElement).not.toHaveFocus();
     expect(getByRole('presentation').nextElementSibling).toBeNull();

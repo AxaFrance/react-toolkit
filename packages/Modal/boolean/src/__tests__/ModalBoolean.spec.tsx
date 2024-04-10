@@ -4,6 +4,12 @@ import UserEvent from '@testing-library/user-event';
 import BooleanModal from '../ModalBoolean';
 
 describe('<BooleanModal>', () => {
+  let testingUser: any;
+
+  beforeAll(() => {
+    testingUser = UserEvent.setup();
+  });
+
   it('should render boolean modal', () => {
     const { asFragment } = render(
       <BooleanModal
@@ -21,7 +27,7 @@ describe('<BooleanModal>', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call onSubmit when click on submit', () => {
+  it('should call onSubmit when click on submit', async () => {
     const onSubmit = jest.fn();
     render(
       <BooleanModal
@@ -36,11 +42,11 @@ describe('<BooleanModal>', () => {
       </BooleanModal>
     );
 
-    UserEvent.click(screen.getByText(/Submit/));
-    expect(onSubmit).toBeCalled();
+    await testingUser.click(screen.getByText(/Submit/));
+    expect(onSubmit).toHaveBeenCalled();
   });
 
-  it('should call onCancel when click on Cancel', () => {
+  it('should call onCancel when click on Cancel', async () => {
     const onCancel = jest.fn();
     render(
       <BooleanModal
@@ -55,7 +61,7 @@ describe('<BooleanModal>', () => {
       </BooleanModal>
     );
 
-    UserEvent.click(screen.getByText(/Cancel/));
-    expect(onCancel).toBeCalled();
+    await testingUser.click(screen.getByText(/Cancel/));
+    expect(onCancel).toHaveBeenCalled();
   });
 });

@@ -387,7 +387,9 @@ $btn-line-height-lg: $input-btn-line-height-lg !default;
 $btn-border-width: $input-btn-border-width !default;
 
 $btn-font-weight: $font-weight-normal !default;
-$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-box-shadow:
+  inset 0 1px 0 rgba($white, 0.15),
+  0 1px 1px rgba($black, 0.075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity: 0.65 !default;
@@ -402,8 +404,11 @@ $btn-border-radius: $border-radius !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$btn-transition:
+  color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
 
 // Forms
 
@@ -460,7 +465,9 @@ $input-height-lg: calc(
   #{$input-height-inner-lg} + #{$input-height-border}
 ) !default;
 
-$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$input-transition:
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
 
 $form-text-margin-top: 0.25rem !default;
 
@@ -477,8 +484,10 @@ $input-group-addon-color: $input-color !default;
 $input-group-addon-bg: $gray-200 !default;
 $input-group-addon-border-color: $input-border-color !default;
 
-$custom-forms-transition: background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$custom-forms-transition:
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
 
 $custom-control-gutter: 1.5rem !default;
 $custom-control-spacer-x: 1rem !default;
@@ -499,7 +508,8 @@ $custom-control-indicator-checked-disabled-bg: rgba(
 ) !default;
 $custom-control-indicator-checked-box-shadow: none !default;
 
-$custom-control-indicator-focus-box-shadow: 0 0 0 1px $body-bg,
+$custom-control-indicator-focus-box-shadow:
+  0 0 0 1px $body-bg,
   $input-btn-focus-box-shadow !default;
 
 $custom-control-indicator-active-color: $component-active-color !default;
@@ -577,7 +587,8 @@ $custom-range-thumb-bg: $component-active-bg !default;
 $custom-range-thumb-border: 0 !default;
 $custom-range-thumb-border-radius: 1rem !default;
 $custom-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba($black, 0.1) !default;
-$custom-range-thumb-focus-box-shadow: 0 0 0 1px $body-bg,
+$custom-range-thumb-focus-box-shadow:
+  0 0 0 1px $body-bg,
   $input-btn-focus-box-shadow !default;
 $custom-range-thumb-focus-box-shadow-width: $input-btn-focus-width !default; // For focus box shadow issue in IE/Edge
 $custom-range-thumb-active-bg: lighten($component-active-bg, 35%) !default;

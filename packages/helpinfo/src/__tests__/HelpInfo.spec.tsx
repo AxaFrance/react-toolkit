@@ -96,9 +96,7 @@ describe('HelpInfo', () => {
       );
       UserEvent.click(screen.getByText('My text'));
 
-      await waitFor(() => {
-        screen.queryByText(/Help content/);
-      });
+      await screen.findByText(/Help content/);
 
       // Act
       UserEvent.click(screen.getByText(/Help content/));

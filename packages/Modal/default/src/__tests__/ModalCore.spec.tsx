@@ -7,20 +7,22 @@ const ModalCaller = () => {
   const [open, setIsOpen] = useState(false);
   return (
     <>
-      <div id="root">
-        <button type="button" onClick={() => setIsOpen(true)}>
-          Open
-        </button>
-        <button type="button" onClick={() => {}}>
-          DoNothing
-        </button>
+      <div>
+        <div id="root">
+          <button type="button" onClick={() => setIsOpen(true)}>
+            Open
+          </button>
+          <button type="button" onClick={() => {}}>
+            DoNothing
+          </button>
+        </div>
+        <ModalCore
+          isOpen={open}
+          onOutsideTap={() => setIsOpen(false)}
+          title="modalTest">
+          Modal Content
+        </ModalCore>
       </div>
-      <ModalCore
-        isOpen={open}
-        onOutsideTap={() => setIsOpen(false)}
-        title="modalTest">
-        Modal Content
-      </ModalCore>
     </>
   );
 };
@@ -37,12 +39,13 @@ describe('<ModalCore>', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should invoke onOutsideTap when modal is close', () => {
+  it('should invoke onOutsideTap when modal is close', async () => {
     render(<ModalCaller />);
+    await screen.findByText('Open');
     expect(screen.queryByText(/Modal Content/)).not.toBeInTheDocument();
-    UserEvent.click(screen.getByText(/Open/));
+    await UserEvent.click(screen.getByText(/Open/));
     screen.getByText(/Modal Content/);
-    UserEvent.type(screen.getByLabelText('modalTest'), '{esc}');
+    await UserEvent.keyboard('{Escape}');
     expect(screen.queryByText(/Modal Content/)).not.toBeInTheDocument();
   });
 });

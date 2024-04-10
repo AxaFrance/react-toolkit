@@ -33,7 +33,7 @@ const Paging = ({
   );
 
   const handleChangeItems = useCallback(
-    (e) =>
+    (e: any) =>
       onChange({
         numberItems: e.value,
         page: currentPage,
@@ -42,7 +42,7 @@ const Paging = ({
   );
 
   const handleChangePager = useCallback(
-    (e) =>
+    (e: any) =>
       onChange({
         numberItems,
         page: e.value,

@@ -24,11 +24,6 @@ exports[`renders MultiSelect correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: hsl(0, 0%, 100%);
-  border-color: hsl(0, 0%, 80%);
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
   cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
@@ -46,6 +41,11 @@ exports[`renders MultiSelect correctly 1`] = `
   position: relative;
   -webkit-transition: all 100ms;
   transition: all 100ms;
+  background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 80%);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
   box-sizing: border-box;
 }
 
@@ -69,34 +69,34 @@ exports[`renders MultiSelect correctly 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 2px 8px;
   -webkit-overflow-scrolling: touch;
   position: relative;
   overflow: hidden;
+  padding: 2px 8px;
   box-sizing: border-box;
 }
 
 .emotion-5 {
-  background-color: hsl(0, 0%, 90%);
-  border-radius: 2px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 2px;
   min-width: 0;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 2px;
+  margin: 2px;
   box-sizing: border-box;
 }
 
 .emotion-6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   border-radius: 2px;
   color: hsl(0, 0%, 20%);
   font-size: 85%;
-  overflow: hidden;
   padding: 3px;
   padding-left: 6px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   box-sizing: border-box;
 }
 
@@ -105,11 +105,11 @@ exports[`renders MultiSelect correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-radius: 2px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 2px;
   padding-left: 4px;
   padding-right: 4px;
   box-sizing: border-box;
@@ -129,17 +129,17 @@ exports[`renders MultiSelect correctly 1`] = `
 }
 
 .emotion-13 {
-  margin: 2px;
-  padding-bottom: 2px;
-  padding-top: 2px;
   visibility: visible;
-  color: hsl(0, 0%, 20%);
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   display: inline-grid;
   grid-area: 1/1/2/3;
   grid-template-columns: 0 min-content;
+  margin: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 20%);
   box-sizing: border-box;
 }
 
@@ -175,14 +175,14 @@ exports[`renders MultiSelect correctly 1`] = `
 }
 
 .emotion-15 {
-  color: hsl(0, 0%, 80%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 8px;
   -webkit-transition: color 150ms;
   transition: color 150ms;
+  color: hsl(0, 0%, 80%);
+  padding: 8px;
   box-sizing: border-box;
 }
 
@@ -194,10 +194,10 @@ exports[`renders MultiSelect correctly 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
+  width: 1px;
   background-color: hsl(0, 0%, 80%);
   margin-bottom: 8px;
   margin-top: 8px;
-  width: 1px;
   box-sizing: border-box;
 }
 
@@ -213,6 +213,7 @@ exports[`renders MultiSelect correctly 1`] = `
       aria-live="polite"
       aria-relevant="additions text"
       class="emotion-1"
+      role="log"
     />
     <div
       class=" emotion-3"
@@ -221,16 +222,16 @@ exports[`renders MultiSelect correctly 1`] = `
         class=" emotion-4"
       >
         <div
-          class="emotion-5"
+          class=" emotion-5"
         >
           <div
-            class="emotion-6"
+            class=" emotion-6"
           >
             For fun
           </div>
           <div
             aria-label="Remove For fun"
-            class="emotion-7"
+            class=" emotion-7"
             role="button"
           >
             <svg
@@ -248,16 +249,16 @@ exports[`renders MultiSelect correctly 1`] = `
           </div>
         </div>
         <div
-          class="emotion-5"
+          class=" emotion-5"
         >
           <div
-            class="emotion-6"
+            class=" emotion-6"
           >
             For drink
           </div>
           <div
             aria-label="Remove For drink"
-            class="emotion-7"
+            class=" emotion-7"
             role="button"
           >
             <svg
@@ -279,6 +280,7 @@ exports[`renders MultiSelect correctly 1`] = `
           data-value=""
         >
           <input
+            aria-activedescendant=""
             aria-autocomplete="list"
             aria-expanded="false"
             aria-haspopup="true"

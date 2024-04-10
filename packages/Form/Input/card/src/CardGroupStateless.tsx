@@ -23,7 +23,7 @@ const formatTitle = (titleParam: ReactNode) => {
         titleParam.props.className,
         'af-rccard-group__title'
       ),
-    });
+    } as any);
   }
   return createElement(
     'h3',
@@ -68,7 +68,7 @@ const CardGroupStateless = ({
         isChecked,
         disabled: child.props.disabled || disabled,
         ...otherProps,
-      });
+      } as any);
     }
     return child;
   });

@@ -87,11 +87,8 @@
 @mixin scroll-horizontal-shadow($maxWidth: 100%) {
   max-width: $maxWidth;
   overflow: auto;
-  background: linear-gradient(
-        90deg,
-        rgba(255, 255, 245, 0.6) 30%,
-        rgba(255, 255, 255, 0)
-      )
+  background:
+    linear-gradient(90deg, rgba(255, 255, 245, 0.6) 30%, rgba(255, 255, 255, 0))
       left center,
     linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 245, 0.6) 80%)
       right center,
@@ -108,7 +105,11 @@
       )
       right center;
   background-repeat: no-repeat;
-  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-size:
+    40px 100%,
+    40px 100%,
+    14px 100%,
+    14px 100%;
   background-attachment: local, local, scroll, scroll;
 }
 

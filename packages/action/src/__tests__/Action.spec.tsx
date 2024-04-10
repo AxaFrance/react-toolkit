@@ -11,7 +11,7 @@ const actionLink = {
 };
 
 describe('<Action>', () => {
-  it('when click should invoke onClick', () => {
+  it('when click should invoke onClick', async () => {
     const callback = jest.fn();
     const { getByRole } = render(
       <Action
@@ -21,7 +21,7 @@ describe('<Action>', () => {
         onClick={callback}
       />
     );
-    userEvent.click(getByRole('button'));
+    await userEvent.click(getByRole('button'));
     expect(callback).toHaveBeenCalledWith({ id: 'action-id' });
     expect(getByRole('button').children[0]).toHaveClass('glyphicon-link');
   });
