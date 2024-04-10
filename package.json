@@ -88,7 +88,6 @@
     "rimraf": "3.0.2",
     "sass": "1.49.7",
     "sass-loader": "10.0.5",
-    "storybook-readme": "5.0.9",
     "ts-jest": "27.1.2",
     "ts-node": "10.8.1",
     "typescript": "4.3.5"
