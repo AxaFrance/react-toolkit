@@ -62,7 +62,10 @@ const Template: Story<TableProps & TTableArgs> = ({
   <Table {...args}>
     <Table.Header>
       <Table.Tr>
-        <Table.Th id={columnHeaderId} colSpan={3}>
+        <Table.Th id={columnHeaderId} colSpan={2}>
+          <span className="af-table-th-content">Some text</span>
+        </Table.Th>
+        <Table.Th id={columnHeaderId}>
           <span className="af-table-th-content">Some text</span>
         </Table.Th>
       </Table.Tr>
