@@ -8,15 +8,18 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   background: $white;
 
-  &-th {
-    font-weight: $table-head-font-weight;
+  thead .af-table__th:not(:last-child) {
+    border-right: 1px solid white;
+  }
+
+  tbody .af-table__tr:not(:last-child) .af-table__th {
+    border-bottom: 1px solid white;
   }
 
   &__th {
     height: 100%;
     color: $white;
     background: $color-azur;
-    box-shadow: 0 0 1px 1px $white;
     font-size: 1rem;
     text-align: left;
     position: relative;
