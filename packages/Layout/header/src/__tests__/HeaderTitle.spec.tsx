@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Title } from '../Title/index';
+import { HeaderTitle } from '../HeaderTitle/index';
 
-describe('<Title>', () => {
-  it('renders Title correctly', () => {
+describe('<HeaderTitle>', () => {
+  it('renders HeaderTitle correctly', () => {
     const { asFragment } = render(
-      <Title
+      <HeaderTitle
         title="Toolkit Axa"
         subtitle="Info complémentaire"
         toggleMenu={() => null}
@@ -14,16 +14,16 @@ describe('<Title>', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('renders Title correctly without menu', () => {
+  it('renders HeaderTitle correctly without menu', () => {
     const { asFragment } = render(
-      <Title title="Toolkit Axa" subtitle="Info complémentaire" />
+      <HeaderTitle title="Toolkit Axa" subtitle="Info complémentaire" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('renders Title with classModifier', () => {
+  it('renders HeaderTitle with classModifier', () => {
     const { asFragment } = render(
-      <Title
+      <HeaderTitle
         title="Toolkit Axa"
         subtitle="Info complémentaire"
         classModifier="test"

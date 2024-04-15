@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Title> renders Title correctly 1`] = `
+exports[`<HeaderTitle> renders HeaderTitle correctly 1`] = `
 <DocumentFragment>
   <div
     class="af-title-bar af-title-bar--sticky"
@@ -41,7 +41,7 @@ exports[`<Title> renders Title correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<Title> renders Title correctly without menu 1`] = `
+exports[`<HeaderTitle> renders HeaderTitle correctly without menu 1`] = `
 <DocumentFragment>
   <div
     class="af-title-bar af-title-bar--sticky"
@@ -64,7 +64,7 @@ exports[`<Title> renders Title correctly without menu 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<Title> renders Title with classModifier 1`] = `
+exports[`<HeaderTitle> renders HeaderTitle with classModifier 1`] = `
 <DocumentFragment>
   <div
     class="af-title-bar af-title-bar--test af-title-bar--sticky"

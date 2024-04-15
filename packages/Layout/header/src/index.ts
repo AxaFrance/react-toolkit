@@ -8,6 +8,6 @@ export {
   NavBarItemBase,
   NavBarItemLink,
 } from './NavBar';
-export { Title } from './Title';
+export { HeaderTitle } from './HeaderTitle';
 export { default as ToggleButton } from './ToggleButton';
 export { User } from './User';
