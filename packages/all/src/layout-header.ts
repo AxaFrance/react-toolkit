@@ -7,7 +7,7 @@ export {
   NavBarItem,
   NavBarItemBase,
   NavBarItemLink,
-  Title as HeaderTitle,
+  HeaderTitle,
   ToggleButton,
   User,
 } from '@axa-fr/react-toolkit-layout-header';

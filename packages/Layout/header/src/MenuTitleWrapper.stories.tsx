@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta } from '@storybook/react';
 import { NavBar, NavBarItem } from './NavBar';
-import { Title } from './Title';
+import { HeaderTitle } from './HeaderTitle';
 
 export default {
   title: 'Structure/Header/MenuTitleWrapper',
@@ -151,7 +151,7 @@ const MenuTitleWrapper = () => {
           />
         </NavBarItem>
       </NavBar>
-      <Title
+      <HeaderTitle
         title="Toolkit Axa"
         subtitle="Sous titre"
         toggleMenu={handleClick}

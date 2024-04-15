@@ -14,7 +14,7 @@ type Props = {
   classModifier?: string;
   isSticky?: boolean;
 };
-const Title = ({
+const HeaderTitle = ({
   title,
   subtitle,
   children,
@@ -64,4 +64,4 @@ const Title = ({
   );
 };
 
-export default Title;
+export default HeaderTitle;

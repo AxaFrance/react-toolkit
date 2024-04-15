@@ -2,12 +2,12 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Meta } from '@storybook/react';
 import Action from '@axa-fr/react-toolkit-action';
-import Title from './Title';
+import HeaderTitle from './HeaderTitle';
 import readme from '../../README.md';
 
 export default {
-  title: 'Structure/Title Bar',
-  component: Title,
+  title: 'Structure/Header/HeaderTitle',
+  component: HeaderTitle,
   parameters: {
     readme: {
       sidebar: readme,
@@ -31,7 +31,7 @@ const actions = [
   },
 ];
 
-export const Default = (args) => <Title {...args} />;
+export const Default = (args) => <HeaderTitle {...args} />;
 Default.args = {
   title: 'Toolkit Axa',
   subtitle: 'Info complémentaire',
@@ -42,7 +42,7 @@ Default.argTypes = {
 };
 
 export const Complex = (args) => (
-  <Title {...args}>
+  <HeaderTitle {...args}>
     <div className="af-title-bar__actions">
       <a className="af-title-bar__link" href="#lien" title="lien titlebar">
         lien titlebar
@@ -59,7 +59,7 @@ export const Complex = (args) => (
         />
       ))}
     </div>
-  </Title>
+  </HeaderTitle>
 );
 Complex.args = {
   ...Default.args,
