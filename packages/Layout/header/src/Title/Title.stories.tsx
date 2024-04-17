@@ -36,6 +36,11 @@ Default.args = {
   title: 'Toolkit Axa',
   subtitle: 'Info complémentaire',
   isSticky: true,
+  leftTitle: (
+    <a className="af-title-bar__link" href="#return" title="Retour">
+      <i className="glyphicon glyphicon-chevron-left" />
+    </a>
+  ),
 };
 Default.argTypes = {
   toggleMenu: { action: 'onToggle' },

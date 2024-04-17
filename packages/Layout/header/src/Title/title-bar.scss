@@ -4,7 +4,7 @@
   background: $brand-primary;
   color: $white;
   overflow: auto;
-  padding: 0.66rem 0;
+  padding: 12.66rem 0;
   margin-bottom: 2rem;
 
   &--sticky {
@@ -96,13 +96,32 @@
       flex-wrap: wrap;
       justify-content: space-between;
       width: 100%;
+
+      &-titleLeft {
+        display: flex;
+        gap: 1rem;
+        margin-left: inherit;
+        align-self: center;
+      }
     }
+  }
+
+  .left-title-container {
+    display: flex;
+    align-self: center;
   }
 
   .burger-container {
     display: none;
   }
 }
+
+@include media-breakpoint-down(xs) {
+  .left-title-container {
+    display: none;
+  }
+}
+
 @include media-breakpoint-up(md) {
   .af-title-bar {
     padding: 0.66rem 0;
