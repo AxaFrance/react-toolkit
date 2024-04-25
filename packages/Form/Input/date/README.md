@@ -47,7 +47,7 @@ npm i @axa-fr/react-toolkit-form-input-date
 
 ```javascript
 import { DateInput } from '@axa-fr/react-toolkit-form-input-date';
-import { InputConstants, MessageTypes } from '@axa-fr/react-toolkit-form-core';
+import { MessageTypes } from '@axa-fr/react-toolkit-form-core';
 import '@axa-fr/react-toolkit-form-input-date/dist/af-date.css';
 import '@axa-fr/react-toolkit-form-core/dist/af-form.css';
 ```
@@ -70,12 +70,6 @@ const MyDateInput = () => (
       value={Date('2021-12-17')}
       messageType={MessageTypes.success}
       forceDisplayMessage={true}
-      classNameContainerLabel={
-        InputConstants.defaultProps.classNameContainerLabel
-      }
-      classNameContainerInput={
-        InputConstants.defaultProps.classNameContainerInput
-      }
     />
   </form>
 );
