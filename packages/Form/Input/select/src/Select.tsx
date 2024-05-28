@@ -1,6 +1,6 @@
-import React, { ComponentPropsWithRef, useState } from 'react';
 import { useId } from '@axa-fr/react-toolkit-core';
 import { withInput } from '@axa-fr/react-toolkit-form-core';
+import React, { ComponentPropsWithRef, useMemo, useState } from 'react';
 import SelectBase from './SelectBase';
 
 type Props = ComponentPropsWithRef<typeof SelectBase> & {
@@ -20,9 +20,13 @@ const SelectDefault = ({
 }: Props) => {
   const [hasHandleChangeOnce, setHasHandleChangeOnce] = useState(false);
 
-  const newOptions = hasHandleChangeOnce
-    ? options
-    : [{ value: '', label: placeholder }, ...options];
+  const newOptions = useMemo(
+    () =>
+      hasHandleChangeOnce || otherProps.defaultValue !== undefined
+        ? options
+        : [{ value: '', label: placeholder }, ...options],
+    [hasHandleChangeOnce, options, otherProps.defaultValue, placeholder]
+  );
 
   const inputId = useId(id);
 
