@@ -30,6 +30,20 @@ You can easily build a new app from scratch or integrate some components into an
 
 ## Getting Started
 
+Make you sure that [sass](https://www.npmjs.com/package/sass) and [bootstrap](https://www.npmjs.com/package/bootstrap) modules are installed :
+
+```sh
+npm install -D sass
+npm install bootstrap@4.3.1
+```
+
+After installing bootstrap, add these css imports in the root file of your components tree :
+
+```js
+import 'bootstrap/scss/bootstrap-grid.scss';
+import 'bootstrap/scss/bootstrap-reboot.scss';
+```
+
 You can either install everything and use only what you need. If you do that you will be able to use tree shaking to have a smaller bundle.
 However, you will need to import all the styles and not only the style related to your component.
 
