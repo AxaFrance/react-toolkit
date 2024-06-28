@@ -79,7 +79,7 @@ NewStepsStory.args = {
 };
 
 export const OldStepsStory = Template.bind({}) as typeof Template;
-OldStepsStory.storyName = 'Old Design Steps';
+OldStepsStory.storyName = 'Old Design Steps (Deprecated)';
 OldStepsStory.args = {
   classModifier: '',
   className: '',
