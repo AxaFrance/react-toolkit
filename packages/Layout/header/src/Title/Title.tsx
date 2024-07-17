@@ -13,6 +13,7 @@ type Props = {
   className?: string;
   classModifier?: string;
   isSticky?: boolean;
+  leftTitle?: ReactNode;
 };
 const Title = ({
   title,
@@ -22,6 +23,7 @@ const Title = ({
   className,
   classModifier,
   isSticky = true,
+  leftTitle,
 }: Props) => {
   if (isSticky) {
     // eslint-disable-next-line no-param-reassign
@@ -38,7 +40,10 @@ const Title = ({
   );
   return (
     <div className={componentClassName}>
-      <div className={`container ${defaultClassName}__wrapper`}>
+      <div
+        className={`container ${defaultClassName}__wrapper${
+          leftTitle ? '-titleLeft' : ''
+        }`}>
         {!!toggleMenu && (
           <div className="burger-container">
             <ToggleButton idControl="mainmenu">
@@ -52,6 +57,9 @@ const Title = ({
             </ToggleButton>
           </div>
         )}
+        {leftTitle ? (
+          <div className="left-title-container">{leftTitle}</div>
+        ) : null}
         <h1 className={`${defaultClassName}__title`}>
           {title}
           {subtitle && (
