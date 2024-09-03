@@ -1,7 +1,7 @@
-import React, { ComponentPropsWithoutRef, useCallback } from 'react';
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
-import Pager from '../Pager/Pager';
+import React, { ComponentPropsWithoutRef, useCallback } from 'react';
 import Items from '../Items/Items';
+import Pager from '../Pager/Pager';
 
 type PagingComponentProps = ComponentPropsWithoutRef<typeof Pager> &
   ComponentPropsWithoutRef<typeof Items>;
@@ -33,7 +33,7 @@ const Paging = ({
   );
 
   const handleChangeItems = useCallback(
-    (e) =>
+    (e: { value: number }) =>
       onChange({
         numberItems: e.value,
         page: currentPage,
@@ -42,7 +42,7 @@ const Paging = ({
   );
 
   const handleChangePager = useCallback(
-    (e) =>
+    (e: { value: number }) =>
       onChange({
         numberItems,
         page: e.value,
