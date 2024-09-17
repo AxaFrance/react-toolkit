@@ -1,10 +1,118 @@
 <h1>Migration Guide</h1>
 
+- [From version 2.3.x to 3.0.0](#from-version-23x-to-300)
+  - [Title (from layout)](#title-from-layout)
+  - [Modal](#modal)
+  - [Form](#form)
 - [From version 2.2.0 to 2.3.0](#from-version-220-to-230)
 - [From version 2.0.x to 2.1.0](#from-version-20x-to-210)
 - [From version 1.x to 2.0.x](#from-version-1x-to-20x)
   - [Date Input](#date-input)
   - [All](#package-react-toolkit-all)
+
+# From version 2.3.x to 3.0.0
+
+This version has some breaking changes. Please read the following to update your project.
+
+## Title (from layout)
+
+The `Title` component from the layout-header package has been renamed. Another component was also named `Title` in the title package. To avoid conflicts, the `Title` component from the layout-header package has been renamed to `HeaderTitle`.
+
+```diff
+- import { Title } from '@axa-fr/react-toolkit-layout-header';
++ import { HeaderTitle } from '@axa-fr/react-toolkit-layout-header';
+
+- import '@axa-fr/react-toolkit-layout-header/dist/Title/af-title-bar.css';
++ import '@axa-fr/react-toolkit-layout-header/dist/HeaderTitle/af-title-bar.css';
+
+- <Title title="Titre de mon application" />
++ <HeaderTitle title="Titre de mon application" />
+```
+
+## Modal
+
+The `Modal` component has been fully refactored.\
+In a technical standpoint, we removed the use of `react-modal` library and replaced it with a simple `dialog` html element. This change allows us to have a better accessibility and a better performance.\
+In a functional standpoint, we removed the `isOpen` prop as the `dialog` element doesn't work that way. To open a dialog you have to call the `showModal` function that will set the `open` attribute on the `dialog` element. To close the dialog you have to call the `closeModal` function that will set the `open` attribute to `false`.\
+In order to do that, you can use `ref` to get the `dialog` element and call the `showModal` and `closeModal` functions.
+
+```diff
+- <Modal isOpen={isOpen} onOutsideTap={onClose}>
++ const modalRef = useRef<HTMLDialogElement>(null);
++ <Modal ref={modalRef} onOutsideTap={onClose}>
+```
+
+```diff
+- <button onClick={() => setIsOpen(true)}>Open Modal</button>
++ <button onClick={() => modalRef.current.showModal()}>Open Modal</button>
+```
+
+```diff
+- <button onClick={() => setIsOpen(false)}>Close Modal</button>
++ <button onClick={() => modalRef.current.closeModal()}>Close Modal</button>
+```
+
+Also we removed the prefix `Modal` for the subcomponents of the `Modal` component.\
+For example, `Modal.HeaderBase` is now `HeaderBase`, `Modal.Body` is now `Body`, `Modal.Footer` is now `Footer`.
+
+```diff
+- <Modal.HeaderBase>My Header</Modal.HeaderBase>
++ <HeaderBase>My Header</HeaderBase>
+```
+
+Keep in mind that those components should be wrapped inside a `Modal` component.
+
+Lastly, for your tests to keep working, you wil need to define what the `showModal` and `close` functions do. For that you can use the following code in your `setupTests.ts` file :
+
+```javascript
+window.HTMLDialogElement.prototype.showModal = vi.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true;
+});
+
+window.HTMLDialogElement.prototype.close = vi.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = false;
+});
+```
+
+## Form
+
+In this version, we refactored the form `onChange` event. Previously we used to override the native `onChange` event of the input. Now we use the native `onChange` event to keep it simplier and reduce the codebase and possible issues.\
+For your forms to still work, you need to change the way you handle the `onChange` event.
+
+Before to get the value of the input, you would do something like this :
+
+```typescript
+const handleChange = (event) => {
+  changeSomeProperty(event.value);
+};
+```
+
+Now you can directly get the value from the native event :
+
+```typescript
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  changeSomeProperty(event.target.value);
+};
+```
+
+This change has to be done on all the form components that you use in your project :
+
+- `Card`
+- `Checkbox`
+- `Choice`
+- `Date`
+- `File`
+- `Number`
+- `Pass`
+- `Radio`
+- `MultiSelect`
+- `Select`
+- `Text`
+- `Textarea`
 
 # From version 2.2.0 to 2.3.0
 
