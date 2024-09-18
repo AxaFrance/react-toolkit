@@ -18,10 +18,8 @@
   &__group-label {
     font-weight: normal;
     margin: 0;
-  }
 
-  &__group--required &__group-label {
-    &:after {
+    &--required::after {
       content: ' *';
       color: $color-red-error;
     }

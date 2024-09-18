@@ -1,5 +1,6 @@
 import { getComponentClassName } from '@axa-fr/react-toolkit-core';
 import React, { ComponentPropsWithoutRef, ReactNode } from 'react';
+import classNames from 'classnames';
 import FieldError from './FieldError';
 import FieldForm from './FieldForm';
 import MessageTypes from './MessageTypes';
@@ -53,7 +54,13 @@ const Field = ({
       aria-label={ariaLabelContainer}>
       <div className={classNameContainerLabel}>
         <label
-          className="af-form__group-label"
+          className={classNames(
+            {
+              'af-form__group-label--required':
+                classModifier.includes('required'),
+            },
+            'af-form__group-label'
+          )}
           htmlFor={isLabelContainerLinkedToInput ? id : null}>
           {label}
         </label>
