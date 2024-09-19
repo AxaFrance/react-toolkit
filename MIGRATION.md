@@ -62,7 +62,7 @@ For example, `Modal.HeaderBase` is now `HeaderBase`, `Modal.Body` is now `Body`,
 
 Keep in mind that those components should be wrapped inside a `Modal` component.
 
-Lastly, for your tests to keep working, you wil need to define what the `showModal` and `close` functions do. For that you can use the following code in your `setupTests.ts` file :
+Lastly, for your tests to keep working, you will need to define what the `showModal` and `close` functions do. For that you can use the following code in your `setupTests.ts` file :
 
 ```javascript
 window.HTMLDialogElement.prototype.showModal = vi.fn(function mock(
