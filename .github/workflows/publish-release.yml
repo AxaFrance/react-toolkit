@@ -7,7 +7,7 @@ on:
         required: true
 
 env:
-  NODE_VERSION: 16.x
+  NODE_VERSION: 20.x
   TOOLKIT_VERSION: ${{ inputs.version }}
 
 jobs:
