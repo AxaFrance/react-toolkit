@@ -33,8 +33,8 @@ The `Title` component from the layout-header package has been renamed. Another c
 
 The `Modal` component has been fully refactored.\
 In a technical standpoint, we removed the use of `react-modal` library and replaced it with a simple `dialog` html element. This change allows us to have a better accessibility and a better performance.\
-In a functional standpoint, we removed the `isOpen` prop as the `dialog` element doesn't work that way. To open a dialog you have to call the `showModal` function that will set the `open` attribute on the `dialog` element. To close the dialog you have to call the `closeModal` function that will set the `open` attribute to `false`.\
-In order to do that, you can use `ref` to get the `dialog` element and call the `showModal` and `closeModal` functions.
+In a functional standpoint, we removed the `isOpen` prop as the `dialog` element doesn't work that way. To open a dialog you have to call the `showModal` function that will set the `open` attribute on the `dialog` element. To close the dialog you have to call the `close` function that will set the `open` attribute to `false`.\
+In order to do that, you can use `ref` to get the `dialog` element and call the `showModal` and `close` functions.
 
 ```diff
 - <Modal isOpen={isOpen} onOutsideTap={onClose}>
@@ -49,7 +49,7 @@ In order to do that, you can use `ref` to get the `dialog` element and call the 
 
 ```diff
 - <button onClick={() => setIsOpen(false)}>Close Modal</button>
-+ <button onClick={() => modalRef.current.closeModal()}>Close Modal</button>
++ <button onClick={() => modalRef.current.close()}>Close Modal</button>
 ```
 
 Also we removed the prefix `Modal` for the subcomponents of the `Modal` component.\
