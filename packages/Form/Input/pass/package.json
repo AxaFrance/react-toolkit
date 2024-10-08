@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-form-input-pass",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -20,11 +20,11 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "3.0.0-alpha.2",
-    "@axa-fr/react-toolkit-form-core": "3.0.0-alpha.2"
+    "@axa-fr/react-toolkit-core": "3.0.0",
+    "@axa-fr/react-toolkit-form-core": "3.0.0"
   },
   "devDependencies": {
-    "@axa-fr/react-toolkit-help": "3.0.0-alpha.2"
+    "@axa-fr/react-toolkit-help": "3.0.0"
   },
   "license": "MIT",
   "publishConfig": {
