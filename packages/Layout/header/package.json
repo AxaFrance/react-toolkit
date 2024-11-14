@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-layout-header",
-  "version": "3.0.1",
+  "version": "3.0.2-alpha.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -20,8 +20,8 @@
     "build": "rimraf ./dist && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-action": "3.0.1",
-    "@axa-fr/react-toolkit-core": "3.0.1"
+    "@axa-fr/react-toolkit-action": "3.0.2-alpha.0",
+    "@axa-fr/react-toolkit-core": "3.0.2-alpha.0"
   },
   "license": "MIT",
   "publishConfig": {
