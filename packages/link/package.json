@@ -1,6 +1,6 @@
 {
   "name": "@axa-fr/react-toolkit-link",
-  "version": "3.0.1",
+  "version": "3.0.2-alpha.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -20,7 +20,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@axa-fr/react-toolkit-core": "3.0.1"
+    "@axa-fr/react-toolkit-core": "3.0.2-alpha.0"
   },
   "license": "MIT",
   "publishConfig": {
