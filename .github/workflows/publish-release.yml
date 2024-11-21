@@ -75,7 +75,7 @@ jobs:
           prevVersion=`node -p "require('./latest/version.json').version"`
           mv latest v$prevVersion
           echo "::set-output name=prevVersion::$prevVersion"
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: storybook
           path: gh-pages/react-toolkit/latest/storybook
